@@ -1,0 +1,14 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+- ticket_types = Ticket.ticket_types.keys.reverse
+
+= render 'notification_sections'
+
+= render 'tickets_dashboard_sections', ticket_types: ticket_types
+
+= render 'tickets_resume_sections', ticket_types: ticket_types
+
+= render 'transparency/home/top_queries_sections'
+
+= render 'service_channels'

@@ -1,0 +1,20 @@
+.card-filters.filter-bar{'data-filter-bar': 'macroregion_investiments'}
+
+  = form_for transparency_macroregion_investiments_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row.mt-3
+      .col-12.col-lg-4
+        - select_options = transparency_select_options_from_model(Integration::Macroregions::MacroregionInvestiment, :ano_exercicio)
+        - options = options_for_select(select_options, params[:ano_exercicio] || Date.today.year)
+
+        = label_tag(:ano_exercicio, Integration::Macroregions::MacroregionInvestiment.human_attribute_name(:ano_exercicio))
+        = select_tag(:ano_exercicio, options, include_blank: t('messages.filters.select.all.male'))
+
+      .col-12.col-lg-8
+        - select_options = transparency_select_options_from_model(Integration::Macroregions::MacroregionInvestiment, :descricao_poder)
+        - options = options_for_select(select_options, params[:descricao_poder] || 'EXECUTIVO')
+
+        = label_tag(:descricao_poder, Integration::Macroregions::MacroregionInvestiment.human_attribute_name(:descricao_poder))
+        = select_tag(:descricao_poder, options, include_blank: t('messages.filters.select.all.male'))

@@ -1,0 +1,3 @@
+- action = resource.disabled? ? :enable : :disable
+- btn_class = resource.disabled? ? 'text-success' : 'text-danger'
+= link_to t("commands.#{action}"), url_for([:toggle_disabled, namespace, resource]), method: :patch, 'data-confirm': t("commands.#{action}_confirm"), class: "btn btn-link hover-link float-left d-inline-block #{btn_class}"

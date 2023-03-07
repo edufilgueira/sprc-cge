@@ -1,0 +1,37 @@
+pt-BR:
+  shared:
+    transparency:
+      results:
+        thematic_indicators:
+          index:
+            title: Indicadores temáticos
+            description: Aqui você poderá consultar informações de indicadores temáticos pesquisando por eixo, tema, órgão e indicadores
+
+            filters:
+              title: Consulta
+              search_placeholder: 'Busque por indicador, resultado, eixo, tema e órgão'
+
+            table:
+              summary: Lista de indicadores temáticos
+              header:
+                descricao_eixo: Eixo
+                descricao_tema: Tema
+                sigla: Órgão
+                indicator: Indicador
+                unidade: Unidade
+
+              status:
+                done: Valor realizado
+                scheduled: Valor programado
+
+            subtitle:
+              title: 'Legenda:'
+              done: Valores realizados
+              todo: Valores programados
+
+
+            source: 'Fonte de Dados: Secretaria do Planejamento e Gestão; Monitoramento de Ações e Projetos Prioritários (Mapp GPR) - WebMapp'
+
+          show:
+            valores_realizados:
+              year: Ano

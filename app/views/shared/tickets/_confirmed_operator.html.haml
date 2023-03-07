@@ -1,0 +1,24 @@
+= javascript_include_tag('ckeditor/init')
+
+- comment_form_url = [namespace, new_comment]
+
+- tabs = tickets_operator_tabs(current_user, ticket)
+
+%hr.no-print
+
+%nav.nav.nav-pills.flex-row.flex-wrap.no-print{id: 'tabs', role: 'tablist', 'aria-orientation': 'horizontal'}
+
+  - tabs.each_with_index do |tab, index|
+    - if show_tab?(tab, ticket)
+      %a.nav-link{id: "tabs-#{tab}-tab", 'data-toggle': 'pill', href: "#tabs-#{tab}", role: 'tab'}
+        - title = t(".tabs.#{tab}.#{ticket.ticket_type}.title")
+        = title
+
+#tabs-content.tab-content.d-none
+
+  - tabs.each_with_index do |tab, index|
+
+    - if show_tab?(tab, ticket)
+      .tab-pane.fade{id: "tabs-#{tab}", "aria-labelledby": "#tabs-#{tab}-tab", role: 'tabpanel'}
+
+        = render "shared/tickets/confirmed_operator/#{tab}", ticket: ticket, namespace: namespace, new_comment: new_comment, ticket_children: ticket_children, comment_form_url: comment_form_url

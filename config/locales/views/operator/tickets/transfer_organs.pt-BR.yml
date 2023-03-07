@@ -1,0 +1,33 @@
+pt-BR:
+
+  operator:
+
+    tickets:
+
+      transfer_organs:
+        new:
+          title:
+            sou: Transferir para outra ouvidoria
+            sic: Transferir para outro comitê setorial SIC
+          description:
+            title:
+              sou: Descrição da manifestação
+              sic: Descrição da solicitação
+          attachments:
+            title: Anexos
+          form:
+            title:
+              sou: Transferência da manifestação
+              sic: Transferência da solicitação
+        create:
+          error: Falha ao transferir. Verifique os erros abaixo.
+          done: Transferência realizada com sucesso.
+        form:
+          organ:
+            from: De
+            to: Para
+          subnet:
+            to: Sub-rede
+          justification:
+            label: Motivo da transferência
+          save: Salvar alterações

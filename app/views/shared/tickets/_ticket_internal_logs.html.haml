@@ -1,0 +1,25 @@
+- #
+- # Comentários internos visível apenas aos operadores
+- #
+
+- if operator?(current_user)
+  .card.card-custom
+
+    .card-header
+
+      %h3.card-title
+        = t('.title')
+
+    .card-block
+
+      - # o bloco de histórico do ticket é carregado como um remote content...
+      - # o conteúdo é requisitado passando o parametro 'ticket_log' para a
+      - # action :show. Quando o mecanismo de log do ticket for implementado,
+      - # deverá haver um controller especfíco (ticket_logs) e o mecanismo
+      - # deve ser movido para ele.
+
+      .content{'data-content': 'ticket_internal_logs'}
+
+        - ticket_for_internal_comment = ticket.parent || ticket
+
+        = render 'shared/tickets/comments', ticket: ticket_for_internal_comment, comment_form_url: comment_form_url

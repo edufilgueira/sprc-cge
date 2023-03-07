@@ -1,0 +1,81 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h3
+  = t('.title')
+
+%hr{'aria-hidden': 'true'}
+
+.card-deck.mt-3{ 'aria-labelledby': 'general_channels' }
+  .card.mt-4.mt-md-0
+    .card-block
+      %h4.card-title
+        = t('.card1.title')
+      %p.card-text
+        = t('.card1.description')
+
+    .card-footer.bg-faded.border-bottom-only.border-3.border-orange
+      = link_to '/portal-da-transparencia/paginas/redes-de-ouvidorias', class: 'btn btn-tertiary btn-uppercase' do
+        %i.fa.fa-share
+        = t('.card1.see_more')
+
+  .card.mt-4.mt-md-0
+    .card-block
+      %h4.card-title
+        = t('.card2.title')
+
+      %p.card-text
+        = t('.card2.description')
+
+    .card-block.text-center
+      .row.fa-text-green.mt-4
+        .col-md-4.col-12.mt-3.mt-md-0
+          %i.fa.fa-instagram.fa-3x.d-block.mb-2
+          = link_to t('.social.instagram'), 'https://www.instagram.com/cgeceara', target: '_blank'
+        .col-md-4.col-12.mt-3.mt-md-0
+          %i.fa.fa-twitter.fa-3x.d-block.mb-2
+          = link_to t('.social.twitter'), 'https://twitter.com/cgeceara', target: '_blank'
+        .col-md-4.col-12.mt-3.mt-md-0
+          %i.fa.fa-facebook.fa-3x.d-block.mb-2
+          = link_to t('.social.facebook'), 'https://www.facebook.com/cgeceara', target: '_blank'
+
+  .card.mt-4.mt-md-0
+    .card-block
+      %h4.card-title
+        = t('.card3.title')
+
+      %p.card-text
+        = t('.card3.description')
+
+    .card-block
+      %ul.list-unstyled
+        %li.mb-2
+          = link_to t('.card3.link1.link') do
+            %i.fa.fa-envelope-o
+            = t('.card3.link1.title')
+
+        %li
+          = link_to t('.card3.link2.link') do
+            %i.fa.fa-phone
+            = t('.card3.link2.title')
+
+%h3.mt-4
+  = t('.title2')
+
+%hr{'aria-hidden': 'true'}
+
+- (1..13).each_slice (3) do |row|
+  .card-deck.mt-4
+    - row.each do |i|
+      .card.card-md-4.mt-4.mt-md-0
+        .card-block
+          %h4.card-title
+            = t(".channel#{i}.title")
+
+          %p.card-text
+            = t(".channel#{i}.description")
+        .card-footer.bg-faded.border-bottom-only.border-3.border-orange
+          = link_to t(".channel#{i}.link"), class: 'btn btn-tertiary btn-uppercase', target: '_blank' do
+            %i.fa.fa-share
+            = t('.access_link')
+

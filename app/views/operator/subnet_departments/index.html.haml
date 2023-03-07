@@ -1,0 +1,38 @@
+- content_for :title, t('.title', organ_acronym: organ.acronym)
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+- new_path = new_operator_answer_template_path
+- controller_name = controller.controller_name
+- filter_path = operator_subnet_departments_path
+- filter_new_command = { permission: false }
+- filter_options = { filter_id: :subnet_departments, filter_path: filter_path, search_placeholder: t('.search.label') }
+
+.card.card-custom
+
+  .card-header
+
+    .row
+
+      .col-12.col-md.-8
+        %h2.card-title= t('.title', organ_acronym: organ.acronym)
+
+      .col-12.col-md-4
+        .float-right
+          = link_to "#{controller.request.original_url}&print=true", 'data-input': 'btn-print', class: "btn btn-link btn-print hover-link d-inline-block", target: :_blank do
+            %i.fa.fa-print{ 'aria-hidden': 'true' }
+            = t('.commands.print')
+
+
+  .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+    .remote-content{'data-remote-content': controller_name}
+
+
+      = render "shared/operator/filters", filter_options
+
+      %hr{'aria-hidden': 'true'}
+
+      .remote-content-result{ 'data-remote-content-result': controller_name }
+        .p-2.text-center.text-muted
+          .fa.fa-spin.fa-refresh.mx-1
+          = t('messages.loading')

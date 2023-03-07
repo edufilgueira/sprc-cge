@@ -1,0 +1,80 @@
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4em;
+  }
+
+  @page {
+    margin: 0.5cm;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  footer, video, audio, object, embed,
+  .navbar-bottom-line, .toolbar {
+    display: none;
+  }
+
+  .print {
+    display: block;
+  }
+
+  .no-print {
+    display: none;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  p, h2, h3, h4, h5, h6 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  p a {
+    word-wrap: break-word;
+  }
+
+  .card {
+    page-break-inside: avoid;
+  }
+
+  .card-commands {
+    display: none;
+  }
+
+  .navbar {
+    height:60px;
+    content: asset_url('logos/logo-cge-header-invert1.png') !important;
+  }
+
+  .navbar-container {
+    height:60px;
+    content: asset_url('logos/logo-cge-header-invert1.png') !important;
+  }
+
+  .ribbon {
+    display: none;
+  }
+}

@@ -1,0 +1,37 @@
+en:
+  activerecord:
+    models:
+      integration/expenses/nld:
+        one: Expense Settlement Note
+        other: Expense Settlement Notes
+
+    attributes:
+      integration/expenses/nld:
+        exercicio: Period
+        unidade_gestora: Management unit
+        unidade_executora: Executing unit
+        numero: Number
+        natureza: Nature
+        efeito: Effect
+
+        tipo_de_documento_da_despesa: Expense document type
+        numero_do_documento_da_despesa: Expense document number
+        data_do_documento_da_despesa: Expense document date
+        processo_administrativo_despesa: Administrative expenditure process
+        data_emissao: Issue date
+        date_of_issue: Issue date
+        valor: Value
+        valor_retido: Retained value
+        cpf_ordenador_despesa: Expense orderer CPF
+        credor: Creditor
+        numero_npf_ordinaria: NPF ordinary number
+        numero_nota_empenho_despesa: NED number
+        ned: Expenditure commitment note
+        tipo_despesa_extra_orcamentaria: Type of extra budgetary expenditure
+        especificacao_restituicao: Specification of refund
+        exercicio_restos_a_pagar: Exercise remnants to pay
+        data_atual: Current date
+
+        management_unit_title: Secretariat/Agency
+        executing_unit_title: Executing Unit
+        creditor_nome: Creditor

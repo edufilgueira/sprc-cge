@@ -1,0 +1,12 @@
+- if user?(current_user)
+
+  .d-inline-block{ 'data-content': 'social-actions' }
+
+    - if ticket_like.persisted?
+
+      = render 'transparency/public_tickets/likes/delete_form'
+
+    - else
+
+      = render 'transparency/public_tickets/likes/new_form'
+

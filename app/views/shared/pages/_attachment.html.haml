@@ -1,0 +1,11 @@
+.row.m-2.attachment
+  .attachment-description.px-1.d-inline
+    = link_to document_url(attachment), target: '_blank' do
+      = document_image_tag(attachment, :smaller)
+
+    = link_to document_url(attachment), target: '_blank' do
+      = attachment.title
+
+      .small.text-muted.d-inline
+        %em
+          = l(attachment.imported_at, format: :attachment)

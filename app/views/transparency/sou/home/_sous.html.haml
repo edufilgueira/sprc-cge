@@ -1,0 +1,22 @@
+%section.my-4{ 'aria-labelledby': 'sous' }
+  .card
+    .card-block
+      .card-title.mb-4
+        %h4.font-weight-bold
+          = t('.title')
+
+      .card-text
+        = t('.description')
+
+      %ul.list-unstyled.mt-3
+        %li
+          = link_to t('.link_1'), transparency_sou_executive_ombudsmen_path
+        %li
+          = link_to t('.link_2'), transparency_page_path('redes-de-ouvidorias', anchor: 'redeouvir')
+        %li
+          = link_to t('.link_3'), transparency_page_path('redes-de-ouvidorias', anchor: 'profort')
+
+    .card-footer.bg-faded.border-bottom-only.border-3.border-orange
+      = link_to t('.see_more.link'), class: 'btn btn-tertiary btn-uppercase' do
+        %i.fa.fa-share.mr-2
+        = t('.see_more.title')

@@ -1,0 +1,36 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/constructions/dae:
+        id_obra: 'ID da obra'
+        codigo_obra: 'Código da obra'
+        contratada: 'Contratada'
+        data_fim_previsto: 'Fim previsto'
+        data_inicio: 'Início da obra'
+        data_ordem_servico: 'Data da ordem de serviço'
+        descricao: 'Descrição'
+        dias_aditivado: 'Dias aditivado'
+        latitude: 'Latitude'
+        longitude: 'Longitude'
+        municipio: 'Município'
+        numero_licitacao: 'Número da licitação'
+        numero_ordem_servico: 'Número da ordem de serviço'
+        numero_sacc: 'Número SACC'
+        percentual_executado: 'Percentual executado'
+        prazo_inicial: 'Prazo inicial'
+        secretaria: 'Secretaria/Órgão'
+        status: 'Situação'
+        tipo_contrato: 'Tipo do contrato'
+        valor: 'Valor'
+        dae_status: Situação
+        dae_status: Situação
+
+  integration/constructions/dae:
+    dae_statuses:
+      waiting: 'Aguardando OS'
+      canceled: 'Cancelada'
+      done: 'Concluída'
+      in_progress: 'Em Execução'
+      finished: 'Finalizada'
+      paused: 'Paralisada'
+      physical_progress_done: 'Execução Fisíca Concluída'

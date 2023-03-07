@@ -1,0 +1,108 @@
+pt-BR:
+  ceara_app:
+    platform:
+
+      tickets:
+
+        create:
+          sou:
+            title: Nova Manifestação de Ouvidoria
+            done: "A manifestação foi criada com o protocolo '%{title}'"
+            error: Não foi possível realizar a manifestação
+
+          sic:
+            title: Nova Solicitação de Acesso à Informação
+            done: "A solicitação foi criada com o protocolo '%{title}'"
+            error: Não foi possível solicitar a informação
+
+
+        destroy:
+          sou:
+            title: Nova Manifestação de Ouvidoria
+            done: "A manifestação '%{title}' foi removida."
+
+          sic:
+            title: Nova Solicitação de Acesso à Informação
+            done: "A solicitação '%{title}' foi removida."
+
+        index:
+          filters: Filtros de busca
+          headers:
+            organ:
+              title: Órgão
+            sou_type:
+              title: Tipo
+
+          sou:
+            breadcrumb_title: Ouvidoria Digital
+            title: Manifestações de Ouvidoria Digital
+            description: O prazo de atendimento da manifestação de Ouvidoria é de até 20 dias, podendo ser prorrogado por mais 10 dias, conforme estabelece o Decreto Estadual n° 33.485/2020.
+            commands:
+              new: Nova manifestação
+
+          sic:
+            breadcrumb_title: Acesso à Informação
+            title: Solicitações de Acesso à Informação
+            description: O atendimento das Solicitações de Informação é de até 20 dias podendo ser prorrogado por mais 10 dias conforme estabelece a Lei nº. 15.175/2012.
+            commands:
+              new: Nova solicitação
+
+        table:
+          summary: Lista paginada com todos as manifestações
+          caption: Tabela contendo todos as manifestações de Ouvidorias
+          heads:
+            parent_protocol: Protocolo
+            sou_type: Tipo
+            organs: Órgão(s)
+            internal_status: Situação
+            description: Descrição
+            deadline: Prazo
+            created_at: Criado em
+            updated_at: Última atualização
+
+        ticket:
+          messages:
+            deadline:
+              undefined: '-'
+
+        new:
+          sou:
+            title: Nova Manifestação de Ouvidoria
+
+          sic:
+            title: Nova Solicitação de Acesso à Informação
+
+        show:
+          confirmed:
+            title: Exibição detalhada da manifestação
+          in_progress:
+            title: Confirmar abertura de manifestação
+            sou:
+              title: Confirmar abertura de manifestação
+            sic:
+              title: Confirmar abertura de solicitação
+          sou:
+            commands:
+              new: Nova manifestação
+          sic:
+            commands:
+              new: Nova solicitação
+
+        edit:
+          sou:
+            title: Edição de Manifestação de Ouvidoria
+
+          sic:
+            title: Edição de Solicitação de Acesso à Informação
+
+        update:
+
+          sou:
+            title: Edição de Manifestação de Ouvidoria
+            done: "A manifestação foi atualizada"
+            error: Não foi possível editar a manifestação
+
+          sic:
+            title: Edição de Solicitação de Acesso à Informação
+            done: "A solicitação foi atualizada"
+            error: Não foi possível editar a solicitação

@@ -1,0 +1,395 @@
+en:
+  activerecord:
+    attributes:
+
+      ticket:
+        answer_type: 'How would you like to receive the response?'
+        answer_type_str: 'Type of response'
+
+        answer_phone: 'Telephone nunmber 1'
+        answer_cell_phone: 'Telephone number 2'
+        city: City
+        city_id: City
+        city_title: City
+        created_at: Created at
+        answer_address_street: 'Street/Avenue'
+        answer_address_number: 'Number'
+        answer_address_zipcode: 'Zipcode'
+        answer_address_neighborhood: 'Neighborhood'
+        answer_address_complement: 'Complement'
+        answer_twitter: Twitter Profile
+        answer_facebook: Facebook Profile
+        answer_instagram: Instagram Profile
+
+        description: Description
+        deadline_str: Deadline
+        email: E-mail
+        name: Full name
+        organ: Responsible organ
+        citizen_topic: Subject
+        organ_acronym: Responsible organ
+        subnet: Responsible subnet
+        subnet_acronym: Responsible subnet
+        password: Password
+        plain_password: Password
+        protocol: Protocol
+        parent_protocol: Protocol
+        status: Status
+        status_str: Status
+        ticket_type: Type
+        ticket_type_str: Type
+        unknown_organ: I don't know the responsible organ
+        unknown_subnet: Sent to SESA
+        unknown_classification: I don't know the classification
+        sou_type: Type of manifestation
+        sou_type_str: Type of manifestation
+        internal_status: Status
+        internal_status_str: Status
+        evaluation: On a scale of 1 to 10, rate the service.
+        justification: Justify
+        document_type: Type of document
+        document_type_str: Type of document
+        document: Document
+        person_type: Type of profile
+        person_type_str: Type of profile
+        anonymous: Anonymous
+        used_input: Input used
+        used_input_str: Input used
+        call_center_responsible: Responsible
+        call_center_responsible_name: Responsible
+        call_center_status: Status
+        call_center_status_str: Status
+        priority: Priority
+        social_name: Social name
+        gender: Gender
+        gender_str: Gender
+        reopened: Reopened
+        appeals: Appeals
+        public_ticket: ATTENTION! When clicking on this option, we recommend that you keep personal information in the description of the request, as the information will be visible to all citizens.
+        parent_public_ticket: ATTENTION! When clicking on this option, we recommend that you keep personal information in the description of the request, as the information will be visible to all citizens.
+        attachments: Attachments
+
+        denunciation_organ: Organ reported
+        denunciation_organ_acronym: Organ reported
+        denunciation_description: Write down your denunciantion
+        denunciation_description_str: Description of denunciantion
+        denunciation_date: When happened or how long it has been happening?
+        denunciation_date_str: Date of denunciantion
+        denunciation_place: 'Place of denunciation/ where has that happened?'
+        denunciation_place_str: Place of denunciation
+        denunciation_assurance: 'About the case been reported, you have:'
+        denunciation_assurance_str: 'About the case been reported'
+        denunciation_witness: 'Are there any witnesses? If so, mention them: '
+        denunciation_witness_str: Witnesses
+        denunciation_evidence: 'Are there any evidences? If so, mention them: '
+        denunciation_evidence_str: Evidences
+        denunciation_against_operator: Involve Ombudsman, Leader of other power
+
+        used_input: Input used
+        used_input_str: Input used
+        used_input_url: Link used to complaint
+        answer_classification: Perception after the preliminary examination procedure
+        answer_classification_str: Perception after the preliminary examination procedure
+
+        immediate_answer: Terminate immediately
+
+        target_address_zipcode: Zipcode
+        target_city: City
+        target_city_title: City
+        target_address_street: Street/Avenue
+        target_address_number: Number
+        target_address_neighborhood: Neighborhood
+        target_address_complement: Complement
+
+      ticket/answer_type:
+        default: No (apenas via e-mail e internet)
+        phone: Yes, through telephone call
+        letter: Yes, through letter
+
+      ticket/denunciation_assurance:
+        assured: Assured
+        suspicion: Suspicion
+        rumor: Has heard the rumors
+        legacy_assurance: Legacy system
+
+      ticket/denunciation_classification:
+        against_leader: It involves senior officer
+        against_operator: It involves sectorial operator
+        against_others: It comes from another power
+        various_denunciation: Various denunciation
+
+      ticket/used_input:
+        phone: Telephone
+        system: System
+        presential: Presential
+        email: E-mail
+        facebook: Facebook
+        letter: Letter
+        phone_155: Telephone 155
+        complaint_here: Complaint here
+        consumer_gov: consumer.gov.br
+        instagram: Instagram
+        traveling_government: Traveling Government
+        suggestions_box: Suggestion box
+        legacy: Legacy system
+        twitter: Twitter
+        ceara_app: Ceará App
+        whatsapp: Whatsapp
+
+      ticket/answer_type:
+        default: Default
+        letter: Letter
+        phone: Telephone
+        email: E-mail
+        twitter: Twitter
+        facebook: Facebook
+        instagram: Instagram
+        presential: Presential
+
+      ticket/sou_type:
+        complaint: Complaint
+        denunciation: Denunciation
+        compliment: Compliment
+        suggestion: suggestion
+        request: Request
+        service: Service
+
+      ticket/person_type:
+        individual: Individual
+        legal: Legal person
+
+      ticket/ticket_type:
+        sic: Access to Information
+        sou: Ombudsman
+
+      ticket/internal_status:
+        in_filling: Filling
+        waiting_confirmation: Waiting confirmation
+        waiting_referral: Waiting referral
+        sectoral_attendance: In attendance - sectorial
+        internal_attendance: In attendance - internal department
+        sectoral_validation: In validation - sectorial
+        cge_validation: In validation - CGE
+        partial_answer: Partially finalized
+        final_answer: Completed
+        invalidated: Invalidated
+        completed: Completed
+        appeal: Appeal
+        awaiting_invalidation: Awaiting invalidation
+        subnet_attendance: In attendance - sub network
+        subnet_validation: In validation - sub network
+
+      ticket/statuses_for_citizen:
+        active: In attendance
+        inactive: Completed
+
+      ticket/internal_status/appeal:
+          '1': Appeal requested (first instance)
+          '2': Appeal requested (second instance)
+          '3': Appeal requested (third instance)
+
+      ticket/deadline: &deadline
+        not_expired: Not expired
+        expired: Expired
+        expired_can_extend: Expired can be extended
+
+      ticket/departments_deadline:
+        <<: *deadline
+
+      ticket/gender:
+        not_informed_gender: Not informed
+        female: Female
+        male: Male
+        other_gender: Other
+
+      ticket/call_center_status:
+        waiting_allocation: Waiting allocation
+        waiting_feedback: Waiting response
+        with_feedback: Attendance completed
+
+      ticket/answer_classification:
+        sic_attended_personal_info: Attended (informação pessoal)
+        sic_attended_rejected_partially: Partially attended/rejected
+        sic_rejected_secret: Rejected (sigiloso/secreto)
+        sic_rejected_need_work: Rejected (exige trabalho adicional)
+        sic_rejected_reserved: Rejected (sigiloso/reservado)
+        sic_rejected_personal_info: Rejected (informação pessoal)
+        sic_not_attended_info_unclear: Not attended (solicitação não especificada de forma clara e precisa)
+        sic_not_attended_info_nonexistent: Not attended (informação inexistente)
+        sic_rejected_ultrasecret: Rejected (ultrassecreto)
+        sic_rejected_generic: Rejected (solicitações genéricas, desproporcionais ou desarrazoadas)
+        sic_not_attended_other_organs: Not Attended (competência outros poderes)
+        sic_attended_active: Attended (transparência ativa)
+        sic_attended_passive: Attended (transparência passiva)
+        appeal_deferred: Deferred
+        appeal_rejected: Rejected
+        appeal_deferred_partially: Partially deferred
+        appeal_loss_object: Object loss
+        appeal_loss_object_partially: Object partially loss
+        appeal_not_allowed: Not allowed
+        sou_demand_well_founded: Demand well founded
+        sou_demand_unfounded: Demand unfounded
+        sou_well_founded_partially: Partially well founded
+        sou_could_not_verify: It was not possible to verify
+        sou_waitting_determination_result: Waiting determination of results
+        other_organs: It is not the responsibility of the State Executive Power
+        legacy_classification: Legacy system
+
+
+    errors:
+      models:
+        ticket:
+          attributes:
+            parent:
+              parent_association: A manifestation / request can not be attributed as father to himself
+              child_association: A child manifestation / request can not have children
+
+            cpf:
+              invalid: Social security invalid
+            cnpj:
+              invalid: National Register of Legal Entities invalid
+  ticket:
+
+    anonymous:
+      title: Anonymous manifestation
+
+    user_info_private: '-'
+
+
+    answer_types:
+      default: Default
+      letter: Letter
+      phone: Telephone
+      email: E-mail
+      twitter: Twitter
+      facebook: Facebook
+      instagram: Instagram
+      presential: Presential
+
+    answer_types_description:
+      default: "To see your response, you'll need to access this site again and enter your protocol number or email address and your password."
+      letter: "You will receive the response by means of a letter at the address given below."
+      phone: "You will receive the response by calling at the phone number below."
+      email: "You will receive the response by means of an email at the address given below."
+      twitter: "You will receive the response via a private message on your Twitter profile. It is necessary to inform the link below for your profile and follow the page of the Controllership and General Ombudsman's Office of the State of Ceará on Twitter:<a href=\"https://twitter.com/cgeceara\">https://twitter.com/cgeceara</a>"
+      facebook: "You will receive the response via a private message on your Facebook profile. It is necessary to inform below the link to your profile and follow the page of the Controllership and Ombudsman General of the State of Ceará on Facebook:<a href=\"https://pt-br.facebook.com/cgeceara\">https://pt-br.facebook.com/cgeceara</a>"
+      instagram: "You will receive the response via a private message in your Instagram profile. It is necessary to inform below the link to your profile and follow the page of the Controllership and General Ombudsman's Office of the State of Ceará in Instagram:<a href=\"https://www.instagram.com/cgeceara\">https://www.instagram.com/cgeceara</a>"
+      presential: 'You must attend the agency indicated in your request to receive the requested information'
+
+    ticket_types:
+      sic: Access to Information
+      sou: Ombudsman
+
+    protocol_title:
+      sou: "Manifestation %{protocol}"
+      sic: "Request %{protocol}"
+
+    sou_types:
+      complaint: Complaint
+      denunciation: Denunciation
+      compliment: Compliment
+      suggestion: suggestion
+      request: Request
+      service: Service
+
+    statuses:
+      in_progress: Not confirmed
+      confirmed: Confirmed
+      replied: Replied
+      not_replied: Not replied
+
+    document_types:
+      cpf: Social security
+      rg: ID
+      cnh: Driver license
+      ctps: Work record booklet
+      passport: Passaport
+      voter_registration: Voter registration
+      cnpj: National Register of Legal Entities
+      other: Other
+
+    person_types:
+      individual: Individual
+      legal: Legal person
+
+    used_inputs:
+      phone: Telephone
+      system: System
+      presential: Presential
+      email: E-mail
+      facebook: Facebook
+      letter: Letter
+      phone_155: Telephone 155
+      complaint_here: Complaint here
+      consumer_gov: consumer.gov.br
+      instagram: Instagram
+      traveling_government: Traveling Government
+      suggestions_box: Suggestion box
+      legacy: Legacy system
+      twitter: Twitter
+      ceara_app: Ceará App
+      whatsapp: Whatsapp
+
+    internal_statuses:
+      in_filling: Filling in
+      waiting_confirmation: Waiting confirmation
+      waiting_referral: Waiting referral
+      sectoral_attendance: In attendance - sectorial
+      internal_attendance: In attendance - internal department
+      sectoral_validation: In validation - sectorial
+      cge_validation: In validation - CGE
+      partial_answer: Partially Finalized
+      final_answer: Completed
+      invalidated: Invalidated
+      completed: Completed
+      appeal: Appeals
+      awaiting_invalidation: Awaiting invalidation
+      subnet_attendance: In attendance - sub network
+      subnet_validation: In validation - sub network
+
+    answer_classifications:
+      sic_attended_personal_info: Attended (informação pessoal)
+      sic_attended_rejected_partially: Partially attended/rejected
+      sic_rejected_secret: Rejected (sigiloso/secreto)
+      sic_rejected_need_work: Rejected (exige trabalho adicional)
+      sic_rejected_reserved: Rejected (sigiloso/reservado)
+      sic_rejected_personal_info: Rejected (informação pessoal)
+      sic_not_attended_info_unclear: Not attended (solicitação não especificada de forma clara e precisa)
+      sic_not_attended_info_nonexistent: Not attended (informação inexistente)
+      sic_rejected_ultrasecret: Rejected (ultrassecreto)
+      sic_rejected_generic: Rejected (solicitações genéricas, desproporcionais ou desarrazoadas)
+      sic_not_attended_other_organs: Not Attended (competência outros poderes)
+      sic_attended_active: Attended (transparência ativa)
+      sic_attended_passive: Attended (transparência passiva)
+      appeal_deferred: Deferred
+      appeal_rejected: Rejected
+      appeal_deferred_partially: Partially deferred
+      appeal_loss_object: Object loss
+      appeal_loss_object_partially: Object partially loss
+      appeal_not_allowed: Not allowed
+      sou_demand_well_founded: Demand well founded
+      sou_demand_unfounded: Demand unfounded
+      sou_well_founded_partially: Partially well founded
+      sou_could_not_verify: It was not possible to verify
+      sou_waitting_determination_result: Waiting determination of results
+      other_organs: It is not the responsibility of the State Executive Power
+      legacy_classification: Legacy system
+
+    expireds:
+      "true": 'Yes'
+      "false": 'No'
+
+    deadline:
+      one: '1 day'
+      other: '%{count} days'
+
+    genders:
+      not_informed_gender: Not informed
+      female: Female
+      male: Male
+      other_gender: Other
+
+    call_center_statuses:
+      waiting_allocation: Waiting allocation
+      waiting_feedback: Waiting feedback
+      with_feedback: Attendance completed

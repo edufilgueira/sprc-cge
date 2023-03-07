@@ -1,0 +1,65 @@
+pt-BR:
+  shared:
+    answers:
+
+      form:
+        description:
+          internal: Inserir posicionamento
+          default: Inserir resposta
+        save:
+          internal: Enviar posicionamento
+          default: Enviar resposta
+
+      form_fields:
+        add_attachment: Adicionar anexo
+        attachment_letter:
+          sic: Solicitação de informação com resposta por carta. Obrigatório anexo da carta
+          sou: Manifestação com resposta por carta. Obrigatório anexo da carta
+
+      existent_attachments:
+        add: Anexar arquivos existentes
+
+      answer:
+        title:
+          sectoral:
+            sic: '%{type} enviada pelo comitê setorial SIC %{organ}'
+            sou: '%{type} enviada pela %{ouvidoria} %{organ}'
+          department:
+            sic: 'Posicionamento elaborado pela área interna %{department}'
+            sou: 'Posicionamento elaborado pela área interna %{department}'
+          subnet:
+            sic: '%{type} enviado pelo comitê setorial SIC %{subnet}'
+            sou: '%{type} enviada pela Ouvidoria %{subnet}'
+          subnet_department:
+            sic: 'Posicionamento elaborado pela área interna %{department}'
+            sou: 'Posicionamento elaborado pela área interna %{department}'
+          cge:
+            sic: '%{type} enviada pela CGE'
+            sou: '%{type} enviada pela CGE'
+          call_center:
+            sic: '%{type} enviada pela Ouvidoria 155'
+            sou: '%{type} enviada pela Ouvidoria 155'
+        justification: Considerações
+        answer_evaluated_by: 'Por %{name}'
+
+      evaluations:
+        evaluation_form:
+          save: Enviar pesquisa
+          saving: Enviando...
+
+      answer_awaiting:
+        attachments: Anexos
+        classification:
+          title: "%{ticket_title} - Classificação"
+        answer: Conteúdo da resposta
+        original_answer: Conteúdo original da resposta/posicionamento
+        justification: Considerações
+        approve: Aprovar
+        reject: Devolver
+
+
+      positioning_fields:
+        positioning: Enviar posicionamento como uma área interna
+
+      already_positioned:
+        description: "O usuário <b>%{email}</b>, da área interna <b>%{department_name}</b>, já forneceu posicionamento para o protocolo <b>%{protocol}</b>"

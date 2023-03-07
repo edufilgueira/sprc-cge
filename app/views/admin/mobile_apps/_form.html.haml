@@ -1,0 +1,43 @@
+= simple_form_for [:admin, mobile_app] do |f|
+
+  .row
+
+    .col-12.col-lg-6
+      = f.input :name, autofocus: true
+
+  .row
+
+    .col-12.col-lg-6
+      = f.input :icon, as: :attachment, direct: true, input_html: { class: 'form-control-file', 'aria-label': t('simple_form.file.choose') }
+
+  .row
+
+    .col-12.col-lg-12
+      = f.association :mobile_tags, as: :check_boxes, collection: MobileTag.sorted, checked: params[:mobile_app] && params[:mobile_app][:mobile_tag_ids]
+
+  .row
+
+    .col-12.col-lg-12
+      = f.input :description, input_html: { rows: 10 }
+
+
+  .row
+
+    .col-12.col-lg-6
+      = f.input :link_google_play
+
+    .col-12.col-lg-6
+      = f.input :link_apple_store
+
+
+  .row
+
+    .col-12.col-lg-6
+      = f.input :official, input_html: { class: 'mr-1' }
+
+  %hr{'aria-hidden': 'true'}
+
+  .row
+    .col-12
+      = link_to t('commands.cancel'), admin_mobile_apps_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary pull-right'

@@ -1,0 +1,19 @@
+pt-BR:
+  admin:
+    integrations:
+      supports:
+        axes:
+
+          index:
+            title: Eixos
+            empty: Nenhum registro encontrado
+
+          table:
+            summary: Lista de eixos
+            heads:
+              codigo_eixo: Código do eixo
+              descricao_eixo: Descrição do eixo
+
+          filters:
+            search:
+              label: Buscar por código ou descrição

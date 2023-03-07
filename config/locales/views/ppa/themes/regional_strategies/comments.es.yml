@@ -1,0 +1,8 @@
+es:
+  ppa:
+    themes:
+      regional_strategies:
+        comments:
+          create:
+            success: 'Comentario registrado. ¡Gracias!'
+            failure: 'No ha sido posible registrar el comentario.'

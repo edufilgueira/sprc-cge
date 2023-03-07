@@ -1,0 +1,71 @@
+en:
+  shared:
+    transparency:
+      expenses:
+
+        non_profit_transfers:
+          index:
+            title: Transfers to Non-Profit Organizations
+            description: Verify here the Transfers to Non-Profit Organizations.
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Secretary of Finance - SEFAZ</p>
+              <p>Governmental Management System by Results - S2GPR</p>
+
+            chart:
+              calculated_valor_final:
+                unit: 'Sum of transferred amounts: BRL'
+                title: 'Amounts on the Statements of Agreement in the selected month.'
+
+                razao_social_credor:
+                  title: Sum of transferred amounts by creditor
+                management_unit:
+                  title: Sum of transferred amounts by management units
+                item_despesa:
+                  title: Sum of transferred amounts by expense item
+                efeito:
+                  title: Sum of transferred amounts by effect
+
+            charts:
+              tabs:
+                razao_social_credor:
+                  title: By creditor
+                management_unit:
+                  title: By management unit
+                item_despesa:
+                  title: By item of expense
+
+            filters:
+              title: Advanced search
+
+            counts:
+              filtered_count:
+                title: Quantity of filtered transfers
+              filtered_sum:
+                valor:
+                  title: Amount spent on the filtered transfers
+                valor_pago:
+                  title: Amount paid on the filtered transfers
+
+            table:
+              summary: List of Transfers to Non-Profit Organizations
+              header:
+                numero: Statement of Agreement
+                date_of_issue: Date of date_of_issue
+                unidade_gestora: Management unit
+                management_unit_title: Management unit
+                item_despesa: Expense item
+                credor: Creditor
+                valor: Amount spent
+                valor_pago: Amount paid
+
+            stats:
+              title: Main numbers related to transfers
+              count: 'Transfers on <strong>%{date}</strong>'
+              valor: 'Amount spent on <strong>%{date}</strong>'
+              valor_pago: 'Amount paid on <strong>%{date}</strong>'
+
+          show:
+            contract:
+              link: '%{value}'
+              none: EXPENDITURE NOT LINKED TO THE CONTRACT INSTRUMENT OR COVENANT

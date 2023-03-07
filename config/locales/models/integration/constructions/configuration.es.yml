@@ -1,0 +1,25 @@
+es:
+  activerecord:
+    models:
+      integration/constructions/configuration:
+        one: Configuración de obras
+
+    attributes:
+      integration/constructions/configuration:
+        headers_soap_action: SOAPAction
+        password: Contraseña
+        user: Usuario 
+        der_wsdl: WSDL DER
+        dae_wsdl: WSDL DAE
+        der_operation: Nombre del método SOAP DER
+        der_response_path: Camino de la respuesta DER
+        dae_operation: Nombre del método SOAP DAE
+        dae_response_path: Camino de la resposta DAE
+        der_contract_operation: Nombre del método SOAP CONTRATOS DER
+        der_contract_response_path: Camino de la respuesta CONTRATOS DER
+        der_measurement_operation: Nombre del método SOAP MEDIDAS DER
+        der_measurement_response_path: Camino de la respuesta MEDIDAS DER
+        dae_measurement_operation: Nombre del método SOAP MEDIDAS DAE
+        dae_measurement_response_path: Camino de la respuesta MEDIDAS DAE
+        dae_photo_operation: Nombre del método SOAP FOTOS DAE
+        dae_photo_response_path: Camino de la respuesta FOTOS DAE

@@ -1,0 +1,46 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+- controller_name = controller.controller_name
+- filter_path = admin_citizens_path
+
+%h2.sr-only
+  = t('.title')
+
+.card.card-custom
+
+  .card-header
+
+    %h3.card-title
+      = t('.title')
+
+
+  .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+    .remote-content{'data-remote-content': controller_name}
+
+      - filter_new_command = { permission: false }
+      - filter_commands = { 'new': filter_new_command }
+      - filter_options = { filter_id: :citizens, filter_path: filter_path, commands: filter_commands, search_placeholder: t('.filters.search.placeholder') }
+
+      = render "shared/admin/filters", filter_options do
+
+        - # filtros além do padrão (barra de busca);
+
+        .row.mt-2
+          .col-12.col-md-6
+            - label = t('admin.users.index.filters.select.person_type')
+            - placeholder = t('messages.filters.select.all.female')
+            - options = options_for_select(user_person_types_for_select, params[:person_type])
+            = label_tag :person_type, label
+            = select_tag :person_type, options, { include_blank: placeholder }
+
+      - # o index é carregado como remote-content e está na partial ./_index
+
+      %hr{'aria-hidden': 'true'}
+
+      .remote-content-result{ 'data-remote-content-result': controller_name }
+
+        .p-2.text-center.text-muted
+          .fa.fa-spin.fa-refresh.mx-1
+          = t('messages.loading')

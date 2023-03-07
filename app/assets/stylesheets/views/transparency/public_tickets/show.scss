@@ -1,0 +1,9 @@
+@import 'views/shared/tickets/ticket_logs';
+@import 'views/transparency/public_tickets/comments/index';
+
+
+.btn {
+  &:hover {
+    cursor: pointer;
+  }
+}

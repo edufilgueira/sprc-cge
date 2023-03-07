@@ -1,0 +1,274 @@
+es:
+  shared:
+
+    navbar:
+      toggle_navigation: Mostrar menú de navegación
+
+      transparency_menu:
+        transparency:
+          title: Acceso a la transparencia
+        data:
+          title: Consultar datos
+        what_is:
+          title: ¿Qué es la transparencia?
+        map:
+          title: Mapas interactivos
+        news:
+          title: Noticias
+        apps:
+          title: Iniciativas de la Sociedad
+        whats_new:
+          title: Novedades
+
+      tickets_menu:
+        tickets:
+          title: Acceder a la Oidoría
+        new:
+          title: Nueva Manifestación
+        watch:
+          title: Acompañar Manifestación
+        public:
+          title: Manifestaciones Públicas
+        what_is:
+          title: ¿Qué es Oidoría?
+
+      information_menu:
+        information:
+          title: Acceso a la Información
+        new:
+          title: Nueva Solicitud
+        watch:
+          title: Seguir su Solicitud
+        public:
+          title: Solicitudes Públicas
+        what_is:
+          title: ¿Qué es el acceso a la información?
+
+      ppa_menu:
+        ppa:
+          title: Acceder a PPA
+        new:
+          title: Proponer nueva directriz
+        watch:
+          title: Acompañar planificación
+
+      services_menu:
+        services:
+          title: Servicios
+        envelope:
+          title: Carta de Servicios
+        official:
+          title: Aplicaciones oficiales
+        public:
+          title: Servicios Electrónicos
+        rating:
+          title: Evaluación de servicios
+
+
+    navbar_menu: &navbar_menu
+      home:
+        title: Início
+
+      open_data:
+        title: Datos abiertos
+
+      tickets:
+        title: Oidoría
+
+      transparency:
+        title: Transparencia
+
+      information:
+        title: Acceso a la Información
+
+      ppa:
+        title: Participación Ciudadana
+
+      services:
+        title: Servicios
+
+      about:
+        title: Acerca del Portal
+      
+      lgpd:
+        title: LGPD
+
+      site_map:
+        title: Mapa del Sitio
+
+      search:
+        title: Buscar en la plataforma
+
+      logout:
+        title: Salir
+
+    navbar_head:
+      search:
+        placeholder: ¿De qué información necesitas?
+
+    admin:
+      navbar:
+        users:
+          title: Usuarios administrativos
+        citizens:
+          title: Ciudadanos catastrados
+        unregistred_citizens:
+          title: Ciudadanos no registrados
+        organs:
+          title: Organos
+        departments:
+          title: Unidades
+        topics:
+          title: Cuestiones
+        open_data:
+          title: Datos abiertos
+        pages:
+          title: Páginas
+        events:
+          title: Eventos
+        mobile_apps:
+          title: Aplicaciones
+        mobile_tags:
+          title: Categorías de aplicaciones
+        service_types:
+          title: Tipos de servicios
+        integrations:
+          title: Integraciones
+        themes:
+          title: Temas
+        budget_programs:
+          title: Programas presupuestarios
+        admin:
+          title: Administrativo
+        ticket:
+          title: SIC/Oidoría
+        transparency:
+          title: Transparencia
+        home:
+          title: Acceder al portal
+        holidays:
+          title: Vacaciones
+        search_contents:
+          title: Resultados de búsqueda
+        subnets:
+          title: Subredes
+
+    application:
+      top_bar: &top_bar
+        portal_governo:
+          title: Portal del gobierno
+          link: 'http://www.ceara.gov.br/'
+
+        gabinete_governador:
+          title: Gabinete del gobernador
+          link: 'http://www.gabgov.ce.gov.br/'
+
+        cge:
+          title: CGE
+          link: 'http://www.cge.ce.gov.br/'
+
+        seplag:
+          title: Seplag
+          link: 'http://www.seplag.ce.gov.br/'
+
+        acesso_cidadao:
+          title: Acceso ciudadano
+          link: 'http://web3.seplag.ce.gov.br/Csonline/ConsultaCesec/pg_cs_servico.aspx'
+
+        login:
+          title: Acceder al perfil
+
+        faq:
+          title: Preguntas frecuentes
+          link: '/portal-da-transparencia/paginas/duvidas-frequentes'
+
+        sign_up:
+          title: Crear perfil
+
+        alto_contraste:
+          title: Alto contraste
+
+        acessibilidade:
+          title: Accesibilidad
+          link: '/portal-da-transparencia/paginas/acessibilidade'
+
+      navbar: &shared_navbar
+        cge_title: >
+          Controladoria e Ouvidoria<br>
+          Geral do Estado
+
+        search:
+          placeholder: ¿De qué información necesitas?
+
+        home:
+          title: Início
+
+        transparency_portal:
+          title: Páginas de Transparencia
+
+        global_tickets:
+          title: Consulta SIC/OIDORÍA
+
+        tickets:
+          title: Oidoría Digital
+
+        information_access:
+          title: Acceso a la Información
+
+        reports:
+          title: Informes y estadísticas
+
+        open_data:
+          title: Datos abiertos
+
+        logout:
+          title: Salir
+
+      home_navbar: &shared_inner_navbar
+        login:
+          title: Acceder al Perfil
+
+        register:
+          title: Crear nuevo perfil
+
+        protocol_login:
+          title: Acompañar manifestación
+
+      inner_navbar:
+        <<: *shared_inner_navbar
+
+    operator:
+      navbar:
+        <<: *shared_navbar
+        attendances:
+          title: Llamadas
+        call_center_tickets:
+          title: Responder llamadas
+        dashboard:
+          title: Paneles
+        users:
+          title: Usuarios
+        topics:
+          title: Tema
+        departments:
+          title: Unidades
+        answer_templates:
+          title: Banco de respuestas
+
+    navbar_mobile:
+      <<: *navbar_menu
+      <<: *top_bar
+
+    platform:
+      navbar:
+        <<: *shared_navbar
+
+    ticket_area:
+      navbar:
+        <<: *shared_navbar
+
+    transparency:
+      navbar:
+        <<: *shared_navbar
+
+

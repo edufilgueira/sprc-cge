@@ -1,0 +1,62 @@
+en:
+  shared:
+    transparency:
+      expenses:
+
+        npfs:
+          index:
+            title: Financial Planning Statements
+            description: Check here the Financial Planning Statements.
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Secretary of Finance - SEFAZ</p>
+              <p>Governmental Management System by Results - S2GPR</p>
+
+            chart:
+              valor:
+                unit: 'Sum of amounts: BRL'
+                title: 'Amounts on the Financial Planning Statements in the selected month.'
+
+                creditor:
+                  title: Sum of amounts by creditor
+                management_unit:
+                  title: Sum of amounts by management units
+                natureza:
+                  title: Sum of amounts by nature
+                efeito:
+                  title: Sum of amounts by effect
+
+            charts:
+              tabs:
+                creditor:
+                  title: By creditor
+                management_unit:
+                  title: By management unit
+                natureza:
+                  title: By nature
+                efeito:
+                  title: By effect
+
+            filters:
+              title: Advanced search
+
+            counts:
+              npfs_count:
+                title: Quantity of filtered Statements
+              npfs_sum:
+                title: Amount on the filtered Statements
+
+            table:
+              summary: List of Financial Planning Statements
+              header:
+                numero: Number
+                date_of_issue: Date of issue
+                unidade_gestora: Management unit
+                management_unit_title: Management unit
+                credor: Creditor
+                valor: Value
+
+            stats:
+              title: Main numbers related to the Statements
+              count: 'Statements on <strong>%{date}</strong>'
+              valor: 'Value on <strong>%{date}</strong>'

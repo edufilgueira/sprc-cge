@@ -1,0 +1,37 @@
+- breadcrumbs = content_for(:breadcrumbs)
+- toolbar = content_for(:toolbar)
+
+-# Simple extraction from `shared/toolbar` to strip notifications
+-# out from PPA toolbar instead of decorating our Adminstrator instance
+- if (breadcrumbs.present? || toolbar.present?)
+
+  .toolbar
+    .row
+      .toolbar-content.col-12.col-sm-6
+        = breadcrumbs
+
+      .toolbar-content.col-12.col-sm-6
+        = toolbar
+
+        .float-right
+
+          -#
+          -# User Dropdown
+          -# apenas para usuários autenticados
+          -#
+          - if ppa_admin_signed_in?
+
+            .float-left.ml-3
+              .dropdown
+                - user_title = current_ppa_admin.name
+                %a.btn.btn-secondary.dropdown-toggle{ href: '#!', id: 'dropdownMenuLink', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', title: user_title}
+                  %i.fa.fa-user{'aria-hidden': 'true'}
+                  = user_title.truncate(20)
+
+                .dropdown-menu{'aria-labelledby':'dropdownMenuLink'}
+
+
+                  = link_to destroy_ppa_admin_session_path, method: :delete, class: 'dropdown-item' do
+
+                    %i.fa.fa-sign-out{'aria-hidden':'true'}
+                    = t('.user.logout')

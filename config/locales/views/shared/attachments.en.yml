@@ -1,0 +1,8 @@
+en:
+  shared:
+    attachments:
+      index:
+        attachments:
+          none: No attachments
+      attachment_permission:
+        protected: Protected

@@ -1,0 +1,29 @@
+pt-BR:
+  activerecord:
+    models:
+      integration/contracts/configuration:
+        one: Configuração de Contratos e Convênios
+
+    attributes:
+      integration/contracts/configuration:
+        start_at: Data de início
+        end_at: Data de término
+        wsdl: WSDL
+        headers_soap_action: SOAPAction
+        user: Usuário
+        password: Senha
+        contract_operation: Nome do método SOAP
+        contract_response_path: Caminho da resposta
+        contract_parameters: Parâmetros
+        additive_operation: Nome do método SOAP
+        additive_response_path: Caminho da resposta
+        additive_parameters: Parâmetros
+        adjustment_operation: Nome do método SOAP
+        adjustment_response_path: Caminho da resposta
+        adjustment_parameters: Parâmetros
+        financial_operation: Nome do método SOAP
+        financial_response_path: Caminho da resposta
+        financial_parameters: Parâmetros
+        infringement_operation: Nome do método SOAP
+        infringement_response_path: Caminho da resposta
+        infringement_parameters: Parâmetros

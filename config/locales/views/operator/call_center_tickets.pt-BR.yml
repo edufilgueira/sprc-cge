@@ -1,0 +1,58 @@
+pt-BR:
+  operator:
+    call_center_tickets:
+      index:
+        empty: Nenhum atendimento para responder
+        title: Atendimentos para responder
+        deadline: Prazo
+
+        call_center_responsible:
+          no_responsible: Nenhum
+          label: Delegar para responsável
+          commands:
+            save: Alocar
+
+        table:
+          summary: Lista paginada com todos os atendimentos para responder
+          header:
+            created_at: Criado em
+            deadline: Prazo
+            call_center_responsible_id: Responsável
+            call_center_allocation_at: Data de alocação
+            call_center_feedback_at: Data de retorno
+            parent_protocol: Protocolo
+            call_center_status: Situação
+            organ: Órgão
+            name: Cidadão
+            description: Descrição
+            actions: ''
+            answer_type: Tipo de Resposta
+
+      filters:
+        search:
+          label: Buscar por protocolo, nome, e-mail, documento ou descrição
+        parent_protocol:
+          label: Protocolo
+
+        select:
+          organ: Filtrar por órgão
+          ticket_type: Filtrar por tipo
+          responsible: Filtrar por responsável
+          answer_type: Filtrar por tipo de resposta
+          call_center_status: Filtrar por situação
+        priority: Somente urgentes
+        call_center_status:
+          waiting_allocation: Aguardando alocação
+          waiting_feedback: Aguardando retorno
+          with_feedback: Atendimento finalizado
+
+
+      show:
+        title:
+          sou: Manifestação %{protocol}
+          sic: Solicitação %{protocol}
+        ticket_logs:
+          title: Histório de atendimento
+
+      feedback:
+        done: Retorno dado em %{date}

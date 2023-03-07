@@ -1,0 +1,8 @@
+.row
+  .col-6.col-lg-6
+    = content_with_label(ticket, :sou_type_str)
+
+  - if can?(:change_sou_type, ticket)
+    .col-6.col-lg-6.mt-3
+      .float-right.no-print
+        = link_to t('.edit'), new_operator_ticket_change_sou_type_path(ticket), class: 'btn btn-sm btn-info'

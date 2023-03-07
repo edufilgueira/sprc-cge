@@ -1,0 +1,43 @@
+pt-BR:
+
+  operator:
+
+    reports:
+
+      ticket_reports:
+
+        index:
+          title: Relatórios
+          empty: Nenhum relatório disponível
+          commands:
+            new: Novo relatório
+
+        new:
+          title: Novo relatório
+
+        show:
+          title: Relatório
+
+        create:
+          title: Novo relatório
+          error: Falha ao criar relatório
+          done: Relatório criado
+
+        form:
+          title: Novo relatório
+          filters:
+            title: Filtros
+            ticket_type: Tipo
+            organ:
+              title: Órgão responsável
+              select: Todos
+            organ_id: Órgão responsável
+            all: Todos
+            confirmed_at:
+              label: Período
+              start: Início
+              end: Fim
+
+        destroy:
+          done: Relatório removido com sucesso
+          error: Falha ao remover relatório

@@ -1,0 +1,54 @@
+pt-BR:
+
+  admin:
+
+    budget_programs:
+      create:
+        title: Novo programa orçamentário
+        done: "O programa orçamentário '%{title}' foi criado."
+        error: Falha ao criar o programa orçamentário
+      destroy:
+        done: "O programa orçamentário '%{title}' foi removido."
+      form:
+        theme:
+          select: Selecione o tema
+        commands:
+          cancel: < Voltar a lista de programas orçamentários
+          create: Criar programa orçamentário
+      index:
+        title: Programas orçamentários
+
+        commands:
+          new: Novo programa
+
+        table:
+          summary: Lista paginada com todas os programas orçamentários
+          caption: Tabela contendo todas os programas orçamentários
+
+          header:
+            name: Nome
+            code: Código
+            theme: Tema
+            commands: ''
+            status: ''
+            organ_acronym: Órgão
+            subnet_acronym: Sub-rede
+
+        filters:
+          select:
+            organ: Órgão
+            subnet: Sub-rede
+
+      new:
+        title: Novo programa orçamentário
+      edit:
+        title: Edição
+      update:
+        title: Edição de programa orçamentário
+        done: "O programa orçamentário '%{title}' foi atualizado."
+        error: Falha ao atualizar o programa orçamentário
+      show:
+        title: Exibição do programa orçamentário
+      toggle_disabled:
+        disabled: Programa orçamentário desabilitado!
+        enabled: Programa orçamentário habilitado!

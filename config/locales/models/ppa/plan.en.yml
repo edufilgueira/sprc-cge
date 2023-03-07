@@ -1,0 +1,20 @@
+en:
+  activerecord:
+    models:
+      ppa/plan:
+        one: Multiannual Plan
+        other: Multiannual Plans
+
+    attributes:
+      ppa/plan:
+        start_year: Start Year
+        end_year: End Year
+       
+    errors:
+      models:
+        ppa/plan:
+          attributes:
+            base:
+              invalid_range: Invalid range - there is already a plan with end date greater than the desired date
+            end_year:
+              invalid_duration: Period must be considered in years

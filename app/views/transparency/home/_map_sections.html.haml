@@ -1,0 +1,32 @@
+%section#mapas-iterativos{ 'aria-labelledby': 'map_sections' }
+  %h4.font-weight-bold.mt-4
+    = t('.title')
+    %hr.my-4
+
+  .row
+    .col-md-6.col-12.mt-4.mt-md-0
+      #map{ 'data-google-map': 'map', 'data-places': daes.to_json, 'data-index-path': transparency_constructions_daes_path }
+    .col-md-6.col-12
+      %h3.font-weight-bold.h2.mt-4.mt-md-0
+        %i.fa.fa-map-o.text-green
+        = t('.map_title')
+
+      .text-orange.font-weight-bold.mb-3.mt-4
+        = t('.last_daes.title')
+        %span.small.text-muted
+          = t('.last_daes.description')
+
+      %ul.list-unstyled.text-gray
+        - daes.last(5).each do |dae|
+          %li.mb-2.small
+            - dae_date = dae.data_fim_previsto.present? ? I18n.l(dae.data_fim_previsto, format: :date) : t('.last_daes.not_informed')
+            = [content_tag(:strong, dae_date), dae.descricao.truncate(50)].compact.join(' - ').html_safe
+
+      .row.mb-2.mt-3
+        .col-md-8
+          %p
+            = t('.watch')
+
+      = link_to transparency_constructions_daes_path, class: 'btn btn-tertiary' do
+        %i.fa.fa-plus-circle
+        = t('.see_more')

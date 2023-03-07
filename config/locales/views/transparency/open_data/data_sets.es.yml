@@ -1,0 +1,16 @@
+es:
+  transparency:
+    open_data:
+      data_sets:
+        index:
+          title: Datos abiertos
+          table:
+            summary: Lista de conjuntos de datos abiertos
+            header:
+              author: Autor
+              title: Título
+              organ: Órgano
+              source_catalog: Catálogo de orígen
+
+        show:
+          title: Visualización del dato abierto 

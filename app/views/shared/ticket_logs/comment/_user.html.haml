@@ -1,0 +1,36 @@
+.row
+
+  .col-12.col-md-1.no-print
+
+    .float-left
+
+      .bg-faded.rounded-circle.p-1
+
+        %i.fa.fa-comment.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      %h4.h6.mb-0
+        %p
+          - if comments_user(current_user, comment)
+            = t('.title', author: comment.as_author)
+      - #
+      - # Descrição do comentário
+      - #
+      %blockquote
+        = content_sanitizer(comment.description)
+
+        %i.small
+          = l(comment.created_at, format: :shorter)
+
+      - #
+      - # Anexos
+      - #
+      .attachments
+        - comment.attachments.each do |attachment|
+          - next unless attachment.document.present?
+          = render 'shared/attachments/attachment', attachment: attachment, image_size: :small
+
+%hr{'aria-hidden': 'true'}

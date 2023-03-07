@@ -1,0 +1,33 @@
+= simple_form_for configuration, as: :configuration, url: admin_integrations_supports_organ_configuration_path(configuration) do |f|
+
+  .row
+    .col-6
+      = f.input :wsdl, autofocus: true
+    .col-6
+      = f.input :headers_soap_action
+
+  .row
+    .col-6
+      = f.input :user
+    .col-6
+      = f.input :password, input_html: { value: configuration.password }
+
+  .row
+    .col-6
+      = f.input :operation
+    .col-6
+      = f.input :response_path
+
+  %hr{'aria-hidden':'true'}
+
+  .row
+    .col-md-6
+      = f.simple_fields_for :schedule do |s|
+        = s.input :cron_syntax_frequency, hint: true
+
+  %hr{'aria-hidden': 'true'}
+
+  .row
+    .col-12
+      = link_to t('.commands.cancel'), admin_integrations_root_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary float-right'

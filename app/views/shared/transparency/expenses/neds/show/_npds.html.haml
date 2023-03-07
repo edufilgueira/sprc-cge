@@ -1,0 +1,46 @@
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.title')
+
+      .card-block
+
+        - if npds.present?
+          - export_file_name = t('.table.export_file_name', id: ned.title.gsub('/', ''))
+
+          .table-responsive
+            %table.table.table-hover.table-striped.table-sm.bg-faded{summary: t('.summary'), 'data-toggle': 'table-export', 'data-filename': export_file_name}
+
+              %thead
+
+                %tr
+                  - heads = [:numero, :date_of_issue, :credor, :valor]
+
+                  - heads.each do |head|
+                    %th
+                      = Integration::Expenses::Npd.human_attribute_name(head)
+
+              %tbody
+                - npds.each do |npd|
+                  %tr
+                    %td
+                      = npd.numero
+                    %td
+                      = npd.data_emissao
+                    %td
+                      = npd.creditor_nome
+                    %td
+                      = number_to_currency(npd.valor_final)
+
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')

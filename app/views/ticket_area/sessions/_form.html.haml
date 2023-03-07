@@ -1,0 +1,29 @@
+.row.justify-content-center
+
+  .col-md-12.col-lg-6
+
+    .card
+      .card-block
+        = simple_form_for(resource, url: url_for_ticket_area_login) do |f|
+
+          = f.input :protocol, input_html: { autofocus: true }
+          = f.input :password
+
+          .row.mb-3
+            .col-3
+
+
+            .col-9.text-right
+              .errors.text-danger
+                = alert
+
+              .notice.text-success
+                = notice
+
+
+          = f.submit t('.login'), class: 'btn btn-tertiary btn-uppercase w-100'
+
+        .mt-3
+          %p.text-muted.text-center
+            %small
+              = t('.forgot_password')

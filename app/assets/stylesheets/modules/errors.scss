@@ -1,0 +1,16 @@
+.container .error {
+  text-align: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  font-style: normal;
+  color: #777;
+
+  #status {
+    font-size: 100px;
+    text-shadow: 0 0 3px;
+  }
+
+  #title {
+    font-size: 20px;
+  }
+}

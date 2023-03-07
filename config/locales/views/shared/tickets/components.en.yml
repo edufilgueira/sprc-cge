@@ -1,0 +1,68 @@
+en:
+
+  shared:
+
+    tickets:
+
+      components:
+
+        btn_appeal:
+          appeal: I want to request an appeal.
+          confirm: Do you really want to request an appeal?
+
+        btn_reopen:
+          sou:
+            reopen: Reopen manifestation
+            confirm: Do you really want to reopen the manifestation?
+          sic:
+            reopen: Reopen request
+            confirm: Do you really want to reopen the request?
+
+        btn_invalidate:
+          invalidate:
+            sic: Invalidate appeal
+            sou: Invalidade manifestation
+            request: Request invalidation
+          confirm: Do you really want to request invalidation?
+
+        btn_print:
+          title: Print
+
+        btn_clone:
+          title:
+            sic: Clone request
+            sou: Clone manifestation
+          confirm:
+            sic: Do you really want to clone request?
+            sou: Do you really want to clone manifestation?
+
+        btn_publish_ticket:
+          sic:
+            'true': Make request not public
+            'false': Make request public
+          sou:
+            'true': Make manifestation not public
+            'false': Make manifestation public
+
+
+        btn_change_type:
+          title: Change type
+          confirm: Do you really want to change type?
+
+
+        btn_edit:
+          confirm:
+            sic: Do you really want to edit request?
+            sou: Do you really want to edit manifestation?
+
+        btn_feedback:
+          title: Select as feedback given
+          confirmation: Do you really want to select as "feedback given"?
+
+        btn_email_reply:
+          title: 'Send reply to user'
+          confirmation: Do you really want to select as "returned"?
+
+        btn_attendance_response:
+          title: Register response
+          confirm: Do you really want to register a new attempt of response?

@@ -1,0 +1,111 @@
+pt-BR:
+  routes:
+    transparency:
+      title: 'portal-da-transparencia'
+
+      city_undertakings: 'investimentos-municipio'
+
+      contacts: 'canais-atendimento'
+
+      management_contracts: 'contratos-de-gestao'
+      contracts:
+        instrument: instrumento
+        contracts: 'contratos'
+        convenants: 'convenios'
+        management_contracts: 'contratos-de-gestao'
+
+      events: 'eventos'
+
+      constructions:
+        title: 'obras'
+        ders: 'rodoviarias'
+        daes: 'edificacoes'
+
+      data_sets: 'conjuntos-de-dados'
+
+      expenses:
+        title: 'despesas'
+        budget_balances: 'despesas-do-poder-executivo'
+        city_transfers: 'transferencias-a-municipios'
+        dailies: 'diarias'
+        consortium_transfers: 'transferencias-a-consorcios-publicos'
+        fund_supplies: 'suprimentos-de-fundos'
+        multi_gov_transfers: 'transferencias-a-instituicoes-multigovernamentais'
+        neds: 'notas-de-empenho'
+        nlds: 'notas-de-liquidacao-de-despesa'
+        non_profit_transfers: 'transferencias-a-entidades-sem-fins-lucrativos'
+        npds: 'notas-de-pagamento-de-despesa'
+        npfs: 'notas-de-programacao-financeira'
+        profit_transfers: 'transferencias-a-entidades-com-fins-lucrativos'
+
+      results:
+        title: 'resultados'
+        strategic_indicators: 'indicadores-estrategicos'
+        thematic_indicators: 'indicadores-tematicos'
+
+      mobile_apps: 'aplicativos'
+      society_mobile_apps: 'iniciativas-da-sociedade'
+      open_data: 'dados-abertos'
+
+      pages: 'paginas'
+
+      public_tickets:
+        title: 'manifestacoes-e-solicitacoes-publicas'
+        comments: comentarios
+
+        subscriptions:
+          title: notificacao
+          new: seguir
+        confirmation: 'confirmacao/:token'
+        unsubscribe: 'nao-seguir/:token'
+
+      purchases: 'licitacoes-finalizadas'
+
+      macroregion_investiments: 'investimentos-macrorregioes'
+
+      revenues:
+        title: 'receitas'
+
+        accounts:
+          title: 'receitas-do-poder-executivo'
+
+        transfers:
+          title: 'recursos-recebidos-em-transferencias'
+
+        registered_revenues:
+          title: 'receitas-lancadas'
+
+      revenues_expenses:
+        title: 'receitas-vs-despesas'
+
+      real_states: 'bens-imoveis'
+
+      server_salaries: 'servidores'
+
+      sic:
+        title: acesso-a-informacao
+        home:
+          title: ''
+
+      sou:
+        title: ouvidoria
+        home:
+          title: ''
+        executive_ombudsmen:
+          title: redes-de-ouvidorias-poder-executivo
+        sesa_ombudsmen:
+          title: redes-de-ouvidorias-sesa
+
+      tickets:
+        title: 'manifestacoes-e-solicitacoes'
+        stats_tickets: 'estatisticas'
+        stats_evaluations: 'estatisticas-de-satisfacao'
+
+      export:
+        title: 'exportacao-planilha'
+
+      covid19:
+        title: covid19
+        gas_voucher: consulta-vale-gas
+
+

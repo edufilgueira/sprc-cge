@@ -1,0 +1,18 @@
+#
+# Arquivo de localização principal para o layout ppa (@layouts/ppa.html.haml) e seus templates
+#
+
+pt-BR:
+  ppa:
+    title: Participação Cidadã - Ceará Transparente
+    description: Participação Cidadã - Ceará Transparente
+    say_yes: Sim
+    say_no: Não
+
+    # open graph
+    og:
+      title: Participação Cidadã
+      description: Participação Cidadã
+
+    ensure_current_plan:
+      alert: Não há um plano em vigência

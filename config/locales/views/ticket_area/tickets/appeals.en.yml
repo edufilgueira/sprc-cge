@@ -1,0 +1,14 @@
+en:
+
+  ticket_area:
+
+    tickets:
+
+      appeals:
+
+        new:
+          title: New appeal request
+
+        create:
+          done: Appeal request successfully registered
+          error: Unable to register appeal request

@@ -1,0 +1,40 @@
+es:
+  shared:
+    transparency:
+
+      footer:
+        new_ticket:
+          sou:
+            title: Manifiéstese en la Oidoría
+          sic: 
+            title: Acceso a la Información
+
+      menu_download:
+        xlsx: Descargar archivo XLSX
+        csv: Descargar archivo CSV
+
+      download_links:
+        xlsx:
+          title: 'Descargar planilla Excel con los datos'
+          hint: 'Utilize una versión del Excel 7 o superior para abrir la planilla'
+
+        csv:
+          title: 'Descargar planilla CSV con los datos'
+
+      search:
+        hint: 'Nota: Esta búsqueda desconsidera los demás filtros'
+
+        creditor_name:
+          contract: Búsqueda por el nombre del acreedor
+          convenant: Búsqueda por el nombre del acreedor
+          expense: Búsqueda por el nombre del acreedor
+          daily: Buscar por el nombre del beneficiario
+
+      tree_organizer:
+        title: Modo de exhibición
+        default: Uso de la vista predeterminada.
+        restore_default: Restaurar la vista predeterminada
+        select: Seleccione para añadir a la vista
+
+      survey_answer:
+        title: ¿Te gustó la página? <a href="#new_transparency_survey_answer">Haga clic aquí </a>y diga lo que piensa!

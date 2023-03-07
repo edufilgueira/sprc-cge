@@ -1,0 +1,44 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:status, :code, :organ_acronym, :name, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: service_types, sort_columns: sort_columns, table_locale: table_locale do |service_type|
+
+    - show_path = can?(:show, service_type) ? admin_service_type_path(service_type) : '#!'
+
+    %tr
+
+      %td
+        - icon_class = service_type.disabled? ? 'times' : 'check'
+        = link_to show_path, title: t("commands.disabled._#{service_type.disabled?}") do
+          %i{class: "fa fa-#{icon_class}"}
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(service_type.code)
+
+      %td
+        = link_to show_path do
+          - if service_type.subnet.present?
+            = service_type.subnet_full_acronym
+          - elsif service_type.organ.present?
+            = filtered_highlighted(service_type.organ_acronym)
+          - else
+            = '-'
+
+      %td
+        - service_type_name = service_type.name
+        = link_to show_path, title: service_type_name do
+          = filtered_highlighted(service_type_name.truncate(80))
+
+      %td
+        .float-right
+          - if can?(:edit, service_type)
+            = link_to t('commands.edit'), edit_admin_service_type_path(service_type), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:manage, service_type)
+            = render 'shared/buttons/btn_toggle_disabled', resource: service_type, namespace: :admin

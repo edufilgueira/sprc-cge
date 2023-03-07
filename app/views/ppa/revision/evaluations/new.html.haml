@@ -1,0 +1,53 @@
+- content_for :javascript, javascript_include_tag(javascript)
+
+.row
+  .col-lg-12
+    .card.card-custom{'data-content': 'transparency-survey-answer'}
+      .card-header
+        %h3.card-title
+          = t('.title')
+      .card-block
+        .row
+          .col-lg-12.mb-3.text-justify
+            = t('.description')
+
+
+        - collection = [:very_satisfied, :neutral, :very_dissatisfied]
+        = form_for :ppa_revision_evaluation, url: ppa_revision_evaluation_path(plan_id: plan.id) do |f|
+
+          .row.mt-2
+            .col-lg-6.ml-2
+              %h6= t('.question1')
+              = f.select("question1", evaluation_options, include_blank: true)
+         
+          .row.mt-2
+            - 8.times do |n|
+              - n = n+2
+
+              .row.mt-2
+                .col-lg-12.ml-4
+                  %h6= t(".question#{n}")
+              
+              .row.col-lg-12.justify-content-left.ml-4
+                = f.collection_radio_buttons("question#{n}", collection, :to_s, :to_s) do |b|
+
+                  #group
+                    = b.label('data-input': 'icon_survey', question: n) { image_tag("views/transparency/survey_answer/#{b.value}.png", alt: t(".#{b.text}"), title: t(".#{b.text}"), class: "mr-2 ml-2", role: 'button')}
+                    = b.radio_button('class': 'content-hidden', question: n)
+                    %p.small.mr-2.ml-2
+                      = t(".#{b.text}")
+
+            .col-lg-6.ml-2
+              %h6= t('.question10')
+              = f.select("question10", evaluation_short_options, include_blank: true)
+
+          .row.mt-3
+            .col-lg-12
+              %h6= t(".observation")
+              = f.text_area :observation, rows: 5, class: 'form-control text'
+
+          .row.mt-4
+            .col-lg-12
+              = f.submit t('commands.save'), class: 'btn btn-primary float-right'
+
+

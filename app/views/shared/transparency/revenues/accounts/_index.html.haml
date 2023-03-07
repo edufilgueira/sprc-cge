@@ -1,0 +1,75 @@
+= cache(cache_key) do
+
+  = render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+  .my-4
+
+    %hr{'aria-hidden': 'true'}
+
+    = render 'transparency/exports/form'
+
+    %hr{'aria-hidden': 'true'}
+
+    .row
+      .col-12.col-lg-4
+        .content-with-label
+          - label = raw(t('.counts.valor_previsto_inicial.title'))
+          - value = number_to_currency(nodes_totals[:valor_previsto_inicial])
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+      .col-12.col-lg-4
+        .content-with-label
+          - label = raw(t('.counts.valor_previsto_atualizado.title'))
+          - value = number_to_currency(nodes_totals[:valor_previsto_atualizado])
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+      .col-12.col-lg-4
+        .content-with-label
+          - label = raw(t('.counts.valor_arrecadado.title'))
+          - value = number_to_currency(nodes_totals[:valor_arrecadado])
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+    .fa.fa-spin.fa-refresh.m-1.text-muted.float-right{'data-remote-content-loader': ''}
+
+    - header = [{ id: 'title', html_class: 'w-40'}, { id: 'valor_previsto_inicial', html_class: 'text-right w-20' }, { id: 'valor_previsto_atualizado', html_class: 'text-right w-20' }, { id: 'valor_arrecadado', html_class: 'text-right w-20' }  ]
+
+    - table_locale = t('.table')
+
+    = render 'shared/components/remote_table', header: header, has_footer: true, collection: nodes, sort_columns: sort_columns, table_locale: table_locale, table_html: { class: 'treeview small' }, view_options: { pagination: false, count: false } do |node|
+
+      - # footer
+      - if node.nil?
+
+        %tr.font-weight-bold
+          %td.border-0
+            = table_locale[:total].upcase
+          %td.border-0.text-right
+            = number_to_currency(nodes_totals[:valor_previsto_inicial])
+          %td.border-0.text-right
+            = number_to_currency(nodes_totals[:valor_previsto_atualizado])
+          %td.border-0.text-right
+            = number_to_currency(nodes_totals[:valor_arrecadado])
+
+      - else
+
+        - node_type = node[:type]
+
+        = render 'shared/transparency/revenues/accounts/index/nodes', nodes: [node], current_node_path: nil, next_node_level: 0, next_node_type: node_type, node_types: node_types

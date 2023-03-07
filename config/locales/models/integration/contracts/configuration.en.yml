@@ -1,0 +1,27 @@
+en:
+  activerecord:
+    models:
+      integration/contracts/configuration:
+        one: Contracts and Agreements Settings
+
+    attributes:
+      integration/contracts/configuration:
+        wsdl: WSDL
+        headers_soap_action: SOAPAction
+        user: User name
+        password: Password
+        contract_operation: SOAP method name
+        contract_response_path: Response path
+        contract_parameters: Parameters
+        additive_operation: SOAP method name
+        additive_response_path: Response path
+        additive_parameters: Parameters
+        adjustment_operation: SOAP method name
+        adjustment_response_path: Response path
+        adjustment_parameters: Parameters
+        financial_operation: SOAP method name
+        financial_response_path: Response path
+        financial_parameters: Parameters
+        infringement_operation: SOAP method name
+        infringement_response_path: Response path
+        infringement_parameters: Parameters

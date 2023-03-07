@@ -1,0 +1,25 @@
+pt-BR:
+
+  admin:
+    integrations:
+      supports:
+        domain:
+          configurations:
+
+            import:
+              done: A importação dos dados da Tabela Exercício está sendo processada em segundo plano
+            form:
+              commands:
+                cancel: Voltar para integrações
+            edit:
+              title: Configuração
+            update:
+              error: Falha ao atualizar as configurações.
+              done: "Configuração salva com sucesso."
+            show:
+              edit: Configurar
+              created_at: Criado
+              title: Integração com Tabela Exercício
+              import: Importar agora
+              hide_show: Mostrar/Esconder log
+              empty: Nenhuma importação realizada

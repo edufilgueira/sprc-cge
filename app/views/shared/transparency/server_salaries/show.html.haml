@@ -1,0 +1,46 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :title, server_salary.title
+
+= cache_unless(admin?(current_user), cache_key) do
+  - server = server_salary.server
+
+  - if server.present?
+
+    %h2.sr-only
+      = t('.title')
+
+    .row
+      .col-6
+
+        - server_salaries = transparency_server_salaries_options_for_select(server)
+        - server_salaries_options = server_salaries.map {|s| [s[0], transparency_server_salary_path(id: s[1])]}
+        - selected = transparency_server_salary_path(id: params[:id])
+        - options = options_for_select(server_salaries_options, selected)
+        = select_tag(:id, options, 'data-input': 'server_salary_select', 'data-allow-clear': 'false')
+
+      .col-6
+        .float-right
+          = link_to "#{controller.request.original_url}&print=true", 'data-input': 'btn-print', class: "btn btn-link btn-print hover-link d-inline-block", target: :_blank do
+            %i.fa.fa-print{ 'aria-hidden': 'true' }
+            = t('shared.tickets.components.btn_print.title')
+
+
+
+    %hr{'aria-hidden':'true'}
+
+    %h3
+      = server_salary.title
+
+    .server-salary-content{'data-input': 'server_salary_content'}
+      = render 'shared/transparency/server_salaries/show', server_salary: server_salary
+
+    %hr{'aria-hidden':'true'}
+
+    - [:source, :proceeds].each do |info|
+      .row
+        .col-md-12
+          .small
+            = raw(t(".infos.#{info}"))
+
+      %hr{'aria-hidden':'true'}

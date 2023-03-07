@@ -1,0 +1,43 @@
+es:
+  ticket_mailer:
+    daily_recap:
+      subject: '[Ceará transparente] Resumen diario'
+      not_expired: 'Dentro del plazo:'
+      expired: 'Atrasadas:'
+      expired_can_extend: 'Atrasadas prorrogáveis:'
+      title: "Resumen diario - "
+
+    email_reply:
+      title:
+        sic:
+          one: 'Usted ha recibido la respuesta para su solicitud de información de protocolo %{protocol}.'
+          other: 'Usted ha recibido respuestas para su solicitud de información de protocolo %{protocol}.'
+        sou:
+          one: 'Usted ha recibido la respuesta para su manifestación de oidoría de protocolo %{protocol}.'
+          other: 'Usted ha recibido respuestas para su manifestación de oidoría de protocolo %{protocol}.'
+
+      replies:
+        title: 'Respuesta de %{author} en %{created_at}'
+
+      link:
+        title: 'Usted puede ver más detalles. Para esto, haga clic <a href="%{url}">aquí</a>.'
+
+      subject:
+        sic: '[Ceará Transparente] Respuesta para su solicitud de información'
+        sou: '[Ceará Transparente] Respuesta para su manifestación de oidoría'
+
+    subscription_confirmation:
+      subject:
+        sic: 'Confirmación de email de la solicitud de Información [%{protocol}]'
+        sou: 'Confirmación de email de la manifestación de Oidoría [%{protocol}]'
+
+      template:
+        title:
+          sic: 'Confirmación para acompañar la solicitud de Información [%{protocol}]'
+          sou: 'Confirmación para acompañar la manifestación de Oidoría [%{protocol}]'
+
+        explanation:
+          sic: 'Después de la confirmación por email, se le notificará acerca de las actualizaciones de su solicitud de Información.. Si desea cancelar las notificaciones, un enlace estará disponible en los próximos correos electrónicos.'
+          sou: 'Después de la confirmación por email, se le notificará acerca de las actualizaciones de la suya manifestación de Oidoría. Si desea cancelar las notificaciones, un enlace estará disponible en los próximos correos electrónicos.'
+
+        confirmation_link: '<a href="%{url}">Haga clic aquí para confirmar su correo electrónico</a>'

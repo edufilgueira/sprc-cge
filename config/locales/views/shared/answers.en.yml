@@ -1,0 +1,62 @@
+en:
+  shared:
+    answers:
+
+      form:
+        description:
+          internal: Insert opinion
+          default: Insert answer
+        save:
+          internal: Save opinion
+          default: Save answer
+
+      form_fields:
+        add_attachment: Add attachment
+        attachment_letter:
+          sic: Request for information with answer by letter. Mandatory letter attachment
+          sou: Manifestation with response by letter. Mandatory letter attachment
+
+      existent_attachments:
+        add: Add attachments
+
+      answer:
+        title:
+          sectoral:
+            sic: '%{type} sent by the %{organ} sectoral committee of Access to Information'
+            sou: '%{type} sent by the %{organ} ombudsman'
+          department:
+            sic: 'Opinion developed by the %{department} internal area'
+            sou: 'Opinion developed by the %{department} internal area'
+          subnet:
+            sic: '%{type} sent by the %{subnet} sectoral committee of Access to Information'
+            sou: '%{type} sent by the %{subnet} ombudsman'
+          subnet_department:
+            sic: 'Opinion developed by the %{department} internal area'
+            sou: 'Opinion developed by the %{department} internal area'
+          cge:
+            sic: '%{type} sent by CGE'
+            sou: '%{type} sent by CGE'
+          call_center:
+            sic: '%{type} sent by the 155 Ombudsman'
+            sou: '%{type} sent by the 155 Ombudsman'
+        justification: Justification
+        answer_evaluated_by: 'By %{name}'
+
+      evaluations:
+        evaluation_form:
+          save: Save feedback
+          saving: Saving...
+
+      answer_awaiting:
+        attachments: Attachments
+        classification:
+          title: "%{ticket_title} - Classification"
+        answer: Answer content
+        original_answer: Original answer content/opinion
+        justification: Justification
+        approve: Approve
+        reject: Reject
+
+
+      positioning_fields:
+        positioning: Send opinion as an internal area

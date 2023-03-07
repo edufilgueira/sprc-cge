@@ -1,0 +1,8 @@
+en:
+  shared:
+    ppa:
+      login_alert:
+        login: Sign in
+        create: Sign up
+        authentication_needed_html: '%{login_link} or %{registration_link} to interact!'
+

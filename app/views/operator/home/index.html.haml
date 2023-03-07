@@ -1,0 +1,25 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+
+- if can?(:view_organ_association, User)
+  = render 'shared/tickets/index/organ_association_filter'
+
+- if current_user.call_center? || current_user.call_center_supervisor?
+  = render 'attendance_index'
+  = render 'call_center_tickets_index'
+
+- elsif current_user.sectoral?
+  = render 'sectoral_index'
+
+- elsif current_user.coordination?
+  = render 'denunciation_index'
+  = render 'couvi'
+  = render 'ticket_index'
+
+- elsif current_user.operator_denunciation?
+  = render 'denunciation_index'
+  = render 'ticket_index'
+  
+- else
+  = render 'ticket_index'

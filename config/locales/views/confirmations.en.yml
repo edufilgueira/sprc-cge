@@ -1,0 +1,15 @@
+en:
+  confirmations:
+    show:
+      title: Profile confirmation
+      instructions: >-
+        Please, set a password to confirm your profile
+      back: Back
+      submit: Submit
+
+    new:
+      title: Resend instructions for profile confirmation
+      instructions: >-
+        Enter the email address used in your profile and we will send you an email with instructions for confirmation.
+      back: Back
+      submit: Resend instructions

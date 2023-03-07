@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    attributes:
+      page/series_datum:
+        title: Series name
+        series_type: Type
+
+      page/series_datum/series_type:
+        column: Bar
+        line: Line
+        area: Area

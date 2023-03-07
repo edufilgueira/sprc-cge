@@ -1,0 +1,22 @@
+en:
+  activerecord:
+    attributes:
+      integration/macroregions/macroregion_investiment:
+        ano_exercicio: 'Year'
+        codigo_poder: 'Power code'
+        descricao_poder: 'Power'
+        codigo_regiao: 'Region code'
+        descricao_regiao: 'Macroregion'
+        valor_lei: 'Initial Budget'
+        valor_lei_creditos: 'Updated budget'
+        valor_empenhado: 'Committed budget'
+        valor_pago: 'Paid value'
+        perc_empenho: '% committed'
+        perc_pago: '% paid'
+        perc_pago_calculated: '% paid'
+
+  integration/macroregions:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Real estate %{month}-%{year}'

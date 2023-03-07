@@ -1,0 +1,36 @@
+en:
+  activerecord:
+    attributes:
+
+      integration/eparcerias/configuration:
+        wsdl: WSDL
+        headers_soap_action: SOAPAction
+        user: User name
+        password: Password
+
+        transfer_bank_order: Bank transfer orders
+        transfer_bank_order_operation: SOAP method name
+        transfer_bank_order_response_path: Response path
+
+        work_plan_attachment: Work plan attachments
+        work_plan_attachment_operation: SOAP method name
+        work_plan_attachment_response_path: Response path
+
+        accountability: Accountabilities status
+        accountability_operation: SOAP method name
+        accountability_response_path: Response path
+
+        status: Status
+        log: Log
+        last_importation: Last import
+        import_type: Import type
+        import_type_str: Import type
+
+    models:
+      integration/eparcerias/configuration:
+        one: Importer of e-Partner information
+
+  integration/eparcerias/configuration:
+    import_types:
+      import_all: Import from all agreements
+      import_active: Import only active agreements

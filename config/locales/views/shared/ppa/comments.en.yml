@@ -1,0 +1,9 @@
+en:
+  shared:
+    ppa:
+      comments:
+        comment:
+          title: '%{author} commented:'
+        form:
+          comment_label: 'Register a comment:'
+          submit: 'Submit comment'

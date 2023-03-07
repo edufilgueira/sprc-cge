@@ -1,0 +1,14 @@
+.row.justify-content-center
+
+  .col-12
+
+    %hr{'aria-hidden': 'true'}
+
+    %label.mt-4
+      = t('.description')
+
+    - if departments.present?
+      = render partial: 'department', collection: departments
+    - else
+      .text-center
+        %i= t('.empty')

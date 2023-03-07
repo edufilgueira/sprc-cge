@@ -1,0 +1,25 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t('.title')
+
+= form_for operator_attendances_path, method: :get do |f|
+
+  .card.card-custom
+
+    .card-header
+
+      %h2.card-title
+        = t('.title')
+
+    .card-block
+      = render 'filters', f: f
+
+
+    .card-block
+
+      - if attendances.present?
+        = render 'table', attendances: attendances
+
+      - else
+        .row
+          %i.col-md-12.text-center
+            = t('.empty')

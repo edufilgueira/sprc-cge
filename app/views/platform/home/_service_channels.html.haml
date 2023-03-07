@@ -1,0 +1,57 @@
+
+.card
+  .card-block
+    .card-title.mb-4
+      %h4.font-weight-bold
+        = link_to t('.title'), transparency_contacts_path, class: 'text-gray-dark'
+
+    .card-text
+      = t('.description')
+
+  .card-footer.bg-transparent.border-orange.border-bottom-only.border-3
+    .row.text-center.mb-4
+      .col-md-6
+        %strong
+          = t('.social.title')
+
+        .row.fa-text-green.mt-3
+          .col-md-4.col-12.mt-3.mt-md-0
+            %i.fa.fa-instagram.fa-3x.d-block.mb-2
+            = link_to t('.social.instagram'), 'https://www.instagram.com/cgeceara', target: '_blank'
+          .col-md-4.col-12.mt-3.mt-md-0
+            %i.fa.fa-twitter.fa-3x.d-block.mb-2
+            = link_to t('.social.twitter'), 'https://twitter.com/cgeceara', target: '_blank'
+          .col-md-4.col-12.mt-3.mt-md-0
+            %i.fa.fa-facebook.fa-3x.d-block.mb-2
+            = link_to t('.social.facebook'), 'https://www.facebook.com/cgeceara', target: '_blank'
+
+      .col-md-5.5.mt-8.mt-md-0
+        %strong
+          = t('.other_channels.title')
+
+        .row.fa-text-green.mt-3.border-left
+          .col-md-3.col-12.mt-3.mt-md-0
+            %i.fa.fa-phone.fa-3x.d-block.mb-2
+            = link_to t('.other_channels.central'), transparency_contacts_path
+
+          .col-md-3.col-12.mt-3.mt-md-0
+            %i.fa.fa-envelope-o.fa-3x.d-block.mb-2            
+            - text = t('.other_channels.email')
+            - url = 'maito:ouvidoria.geral@cge.ce.gov.br'
+            = link_to text.html_safe, url
+
+          .col-md-3.col-12.mt-3.mt-md-0
+            %i.fa.fa-map-marker.fa-3x.d-block.mb-2
+            - if local_assigns[:networking_sic]
+              - text = t('.other_channels.networking_sic')
+              - url = transparency_page_path('relacao-de-responsaveis-sic')
+            - else
+              - text = t('.other_channels.networking')
+              - url = transparency_contacts_path
+
+            = link_to text.html_safe, url
+          .col-md-3.8.col-12.mt-3.8.mt-md-0
+            = content_tag(:img, '', src: image_path('logos/logo-ceara-app.png'))
+            = link_to t('.other_channels.ceara_app_google'), 'https://play.google.com/store/apps/details?id=br.gov.ce.cearaapp', target: '_blank'
+            %br
+            = link_to t('.other_channels.ceara_app_appstore'), 'https://apps.apple.com/br/app/cear%C3%A1-app/id1511705379', target: '_blank'

@@ -1,0 +1,179 @@
+pt-BR:
+
+  operator:
+
+    tickets:
+
+      create:
+        sou:
+          title: Nova Manifestação de Ouvidoria
+          done: "A manifestação foi criada com o protocolo '%{title}'"
+          error: Não foi possível realizar a manifestação
+
+        sic:
+          title: Nova Solicitação de Acesso à Informação
+          done: "A solicitação foi criada com o protocolo '%{title}'"
+          error: Não foi possível solicitar a informação
+
+
+      destroy:
+        sou:
+          title: Nova Manifestação de Ouvidoria
+          done: "A manifestação '%{title}' foi removida."
+
+        sic:
+          title: Nova Solicitação de Acesso à Informação
+          done: "A solicitação '%{title}' foi removida."
+
+      index:
+        filters: Filtros
+        sample_filters: Filtros da Amostra
+        headers:
+          organ:
+            title: Órgão
+          sou_type:
+            title: Tipo
+
+        generate: Salvar amostra
+
+        export: Relatório de dados brutos
+        report: Relatório estatístico
+
+        sou:
+          breadcrumb_title: Ouvidoria Digital
+          title: Manifestações de Ouvidoria Digital
+          commands:
+            new: Registrar nova manifestação
+
+        sic:
+          breadcrumb_title: Acesso à Informação
+          title: Solicitações de Acesso à Informação
+          commands:
+            new: Solicitar informação
+
+        sou_evaluation_samples:
+          breadcrumb_title: Avaliação da qualidade das respostas de ouvidoria
+          title: Manifestações de Ouvidoria Digital
+
+        sample:
+          label:
+            title: Título da Amostra
+
+          link: Solicitar Amostra
+
+
+
+      table:
+        summary: Lista paginada com todos as manifestações
+        caption: Tabela contendo todos as manifestações de Ouvidorias
+        heads:
+          confirmed_at: Criado em
+          parent_protocol: Protocolo
+          sou_type: Tipo
+          departments: Unidade(s)
+          organs: Órgão(s)
+          internal_status: Situação
+          description: Descrição
+          deadline: Prazo restante
+          ticket_departments_deadline: Prazo restante
+          name: Identificação
+
+
+        cells:
+          deadline:
+            undefined: '-'
+
+          internal_statuses:
+            reopen_appeal:
+              sic: Recurso
+              sou: Reaberto
+
+          alert_waiting:
+            title: Em análise
+
+          deadline:
+            title: Prorrogação
+
+
+      ticket:
+        deadline:
+          remaining: "Dias restantes: %{days}"
+
+        messages:
+          deadline:
+            undefined: '-'
+
+
+      new:
+        sou:
+          title: Nova Manifestação de Ouvidoria
+
+        sic:
+          title: Nova Solicitação de Acesso à Informação
+
+      show:
+        in_progress:
+          sou:
+            title: Confirmar abertura de manifestação
+
+          sic:
+            title: Confirmar abertura de solicitação
+
+        sou_evaluation_samples:
+          breadcrumb_title: Amostras Geradas - Ouvidoria
+
+        sou_evaluation_sample_details:
+          breadcrumb_title: Detalhes da Amostra
+
+      edit:
+        sou:
+          title: Edição de Manifestação de Ouvidoria
+
+        sic:
+          title: Edição de Solicitação de Acesso à Informação
+
+      update:
+        sou:
+          title: Edição de Manifestação de Ouvidoria
+          done: "A manifestação foi atualizada"
+          error: Não foi possível editar a manifestação
+
+        sic:
+          title: Edição de Solicitação de Acesso à Informação
+          done: "A solicitação foi atualizada"
+          error: Não foi possível editar a solicitação
+
+      invalidate:
+        invalidated: Invalidado!
+
+      invalidate_alert:
+        title: Pedido de invalidação
+        justification: 'Justificativa:'
+        responsable: "Solicitado por %{organ}"
+        approve: Aprovar
+        reject: Rejeitar
+        description: Considerações
+
+      reopen_alert:
+        title:
+          one: 'Reaberta (%{count} vez)'
+          other: 'Reaberta (%{count} vezes)'
+        justification: 'Última justificativa do cidadão'
+
+      appeal_alert:
+        title:
+          one: 'Recurso (%{count}ª instância)'
+          other: 'Recurso (%{count}ª instância)'
+        justification: 'Última justificativa do cidadão'
+
+
+      area_involved_status:
+        other_organs: Outros órgão(s) envolvidos
+        departments: Áreas envolvidas
+
+      extension_alert:
+        title: Pedido de prorrogação de prazo
+        justification: Considerações
+        commands:
+          approve: Aprovar
+          reject: Reprovar

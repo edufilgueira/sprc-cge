@@ -1,0 +1,108 @@
+en:
+
+  platform:
+
+    tickets:
+
+      create:
+        sou:
+          title: New Ombudsman of manifestation
+          done: "The manifestation has been signed by'%{title} protocol"
+          error: It was not possible to carry out manifestation
+
+        sic:
+          title: New request for Access to Information
+          done: "The request has been signed by'%{title} protocol"
+          error: It was not possible to request information
+
+
+      destroy:
+        sou:
+          title: New Ombudsman manifestation
+          done: "'%{title}' manifestation has been destroyed."
+
+        sic:
+          title: New request for Access to information
+          done: "'%{title}' request was removed."
+
+      index:
+        filters: Search filters
+        headers:
+          organ:
+            title: Organ
+          sou_type:
+            title: Type
+
+        sou:
+          breadcrumb_title: Digital Ombudsman
+          title: Manifestation of Digital Ombudsman
+          description: The service of the manifestation of Ombudsman's Office is of up to 15 days and can be extended for another 15 days as established in Decree no. 30,474 / 2011.
+          commands:
+            new: New manifestation
+
+        sic:
+          breadcrumb_title: Access to information
+          title: Request for Access to information
+          description: The service of the Information Request is of up to 20 days and can be extended for another 10 days as established by Law no. 15,175 / 2012.
+          commands:
+            new: New request
+
+      table:
+        summary: List of manifestations
+        caption: Table containing all Ombudsman manifestations
+        heads:
+          parent_protocol: Protocol
+          sou_type: Type
+          organs: Organ(s)
+          internal_status: Status
+          description: Description
+          deadline: Deadline
+          created_at: Created at
+          updated_at: Last updated at
+
+      ticket:
+        messages:
+          deadline:
+            undefined: '_'
+
+      new:
+        sou:
+          title: New manifestation of Ombudsman
+
+        sic:
+          title: New request for access to information
+
+      show:
+        confirmed:
+          title: Detailed exhibition of manifestation
+        in_progress:
+          title: Confirm manifestation opening
+          sou:
+            title: Confirm manifestation opening
+          sic:
+            title: Confirm request opening
+        sou:
+          commands:
+            new: New manifestation
+        sic:
+          commands:
+            new: New request
+
+      edit:
+        sou:
+          title: Manifestation of Ombudsman Editing
+
+        sic:
+          title: Request for Access to Information Editing
+
+      update:
+
+        sou:
+          title: Manifestation of Ombudsman Editing
+          done: "The manifestation was updated"
+          error: It was not possible to edit manifestation
+
+        sic:
+          title: Request for Access to Information Editing
+          done: "The request was updated"
+          error: It was not possible to edit request

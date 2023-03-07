@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        ticket_department_sub_department:
+          attributes:
+            sub_department_id:
+              belongs: não pertence à unidade

@@ -1,0 +1,27 @@
+- attachment = ticket_log.resource
+.row
+
+  .col-12.col-md-1.no-print
+    .float-left
+
+      .bg-faded.rounded-circle.p-1
+
+        %i.fa.fa-paperclip.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      %h4.h6.mb-0
+        = t('.title', name: ticket_log.responsible.title)
+
+      .small
+        %em
+          = l(ticket_log.created_at, format: :shorter)
+
+      .small
+        %em= ticket_log.data[:title]
+
+
+%hr{'aria-hidden': 'true'}
+

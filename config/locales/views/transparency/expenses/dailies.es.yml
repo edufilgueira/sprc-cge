@@ -1,0 +1,7 @@
+es:
+  transparency:
+    expenses:
+      dailies:
+        index:
+          title: Gastos con diárias
+          description: 'Consulte aqui los gastos con diárias, que son los valores recibidos por funcionarios públicos del Estado para as despesas com diárias, que são valores recebidos por servidores del Estado para costear gastos en viajes al servicio. Aquí es posible realizar la consulta filtrando por órgano, período o beneficiario.'

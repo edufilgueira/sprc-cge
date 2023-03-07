@@ -1,0 +1,11 @@
+- ticket_department = ticket.ticket_department_by_user(current_user)
+- deadline = (operator_internal?(current_user) && ticket_department.present?) ? ticket_department.deadline : ticket.deadline
+
+- if deadline.present?
+  .content-with-label
+    %label.content-label{ class: remaining_days_to_deadline_class(deadline) }
+      = t('.remaining')
+
+    %p.content-value{ class: remaining_days_to_deadline_class(deadline) }
+      %b
+        = t('ticket.deadline', count: deadline)

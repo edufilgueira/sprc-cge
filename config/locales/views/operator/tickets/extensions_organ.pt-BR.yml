@@ -1,0 +1,19 @@
+pt-BR:
+  operator:
+    tickets:
+      extensions_organ:
+        new:
+          title: Solicitação de prorrogação
+        form:
+          save:
+            title: Enviar solicitação
+        create:
+          done: A solicitação de prorrogação foi enviada com sucesso.
+          fail: Falha ao enviar a solicitação. Verifique os campos abaixo.
+        update:
+          done: Solicitação cancelada.
+        approve:
+          done: A demanda foi prorrogada com sucesso.
+        reject:
+          done: A prorrogação foi rejeitada.
+

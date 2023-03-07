@@ -1,0 +1,6 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t('.title')
+
+- stats_url = transparency_results_thematic_indicators_path(show_stats: true)
+
+= render 'shared/transparency/index', filter_path: 'results/thematic_indicators', transparency_id: :thematic_indicators, stats_type: :month, stats_url: stats_url, base_locale: t('.')

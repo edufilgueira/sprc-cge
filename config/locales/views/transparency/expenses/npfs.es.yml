@@ -1,0 +1,7 @@
+es:
+  transparency:
+    expenses:
+      npds:
+        index:
+          title: Notas de Programación Financiera
+          description: 'Aquí usted podrá consultar informaciones de las notas de programación financiera buscando por período, unidad gestora o nombre del acreedor.' 

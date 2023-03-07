@@ -1,0 +1,19 @@
+- content_for :title, t(".#{ticket.ticket_type}.title")
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = t(".#{ticket.ticket_type}.title")
+
+      .card-block
+
+        .content
+
+          = render 'shared/tickets/reopen_tickets/form', namespace: :ticket_area

@@ -1,0 +1,120 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :title, contract.title
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = link_to t('.resource_title', sacc: contract.title), transparency_contracts_contract_path(contract)
+
+        .card-commands
+          = render 'shared/components/btn_link_to_print'
+
+
+      .card-block
+        .row
+
+          .col-12
+            = content_with_label(contract, :descricao_objeto)
+
+
+        %hr{'aria-hidden': 'true'}
+
+        - manager = contract.manager.present? ? :manager_title : :cod_gestora
+        - grantor = contract.grantor.present? ? :grantor_title : :cod_concedente
+
+        .row
+
+          .col-12.col-sm-4
+            - creditor = (contract.creditor.present? ? :creditor_title : :cod_financiador)
+            = content_with_label(contract, creditor)
+
+          .col-12.col-lg-4
+            .content-with-label
+
+              %p.content-label
+                = t('.cod_secretaria')
+
+              %p.content-value
+                = contract.manager_title || contract.cod_secretaria
+
+          .col-12.col-lg-4
+            = content_with_label(contract, manager)
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+          .col-12.col-lg-4
+            = dash_content_with_label(contract, :data_publicacao_doe, format: :date)
+
+          .col-12.col-lg-4
+            = content_with_label(contract, :data_assinatura, format: :date)
+
+          - unless hide_field?(contract, :data_termino)
+            .col-12.col-lg-4
+              = dash_content_with_label(contract, :data_termino, format: :date)
+
+          .col-12.col-lg-4
+            = content_with_label(contract, :data_termino_original, format: :date)
+
+          .col-12.col-lg-4
+            = content_with_label(contract, :data_rescisao, format: :date)
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(contract, :descricao_situacao)
+
+          .col-12.col-lg-4
+            = content_with_label(contract, :valor_contrato)
+
+          .col-12.col-lg-4
+            = content_with_label(contract, :valor_atualizado_concedente)
+
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+
+          - attachments_url = integration_contracts_management_attachments(contract.isn_sic)
+          - if attachments_url.present?
+            .col-12.col-lg-4
+              .content-with-label
+                %p.content-label
+                  = t('.attachments_url')
+
+                %p.content-value
+                  = link_to attachments_url, target: :_blank do
+                    %i.fa.fa-external-link.fa-2x{'aria-hidden': 'true'}
+
+          .col-12.col-lg-4
+
+            - document_url = integration_contracts_document_url(contract.descricao_url)
+
+            .content-with-label
+              %p.content-label
+                = t('.descricao_url')
+
+              %p.content-value
+                - if document_url.present?
+                  = link_to document_url do
+                    %i.fa.fa-file-pdf-o.fa-2x{'aria-hidden': 'true'}
+                - else
+                  = t('.blank_contract')
+
+
+    = render 'shared/transparency/contracts/management_contracts/show/additives'
+
+    = render 'shared/transparency/contracts/management_contracts/show/adjustments'
+
+    - #
+    - # Lista carregada por ajax
+    - #
+    = render 'shared/transparency/contracts/financials', contract: contract
+
+    = render 'shared/transparency/followers/new', resource: contract

@@ -1,0 +1,106 @@
+.card-deck.justify-content-center
+
+  - ticket_type = params[:ticket_type]
+
+  - card_class = ticket_type.present? ? '' : 'col-12 col-xl-6'
+
+  - # card-deck responsive
+  .w-100.d-none
+
+  - #
+  - # Card login
+  - #
+  .card.mb-3{ class: "#{card_class}"}
+    = simple_form_for(resource, url: url_for_session) do |f|
+
+      .card-block
+
+        %h5.card-title
+          = t('.login.title')
+
+        - # importante para determinar se o usuário está entrando para
+        - # 'sou' (ouvidoria) ou para 'sic' (acesso à informação).
+        - # esse parâmetro é usado pelo sessions_controller para determinar
+        - # o after_sign_in_path
+
+        = hidden_field_tag :ticket_type, ticket_type
+
+        .row
+          .col
+            = f.input :email, autofocus: true, input_html: { type: :text }
+
+        .row
+          .col.mb-3
+            = f.input :password
+            .form-text.text-muted.mt-0.text-right
+              = link_to t('.forgot'), new_user_password_path, class: 'pull-right small'
+
+            .form-text.text-muted.mt-0.text-left.small
+              .errors.text-danger
+                = alert
+
+              .notice.text-success
+                = notice
+
+        .row
+          .col-12.mb-4
+            = recaptcha_tags
+
+          .col-12
+            = f.submit t('.login.action'), class: 'btn btn-uppercase btn-tertiary btn-block'
+        .row.mt-3
+          .col-12
+            = link_to user_facebook_omniauth_authorize_path, class: 'btn btn-uppercase btn-block btn-social btn-facebook text-center' do
+              %i.fa.fa-facebook
+              = t('.login.facebook')
+
+        .text-center.mt-2
+          = link_to t('.confirmation_instructions'), new_user_confirmation_path,  class: 'small'
+
+        .text-center
+          - registration_path = ticket_type.present? ? new_user_registration_path(ticket_type: ticket_type) : new_user_registration_path
+          = link_to t('.register.action'), registration_path, class: 'small'
+
+
+
+  - if ticket_type.present?
+
+    - # card-deck responsive
+    .w-100.d-none
+
+    - #
+    - # Card ticket identificado
+    - #
+    .card.mb-3
+
+      .card-block.h-100
+
+        %h5.card-title
+          = t(".identified_login.#{ticket_type}.title")
+
+        %p.card-text.text-muted
+          = t(".identified_login.#{ticket_type}.description")
+
+      .card-block
+        = link_to t(".identified_login.#{ticket_type}.action"), link_to_new_ticket(ticket_type: ticket_type), class: 'btn btn-uppercase btn-tertiary btn-block'
+
+  - if ticket_type.in?(['sou', 'denunciation'])
+
+    - # card-deck responsive
+    .w-100.d-none
+
+    - #
+    - # Card manifestação anônima
+    - #
+    .card.mb-3
+
+      .card-block.h-100
+
+        %h5.card-title
+          = t(".protocol_login.#{ticket_type}.title")
+
+        %p.card-text.text-muted
+          = t(".protocol_login.#{ticket_type}.description")
+
+      .card-block
+        = link_to t(".protocol_login.#{ticket_type}.action"), link_to_new_ticket(ticket_type: ticket_type, anonymous: true), class: 'btn btn-uppercase btn-tertiary btn-block'

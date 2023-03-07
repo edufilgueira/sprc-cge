@@ -1,0 +1,5 @@
+pt-BR:
+  routes:
+    application:
+      services_rating:
+        title: avaliacao-de-servicos

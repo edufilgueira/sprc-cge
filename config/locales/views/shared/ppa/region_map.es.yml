@@ -1,0 +1,15 @@
+es:
+  shared:
+    ppa:
+      region_map:
+        map:
+          title: Seleccione una region
+          city: Ciudad
+          hint: Elija la región en la que participará haciendo clic en ella.
+          hint_mobile: Región
+          see_more:
+            elaborating: Participa en el PPA en esta región
+            revising: Participar en la Revisión de la PPA
+
+
+

@@ -1,0 +1,76 @@
+-# Essa view é útil para usuário com perfil e sem perfil. Usuários anônimos não carregam ela.
+.contact-fields{data: {content: 'address-fields'}}
+  .row
+    .col-12.col-md-6
+      = f.input :email, label_html: { data: { required: 'email' } }, input_html: { data: {input: 'email' } }
+
+    .col-12.col-md-2
+      = f.input :answer_phone, label_html: { data: { required: 'phone' } }, input_html: { type: :text, 'data-mask': 'phone', 'aria-label': t('shared.tickets.form.fields.answer_phone'), data: { input: 'answer_phone'} }
+
+    .col-12.col-md-2
+      = f.input :answer_cell_phone, input_html: { type: :text, 'data-mask': 'phone', 'aria-label': t('shared.tickets.form.fields.answer_cell_phone'), data: { input: 'answer_cell_phone'} }
+
+    .col-12.col-md-2
+      = f.input :answer_whatsapp, label_html: { data: { required: 'whatsapp' } }, input_html: { type: :text, 'data-mask': 'phone', 'aria-label': t('shared.tickets.form.fields.answer_whatsapp'), data: { input: 'answer_whatsapp'} }
+
+  .row
+
+    - if is_platform? || operator?(current_user)
+      .col-12.col-md-3
+        = f.input :answer_address_zipcode, label_html: { data: { required: 'letter' } }, input_html: { 'data-input': 'answer_address_zipcode','data-mask': 'zipcode', 'aria-label': t('shared.tickets.form.fields.answer_address_zipcode') }
+
+    .col-12.col-md-3
+      - state = params[:state] || states_default_selected_for_ticket(ticket, current_user)
+
+      - city = nil
+      - unless operator?(current_user)
+        - city = params[:city_id] || ticket.city_id || current_user&.city_id
+
+      - city = current_user&.call_center? ? (ticket.city_id || '') : city
+      - cities_container = current_user&.call_center? ? 'attendance_ticket_attributes_city_id' : 'ticket_city_id'
+      - field_name = :state
+      - selected = state
+      - required = user?(current_user)
+      - cities_container = cities_container
+
+      .form-group
+        = label_tag field_name, class: 'form-control-label', data: { required: 'presential' } do
+          = t('.state')
+          - if required
+            %abbr{title: t('simple_form.required.text') }
+              = t('simple_form.required.mark')
+
+        %i.fa.fa-spinner.fa-spin.fa-fw.hidden-xs-up{ 'aria-hidden': 'true', 'data-content': 'loading' }
+        - options = options_for_select(states_for_select, selected)
+        = select_tag field_name, options, { class: 'form-control state-select', include_blank: t('.select'), data: { input: 'state', url: api_v1_cities_path, 'cities-container': cities_container } }
+
+
+    .col-12.col-md-6
+      - cities = cities_by_state_for_select(state)
+      = f.association :city, collection: cities, required: user?(current_user), selected: city, input_html: { 'data-input': 'city' }, wrapper_html: { 'data-container': 'city' }, include_blank: t('messages.form.select'), label_html: { data: { required: 'presential' } }
+
+  -# somente para usuário com perfil ou qualquer tipo de operador
+  - if is_platform? || operator?(current_user)
+    .row
+      .col-12.col-md-8
+        = f.input :answer_address_street, label_html: { data: { required: 'letter' } }, input_html: { data: { input: 'answer_address_street'} }
+
+      .col-12.col-md-4
+        = f.input :answer_address_number, label_html: { data: { required: 'letter' } }, input_html: { data: { input: 'answer_address_number'} }
+
+    .row
+      .col-12.col-md-4
+        = f.input :answer_address_neighborhood, label_html: { data: { required: 'letter' } }, input_html: { data: { input: 'answer_address_neighborhood'} }
+
+      .col-12.col-md-8
+        = f.input :answer_address_complement, input_html: { data: { input: 'answer_address_complement'} }
+
+  .row
+    .col-12.col-md-4
+      = f.input :answer_twitter, label_html: { data: { required: 'twitter' } }, input_html: { data: { input: 'answer_twitter' } }
+
+    .col-12.col-md-4
+      = f.input :answer_facebook, label_html: { data: { required: 'facebook' } }, input_html: { data: { input: 'answer_facebook' } }
+
+    .col-12.col-md-4
+      = f.input :answer_instagram, label_html: { data: { required: 'instagram' } }, input_html: { data: { input: 'answer_instagram' } }

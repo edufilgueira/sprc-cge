@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    attributes:
+
+      integration/eparcerias/transfer_bank_order:
+        isn_sic: SIC Agreement
+        convenant: Agreement
+
+        numero_ordem_bancaria: Bank order number
+        tipo_ordem_bancaria: Bank order type
+        nome_benceficiario: Beneficiary
+        valor_ordem_bancaria: Value
+        data_pagamento: Payment day
+
+    models:
+      integration/eparcerias/transfer_bank_order:
+        one: Transfer bank order
+        other: Bank transfer orders

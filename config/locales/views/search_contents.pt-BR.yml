@@ -1,0 +1,8 @@
+pt-BR:
+
+  search_contents:
+    index:
+      title: Informações gerais
+      count_title: 'Exibindo %{count} resultados de busca para "%{term}"'
+      what_do_you_need: 'Do que você precisa?'
+      more: Veja mais

@@ -1,0 +1,19 @@
+es:
+  activerecord:
+    models:
+      integration/city_undertakings/configuration:
+        one: Configuración de Ingresos por Municipio
+
+    attributes:
+      integration/city_undertakings/configuration:
+        headers_soap_action: SOAPAction
+        password: Contraseña
+        user: Usuario
+        wsdl: WSDL
+        undertaking_operation: Nombre del método SOAP (obra)
+        undertaking_response_path: Camino de la respuesta (obra)
+        city_undertaking_operation: Nombre del método SOAP (municipios_empreendimentos)
+        city_undertaking_response_path: Camino de la respuesta (municipios_empreendimentos)
+        city_organ_operation: Nombre del método SOAP (municipios_secretarias)
+        city_organ_response_path: Camino de la respuesta (municipios_secretarias)
+

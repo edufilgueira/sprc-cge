@@ -1,0 +1,67 @@
+en:
+  shared:
+    transparency:
+
+      constructions:
+
+        daes:
+
+          index:
+            title: Edifications Civil Work
+            description: 'See here all the state works of buildings that have the Public Works Superintendence as technical responsible or contractor.'
+            last_update: 'Last SOP update: '
+
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Superintendência de Obras Públicas - SOP</p>
+
+            filters:
+              title: Advanced search
+              search:
+                hint: |
+                    You can search by the number of SACC, name of contractor, city, secretariat, description among others.
+
+            chart:
+              valor:
+                unit: 'Total spent R$'
+                title: 'Highest values'
+              count:
+                unit: 'Amount'
+                title: 'Civil Works amount'
+
+            charts:
+              tabs:
+                descricao:
+                  title: 'General'
+                municipio:
+                  title: 'City'
+                secretaria:
+                  title: 'Secretariat'
+                contratada:
+                  title: 'Contracted'
+
+            stats:
+              title: Main figures related to the civil works
+              count: 'Active civil works amount in <strong>%{date}</strong>'
+
+            counts:
+              daes_count:
+                title: Filtered civil works amount
+              daes_sum:
+                title: Filtered civil works value
+
+            table:
+              summary: Contracts and agreements list
+              header:
+                numero_sacc: SACC
+                secretaria: Secretariat
+                contratada: Contracted
+                descricao: Description
+                municipio: City
+                status: Status
+                valor: Value
+
+            blank_coordinates: No georeferenced records
+
+
+          show:

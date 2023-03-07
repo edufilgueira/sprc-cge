@@ -1,0 +1,18 @@
+@import 'base';
+
+.search-protocol {
+  position: fixed !important;
+  bottom: 0; right: 0;
+  z-index: 99;
+  margin-bottom: 1em;
+  margin-right: 0.5em;
+  max-width: 14rem;
+  background-color: rgba(0,0,0,.03);
+}
+
+.btn-search-protocol {
+  border-radius: 0;
+  color: white !important;
+  background-color: #008640;
+  cursor: pointer;
+}

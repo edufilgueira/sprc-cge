@@ -1,0 +1,16 @@
+/*
+ * Classes de sizing não disponíveis no Bootstrap
+ */
+
+.w-15 {
+  // o !important é usado no próprio Bootstrap, estamos seguindo o padrão.
+  width: 15% !important;
+}
+
+.w-12 {
+  width: 12% !important;
+}
+
+.w-10 {
+  width: 10% !important;
+}

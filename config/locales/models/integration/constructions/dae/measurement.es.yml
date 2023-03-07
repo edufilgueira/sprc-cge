@@ -1,0 +1,14 @@
+es:
+  activerecord:
+    attributes:
+      integration/constructions/dae/measurement:
+        integration_constructions_dae: Obra
+        id_medicao: Identificador de la medición  
+        id_obra: Identificador de la obra
+        ano_mes: Año/mes
+        ano_mes_date: Año/mes
+        data_inicio: Fecha inicio
+        data_fim: Fecha final 
+        numero_medicao: Número de la medición 
+        status_medicao: Situación de la medición
+        valor_medido: Valor medido

@@ -1,0 +1,57 @@
+pt-BR:
+  shared:
+    transparency:
+
+      macroregion_investiments:
+
+        index:
+          title: Investimentos por macrorregiões
+          description: >
+            Saiba quanto o Governo do Ceará investe em cada macrorregião. Veja também em quê e onde o governo mais investe em cada região.
+
+          chart:
+            valor_lei:
+              unit: 'Valor total em R$'
+              title: 'Valor total'
+
+          charts:
+            tabs:
+              ano_exercicio:
+                title: Ano
+              descricao_regiao:
+                title: Macrorregião
+              descricao_poder:
+                title: Poder
+
+
+          filters:
+            title: Consulta avançada
+
+          counts:
+            macroregion_investiments_sum:
+              title: Valor do orçamento atualizado dos investimentos filtrados
+
+          table:
+            summary: Lista de investimentos
+            header:
+              descricao_poder: Poder
+              descricao_regiao: Macrorregião
+              valor_lei: Orçamento Inicial
+              valor_lei_creditos: Orçamento Atualizado
+              valor_empenhado: Valor Empenhado
+              valor_pago: Valor Pago
+              perc_pago_calculated: '% Pago'
+
+          stats:
+            title: Principais números relacionados a investimentos
+            count: 'Quantidade de investimentos em <strong>%{date}</strong>'
+            valor_lei: 'Investimentos por macrorregiões em <strong>%{date}</strong>'
+
+          source: 'Fonte de Dados: Secretaria do Planejamento e Gestão; Monitoramento de Ações e Projetos Prioritários (Mapp GPR) - WebMapp'
+
+        show:
+          descricao_url: Íntegra do investimento
+          descricao_url_ddisp: Processo de dispensa de licitação
+          descricao_url_inexg: Processo de inexibilidade de licitação
+          edital_url: Ver edital
+

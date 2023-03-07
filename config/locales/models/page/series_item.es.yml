@@ -1,0 +1,6 @@
+es:
+  activerecord:
+    attributes:
+      page/series_item:
+        title: Título
+        value: Valor

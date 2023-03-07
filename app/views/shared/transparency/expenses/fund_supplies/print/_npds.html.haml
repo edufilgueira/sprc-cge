@@ -1,0 +1,42 @@
+.row
+  .col-12
+    %h3.h5.text-center
+      = t('shared.transparency.expenses.neds.show.npds.title')
+
+.row
+  .col-12
+    - if fund_supply.npds.ordinarias.present?
+      - export_file_name = t('shared.transparency.expenses.neds.show.npds.table.export_file_name', id: fund_supply.title.gsub('/', ''))
+
+      .table-responsive
+        %table.table.table-striped.table-sm.table-print{summary: t('shared.transparency.expenses.neds.show.npds.summary'), 'data-toggle': 'table-export', 'data-filename': export_file_name}
+
+          %thead
+
+            %tr
+              - heads = [:numero, :date_of_issue, :credor, {id: :valor, class: 'text-right'}]
+
+              - heads.each do |head|
+                - if head.is_a?(Hash)
+                  %th{class: head[:class]}
+                    = Integration::Expenses::Npd.human_attribute_name(head[:id])
+                - else
+                  %th
+                    = Integration::Expenses::Npd.human_attribute_name(head)
+
+          %tbody
+            - fund_supply.npds.ordinarias.each do |npd|
+              %tr
+                %td
+                  = npd.numero
+                %td
+                  = npd.data_emissao
+                %td
+                  = npd.creditor_nome
+                %td.text-right
+                  = number_to_currency(npd.valor_final)
+
+    - else
+      .row
+        %i.col-md-12.text-center
+          = t('shared.transparency.expenses.neds.show.npds.empty')

@@ -1,0 +1,11 @@
+.col-md-6.col-lg-4.col-sm-12.pb-3
+
+  = link_to operator_tickets_path(reopened: true, ticket_type: user_type, organ_association: organ_association) do
+
+    .operator-home-card{'data-internal-status': 'reopened'}
+
+      %h3.operator-home-card-title
+        = t('.title')
+
+      %p.operator-home-card-count
+        = tickets_reopened_count(user_type, organ_association)

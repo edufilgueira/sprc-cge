@@ -1,0 +1,110 @@
+en:
+  shared:
+    transparency:
+      contracts:
+        convenants:
+
+          index:
+            title: Agreements
+            description: Consult here any agreement signed by the State. See here the agreements with the municipality of your city or agreements of other entities. Find out what service should be done, how much has been paid, the date of completion, etc.
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Controladoria e Ouvidoria Geral do Estado - CGE</p>
+              <p>Sistema de Acompanhamento de Contratos e Convênio - SACC</p>
+
+            chart:
+              valor_atualizado_concedente:
+                unit: 'Agreement values: R$'
+                title: Agreement values
+
+                creditor:
+                  title: Agreement values per creditor
+                manager:
+                  title: Agreement values per management unit
+                tipo_objeto:
+                  title: Agreement values per scope type
+
+            charts:
+              tabs:
+                creditor:
+                  title: Per creditor
+                manager:
+                  title: Per management unit
+                tipo_objeto:
+                  title: Per scope type
+
+            filters:
+              title: Advanced search
+              search:
+                hint: |
+                  "You can search by the SACC No., Agreement No., unit name, name or CNPJ of the creditor and parts of the agreement scope. Examples: 'der', 'construction', among others."
+              situation_description:
+                information: |
+                  WAITING FOR ADDITIONAL PUBLICATION - Instrument with Additive pending publication in the Official Gazette of the State (DOE) or in Ceará Transparente;
+                  COMPLETED - Instrument with object completed;
+                  COMPLETED WITH DEBT - Instrument with completed object, which presents pending payments;
+                  UNDER EXECUTION [BLOCKED REQUEST FOR INSTALLMENT] - Instrument that presents an impediment to execution, due to a supervening fact;
+                  UNDER PERFORMANCE [NORMAL] - Instrument with execution proceeding normally;
+                  DISABLED [ELECTORAL PERIOD] - Restriction imposed on account of the electoral period in accordance with § 10 of art. 73 of Law No. 9.504 / 97;
+                  RELEASED [ELECTORAL PERIOD] - The restriction imposed on account of the electoral period provided for in § 10 of art. 73 of Law No. 9.504 / 97;
+                  STOPPED - If it occurs due to a fact attributable to the Public Administration, there will be an automatic extension of the execution schedule;
+                  TERMINATED - Instrument terminated unilaterally by the State or bilaterally by related parties;
+                  ENDED WITH DEBT - Instrument closed unilaterally by the State or bilaterally by related parties, which presents pending payments;
+                  SUSPENDED - It arises from a unilateral act of the Administration, accompanied by motivation, supported by reasons of public interest, arising from a supervening fact;
+                  EXPIRED - Instrument with expired term.
+              effective_date_description:
+                information: |
+                  Period in which the Instrument begins its effects - signature date, publication date or date defined in the contractual instrument - with an end defined on the day established in the contractual instrument and its amendments.
+              signature_date_description:
+                information: |
+                  Period in which the Instrument was signed by the parties involved - contracting party and contracted party.
+              publication_date_description:
+                information: |
+                  The publication date of the agreement instruments on the Ceará Transparent Platform started in June 2014, therefore, there are no records of the publication date for instruments published on an earlier date.
+
+            counts:
+              convenants_count:
+                title: Amount of filtered agreements
+              convenants_sum:
+                title: Updated value of filtered agreements
+                tolltip: It is the original value of the Instruments plus the value of their amendments - amendments or apostilles - considering the entire period of validity of the contractual instrument.
+
+            table:
+              summary: Agreements list
+              header:
+                data_assinatura: Signature date
+                isn_sic: SACC No.
+                num_contrato: Convênio No.
+                descricao_objeto: Scope
+                valor_atualizado_concedente: Updated value <i class="fa fa-question-circle" title="It is the original value of the instruments plus the value of their amendments - amendments or apostilles - considering the entire period of validity."></i>
+                calculated_valor_empenhado: Committed value <i class="fa fa-question-circle" title="It is the total value of the commitments made, considering the entire period of validity of the contractual instrument."></i>
+                calculated_valor_pago: Amount paid <i class="fa fa-question-circle" title="It is the total value of payments made, considering the entire period of validity of the contractual instrument."></i>
+                cod_gestora: Unit
+                creditor: Creditor
+
+            stats:
+              title: Main agreements-related figures
+              count: 'Number of active agreements on <strong>%{date}</strong>'
+              valor_atualizado_concedente: 'Sum of the active agreements values on <strong>%{date}</strong>'
+              valor_atualizado_concedente_tooltip: Includes current agreements, that is, those that have not yet expired or have not been terminated
+              tooltips:
+                active_information: Active agreement is one that has not yet expired or has not been terminated.
+
+          show:
+            resource_title: 'SACC Nº: %{sacc}'
+            descricao_url: Entire Agreement
+            descricao_url_pltrb: Work plan
+
+            tooltips:
+              valor_contrato: 'Instrument Initial Value (added on the value of the transfer and counterpart).'
+              valor_original_concedente: 'Initial amount that the government will transfer to the Beneficiary.'
+              valor_original_contrapartida: 'Amount that the Beneficiary will spend of its own budget.'
+              valor_atualizado_concedente: 'Updated amount that the government will transfer to the Beneficiary (Initial value of the transfer plus additives, if any).'
+              valor_atualizado_contrapartida: 'Updated value that the Beneficiary will spend from their own budget.'
+              valor_atualizado_total: 'Overall value of the instrument (sum of transfer value, counterpart and additives, if any).'
+              data_publicacao_portal: '
+Data for the release of the Ceará Transparent agreement records started in June 014, so it was not published for instruments published on that date.'
+
+            confidential:
+              message: "Instrument contains confidential information, under the terms of State Law No. 15,175 / 2012 - Law on Access to Information. Documents omitted for confidentiality: the integrals of the Agreement, Work Plan, Additives, Apostilamentos, Adjustments and OBTs."
+

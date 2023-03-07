@@ -1,0 +1,45 @@
+.card-filters.filter-bar{'data-filter-bar': 'revenues_accounts'}
+
+  = form_for transparency_revenues_accounts_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+
+      .col-12.col-lg-2
+        = label_tag(:year, Integration::Revenues::Revenue.human_attribute_name(:year))
+        = text_field_tag(:year, params[:year], placeholder: year, 'data-filter-bar-bypass-clear': '', class: 'form-control w-100 mb-3 year-datetimepicker')
+
+      .col-12.col-lg-5
+        - options = options_for_select(supports_secretaries_from_executivo_for_select_with_all_option, params['integration_revenues_revenues.integration_supports_secretary_id'])
+
+        = label_tag('integration_revenues_revenues.integration_supports_secretary_id', Integration::Revenues::Revenue.human_attribute_name(:secretary))
+        = select_tag('integration_revenues_revenues.integration_supports_secretary_id', options)
+
+      .col-12.col-lg-5
+        - options = options_for_select(supports_organs_and_secretaries_from_executivo_for_select_with_all_option(false, :codigo_orgao), params['integration_revenues_revenues.unidade'])
+
+        = label_tag('integration_revenues_revenues.unidade', Integration::Revenues::Revenue.human_attribute_name(:organ))
+        = select_tag('integration_revenues_revenues.unidade', options)
+
+
+    .row.mt-3
+      .col-12.col-lg-4
+
+        - node_type_model = Integration::Supports::RevenueNature
+
+        - tree_organizer_options = { id: 'transfers', default_node_types: default_node_types, default_node_types_path: default_node_types_path, node_type_model: node_type_model, node_types_options: node_types_options }
+
+        = render 'shared/transparency/tree_organizer', options: tree_organizer_options
+
+      .col-12.col-lg-6
+        = label_tag(:search, t('messages.filters.search.label'))
+        = text_field_tag(:search, params[:search], class: 'form-control w-100', 'data-filter-bar-ignore-submit-on-enter': 'true')
+        %small.form-text.text-muted
+          = t('.search.hint')
+
+      .col-12.col-lg-2
+
+        - # forma simples de align-bottom no botão de busca
+        .mt-4.pt-2
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'

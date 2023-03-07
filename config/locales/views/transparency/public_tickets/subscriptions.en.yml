@@ -1,0 +1,74 @@
+en:
+  transparency:
+    public_tickets:
+      subscriptions:
+
+        breadcrumbs:
+          ticket:
+            sou: 'Manifestation %{protocol}'
+            sic: 'Request %{protocol}'
+
+        new:
+          title:
+            sou: Follow manifestation
+            sic: Follow request
+
+        edit:
+          title:
+            sou: Follow manifestation
+            sic: Follow request
+
+
+        create:
+          done: The confirmation email was sent to the registered email.
+          fail: Follow attempt failed
+          was_created:
+            unconfirmed: Confirmation email sent
+            already_following: Already following
+
+        update:
+          done: The confirmation email was sent to the registered email.
+          fail: Follow attempt failed
+
+        confirmation:
+          done:
+            sic: 'You are following the request [%{protocol}].'
+            sou: 'You are following the manifestation [%{protocol}].'
+          fail: Attempt to find request failed
+
+        unsubscribe:
+          done:
+            sic: 'You are not following the request [%{protocol}] anymore.'
+            sou: 'You are not following the manifestation [%{protocol}] anymore.'
+          fail: Attempt to find request failed
+
+        unconfirmed:
+          title:
+            sou: Seguir Manifestação
+            sic: Seguir Solicitação
+
+          explanation: 'Acesse o link de confirmação enviado para o e-mail: %{email} para receber as notificações de atualização.'
+
+        confirmed:
+          title:
+            sou: Follow manifestation
+            sic: Follow request
+
+          explanation:
+            sou: 'To unfollow manifestation [%{protocol}] and stop receiving updates, click the button below.'
+            sic: 'To unfollow request [%{protocol}] and stop receiving updates, click the button below.'
+
+          unfollow: Unfollow
+
+        form:
+          title:
+            sou: Follow manifestation
+            sic: Follow request
+
+          field:
+            email: Email
+
+          explanation:
+            sic: Enter your email and click "register" to receive updates of your manifestation.
+            sou: Enter your email and click "register" to receive updates of your request.
+          register: Register

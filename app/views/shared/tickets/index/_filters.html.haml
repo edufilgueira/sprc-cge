@@ -1,0 +1,57 @@
+.card-filters
+
+  - #
+  - # sort params
+  - #
+  = render 'shared/sortered/hidden_filters'
+  .row
+    - unless controller_name.to_sym == :sou_evaluation_samples
+      .col-12.col-md-4
+        %label
+          = t('.search.title')
+
+        = text_field_tag(:search, params[:search], placeholder: t('.search.label'), class: 'form-control w-100 mb-3', title: t('.search.label'))
+
+      .col-12.col-md-2
+        %label
+          = t('.parent_protocol.title')
+
+        = text_field_tag(:parent_protocol, params[:parent_protocol], placeholder: t('.parent_protocol.label'), class: 'form-control w-100 mb-3', title: t('.parent_protocol.label'))
+
+    .col-12{ class: controller_name.to_sym == :sou_evaluation_samples ? 'col-md-8' : 'col-md-4'}
+      %label
+        = t('.confirmed_at.label')
+
+      .row
+        - filter_confirmed_at = params[:confirmed_at]
+        - if filter_confirmed_at.present?
+          - filter_confirmed_at_start = filter_confirmed_at[:start]
+          - filter_confirmed_at_end = filter_confirmed_at[:end]
+
+        .col-12.col-md-6.mb-3
+          = text_field_tag("[confirmed_at][start]", filter_confirmed_at_start, placeholder: t('.confirmed_at.start'),  class: 'form-control w-100 datetimepicker')
+
+        .col-12.col-md-6.mb-3
+          = text_field_tag("[confirmed_at][end]", filter_confirmed_at_end, placeholder: t('.confirmed_at.end'), class: 'form-control w-100 datetimepicker')
+
+    .col-12.col-md-2
+      = f.submit define_submit, class: 'btn btn-orange btn-block label-margin'
+
+    - if controller_name.to_sym == :sou_evaluation_samples
+      .col-12.col-md-2
+        = link_to t('.list_sample'), operator_generated_lists_path, class: 'btn btn-orange btn-tertiary btn-block label-margin'
+
+  .row
+    - if operator?(current_user)
+      = render 'shared/tickets/index/operator_filters'
+
+    - else
+      = render 'shared/tickets/index/user_filters'
+
+
+  - if ticket_filter_params?(params)
+    .mt-3
+      %small
+        .alert.alert-warning
+          = raw t('messages.filters.warning_count', total: number_with_delimiter(total_count), filtered: number_with_delimiter(filtered_count))
+          = link_to t('messages.filters.clear'), '#!', 'data-input': 'clear-filter', class: 'float-right'

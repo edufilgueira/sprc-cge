@@ -1,0 +1,32 @@
+-# Essa partial é o conteúdo de uma `#index` renderizada para XHR pelo BaseController#index.
+-# Em outras views, o nome da partial seria apenas `_index.html.haml`. Aqui, usamos
+-# `_index_content.html.haml` pois estamos em `/shared/`, e já temos uma `_index.html.haml` que
+-# representa o "template" #index.
+
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [{ id: :icon, html_class: 'icon-col' }, :subject, :created_at]
+  - sort_columns_ignoring_icon = { id: nil, subject: :subject, created_at: :created_at }
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: notifications, sort_columns: sort_columns_ignoring_icon, table_locale: table_locale do |notification|
+
+    - show_path = url_for([namespace, :notification, id: notification.id])
+
+    %tr
+      %td.icon-col
+        = link_to show_path do
+          - unread = notification.is_unread?(current_user)
+          - icon_class = unread ? 'fa-envelope' : 'fa-envelope-open-o'
+          %i.fa{ class: icon_class }
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(notification.subject.truncate(50))
+
+      %td
+        = link_to show_path do
+          = l(notification.created_at, format: :short)

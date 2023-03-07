@@ -1,0 +1,28 @@
+.form-group{ class: f.object.errors[:sou_type].present? ? 'has-danger' : '' }
+
+  %label.form-control-label= t('.label')
+  - if @only_denunciation.present?
+    = hidden_field_tag :only_denunciation, '1'
+
+  .sou-types-btn-group.btn-group.btn-group-justified{role: 'group', data: { toggle: 'radio-buttons', content: 'sou_types' }}
+    - ticket_sou_types(anonym, @only_denunciation).each do |sou_type|
+
+      - if f.object.sou_type.present?
+        - checked = (sou_type.to_s == f.object.sou_type)
+      - else
+        - checked = (sou_type.to_s == ticket.sou_type)
+
+      - option_label = t("ticket.sou_types.#{sou_type}")
+      - active_class = (checked ? 'active' : '')
+
+      - popover_title = t(".popover.#{sou_type}.title")
+      - popover_description = t(".popover.#{sou_type}.body")
+
+      - user_identified = user?(current_user) || current_user.blank? && !ticket.anonymous
+
+      %label.btn.btn-outline-primary{ class: active_class, 'tabindex': '0', 'role': 'button', 'title': popover_title, data: { toggle: 'popover', placement: 'top', trigger: 'focus', title: option_label, content: popover_description }}
+        %div{ 'data-content': "sou_type_#{sou_type}" }
+          = radio_button_tag field_name, sou_type, checked, id: option_label, "data-input": sou_type
+        = option_label
+
+  %div= f.error :sou_type

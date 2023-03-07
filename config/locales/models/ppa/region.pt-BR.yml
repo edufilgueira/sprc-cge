@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    models:
+      ppa/region:
+        one: Região de Planejamento
+        other: Regiões de Planejamento
+
+    attributes:
+      ppa/region:
+        themes: Temas
+        strategies: Estratégias
+        proposals: Propostas
+
+
+    errors:
+      models:
+        ppa/region:
+          attributes:
+            name: Nome da região precisa ser informado

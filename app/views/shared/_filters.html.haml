@@ -1,0 +1,24 @@
+- search_placeholder = local_assigns[:search_placeholder] || t('messages.filters.search.label')
+
+.card-filters.filter-bar{'data-filter-bar': filter_id}
+
+  = form_for filter_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+      .col-12.col-lg-6
+        .input-group.mb-3
+          = text_field_tag(:search, params[:search], autofocus: true, class: 'form-control w-100 mb-3', 'data-filter-bar-ignore-submit-on-enter': 'true', placeholder: search_placeholder)
+          .input-group-append
+            = f.submit t('commands.search'), class: 'btn btn-tertiary btn-block btn-search'
+
+      .col-12.col-lg-6
+        .input-group.mb-3
+          - options = options_for_select(categories_all_description, params[:open_data_vcge_category_id])
+          - placeholder = t('messages.form.select')
+          = label_tag :open_data_vcge_category_id, t('.category.label'), style: 'padding: 5px'
+          = select_tag :open_data_vcge_category_id, options, { include_blank: placeholder}
+
+    - # Adiciona outros filtros, além da barra de busca, passados pelo bloco
+    = yield

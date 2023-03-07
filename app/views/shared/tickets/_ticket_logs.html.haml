@@ -1,0 +1,4 @@
+= content_for :stylesheet, stylesheet_link_tag('views/shared/tickets/ticket_logs')
+= content_for :javascript, javascript_include_tag('views/shared/tickets/ticket_logs')
+
+= render 'shared/tickets/ticket_logs/index', ticket: ticket, answer_form_url: answer_form_url

@@ -1,0 +1,47 @@
+- show_path = admin_integrations_supports_organ_path(organ)
+
+%tr
+  %td
+    = link_to show_path do
+      = filtered_highlighted(organ.codigo_entidade)
+
+  %td
+    = link_to show_path do
+      = filtered_highlighted(organ.descricao_entidade)
+
+  %td
+    = link_to show_path do
+      = filtered_highlighted(organ.codigo_orgao)
+
+  %td
+    = link_to show_path do
+      = filtered_highlighted(organ.sigla)
+
+  %td
+    = link_to show_path do
+      = filtered_highlighted(organ.descricao_orgao)
+
+  %td
+    - date = organ.data_inicio
+
+    - if date.present?
+      = link_to show_path do
+        = l(date)
+    - else
+      = t('messages.content.undefined')
+
+  %td
+    - date = organ.data_termino
+
+    - if date.present?
+      = link_to show_path do
+        = l(date)
+    - else
+      = t('messages.content.undefined')
+
+  %td
+    - if organ.orgao_sfp?
+      = link_to show_path do
+        = t('messages.content.yes')
+    - else
+      = t('messages.content.no')

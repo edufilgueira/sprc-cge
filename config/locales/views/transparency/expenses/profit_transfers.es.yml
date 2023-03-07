@@ -1,0 +1,7 @@
+es:
+  transparency:
+    expenses:
+      profit_transfers:
+        index:
+          title: Transferencias a Entidades con Ánimos de Lucro. 
+          description: Aquí usted podrá consultar informaciones de Transferencias a Entidades con Ánimos de Lucro.

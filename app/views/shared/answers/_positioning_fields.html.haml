@@ -1,0 +1,14 @@
+- if can?(:create_positioning, ticket)
+  .row
+    .col-12.col-lg-6
+      - selected = new_answer.errors[:department_id].present?
+
+      = check_box_tag :positioning, {}, selected, 'data-input': 'positioning'
+      = label_tag :positioning, t('.positioning')
+
+  %div{ data: { content: 'positioning-fields'} }
+    = f.input :department_id, collection: answer_positioning_departments_for_select(ticket), input_html: { 'data-select2-search': 'hidden' }
+
+    = f.input :status, as: :hidden, input_html: { value: :cge_approved }
+
+    = f.input :answer_scope, as: :hidden, input_html: { value: :department }

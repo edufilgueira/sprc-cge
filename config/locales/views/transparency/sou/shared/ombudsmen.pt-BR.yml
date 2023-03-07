@@ -1,0 +1,16 @@
+pt-BR:
+
+  transparency:
+    sou:
+      shared:
+        ombudsmen:
+          index:
+            map_view: Ver no mapa
+
+            executive:
+              title: Rede de Ouvidorias do Poder Executivo
+              empty: Nenhuma rede de ouvidoria encontrada.
+
+            sesa:
+              title: Rede de Ouvidorias da Sesa
+              empty: Nenhuma rede de ouvidoria encontrada.

@@ -1,0 +1,24 @@
+- aos = f.object
+- child_ticket = ticket&.tickets&.find_by(organ_id: aos.organ_id, subnet_id: aos.subnet_id)
+.nested-fields{ 'data-content': 'organ' }
+
+  .row
+    .col-lg-11
+      %p.content-value
+        - if aos.organ_subnet?
+          = "#{aos.organ_full_title} / #{aos.subnet_full_acronym}"
+
+        - else
+          = aos.organ_full_title
+
+      = f.input :organ_id, as: :hidden, value: aos.organ_id
+
+      - if aos.subnet_id.present?
+        = f.input :subnet_id, as: :hidden, value: aos.organ_id
+
+
+    .col-md-1
+      - if child_ticket.blank? || can?(:delete_share, child_ticket)
+        = link_to_remove_association '', f, { class: 'fa fa-times ', 'aria-label': t('simple_form.file.remove') }
+
+  %hr{ 'aria-hidden': 'true' }

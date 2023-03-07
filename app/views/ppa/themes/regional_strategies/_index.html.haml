@@ -1,0 +1,44 @@
+- # extra columns not yet implemented: :interactions_count
+- header = %i[badge objectives strategies priority initiatives_count products_count]
+
+- table_locale = t('.table')
+
+= render 'shared/components/filtered_warning', filtered: filtered?
+
+= render 'shared/components/remote_table', header: header, collection: regional_strategies, sort_columns: sort_columns, table_locale: table_locale do |biennial_strategy|
+
+  - link = ppa_scoped_path(:theme_regional_strategy, theme, biennial_strategy)
+
+  %tr
+    %td
+      - if biennial_strategy.prioritized?
+        %span.fa-stack.small
+          .fa.fa-certificate.text-warning.fa-stack-2x
+          .fa.fa-check.fa-stack-1x.fa-stack.text-white
+
+    %td
+      - objective_name = filtered_highlighted(biennial_strategy.objective_name)
+      = link_to truncate(objective_name, escape: false), link,
+        data: { toggle: 'tooltip', placement: 'top' }, title: biennial_strategy.objective_name
+
+    %td
+      - strategy_name = filtered_highlighted(biennial_strategy.strategy_name)
+      = link_to truncate(strategy_name, escape: false, length: 80), link,
+        data: { toggle: 'tooltip', placement: 'top' }, title: biennial_strategy.strategy_name
+
+    %td.text-center
+      = biennial_strategy.priority_index || '-'
+
+    %td.text-center
+      = biennial_strategy.initiatives_count
+
+    %td.text-center
+      = biennial_strategy.products_count
+
+.pull-left
+  %span.fa-stack.small
+    .fa.fa-certificate.text-warning.fa-stack-2x
+    .fa.fa-check.fa-stack-1x.fa-stack.text-white
+
+  %span.text-muted
+    = t('.prioritized_strategy')

@@ -1,0 +1,26 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = t('.title')
+
+.row
+  .col-12
+    - if can?(:create, solvability_report)
+      = link_to t('.commands.new'), new_operator_reports_solvability_report_path, class: 'btn btn-primary pull-right'
+
+%hr{'aria-hidden':'true'}
+
+.row
+  .col-12
+    - if solvability_reports.present?
+      %ul.tickets-list
+        = render solvability_reports
+    - else
+      .row
+        %i.col-md-12.text-center
+          = t('.empty')
+
+    .mt-4.clearfix
+      .float-right
+        = paginate solvability_reports

@@ -1,0 +1,38 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+
+%h2
+  = t('.title')
+
+= form_for admin_mobile_apps_path, method: :get do |f|
+
+  .card.card-custom
+
+    .card-header
+
+      .row
+
+        .col-12
+
+          %h3.card-title
+            = t('.filters.title')
+
+    .card-block
+
+      = render 'shared/mobile_apps/filters', f: f
+
+      - if mobile_apps.present?
+
+        %ul.tickets-list.mt-4
+
+          = render partial: 'shared/mobile_apps/mobile_app', collection: mobile_apps
+
+      - else
+
+        .row
+          %i.col-md-12.text-center
+            = t('.empty')
+
+      = render 'shared/components/table/index_count', collection: mobile_apps, filtered_count: filtered_count, total_count: total_count, filtered: filtered?

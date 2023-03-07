@@ -1,0 +1,12 @@
+es:
+
+  shared:
+
+    tickets:
+
+      reopen_tickets:
+
+        form:
+          justification: Justificación 
+          hint: Explique la razón de la solicitud 
+          save: Enviar

@@ -1,0 +1,8 @@
+- if show_warning_sefaz_migration?
+  - title = t('warnings.show_warning_sefaz_migration.title')
+  - message = t('warnings.show_warning_sefaz_migration.message')
+  
+
+
+  = hidden_field_tag :modal_title, title
+  = hidden_field_tag :modal_message, message

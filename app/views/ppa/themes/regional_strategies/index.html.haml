@@ -1,0 +1,46 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.font-weight-bold
+  = axis.name
+
+%h3
+  = t('.title', theme: theme.name, biennium: current_biennium.to_s, region: current_region.name.titleize_with_accents)
+
+%hr.border-2
+
+%h4
+  = t('.regional_strategies')
+
+.row.mt-4
+  .col-md-12
+
+    %ul.nav.nav-tabs.border-bottom-0
+      %li.nav-item
+        = link_to t('.guidelines'), '#strategies', class: 'nav-link active border-bottom-0'
+
+      %li.nav-item
+        = link_to t('.proposals'), ppa_scoped_path(:theme_proposals, theme), class: 'nav-link'
+
+    .card.rounded.border-top-0
+      .card-block.tab-content
+
+        -# não devemos usar as classes de tab, uma vez que estamos carregando navegacionalmente
+        -# apenas um conteúdo.
+        -# .tab-pane.active#strategies{'data-toggle': 'remote-content-with-filter-bar', role: 'tabpane'}
+        .strategies{ 'data-toggle': 'remote-content-with-filter-bar' }
+
+          .remote-content{ 'data-remote-content': controller_name }
+
+            - filter_new_command = { title: t('.commands.new'), path: nil, permission: false }
+            - filter_commands = { 'new': ppa_scoped_path(:theme_regional_strategies, theme) }
+            - filter_options = { filter_id: :ppa_theme_regional_strategies, filter_path: ppa_scoped_path(:theme_regional_strategies, theme), commands: filter_commands }
+
+            = render "ppa/themes/regional_strategies/filters", filter_options
+
+            - # o index é carregado como remote-content e está na partial ./_index
+
+            .remote-content-result.mt-4{ 'data-remote-content-result': controller_name }
+
+              .p-2.text-center.text-muted
+                .fa.fa-spin.fa-refresh.mx-1
+                = t('messages.loading')

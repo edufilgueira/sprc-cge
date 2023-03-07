@@ -1,0 +1,11 @@
+.available-locales
+
+  - can_edit = can?(:edit, resource)
+  - I18n.available_locales.each do |locale|
+    - edit_url = can_edit ? url_for([:edit, :admin, resource, only_path: true, locale: locale]) : '#!'
+    = link_to edit_url, class: 'ml-2 text-muted small' do
+      - if resource.translated_locales.include?(locale)
+        %i.fa.fa-check.text-success
+      - else
+        %i.fa.fa-ban.text-danger
+      = locale.upcase

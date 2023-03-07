@@ -1,0 +1,35 @@
+es:
+  activerecord:
+    attributes:
+      integration/constructions/dae:
+        id_obra: 'ID de la obra'
+        codigo_obra: 'Código de la obra'
+        contratada: 'Contratada'
+        data_fim_previsto: 'Fin previsto'
+        data_inicio: 'Inicio de la obra'
+        data_ordem_servico: 'Fecha de la ordem de servicio'
+        descricao: 'Descripción'
+        dias_aditivado: 'Días con aditivo'
+        latitude: 'Latitud'
+        longitude: 'Longitud'
+        municipio: 'Municopio'
+        numero_licitacao: 'Número de la licitación'
+        numero_ordem_servico: 'Número de la orden de servicio'
+        numero_sacc: 'Numero SACC'
+        percentual_executado: 'Porcentaje ejecutada'
+        prazo_inicial: 'Plazo inicial'
+        secretaria: 'Secretaría/Órgano'
+        status: 'Situación'
+        tipo_contrato: 'Tipo do contrato'
+        valor: 'Valor'
+        dae_status: Situación
+        dae_status: Situación
+
+  integration/constructions/dae:
+    dae_statuses:
+      waiting: 'Aguardando OS'
+      canceled: 'Cancelada'
+      done: 'Concluida'
+      in_progress: 'En Ejecución'
+      finished: 'Finalizada'
+      paused: 'Paralizada'

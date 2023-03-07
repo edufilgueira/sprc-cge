@@ -1,0 +1,188 @@
+@import 'base/variables';
+@import 'bootstrap/variables';
+
+.card-custom {
+
+  margin-top: 20px;
+
+  .card-header {
+    background: none;
+    padding: 0;
+
+    .card-title {
+      float: left;
+      padding: 0.4em;
+      margin: 0;
+
+      font-size: 22px;
+    }
+
+    &.card-header {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      margin-top: 0.3rem;
+    }
+
+    &.card-block {
+      padding: 1.25rem;
+    }
+
+    .card-commands {
+      float: right;
+
+      padding: 0.3em;
+
+      a {
+        font-size: 13px;
+      }
+
+      .btn {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    }
+  }
+
+  h2.card-title {
+    margin-bottom: 0;
+
+    font-size: 21px;
+  }
+
+  h3.card-title {
+    margin-bottom: 0;
+
+    font-size: 20px;
+  }
+
+  h3.card-subtitle,
+  h4.card-subtitle {
+    margin-bottom: 0;
+    margin-top: 10px;
+
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+.card-collapsable {
+
+  .card-header {
+    background: none;
+    padding: 0;
+  }
+
+  h3.card-title {
+    margin-bottom: 0;
+    padding: 0.75rem 1.25rem;
+
+    font-size: 20px;
+  }
+
+  .card-collapse-icons {
+    float: right;
+
+    a {
+        display: block;
+        padding: 0.7rem 1.2rem 0.6rem 1.75rem;
+        text-align: right;
+
+        color: $text-gray;
+        text-decoration: none;
+
+      .fa.card-collapse-icon-down {
+        display: none;
+      }
+
+      &.collapsed {
+        .fa.card-collapse-icon-down {
+          display: initial;
+        }
+
+        .fa.card-collapse-icon-up {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.collapse-icons {
+  a[aria-expanded=true] {
+    .fa.card-collapse-icon-down {
+      display: none;
+    }
+
+    .fa.card-collapse-icon-up {
+      display: initial;
+    }
+  }
+
+  a[aria-expanded=false] {
+    .fa.card-collapse-icon-down {
+      display: initial;
+    }
+
+    .fa.card-collapse-icon-up {
+      display: none;
+    }
+  }
+}
+
+.card-green {
+  .card-header {
+    background-color: $app-green;
+    color: white;
+
+    .border-right {
+      border-right-color: $app-green-darken !important;
+    }
+  }
+}
+
+.card.card-collapse {
+  background-color: $app-salmon-light;
+  margin-bottom: 1rem;
+
+  .card-header {
+    border-bottom: none;
+    margin-left: 0;
+
+    .card-title {
+      padding: 0;
+      width: 100%;
+
+      a {
+        color: $app-yellow;
+        font-weight: bold;
+        width: 100%;
+        text-align: left;
+
+        &:focus {
+          box-shadow: none;
+        }
+
+        .fa {
+          float: right;
+        }
+      }
+
+    }
+  }
+
+  .card-block {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+}
+
+
+.card-md-4 {
+  max-width: calc(calc(100% - 60px) / 3);
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  .card-md-4 {
+    max-width: 100%;
+  }
+}

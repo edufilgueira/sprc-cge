@@ -1,0 +1,205 @@
+pt-BR:
+  shared:
+    ticket_logs:
+      confirm:
+        sou:
+          title: Manifestação confirmada
+        sic:
+          title: Solicitação de informação confirmada
+        author: '%{date} por %{author}'
+
+      change_sou_type:
+        title: 'Tipo de manifestação alterada de "%{from}" para "%{to}".'
+        responsible: 'Alterado por %{name}'
+        justification: 'Justificativa: %{justification}'
+
+      change_ticket_type:
+        title: >
+          Tipo alterado: de <b>%{from}</b> para <b>%{to}</b>
+
+        sic:
+          title: "Tipo alterado: de <b>Manifestação de ouvidoria</b> para <b>Solicitação de informação</b>"
+        sou:
+          title: "Tipo alterado: de <b>Solicitação de informação</b> para <b>Manifestação de ouvidoria</b>"
+
+      change_denunciation_type:
+        title: "Tipo de Denúncia Classificado: %{to}"
+        undefined: "Indefinido"
+
+      comment:
+        user:
+          anonymous_title: 'Comentário do cidadão anônimo'
+          title: 'Comentário de %{author}'
+
+        internal:
+          title: 'Comentário de %{author}'
+
+      share:
+        sou:
+          title: '%{name} compartilhou a manifestação com a ouvidoria %{to}'
+        sic:
+          title: '%{name} compartilhou a solicitação de informação com o comitê setorial %{to}'
+
+      delete_share:
+        sou:
+          title: '%{name} removeu o compartilhamento da manifestação %{protocol} da ouvidoria %{organ}'
+        sic:
+          title: '%{name} removeu o compartilhamento da solicitação de informação %{protocol} da ouvidoria %{organ}'
+
+      delete_forward:
+        sou:
+          title: '%{name} removeu a área interna %{acronym} da manifestação %{protocol}'
+        sic:
+          title: '%{name} removeu a área interna %{acronym} da solicitação de informação %{protocol}'
+
+      transfer:
+        sou:
+          title: '%{name} transferiu a manifestação para ouvidoria %{to}'
+        sic:
+          title: '%{name} transferiu a solicitação de informação para comitê setorial %{to}'
+
+      invalidate:
+        waiting:
+          title:
+            sou: '%{user} solicitou invalidação da manifestação %{protocol}'
+            sic: '%{user} solicitou invalidação da solicitação SIC %{protocol}'
+
+        approved:
+          title:
+            sou: 'Manifestação %{protocol} invalidada por %{user}'
+            sic: 'Solicitação de informação %{protocol} invalidada por %{user}'
+
+        rejected:
+          title:
+            sou: 'Invalidação da manifestação %{protocol} negada por %{user}'
+            sic: 'Invalidação de solicitação de informação %{protocol} negada por %{user}'
+
+      forward:
+        sou:
+          title: '%{name} envolveu área interna %{to}'
+        sic:
+          title: '%{name} envolveu área interna %{to}'
+        email: 'E-mails: %{emails}'
+
+      evaluation:
+        title: Cidadão respondeu a pesquisa de satisfação
+        search_result_title: 'Resultado da pesquisa de satisfação:'
+        satisfaction_average: 'Média da satisfação: <b>%{grade}</b>'
+        sou:
+          perception_before: 'Percepção da ouvidoria antes de realizar a manifestação: <b>%{grade}</b>'
+          perception_after: 'Percepção da ouvidoria depois de realizar a manifestação: <b>%{grade}</b>'
+        sic:
+          perception_before: 'Percepção do sic antes de realizar a manifestação: <b>%{grade}</b>'
+          perception_after: 'Percepção do sic depois de realizar a manifestação: <b>%{grade}</b>'
+        demand_resolution: 'Resolução da demanda: <b>%{grade}</b>'
+
+      reopen:
+        sou:
+          title:
+            zero: '%{responsible} reabriu a manifestação'
+            one: '%{responsible} reabriu a manifestação (%{count} vez)'
+            other: '%{responsible} reabriu a manifestação (%{count} vezes)'
+        sic:
+          title:
+            zero: '%{responsible} reabriu a solicitação'
+            one: '%{responsible} reabriu a solicitação (%{count} vez)'
+            other: '%{responsible} reabriu a solicitação (%{count} vezes)'
+
+      extension:
+        in_progress:
+          title: '%{requester} solicitou prorrogação de prazo'
+          chief_responsible: 'Enviado para o dirigente - %{organ}'
+          coordination_responsible: 'Enviado para Coordenação de Ouvidoria'
+          status:
+
+        rejected:
+          title: '%{user} recusou a prorrogação do prazo'
+
+        cancelled:
+          title: '%{user} cancelou a prorrogação do prazo'
+
+        approved:
+          title: '%{user} aprovou a prorrogação do prazo'
+
+      occurrence:
+        title: '%{date} por %{title}'
+
+      appeal:
+        title:
+          zero: 'Cidadão solicitou recurso de SIC'
+          one: 'Cidadão solicitou recurso em %{count}ª instância de SIC'
+          other: 'Cidadão solicitou recurso em %{count}ª instância de SIC'
+
+      attendance_response:
+        title:
+          success: Retorno realizado com sucesso
+          failure: Tentativa de retorno sem sucesso
+        subtitle: '%{date} por %{title}'
+
+      attendance_finalized:
+        title: Atendimento finalizado
+
+      create_attachment:
+        title: "%{name} adicionou um anexo"
+
+      destroy_attachment:
+        title: "%{name} removeu um anexo"
+
+      create_classification:
+        title:
+          sou: "%{name} classificou a manifestação %{protocol}"
+          sic: "%{name} classificou a solicitação %{protocol}"
+
+      update_classification:
+        title:
+          sou: "%{name} alterou a classificação da manifestação %{protocol}"
+          sic: "%{name} alterou a classificação da solicitação %{protocol}"
+
+      edit_department_deadline:
+        title: '%{organ_acronym} editou o prazo de %{department_acronym} para %{deadline_ends_at}'
+
+      priority:
+        title: "%{name} marcou como urgente"
+
+      attendance_updated:
+        title: '%{name} editou o atendimento'
+
+      answer_updated:
+        title: '%{name} editou a resposta da %{acronym}'
+
+      answer_cge_approved:
+        title: '%{name} aprovou a resposta da %{acronym}'
+
+      answer_cge_rejected:
+        title: '%{name} rejeitou a resposta da %{acronym}'
+
+      change_answer_certificate:
+        title: '%{name} alterou a certidão negativa'
+
+      update_ticket:
+        title:
+          sou: '%{name} alterou as informações da manifestação'
+          sic: '%{name} alterou as informações da solicitação'
+
+        attributes_changed: 'Dados que foram alterados: %{attributes}'
+
+      edit_ticket_description:
+        title:
+          Parte do texto da manifestação foi alterado para proteger a identificação do cidadão
+
+      ticket_protect_attachment:
+       title: 'Anexo Protegido - Arquivo: %{filename}'
+
+      create_sou_evaluation_sample:
+        sou:
+          title: 'Manifestação %{protocol} foi selecionada na amostragem de avaliação de respostas da CGE'
+
+      create_average_internal_evaluation:
+        sou:
+          title: 'A nota da avaliação interna dessa resposta para a Ouvidoria %{organ} foi: %{average}'
+        sic:
+          title: 'A nota da avaliação interna dessa resposta para o %{organ} foi: %{average}'
+
+      update_average_internal_evaluation:
+        sic:
+          title: 'A nota da reavaliação interna dessa resposta para o %{organ} foi: %{average}'

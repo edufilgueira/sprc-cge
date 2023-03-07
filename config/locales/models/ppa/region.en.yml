@@ -1,0 +1,19 @@
+en:
+  activerecord:
+    models:
+      ppa/region:
+        one: Planning region
+        other: Planning regions
+
+    attributes:
+      ppa/region:
+        themes: Themes
+        strategies: Strategies
+        proposals: Proposals
+
+
+    errors:
+      models:
+        ppa/region:
+          attributes:
+            name: Name of the region must be informed 

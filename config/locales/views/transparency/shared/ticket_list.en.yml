@@ -1,0 +1,21 @@
+en:
+  transparency:
+    shared:
+      ticket_list:
+        sou:
+          title: Public manifestations
+          description: >
+            Follow the most recent public manifestations created by the citizens in the State of Ceará. Besides consulting the history of each manifestation, you can contribute to those still pending. It is important to remember that all public manifestations may be suggestions, praise, queries, claims and complaints related to public services – which the Ombudsman is in charge of attending and responding to.
+          see_more_description: >
+            See all public manifestations registered on the Ceará Transparente Portal. 
+          see_more: See all public manifestations.
+          empty: No requests
+
+        sic:
+          title: Public Requests of Access to Information
+          description: >
+            On this field, you can follow all ongoing requests of access to information and visualize which sectoral body is involved in providing the response.
+          see_more_description: >
+            See all public requests of access available on the Ceará Transparente portal
+          see_more: See all public requests
+          empty: No requests

@@ -1,0 +1,28 @@
+- form_name = "ppa_revision_review_problem_situation_strategy"
+- table_alias = "[region_themes_attributes][0]"
+- tag_name = "#{form_name}#{table_alias}"
+
+.card
+  = render partial: 'multistep_flow'
+
+  .row
+    .col-lg-12
+      = button_to_abort(t('.button_to_abort'))
+
+  -# form do segundo nível da hierarquia: Region Theme
+
+  = simple_form_for resource, html: { method: :post, id: 'msform' } do |ff|
+
+    -# os hiddens são preenchidos via js nos steps de região e tema
+    = hidden_field_tag "#{tag_name}[region_id]", '', class: 'hidden_region_id'
+    = hidden_field_tag "#{tag_name}[theme_id]", '', class: 'hidden_theme_id'
+
+    %fieldset
+      = render multistep_path(:region), f: ff
+
+    %fieldset
+      = render multistep_path(:theme), f: ff
+
+    %fieldset
+      = render partial: multistep_path(:revision), locals: { f: ff, parent_form_alias: tag_name }
+

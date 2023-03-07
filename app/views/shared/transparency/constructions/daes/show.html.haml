@@ -1,0 +1,96 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, dae.title
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = dae.title
+
+        .card-commands
+          = render 'shared/tickets/components/btn_print'
+
+
+      .card-block
+
+        .row
+          .col-12
+            = content_with_label(dae, :descricao)
+
+        .row
+          .col-12.col-sm-4
+            = content_with_label(dae, :id_obra)
+          .col-12.col-sm-4
+            = content_with_label(dae, :codigo_obra)
+          .col-12.col-sm-4
+            = content_with_label(dae, :contratada)
+
+        .row
+          .col-12.col-sm-4
+            = content_with_label(dae, :municipio)
+          .col-12.col-sm-4
+            = content_with_label(dae, :secretaria)
+          .col-12.col-sm-4
+            = content_with_label(dae, :valor)
+
+        .row
+          .col-12.col-sm-4
+            = content_with_label(dae, :status)
+          .col-12.col-sm-4
+            = content_with_label(dae, :latitude)
+          .col-12.col-sm-4
+            = content_with_label(dae, :longitude)
+
+        .row
+          .col-12.col-sm-4
+            = content_with_label(dae, :numero_licitacao)
+          .col-12.col-sm-4
+            = content_with_label(dae, :numero_ordem_servico)
+          .col-12.col-sm-4
+            .content-with-label
+              %p.content-label
+                = dae.class.human_attribute_name(:numero_sacc)
+
+              %p.content-value
+                - contract = Integration::Contracts::Contract.find_by(isn_sic: dae.numero_sacc)
+                - convenant = Integration::Contracts::Convenant.find_by(isn_sic: dae.numero_sacc)
+
+                - if contract.present?
+                  = link_to dae.numero_sacc, transparency_contracts_contract_path(contract)
+                - elsif convenant.present?
+                  = link_to dae.numero_sacc, transparency_contracts_convenant_path(conve nant)
+                - else
+                  = dae.numero_sacc
+        .row
+          .col-12.col-sm-4
+            = content_with_label(dae, :tipo_contrato)
+          .col-12.col-sm-4
+            = content_with_label(dae, :prazo_inicial)
+          .col-12.col-sm-4
+            .content-with-label
+              %p.content-label
+                = dae.class.human_attribute_name(:percentual_executado)
+
+              %p.content-value
+                = number_to_percentage(dae.percentual_executado, precision: 2)
+
+        .row
+          .col-12.col-sm-3
+            = content_with_label(dae, :data_ordem_servico)
+          .col-12.col-sm-3
+            = content_with_label(dae, :data_inicio)
+          .col-12.col-sm-3
+            = content_with_label(dae, :data_fim_previsto)
+          .col-12.col-sm-3
+            = content_with_label(dae, :dias_aditivado)
+
+= render 'shared/transparency/constructions/daes/measurements', measurements: dae.measurements
+
+= render 'shared/transparency/constructions/daes/photos', measurements: dae.photos
+
+= render 'shared/transparency/followers/new', resource: dae

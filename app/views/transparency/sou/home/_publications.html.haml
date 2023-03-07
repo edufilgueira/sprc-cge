@@ -1,0 +1,15 @@
+.card.mt-4{ 'aria-labelledby': 'publications' }
+  .card-block
+    %h4.card-text.text-justify
+      = t('.title')
+
+    .card-text.text-justify
+      = t('.description')
+
+    %hr{'aria-hidden': 'true'}
+
+      .list-group-flex.justify-content-start.align-items-start.pl-0
+        = link_to '/portal-da-transparencia/paginas/diagnostico-das-manifestacoes-da-ouvidoria-da-secretaria-do-trabalho-e-desenvolvimento-social-do-estado-do-ceara-stds-com-foco-na-resolubilidade', target: '_blank' do
+          %i.fa.fa-file-pdf-o.mr-1
+          = t('.diagnosis.title')
+

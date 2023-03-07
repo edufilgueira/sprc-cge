@@ -1,0 +1,3 @@
+- topics = organ[:topics]
+- series_name = t('.series_name')
+.chart{ data: { title: t('.name'), unit: series_name, series_name: [series_name], series_data_keys: [stats_organ_topics_show_serie_keys(topics)], series_data_values: [stats_organ_topics_show_serie_values(topics)], type: :pie }}

@@ -1,0 +1,50 @@
+pt-BR:
+  ceara_app:
+    sessions:
+      form:
+        title: Acesse seu perfil
+        confirmation_instructions: Reenviar instruções de confirmação de perfil
+        forgot: Esqueceu sua senha?
+        login:
+          title: Acesse seu perfil
+          action: Fazer login
+          facebook: Fazer login com Facebook
+
+        register:
+          action: Ainda não possui um perfil?
+
+        identified_login:
+          sou:
+            title: Manifestação sem perfil
+            description: Entre em contato sem perfil. Escreva mesmo sem ter perfil, mas informando seus dados pessoais.
+            action: Realizar manifestação sem perfil
+          sic:
+            title: Solicitação sem perfil
+            description: Envie uma Solicitação sem precisar possuir um perfil, mas informando seus dados pessoais.
+            action: Realizar solicitação sem perfil
+
+        protocol_login:
+          title: Manifestação anônima
+          action: Realizar manifestação anônima
+
+          description: >
+            Entre em contato de modo anônimo. Você pode enviar uma manifestação anônima. Não precisa de cadastro, nem informar dados pessoais.
+
+      new:
+        title: Acesse seu perfil
+
+        ticket_types:
+
+          sic:
+            title: Nova solicitação de Acesso à Informação
+            description: 'Para solicitar acesso a informações, você precisa acessar a plataforma com seu perfil.'
+
+          sou:
+            title: Nova manifestação de Ouvidoria
+            description: 'Para entrar em contato com Ouvidoria Digital, você pode acessar seu perfil, identificar-se sem precisar de um perfil ou continuar de forma anônima.'
+
+      create:
+        title: Acesse seu perfil
+        ticket_types:
+          sou:
+            title: Nova manifestação de Ouvidoria

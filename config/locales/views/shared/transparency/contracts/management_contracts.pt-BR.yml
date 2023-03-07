@@ -1,0 +1,145 @@
+pt-BR:
+  shared:
+    transparency:
+      contracts:
+        management_contracts:
+
+          index:
+            title: Contratos de gestão
+            description: Consulte aqui qualquer contrato de gestão firmado pelo Estado. Veja quem foi contratado, qual o serviço que deve ser feito, quanto já foi pago, a data de conclusão etc.
+
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Controladoria e Ouvidoria Geral do Estado - CGE</p>
+              <p>Sistema de Acompanhamento de Contratos e Convênio - SACC</p>
+
+            chart:
+              valor_atualizado_concedente:
+                unit: 'Soma dos valores dos contratos ativos: R$'
+                title: 'Valores dos contratos ativos no mês'
+
+                creditor:
+                  title: Soma dos valores dos contratos ativos por fornecedor
+                manager:
+                  title: Soma dos valores dos contratos ativos por unidades
+                tipo_objeto:
+                  title: Soma dos valores dos contratos ativos por tipo de objeto
+
+            charts:
+              tabs:
+                creditor:
+                  title: Por fornecedor
+                manager:
+                  title: Por unidade
+                tipo_objeto:
+                  title: Por tipo de objeto
+
+            filters:
+              title: Consulta avançada
+              search:
+                hint: |
+                  Você pode buscar por parte do Nº SACC, Nº do Contrato, nome da
+                  unidade, nome ou CNPJ do contratado e partes do objeto do contrato.
+                  Exemplos: 'sec saude', 'educacao', 'merenda', entre outros.
+
+              select:
+                cod_gestora: Todas
+
+            counts:
+              contracts_count:
+                title: Quantidade de contratos filtrados
+              contracts_sum:
+                title: Valor atualizado dos contratos filtrados
+                tolltip: É o valor original dos contratos acrescido do valor de suas alterações – aditivos ou apostilamentos – considerando todo o período de vigência do instrumento contratual.
+
+            table:
+              summary: Lista de contratos de gestão
+              header:
+                data_assinatura: Data de assinatura
+                isn_sic: Nº SACC
+                num_contrato: Nº Contrato
+                descricao_objeto: Objeto
+                valor_atualizado_concedente: Valor atualizado <i class="fa fa-question-circle" title="É o valor original dos contratos acrescido do valor de suas alterações – aditivos ou apostilamentos – considerando todo o período de vigência."></i>
+                calculated_valor_empenhado: Valor empenhado <i class="fa fa-question-circle" title="É o valor total dos empenhos realizados, considerando todo o período de vigência do instrumento contratual"></i>
+                calculated_valor_pago: Valor pago <i class="fa fa-question-circle" title="É o valor total dos pagamentos realizados, considerando todo o período de vigência do instrumento contratual."></i>
+                cod_gestora: Secretaria/Órgão
+                cod_concedente: Contratante
+                creditor: Contratado
+
+            stats:
+              title: Principais números relacionados aos contratos de gestão
+              count: 'Quantidade de contratos ativos em <strong>%{date}</strong>'
+              valor_atualizado_concedente: 'Soma dos valores ativos em <strong>%{date}</strong>'
+
+          show:
+            attachments_url: 'Documentos relacionados à Prestação de Contas'
+            resource_title: 'Nº SACC: %{sacc}'
+            descricao_url: Íntegra do contrato
+            descricao_url_ddisp: Processo de dispensa de licitação
+            descricao_url_inexg: Processo de inexibilidade de licitação
+            edital_url: Ver edital
+            cod_secretaria: Órgão/Secretaria
+
+            additives:
+              title: Aditivos
+              empty: Não existem aditivos registrados
+              table:
+                heads:
+                  descricao_tipo_aditivo: Tipo
+                  data_termino: Data Término
+                  valor: Valor
+                  descricao_observacao: Objeto
+                  descricao_url: Íntegra
+
+            adjustments:
+              title: Ajustes
+              empty: Não existem ajustes registrados
+              table:
+                heads:
+                  descricao_tipo_ajuste: Descrição tipo
+                  descricao_observacao: Objeto
+                  data_termino: Data Término
+                  valor_ajuste_destino: Valor
+                  descricao_url: Íntegra
+
+            financials:
+              title: Nota de Empenho e Notas de Pagamentos
+              empty: Não existem nota de empenho e notas de pagamentos registradas
+              table:
+                export_file_name: 'pagamentos-%{id}'
+                heads:
+                  num_documento: Nota de Empenho
+                  data_documento: Data de Empenho
+                  valor_documento: Empenho
+                  num_pagamento: Nota de Pagamento
+                  data_pagamento: Data de Pagamento
+                  valor_pagamento: Pagamento
+
+            infringements:
+              title: Inadimplências
+              empty: Não existem inadimplências registradas
+              table:
+                heads:
+                  cod_financiador: Financiador
+                  descricao_entidade: Entidade
+                  descricao_financiador: Descrição financiador
+                  descricao_motivo_inadimplencia: Motivo
+                  data_lancamento: Data lançamento
+                  valor_atualizado_total: Valor
+
+            transfer_bank_orders:
+              empty: Não existem ordens de transferência bancária para este convênio
+
+            accountability:
+              empty: Não existe informação da prestação de contas deste convênio
+              legend: |
+                <p>Situações de Prestação de Contas:</p>
+                <ul>
+                  <li><strong>Aguardando a Prestação de Contas</strong>: Ainda não foi enviada a Prestação de Contas;</li>
+                  <li><strong>Prestação de Contas não apresentada</strong>: Expirou o prazo de apresentar a Prestação de Contas;</li>
+                  <li><strong>Aguardando análise de Prestação de Contas</strong>: Prestação de contas enviada, mas a Concedente não iniciou a análise;</li>
+                  <li><strong>Prestação de Contas em Análise</strong>: Prestação de Contas enviada e o Concedente iniciou a análise;</li>
+                  <li><strong>Prestação de Contas não analisadas</strong>: Expirou o prazo de análise, por parte da Concedente, da Prestação de Contas;</li>
+                  <li><strong>Aprovada</strong>: Prestação de contas aprovada;</li>
+                  <li><strong>Reprovada</strong>: Prestação de contas reprovada;</li>
+                </ul>

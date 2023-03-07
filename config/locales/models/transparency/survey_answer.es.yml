@@ -1,0 +1,24 @@
+es:
+  activerecord:
+    models:
+      transparency/survey_answer: 'Encuesta de satisfacción'
+
+    attributes:
+      transparency/survey_answer:
+        email: Correo Eletrónico
+        message: Mensaje
+
+      transparency/survey_answer/answer:
+        very_dissatisfied: Muy insatisfecho
+        somewhat_dissatisfied: Un poco insatisfecho
+        neutral: Neutro
+        somewhat_satisfied: Un poco satisfecho
+        very_satisfied: Muy satisfecho
+
+  transparency/survey_answer:
+    answers:
+      very_dissatisfied: Muy insatisfecho
+      somewhat_dissatisfied: Un poco insatisfecho
+      neutral: Neutro
+      somewhat_satisfied: Un poco satisfecho
+      very_satisfied: Muy satisfecho

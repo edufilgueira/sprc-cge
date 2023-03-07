@@ -1,0 +1,52 @@
+pt-BR:
+  transparency:
+    notification:
+      integration:
+        contracts:
+          convenant_follow:
+
+            subject: 'O convênio que você segue foi atualizado'
+
+            body:
+              title: >
+                <p>Olá! O Ceará Transparente tem novidades. O convênio que você segue foi atualizado. Veja o que foi atualizado abaixo:</p>
+
+              description: >
+                <hr>
+                <strong>Objeto</strong>
+                <p>%{description}</p>
+                <hr>
+                <strong>Alterações</strong>
+
+              attribute_changed: >
+                <p> - %{name_changed}: de %{attr_origin} para %{attr_changed}</p>
+
+              links: >
+                <hr>
+                <p>Acesse este <a href="%{convenant_url}">convênio</a> e veja mais detalhes. E para deixar de seguir este convênio clique <a href="%{unsubscribe_url}">aqui</a>.</p>
+
+              associations_changed:
+                financials:
+                  one: >
+                    <p> - 1 nota de empenho/pagamento adicionada</p>
+                  other: >
+                    <p> - %{count} notas de empenho/pagamento adicionadas</p>
+
+                additives:
+                  one: >
+                    <p> - 1 aditivo adicionado</p>
+                  other: >
+                    <p> - %{count} aditivos adicionados</p>
+
+                adjustments:
+                  one: >
+                    <p> - 1 ajuste adicionado</p>
+                  other: >
+                    <p> - %{count} ajustes adicionados</p>
+
+                transfer_bank_orders:
+                  one: >
+                    <p> - 1 ordem bancária de transferência adicionada</p>
+                  other: >
+                    <p> - %{count} ordens bancárias de transferência adicionadas</p>
+

@@ -1,0 +1,37 @@
+en:
+  shared:
+    transparency:
+      results:
+        thematic_indicators:
+          index:
+            title: Thematic indicators 
+            description: Here you can consult information on thematic indicators by searching by axis, theme, organ and indicators
+
+            filters:
+              title: Consultation
+              search_placeholder: 'Search by indicator, result, axis, theme and organ'
+
+            table:
+              summary: List of thematic indicators
+              header:
+                descricao_eixo: Axis
+                descricao_tema: theme
+                sigla: Organ
+                indicator: Indicator
+                unidade: Unit
+
+              status:
+                done: Realised value
+                scheduled: Set value
+
+            subtitle:
+              title: 'Subtitle:'
+              done: Realised value
+              todo: Set value
+
+
+            source: 'Source: Management Planning Secretariat; Monitoring Actions and Priority Projects (Mapp GPR) - WebMapp'
+
+          show:
+            valores_realizados:
+              year: Year

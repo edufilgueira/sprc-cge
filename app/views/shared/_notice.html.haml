@@ -1,0 +1,10 @@
+- if notice.present? and !notice_in_exception_list?
+
+  .alert.alert-dismissible.fade.show.alert-success.no-print{ role: 'alert' }
+
+    %button.close{ type: 'button', 'data-dismiss': 'alert', 'aria-hidden': 'true' }
+      %span{ 'aria-hidden': 'true' }
+        = raw('&times;')
+
+    -# preservando espaços em branco. útil para quebra de linha e indentação.
+    %span{ style: 'white-space: pre-wrap' }<= notice

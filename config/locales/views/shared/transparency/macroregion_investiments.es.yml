@@ -1,0 +1,58 @@
+es:
+  shared:
+    transparency:
+
+      macroregion_investiments:
+
+        index:
+          title: Inversiones por macrorregiones
+          description: >
+            Consulte aquí las inversiones del Estado por macrorregiones. 
+            Vea las mayores inversiones por región, poder y año. 
+
+          chart:
+            valor_lei:
+              unit: 'Valor total en R$'
+              title: 'Valor total'
+
+          charts:
+            tabs:
+              ano_exercicio:
+                title: Año
+              descricao_regiao:
+                title: Macrorregión 
+              descricao_poder:
+                title: Poder
+
+
+          filters:
+            title: Consulta avanzada
+
+          counts:
+            macroregion_investiments_sum:
+              title: Valor del presupuesto actualizado de las inversiones filtradas 
+
+          table:
+            summary: Lista de inversiones
+            header:
+              descricao_poder: Poder
+              descricao_regiao: Macrorregión
+              valor_lei: Presupuesto Inicial
+              valor_lei_creditos: Presupuesto Actualizado
+              valor_empenhado: Valor Comprometido
+              valor_pago: Valor Pago
+              perc_pago_calculated: '% Pago'
+
+          stats:
+            title: Principales numeros relacionados con las inversiones 
+            count: 'Cantidade de inversiones en <strong>%{date}</strong>'
+            valor_lei: 'Inversiones por macrorregiones en <strong>%{date}</strong>'
+
+          source: 'Fuente de Datos: Secretaría del Planeamento y Gestión; Monitoreo de Acciones y Proyectos Prioritários (Mapp GPR) - WebMapp'
+
+        show:
+          descricao_url: Íntegra de la inversión 
+          descricao_url_ddisp: Proceso de dispensa de licitación
+          descricao_url_inexg: Proceso de inexigibilidad de licitación
+          edital_url: Ver convocatoria
+

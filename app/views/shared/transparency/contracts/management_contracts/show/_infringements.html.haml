@@ -1,0 +1,49 @@
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.title')
+
+      .card-block
+
+        - if infringements.present?
+          %table.table.table-hover.table-sm.table-bordered.bg-faded{summary: t('.summary')}
+
+            %thead
+
+              %tr
+
+                - heads = [:cod_financiador, :descricao_entidade, :descricao_financiador, :descricao_motivo_inadimplencia, :data_lancamento, :valor_atualizado_total]
+
+                - heads.each do |head|
+                  %th
+                    = t(".table.heads.#{head}")
+
+            %tbody
+
+              - infringements.each do |infringement|
+                %tr
+                  %td
+                    = infringement.cod_financiador
+                  %td
+                    = infringement.descricao_entidade
+                  %td
+                    = infringement.descricao_financiador
+                  %td
+                    = infringement.descricao_motivo_inadimplencia
+                  %td
+                    = l(infringement.data_lancamento, format: :long)
+                  %td.w-15
+                    = number_to_currency(infringement.valor_atualizado_total)
+
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')

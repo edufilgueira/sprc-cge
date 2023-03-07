@@ -1,0 +1,11 @@
+.col-md-6.col-lg-4.col-sm-12.pb-3
+
+  = link_to operator_tickets_path(ticket_type: user_type, internal_status: internal_status, organ_association: organ_association, without_denunciation: !current_user.sectoral_denunciation?, expired: true) do
+
+    .operator-home-card{'data-internal-status': 'partial_answer_expired'}
+
+      %h3.operator-home-card-title
+        = t(".title")
+
+      %p.operator-home-card-count
+        = send("partial_answer_expired_count", user_type, internal_status, organ_association)

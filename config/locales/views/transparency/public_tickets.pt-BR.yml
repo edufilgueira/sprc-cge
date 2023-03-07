@@ -1,0 +1,64 @@
+pt-BR:
+
+  transparency:
+
+    public_tickets:
+
+      index:
+        sic:
+          title: Solicitações públicas
+          description: Solicitações publicizadas pelos cidadãos
+        sou:
+          title: Manifestações públicas
+          description: Manifestações publicizadas pelos cidadãos
+
+
+        table:
+          summary: Lista paginada com todos as manifestações/solicitações públicas
+          header:
+            parent_protocol: Protocolo
+            sou_type: Tipo
+            organs: Órgão(s)
+            internal_status: Situação
+            description: Descrição
+            deadline: Prazo
+            created_at: Criado em
+            updated_at: Última atualização
+
+
+      filters:
+        select:
+          sou_type: Tipo de manifestação
+          organ: Órgão
+          topic: Assunto
+          theme: Tema
+
+      show:
+        sic:
+          title: Solicitação pública
+          description:
+            title: Descrição da solicitação
+        sou:
+          title: Manifestação pública
+          description:
+            title: Descrição da manifestação
+
+        title:
+          follows: Seguir
+
+        attachments:
+          title: Anexos
+
+      comments:
+        title: Comentários
+
+      likes:
+        delete_form:
+          title: Curtir
+        new_form:
+          title: Curtir
+
+      answers:
+        title: Resposta(s)
+        empty: Nenhuma resposta até o momento
+        replies_received: "%{answers_count} de %{children_count} resposta(s)"

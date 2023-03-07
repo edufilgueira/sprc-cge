@@ -1,0 +1,11 @@
+.content-detail
+  .card.card-custom
+    .card-header
+      %h2.card-title
+        = t('.title', ppa: ppa_plan_revising.name)
+
+    .card-block
+      %p
+        = t('.description', email: current_ppa_admin.email)
+      %p
+        = t('.wait')

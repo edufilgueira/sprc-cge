@@ -1,0 +1,68 @@
+es:
+
+  shared:
+
+    tickets:
+
+      components:
+
+        btn_appeal:
+          appeal: Quiero solicitar recurso
+          confirm: Realmente desea solicitar recurso?
+
+        btn_reopen:
+          sou:
+            reopen: Reabrir manifestación
+            confirm: Realmente desea reabrir la manifestación?
+          sic:
+            reopen: Reabrir solicitud
+            confirm: Realmente desea reabrir la solicitud?
+
+        btn_invalidate:
+          invalidate:
+            sic: Invalidar solicitud
+            sou: Invalidar manifestación
+            request: Solicitar invalidación
+          confirm: Realmente desea solicitar invalidación?
+
+        btn_print:
+          title: Impresión
+
+        btn_clone:
+          title:
+            sic: Clonar solicitud
+            sou: Clonar manifestación
+          confirm:
+            sic: Realmente desea clonar solicitud?
+            sou: Realmente desea clonar manifestación?
+
+        btn_publish_ticket:
+          sic:
+            'true': Tornar solicitud no pública
+            'false': Tornar solicitud pública
+          sou:
+            'true': Tornar manifestación no pública
+            'false': Tornar manifestación pública
+
+
+        btn_change_type:
+          title: Cambiar tipo
+          confirm: Realmente desea mudar tipo?
+
+
+        btn_edit:
+          confirm:
+            sic: Realmente desea editar solicitud?
+            sou: Realmente desea editar manifestación?
+
+        btn_feedback:
+          title: Marcar como retornado
+          confirmation: Realmente desea marcar como 'Retorno dado'?
+
+        btn_email_reply:
+          title: 'Enviar retorno al ciudadano'
+          confirmation: Realmente desea marcar como 'Retornado'?
+
+        btn_attendance_response:
+          title: Registrar retorno
+          confirm: Realmente desea registrar una nueva tentativa de retorno?

@@ -1,0 +1,64 @@
+- # a home tem uma estrura de layout muito específica, por isso sua estrutura
+- # (navbar, footer, ...) estão serparadas.
+
+- content_for :title, t('.home')
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+
+.home-background
+.home-header
+
+  .container
+
+    = render 'shared/application/top_bar'
+
+    = render 'shared/a11y/content_anchor'
+
+    %section.row.text-white.mt-lg-0.mb-lg-4{'aria-labelledby': 'title'}
+
+      .container
+        .row
+          .col-lg-8.col-12
+
+            .home-banner
+
+              .home-banner-image
+                = content_tag(:img, '', src: image_path('logos/logo-ceara-header.png'), alt: t('app.title'), class: 'right-border')
+
+              .home-banner-image.hidden-lg-down
+                = content_tag(:img, '', src: image_path('logos/badge-ceara1.png'), alt: t('app.title'))
+             
+          .col-12.col-lg-4
+
+            - global_search_options = { search_box_id: 'home', search_box_placeholder: t('messages.filters.search.label'), search_box_title: t('.search.title') }
+
+            = render 'shared/global_search', global_search_options: global_search_options
+
+
+    .hidden-lg-up.home-login
+      %p.text-center.mt-4.text-white
+        = t('.sign_in_description')
+
+      .text-center.login-mobile
+        = link_to new_user_registration_path, class: 'btn btn-white mr-4' do
+          %i.fa.fa-user.fa-btn-icon.fa-border
+          %span.small.ml-4
+            = t('.sign_up.title')
+
+        = link_to new_user_session_path, class: 'btn btn-white' do
+          %i.fa.fa-user-plus.fa-btn-icon.fa-border
+          %span.small.ml-4
+            = t('.login.title')
+
+    %nav.navbar.navbar-toggleable.white-navbar.hidden-lg-down
+      = render 'shared/navbar_menu'
+
+  = render 'shared/navbar_dropdown'
+
+  .container.mt-4
+
+    %section.row{'aria-labelledby': 'sections'}
+
+      %h3.sr-only{id: 'sections'}
+        = t('.sections.title')
+
+      = render 'cards'

@@ -1,0 +1,7 @@
+pt-BR:
+  activerecord:
+    attributes:
+      ppa/revision/review/problem_situation_strategy:
+        axis: Eixo
+        theme: Tema
+        city: Cidade

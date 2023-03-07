@@ -1,0 +1,41 @@
+- nld_item_payment_plannings = nld.nld_item_payment_plannings
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.title')
+
+      .card-block
+
+        - if nld_item_payment_plannings.present?
+          %table.table.table-hover.table-sm.table-bordered.bg-faded{summary: t('.summary')}
+
+            %thead
+
+              %tr
+
+                - heads = [:codigo_isn, :valor_liquidado]
+
+                - heads.each do |head|
+                  %th
+                    = t(".table.heads.#{head}")
+
+            %tbody
+              - nld_item_payment_plannings.each do |nld_item_payment_planning|
+                %tr
+                  %td
+                    = nld_item_payment_planning.codigo_isn
+                  %td
+                    = nld_item_payment_planning.valor_liquidado
+
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')

@@ -1,0 +1,64 @@
+es:
+
+  transparency:
+
+    public_tickets:
+
+      index:
+        sic:
+          title: Solicitudes públicas
+          description: Solicitudes publicadas por los ciudadanos
+        sou:
+          title: Manifestaciones públicas
+          description: Manifestaciones publicadas por los ciudadanos
+
+
+        table:
+          summary: Lista paginada con todas las manifestaciones y solicitudes públicas
+          header:
+            parent_protocol: Protocolo
+            sou_type: Tipo
+            organs: Órgano(s)
+            internal_status: Situación
+            description: Descripción
+            deadline: Plazo
+            created_at: Creado en
+            updated_at: Última actualización
+
+
+      filters:
+        select:
+          sou_type: Tipo de manifestación
+          organ: Órgano
+          topic: Sujeto
+          theme: Tema
+
+      show:
+        sic:
+          title: Solicitación pública
+          description:
+            title: Descripción de la solicitud
+        sou:
+          title: Manifestación pública
+          description:
+            title: Descripción de la manifestación
+
+        title:
+          follows: Seguir
+
+        attachments:
+          title: Adjuntos
+
+      comments:
+        title: Comentarios
+
+      likes:
+        delete_form:
+          title: Me gusta
+        new_form:
+          title: Me gusta
+
+      answers:
+        title: Repuesta(s)
+        empty: Ninguna repuesta
+        replies_received: "%{answers_count} de %{children_count} repuesta(s)"

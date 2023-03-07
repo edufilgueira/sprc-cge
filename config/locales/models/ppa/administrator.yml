@@ -1,0 +1,13 @@
+es:
+  activerecord:
+    models:
+      ppa/administrator:
+        one: Administrador
+        other: Administradores
+    attributes:
+      ppa/administrator:
+        name: Nombre
+        email: Corréo Electrónico
+        cpf: CPF
+        password: Contraseña
+        password_confirmation: Confirmación de contraseña

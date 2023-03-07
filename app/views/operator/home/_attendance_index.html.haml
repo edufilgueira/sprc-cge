@@ -1,0 +1,145 @@
+= form_for operator_root_path, method: :get do |f|
+
+  .row
+
+    .col-12
+      .card.card-custom
+        .card-header
+          %h2.card-title
+            = link_to t(".attendances.title"), operator_attendances_path
+
+        .card-block
+
+          .row
+            .col-12.col-lg-4
+              = label_tag(:created_at, t('.attendances.filters.range'))
+              = text_field_tag(:created_at, params[:created_at] || "#{Date.today} - #{Date.today}", data: { input: 'daterangepicker' }, class: 'form-control w-100')
+
+            .col-12.col-lg-3
+              .mt-4.pt-2
+                = f.submit t('commands.search'), class: 'btn btn-primary btn-block'
+
+
+        .card-block
+          .row
+            .col-md-3.col-lg-4.col-sm-12.pb-4
+              - service_types = [:sic_forward, :sic_completed, :sic_search]
+              - scope = attendance_scope_params(service_types, current_user)
+              = link_to operator_attendances_path(scope) do
+
+                .attendance-stats.attendance-status{'data-status': :sic}
+
+                  %h3.attendance-stats-title
+                    = t(".stats.sic")
+
+                  %p.attendance-stats-count
+                    = attendances_count(scope)
+
+            .col-md-3.col-lg-4.col-sm-12.pb-4
+              - service_types = [:sou_forward, :sou_search]
+              - scope = attendance_scope_params(service_types, current_user)
+              = link_to operator_attendances_path(scope) do
+
+                .attendance-stats.attendance-status{'data-status': :sou}
+
+                  %h3.attendance-stats-title
+                    = t(".stats.sou")
+
+                  %p.attendance-stats-count
+                    = attendances_count(scope)
+
+            .col-md-3.col-lg-4.col-sm-12.pb-4
+              - service_types = [:prank_call, :immediate_hang_up, :hang_up, :missing_data, :no_communication, :noise, :technical_problems, :incorrect_click]
+              - scope = attendance_scope_params(service_types, current_user)
+              = link_to operator_attendances_path(scope) do
+
+                .attendance-stats.attendance-status{'data-status': :incomplete}
+
+                  %h3.attendance-stats-title
+                    = t(".stats.incomplete")
+
+                  %p.attendance-stats-count
+                    = attendances_count(scope)
+
+        - if current_user.call_center_supervisor?
+          .card-block
+            .row
+              .col-md-3.col-lg-4.col-sm-12.pb-4
+                = link_to operator_attendances_path(internal_status: :waiting_confirmation) do
+
+                  .attendance-stats.attendance-status{'data-status': :waiting_confirmation}
+
+                    %h3.attendance-stats-title
+                      = t('.stats.waiting_confirmation')
+
+                    %p.attendance-stats-count-with-comment
+                      = attendances_waiting_confirmation_count
+                    %p.small-comment
+                      = t('.no_range_filter')
+
+              .col-md-3.col-lg-4.col-sm-12.pb-4
+              .col-md-3.col-lg-4.col-sm-12.pb-4
+          - #
+          - # Contagem de atendimentos retornados por operador
+          - #
+
+          - if attendance_responses_by_operator.present?
+            .row
+              .col-12.text-center
+                %h3.h5
+                  = t('.attendances.responses_count.title')
+
+            .card-block
+
+              .table-responsive
+                %table.table.table-hover.table-striped.table-sm.table-sorted
+                  %thead
+                    %tr
+                      %th{scope: 'col'}
+                        = '#'
+                      %th{scope: 'col'}
+                        = t('.attendances.responses_count.operator_name.title')
+                      %th.text-center{scope: 'col'}
+                        = t('.attendances.responses_count.responses.title')
+
+                  %tbody
+                    - attendance_responses_by_operator.each_with_index do |attendance_response, _index|
+                      %tr
+                        %th{scope: 'row'}
+                          = "#{_index + 1}º"
+                        %td
+                          = attendance_response.first
+                        %td.text-center
+                          = attendance_response.last
+
+          - #
+          - # Contagem de atendimentos por operador
+          - #
+          - if attendances_by_operator.present?
+            .row
+              .col-12.text-center
+                %h3.h5
+                  = t('.attendances.created_count.title')
+
+            .card-block
+
+              .table-responsive
+                %table.table.table-hover.table-striped.table-sm.table-sorted
+                  %thead
+                    %tr
+                      %th{scope: 'col'}
+                        = '#'
+                      %th{scope: 'col'}
+                        = t('.attendances.created_count.operator_name.title')
+                      %th.text-center{scope: 'col'}
+                        = t('.attendances.created_count.responses.title')
+
+                  %tbody
+                    - attendances_by_operator.each_with_index do |attendance, _index|
+                      %tr
+                        %th{scope: 'row'}
+                          = "#{_index + 1}º"
+                        %td
+                          = attendance.first
+                        %td.text-center
+                          = attendance.last

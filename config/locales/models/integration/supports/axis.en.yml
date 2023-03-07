@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    attributes:
+      integration/supports/axis:
+        codigo_eixo: Axis code
+        descricao_eixo: Axis description
+
+  axis:
+    select:
+      all: All axis

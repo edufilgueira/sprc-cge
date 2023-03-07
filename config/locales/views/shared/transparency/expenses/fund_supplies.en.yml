@@ -1,0 +1,74 @@
+en:
+  shared:
+    transparency:
+      expenses:
+
+        fund_supplies:
+          index:
+            title: Fund Supplies
+            description: 'Verify here the expenses on fund supplies, which are amounts granted to State servants so that they can use it in case of emergency expenditures.'
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Secretary of Finance - SEFAZ</p>
+              <p>Governmental Management System by Results - S2GPR</p>
+
+            chart:
+              calculated_valor_final:
+                unit: 'Sum of spent amounts: BRL'
+                title: 'Sums of the Statements of Agreement in the selected year.'
+
+                razao_social_credor:
+                  title: Amounts spent by creditor
+                management_unit:
+                  title: Amounts spent by management unit
+                item_despesa:
+                  title: Amounts spent by expense item
+                efeito:
+                  title: Amounts spent by effect
+
+            charts:
+              tabs:
+                razao_social_credor:
+                  title: By creditor
+                management_unit:
+                  title: By management unit
+                item_despesa:
+                  title: By expense item
+
+            filters:
+              title: Advanced search
+              search:
+                hint: |
+                  You can search by the name of secretariats, agencies, revenue type, etc. Examples: 'sec educa', 'seplag', among others.
+
+            counts:
+              filtered_count:
+                title: Quantity of fund supplies filtered
+              filtered_sum:
+                valor:
+                  title: Amount spent on the filtered fund supplies
+                valor_pago:
+                  title: Amount paid on the filtered fund supplies
+
+            table:
+              summary: List of daily rates to cities
+              header:
+                numero: Statement of Agreement
+                date_of_issue: Date of issue
+                unidade_gestora: Management Unit
+                management_unit_title: Management Unit
+                item_despesa: Expense item
+                credor: Creditor
+                valor: Amount spent
+                valor_pago: Amount paid
+
+            stats:
+              title: Main numbers related to Fund Supplies
+              count: 'Figures on <strong>%{date}</strong>'
+              valor: 'Amount spent on <strong>%{date}</strong>'
+              valor_pago: 'Amount paid on <strong>%{date}</strong>'
+
+          show:
+            contract:
+              link: '%{value}'
+              none: EXPENDITURE NOT LINKED TO THE CONTRACT INSTRUMENT OR COVENANT

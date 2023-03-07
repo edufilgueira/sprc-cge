@@ -1,0 +1,45 @@
+= content_for :stylesheet, stylesheet_link_tag('views/shared/tickets/form')
+= content_for :javascript, javascript_include_tag('views/shared/tickets/form')
+= javascript_include_tag('ckeditor/init')
+
+= simple_form_for [:operator, ticket] do |f|
+
+  - # flag usada para dizer que essa edição é do tipo de mudança de sou_type.
+  = hidden_field_tag :edit_action, params[:edit_action]
+
+  .row
+
+    .col-12
+      .card.card-custom
+
+        .card-header
+
+          %h3.card-title
+            = t("shared.tickets.form.cards.#{ticket.ticket_type}.description.title")
+
+        .card-block
+
+          .row
+            .col-12
+              %label.content-label{for: 'justification'}
+                = t('shared.tickets.form.change_sou_type.justification')
+
+              = text_area_tag(:justification, params[:justification], { type: :text, autofocus: true, rows: 10, class: 'form-control text'})
+
+          %hr
+
+          .row
+            .col-12
+              = render 'shared/tickets/sou_types_toggle', ticket: ticket, field_name: "ticket[sou_type]", f: f, anonym: anonymous_param
+
+              .content{'data-content': 'denunciation_ticket_type_content'}
+                = render 'shared/tickets/denunciation_ticket_type_content', f: f, attendance_155: false
+
+              - # Descrição da manifestação
+              = render 'shared/tickets/description', ticket: ticket
+
+
+      .row.mt-4
+        .col-12
+          .float-right
+            = f.submit t("shared.tickets.form.commands.#{ticket_type}.create"), class: 'btn btn-primary'

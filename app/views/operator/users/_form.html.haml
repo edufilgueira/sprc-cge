@@ -1,0 +1,146 @@
+= simple_form_for [:operator, user] do |f|
+
+  = f.input :person_type, { as: :hidden, input_html: { 'data-input': 'person_type' } }
+
+  - if yourself?
+
+    .row
+      .col-12.col-lg-4
+        = content_with_label(user, :operator_type_str)
+
+      .col-12.col-lg-4
+        - if user.organ.present?
+          = content_with_label(user, :organ_acronym)
+
+      .col-12.col-lg-4
+        - if user.subnet.present?
+          = content_with_label(user, :subnet_name)
+
+    %hr{'aria-hidden': 'true'}
+
+  .row
+    .col-12.col-lg-6
+      = f.input :name
+
+    .col-12.col-lg-6
+      = f.input :social_name
+
+  .row
+    .col-12.col-lg-6
+      = f.input :document_type, { collection: user_admin_document_types_for_select, selected: user.document_type, input_html: { 'data-input': 'document_type' } }
+
+    .col-12.col-lg-6
+      = f.input :document, input_html: { 'data-input': 'document' }
+
+  .row
+    .col-12.col-lg-6
+      = f.input :gender, { collection: user_gender_for_select, selected: user.gender || :not_informed_gender, wrapper_html: { data: { content: 'individual_gender' } } }
+
+    .col-12.col-lg-6
+      = f.input :birthday, as: :string, input_html: { class: 'datetimepicker' }
+
+
+  .row
+    .col-12.col-lg-6
+      = f.input :server, as: :radio_buttons
+
+
+  .row
+    .col-6
+      - education_level_select_text = t('.fields.education_level.select')
+      = f.input :education_level, include_blank: education_level_select_text, collection: user_education_level_for_select, selected: user.education_level, input_html: { 'data-select2-search': 'hidden' }
+
+  .row
+    - state = params[:state] || states_default_selected_for_user(user)
+
+    .col-lg-6
+      = render 'shared/components/select_states', field_name: :state, cities_container: :user_city_id, required: false, selected: state
+    .col-lg-6
+      = f.association :city, collection: cities_by_state_for_select(state),include_blank: t('.fields.city.select')
+
+
+  .row.mt-3
+    .col-12.col-lg-6
+      = f.input :email
+      - if user.unconfirmed_email.present?
+        .alert.alert-warning.unconfirmed-email.py-1.px-2
+          %i.fa.fa-warning
+          %i
+            = raw t('.fields.unconfirmed_email.tooltip', email: user.unconfirmed_email)
+
+    .col-12.col-lg-6
+      = f.input :email_confirmation
+
+    %hr{'aria-hidden': 'true'}
+
+  - unless yourself?
+
+    .row
+      .col-12.col-lg-6
+        - operator_type_select_text = t('.fields.operator_type.select')
+        = f.input :operator_type, required: true, include_blank: operator_type_select_text, collection: user_operator_types_for_operators_for_select(current_user), input_html: { 'aria-label': operator_type_select_text, data: { input: :operator_type} }
+
+      .col-12.col-lg-6{ data: { content: 'organ' } }
+        = content_with_label(user, :organ_name)
+        = f.association :organ, as: :hidden, input_html: { data: { input: :organ }, value: user.organ_id }
+
+
+    %hr{'aria-hidden': 'true'}
+
+
+    - if operator_sectoral?(current_user) && !current_user.rede_ouvir?
+      .row{ data: {  content: 'positioning' } }
+        .col-12.col-lg-6
+          = f.input :positioning, as: :radio_buttons
+
+
+    .row{ data: { content: 'subnet' } }
+
+      .col-12.col-lg-6
+        - data = { 'input': 'subnet', 'dependent-select': 'subnet', 'child-container': '[data-dependent-select-child=departments]', 'ignore-blank': 'true', 'param-name': 'subnet_id', 'url': api_v1_departments_path, 'aria-label': t('messages.form.select'), value: user.subnet_id, 'dependent-select-child': 'subnets' }
+
+        - if current_user.subnet_sectoral?
+          = content_with_label(user, :subnet_name)
+          = f.association :subnet, as: :hidden, input_html: { data: data, value: user.subnet_id }, wrapper: false
+        - else
+          = f.association :subnet, prompt: t('messages.form.select'), collection: subnets_by_organ_for_select(user.organ), input_html: { data: data  }
+
+
+    .row{ data: { content: 'department' } }
+      .col-12.col-lg-6
+        - department_select_text = t('.fields.department.select')
+        - data = { 'input': 'department', 'dependent-select-child': 'departments', 'dependent-select-blank': department_select_text, 'dependent-select': 'sub_departments', 'child-container': '[data-dependent-select-child=sub_departments]', 'param-name': 'department_id', 'url': api_v1_sub_departments_path }
+        - options = user.subnet.present? ? departments_by_subnet_for_select(user.subnet) : departments_by_organ_for_select(user.organ)
+
+        = f.association :department, prompt: department_select_text, collection: options, label: department_select_text, input_html: { data: data, 'aria-label': department_select_text }
+
+      .col-12.col-lg-6
+        - sub_department_select_text = t('.fields.sub_department.select')
+        - data = { 'input': 'sub_department', 'dependent-select-child': 'sub_departments', 'dependent-select-blank': sub_department_select_text }
+
+        = f.association :sub_department, { collection: sub_departments_by_department_for_select(user.department_id), include_blank: sub_department_select_text, label: sub_department_select_text, input_html: { data: data, 'aria-label': sub_department_select_text } }
+
+
+  - if can?(:edit, user) && user.persisted?
+    .row
+      .col-12.col-lg-6
+        = check_box_tag :change_password, {}, user.errors[:password].present? || user.errors[:password_confirmation].present?, 'data-input': 'change_password'
+        = label_tag :change_password, t('.commands.change_password')
+
+    .row
+      .col-12.col-lg-6
+        = f.input :password
+
+      .col-12.col-lg-6
+        = f.input :password_confirmation
+
+
+  .row
+    = render 'shared/users/notification_roles_form', f: f, user: user
+
+  %hr{'aria-hidden': 'true'}
+
+  .row.mt-3
+    .col-12
+      = link_to t('commands.cancel'), operator_users_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary pull-right'

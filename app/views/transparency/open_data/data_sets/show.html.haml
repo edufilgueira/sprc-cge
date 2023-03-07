@@ -1,0 +1,11 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+= render 'shared/transparency/open_data/data_sets/show', data_set: data_set
+
+- #
+- # Formulário Pesquisa de satisfação
+- #
+- if namespace == :transparency
+	.row.mt-3
+		.col-lg-12
+			= render("shared/transparency/survey_answers/form", transparency_id: transparency_id, action: action_name, controller: controller_path, url: request.original_url)

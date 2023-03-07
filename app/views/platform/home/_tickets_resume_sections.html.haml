@@ -1,0 +1,56 @@
+%section{ 'aria-labelledby': 'tickets_resume_sections' }
+
+  .card-deck.mb-4
+
+    - # Escondendo SOU públicos
+    - [:sic].each do |type|
+      .card
+        .card-block.pb-0.flex-none
+          .card-title
+            .text-green.small.text-uppercase
+              %i.fa.fa-comment-o
+              = t(".#{type}.super_title")
+            %h4
+              = t(".#{type}.title")
+            %hr
+
+        .card-block.py-0
+          - # TODO: move. Check which tickets will be listed - last? updated? new?
+          - tickets = current_user.tickets.from_type(type).last(3)
+
+          %table.mb-0.table.table-striped.table-sm.table-responsive-sm
+            %thead
+              %tr.small
+                %th.border-0
+                  = Ticket.human_attribute_name(:created_at)
+                %th.border-0
+                  = Ticket.human_attribute_name(:parent_protocol)
+                %th.border-0
+                  = Ticket.human_attribute_name(:description)
+                %th.border-0
+                  = t('.activity')
+
+            %tbody
+              - if tickets.present?
+                - tickets.each do |ticket|
+                  - ticket_show_path = platform_ticket_path(ticket)
+                  - description = strip_tags(ticket.description || ticket.denunciation_description)
+
+                  %tr
+                    %td
+                      = link_to l(ticket.created_at, format: :date_time), ticket_show_path
+                    %td
+                      = link_to ticket.parent_protocol, ticket_show_path
+                    %td
+                      = link_to ticket_show_path, title: description do
+                        = description.truncate(40)
+                    %td
+                      %span.badge.badge-default
+                        = ticket.ticket_logs.count
+              - else
+                %tr
+                  %td.text-center{ colspan: 4 }
+                    = t(".#{type}.empty")
+
+        .card-footer.bg-transparent.border-0
+          = link_to t(".#{type}.see_more"), platform_tickets_path(ticket_type: type), class: 'small pull-right'

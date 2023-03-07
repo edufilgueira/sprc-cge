@@ -1,0 +1,31 @@
+= javascript_include_tag('ckeditor/init')
+
+.no-print{ 'data-content': 'extensions-form' }
+
+  = simple_form_for extension, url: [:approve, :operator, ticket, :extensions_organ, id: extension.id], remote: true do |f|
+
+    .row.justify-content-center.mt-4
+      .col-xl-10.col-12
+
+        .alert.alert-success.alert-dismissible.fade.show{ role: 'alert' }
+
+          .m-2
+
+            %h3.row.justify-content-center
+              = "#{ticket.parent_protocol} - #{t('.title')}"
+
+            .row
+              .col-12
+                %p
+                  = content_with_label(extension, :description)
+
+            %hr{ 'aria-hidden': 'true' }
+
+            = f.input :justification, label: t('.justification'), as: :ckeditor, input_html: { ckeditor: { toolbar: :mini } }
+
+            .row.mt-2
+              .col-6
+                = f.submit t('.commands.approve'), class: 'btn btn-success w-100'
+              .col-6
+                = f.submit t('.commands.reject'), class: 'btn btn-danger w-100', formaction: reject_operator_ticket_extensions_organ_path(ticket, extension)
+

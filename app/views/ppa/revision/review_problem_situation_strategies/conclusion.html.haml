@@ -1,0 +1,14 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+
+.card
+  = render partial: 'shared/ppa/revision/multistep_forms/multistep_flow'
+
+.card
+  %h2.font-weight-bold.text-center
+    %strong= t('.description')
+
+
+.card
+  = render("shared/transparency/survey_answers/form", transparency_id: :review_problem_situation_strategy, action: action_name, controller: controller_path, url: request.original_url)

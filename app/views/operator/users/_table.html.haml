@@ -1,0 +1,23 @@
+.table-responsive
+  %table.table.table-hover.table-sm.table-sorted{summary: t('.summary')}
+
+    %thead
+      %tr
+
+        - heads = [:name, :email, :operator_type, :department, :actions]
+
+        %th
+
+        - heads.each_with_index do |head, index|
+          - sort_column_name = sort_columns[index]
+
+          %th{ class: "#{sortered_table_active_class(sort_column_name)}" }
+
+            - if sort_column_name
+              = sortered_table_header(sort_column_name, t(".heads.#{head}"))
+            - else
+              = t(".heads.#{head}")
+
+    %tbody
+      %tbody
+        = render users

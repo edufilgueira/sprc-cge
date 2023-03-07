@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    attributes:
+
+      transparency/export:
+        name: 'Nome'
+        email: 'Seu e-mail'
+        worksheet_format: 'Formato'
+
+  transparency_export:
+    title: 'Gerar XLSX com os dados filtrados'
+
+    worksheet_formats:
+      xlsx: '.xlsx (Excel 7 ou superior)'
+      csv: '.csv'

@@ -1,0 +1,103 @@
+- tag_for_region_themes = "ppa_revision_prioritizations[region_themes_attributes][0]"
+
+.row
+  .col-lg-12
+    #operations_content.form-card
+      .row
+        .col-lg-12
+          %h3= t('.title')
+          %p= t('.description')
+
+        .col-lg-12
+          %strong= t('.region')
+          = region.name
+          = hidden_field_tag "#{tag_for_region_themes}[id]", region_theme.id
+          = hidden_field_tag "#{tag_for_region_themes}[region_id]", region.id
+          = hidden_field_tag "#{tag_for_region_themes}[theme_id]", theme.id
+
+        .col-lg-12
+          %strong= t('.axis')
+          = axis.name
+
+        .col-lg-12
+          %strong= t('.theme')
+          = theme.name
+
+        .col-lg-12
+          %strong= t('.theme_description')
+          = theme.description
+
+        .col-lg-12
+          %hr
+
+      .row
+        .col-lg-12.mt-4
+          %strong= t('.regional_strategies.title')
+        .col-lg-12.mb-2
+          %label.text-muted= t('.regional_strategies.description')
+        .col-lg-12
+         
+
+          - regional_strategies.each_with_index do |strategy, i|
+            .row
+              .col-lg-1.mt-2
+                
+                - chk_name = "#{tag_for_region_themes}[regional_strategies_attributes][#{i}]"
+
+                = check_box_tag("#{chk_name}[priority]", value = "1", checked = false, options = { multiple: true ,  class: 'prioritization_checkbox d-block'})
+
+                = hidden_field_tag "#{chk_name}[strategy_id]", strategy.id
+
+              .col-lg-11.mt-2
+                %label.d-inline= strategy.name
+
+        .col-lg-12
+          %hr
+
+      .row
+        .col-lg-12.mt-4
+          %strong= t('.problem_situations.title')
+        .col-lg-12.mb-2
+          %label.text-muted= t('.problem_situations.description')
+      .row
+        - problem_situations.each do |problem_situation|
+          .col-lg-1
+          .col-lg-11.mt-2
+            = problem_situation.description
+
+.row
+  .col-lg-12
+
+    %a.btn.text-gray-dark{ href: edit_ppa_revision_prioritization_path(plan_id: plan.id, id: params[:prioritization_id]), style: 'margin-right: 10px;' }
+      %strong= t('.previous')
+    %input.next.action-button.next-step2.d-inline{multisteps_next_btn, type: :submit}
+
+
+:javascript
+  
+  $(".prioritization_checkbox").on('change', function() {
+    var cont = 0;
+    var unchecked = 0;
+    $(".prioritization_checkbox").each(function() {
+
+      if ($(this).is(":checked")) {
+        cont = cont + 1;
+      }
+    });
+    
+    if (cont >= 2){
+      $(".prioritization_checkbox").each(function() {
+
+        if (!$(this).is(":checked")) {
+          $(this).prop("disabled", true);
+        }
+      });
+    }else{
+      $(".prioritization_checkbox").each(function() {
+
+        if (!$(this).is(":checked")) {
+          $(this).prop("disabled", false);
+        }
+      });
+    }
+  });

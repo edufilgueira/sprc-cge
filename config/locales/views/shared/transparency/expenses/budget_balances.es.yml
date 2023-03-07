@@ -1,0 +1,91 @@
+es:
+  shared:
+    transparency:
+      expenses:
+        budget_balances:
+
+          index:
+            title: Gastos del Poder Ejecutivo
+            description: Consulte aquí los gastos del Poder Ejecutivo.
+            source: |
+              <p><strong>Fuente de datos:</strong></p>
+              <p>Secretaría de Hacienda - SEFAZ</p>
+              <p>Sistema de Gestíon Gubernamental por Resultados - S2GPR</p>
+
+            chart:
+              calculated_valor_orcamento_atualizado:
+                unit: 'Suma de los presupuestos actualizados: R$'
+                title: 'Valores pagados en el período'
+
+                secretary:
+                  title: Suma de los presupuestos actualizados por secretarías
+                function:
+                  title: Suma de los presupuestos actualizados por función
+                sub_function:
+                  title: Suma de los presupuestos actualizados por subfunción
+                government_program:
+                  title: Suma de los presupuestos actualizados por programa de gobierno
+                administrative_region:
+                  title: Suma de los presupuestos actualizados por región administrativa
+
+            charts:
+              tabs:
+                secretary:
+                  title: Por secretaría
+                function:
+                  title: Por función
+                sub_function:
+                  title: Por subfunción
+                government_program:
+                  title: Por programa de gobierno
+                administrative_region:
+                  title: Por región administrativa
+
+            counts:
+              valor_orcamento_inicial:
+                title: 'Presupuesto inicial de los gastos filtrados'
+
+              valor_orcamento_atualizado:
+                title: 'Presupuesto actualizado de los gastos filtrados'
+
+              valor_empenhado:
+                title: 'Empeñado'
+
+              valor_liquidado:
+                title: 'Liquidado'
+
+              valor_pago:
+                title: 'Pago'
+
+            filters:
+              title: Consulta avanzada
+
+              search:
+                hint: |
+                  Usted puede buscar por el nombre de Secretarías, Órganos, función, subfunción, naturaleza del gasto, elemento de gasto, etc. Ejemplos: 'vivienda', 'seguridad', 'tecnología', 'sec saude', entre otros.
+
+
+            table:
+              summary: Lista de gastos del Poder Ejecutivo
+              header:
+                title: Descripción
+                valor_orcamento_inicial: Presupuesto inicial
+                valor_orcamento_atualizado: Presupuesto actualizado
+                valor_empenhado: Empeñado
+                valor_liquidado: Liquidado
+                valor_pago: Pago
+
+              total: Total
+
+            stats:
+              title: Principales cifras relacionadas con los gastos
+              valor_orcamento_inicial:
+                title: 'Presupuesto inicial en <strong>%{date}</strong>'
+              valor_orcamento_atualizado:
+                title: 'Presupuesto actualizado en <strong>%{date}</strong>'
+              valor_empenhado:
+                title: 'Empeñado en <strong>%{date}</strong>'
+              valor_liquidado:
+                title: 'Liquidado en <strong>%{date}</strong>'
+              valor_pago:
+                title: 'Pago en <strong>%{date}</strong>'

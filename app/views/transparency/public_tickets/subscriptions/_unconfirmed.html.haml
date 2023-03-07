@@ -1,0 +1,12 @@
+.row
+  .col-12
+    .card.card-custom
+
+      .card-header
+        %h3.card-title
+          = t(".title.#{ticket.ticket_type}")
+
+      .card-block
+        .card-subtitle
+          %h4
+            = t(".explanation", email: ticket_subscription.email)

@@ -1,0 +1,128 @@
+pt-BR:
+  activerecord:
+    attributes:
+      user:
+        document: Documento
+        document_type: Tipo de documento
+        document_type_str: Tipo de documento
+        email: E-mail
+        email_confirmation: Confirmação do e-mail
+        name: Nome
+        password: Senha
+        password_confirmation: Confirmação da senha
+        user_type: Tipo de usuário
+        operator_type: Tipo do operador
+        organ: Órgão
+        department: Unidade
+        sub_department: Sub-Unidade
+        subnet: Sub-rede
+        user_type_str: Tipo do usuário
+        operator_type_str: Tipo do operador
+        organ_name: Órgão
+        organ_acronym: Órgão
+        department_name: Unidade
+        sub_department_name: Sub-Unidade
+        subnet_name: Sub-rede
+        person_type: Tipo do perfil
+        person_type_str: Tipo do perfil
+        provider: Origem
+        social_name: Nome social
+        gender: Gênero
+        gender_str: Gênero
+        denunciation_tracking: Triagem de denúncias
+        education_level: Formação
+        education_level_str: Formação
+        birthday: Data de nascimento
+        server: É servidor/Funcionário Público?
+        city: Município
+        city_id: Município
+        city_title: Município
+        state: Estado
+        positioning: Pode atuar como área interna?
+        acts_as_sic: Pode atuar como setorial SIC?
+        sectoral_denunciation: Pode visualizar denúncias?
+        internal_subnet: Pertence à uma sub-rede?
+        subnet_full_acronym: Sub-rede
+        created_at: Criado em
+        updated_at: Atualizado em
+        disabled_at: Desabilitado em
+
+      user/gender:
+        not_informed_gender: Não informar
+        female: Feminino
+        male: Masculino
+        other_gender: Outro
+
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: Senha muito curta.
+              password_complexity: 'Senha não atende à politica de segurança. A senha deve ter: 1 letra maiúscula, 1 letra minúscula, 1 número, 1 caractere especial, mínimo de 8 caracteres.'
+            password_confirmation:
+              confirmation: A confirmação não é igual à senha.
+            cpf:
+              invalid: CPF inválido
+            cnpj:
+              invalid: CNPJ inválido
+            department_id:
+              invalid_organ_association: Unidade não existe para orgão escolhido
+              invalid_subnet_association: Unidade não existe para sub-rede escolhida
+            sub_department_id:
+              invalid_department_association: Subunidade não existe para unidade escolhida
+            organ: 
+              coordination_couvi_organ: 'Quando o tipo de operador é Coordenação de Ouvidoria, o órgão deve ser: COUVI'
+
+  user:
+    need_to_change_password: Informamos que é necessário fazer uma atualização de senha. Por favor troque imediatamente e fique atualizado com as políticas de segurança do Ceará Transparente. Utilize o formulário de edição do seu perfil para modificar sua senha e manter seus dados atualizados.
+    document_types:
+      cpf: CPF
+      rg: RG
+      cnh: CNH
+      ctps: CTPS
+      passport: Passaporte
+      voter_registration: Título de eleitor
+      cnpj: CNPJ
+      registration: Matrícula institucional
+      other: Outro
+
+    user_types:
+      admin: Administrador
+      operator: Operador
+      user: Usuário
+
+      color_classes:
+        admin: danger
+        operator: warning
+        user: info
+
+    operator_types:
+      cge: Operador CGE
+      cge_denunciation_tracking: Triagem de denúncia
+      call_center_supervisor: Supervisor 155
+      sou_sectoral: Operador Setorial Ouvidor
+      sic_sectoral: Operador setorial SIC
+      internal: Operador interno
+      call_center: Atendente 155
+      chief: Dirigente
+      subnet_sectoral: Operador sub-rede
+      subnet_chief: Dirigente Sub-rede
+      coordination: Coordenação de Ouvidoria
+      security_organ: Órgão de Segurança
+
+    person_types:
+      individual: Pessoa física
+      legal: Pessoa jurídica
+
+    genders:
+      not_informed_gender: Não informado
+      female: Feminino
+      male: Masculino
+      other_gender: Outro
+
+    education_levels:
+      primary_school: Ensino fundamental
+      high_school: Ensino médio
+      bachelors_degree: Superior
+      postgraduate: Pós-graduação

@@ -1,0 +1,18 @@
+%nav.navbar.navbar-toggleable-md.navbar-inverse.no-print
+
+  .container.no-print
+
+    %button.navbar-toggler.navbar-toggler-right{ type: 'button', data: { toggle: 'collapse', target: '#navbar-toggleable', 'aria-controls': 'navbar-toggleable', 'aria-expanded': 'false', 'aria-label': t('shared.navbar.toggle_navigation') } }
+
+      %span.navbar-toggler-icon
+
+    %h1.navbar-brand{title: t('app.title') }
+      %a{href: root_path}
+        = navbar_brand_image
+
+    = render 'shared/a11y/menu_anchor'
+
+    #navbar-toggleable.collapse.navbar-collapse.text-center.text-white
+      = yield(:navbar)
+
+.navbar-bottom-line

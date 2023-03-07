@@ -1,0 +1,28 @@
+.row
+  .col-12
+    .card.card-custom
+
+      .card-header
+        %h3.card-title
+          = t(".title.#{ticket.ticket_type}")
+
+      .card-block
+        .card-subtitle
+          %h4
+            = t(".explanation.#{ticket.ticket_type}")
+
+
+        .row.mt-3
+          .col-md-6.col-6.col-sm-12
+            = f.input :email,label: false, placeholder: t(".field.email"), input_html: { value: email }
+
+          .col-md-6.col-6.col-sm-12
+            = f.submit t('.register'), class: 'btn btn-primary btn-block'
+
+        - if current_user.blank?
+          .row.mt-4
+            .col-12
+              = recaptcha_tags hl: I18n.locale
+              .text-danger
+                %small
+                  = ticket_subscription.errors[:recaptcha].to_sentence

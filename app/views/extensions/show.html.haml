@@ -1,0 +1,22 @@
+- content_for :title, t('.title', ticket_title: ticket.title)
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col
+            %h2.card-title
+              = t(".title", ticket_title: ticket.title)
+
+      .card-block
+        = content_with_label(extension, :organ_acronym)
+        = content_with_label(extension, :description)
+        = content_with_label(extension, :status_str)
+
+        - if extension.rejected?
+          = content_with_label(ticket_log_rejected, :description, { label: t('.rejected.justification.label') })

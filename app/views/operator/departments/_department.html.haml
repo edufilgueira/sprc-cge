@@ -1,0 +1,32 @@
+%li.ticket-card.card.mb-4
+  .card-header
+
+    = link_to operator_department_path(department) do
+      %h3.card-title{'aria-label': department.name}
+        = highlight(department.acronym, params[:search])
+
+    .card-commands
+
+      - if can?(:show, department)
+        = link_to t('commands.more_details'), operator_department_path(department), class: 'btn text-muted btn-link hover-link float-left d-inline-block', tabindex: -1
+
+      - if can?(:edit, department)
+        = link_to t('commands.edit'), edit_operator_department_path(department), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+      - if can?(:manage, department)
+        = render 'shared/buttons/btn_toggle_disabled', resource: department, namespace: :operator
+
+
+  .card-block
+
+    .row
+      .col-12.col-lg-6
+        = content_with_label(department, :name)
+
+      - if department.organ.present?
+        .col-12.col-lg-6
+          = content_with_label(department, :organ_name)
+
+      - if department.subnet.present?
+        .col-12.col-lg-6
+          = content_with_label(department, :subnet_name)

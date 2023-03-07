@@ -1,0 +1,16 @@
+pt-BR:
+  operator:
+    tickets:
+      change_denunciation_organs:
+
+        new:
+          title: 'Editar órgão denunciado'
+
+        form:
+          title: 'Editar órgão denunciado'
+
+        create:
+          title: Editar órgão denunciado
+          done: 'O órgão denunciado foi modificado.'
+          fail: 'Erro ao modificar órgão denunciado.'
+

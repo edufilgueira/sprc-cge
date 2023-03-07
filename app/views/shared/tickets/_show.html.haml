@@ -1,0 +1,442 @@
+- ticket_department = ticket.ticket_department_by_user(current_user) if current_user.present?
+
+.card.card-custom
+
+  .card-header
+
+    .row
+      .col-8
+        %h3.card-title
+
+          - if ticket.in_progress?
+            = t('.confirmation.title')
+          - else
+            = t(".#{ticket.ticket_type}.title")
+
+      .col-4
+
+        .float-right
+          .card-commands
+
+            .dropdown
+              %a.btn.dropdown-toggle{ href: "#", id: "dropdown-actions", 'data-toggle': "dropdown", aria: { haspopup: "true", expanded: "false", label: t('.actions') } }
+                %i.fa.fa-bars.fa-2x
+
+              %ul.dropdown-menu.dropdown-menu-right{ 'aria-labelledby': "dropdown-actions" }
+
+                - if operator?(current_user)
+
+                  %li
+                    = render 'shared/tickets/components/btn_change_type', ticket: ticket, namespace: namespace
+
+                  %li
+                    = render 'shared/tickets/components/btn_edit', ticket: ticket, namespace: namespace
+
+                  %li
+                    = render 'shared/tickets/components/btn_edit_note', ticket: ticket, namespace: namespace
+
+                - #
+                - # # Removendo flag para tornar os chamados SOU/SIC públicos até a decisão da CGE
+                - #
+                / %li
+                /   = render 'shared/tickets/components/btn_publish_ticket', ticket: ticket, namespace: namespace
+
+                - if user?(current_user)
+
+                  %li
+                    = render 'shared/tickets/components/btn_change_type', ticket: ticket, namespace: namespace
+
+                %li
+                  = render 'shared/tickets/components/btn_clone', ticket: ticket, namespace: namespace
+
+                %li
+                  = render 'shared/components/btn_link_to_print'
+
+                %li
+                  = render 'shared/tickets/components/btn_email_reply'
+
+                - if controller_path == 'operator/call_center_tickets' && !ticket.with_feedback?
+
+                  %li
+                    = render 'shared/tickets/components/btn_attendance_response', ticket: ticket, namespace: namespace
+
+                  %li
+                    = render 'shared/tickets/components/btn_feedback'
+
+
+
+  - #
+  - # Prazos e situação
+  - #
+  - if operator?(current_user)
+    .card-block.card-header
+
+      = render 'shared/tickets/priority_alert'
+
+      .row
+
+        .col-lg-6
+          %h4.card-subtitle.mb-3
+            = t('.deadline.title')
+
+        .col-lg-6.no-print
+          .card-commands
+            = render 'shared/tickets/components/btn_invalidate', namespace: namespace
+
+      - if can?(:can_view_deadline, ticket)
+        .row
+          .col-lg-6
+            = render 'shared/tickets/deadline', ticket: ticket
+
+          .col-lg-6.no-print
+            .card-commands
+
+              - if can?(:extend, ticket)
+                = link_to t('.extension.title'), extension_operator_path(ticket), class: 'btn btn-sm btn-info'
+
+              - if can?(:cancel_extend, ticket)
+                = link_to t('.cancel_extension'), extension_operator_cancel_path(ticket), method: :put,  class: 'btn btn-sm btn-warning', data: { confirm: t('.cancel_extension_confirmation') }
+
+              - if can?(:second_extend, ticket)
+                = link_to t('.extension.title'), extension_operator_path(ticket), class: 'btn btn-sm btn-info'
+
+              - if can?(:cancel_second_extend, ticket)
+                = link_to t('.cancel_extension'), extension_operator_cancel_path(ticket), method: :put,  class: 'btn btn-sm btn-warning', data: { confirm: t('.cancel_extension_confirmation') }
+
+
+      .row
+
+        .col-12.col-lg-6
+          = content_with_label(ticket, :confirmed_at, label: t('.deadline.created_at'))
+
+
+        - if ticket.confirmed?
+
+          - if operator_internal?(current_user) && ticket_department.present?
+            .col-12.col-lg-6
+              = content_with_label(ticket_department, :deadline_ends_at, label: t('.ticket_department.deadline'))
+
+            .col-12
+              = content_with_label(ticket_department, :considerations)
+
+          - else
+            .col-12.col-lg-6
+              = content_with_label(ticket, :response_deadline, label: t('.deadline.last_day'))
+
+
+      - if ticket.appeal?
+
+        .row
+
+          .col-12
+            = content_with_label(ticket, :appeals_at, label: t(".appeal.#{ticket.appeals}"))
+
+
+      .row
+        .col-12
+          .content-with-label
+            %p.content-label
+              = t('.deadline.status')
+
+            - if ticket.child? || ticket.tickets.empty?
+
+              %p.content-value{ data: { internal_status: api_v1_operator_ticket_path(ticket) } }
+                = status_for_operator(ticket)
+
+              = render partial: 'operator/tickets/area_involved_status', ticket: ticket
+
+            - else
+
+              = render partial: 'shared/tickets/preview_children', collection: ticket.sorted_tickets, as: :ticket_child
+
+      - if can?(:view_answer_type, ticket)
+        .row
+          .col-12
+            = content_with_label(ticket, :answer_type_str)
+      .row
+        .col-12
+          = content_with_label(ticket, :used_input_str)
+
+
+  - #
+  - # Informações pessoais
+  - #
+  - if can?(:view_user_info, ticket)
+
+    .card-block.card-header.no-print
+      %h4.card-subtitle
+        - if ticket.anonymous?
+          = t('.infos.anonymous.title')
+        - else
+          = t('.infos.title')
+
+      - if !ticket.anonymous? || current_user&.cge?
+        - #
+        - # Se form anônimo, somente o operador CGE pode visualizar o email do cidadão anônimo
+        - #
+        .row
+          .col-12
+            = content_with_label(ticket, :email)
+
+      - if ticket.phone? or ticket.email?
+        .row
+          .col-12
+            = content_with_label(ticket, :answer_phone)
+            = content_with_label(ticket, :answer_cell_phone)
+
+      - if ticket.whatsapp?
+        .row
+          .col-12
+            = content_with_label(ticket, :answer_whatsapp)
+
+      - if ticket.anonymous?
+
+        .row
+          .col-12
+            .content-with-label
+              %p.content-label
+                = t(".anonymous.#{ticket.ticket_type}.title")
+
+      - else
+
+        .row
+          .col-12.col-md-6
+            = content_with_label(ticket, :name)
+
+          .col-12.col-md-6
+            = content_with_label(ticket, :social_name)
+
+        .row
+
+          - if ticket.sic? && user_facebook?(current_user)
+
+            .col-12.col-md-4
+              = content_with_label(ticket, :document)
+              
+        - if (operator?(current_user))
+
+          .row
+            .col-12.col-md-4
+              = content_with_label(ticket, :document_type_str)
+
+            .col-12.col-md-4
+              = content_with_label(ticket, :document)
+
+        .row
+          .col-12
+            = content_with_label(ticket, :created_at, label: t('.deadline.created_at'))
+      .row
+        .col-3
+          = content_with_label(ticket, :city_title)
+
+        .col-6
+          = content_with_label(ticket, :answer_address_street)
+
+        .col-3
+          = content_with_label(ticket, :answer_address_number)
+
+      .row
+        .col-3
+          = content_with_label(ticket, :answer_address_zipcode)
+
+        .col-3
+          = content_with_label(ticket, :answer_address_neighborhood)
+
+        .col-6
+          = content_with_label(ticket, :answer_address_complement)
+
+          - if ticket.used_input_url.present?
+            .col-12.col-md-6
+              = render 'shared/tickets/used_input_url', ticket: ticket
+
+
+  - #
+  - # Descrição da manifestação
+  - #
+  .card-block.card-header
+    %h4.card-subtitle
+      = t(".#{ticket.ticket_type}.description.title")
+
+    - if can?(:view_user_password, ticket)
+      .row
+        .col-6
+          = content_with_label(ticket.parent || ticket, :parent_protocol)
+        .col-6
+          = content_with_label(ticket.parent || ticket, :plain_password)
+
+    - if ticket.sou?
+      = render 'shared/tickets/sou_type', ticket: ticket, namespace: namespace
+
+    - if ticket.citizen_topic.present?
+      .row
+        .col-6
+          = content_with_label(ticket.citizen_topic, :name, { label: t('.citizen_topic.label') })
+
+    - if ticket.in_progress? && !ticket.denunciation?
+      %abbr{'aria-label':ticket.organ_name, title: ticket.organ_name}
+        = content_with_label(ticket, :organ_acronym)
+
+    = render 'shared/tickets/description', ticket: ticket
+
+    - if operator_internal?(current_user) && ticket_department.present?
+      = content_with_label(ticket_department, :considerations)
+
+    - if operator?(current_user) && ticket.priority?
+
+      = content_with_label(ticket, :priority)
+
+    - if ticket.denunciation?
+
+      .row
+        .col-6.col-lg-6
+          .content-with-label
+            %p.content-label
+              = t('.denunciation_type_str')
+            %p.content-value
+              - if ticket.denunciation_type.present?
+                = t("ticket.denunciation_types.#{ticket.denunciation_type}")
+              - else
+                %em
+                  = t('.undefined')
+
+        - if can?(:edit_denunciation_type, ticket)
+          .col-6.col-lg-6.mt-3
+            .float-right.no-print
+              = link_to t('.denunciation_type.edit'), new_operator_ticket_change_denunciation_type_path(ticket), class: 'btn btn-sm btn-info'
+
+      - if can?(:view_denunciation, ticket)
+        .row
+          .col-6.col-lg-6
+            = content_with_label(ticket, :denunciation_organ_acronym)
+
+          - if can?(:edit_denunciation_organ, ticket)
+            .col-6.col-lg-6.mt-3
+              .float-right.no-print
+                = link_to t('.denunciation_organ.edit'), new_operator_ticket_change_denunciation_organ_path(ticket), class: 'btn btn-sm btn-info'
+
+      = content_with_label(ticket, :denunciation_date_str)
+
+      = content_with_label(ticket, :denunciation_place_str)
+
+      .content-with-label
+        %p.content-label
+          = Ticket.human_attribute_name(:denunciation_witness)
+        .content-value
+          = raw(ticket.denunciation_witness_str)
+
+      .content-with-label
+        %p.content-label
+          = Ticket.human_attribute_name(:denunciation_evidence)
+        .content-value
+          = raw(ticket.denunciation_evidence_str)
+
+
+    - if ticket.anonymous?
+
+      = content_with_label(ticket, :internal_status_str)
+
+    - else #if can?(:view_user_info, ticket)
+
+      = content_with_label(ticket, :answer_type_str)
+
+      = content_with_label(ticket, :internal_status_str)
+
+      - if can?(:view_answer_type_label, ticket)
+
+        - # Tipo de resposta via telefone...
+
+        - if ticket.phone?
+          = content_with_label(ticket, :answer_phone)
+          = content_with_label(ticket, :answer_cell_phone)
+
+        - # Tipo de resposta via carta...
+
+        / .row
+        /   .col-3
+        /     = content_with_label(ticket, :city_title)
+
+        /   .col-6
+        /     = content_with_label(ticket, :answer_address_street)
+
+        /   .col-3
+        /     = content_with_label(ticket, :answer_address_number)
+
+        / .row
+        /   .col-3
+        /     = content_with_label(ticket, :answer_address_zipcode)
+
+        /   .col-3
+        /     = content_with_label(ticket, :answer_address_neighborhood)
+
+        /   .col-6
+        /     = content_with_label(ticket, :answer_address_complement)
+
+        - # Tipo de resposta via twitter...
+
+        - if ticket.twitter?
+          = content_with_label(ticket, :answer_twitter)
+
+        - # Tipo de resposta via facebook...
+
+        - if ticket.facebook?
+          = content_with_label(ticket, :answer_facebook)
+
+        - # Tipo de resposta via instagram...
+
+        - if ticket.instagram?
+          = content_with_label(ticket, :answer_instagram)
+
+        - # Tipo de resposta via whatsapp...
+
+        - if ticket.whatsapp?
+          = content_with_label(ticket, :answer_whatsapp)
+
+        - # Tipo de Resposta via email
+        - if ticket.email?
+          = content_with_label(ticket, :email)
+
+      - public_ticket_field = ticket.parent? ? :public_ticket : :parent_public_ticket
+      = content_with_label(ticket, public_ticket_field)
+
+
+  - #
+  - # Local da ocorrência
+  - #
+  - if ticket.ticket_type == 'sou'
+    .card-block.card-header
+
+      %h4.card-subtitle
+        = t(".target_address.title")
+
+      .row
+        .col-12.col-md-6
+          = content_with_label(ticket, :target_address_zipcode)
+
+        .col-12.col-md-6
+          = content_with_label(ticket, :target_city_title)
+
+      .row
+        .col-12.col-md-6
+          = content_with_label(ticket, :target_address_street)
+
+        .col-12.col-md-6
+          = content_with_label(ticket, :target_address_number)
+
+      .row
+        .col-12.col-md-6
+          = content_with_label(ticket, :target_address_neighborhood)
+
+        .col-12.col-md-6
+          = content_with_label(ticket, :target_address_complement)
+
+
+  - #
+  - # Anexos
+  - #
+  .card-block.card-header
+
+    %h4.card-subtitle
+      = t('.attachments.title')
+
+    .attachments.mt-4
+      = render 'shared/attachments/index', ticket: ticket

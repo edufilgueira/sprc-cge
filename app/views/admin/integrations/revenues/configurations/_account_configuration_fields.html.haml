@@ -1,0 +1,8 @@
+.nested-fields.row.mb-3
+  .col-sm-5.col-md-4
+    = f.input :account_number
+  .col-sm-5.col-md-4
+    = f.input :title
+
+  .col-1
+    = link_to_remove_association '', f, { class: 'fa fa-trash fa-2x mt-4', 'aria-label': t('.remove') }

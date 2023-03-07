@@ -1,0 +1,26 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t('.title')
+
+%h2.sr-only
+  = t('.title')
+
+%hr{'aria-hidden':'true'}
+
+.row
+  .col-12.col-lg-6
+  .col-12.col-lg-6
+    - if can?(:create, department)
+      = link_to t('.commands.new'), new_operator_department_path, class: 'btn btn-success btn-block'
+
+.mt-4
+
+  .row
+    .col-12
+      - if departments.present?
+        %ul.tickets-list
+          = render departments
+      - else
+        .row
+          %i.col-md-12.text-center
+            = t('.empty')
+

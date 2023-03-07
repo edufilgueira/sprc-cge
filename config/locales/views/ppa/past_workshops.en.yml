@@ -1,0 +1,16 @@
+en:
+  ppa:
+    past_workshops:
+      index:
+        next_workshops: See the next workshops
+        title: MAP elaboration workshops
+        form_title: List of past workshops
+        address_title: 'Address:'
+        participants: 'Participants:'
+        date_title: 'Date:'
+        documents: Files
+
+      filters:
+        city: City
+        end_at: End at
+        all: All

@@ -1,0 +1,38 @@
+.card{ 'aria-labelledby': 'workshops' }
+  .card-block.pb-0
+    %h4.card-title.font-weight-bold
+      = t('.title')
+
+    .card-text.mb-2
+      = t('.description')
+
+    - if last_workshop
+      .card-text.mb-2
+        %strong
+          = t('.links')
+
+        .row.small
+          .col-md-12
+            = link_to t('.last', name: last_workshop.name, date: l(last_workshop.start_at.to_date)), ppa_workshops_path
+
+  .card-text.text-white.bg-tertiary.text-center.text-shadow.ppa-counter
+    .card-block
+      - time_left = remaining_time_for_next_workshop(plan.id)
+      - if time_left 
+        - if time_left.include?("#{t('ppa.workshops_helper.today_is_workshop_day')}")
+          %p.h3
+            = time_left
+        - else
+          .shout
+            = time_left
+        - unless time_left.to_i < 1
+          %p.h3
+            = t('.counter', start_year:  plan.start_year, end_year:  plan.end_year)
+      - else
+        %p.h3
+          = t('.text_workshop_next')
+      
+
+  .card-footer.bg-faded.border-bottom-only.border-3.border-orange
+    = link_to t('.see_more'), ppa_workshops_path, class: 'btn btn-tertiary btn-uppercase'
+    -#= link_to t('.soon'), '', class: 'btn btn-tertiary btn-uppercase'

@@ -1,0 +1,56 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+- can_create = can?(:create, Department)
+- new_path = new_admin_department_path
+- controller_name = controller.controller_name
+- filter_path = admin_departments_path
+
+%h2.sr-only
+  = t('.title')
+
+.card.card-custom
+
+  .card-header
+
+    %h3.card-title
+      = t('.title')
+
+
+  .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+    .remote-content{'data-remote-content': controller_name}
+
+      - filter_new_command = { title: t('.commands.new'), path: new_path, permission: can_create }
+      - filter_commands = { 'new': filter_new_command }
+      - filter_options = { filter_id: :departments, filter_path: filter_path, commands: filter_commands }
+
+      = render "shared/admin/filters", filter_options do
+
+        .row
+          .col-4.col-md-4.col-sm-12.mt-2
+            = render "shared/admin/remote_disable_filter"
+
+          .col-4.col-md-4.col-sm-12.mt-2
+            - label = t('admin.departments.index.filters.select.organ')
+            - placeholder = t('messages.filters.select.all.male')
+            - options = options_for_select(organs_for_select, params[:organ])
+            = label_tag :organ, label
+            = select_tag :organ, options, { include_blank: placeholder }
+
+          .col-4.col-md-4.col-sm-12.mt-2
+            - label = t('admin.departments.index.filters.select.subnet')
+            - placeholder = t('messages.filters.select.all.male')
+            - options = options_for_select(subnets_for_select, params[:subnet])
+            = label_tag :subnet, label
+            = select_tag :subnet, options, { include_blank: placeholder }
+
+      - # o index é carregado como remote-content e está na partial ./_index
+
+      %hr{'aria-hidden': 'true'}
+
+      .remote-content-result{ 'data-remote-content-result': controller_name }
+
+        .p-2.text-center.text-muted
+          .fa.fa-spin.fa-refresh.mx-1
+          = t('messages.loading')

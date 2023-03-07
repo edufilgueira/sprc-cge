@@ -1,0 +1,7 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t(".title")
+- content_for :javascript, javascript_include_tag(javascript)
+
+- stats_url = transparency_expenses_neds_path(show_stats: true)
+
+= render 'shared/transparency/index', transparency_id: :expenses_neds, stats_type: :year, stats_url: stats_url, base_locale: t('.')

@@ -1,0 +1,26 @@
+pt-BR:
+  activerecord:
+    models:
+      ppa/workshop:
+        one: Encontro Regional de elaboração
+        other: Encontros Regionais de elaboração
+
+    attributes:
+      ppa/workshop:
+        plan: Plano
+        name: Nome
+        start_at: Data início
+        end_at: Data término
+        region: Região
+        city: Cidade
+        address: Endereço
+        participants_count: Número de Participantes
+        link: Link para inscrição
+        
+
+    errors:
+      models:
+        ppa/workshop:
+          attributes:
+            end_at:
+              invalid_range: Data de fim tem que ser maior que a de início

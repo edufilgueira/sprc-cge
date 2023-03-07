@@ -1,0 +1,85 @@
+.card.card-custom
+
+  .card-header
+
+    .row
+
+      .col-6
+        %h3.card-title
+          - if ticket.present? && ticket.in_progress?
+            = t('.confirmation.title')
+          - else
+            = t('.title', protocol: attendance.protocol)
+
+      .col-6
+        .float-right
+          = render 'operator/attendances/components/btn_clone', attendance: attendance
+
+  .card-block
+
+    .content-with-label
+      %p.content-label
+        = Attendance.human_attribute_name(:description)
+      .content-value.text-justify
+        = raw(attendance.description)
+
+    = content_with_label(attendance, :service_type_str)
+
+    - if attendance.answer.present?
+      .content-with-label
+        %p.content-label
+          = Attendance.human_attribute_name(:answer)
+        .content-value
+          = raw(attendance.answer)
+
+
+.card.card-custom
+
+  .card-header
+
+    .row
+
+      .col-6
+        %h3.card-title
+          = t('.organs.title')
+
+  .card-block
+
+    - if attendance.unknown_organ?
+      .mb-3
+        %em
+          =t('.organs.empty')
+
+    - else
+      - attendance.attendance_organ_subnets.each do |attendance_organ_subnet|
+
+        %p.content-value
+
+          - if attendance_organ_subnet.organ_subnet?
+            = "#{attendance_organ_subnet.organ_full_title} / #{attendance_organ_subnet.subnet_full_acronym}"
+
+          - else
+            = attendance_organ_subnet.organ_full_title
+
+- if ticket.present?
+  = render 'ticket', ticket: ticket
+
+  - namespace = :operator
+
+  - if attendance.sic_completed?
+    = render 'shared/tickets/ticket_logs', ticket: ticket, answer_form_url: nil, namespace: namespace
+
+  - comment_form_url  = [namespace, new_comment]
+  = render "shared/tickets/ticket_internal_logs", ticket: ticket, comment_form_url: comment_form_url
+
+.card.card-custom
+
+  .card-header
+
+    %h3.card-title
+      = t('.occurrences.title')
+
+  .card-block
+
+    .content{'data-content': 'occurrences'}
+      = render 'occurrences', attendance: attendance

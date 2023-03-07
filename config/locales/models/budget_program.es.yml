@@ -1,0 +1,19 @@
+es:
+  activerecord:
+    attributes:
+
+      budget_program:
+        name: Nombre
+        code: Código
+        theme: Tema
+        theme_name: Tema
+        organ_id: Órgano
+        organ: Órgano
+        organ_name: Órgano
+        subnet: Subred
+        subnet_name: Subred
+
+    errors:
+      models:
+        budget_program:
+          attributes:

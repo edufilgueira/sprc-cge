@@ -1,0 +1,16 @@
+pt-BR:
+  operator:
+    tickets:
+      change_sou_types:
+
+        new:
+          title: 'Mudar tipo de Manifestação'
+
+        form:
+          title: 'Mudar tipo de Manifestação'
+
+        create:
+          title: Mudar tipo de Manifestação
+          done: 'O tipo da Manifestação foi modificado'
+          fail: 'É obrigatório informar uma justificativa e modificar o tipo da manifestação.'
+

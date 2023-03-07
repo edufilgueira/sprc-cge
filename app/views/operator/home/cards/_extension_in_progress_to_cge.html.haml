@@ -1,0 +1,10 @@
+.col-md-6.col-lg-4.col-sm-12.pb-3
+  = link_to operator_tickets_path(ticket_type: :sou, extension_status: :in_progress, solicitation: 2, organ_association: organ_association) do
+
+    .operator-home-card.warning
+
+      %h3.operator-home-card-title
+        = t(".title")
+
+      %p.operator-home-card-count
+        = tickets_extension_in_progress_count(:sou, 2, nil, organ_association)

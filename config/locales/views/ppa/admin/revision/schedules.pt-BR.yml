@@ -1,0 +1,8 @@
+pt-BR:
+  ppa:
+    admin:
+      revision:
+        schedules:
+          create:
+            done: Cronograma criado com sucesso
+            error: Erro ao criar Cronograma

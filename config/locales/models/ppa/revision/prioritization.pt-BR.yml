@@ -1,0 +1,7 @@
+pt-BR:
+  activerecord:
+    attributes:
+      ppa/revision/prioritization:
+        axis: Eixo
+        theme: Tema
+        city: Cidade

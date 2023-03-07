@@ -1,0 +1,156 @@
+@import 'base/variables';
+
+[data-tree-organizer] {
+
+  [data-default-message] {
+    display: none;
+  }
+
+  &[data-selected=''] {
+    [data-default-message] {
+      display: initial;
+    }
+  }
+
+  [data-restore-default],
+  [data-close] {
+    color: $brand-primary;
+    font-size: 0.9em;
+  }
+
+  [data-selected-value-container] {
+    background: $brand-success;
+    border-radius: 0.4em;
+    color: white;
+    cursor: pointer;
+
+    .value {
+      display: inline-block;
+      padding: 0.3em 0.6em;
+      padding-top: 0.6em;
+      padding-bottom: 0.1em;
+      line-height: 0.7em;
+
+      p {
+        margin-bottom: 0.8rem;
+        margin-top: 0.2rem;
+        min-height: 0.3rem;
+      }
+    }
+
+    .icon {
+      display: inline-block;
+      margin-top: 0.2em;
+      margin-right: 0.6em;
+      float: right;
+
+      a {
+        font-size: 1.3em;
+        color: white;
+      }
+    }
+  }
+
+  [data-container] {
+    display: none;
+  }
+
+  [data-list] {
+    padding: 0;
+
+    [data-node-type] {
+      margin: 0.5em 0;
+      cursor: grab;
+
+      &:active {
+        cursor: grabbing;
+      }
+
+      // status de removido
+      &[data-removed=true] {
+        display: none !important;
+      }
+
+      .node-container {
+        background: $brand-success;
+        border-radius: 0.4em;
+
+        .node-position {
+          display: inline-block;
+          float: left;
+          border-radius: 100%;
+          background: white;
+          color: $brand-success;
+
+          min-width: 1.5em;
+          padding: 0.2em 0.3em;
+          margin: 0.4em 0.3em;
+
+          text-align: center;
+          line-height: 1.2em;
+          font-size: 0.7em;
+          font-weight: bold;
+        }
+
+        .node-title {
+          display: inline-block;
+          color: white;
+          margin-left: 0.2em;
+          margin-top: 0px;
+          padding-top: 1px;
+          font-size: 0.9em;
+
+          line-height: 1.8em;
+        }
+
+        .node-remove {
+          display: inline-block;
+          float: right;
+          color: white;
+
+          width: 1.5em;
+          margin-top: 1px;
+          text-align: center;
+
+          cursor: pointer;
+        }
+      }
+
+      @for $i from 0 through 18 {
+        &[data-node-level='#{$i}'] {
+          margin-left: 0.8em * $i;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  [data-tree-organizer] {
+
+    [data-list] {
+
+      [data-node-type] {
+
+        .node-container {
+          .node-title {
+            font-size: 0.8em;
+            max-width: 70%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+
+            padding-top: 2px;
+          }
+        }
+
+
+        @for $i from 0 through 18 {
+          &[data-node-level='#{$i}'] {
+            margin-left: 0.55em * $i;
+          }
+        }
+      }
+    }
+  }
+}

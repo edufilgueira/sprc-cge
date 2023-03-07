@@ -1,0 +1,21 @@
+pt-BR:
+  ppa:
+    revision:
+      region_themes:
+        show:
+          remove_theme: 'Excluir tema'
+          edit_theme: 'Editar tema'
+          register_process: Registrada no processo de elaboração do PPA %{ppa_plan}
+          problem_situation:
+            title: Situações-Problemas
+            without_news: Sem novas situações-problemas cadastradas
+          regional_strategy:
+            title: Estratégias Regionais
+            without_news: Sem novas estratégias regionais cadastradas
+          answer: Resposta
+          no_answer: Sem resposta
+          new_proposals: Propostas
+          county: Município
+          all: Todos
+        destroy:
+          done: 'Tema removido com sucesso.'

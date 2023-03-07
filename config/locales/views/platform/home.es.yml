@@ -1,0 +1,84 @@
+es:
+  platform:
+    home:
+      index:
+        title: Inicio
+
+      notification_sections:
+        title: Centro de notificación
+        subject: Descripción
+        created_at: Fecha
+
+      tickets_dashboard_sections:
+
+        new:
+          sou: Registrar nueva manifestación
+          sic: Registrar nueva solicitación
+          ppa: Propor nueva directriz
+
+        sou:
+          title: Manifestaciones de oidoría
+          statuses: &statuses
+            active: En atención
+            inactive: Finalizadas
+
+        sic:
+          title: Solicitudes de información
+          statuses:
+            <<: *statuses
+
+        ppa:
+          title: Propuestas
+          statuses:
+            active: Mis propuestas
+            inactive: Propuestas en las que he votado
+
+      tickets_resume_sections:
+        sou:
+          super_title: Oidoría
+          title: Mis Manifestaciones públicas
+          see_more: Ver todas las Manifestaciones públicas
+          empty: Sin Manifestaciones
+
+        sic:
+          super_title: Acceso a la Información
+          title: Mis solicitudes públicas
+          see_more: Ver todas las solicitudes públicas
+          empty: Sin solicitudes
+        activity: Actividade
+
+      service_channels:
+        title: Canales de atención
+        description: >
+          Habla, sé parte del gobierno y haz valer tu derecho como ciudadano.
+          ¡Accede a los canales a continuación!
+
+        social:
+          title: Redes sociales
+
+          instagram: Instagram
+          twitter: Twitter
+          facebook: Facebook
+
+        other_channels:
+          title: Otros atendimentos
+
+          central: Central de Atención 155
+          email: E-mail
+          networking: >
+            Aula
+            <div class="small">
+              (Teléfonos y Dirección)
+            </div>
+          networking_sic: >
+            Relación de Responsables por el Acceso a la Información
+            <div class="small">
+              (Teléfonos y Dirección)
+            </div>
+          ceara_app_google: Google Play
+          ceara_app_appstore: App Store
+
+      pending_research:
+        sou:
+          title: 'Búsqueda de Satisfacción'
+          subtitle: 'Pendiente'

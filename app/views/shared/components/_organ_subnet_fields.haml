@@ -1,0 +1,40 @@
+- content_for :javascript, javascript_include_tag('views/shared/organ_subnet/form')
+
+- if admin?(current_user)
+  .col-sm-6
+    - checked = f.object.subnet_id.present? || params[:from_subnet].present?
+    = label_tag :from_subnet do
+      = check_box_tag :from_subnet, '1', checked, { class: 'mr-2', 'data-input': 'from-subnet' }
+      = t('.subnet.info')
+
+  .col-sm-6
+    .content{ 'data-content': 'organ' }
+      - organ_select_text = t('.organ.select')
+      = f.association :organ, prompt: organ_select_text, collection: organs_for_select, required: true, input_html: { 'data-input': 'organ', 'aria-label': organ_select_text }
+
+    .content{ 'data-content': 'subnet' }
+      - subnet_select_text = t('.subnet.select')
+      = f.association :subnet, prompt: subnet_select_text, collection: subnets_for_select, required: true, input_html: { 'data-input': 'subnet', 'aria-label': subnet_select_text }
+
+
+- elsif operator_sectoral?(current_user)
+  .col-sm-4
+    - checked = f.object.subnet_id.present? || params[:from_subnet].present?
+    = label_tag :from_subnet do
+      = check_box_tag :from_subnet, '1', checked, { class: 'mr-2', 'data-input': 'from-subnet' }
+      = t('.subnet.info')
+
+  .col-sm-4
+    .content{ 'data-content': 'organ' }
+      = content_with_label(current_user, :organ_name)
+      = f.input :organ_id, as: :hidden, input_html: { value: current_user.organ_id }
+
+    .content{ 'data-content': 'subnet' }
+      - subnet_select_text = t('.subnet.select')
+      = f.association :subnet, prompt: subnet_select_text, collection: subnets_by_organ_for_select(current_user.organ), required: true, input_html: { 'data-input': 'subnet', 'aria-label': subnet_select_text }
+
+
+- elsif current_user.subnet.present?
+  .col-sm-8
+    = content_with_label(current_user, :subnet_name)
+    = f.input :subnet_id, as: :hidden, input_html: { value: current_user.subnet_id }

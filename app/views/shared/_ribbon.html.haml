@@ -1,0 +1,11 @@
+- hosts_hg = ['apresentacao', 'homol']
+- stage =  hosts_hg.any? {|i| request.host.include? i} ? 'homologation' : ENV['STAGE']
+
+
+- if stage && stage != "production"
+  .ribbon
+    .sr-only
+      = t("app.env.stage.label")
+    %span
+      = t("app.env.stage.#{stage}")
+      

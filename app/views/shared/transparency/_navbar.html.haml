@@ -1,0 +1,32 @@
+.navbar-background.no-print
+.navbar-container.no-print
+  = render 'shared/navbar_head'
+
+  .container.background-container.no-print
+    .row.py-4-5
+      .col-lg-8.px-4
+        %h2.title.m-0
+          = content_for(:transparency_title) || t('.default_title')
+
+        %p.text-white
+          = content_for(:transparency_description) || t('.default_description')
+
+        - global_search_options = { search_box_id: 'navbar_head', search_box_placeholder: t('messages.filters.search.label'), search_box_title: '' }
+
+        = render 'shared/global_search', global_search_options: global_search_options
+
+      .col-lg-4
+        .card.hidden-lg-down
+          .card-block.p-3
+            %p.small
+              = t('.login.description')
+
+            = link_to new_user_registration_path, class: 'btn btn-tertiary mr-2' do
+              %i.fa.fa-user.fa-btn-icon
+              %span.small
+                = t('.sign_up.title')
+
+            = link_to new_user_session_path, class: 'btn btn-tertiary' do
+              %i.fa.fa-user-plus.fa-btn-icon
+              %span.small
+                = t('.login.title')

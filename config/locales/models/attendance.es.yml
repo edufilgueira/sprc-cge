@@ -1,0 +1,33 @@
+es:
+  activerecord:
+    attributes:
+      attendance:
+        description: Descripción del pedido
+        service_type: Tipo de servicio
+        service_type_str: Tipo de servicio
+        answer: Respuesta
+        unknown_organ: No sé el órgano responsable
+
+      attendance/service_type:
+        sou_forward: Registro SOU - encaminado
+        sic_forward: Registro SIC - encaminado
+        sic_completed: Registro SIC - finalizado
+        sou_search: Consulta SOU
+        sic_search: Consulta SIC
+        prank_call: Engaño
+        immediate_hang_up: Desistencia inmediata
+        hang_up: Desistencia en conversación
+        missing_data: Finalizado por falta de datos
+        no_communication: Sin comunicación
+        noise: Con ruidos/ruidos externo
+        technical_problems: Problemas técnicos - linea cruzada
+        incorrect_click: Clic incorrecto
+        transferred_call: Transferencia de llamada
+
+
+    errors:
+        models:
+          attendance:
+            attributes:
+              attendance_organ_subnets:
+                blank: Usted necesita agregar al menos 1 órgano o seleccione "No sé el órgano responsable".

@@ -1,0 +1,64 @@
+es:
+  activerecord:
+    attributes:
+      integration/expenses/ned:
+        exercicio: Ejercicio
+        unidade_gestora: Secretaría/Órgano
+        unidade_executora: Unidad ejecutora
+        numero: Número de la nota de empeño
+        natureza: Naturaleza
+        efeito: Efecto
+        data_emissao: Fecha de emisión
+        valor: Valor empeñado
+        valor_pago: Valor pagado
+        classificacao_orcamentaria_reduzido: Clasificación presupuestaria reducida
+        classificacao_orcamentaria_completo: Clasificación presupuestaria completa
+        item_despesa: Ítem de gasto
+        expense_nature_item_title: Ítem de gasto
+        cpf_ordenador_despesa: CPF ordenador del gasto
+        credor: Acreedor
+        cpf_cnpj_credor: CPF/CNPJ del acreedor
+        razao_social_credor: Razón social del acreedor
+        numero_npf_ordinario: Número NPF ordinario
+        projeto: Proyecto
+        numero_parcela: Número de la parcela
+        isn_parcela: ISN de la parcela
+        numero_proposta: Número de la propuesta
+        numero_processo_protocolo_original: Protocolo original del proceso
+        especificacao_geral: Especificación general
+        data_atual: Fecha actual
+
+        date_of_issue: Fecha de gastos
+        date_of_issue_filter: Periodo
+        management_unit_title: Secretaría/Órgano
+        executing_unit_title: Unidad ejecutora
+        creditor_nome: Acreedor
+        contract: Instrumento contractual
+
+        classificacao_unidade_orcamentaria: Unidad presupuestaria
+        classificacao_funcao: Función
+        classificacao_subfuncao: Subfunción
+        classificacao_programa_governo: Programa de gobierno
+        classificacao_acao_governamental: Acción gubernamental
+        classificacao_regiao_administrativa: Región de planeamiento
+        classificacao_natureza_despesa: Naturaleza del gasto
+        classificacao_fonte_recursos: Fuente dos recursos
+        classificacao_subfonte: Subfuente
+        classificacao_tipo_despesa: Tipo del gasto
+        classificacao_elemento_despesa: Elemento del gasto
+
+        calculated_valor_final: 'Valor empeñado'
+        calculated_valor_pago_final: 'Valor pagado'
+
+        calculated_valor_pago_exercicio: 'Valor pagado en el ejercicio de la emisión del empeño'
+        calculated_valor_pago_apos_exercicio: 'Valor pagado en años posteriores al de la emisión del empeño'
+        calculated_valor_liquidado_exercicio: 'Valor liquidado en el ejercicio de la emisión del empeño'
+        calculated_valor_liquidado_apos_exercicio: 'Valor liquidado en años posteriores al de la emisión del empeño'
+        items_description: Descripción del empeño
+
+        function_title: 'Función'
+        sub_function_title: 'Subfunción'
+        resource_source_title: 'Fuente del recurso'
+        government_program_title: 'Programa de gobierno'
+        government_action_title: 'Acción de gobierno'
+        modalidade_licitacao: 'Modalidad de licitación'

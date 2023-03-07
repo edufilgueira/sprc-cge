@@ -1,0 +1,15 @@
+en:
+
+  activerecord:
+
+    attributes:
+
+      page/attachment:
+        title: Title
+        imported_at: Generation date
+        document: File
+
+    models:
+      page/attachment:
+        one: Attachment
+        other: Attachments

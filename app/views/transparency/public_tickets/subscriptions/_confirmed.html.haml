@@ -1,0 +1,21 @@
+.row
+  .col-12
+    .card.card-custom
+
+      .card-header
+        %h3.card-title
+          = t(".title.#{ticket.ticket_type}")
+
+      .card-block
+        .card-subtitle
+          %h4
+            = t(".explanation.#{ticket.ticket_type}" , protocol: ticket.protocol)
+
+
+        .row.mt-3
+          .col-12
+            = content_with_label(ticket_subscription, :email)
+
+        .row
+          .col-12
+            = link_to t('.unfollow'), unsubscribe_transparency_public_ticket_subscriptions_path(public_ticket_id: ticket.id, token: ticket_subscription.token) , class: 'btn btn-primary btn-danger'

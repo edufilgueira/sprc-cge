@@ -1,0 +1,56 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, department.title
+
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-12.col-md.-8
+            %h3.card-title= department.acronym
+
+          .col-12.col-md-4
+            .float-right
+              = link_to "#{controller.request.original_url}&print=true", 'data-input': 'btn-print', class: "btn btn-link btn-print hover-link d-inline-block", target: :_blank do
+                %i.fa.fa-print{ 'aria-hidden': 'true' }
+                = t('.commands.print')
+
+
+      .card-block
+
+        .row
+
+          .col-12.col-md-6
+            = content_with_label(department, :name)
+
+          .col-12.col-md-6
+            - if department.organ.present?
+              = content_with_label(department, :organ_name)
+
+            - if department.subnet.present?
+              = content_with_label(department, :subnet_name)
+
+      .card-block
+
+        - sub_departments = department.sub_departments.sorted
+        - if sub_departments.present?
+          %hr{'aria-hidden': 'true'}
+
+          %h4.card-subtitle= SubDepartment.model_name.human(count: 2)
+
+          .row.mt-3
+            .col-12
+              - sub_departments.each do |sub_department|
+                %p
+                  - if sub_department.disabled?
+                    %del=sub_department.title
+                    %small= t('.sub_departments.disabled_at', disabled_at: l(sub_department.disabled_at, format: :shorter))
+                  - else
+                    = sub_department.title

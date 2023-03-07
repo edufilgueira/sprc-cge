@@ -1,0 +1,24 @@
+= I18n.t("shared.notifications.messages.satisfaction_survey.body.#{ticket_type}")
+
+%br
+%br
+
+= I18n.t('shared.notifications.messages.satisfaction_survey.body_complement.ticket_identification')
+%br
+
+- if ticket.organ_id.present?
+  = I18n.t("shared.notifications.messages.satisfaction_survey.body_complement.organ", organ: ticket.organ.full_title)
+  %br
+
+= I18n.t("shared.notifications.messages.satisfaction_survey.body_complement.protocol", protocol: protocol)
+%br
+
+- if user.class.to_s == 'Ticket'
+  - ticket_parent = user.parent || user
+  = I18n.t("shared.notifications.messages.satisfaction_survey.body_complement.password", password: ticket_parent.plain_password)
+  %br
+  %br
+
+  = I18n.t("shared.notifications.messages.satisfaction_survey.body_complement.protocol_link", url: url)
+- else
+  = I18n.t("shared.notifications.messages.satisfaction_survey.body_complement.user_link", url: url)

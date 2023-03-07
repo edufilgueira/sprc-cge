@@ -1,0 +1,16 @@
+- unless anonymous_param && namespace != :operator
+  .card.card-custom
+
+    .card-header
+
+      %h3.card-title
+        = t('shared.tickets.form.contact_info.title')
+
+    .card-block
+
+      .row.mb-2
+
+        .col-12
+          = render 'shared/tickets/answer_types_toggle', f: f, ticket: ticket, field_name: "ticket[answer_type]", answer_types: ticket_answer_types_for_toggle
+
+      = render 'shared/tickets/contact_fields', f: f

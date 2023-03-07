@@ -1,0 +1,28 @@
+es:
+  ppa:
+    breadcrumbs:
+      region_with_biennium: "%{biennium} - %{region}"
+
+      home:
+        show:
+          title: Participación Ciudadana (PPA)
+
+      workshops:
+        index:
+          title: Talleres de elaboración
+
+      past_workshops:
+        index:
+          title: Talleres de elaboración
+
+      proposals:
+        index:
+          title: Propuestas temáticas
+
+      proposals:
+        index:
+          title: Propuestas
+        new:
+          title: Nueva propuesta
+        show:
+          title: Detalles propuesta

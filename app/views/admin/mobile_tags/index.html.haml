@@ -1,0 +1,38 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2
+  = t('.title')
+
+= form_for admin_mobile_tags_path, method: :get do |f|
+
+  .card.card-custom
+
+    .card-header
+
+      .row
+
+        .col-12
+
+          %h3.card-title
+            = t('.filters.title')
+
+    .card-block
+
+      = render 'filters', f: f
+
+      - if mobile_tags.present?
+
+        .mt-4
+
+          = render 'table'
+
+        .row.mt-4.text-center
+          .col
+            = paginate mobile_tags
+
+      - else
+
+        .row
+          %i.col-md-12.text-center
+            = t('.empty')

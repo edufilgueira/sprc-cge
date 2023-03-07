@@ -1,0 +1,6 @@
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        blank: Campo obrigatório.
+        repeated: opção já escolhida

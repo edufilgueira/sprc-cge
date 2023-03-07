@@ -1,0 +1,125 @@
+en:
+  home:
+    site_map:
+      index:
+        title: Site map
+
+      transparency:
+        title: Transparency
+        default:
+          access: Access Transparency
+          what_is: What is Transperncy?
+          map: Interactive Maps
+          news: News
+          society_mobile_apps: Society Initiatives
+          whats_new: News
+        news_sections:
+          title: News and Articles
+          cge: The State of Ceará’s General Controllership and Ombudsman News
+          gov: News of the State Government of Ceará
+        revenues:
+          title: State Revenue
+          accounts: Executive Power Reveneues
+          registered: Posted Revenues
+          transfers: Resources via Transfers
+          expenses: Revenues/Expenditures
+        expenses:
+          title: State Expenditures
+          budget_balances: Executive Power Expenditures
+          neds: Expenses by Statement of Agreement
+          dailies: Expenses on hotel accomodations
+          fund_supplies: Funds Supply
+          server_salaries: Information on Servants
+          corporate_card: Corporate Card
+          city_undertakings: Investment by City
+          macroregion_investiments: Investiment by Macro-Region
+          contracts: Contracts
+          management_contracts: Managemet Contracts
+          convenants: Agreements
+          purchases_finalized: Completed bids
+          purchases: Open bids
+          constructions_daes: Edifications Civil Work
+          constructions_ders: Road Works
+          non_profit_transfers: Transfers to Non-Profit Entities
+          multi_gov_transfers: Transfers to Multigovernmental Institutions
+          consortium_transfers: Transfers to Public Consortia
+          city_transfers: Transfers to Municipalities
+          required_city_transfers: Compulsory Transfer of Resources to Cities
+        management:
+          title: State Management
+          revenue_liquid: Current Net Revenue
+          report_fiscal_management: Fiscal Management Report
+          report_summary_budget_execution: Summary Report on Budgetary Execution
+          budget_laws: Budgetary Laws
+          report_internal_control: Internal Control Report
+          report_external_control: External Control Report
+          general_balance_state: State General Balance
+          real_estate: Real State
+          official_state_newspaper: State Official Gazette
+          social_control_tool: Social Control Tools
+          management_result: Management by Result
+          fiscal_indicators: Tax Indicators
+          investment_opportunity: Investment Oportunities
+          government_policy: Government Policies
+          radar: Radar
+          socioeconomic_information: Socioeconomic Information
+          result_indicators: Result Indicators
+          preventive_internal_control: Internal Preventive Control
+          governance_models: Governance Models
+          organizational_structure: Organizational Structure
+          address_phone: Adresses and Phone Numbers
+          participative_management: Participative Management
+          cogerf: COGERF
+          pib: PIB
+        maps:
+          title: Interactive Maps
+          constructions_daes: Edification Civil Work
+          constructions_ders: Road Works
+          hydrological_portal: Ceara Hydrological Portal
+          srh: SRH Atlas
+
+
+      sou:
+        title: Ombudsman
+        default:
+          access: Access Ombudsman
+          what_is: What is Ombudsman?
+          new: New manifestation
+          login: Follow Manifestation
+          how_use: How can I use it?
+          service_channels: Service Channels
+          executive_ombudsmen: Ombudsman Network with the State Executive Power
+          organs_ce: Cearense Network of Public Ombudsman and Similar
+          organs_strengthening_program: Ombudsman Reinforcement Program
+          statistics: Ombudsman Statistical Panels
+          report_management: Manegmenet Reports
+          legislation: Legislation
+          articles: Academic Publications and Articles
+          next_events: Next to events
+
+
+      sic:
+        title: Access to Information
+        default:
+          access: Open Informação Access
+          new: New Request
+          login: Follow Request
+          public_sic: Public Requests
+          what_is: What is Access to Information?
+          how_use: How can I use it?
+          report_management: Management reports
+          legislation: Legislation
+          report_statistics: Statistical Reports on Access to Information
+          statistics: Statistics of Requests to Access Information
+        sensitive_information:
+          title: List of confidential information
+          information_classification: Classified and Declassified Information
+          cgai: Portaria CGAI n° 01.2016
+
+
+      services:
+        title: Services
+        default:
+          service_letter: Service Channels
+          mobile_apps: Official Apps
+          electronic_services: Electronic Services

@@ -1,0 +1,78 @@
+= cache(cache_key) do
+
+  = render 'shared/components/filtered_warning', filtered: filtered?
+
+  .my-4
+
+    %hr{'aria-hidden': 'true'}
+
+    = render 'transparency/exports/form'
+
+    %hr{'aria-hidden': 'true'}
+
+    .fa.fa-spin.fa-refresh.m-1.text-muted.float-right{'data-remote-content-loader': ''}
+
+    .row
+      .col-12.col-lg-6
+        .content-with-label
+          - label = raw(t('.counts.filtered_count.title'))
+          - value = number_with_delimiter(filtered_count)
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+      .col-12.col-lg-6
+        .content-with-label
+          - label = raw(t('.counts.filtered_sum.calculated_valor_final.title'))
+          - value = number_to_currency(filtered_sum[:calculated_valor_final])
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+    %hr{'aria-hidden':'true'}
+
+    - header = [:numero, :date_of_issue, :unidade_gestora, :credor, { id: :calculated_valor_final, html_class: 'text-right w-15' }]
+
+    - table_locale = t('.table')
+
+    = render 'shared/components/remote_table', header: header, collection: dailies, sort_columns: sort_columns, table_locale: table_locale do |daily|
+
+      - show_path = url_for(action: 'show', controller: 'expenses/dailies', id: daily)
+
+      - ned = daily.nld.ned
+
+      %tr
+
+        %td
+          = link_to show_path do
+            = filtered_highlighted(daily.numero)
+
+        %td
+          = link_to show_path do
+            = daily.data_emissao
+
+        %td
+          - management_unit_name = daily.management_unit_acronym || daily.unidade_gestora
+          - management_unit_title = daily.management_unit_title || daily.unidade_gestora
+
+          = link_to show_path, title: management_unit_title do
+            - if filtered_params?([:unidade_gestora])
+              = highlight(management_unit_name.truncate(30), management_unit_name.truncate(30))
+            - else
+              = filtered_highlighted(management_unit_name.truncate(30))
+
+        %td
+          = link_to show_path, title: daily.creditor_nome do
+            = filtered_highlighted(daily.creditor_nome)
+
+        %td.text-right
+          = link_to show_path do
+            = number_to_currency(daily.calculated_valor_final)

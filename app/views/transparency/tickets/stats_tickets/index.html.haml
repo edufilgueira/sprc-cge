@@ -1,0 +1,6 @@
+= render 'shared/reports/stats_tickets/index'
+
+- #
+- # Pesquisa de satisfação
+- #
+= render "shared/transparency/survey_answers/form", transparency_id: 'stats_tickets', action: action_name, controller: controller_path, url: request.original_url

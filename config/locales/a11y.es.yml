@@ -1,0 +1,26 @@
+es:
+  a11y:
+    link:
+      new_window:
+        text: Enlace para abrir en un nueva aba. 
+
+      go:
+        content: Ir para el contenido 
+      back:
+        menu: Volver para el menu inicial 
+        content: Volver para el inicio del contenido
+
+    anchor:
+      content: Inicio del contenido 
+      menu: Inicio del menu inicial
+
+    noscript: El comportamiento dinámico de esta página no tiene un contenido alternativo para los navegadores que no admiten secuencias de comandos.
+
+    hidden: El texto está oculto!
+
+    toolbar:
+      description: Inicio del menu desta página 
+    breadcrumbs:
+      description: Inicio del control de navegación 
+
+

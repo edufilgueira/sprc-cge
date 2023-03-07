@@ -1,0 +1,14 @@
+pt-BR:
+
+  operator:
+
+    tickets:
+
+      appeals:
+
+        new:
+          title: Nova solicitação de recurso
+
+        create:
+          done: Solicitação de recurso realizada com sucesso
+          error: Erro ao solicitar recurso

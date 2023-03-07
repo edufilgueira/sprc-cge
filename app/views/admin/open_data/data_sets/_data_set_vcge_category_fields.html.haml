@@ -1,0 +1,13 @@
+- data_set_vcge_category = f.object
+
+.nested-fields.my-2.border.p-3
+  .row
+    .col-11
+
+      - select_text = t('.category.select')
+      - categories = OpenData::VcgeCategory.order(:title).map{|category| [category.title, category.id]}
+      = f.input :open_data_vcge_category_id, collection: categories, label: false, include_blank: false, input_html: { 'data-allow-clear': true, 'data-placeholder': select_text }
+
+    .col-1
+      .float-right
+        = link_to_remove_association "", f, { class: 'fa fa-trash fa-2x', 'aria-label': t('simple_form.file.remove') }

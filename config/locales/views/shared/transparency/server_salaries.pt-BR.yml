@@ -1,0 +1,138 @@
+pt-BR:
+
+  shared:
+
+    transparency:
+
+      server_salaries:
+
+        shared: &shared
+          reference_month: "<strong>%{month_year}</strong>"
+
+        index:
+          <<: *shared
+
+          title: Informações sobre Servidores Públicos
+          description: |
+            Encontre aqui informações sobre servidores estaduais ativos,
+            inativos e pensionistas. Você pode fazer a pesquisa por nome, órgão ou cargo.
+            E na página <a target="_blank" href="/portal-da-transparencia/paginas/servidores-cedidos">Servidores Cedidos</a>, você também encontra informações sobre os servidores públicos estaduais emprestados a outros órgãos.
+            <span class='cordel text-orange text-dash-underline' data-toggle='popover' data-trigger='hover focus click' data-html='true' data-content='<p class="text-center">
+                      Aqui você BAIXA ARQUIVOS<br />
+                      Pra se informar cem por cento...<br />
+                      BAIXAR é o mesmo que ABRIR<br />
+                      Nessa máquina UM DOCUMENTO,<br />
+                      É só CLICAR ou "TRISCAR"<br />
+                      Que se abre no momento!</p>'>Explicação em cordel</span>
+
+          source: |
+            <p><strong>Fonte de dados:</strong></p>
+            <p>Secretaria do Planejamento e Gestão - SEPLAG</p>
+            <p>As informações disponibilizadas nessa página dependem do envio dos dados da SEPLAG e do METROFOR.</p>
+
+          chart:
+            unique_count:
+              unit: 'Servidores'
+              title: 'Quantidade total de servidores'
+            income_total:
+              unit: 'Gastos em R$'
+              title: 'Valores gastos com remuneração de servidores'
+
+            limited: '*O gráfico está limitado aos 10 maiores valores. Baixe a planilha completa para ter acesso a todos os dados.'
+
+          charts:
+            tabs:
+              functional_status:
+                title: Por situação funcional
+              organ:
+                title: Por órgão
+              role:
+                title: Por cargo
+
+          filters:
+            title: Filtros e busca por período
+            month: Mês
+
+            search:
+              hint: |
+                Você pode buscar por parte do nome dos servidores,
+                Exemplos: 'pedro lui', 'joa silv', 'ant francis', entre outros.
+
+
+          table:
+            summary: Lista de servidores públicos
+            header:
+              server_name: 'Servidor'
+              organ: 'Órgão'
+              functional_status: Situação
+              role_name: 'Cargo/Função/Emprego'
+              income_total: 'Salário bruto'
+              income_final: 'Salário líquido'
+
+          stats:
+            title: Principais números relacionados aos servidores estaduais
+            unique_count: 'Total de servidores em <strong>%{date}</strong>'
+            count: 'Total de matrículas em <strong>%{date}</strong>'
+
+            income_total: 'Total de salários pagos em <strong>%{date}</strong>'
+
+          counts:
+
+            unique_servers_count:
+              title: Total de servidores estaduais
+
+            server_salaries_count:
+              title: Total de matrículas
+
+            income_total_sum:
+              title: Total de salários pagos
+              tooltip: Total de salários pagos (Considerando o Teto Governamental)
+
+          additional:
+            title: 'Decretos Anuais de Reajuste Salarial dos Servidores'
+            link: 'Ir para a página com os decretos'
+            url: '/portal-da-transparencia/paginas/portarias-anuais-de-reajuste-salarial-dos-servidores'
+
+        show:
+          <<: *shared
+
+          title: Páginas de Transparência
+
+          infos:
+            source: >
+              <p>Fonte de dados: Secretaria do Planejamento e Gestão (SEPLAG) - Sistema de Folha de Pagamento - SFP.</p>
+              <p>Secretaria da Fazenda (SEFAZ) - Sistema de Gestão Governamental por Resultados - S2GPR (Informações sobre outros pagamentos recebidos)</p>
+
+            proceeds: >
+              <p><strong>Salário Bruto</strong>: Corresponde a remuneração total, incluindo: vencimento base, gratificações, adicionais, prêmios, bonificações, auxílios, benefícios, ajuda de custo (exceto diárias), abonos, soldo e demais vantagens de qualquer espécie recebidas e registradas em folha de pagamento.</strong></p>
+              <p><strong>Outros pagamentos recebidos</strong>: Corresponde às diárias recebidas pelo agente público para cobrir despesas com viagens (locomoção, alimentação e hospedagem). O valor apresentado soma todas as diárias recebidas no período e é atribuído por CPF, independente da matrícula do servidor no órgão.</strong></p>
+              <p><strong>Outros Descontos</strong>: Refere-se aos descontos de previdência, Imposto de Renda Retido na Fonte - IRRF, faltas/atrasos, eventual reposição de parcelas remuneratórias recebidas indevidamente, pensão alimentícia, consignações em prol de associações, sindicatos e agentes financeiros.</strong></p>
+              <p><strong>Abatimento em função do "teto" constitucional</strong>: Refere-se a eventual abatimento em remuneração recebida em função do teto constitucional, art. 37, inciso XI da Constituição Federal e art. 1º da Lei Estadual nº. 14.236/2008.</strong></p>
+              <p><strong>Salário líquido</strong>: Refere-se a remuneração líquida recebida (exceto "outros pagamentos recebidos"), deduzindo os descontos e eventual abatimento em função do teto constitucional.</p>
+
+
+          debit_proceeds:
+            title: Descontos
+            summary: Tabela de descontos do servidor
+            total: Total descontos
+            others: Outros descontos
+            under_roof:  Abatimento em função do "teto" constitucional
+            empty: Nenhum desconto encontrado para o mês selecionado.
+            table:
+              heads:
+                vlr_financeiro: Valor
+                dsc_debit: Tipo do desconto
+
+          credit_proceeds:
+            title: Salários
+            total: Total (Salário bruto)
+            empty: Nenhum salário encontrado para o mês selecionado.
+            summary: Tabela de salário do servidor
+            table:
+              heads:
+                vlr_financeiro: Valor
+                dsc_provento: Tipo do provento
+
+          total_proceeds:
+            income_dailies: Outros pagamentos recebidos
+            total: Salário líquido

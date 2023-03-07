@@ -1,0 +1,22 @@
+pt-BR:
+  activerecord:
+    attributes:
+
+      budget_program:
+        name: Nome
+        code: Código
+        theme: Tema
+        theme_name: Tema
+        organ_id: Órgão
+        organ: Órgão
+        organ_name: Órgão
+        subnet: Sub-rede
+        subnet_name: Sub-rede
+
+    errors:
+      models:
+        budget_program:
+          attributes:
+
+  budget_program:
+    no_characteristic: NÃO SE APLICA

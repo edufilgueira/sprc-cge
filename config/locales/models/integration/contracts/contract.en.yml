@@ -1,0 +1,80 @@
+en:
+  activerecord:
+    attributes:
+      integration/contracts/contract:
+        isn_sic: SACC Nº
+        num_contrato: Contract Nº
+        descricao_objeto: Contract scope
+        tipo_objeto: Contract scope type
+        num_spu: "Process Nº - SPU"
+        cpf_cnpj_financiador: CPF/CNPJ
+        descricao_justificativa: Justification
+        decricao_modalidade: Bidding modality
+        data_assinatura: Signature Date
+        data_termino: End date
+        accountability_status: Accountability status
+        cod_concedente: Contracting Code
+        cod_financiador: "Contractor's code"
+        cod_gestora: Secretariat/Agency
+        cod_orgao: Agency Code
+        cod_secretaria: Secretariat
+        descricao_tipo: Description type
+        descricao_url: Description URL
+        data_processamento: Processing date
+        flg_tipo: Flag type
+        isn_parte_destino: ISN destination
+        isn_modalidade: ISN modality
+        isn_entidade: ISN entity
+        num_spu_licitacao: SPU bidding number
+        data_publicacao_portal: Publication data on the Ceará Transparent Platform
+        data_publicacao_doe: DOE (official) publication date
+        descricao_url_pltrb: Description of url pltrb
+        descricao_url_ddisp: Description of url ddisp
+        descricao_url_inexg: Description url inexg
+        cod_plano_trabalho: Work plan code
+        num_certidao: Certificate Number
+        descriaco_edital: Edital description
+        num_contrato: Contract number
+
+        valor_contrato: Original value
+        valor_original_concedente: "Initial value of the grantor's transfer"
+        valor_atualizado_concedente: Updated value
+        valor_aditivo: Additive value
+        valor_ajuste: Adjustment value
+        valor_empenhado: Committed value
+        valor_pago: Paid value
+        calculated_valor_aditivo: Additive value
+        calculated_valor_ajuste: Adjustment value
+        calculated_valor_empenhado: Committed value
+        calculated_valor_pago: Paid value
+        valor_can_rstpg: Cancellation value of remainders to be paid
+        valor_original_contrapartida: Beneficiary/convenant counterpart initial value
+        valor_atualizado_contrapartida: Beneficiary/convenant counterpart updated value
+        valor_atualizado_total: Updated total value
+
+        descricao_situacao: Physical situation
+
+        status: Validity
+        status_str: Validity
+
+        infringement_status: Convenient status
+        infringement_status_str: Document status
+
+        manager_title: Unit
+        grantor_title: Contractor
+        creditor_title: Contracted
+        descricao_nome_credor: Contracted
+
+  integration/contracts/contract:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Contracts %{month}-%{year}'
+
+    infringement_statuses:
+      adimplente: Compliant
+      inadimplente: Default
+
+    statuses:
+      concluido: Finished
+      vigente: Effective

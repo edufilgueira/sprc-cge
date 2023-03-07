@@ -1,0 +1,114 @@
+pt-BR:
+
+  admin:
+
+    integrations:
+
+      index:
+        title: Integrações
+
+        sections:
+          title: Seções
+
+      cards:
+        importers:
+          title: Dados Abertos
+          text: Gestão de integração automática com serviços externos
+          index: Ir para importadores
+
+        shared: &shared
+          config: Integração
+          data: Visualizar dados
+
+        city_undertakings:
+          <<: *shared
+          title: Investimentos por município
+          text: 'Investimentos realizados nos municípios pelo Governo do Estado do Ceará'
+
+        servers:
+          <<: *shared
+          title: Servidores
+          text: Gestão das informações dos servidores públicos
+
+        revenues:
+          <<: *shared
+          title: Receitas
+          text: Gestão de importação das informações de receitas
+
+        biddings:
+          <<: *shared
+          title: Licitações em andamento
+          text: Gestão de importação das informações das licitações
+
+        eparcerias:
+          <<: *shared
+          title: e-Parcerias
+          text: 'Informações do e-Parcerias (OBT, Anexos de Planos de Trabalho, ...)'
+
+        expenses:
+          <<: *shared
+          title: Despesas
+          text: Gestão de importação das informações das despesas
+
+        results:
+          <<: *shared
+          title: Resultados
+          text: Gestão de importação dos dados de consultoria de resultados
+
+        contracts:
+          <<: *shared
+          title: Contratos
+          text: Gestão de importação das informações dos contratos
+
+        convenants:
+          <<: *shared
+          title: Convênios
+          text: Gestão de importação das informações dos convênios
+
+        domain:
+          <<: *shared
+          title: Tabela Exercício
+          text: 'Informações da Tabela Exercício (Natureza da despesa, ...)'
+
+        organs:
+          <<: *shared
+          title: Órgãos
+          text: Gestão de importação das informações de órgãos
+
+        creditors:
+          <<: *shared
+          title: Credores
+          text: Gestão de importação das informações de credores
+
+        constructions:
+          <<: *shared
+          title: Obras
+          text: Gestão de importação das informações de obras
+          data:
+            dae: DAE
+            der: DER
+
+        purchases:
+          <<: *shared
+          title: Licitações finalizadas
+          text: Gestão de importação das informações de licitações finalizadas
+
+        real_states:
+          <<: *shared
+          title: Bens Imóveis
+          text: Gestão de importação das informações de bens imóveis
+
+        axes:
+          <<: *shared
+          title: Eixos
+          text: Gestão de importação das informações de eixos
+
+        themes:
+          <<: *shared
+          title: Temas
+          text: Gestão de importação das informações de temas
+
+        macroregion_investments:
+          <<: *shared
+          title: Investimentos por macrorregião
+          text: Gestão de importação das informações de investimentos por macrorregião

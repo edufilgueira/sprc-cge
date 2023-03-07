@@ -1,0 +1,10 @@
+- description_type = ticket.denunciation? ? :denunciation_description_str : :description
+
+.content-with-label
+  %p.content-label
+    = Ticket.human_attribute_name(description_type)
+  .content-value
+    - if operator?(current_user)
+      = raw(description_for_operator(current_user, ticket))
+    - else
+      = raw(ticket.send(description_type))

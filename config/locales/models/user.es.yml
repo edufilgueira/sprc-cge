@@ -1,0 +1,116 @@
+es:
+  activerecord:
+    attributes:
+
+      user:
+        document: Documento
+        document_type: Tipo del documento
+        document_type_str: Tipo del documento
+        email: Correo electrónico
+        email_confirmation: Confirmación del correo electrónico
+        name: Nombre
+        password: Contraseña
+        password_confirmation: Confirmación de la contraseña
+        user_type: Tipo de usuario
+        operator_type: Tipo del operador
+        organ: Órgano
+        department: Unidad
+        subnet: Subred
+        user_type_str: Tipo del usuario
+        operator_type_str: Tipo del operador
+        organ_name: Órgano
+        organ_acronym: Órgano
+        department_name: Unidad
+        subnet_name: Subred
+        person_type: Tipo del perfil
+        person_type_str: Tipo del perfil
+        provider: Origen
+        social_name: Nombre social
+        gender: Género
+        gender_str: Género
+        denunciation_tracking: Selección de denuncias
+        education_level: Formación
+        education_level_str: Formación
+        birthday: Fecha de nacimiento
+        server: ¿Usted es funcionario?
+        city: Municipio
+        city_id: Municipio
+        city_title: Municipio
+        state: Provincia
+        positioning: ¿Puede actuar como área interna?
+        internal_subnet: ¿Pertenece a una subred?
+        subnet_full_acronym: Subred
+
+      user/gender:
+        not_informed_gender: No informar
+        female: Femenino
+        male: Masculino
+        other_gender: Otro
+
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: Contraseña muy corta.
+            password_confirmation:
+              confirmation: La confirmación no es igual a la contraseña.
+            cpf:
+              invalid: CPF inválido
+            cnpj:
+              invalid: CNPJ inválido
+            department_id:
+              invalid_organ_association: La unidad no existe para el órgano elegido
+              invalid_subnet_association: La unidad no existe para la subred elegida
+            sub_department_id:
+              invalid_department_association: La subunidad no existe para la unidad elegida
+  user:
+    need_to_change_password: Le informamos que se requiere una actualización de contraseña. Cambie de inmediato y manténgase actualizado con las políticas de seguridad de Ceará Transparente. Use el formulario de edición de su perfil para modificar su contraseña y mantener sus datos actualizados.
+    document_types:
+      cpf: CPF
+      rg: RG
+      cnh: CNH
+      ctps: CTPS
+      passport: Pasaporte
+      voter_registration: Título de elector
+      cnpj: CNPJ
+      registration: Matrícula institucional
+      other: Otro
+
+    user_types:
+      admin: Administrador
+      operator: Operador
+      user: Usuario
+
+      color_classes:
+        admin: peligro
+        operator: advertencia
+        user: información
+
+    operator_types:
+      cge: Operador CGE
+      cge_denunciation_tracking: Selección de denuncias
+      call_center_supervisor: Supervisor 155
+      sou_sectoral: Operador sectorial SOU
+      sic_sectoral: Operador sectorial SIC
+      internal: Operador interno
+      call_center: Dependiente 155
+      chief: Dirigente
+      subnet_sectoral: Operador subred
+      subnet_chief: Dirigente Subred
+
+    person_types:
+      individual: Persona física
+      legal: Persona jurídica
+
+    genders:
+      not_informed_gender: No informado
+      female: Femenino
+      male: Masculino
+      other_gender: Otro
+
+    education_levels:
+      primary_school: Enseñanza fundamental
+      high_school: Enseñanza secundaria
+      bachelors_degree: Superior
+      postgraduate: posgraduación

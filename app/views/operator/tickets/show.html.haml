@@ -1,0 +1,32 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+
+.row
+
+  .col-12
+
+    %h2
+      = ticket.title
+
+- if ticket.reopened?
+  = render 'reopen_alert'
+
+- if ticket.appeals?
+  = render 'appeal_alert'
+
+= render 'note_alert', ticket: ticket.parent || ticket
+
+- if operator_coordination_or_cge?(current_user)
+  - children = ticket.tickets.awaiting_invalidation
+
+  - children.each do |child|
+    - ticket_log_invalidate = ticket_last_log_invalidate(child)
+    = render 'invalidate_alert', ticket_log: ticket_log_invalidate, ticket: child, new_comment: new_comment, scope: :internal
+
+- extension = ticket.extension_organ_in_progress(ticket.next_extension_number)
+
+- if extension.present? && can?(:approve_extension, ticket)
+  = render 'extension_alert', extension: extension
+
+
+= render 'shared/tickets/confirmed', namespace: :operator, ticket: ticket, new_comment: new_comment

@@ -1,0 +1,18 @@
+@import 'base/variables';
+@import 'bootstrap/variables';
+
+.tableexport, [data-toggle='table-export'] {
+  margin-bottom: 0;
+}
+
+.table-export-comands {
+  float: right;
+  padding: 0;
+
+  button {
+    cursor: pointer;
+    padding: 1em 0.25em 0em 0.25em;
+    font-size: 0.85em;
+    font-size: 0.85em;
+  }
+}

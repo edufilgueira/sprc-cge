@@ -1,0 +1,15 @@
+%label
+  = t('.label')
+
+.sou-types-btn-group.btn-group.btn-group-justified.mb-3{role: 'group', data: { toggle: 'radio-buttons', content: 'sou_types' }}
+
+  - ticket_sou_types(anonym).each do |sou_type|
+
+    - option_label = t("ticket.sou_types.#{sou_type}")
+    - checked = (sou_type.to_s == ticket.sou_type)
+    - active_class = (checked ? 'active' : '')
+
+    %label.btn.btn-outline-primary{ class: active_class, for: option_label, 'tabindex': '0', 'role': 'button', data: { title: option_label }}
+      %div{ 'data-content': "sou_type_#{sou_type}" }
+        = radio_button_tag field_name, sou_type, checked, id: option_label, "data-input": sou_type
+      = option_label

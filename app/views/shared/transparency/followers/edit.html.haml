@@ -1,0 +1,7 @@
+.row.mt-4
+  .col
+    .text-center.text-muted
+      - if transparency_follower.active?
+        = link_to t('shared.transparency.followers.edit.title'), transparency_follower_path(transparency_follower), method: :patch
+      - else
+        = t('shared.transparency.followers.unsubscribe.title')

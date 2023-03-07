@@ -1,0 +1,31 @@
+en:
+  activerecord:
+    attributes:
+      integration/real_states/real_state:
+        manager_id: Agency
+        property_type_id: Real estate type
+        occupation_type_id: Occupation type
+        manager_title: Agency
+        property_type_title: Real estate type
+        occupation_type_title: Occupation type
+        service_id: ID
+        descricao_imovel: Description
+        estado: State
+        municipio: City
+        area_projecao_construcao: Construction Projection Area (m2)
+        area_medida_in_loco: Measured area in loco (m2)
+        area_registrada: Registered area (m2)
+        frente: Facade (m)
+        fundo: Back (m)
+        lateral_direita: Right side (m)
+        lateral_esquerda: Left side (m)
+        taxa_ocupacao: Occupancy rate (%)
+        fracao_ideal: Ideal fraction
+        numero_imovel: Real estate number
+        utm_zona: UTM Zone
+        bairro: Neighborhood
+        cep: CEP (ZIP)
+        endereco: Address
+        complemento: Additional info
+        lote: Lot
+        quadra: Block

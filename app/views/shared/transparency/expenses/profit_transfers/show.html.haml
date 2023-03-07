@@ -1,0 +1,8 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, profit_transfer.title
+
+
+%h2.sr-only
+  = t('.title')
+
+= render 'shared/transparency/expenses/neds/show', ned: profit_transfer

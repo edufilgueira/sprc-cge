@@ -1,0 +1,47 @@
+pt-BR:
+
+  admin:
+
+    subnets:
+      create:
+        title: Nova Sub-rede
+        done: "A sub-rede '%{title}' foi criada."
+        error: Falha ao criar a sub-rede
+      destroy:
+        done: "A sub-rede '%{title}' foi removida."
+      form:
+        commands:
+          cancel: < Voltar a lista de sub-redes
+          create: Criar sub-rede
+        organ:
+          select: Selecione o órgão
+      index:
+        commands:
+          new: Nova sub-rede
+        title: Sub-redes
+        table:
+          summary: Lista de sub-redes
+          header:
+            acronym: Sigla
+            name: Nome
+            organ_acronym: Órgão
+            commands: ''
+            status: ''
+        filters:
+          select:
+            organ: Órgão
+
+      new:
+        title: Nova sub-rede
+      edit:
+        title: Edição
+      update:
+        title: Edição de sub-rede
+        done: "A sub-rede '%{title}' foi atualizada."
+        error: Falha ao atualizar a sub-rede
+      show:
+        title: Exibição da sub-rede
+
+      toggle_disabled:
+        disabled: Sub-rede desabilitada!
+        enabled: Sub-rede habilitada!

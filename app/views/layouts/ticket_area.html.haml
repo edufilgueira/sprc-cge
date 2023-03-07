@@ -1,0 +1,37 @@
+!!! 5
+%html{lang: 'pt-BR'}
+
+  %head
+
+    = render 'shared/ticket_area/head'
+
+  %body{ data: { controller: controller_path } }
+
+    = render 'shared/a11y/content_link'
+
+    = render 'shared/ribbon'
+
+    = render 'shared/ticket_area/navbar'
+
+    .container
+
+      = render 'shared/ticket_area/notice'
+
+      = render 'shared/ticket_area/alert'
+
+      = render 'shared/ticket_area/toolbar'
+
+      = render 'shared/a11y/content_anchor'
+
+      = yield
+
+    = render 'shared/a11y/footer_links'
+
+    = render 'shared/ticket_area/footer'
+
+    = javascript_include_tag(:ticket)
+    = render 'shared/javascripts'
+    = yield(:javascript)
+    = noscript_include_tag
+
+    = render 'shared/google_analytics'

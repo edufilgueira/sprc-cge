@@ -1,0 +1,8 @@
+pt-BR:
+  ppa:
+    proposals:
+      votes:
+
+        # filters
+        ensure_open_for_voting:
+          alert: O período de votação não está aberto para essa proposta

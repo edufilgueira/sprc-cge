@@ -1,0 +1,228 @@
+pt-BR:
+  transparency:
+    tickets:
+      stats_evaluations:
+
+        index:
+          title: 'Dados estatísticos'
+          description: >
+            Painéis estatísticos mensais como dos dados consolidados da pesquisa de satisfação de ouvidoria,
+            acesso à informação e central 155 das avaliações de atendimento realizadas pelos cidadãos do Ceará Transparente.
+
+          average_alert: A nota de avaliação vai de 1 a 5.
+
+          tabs:
+            sou:
+              title: 'Ouvidoria digital'
+
+            sic:
+              title: 'Acesso à informação'
+
+            call_center:
+              title: 'Central 155'
+
+            transparency:
+              title: 'Transparência'
+
+          empty: 'Não existem estatísticas para este período'
+
+          sou:
+            title: 'Pesquisa de satisfação da Ouvidoria Digital'
+
+            summary:
+              title: 'Número de manifestações e pesquisas'
+
+              total_answered_tickets:
+                title: 'manifestações respondidas pelo Governo do Estado do Ceará'
+
+              total_user_evaluations:
+                title: 'pesquisas respondidas pelos usuários do Ceará Transparente'
+
+
+              evaluations:
+                questions_01:
+                  title: 'Índice de satisfação'
+
+                questions_02_03:
+                  title: 'Qualidade do serviço de ouvidoria'
+
+              average_question_01_a:
+                title: 'Em geral para o serviço de ouvidoria para este atendimento'
+
+              average_question_01_b:
+                title: 'Com o tempo de retorno da reposta'
+
+              average_question_01_c:
+                title: 'Com compreensão do atendente com o seu pedido'
+
+              average_question_01_d:
+                title: 'Recebeu todas as informações necessárias'
+
+
+              average_question_02:
+                title: 'Antes, achava que o serviço de ouvidoria era'
+
+              average_question_03:
+                title: 'Agora avalia o serviço de ouvidoria realizado'
+
+          sic:
+            title: 'Pesquisa de satisfação do serviço de informação'
+
+            summary:
+              title: 'Número de solicitações e pesquisas'
+
+              total_answered_tickets:
+                title: 'solicitações atendidas pelo Governo do Estado do Ceará'
+
+              total_user_evaluations:
+                title: 'pesquisas respondidas pelos usuários do Ceará Transparente'
+
+
+              evaluations:
+                questions_01:
+                  title: 'Índice de satisfação'
+
+                questions_02_03:
+                  title: 'Qualidade do serviço de informação'
+
+              average_question_01_a:
+                title: 'Em geral para o serviço de informação para este atendimento'
+
+              average_question_01_b:
+                title: 'Com o tempo de retorno da reposta'
+
+              average_question_01_c:
+                title: 'Com compreensão do atendente com o seu pedido'
+
+              average_question_01_d:
+                title: 'Recebeu todas as informações necessárias'
+
+
+              average_question_02:
+                title: 'Antes, achava que o serviço de acesso à informação era'
+
+              average_question_03:
+                title: 'Agora avalia o serviço de acesso à informação realizado'
+
+          call_center:
+            title: 'Pesquisa de satisfação da Central 155'
+
+            summary:
+              title: 'Número de chamados e pesquisas'
+
+              total_answered_tickets:
+                title: 'chamados respondidas pelo Governo do Estado do Ceará'
+
+              total_user_evaluations:
+                title: 'pesquisas respondidas pelos usuários do Ceará Transparente'
+
+
+              evaluations:
+                questions_01:
+                  title: 'Índice de satisfação'
+
+                questions_02_03:
+                  title: 'Qualidade do serviço da Central 155'
+
+              average_question_01_a:
+                title: 'Em geral para o serviço da Central 155 para este atendimento'
+
+              average_question_01_b:
+                title: 'Com o tempo de retorno da reposta'
+
+              average_question_01_c:
+                title: 'Com compreensão do atendente com o seu pedido'
+
+              average_question_01_d:
+                title: 'Recebeu todas as informações necessárias'
+
+
+              average_question_02:
+                title: 'Antes, achava que o serviço da Central 155 era'
+
+              average_question_03:
+                title: 'Agora avalia o serviço da Central 155 realizado'
+
+          transparency:
+            title: 'Pesquisa de satisfação de transparência'
+
+
+        organs:
+          more:
+            title: 'Mostrar/Esconder todos os órgãos'
+
+          title: 'Órgãos mais bem avaliados'
+
+          sou:
+            header:
+              position:
+                title: 'Posição'
+
+              organ_name:
+                title: 'Órgão'
+
+              total_tickets:
+                title: 'Manifestações abertas'
+
+              total_answered_tickets:
+                title: 'Manifestações respondidas'
+
+              total_user_evaluations:
+                title: 'Pesquisas repondidas'
+
+              average_evaluations:
+                title: 'Avaliação'
+
+          sic:
+            header:
+              position:
+                title: 'Posição'
+
+              organ_name:
+                title: 'Órgão'
+
+              total_tickets:
+                title: 'Solicitações abertas'
+
+              total_answered_tickets:
+                title: 'Solicitações respondidas'
+
+              total_user_evaluations:
+                title: 'Pesquisas repondidas'
+
+              average_evaluations:
+                title: 'Avaliação'
+
+          call_center:
+            header:
+              position:
+                title: 'Posição'
+
+              organ_name:
+                title: 'Órgão'
+
+              total_tickets:
+                title: 'Chamados abertos'
+
+              total_answered_tickets:
+                title: 'Chamados respondidos'
+
+              total_user_evaluations:
+                title: 'Pesquisas repondidas'
+
+              average_evaluations:
+                title: 'Avaliação'
+
+        themes:
+          title: 'Média de avaliação por tema'
+
+        transparency:
+          summary:
+            total:
+              title: 'Total de páginas avaliadas'
+
+            average:
+              title: 'Média das páginas avaliadas'
+
+        create:
+          done: 'A atualização das estatísticas estão sendo geradas em segundo plano, aguarde alguns segundos!'

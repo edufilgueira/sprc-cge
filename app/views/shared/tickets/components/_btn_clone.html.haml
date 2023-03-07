@@ -1,0 +1,7 @@
+- if can?(:clone_ticket, ticket)
+
+  %small
+    - url = url_for([:new, namespace, :ticket, clone_ticket: ticket.id, only_path: true])
+    = link_to url, class: 'btn btn-link btn-print hover-link d-inline-block', 'data-confirm': t(".confirm.#{ticket.ticket_type}") do
+      %i.fa.fa-files-o{ 'aria-hidden': 'true' }
+      = t(".title.#{ticket.ticket_type}")

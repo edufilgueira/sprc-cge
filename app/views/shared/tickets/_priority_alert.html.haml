@@ -1,0 +1,4 @@
+- if ticket.priority?
+  .alert.alert-warning{ role: 'alert' }
+    %i.fa.fa-exclamation-triangle{ 'aria-hidden': 'true' }
+    %span.pl-2= t(".title.#{ticket.ticket_type}")

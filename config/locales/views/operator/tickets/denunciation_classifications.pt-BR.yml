@@ -1,0 +1,11 @@
+pt-BR:
+
+  operator:
+
+    tickets:
+
+      denunciation_classifications:
+
+        update:
+          done: Denúncia compartilhada com %{acronym} e classificada com sucesso!
+          error: Erro ao classificar denúncia!

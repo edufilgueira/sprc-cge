@@ -1,0 +1,18 @@
+[data-remote-content] {
+  [data-remote-content-loader] {
+    visibility: hidden;
+  }
+}
+
+[data-remote-content][data-loading=true] {
+
+  [data-remote-content-result],
+  [data-remote-content-partial] {
+    opacity: 0.4;
+  }
+
+  [data-remote-content-loader] {
+    visibility: visible;
+  }
+
+}

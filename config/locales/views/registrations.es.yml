@@ -1,0 +1,29 @@
+es:
+
+  registrations:
+    form:
+      labels:
+        document: Documento
+        full_name: Nombre completo
+
+      fields:
+        education_level:
+          select: Seleccione la formación
+        city:
+          select: Seleccione el municipio
+
+      register: Crear perfil
+
+      person_types:
+        legal:
+          name: Razón social
+          cnpj: CNPJ
+
+    new:
+      title: Crear nuevo perfil
+
+    create:
+      title: Crear nuevo perfil
+
+    edit:
+      title: Cambiar informaciones

@@ -1,0 +1,123 @@
+es:
+  home:
+    site_map:
+      index:
+        title: Mapa do site
+
+      transparency:
+        title: Transparencia
+        default:
+          access: Acceso a la transparencia
+          what_is: ¿Qué es la transparencia?
+          map: Mapas interactivos
+          news: Noticias
+          society_mobile_apps: Iniciativas de la sociedad
+          whats_new: Noticias
+        news_sections:
+          title: Noticias y artículos
+          cge: Noticias de la Controladoría y Oidoría General del Estado del Ceará
+          gov: Notícias do Governo do Estado do Ceará
+        revenues:
+          title: Ingresos del Estado
+          accounts: Ingresos del Poder Ejecutivo
+          registered: Ingresos Lanzados
+          transfers: Ingresos Recibidos en Transferencias
+          expenses: Ingresos vs Gastos
+        expenses:
+          title: Gastos del Estado
+          budget_balances: Gastos del Poder Ejecutivo
+          neds: Gastos por Notas de Rendimiento
+          dailies: Gastos con dietas
+          fund_supplies: Dotación de fondos
+          server_salaries: Informaciones de funcinoarios públicos
+          corporate_card: Tarjeta Corporativa
+          city_undertakings: Inversiones por Municipio
+          macroregion_investiments: Inversiones por Macrorregión
+          contracts: Contratos
+          management_contracts: Contratos de Gestión
+          convenants: Convenios
+          purchases_finalized: Licitaciones terminadas
+          purchases: Licitaciones en curso
+          constructions_daes: Obras de Edificaciones
+          constructions_ders: Obras de Carreteras
+          non_profit_transfers: Transferencia a Instituciones Sin Ánimo de Lucro
+          multi_gov_transfers: Transferencias a Instituiciones Multigobernamentales
+          consortium_transfers: Transferencias a Consorcios Publicos
+          city_transfers: Transferencias a los Municipios
+          required_city_transfers: Transferencias Obligatórias a los Municipios
+        management:
+          title: Gestión Estadual
+          revenue_liquid: Ingreso Corriente Neto
+          report_fiscal_management: Informes de la Gestión Fiscal
+          report_summary_budget_execution: Informe Resumido de Ejecución Presupuestaria
+          budget_laws: Leyes Presupuestarias
+          report_internal_control: Informe de Control Interno
+          report_external_control: Informe de Control Externo
+          general_balance_state: Balance General del Estado
+          real_estate: Bienes Raíces
+          official_state_newspaper: Diario oficial del Estado
+          social_control_tool: Herramientas de Control Social
+          management_result: Gestión por resultado
+          fiscal_indicators: Indicadores Fiscales
+          investment_opportunity: Oportunidades de inversión
+          government_policy: Políticas de Gobierno
+          radar: Radar
+          socioeconomic_information: Informaciones Socioeconómicas
+          result_indicators: Indicadores de Resultados
+          preventive_internal_control: Control Interno Preventivo
+          governance_models: Modelos de Gobernanza
+          organizational_structure: Estructura Organizacional
+          address_phone: Direcciones y teléfonos
+          participative_management: Gestión Participativa
+          cogerf: COGERF
+          pib: PIB
+        maps:
+          title: Mapas Interactivos
+          constructions_daes: Obras de Edificaciones
+          constructions_ders: Obras de Carreteras
+          hydrological_portal: Portal Hidrológico de Ceará
+          srh: Atlas SRH
+
+
+      sou:
+        title: Oidoría
+        default:
+          access: Acceso a la Oidoría
+          what_is: ¿Qué es la Oidoría?
+          new: Nueva manifestación
+          login: Acompañar manifestación
+          how_use: ¿Cómo usarla?
+          service_channels: Canales de atendimiento
+          executive_ombudsmen: Rede de Oidorías del Poder Ejecutivo del Estado
+          organs_ce: Rede Cearense de Oidorías Públicas y Afines
+          organs_strengthening_program: Programa de Fortalecimiento de las Oidorías
+          statistics: Estadísticas de las manifestaciones de Oidoría
+          report_management: Informes de Gestión
+          legislation: Legislación
+          articles: Artículos y Publicaciones Académicas
+          next_events: Cerca de eventos
+      sic:
+        title: Acceso a la Información
+        default:
+          access: Acceder acceso a la información
+          new: Nueva solicitud
+          login: Acompañar solicitud
+          public_sic: Solicitudes públicas
+          what_is: ¿Qué es el acceso a la información?
+          how_use: ¿Como usarlo?
+          report_management: Informes de Gestión
+          legislation: Legislación
+          report_statistics: Informes Estadísticos de Acceso a la Información
+          statistics: Estadísticas de Solicitudes de Acceso a la Información
+        sensitive_information:
+          title: Relación de Información Confidencial
+          information_classification: Informaciones Clasificadas y Desclasificadas
+          cgai: Ordenanza CGAI n° 01.2016
+
+
+      services:
+        title: Servicios
+        default:
+          service_letter: Carta de servicios
+          mobile_apps: Aplicaciones oficiales
+          electronic_services: Servicios electrónicos

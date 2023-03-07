@@ -1,0 +1,30 @@
+.card
+  .card-block
+    .row
+      .col-md-8
+        %h4.card-title.font-weight-bold
+
+          = t('.title')
+
+      .col-md-4
+        .pull-right
+
+          = link_to t('.past_workshops'), ppa_past_workshops_path, class: 'btn btn-link btn-sm'
+
+    %div{'data-toggle': 'remote-content-with-filter-bar'}
+
+      .remote-content{'data-remote-content': controller.controller_name}
+
+        - filter_new_command = { title: t('.commands.new'), path: nil, permission: false }
+        - filter_commands = { 'new': ppa_workshops_path }
+        - filter_options = { filter_id: :ppa_workshops, filter_path: ppa_workshops_path, commands: filter_commands }
+
+        = render "filters", filter_options
+
+        - # o index é carregado como remote-content e está na partial ./_index
+
+        .remote-content-result{ 'data-remote-content-result': controller_name }
+
+          .p-2.text-center.text-muted
+            .fa.fa-spin.fa-refresh.mx-1
+            = t('messages.loading')

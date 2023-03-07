@@ -1,0 +1,7 @@
+pt-BR:
+  transparency:
+    expenses:
+      fund_supplies:
+        index:
+          title: Suprimento de Fundos 
+          description: Aqui você poderá consultar informações sobre Suprimento de Fundos. 

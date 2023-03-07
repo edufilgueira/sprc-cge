@@ -1,0 +1,163 @@
+es:
+  shared:
+    ticket_logs:
+      confirm:
+        sou:
+          title: Manifestación recibida
+        sic:
+          title: Solicitud de información recibida
+        author: '%{date} por %{author}'
+
+      change_sou_type:
+        title: 'Tipo de manifestación cambiada de "%{from}" para "%{to}".'
+        responsible: 'Alterado por %{name}'
+        justification: 'Justificación: %{justification}'
+
+      change_ticket_type:
+        sic:
+          title: "Tipo cambiado para: Solicitud de información"
+        sou:
+          title: "Tipo cambiado para: Manifestación de oidoría"
+
+      change_denunciation_type:
+        title: "Tipo de informe cambiado en %{to}"
+        undefined: "No definido"
+
+      comment:
+        user:
+          anonymous_title: 'Comentário del ciudadano anónimo'
+          title: 'Comentário de %{author}'
+
+        internal:
+          title: 'Comentário de %{author}'
+
+      share:
+        sou:
+          title: '%{name} ha compartido la manifestación con la oidoría  %{to}'
+        sic:
+          title: '%{name} ha compartido la solicitud de información con el comité sectorial %{to}'
+
+      delete_share:
+        sou:
+          title: '%{name} no está más compartindo la manifestación %{protocol} de la oidoría %{organ}'
+        sic:
+          title: '%{name} no está más compartindo la solicitude de información %{protocol} de la oidoría %{organ}'
+
+      transfer:
+        sou:
+          title: '%{name} ha transferido la manifestación con la oidoría %{to}'
+        sic:
+          title: '%{name} ha transferido la solicitud de información para el comité sectorial %{to}'
+
+      invalidate:
+        waiting:
+          title:
+            sou: '%{user} ha solicitado invalidación de la manifestación %{protocol}'
+            sic: '%{user} ha solicitado invalidación de la solicitud SIC %{protocol}'
+
+        approved:
+          title:
+            sou: 'Manifestación %{protocol} invalidada por %{user}'
+            sic: 'Solicitud de información %{protocol} invalidada por %{user}'
+
+        rejected:
+          title:
+            sou: 'Invalidación de la manifestación %{protocol} negada por %{user}'
+            sic: 'Invalidación de solicitud de información  %{protocol} negada por %{user}'
+
+      forward:
+        sou:
+          title: '%{name} ha involucrado la área interna %{to}'
+        sic:
+          title: '%{name} ha involucrado la área interna %{to}'
+        email: 'E-mails: %{emails}'
+
+      evaluation:
+        title: Ciudadano respondió a la encuesta de opinión
+
+      reopen:
+        sou:
+          title:
+            zero: '%{responsible} ha reabierto la manifestación'
+            one: '%{responsible} ha reabierto la manifestación (%{count} vez)'
+            other: '%{responsible} ha reabierto la manifestación (%{count} veces)'
+        sic:
+          title:
+            zero: '%{responsible} ha reabierto la solicitud'
+            one: '%{responsible} ha reabierto la solicitud (%{count} vez)'
+            other: '%{responsible} ha reabierto la solicitud (%{count} veces)'
+
+      extension:
+        in_progress:
+          title: '%{requester} ha solicitado una prorrogación de plazo'
+          chief_responsible: 'Enviado para el dirigente - %{organ}'
+          coordination_responsible: 'Enviado a la Coordinación del Defensor del Pueblo'
+          status:
+
+        rejected:
+          title: '%{user} ha recusado la prorrogación de plazo'
+
+        cancelled:
+          title: '%{user} ha cancelado la prorrogación de plazo'
+
+        approved:
+          title: '%{user} ha aprobado la prorrogación de plazo'
+
+      occurrence:
+        title: '%{date} por %{title}'
+
+      appeal:
+        title:
+          zero: 'Cidadano ha solicitado recurso de SIC'
+          one: 'Cidadano ha solicitado recurso en %{count}ª instancia de SIC'
+          other: 'Cidadano ha solicitado recurso en %{count}ª instancia de SIC'
+
+      attendance_response:
+        title:
+          success: Retorno realizado con éxito
+          failure: Tentativa de retorno sin éxito
+        subtitle: '%{date} por %{title}'
+
+      attendance_finalized:
+        title: Llamada completa
+
+      create_attachment:
+        title: "%{name} ha adicionado un anexo"
+
+      destroy_attachment:
+        title: "%{name} ha removido un anexo"
+
+      create_classification:
+        title:
+          sou: "%{name} ha clasificado la manifestación %{protocol}"
+          sou: "%{name} ha clasificado la solicitud %{protocol}"
+
+      update_classification:
+        title:
+          sou: "%{name} ha cambiado la clasificación de la manifestación %{protocol}"
+          sou: "%{name} ha cambiado la clasificación de la solicitud %{protocol}"
+
+      edit_department_deadline:
+        title: '%{organ_acronym} ha editado el plazo de %{department_acronym} para %{deadline_ends_at}'
+
+      priority:
+        title: "%{name} ha marcado como urgente"
+
+      attendance_updated:
+        title: '%{name} editó la atención'
+
+      answer_updated:
+        title: '%{name} editó la respuesta de %{acronym}'
+
+      answer_cge_approved:
+        title: '%{name} aprobó la respuesta de %{acronym}'
+
+      answer_cge_rejected:
+        title: '%{name} rechazó la respuesta de %{acronym}'
+
+      update_ticket:
+        title:
+          sou: '%{name} Cambió la información de la manifestación'
+          sic: '%{name} Cambió la información de la solicitud'
+
+        attributes_changed: 'Datos que se han modificado: %{attributes}'

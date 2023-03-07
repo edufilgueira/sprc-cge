@@ -1,0 +1,122 @@
+es:
+  shared:
+    answers:
+      evaluations:
+
+        intro:
+          title: 'Evaluar la respuesta respondiendo a la Encuesta de Satisfacción'
+          button: 'Responder la inverstigación'
+
+        questions:
+          title: 'Pesquisa de Satisfacción'
+
+          sou:
+            question_01:
+              title: 'CUESTIÓN N. 1'
+              description: 'Utilizando la escala de 1 a 5, indique cuánto se ha satisfecho:'
+            question_01_a:
+              description: '<strong>a.</strong> En general, ¿cuál es su nivel de satisfacción con el Servicio de Oidoría en este atendimiento (considere la atención, compromiso y respeto del ombudsman y su equipo)?'
+              very_bad: 'TOTALMENTE INSATISFECHO'
+              very_well: 'TOTALMENTE SATISFECHO'
+            question_01_b:
+              description: '<strong>b.</strong> Con el tiempo de retorno de la respuesta '
+              very_bad: 'TOTALMENTE INSATISFECHO'
+              very_well: 'TOTALMENTE SATISFECHO'
+            question_01_c:
+              description: '<strong>c.</strong> ¿Qué tan satisfecho está con el canal de servicio que utilizó para registrar su manifestación? (considere la comunicación, la facilidad de uso, la velocidad y la funcionalidad). <br><strong>Usaste el canal: [used_input]</strong>'
+              very_bad: 'TOTALMENTE INSATISFECHO'
+              very_well: 'TOTALMENTE SATISFECHO'
+            question_01_d:
+              description: '<strong>d.</strong> ¿Qué tan satisfecho está con la calidad de la respuesta presentada? (considerar si la respuesta cumple con las preguntas presentadas y si el defensor del pueblo justifica una posible imposibilidad de notificación)'
+              very_bad: 'TOTALMENTE INSATISFECHO'
+              very_well: 'TOTALMENTE SATISFECHO'
+            question_02:
+              title: 'CUESTIÓN N. 2'
+              description: 'Antes de realizar esta manifestación, pensaba que la calidad del servicio de Oidoría era:'
+              very_bad: 'MUY BAJA'
+              very_well: 'MUY ALTA'
+            question_03:
+              title: 'CUESTIÓN. 3'
+              description: 'Ahora usted elavua que el servicio prestado por la Oidoría fue:'
+              very_bad: 'MUY PEOR DE LO QUE ESPERABA'
+              very_well: 'MUY MEJOR DE LO QUE ESPERAVA'
+            question_04:
+              title: 'CUESTIÓN N. 4'
+              description: '¿Lo que no te ha gustado o piensa que podemos mejorar en nuestro atendimiento?'
+              placeholder: 'Describe su evaluación en el atendimiento'
+            question_05:
+              title: 'CUESTIÓN N. 5'
+              description: '¿Considera que la demanda ha sido resuelta?'
+              'yes': 'Si'
+              'no': 'No'
+              partially: Parcialmente
+
+          sic:
+            question_01:
+              title: 'CUESTIÓN N. 1'
+              description: 'Utilizando la escala de 1 a 5, indique cuánto se ha satisfecho:'
+            question_01_a:
+              description: '<strong>a.</strong> En general, ¿cuál es su nivel de satisfacción con el servicio de información en este atendimiento (considere la atención, compromiso y respeto del ombudsman y su equipo)?'
+              very_bad: 'TOTALMENTE INSATISFECHO'
+              very_well: 'TOTALMENTE SATISFECHO'
+            question_01_b:
+              description: '<strong>b.</strong> ¿Qué tan satisfecho estás con el tiempo de respuesta?'
+              very_bad: 'TOTALMENTE INSATISFECHO'
+              very_well: 'TOTALMENTE SATISFECHO'
+            question_01_c:
+              description: '<strong>c.</strong> ¿Qué tan satisfecho está con el canal de servicio que utilizó para registrar su manifestación? (considere la comunicación, la facilidad de uso, la velocidad y la funcionalidad). <br><strong>Usaste el canal: [used_input]</strong>'
+              very_bad: 'TOTALMENTE INSATISFECHO'
+              very_well: 'TOTALMENTE SATISFECHO'
+            question_01_d:
+              description: '<strong>d.</strong> ¿Qué tan satisfecho está con la calidad de la respuesta presentada? (considerar si la respuesta cumple con las preguntas presentadas y si el defensor del pueblo justifica una posible imposibilidad de notificación)'
+              very_bad: 'TOTALMENTE INSATISFECHO'
+              very_well: 'TOTALMENTE SATISFECHO'
+            question_02:
+              title: 'CUESTIÓN N. 2'
+              description: 'Antes de realizar esta manifestación, usted pensaba que la calidad del Servicio de Información al Ciudadano era:'
+              very_bad: 'MUY BAJA'
+              very_well: 'MUY ALTA'
+            question_03:
+              title: 'CUESTIÓN N. 3'
+              description: 'Ahora usted elavua que el servicio prestado por la Oidoría fue:'
+              very_bad: 'MUY PEOR DE LO QUE ESPERABA'
+              very_well: 'MUY MEJOR DE LO QUE ESPERABA'
+            question_04:
+              title: 'CUESTIÓN N. 4'
+              description: '¿Lo que no te ha gustado o piensa que podemos mejorar en nuestro atendimiento?'
+              placeholder: 'Describe su evaluación en el atendimiento'
+
+          call_center:
+            question_01:
+              title: 'CUESTIÓN N. 1'
+              description: 'Utilizando la escala de 1 a 5, indique cuánto se ha satisfecho:'
+            question_01_a:
+              description: '<strong>a.</strong> De manera general, ¿cúal es su satisfación con la Central 155 en este atendimiento?'
+              very_bad: 'TOTALMENTE INSATISFECHO'
+              very_well: 'TOTALMENTE SATISFECHO'
+            question_01_b:
+              description: '<strong>b.</strong> ¿Qué tan satisfecho estás con el tiempo de respuesta?'
+              very_bad: 'TOTALMENTE INSATISFECHO'
+              very_well: 'TOTALMENTE SATISFECHO'
+            question_01_c:
+              description: '<strong>c.</strong> Con el canal utilizado para el registro de su manifestación'
+              very_bad: 'TOTALMENTE INSATISFECHO'
+              very_well: 'TOTALMENTE SATISFECHO'
+            question_01_d:
+              description: '<strong>d.</strong> Con la calidad de respuesta presentada'
+              very_bad: 'TOTALMENTE INSATISFECHO'
+              very_well: 'TOTALMENTE SATISFECHO'
+            question_02:
+              title: 'CUESTIÓN N. 2'
+              description: 'Antes de realizar esta manifestación, usted pensaba que la calidad de la Central 155 era:'
+              very_bad: 'MUY BAJA'
+              very_well: 'MUY ALTA'
+            question_03:
+              title: 'CUESTIÓN N. 3'
+              description: 'Ahora usted elavua que el servicio prestado por la Central 155 fue'
+              very_bad: 'MUY PEOR DE LO QUE ESPERABA'
+              very_well: 'MUY MEJOR DE LO QUE ESPERABA'
+            question_04:
+              title: 'CUESTIÓN N. 4'
+              description: '¿Lo que no te ha gustado o piensa que podemos mejorar en nuestro atendimiento?'
+              placeholder: 'Describe su evaluación en el atendimiento'

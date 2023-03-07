@@ -1,0 +1,88 @@
+pt-BR:
+  platform:
+    home:
+      index:
+        title: Início
+
+      notification_sections:
+        title: Central de notificações
+        subject: Descrição
+        created_at: Data
+
+      tickets_dashboard_sections:
+
+        new:
+          sou: Registrar nova manifestação
+          sic: Registrar nova solicitação
+          ppa: Propor nova diretriz
+
+        sou:
+          title: Manifestações de ouvidoria
+          statuses: &statuses
+            active: Em atendimento
+            inactive: Finalizadas
+
+        sic:
+          title: Solicitações de informação
+          statuses:
+            <<: *statuses
+
+        ppa:
+          title: Propostas
+          statuses:
+            active: Minhas propostas
+            inactive: Propostas em que eu votei
+
+      tickets_resume_sections:
+        sou:
+          super_title: Ouvidoria
+          title: Minhas manifestações públicas
+          see_more: Ver todas as manifestações públicas
+          empty: Sem manifestações
+
+        sic:
+          super_title: Acesso à Informação
+          title: Minhas solicitações públicas
+          see_more: Ver todas as solicitações públicas
+          empty: Sem solicitações
+        activity: Atividade
+
+      service_channels:
+        title: Canais de atendimento
+        description: >
+          Converse, seja parte do governo e faça valer o seu direito de cidadão.
+          Acesse os canais abaixo! 
+
+        social:
+          title: Redes sociais
+
+          instagram: Instagram
+          twitter: Twitter
+          facebook: Facebook
+
+        other_channels:
+          title: Outros atendimentos
+
+          central: Central de Atendimento 155
+          email: >
+            E-mail
+            <div class="small">
+              (ouvidoria.geral
+              @cge.ce.gov.br)
+            </div>  
+          networking: >
+            Presencial
+            <div class="small">
+              (Telefones e Endereços)
+            </div>
+          networking_sic: >
+            Relação de Responsáveis pelo Acesso à Informação
+            <div class="small">
+              (Telefones e Endereços)
+            </div>
+          ceara_app_google: Google Play
+          ceara_app_appstore: App Store
+      pending_research:
+        sou:
+          title: 'Pesquisa de Satisfação'
+          subtitle: 'Pendente'

@@ -1,0 +1,58 @@
+= form_for url_for(action: 'index', controller: 'stats_tickets'), method: :get do |f|
+
+  .row
+    .col-12
+      #ticket-filters-card.card.card-custom.card-collapsable.mb-4.mt-0
+        #ticket-filters-header.card-header
+          .row
+            .col-11
+              %h2.card-title
+                = title
+
+            .col-1
+              .card-collapse.card-collapse-icons
+
+                = link_to '#ticket-filters', 'data-toggle': 'collapse', 'data-parent': 'ticket-filters-card', 'aria-expanded': 'true', 'aria-controls': 'ticket-filters', aria: { 'hidden':'true' }, tabindex: -1 do
+
+                  %span.hidden-xs-up
+                    = t('a11y.hidden')
+
+                  .fa.fa-caret-down.card-collapse-icon-down
+                  .fa.fa-caret-up.card-collapse-icon-up
+        #ticket-filters.collapse.show{'aria-labelledby': 'ticket-filters-header"'}
+          .card-block
+            .card-filters
+
+              .row.mb-3
+                - month_options = t('date.month_names').compact.each_with_index.map{ |month, index| [month, index + 1] }
+
+                .col-12.col-lg-3
+                  = label_tag(:year, t('messages.filters.select.year'))
+                  = select_tag :year, options_for_select(years_for_select(10), filters[:year])
+
+                .col-12.col-lg-3
+                  = label_tag(:month_start, t('messages.filters.select.month_start'))
+                  = select_tag :month_start, options_for_select(month_options, filters[:month_start])
+
+                .col-12.col-lg-3
+                  = label_tag(:month_end, t('messages.filters.select.month_end'))
+                  = select_tag :month_end, options_for_select(month_options, filters[:month_end])
+
+                - if operator_cge?(current_user)
+                  .col-12.col-lg-3
+                    = label_tag(:organ, t('messages.filters.select.organ'))
+                    = select_tag :organ, options_for_select(organs_for_select_with_all_option, filters[:organ])
+
+                - if operator_sectoral?(current_user) || operator_chief?(current_user)
+                  .col-12.col-lg-3
+                    = label_tag(:sectoral_organ, t('messages.filters.select.organ'))
+                    = select_tag :sectoral_organ, options_for_select(stats_sectoral_organ_scope_for_select, filters[:sectoral_organ])
+
+                - if operator?(current_user) && (current_user.subnet_sectoral? || current_user.subnet_chief?)
+                  .col-12.col-lg-3
+                    = label_tag(:sectoral_subnet, t('messages.filters.select.subnet'))
+                    = select_tag :sectoral_subnet, options_for_select(stats_sectoral_subnet_scope_for_select, filters[:sectoral_subnet])
+
+              .row.mb-3
+                .col-12.offset-lg-9.col-lg-3.text-right
+                  = submit_tag t('commands.search'), class: 'btn btn-primary btn-block'

@@ -1,0 +1,114 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, nld.title
+
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = nld.title
+
+        .card-commands
+          = render 'shared/tickets/components/btn_print'
+
+      .card-block
+
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(nld, :exercicio)
+
+          .col-12.col-lg-4
+            = content_with_label(nld, :numero)
+
+          .col-12.col-lg-4
+            = content_with_label(nld, :numero_nld_ordinaria)
+
+        .row
+          .col-12
+            .content-with-label
+              %p.content-label
+                = ::Integration::Expenses::Nld.human_attribute_name(:ned)
+
+              %p.content-value
+                - ned = nld.ned
+                - label = t('.ned.none')
+
+                - if ned.present?
+                  - label = t('.ned.link', value: ned.title)
+                  - path = url_for(action: 'show', controller: 'neds', id: ned)
+                  = link_to label, path
+                - else
+                  = label
+
+        .row
+
+          .col-12.col-lg-4
+            - management_unit = (nld.management_unit.present?) ? :management_unit_title : :unidade_gestora
+            = content_with_label(nld, management_unit)
+
+          .col-12.col-lg-4
+            - executing_unit = (nld.executing_unit.present?) ? :executing_unit_title : :unidade_executora
+            = content_with_label(nld, executing_unit)
+
+          .col-12.col-lg-4
+            - nome_credor = (nld.creditor.present? ? :creditor_nome : :credor)
+            = content_with_label(nld, nome_credor)
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(nld, :data_emissao)
+
+          .col-12.col-lg-4
+            = content_with_label(nld, :data_atual)
+
+        .row
+
+          .col-12.col-lg-3
+            = content_with_label(nld, :valor)
+
+          .col-12.col-lg-3
+            = content_with_label(nld, :valor_retido)
+
+          .col-12.col-lg-3
+            = content_with_label(nld, :natureza)
+
+          .col-12.col-lg-3
+            = content_with_label(nld, :efeito)
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(nld, :tipo_de_documento_da_despesa)
+
+          .col-12.col-lg-4
+            = content_with_label(nld, :numero_do_documento_da_despesa)
+
+          .col-12.col-lg-4
+            = content_with_label(nld, :data_do_documento_da_despesa)
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(nld, :cpf_ordenador_despesa)
+
+          .col-12.col-lg-4
+            = content_with_label(nld, :numero_nld_ordinaria)
+
+          .col-12.col-lg-4
+            = content_with_label(nld, :numero_nota_empenho_despesa)
+
+       
+
+    = render 'shared/transparency/expenses/nlds/show/nld_item_payment_plannings'
+
+    = render 'shared/transparency/expenses/nlds/show/nld_item_payment_retentions'

@@ -1,0 +1,26 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/supports/revenue_nature:
+        secretary: Secretaria
+        organ: Órgão
+        codigo_consolidado: Tipo de receita
+        codigo_categoria_economica: Categoria econômica
+        codigo_origem: Origem
+        codigo_subfonte: Subfonte
+        codigo_rubrica: Rubrica
+        codigo_aliena: Alínea
+        codigo_subaliena: Subalínea
+
+        consolidado: Tipo de receita
+        categoria_economica: Categoria econômica
+        origem: Origem
+        subfonte: Subfonte
+        rubrica: Rubrica
+        aliena: Alínea
+        subaliena: Subalínea
+
+        transfer_required: Transferências obrigatórias
+        transfer_voluntary: Transferências voluntárias
+        transfer: Tipo de transferência
+

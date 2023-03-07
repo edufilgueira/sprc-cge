@@ -1,0 +1,33 @@
+- accountability_status = contract.accountability_status
+
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = Integration::Contracts::Contract.human_attribute_name(:accountability_status)
+
+      .card-block
+
+        - if accountability_status.present?
+
+          %p
+            = accountability_status
+
+          %hr
+
+          %small
+
+            = raw(t('.legend'))
+
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')
+

@@ -1,0 +1,38 @@
+en:
+
+  shared:
+
+    operator:
+
+      reports:
+
+        report_file_info:
+          title: File information
+          file:
+            size: Size
+            total: Total
+            created_at: Created at
+
+        report_filters:
+          title: Filters considered
+          filters:
+            none: No filter defined
+            ticket_type: Type
+            sou_type: Manifestation type
+            city: City
+            state: State
+            used_input: Used input
+            other_organs: State Executive Power
+            expired: Only expired
+            organ: Responsible organ
+            confirmed_at: Period
+            budget_program: Budget program
+            topic: Topic
+            subtopic: Subtopic
+            deadline: Deadline
+            priority: Only priorities
+            finalized: Show finalized
+            internal_status: Status
+            search: Keyword
+            denunciation: Only denunciations
+            answer_type: Answer Type

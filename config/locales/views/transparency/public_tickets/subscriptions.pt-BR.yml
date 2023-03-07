@@ -1,0 +1,74 @@
+pt-BR:
+  transparency:
+    public_tickets:
+      subscriptions:
+
+        breadcrumbs:
+          ticket:
+            sou: 'Manifestação %{protocol}'
+            sic: 'Solicitação %{protocol}'
+
+        new:
+          title:
+            sou: Seguir Manifestação
+            sic: Seguir Solicitação
+
+        edit:
+          title:
+            sou: Seguir Manifestação
+            sic: Seguir Solicitação
+
+
+        create:
+          done: A confirmação de email foi enviada para o email cadastrado.
+          fail: Erro ao seguir
+          was_created:
+            unconfirmed: E-mail de confirmação foi reenviado
+            already_following: Seu e-mail já está seguindo
+
+        update:
+          done: A confirmação de email foi enviada para o email cadastrado.
+          fail: Erro ao seguir
+
+        confirmation:
+          done:
+            sic: 'Você está seguindo a solicitação de Informação [%{protocol}].'
+            sou: 'Você está seguindo a manifestação de Ouvidoria [%{protocol}].'
+          fail: Erro ao encontrar solicitação
+
+        unsubscribe:
+          done:
+            sic: 'Você não está mais seguindo a solicitação de Infromação [%{protocol}].'
+            sou: 'Você não está mais seguindo a manifestação de Ouvidoria [%{protocol}].'
+          fail: Erro ao encontrar solicitação
+
+        unconfirmed:
+          title:
+            sou: Seguir Manifestação
+            sic: Seguir Solicitação
+
+          explanation: 'Acesse o link de confirmação enviado para o e-mail: %{email} para receber as notificações de atualização.'
+
+        confirmed:
+          title:
+            sou: Seguir Manifestação
+            sic: Seguir Solicitação
+
+          explanation:
+            sou: 'Para deixar de seguir a Manifestação [%{protocol}] e não receber mais as atualizações, clique no botão abaixo.'
+            sic: 'Para deixar de seguir a Solicitação [%{protocol}] e não receber mais as atualizações, clique no botão abaixo.'
+
+          unfollow: Deixar de seguir
+
+        form:
+          title:
+            sou: Seguir Manifestação
+            sic: Seguir Solicitação
+
+          field:
+            email: Email
+
+          explanation:
+            sic: Informe seu e-mail e clique em “cadastrar” para receber atualizações da sua manifestação.
+            sou: Informe seu e-mail e clique em “cadastrar” para receber atualizações da sua solicitação.
+          register: Cadastrar

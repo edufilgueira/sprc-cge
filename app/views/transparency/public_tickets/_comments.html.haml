@@ -1,0 +1,22 @@
+.card.card-custom
+
+  .card-header
+
+    %h2.card-title
+      = t(".title")
+
+  .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+    .remote-content{'data-remote-content': :comments }
+
+      = render "transparency/public_tickets/comments/form", comment_form: ticket.citizen_comments.new
+
+      - # o index é carregado como remote-content e está na partial transparency/public_tickets/comments/_index
+
+      %hr{'aria-hidden': 'true'}
+
+      .remote-content-result.mb-4{ 'data-remote-content-result': :comments }
+
+        .p-2.text-center.text-muted
+          .fa.fa-spin.fa-refresh.mx-1
+          = t('messages.loading')

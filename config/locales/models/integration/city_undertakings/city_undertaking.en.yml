@@ -1,0 +1,37 @@
+en:
+  activerecord:
+    attributes:
+      integration/city_undertakings/city_undertaking:
+        expense: Expense type
+        expense_str: Expense type
+        organ_id: Secretariat
+        creditor_id: Creditor
+        undertaking_id: Enterprise
+        organ_title: Secretariat
+        creditor_title: Creditor
+        undertaking_title: Enterprise
+        municipio: City
+        tipo_despesa: Expense type
+        sic: SACC No.
+        mapp: Project
+        valor_programado1: Scheduled value 1
+        valor_programado2: Scheduled value 2
+        valor_programado3: Scheduled value 3
+        valor_programado4: Scheduled value 4
+        valor_programado5: Scheduled value 5
+        valor_programado6: Scheduled value 6
+        valor_programado7: Scheduled value 7
+        valor_programado8: Scheduled value 8
+        valor_executado1: Executed value 1
+        valor_executado2: Executed value 2
+        valor_executado3: Executed value 3
+        valor_executado4: Executed value 4
+        valor_executado5: Executed value 5
+        valor_executado6: Executed value 6
+        valor_executado7: Executed value 7
+        valor_executado8: Executed value 8
+
+  integration/city_undertakings/city_undertaking:
+    expenses:
+      contract: Contract
+      convenant: Agreement

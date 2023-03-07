@@ -1,0 +1,36 @@
+.row
+
+  .col-12.col-md-1.no-print
+    .float-left
+
+      .rounded-circle.p-1{ class: "#{answer_class(answer)}" }
+
+        %i.fa.fa-comment.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      %h4.h6.mb-0
+        - ticket_log = answer.ticket_log
+        - organ = answer_organ_responsible_from_log(ticket_log)
+        - department = answer_department_responsible_from_log(ticket_log)
+        - subnet = answer_subnet_responsible_from_log(ticket_log)
+
+        = verifid_parent_or_cosco_couvi(ticket, organ, answer, department, subnet)
+
+      %small
+        %em
+          = ticket_log.resource.as_author || ticket_log.responsible&.title
+      %br/
+      %small
+        %em
+          = l(ticket_log.created_at, format: :shorter)
+
+      - unless answer.approved_for_user?
+        %br/
+        %small{class: "#{answer_class(answer)}"}
+          %em
+            = answer.status_str
+
+%hr{'aria-hidden': 'true'}

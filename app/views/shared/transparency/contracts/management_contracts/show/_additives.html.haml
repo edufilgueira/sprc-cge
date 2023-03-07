@@ -1,0 +1,62 @@
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.title')
+
+      .card-block
+
+        - if additives.present?
+          .table-responsive
+            %table.table.table-hover.table-striped.table-sm.bg-faded{summary: t('.summary')}
+
+              %thead
+
+                %tr
+
+                  - heads = [:descricao_tipo_aditivo, :descricao_observacao, {id: :data_termino, class: 'text-right'}, {id: :valor, class: 'text-right'}, {id: :descricao_url, class: 'text-right'}]
+
+                  - heads.each do |head|
+                    - if head.is_a?(Hash)
+                      %th{class: head[:class]}
+                        = t(".table.heads.#{head[:id]}")
+                    - else
+                      %th
+                        = t(".table.heads.#{head}")
+
+              %tbody
+
+                - additives.each do |additive|
+
+                  %tr
+                    %td
+                      = additive.descricao_tipo_aditivo
+
+                    - desc_observation = additive.descricao_observacao
+                    %td{ title: desc_observation }
+                      = desc_observation
+
+                    %td.w-12.text-right
+                      = l(additive.data_termino.to_date) if additive.data_termino.year > 1900
+
+                    %td.w-15.text-right
+                      = number_to_currency(additive.valor_acrescimo + additive.valor_reducao)
+
+                    %td.w-10.text-right
+                      - additive_url = integration_contracts_additive_url(additive.descricao_url)
+
+                      - if additive_url.present?
+                        = link_to additive_url, title: t('messages.download') do
+                          %i.fa.fa-file-pdf-o.fa-2x{'aria-hidden': 'true'}
+
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')

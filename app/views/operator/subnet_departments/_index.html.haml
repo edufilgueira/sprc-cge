@@ -1,0 +1,12 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+  - header = [{ id: :subnet_acronym, html_class: "w-50" }, { id: :name, html_class: "w-50" } ]
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: departments, sort_columns: sort_columns, table_locale: table_locale do |department|
+    - show_path = operator_subnet_department_path(department)
+
+    %tr
+      %td= link_to filtered_highlighted(department.subnet_acronym), show_path, title: department.subnet_acronym
+      %td= link_to filtered_highlighted(department.name), show_path, title: department.name

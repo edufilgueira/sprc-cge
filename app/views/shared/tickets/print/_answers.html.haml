@@ -1,0 +1,57 @@
+- answer_class = answer_class(answer)
+- ticket_log = answer.ticket_log
+- ticket = answer.ticket
+
+- if can?(:view, answer) || namespace == :positionings
+  .row
+    .col-12
+      %h4.h6
+        - organ = answer_organ_responsible_from_log(ticket_log)
+        - department = answer_department_responsible_from_log(ticket_log)
+        - subnet = answer_subnet_responsible_from_log(ticket_log)
+
+        = t("shared.tickets.ticket_logs.answer.title.#{answer.answer_scope}.#{ticket.ticket_type}", type: answer.answer_type_str, organ: organ&.acronym, department: department&.acronym, subnet: subnet&.acronym, ouvidoria: nil)
+
+      %i.small.list-inline-item
+        = l(answer.created_at, format: :shorter)
+
+      %i.small
+        - kind = ticket.sou? || ticket.child? ? :reopen : :appeal
+        = t("shared.tickets.ticket_logs.answer.answer_versions.#{ticket.ticket_type}.#{kind}", count: answer.version)
+
+    - #
+    - # Label do status
+    - #
+    .col-12
+      %p
+        %small{ class: answer_class }
+          %em
+            = answer.status_str
+
+  - #
+  - # Resposta
+  - #
+  %blockquote
+    = answer_sanitizer(answer.description)
+
+    %i.small.list-inline-item
+      = answer.as_author
+
+  - #
+  - # Considerações
+  - #
+  - justification = ticket_log&.description
+  - if current_user.present? && current_user.operator? && justification.present?
+    %p
+      %small
+        %em
+          = "#{t('.justification')}: #{justification}"
+
+
+  - if answer.ticket.sic?
+    .row.no-print
+      .col-12
+        = content_with_label(answer, :classification_str)
+
+
+  %hr{'aria-hidden': 'true'}

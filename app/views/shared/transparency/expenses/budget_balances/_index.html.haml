@@ -1,0 +1,106 @@
+= cache(cache_key) do
+
+  = render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+  .my-4
+
+    %hr{'aria-hidden': 'true'}
+
+    = render 'transparency/exports/form'
+
+    %hr{'aria-hidden': 'true'}
+
+    .row
+      .col-12.col-lg-4
+        .content-with-label
+          - label = raw(t('.counts.valor_orcamento_inicial.title'))
+          - value = number_to_currency(nodes_totals[:calculated_valor_orcamento_inicial])
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+      .col-12.col-lg-4
+        .content-with-label
+          - label = raw(t('.counts.valor_orcamento_atualizado.title'))
+          - value = number_to_currency(nodes_totals[:calculated_valor_orcamento_atualizado])
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+    .row
+      .col-12.col-lg-4
+        .content-with-label
+          - label = raw(t('.counts.valor_empenhado.title'))
+          - value = number_to_currency(nodes_totals[:calculated_valor_empenhado])
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+
+      .col-12.col-lg-4
+        .content-with-label
+          - label = raw(t('.counts.valor_liquidado.title'))
+          - value = number_to_currency(nodes_totals[:calculated_valor_liquidado])
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+      .col-12.col-lg-4
+        .content-with-label
+          - label = raw(t('.counts.valor_pago.title'))
+          - value = number_to_currency(nodes_totals[:calculated_valor_pago])
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+    .fa.fa-spin.fa-refresh.m-1.text-muted.float-right{'data-remote-content-loader': ''}
+
+    - header = [{ id: 'title', html_class: 'text-left w-27'}, { id: 'valor_orcamento_inicial', html_class: 'text-right w-23'}, { id: 'valor_orcamento_atualizado', html_class: 'text-right w-11'}, { id: 'valor_empenhado', html_class: 'text-right w-22'}, { id: 'valor_liquidado', html_class: 'text-right w-22'}, { id: 'valor_pago', html_class: 'text-right w-22'}]
+
+    - table_locale = t('.table')
+
+    = render 'shared/components/remote_table', header: header, has_footer: true, collection: nodes, sort_columns: sort_columns, table_locale: table_locale, table_html: { class: 'treeview small' }, view_options: { pagination: false, count: false } do |resource|
+
+      - # footer
+      - if resource.nil?
+
+        %tr.font-weight-bold
+          %td.border-0
+            = table_locale[:total].upcase
+          %td.border-0.text-right
+            = number_to_currency(nodes_totals[:calculated_valor_orcamento_inicial], unit: '')
+          %td.border-0.text-right
+            = number_to_currency(nodes_totals[:calculated_valor_orcamento_atualizado], unit: '')
+          %td.border-0.text-right
+            = number_to_currency(nodes_totals[:calculated_valor_empenhado], unit: '')
+          %td.border-0.text-right
+            = number_to_currency(nodes_totals[:calculated_valor_liquidado], unit: '')
+          %td.border-0.text-right
+            = number_to_currency(nodes_totals[:calculated_valor_pago], unit: '')
+
+      - else
+
+        - node = resource
+        - node_type = node[:type]
+
+        = render 'shared/transparency/expenses/budget_balances/index/nodes', nodes: [node], current_node_path: nil, next_node_level: 0, next_node_type: node_type, node_types: node_types

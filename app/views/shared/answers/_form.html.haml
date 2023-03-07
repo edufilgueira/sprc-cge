@@ -1,0 +1,17 @@
+- if answer_form_url.present?
+  .no-print
+    = simple_form_for new_answer, url: answer_form_url, remote: true, data: { content: 'answer-form' } do |f|
+
+
+      = render 'shared/answers/positioning_fields', f: f, ticket: ticket
+
+      - if answer_appeal_and_operator_cge_or_not_appeal(ticket,current_user)
+      
+        = render 'shared/answers/form_fields', f: f, ticket: ticket
+
+        .row
+          .col.align-self-end
+          - if ticket.extensions.in_progress.present?
+            = f.submit answer_save_text(current_user), class: 'btn btn-primary w-100', 'data-confirm': t('commands.remove_confirm_extension')
+          - else
+            = f.submit answer_save_text(current_user), class: 'btn btn-primary w-100'

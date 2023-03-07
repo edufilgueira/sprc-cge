@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      integration/supports/axis/configuration:
+        one: Configuração de eixos
+
+    attributes:
+      integration/supports/axis/configuration:
+        wsdl: WSDL
+        headers_soap_action: SOAPAction
+        user: Usuário
+        password: Senha
+        operation: Nome do método SOAP
+        response_path: Caminho da resposta

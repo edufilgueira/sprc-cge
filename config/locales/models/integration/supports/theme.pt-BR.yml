@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/supports/theme:
+        codigo_tema: Código do tema
+        descricao_tema: Descrição do tema
+
+  theme:
+    select:
+      all: Todos os temas

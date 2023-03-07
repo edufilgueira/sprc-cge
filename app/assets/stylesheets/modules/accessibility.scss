@@ -1,0 +1,138 @@
+$texts: btn btn-link text-gray-dark text-warning text-info text-success text-primary text-muted text-danger text-gray text-green text-orange;
+
+* {
+  color: white !important;
+  background-color: black !important;
+  border-color: white !important;
+
+  i,
+  [class^="col-"],
+  .row,
+  .card-img-overlay {
+    background-color: transparent !important;
+  }
+}
+
+[data-google-map] {
+  * {
+    background-color: transparent !important;
+
+    .gm-style-iw {
+      background-color: black !important;
+    }
+  }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white !important;
+}
+
+.fa-text-green {
+  .fa {
+    color: white !important;
+  }
+}
+
+.text-muted,
+.text-gray-dark,
+.text-warning,
+.text-info,
+.text-success,
+.text-primary,
+.text-muted,
+.text-danger,
+.text-gray,
+.text-green,
+.text-orange {
+  color: white !important;
+}
+
+a {
+  color: yellow !important;
+
+  .fa,
+  small,
+  span,
+  &.btn,
+  &.btn-link,
+  &.text-gray-dark,
+  &.text-warning,
+  &.text-info,
+  &.text-success,
+  &.text-primary,
+  &.text-muted,
+  &.text-danger,
+  &.text-gray,
+  &.text-green,
+  &.text-orange,
+  &:hover,
+  &:focus,
+  &:active {
+    color: yellow !important;
+  }
+}
+
+a {
+  @each $item in $texts {
+    &.#{$item} {
+      &:hover,
+      &:focus,
+      &:active {
+        color: yellow !important;
+      }
+    }
+  }
+}
+
+input {
+  color: yellow !important;
+  border: solid 1px white !important;
+}
+
+.border-success,
+.border-info,
+.border-warning,
+.border-danger,
+.border-light,
+.border-dark,
+.border-white,
+.border-orange,
+.border-green,
+.border-primary,
+.card,
+.card-green .card-header .border-right {
+  border-color: white !important;
+}
+
+.tri-nav-item.active:after {
+  border-top-color: white !important;
+}
+
+.select2-container .select2-selection .select2-selection__arrow,
+.select2-container .select2-selection > .select2-selection__rendered {
+  background-color: transparent !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-color: white transparent transparent transparent !important;
+}
+
+.nav-link {
+  &.active {
+    border: solid 1px white !important;
+  }
+}
+
+mark {
+  background-color: yellow !important;
+  color: black !important;
+}

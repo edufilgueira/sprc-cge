@@ -1,0 +1,39 @@
+- # versão 4.0.3 tem problema de manter foco ao selecionar elemento
+- # https://github.com/select2/select2/issues/4384#issuecomment-228464364
+- select2_version = '4.0.2'
+- flexdatalist_version = '2.2.2'
+- jquery_ui_version = '1.12.1'
+- jquery_touch_punch_version = '0.2.3'
+
+= javascript_include_tag('https://code.highcharts.com/highcharts.js')
+= javascript_include_tag('https://code.highcharts.com/modules/data.js')
+= javascript_include_tag('https://code.highcharts.com/modules/exporting.js')
+= javascript_include_tag('https://code.highcharts.com/modules/export-data.js')
+= javascript_include_tag('https://code.highcharts.com/modules/accessibility.js')
+
+= javascript_include_tag("https://cdnjs.cloudflare.com/ajax/libs/select2/#{select2_version}/js/select2.full.min.js")
+= javascript_include_tag("https://cdnjs.cloudflare.com/ajax/libs/select2/#{select2_version}/js/i18n/pt-BR.js")
+= javascript_include_tag("https://cdnjs.cloudflare.com/ajax/libs/select2/#{select2_version}/js/i18n/pt.js")
+
+= javascript_include_tag("https://cdnjs.cloudflare.com/ajax/libs/jquery-flexdatalist/#{flexdatalist_version}/jquery.flexdatalist.min.js")
+
+= javascript_include_tag("https://cdnjs.cloudflare.com/ajax/libs/jqueryui/#{jquery_ui_version}/jquery-ui.min.js")
+= javascript_include_tag("https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/#{jquery_touch_punch_version}/jquery.ui.touch-punch.min.js")
+
+= javascript_include_tag("https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js")
+
+- # Exportação de tabelas para xls, csv...
+= javascript_include_tag("https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js")
+= javascript_include_tag("https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.0/xlsx.full.min.js")
+= javascript_include_tag("https://cdnjs.cloudflare.com/ajax/libs/TableExport/5.0.0/js/tableexport.js")
+
+- if ENV['HOTJAR'].present?
+  :javascript
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments);};
+      h._hjSettings={hjid:#{ENV['HOTJAR']},hjsv:5};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+    }(window,document,'//static.hotjar.com/c/hotjar-','.js?sv='));

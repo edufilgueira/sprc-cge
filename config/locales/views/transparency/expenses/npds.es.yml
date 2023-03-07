@@ -1,0 +1,7 @@
+es:
+  transparency:
+    expenses:
+      npds:
+        index:
+          title: Notas de Pago de Gastos
+          description: 'Aquí usted podrá consultar informaciones de las notas de pago de gastos buscando por período, unidad gestora o nombre del acreedor.'

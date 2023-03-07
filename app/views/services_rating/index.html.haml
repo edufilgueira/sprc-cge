@@ -1,0 +1,24 @@
+- content_for :title, t('.title')
+
+- if try(:page_attachments) and page_attachments.show_survey?
+	.my-4
+		.alert.alert-warning
+			= t('shared.transparency.survey_answer.title').html_safe
+
+
+.card.card-custom
+	
+	.card-header
+		%h2.card-title= t('.title')
+	.card-block
+		- if notice.present?
+			.col-12.alert.alert-success{role: "alert"}
+				= notice
+
+		%p.card-text
+			= t('.rating.description')
+
+		= render "index"
+
+- if try(:page_attachments) and page_attachments.show_survey?
+	= render file: "transparency/pages/show", locals: {page: page_attachments, hide_survey_alert: true}

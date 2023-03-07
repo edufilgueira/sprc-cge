@@ -1,0 +1,128 @@
+pt-BR:
+
+  transparency:
+    sou:
+      home:
+
+        index:
+          title: Ouvidoria Digital
+          transparency_title: Ouvidoria Digital
+          transparency_description: >
+            Bem-vindo(a) à Ouvidoria Digital do Ceará Transparente.
+
+        general:
+          title: Faça sua manifestação
+          description: >
+           O governo escuta você. Registre solicitações, reclamações, sugestões ou elogios. 
+           É possível também denunciar algo de errado sem precisar se identificar
+
+          new_ticket: Registrar nova Manifestação
+
+          follow_ticket: 
+            title: Acompanhar Manifestação
+            description: >
+              Você poderá acompanhar o atendimento da sua manifestação pelo número de protocolo ou acessando seu perfil no Ceará Transparente.
+
+          
+        how:
+          more: 'Leia mais'
+          what_is:
+            title: O que é Ouvidoria?
+            description: >
+              A Ouvidoria é o principal canal de comunicação entre os(as) cidadãos(ãs) e o governo. É direito do(a) cidadão(ã) se manifestar, participar e fiscalizar o governo, com o objetivo de melhorar a qualidade dos serviços públicos e de identificar irregularidades.    
+              <span class='cordel text-orange text-dash-underline' data-toggle='popover' data-trigger='hover focus click' data-html='true' data-content='<p class="text-center">
+                      OUVIDORIA é um órgão<br />
+                      Que ESCUTA O CIDADÃO:<br />
+                      Perguntas e elogios,<br />
+                      E até reclamação!<br />
+                      É você dando "PITACO",<br />
+                      Tendo participação!</p>'>Explicação em cordel</span>
+          how_to:
+            title: 
+            description: >
+              
+
+        publications:
+          title: Manual de Ouvidoria e Publicações Gerais
+          description: >
+            Manual de Ouvidoria da Controladora e Ouvidoria Geral do Estado, Avaliação de Desempenho das Ouvidorias e Trabalhos Profissionais.
+
+          articles: Artigos
+          academic: Publicações Acadêmicas
+
+          diagnosis:
+            title: 'Clique Aqui'
+
+        sou_intro:
+          title: 'Relatórios de Gestão de Ouvidoria'
+          description: 'Acesse os Relatórios de Gestão de Ouvidoria e conheça as análises das manifestações dos cidadãos e as informações sobre providências adotadas pelo governo.'
+          links: 'Links'
+
+          report:
+            title: 'Relatórios de Gestão de Ouvidoria (Consolidado CGE)'
+          legislation:
+            title: 'Legislação'
+          sectoral:
+            title: 'Relatórios de Gestão das Ouvidorias Setoriais'
+
+        stats:
+          title: Estatísticas de manifestações de ouvidoria
+          description: >
+            Consulte as estatísticas e os dados sobre os tipos de manifestações de 
+            Ouvidoria realizadas por cidadãos desde março de 2018.
+
+          month: Exibindo dados do período de %{month}
+          stats_1:
+            title: Total de manifestações válidas
+
+          stats_2:
+            title: Tempo médio para responder
+            unit: '%{value} dias'
+
+          stats_3:
+            title: '% de manifestações respondidas no prazo'
+            unit: '%{value}%'
+
+          summary:
+            stats_1: Elogio
+            stats_2: Reclamação
+            stats_3: Denúncia
+            stats_4: Sugestão
+            stats_5: Solicitação
+
+          see_more: Acessar painéis estatísticos de ouvidoria
+
+        stats_evaluations:
+          title: 'Pesquisa de satisfação da Ouvidoria Digital'
+          description: >
+            Painéis estatísticos mensais como os dados consolidados da pesquisa de satisfação e das avaliações 
+            de atendimento realizadas pelos cidadãos no Ceará Transparente.
+          month: Exibindo dados do período de %{month}
+
+          total_answered_tickets:
+            title: 'Total de manifestações Respondidas'
+
+          total_user_evaluations:
+            title: 'Pesquisas de satisfação respondidas pelos usuários do Ceará Transparente'
+
+          see_more: Acessar painéis estatísticos das pesquisas de satisfação da ouvidoria
+
+        events:
+          title: Próximos eventos
+          description: >
+            Acompanhe a programação de cursos e formações ligados à cidadania para os servidores 
+            dos órgãos e das entidades estaduais. 
+          empty: Nenhum evento cadastrado.
+
+        sous:
+          title: Rede de Ouvidorias
+          description: >
+            O Estado do Ceará possui uma rede organizada de Ouvidorias. 
+            Isso proporciona a uniformização de processos e ajuda a colocar em prática políticas públicas melhores.
+
+          link_1: Rede de Ouvidorias do Poder Executivo Estadual
+          link_2: Rede Cearense de Ouvidorias Públicas e Afins (Rede Ouvir CE)
+          link_3: Rede Nacional de Ouvidorias
+          see_more:
+            title: Ver Rede de Ouvidorias
+            link: '/portal-da-transparencia/paginas/redes-de-ouvidorias'

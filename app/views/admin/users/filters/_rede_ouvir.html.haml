@@ -1,0 +1,13 @@
+/ %label
+/   = t('.label')
+
+/ .radio
+/   - show_rede_ouvir = params[:rede_ouvir] == 'true'
+
+/   %label
+/     = radio_button_tag :rede_ouvir, 'false', !show_rede_ouvir, onchange: 'submit();'
+/     = t('boolean.false')
+
+/   %label
+/     = radio_button_tag :rede_ouvir, 'true', show_rede_ouvir, onchange: 'submit();'
+/     = t('boolean.true')

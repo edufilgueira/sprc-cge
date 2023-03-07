@@ -1,0 +1,50 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-8
+            %h3.card-title
+              = department.acronym
+
+          .col-4
+            .float-right
+
+              - if can?(:manage, department)
+                = render 'shared/buttons/btn_toggle_disabled', resource: department, namespace: :operator
+
+              - if can?(:edit, department)
+                = link_to t('commands.edit'), edit_operator_department_path(department), class: 'btn text-muted btn-link'
+
+      .card-block
+
+        = content_with_label(department, :name)
+        - if department.organ.present?
+          = content_with_label(department, :organ_name)
+        - if department.subnet.present?
+          = content_with_label(department, :subnet_name)
+
+      .card-block
+
+        - if sub_departments.present?
+          %hr{'aria-hidden': 'true'}
+
+          %h4.h6
+            = SubDepartment.model_name.human(count: 2)
+
+          .row
+            .col-12
+              - sub_departments.each do |sub_department|
+                %p
+                  - if sub_department.disabled?
+                    %del=sub_department.title
+                    %small= t('.sub_departments.disabled_at', disabled_at: l(sub_department.disabled_at, format: :shorter))
+                  - else
+                    = sub_department.title

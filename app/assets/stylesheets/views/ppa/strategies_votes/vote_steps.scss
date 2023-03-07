@@ -1,0 +1,16 @@
+.step-medium {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.card-steps-list {
+  min-height: 340px;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+input[type="radio"]:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}

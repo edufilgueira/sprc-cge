@@ -1,0 +1,143 @@
+@import 'base/variables';
+@import 'bootstrap/variables';
+
+.table-active, .table-active > th, .table-active > td {
+  background-color: #f7f7f9;
+}
+
+// @media (max-width: map-get($grid-breakpoints, "lg")) {
+// XXX: essa configuração quebra as tabelas. Usar table-responsive para os
+// casos necessários.
+//
+// Deve ser um wrapper com .table-responsive é a única forma que funciona.
+// https://github.com/twbs/bootstrap/issues/21577
+//
+// .table {
+//   display: block;
+//   overflow-x: auto;
+// }
+// }
+
+table {
+
+  &.table-sorted {
+    th {
+      .fa {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  tr {
+
+    th {
+
+      padding: 0;
+
+      &.icon-col {
+        // XXX essa classe foi criada para definir uma coluna "mínima", com largura fixa para
+        // abrigar um ícone (font-awesome) de envelope, para a tabela de notificações.
+        // Caso a necessidade surja novamente para outras tabelas, devemos criar classes "compostas"
+        // dando flexibilidade à largura desejada. Exemplo:
+        //   .icon-col       -> a padrão, com largura 40px
+        //   .icon-col.w-50  -> largura específica de 50px
+        //   .icon-col.w-80  -> largura específica de 80px
+        //   ...
+        //   ps: as larguras dos ícones do font-awesome variam.
+        width: 40px;
+        max-width: 40px;
+      }
+
+      &.table-active {
+        a {
+          // inline-block no lugar do block é importante para que o copy&paste da
+          // tabela venha corretamente. Com o block, cada coluna quebra linha do
+          // copypaste.
+          display: inline-block;
+          width: 100%;
+          margin-right: 70px;
+
+          .fa {
+            position: relative;
+            margin-left: 8px;
+            float: right;
+            padding-right: 5px;
+
+            &.fa-sort-asc {
+              top: 9px;
+            }
+
+            &.fa-sort-desc {
+              top: 3px;
+            }
+          }
+        }
+      }
+
+      a {
+        // inline-block no lugar do block é importante para que o copy&paste da
+        // tabela venha corretamente. Com o block, cada coluna quebra linha do
+        // copypaste.
+        display: inline-block;
+      }
+    }
+
+    td {
+
+      &.icon-col {
+        width: 40px;
+        max-width: 40px;
+      }
+
+      a, .a {
+        // inline-block no lugar do block é importante para que o copy&paste da
+        // tabela venha corretamente. Com o block, cada coluna quebra linha do
+        // copypaste.
+        display: inline-block;
+
+        // min-height é importante para links na tabela que não tenham
+        // conteúdo, como um ticket que não tenha nome, para que o
+        // link ocupe todo o espaço da td.
+        min-height: 38px;
+
+        padding: 8px;
+
+        text-decoration: none;
+
+        color: $text-gray;
+
+        font-size: 14px;
+
+        &:hover {
+          text-decoration: none;
+
+        }
+      }
+
+      a.hover-link {
+        font-size: 14px;
+        opacity: 0.4;
+      }
+
+      &:hover {
+        a.hover-link {
+          opacity: 1;
+        }
+      }
+    }
+
+    mark {
+      padding: 0.2em 0;
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  .table-responsive-sm {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}

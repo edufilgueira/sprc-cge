@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    integrations:
+      expenses:
+        neds:
+          index:
+            title: Despesas por nota de empenho

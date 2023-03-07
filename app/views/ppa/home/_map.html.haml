@@ -1,0 +1,43 @@
+-# TODO: desbloquear o acesso aos dados pelo mapa, reabilitando o template abaixo
+
+-# XXX é possível que não haja plano corrente!
+- bienniums = current_plan ? current_plan.bienniums.reverse.map(&:to_s) : []
+
+.card.mt-4.mt-md-0{ 'aria-labelledby': 'ppa_regions' }
+  = simple_form_for(:ppa, url: ppa_root_path, method: :get, role: :search) do |f|
+    .card-block.pb-2
+      %h4.card-title.font-weight-bold
+        = t('.title')
+
+      .card-text
+        .row
+          .col-sm-8
+            = f.input :region_code,
+              collection: regions, as: :grouped_select,
+              group_method: :ordered_cities,
+              group_label_method: :name,
+              value_method: :region_code,
+              input_html: { data: { region_select: '' } },
+              label: t('.city')
+
+            .text-muted.small
+              .hidden-md-down
+                = t('.hint')
+              .hidden-md-up.mb-2.mb-md-0
+                = t('.hint_mobile')
+          .col-sm-4
+            = f.input :biennium, collection: bienniums, prompt: nil, label: t('.biennium'), required: false, input_html: { data: { biennium_select: '' } }
+
+      .card-block.card-map-container.p-0.hidden-md-down
+        - regions.each do |region|
+          .card.card-map-region-info.collapse.pb-2{ data: { region_code: "r#{region.code}", region_slug: "#{region.name.parameterize}" } }
+            .card-block.pb-0
+              .card-title.mb-0
+                %h6.card-title.font-weight-bold.text-green.mb-0
+                  = region.name
+                  = render 'bienniums', bienniums: bienniums, region: region
+
+      = render 'svg'
+      .card-footer.bg-faded.border-bottom-only.border-3.border-orange
+        = link_to t('.see_more'), '', class: 'btn btn-tertiary btn-uppercase',
+        data: { 'monitoring-link' => '/ppa/:biennium/:region/eixos' }

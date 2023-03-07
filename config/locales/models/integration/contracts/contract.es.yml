@@ -1,0 +1,75 @@
+es:
+  activerecord:
+    attributes:
+      integration/contracts/contract:
+        isn_sic: Nº SACC
+        num_contrato: Nº Contrato
+        descricao_objeto: Objeto
+        tipo_objeto: Tipo objeto
+        num_spu: "Nº del Proceso - SPU"
+        cpf_cnpj_financiador: CPF/CNPJ
+        descricao_justificativa: Justificación
+        decricao_modalidade: Modalidad de la licitación
+        data_assinatura: Fecha de la firma
+        data_termino: Fecha de finalización
+        accountability_status: Situación de la rendición de cuentas
+        cod_concedente: Código contratante
+        cod_financiador: Código del contratado
+        cod_gestora: Secretaría/Órgano
+        cod_orgao: Código órgano
+        cod_secretaria: Secretaría
+        descricao_tipo: Descripción tipo
+        descricao_url: Descrición url
+        data_processamento: Fecha processamiento
+        flg_tipo: Flag tipo
+        isn_parte_destino: ISN parte destino
+        isn_modalidade: ISN modalidad
+        isn_entidade: ISN entidad
+        num_spu_licitacao: Número spu licitación
+        data_publicacao_portal: Datos de publicación en la Plataforma Transparente de Ceará      
+        data_publicacao_doe: Fecha publicación en el DOE
+        descricao_url_pltrb: Descripción url pltrb
+        descricao_url_ddisp: Descripción url ddisp
+        descricao_url_inexg: Descripción url inexg
+        cod_plano_trabalho: Código plan de trabajo
+        num_certidao: Número certificado
+        descriaco_edital: Descripción edital
+        num_contrato: Número contrato
+
+        valor_contrato: Valor original
+        valor_original_concedente: Valor inicial do paso del dedente
+        valor_atualizado_concedente: Valor actualizado
+        valor_aditivo: Valor aditivo
+        valor_ajuste: Valor ajuste
+        valor_empenhado: Valor empenhado
+        valor_pago: Valor pago
+        calculated_valor_aditivo: Valor aditivo
+        calculated_valor_ajuste: Valor ajuste
+        calculated_valor_empenhado: Valor empenhado
+        calculated_valor_pago: Valor pago
+        valor_can_rstpg: Valor cancelamento de restos a pagar
+        valor_original_contrapartida: Valor inicial de la contrapartida del contratante/beneficiario
+        valor_atualizado_contrapartida: Valor actualizado de la contrapartida del contratante/beneficiario
+        valor_atualizado_total: Valor actualizado total
+
+        descricao_situacao: Situacion fisica
+
+        status: Vigencia
+        status_str: Vigencia
+
+        infringement_status: Situación del contratante
+        infringement_status_str: Situación del contratante
+
+        manager_title: Unidad
+        grantor_title: Contratante
+        creditor_title: Contratado
+        descricao_nome_credor: Contratado
+
+  integration/contracts/contract:
+    infringement_statuses:
+      adimplente: Cumplidor
+      inadimplente: Incumplidor
+
+    statuses:
+      concluido: Concluido
+      vigente: Vigente

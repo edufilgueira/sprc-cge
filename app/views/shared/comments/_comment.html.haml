@@ -1,0 +1,28 @@
+- if can? :view, comment
+  .row
+
+    .col-12.col-md-1.no-print
+
+      .float-left
+
+        .bg-faded.rounded-circle.p-1
+
+          %i.fa.fa-comment.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+    .col-12.col-md-11.pt-3.pt-md-1
+
+      .text-muted
+
+        %h4.h6.mb-0
+          - if (comment.external? && ticket.denunciation?)  
+            = t('.anonymous_title') 
+
+          - else
+            = t('.title', author: comment.as_author)  
+
+
+        %small
+          %em
+            = l(comment.created_at, format: :shorter)
+
+  %hr{'aria-hidden': 'true'}

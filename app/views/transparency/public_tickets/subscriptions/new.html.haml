@@ -1,0 +1,6 @@
+- content_for :title, t(".title.#{ticket.ticket_type}")
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.content-detail
+  = simple_form_for ticket_subscription, url: transparency_public_ticket_subscriptions_path(public_ticket_id: ticket) do |f|
+    = render 'form', f: f

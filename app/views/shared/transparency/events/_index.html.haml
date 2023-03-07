@@ -1,0 +1,5 @@
+.row
+  = render partial: 'shared/transparency/events/event', collection: events
+
+= render 'shared/components/remote_table/index_count', collection: events, filtered_count: filtered_count, total_count: total_count, filtered: filtered?
+

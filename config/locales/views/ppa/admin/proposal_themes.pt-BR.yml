@@ -1,0 +1,20 @@
+pt-BR:
+  ppa:
+    admin:
+      proposal_themes:
+        index:
+          title: Proposição Temática
+          new: Adicionar Proposição Temática          
+        new:
+          title: Proposição Temática
+        create:
+          done: Proposição Temática criada com sucesso
+          error: Alguns erros foram encontrados
+        edit:
+          title: Alterar Proposição Temática
+        update:
+          done: Proposição Temática atualizado com sucesso
+          error: Proposição Temática não pode ser atualizado
+        destroy:
+          done: Proposição Temática removida com sucesso
+        

@@ -1,0 +1,8 @@
+es:
+  ppa:
+    proposals:
+      votes:
+
+        # filters
+        ensure_open_for_voting:
+          alert: El turno de votaciones no está abierto para esta propuesta

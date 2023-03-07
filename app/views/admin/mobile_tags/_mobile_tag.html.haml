@@ -1,0 +1,12 @@
+%tr
+  %td
+    = link_to admin_mobile_tag_path(mobile_tag) do
+      = highlight(mobile_tag.name, params[:search])
+
+  %td
+    .pull-right
+      = link_to edit_admin_mobile_tag_path(mobile_tag), class: 'btn btn-sm btn-outline-primary pt-2 ml-2' do
+        %i.fa.fa-edit{title: t('commands.edit')}
+
+      = link_to admin_mobile_tag_path(mobile_tag), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn btn-sm btn-outline-danger pt-2 ml-2' do
+        %i.fa.fa-trash{title: t('commands.remove')}

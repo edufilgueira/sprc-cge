@@ -1,0 +1,45 @@
+pt-BR:
+
+  services:
+
+    reports:
+
+      attendances:
+
+        summary:
+          sheet_name: Sumário
+          title: 'Período do Relatório: %{begin} à %{end}'
+          total:
+            sou: Total de Atendimentos em Ouvidoria Pela Central 155
+            sic: Total de Atendimentos Acesso à Informação Pela Central 155
+
+        sou:
+          sheet_name: Ouvidoria
+          attendance_title: Total de Atendimentos em Ouvidoria por Atendente
+          returned_phone_title: Total de Atendimentos retornados por Atendente através de telefone
+          returned_whatsapp_title: Total de Atendimentos retornados por Atendente através de whatsapp
+          returned_whatsapp_header_total_returned_title: Total de retornos
+          returned_phone_header_with_success_title: Com Êxito
+          returned_phone_header_without_success_title: Sem Êxito
+          returned_phone_header_attemps_title: Total de Tentativas
+          returned_phone_header_total_protocols_title: Total de Protocolos
+
+        sic:
+          sheet_name: Acesso à Informação
+          attendance_title: Total de Atendimentos Acesso à Informação por Atendente
+          returned_phone_title: Total de Atendimentos retornados por Atendente através de telefone
+          returned_whatsapp_title: Total de Atendimentos retornados por Atendente através de whatsapp
+          returned_whatsapp_header_total_returned_title: Total de retornos
+          returned_phone_header_with_success_title: Com Êxito
+          returned_phone_header_without_success_title: Sem Êxito
+          returned_phone_header_attemps_title: Total de Tentativas
+          returned_phone_header_total_protocols_title: Total de Protocolos
+
+        service_type:
+          sheet_name: Tipos de serviço
+          title: Total de Atendimentos por tipo de serviço
+
+        service_type_by_user:
+          sheet_name: Tipos de serviço por atendente
+          headers:
+            name: Atendente

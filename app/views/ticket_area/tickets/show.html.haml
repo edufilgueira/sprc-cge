@@ -1,0 +1,13 @@
+.row
+
+  .col-12
+
+    %h2.mt-4.button-title
+      = ticket.title
+
+      - user_identity = ticket.anonymous? ? 'anonymous' : 'identified'
+      = link_to t(".#{ticket_type}.#{user_identity}.commands.new"), link_to_new_ticket(ticket_type: ticket_type), class: 'btn btn-tertiary pull-right mt-3 mt-md-0'
+
+    %hr{'aria-hidden': 'true'}
+
+= render 'shared/tickets/confirmed', namespace: :ticket_area, ticket: ticket, new_comment: new_comment

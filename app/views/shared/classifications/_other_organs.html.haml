@@ -1,0 +1,12 @@
+- if classification_other_organs.present?
+  .row{ data: { content: :classification_other_organs } }
+    .col-6
+      = content_with_label(classification_other_organs, :topic_name)
+    .col-6
+      = content_with_label(classification_other_organs, :subtopic_name)
+
+  .row{ data: { content: :classification_other_organs } }
+    .col-6
+      = content_with_label(classification_other_organs, :budget_program_name)
+    .col-6
+      = content_with_label(classification_other_organs, :service_type_name)

@@ -1,0 +1,14 @@
+es:
+  activerecord:
+
+    models:
+      sub_department:
+        one: 'Subunidad'
+        other: 'Subunidades'
+
+    attributes:
+      sub_department:
+        acronym: Sigla
+        name: Nombre
+        _disable: Inhabilitar
+        disabled_at: Inhabillitado en

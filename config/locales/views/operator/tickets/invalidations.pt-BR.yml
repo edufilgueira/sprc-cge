@@ -1,0 +1,28 @@
+pt-BR:
+
+  operator:
+
+    tickets:
+
+      invalidations:
+
+        new:
+          title: Invalidar
+          title_request: Pedido de invalidação
+        create:
+          done: Invalidado com sucesso.
+          request_done: Pedido de invalidação feito com sucesso.
+          fail: É obrigatório inserir uma justificativa para invalidar.
+        form:
+          hint: Justifique a invalidação
+          save: Invalidar
+          request: Solicitar invalidação
+          justification: Motivação
+
+        reject:
+          done: Rejeitado com sucesso.
+          fail: É obrigatório inserir uma justificativa para invalidar.
+
+        approve:
+          done: Invalidado com sucesso.
+          fail: Erro ao aprovar invalidação.

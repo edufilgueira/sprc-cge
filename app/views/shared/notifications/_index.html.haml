@@ -1,0 +1,33 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+- filter_path = url_for([namespace, :notifications])
+
+%h2.sr-only
+  = t('.title')
+
+.card.card-custom
+
+  .card-header
+
+    %h3.card-title
+      = t('.title')
+
+
+  .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+    .remote-content{'data-remote-content': controller_name}
+
+      - filter_options = { filter_id: :notifications, filter_path: filter_path }
+
+      = render "shared/notifications/filters", filter_options
+
+      - # o index é carregado como remote-content e está na partial ./_index_content
+
+      %hr{'aria-hidden': 'true'}
+
+      .remote-content-result{ 'data-remote-content-result': controller_name }
+
+        .p-2.text-center.text-muted
+          .fa.fa-spin.fa-refresh.mx-1
+          = t('messages.loading')

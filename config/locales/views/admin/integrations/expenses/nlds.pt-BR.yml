@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    integrations:
+      expenses:
+        nlds:
+          index:
+            title: Notas de Liquidação de Despesa

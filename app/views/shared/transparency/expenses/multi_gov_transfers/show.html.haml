@@ -1,0 +1,7 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, multi_gov_transfer.title
+
+%h2.sr-only
+  = t('.title')
+
+= render 'shared/transparency/expenses/neds/show', ned: multi_gov_transfer

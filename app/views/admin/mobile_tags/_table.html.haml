@@ -1,0 +1,16 @@
+.table-responsive
+  %table.table.table-hover.table-sm.table-sorted{summary: t('.summary')}
+
+    %thead
+      %tr
+        - heads = [:name, :actions]
+
+        - heads.each_with_index do |head, index|
+
+          %th
+            = t(".heads.#{head}")
+
+    %tbody
+      = render mobile_tags
+
+= render 'shared/components/table/index_count', collection: mobile_tags, filtered_count: filtered_count, total_count: total_count, filtered: filtered?

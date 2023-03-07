@@ -1,0 +1,57 @@
+.tree-organizer.mb-3{'data-tree-organizer': options[:id], 'data-default-node-types': options[:default_node_types_path]}
+
+  = label_tag('tree-organizer-title', t('.title'))
+
+  .selected-value{'data-selected-value-container': ''}
+    .value
+      %p{'data-selected-value-message': ''}
+
+    .icon
+      = link_to '#!', title: t('commands.config'), 'data-config': '' do
+        .fa.fa-cog
+
+  .tree-organizer-container{'data-container': ''}
+
+    %hr
+
+    .px-2
+
+      = label_tag('tree-organizer-select', t('.select'))
+
+      - select_options = options_for_select(options[:node_types_options])
+      = select_tag('nodes', select_options, { 'data-filter-bar-ignore': '', 'data-select-node-types': ''})
+
+      - # data-filter-bar-field indica que o component FilterBar vai sentir
+      - # mudanças nesse campo.
+      = hidden_field_tag(:node_types, params[:node_types], 'data-tree-selected-nodes': '', 'data-filter-bar-field': '')
+
+      .tree-organizer-node-list{'data-list': ''}
+
+        %p{'data-default-message': ''}
+          = t('.default')
+
+        - options[:default_node_types].each_with_index do |node_type, index|
+          - node_type_title = options[:node_type_model].human_attribute_name(node_type)
+          - position = (index + 1 - 1);
+
+          .tree-organizer-node-item{'data-node-type': node_type, title: node_type_title}
+
+            .node-container
+              .node-position{'data-position': ''}
+                = position
+
+              .node-title
+                = node_type_title
+
+              .node-remove{'data-remove': ''}
+                .fa.fa-times
+
+    .mt-3
+      %hr
+      .row
+        .col-3
+          = link_to t('commands.close'), '#!', 'data-close': ''
+
+        .col-9
+          .float-right
+            = link_to t('.restore_default'), '#!', 'data-restore-default': ''

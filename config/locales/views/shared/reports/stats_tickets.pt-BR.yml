@@ -1,0 +1,261 @@
+pt-BR:
+  shared:
+    reports:
+        stats_tickets:
+
+          index:
+            title: Painéis estatísticos
+            title_others_topics: Outros assuntos
+            tabs:
+              sic:
+                title: Acesso à Informação
+              sou:
+                title: Ouvidoria Digital
+
+            filters:
+              sectoral:
+                scopes:
+                  general: Geral
+                  sectoral: Setorial
+
+            stats_ticket:
+              last_update: 'Atualizado em: %{value}'
+              card:
+                sou:
+                  chart_year_title: 'Total de manifestações registradas:'
+                  chart_year_column_title: Manifestações
+                  stats:
+                    title: 'Painel estatístico - Ouvidoria Digital (%{date})'
+                sic:
+                  chart_year_title: 'Total de solicitações registradas:'
+                  chart_year_column_title: Solicitações
+                  stats:
+                    title: 'Painel estatístico - Acesso à Informação (%{date})'
+              popover:
+                title: Assunto
+                sou:
+                  body: '%{total_tickets} manifestações classificadas como: %{title}'
+                sic:
+                  body: '%{total_tickets} solicitações classificadas como: %{title}'
+              button:
+                import: Atualizar dados
+                importing: Atualizando dados...
+
+            organs:
+              title: Órgãos mais demandados
+              no_content: 'Sem dados'
+              chart_organs:
+                series_name: Órgão
+                sou:
+                  name: Total de manifestações por órgão
+                  unit: Manifestações
+                sic:
+                  name: Total de solicitações por órgão
+                  unit: Solicitações
+              popover:
+                title: Assunto
+                sou:
+                  body: '%{total_tickets} manifestações classificadas como: %{title}'
+                sic:
+                  body: '%{total_tickets} solicitações classificadas como: %{title}'
+              topics:
+                empty: Sem assuntos
+
+            topics:
+              title: Assuntos mais demandados
+              series_name: Assunto
+              no_content: Sem dados
+              sou:
+                name: Total de manifestações por assunto
+                unit: Manifestações
+              sic:
+                name: Total de solicitações por assunto
+                unit: Solicitações
+
+            departments:
+              title: Unidades mais demandadas
+              series_name: Unidade
+              no_content: Sem dados
+              sou:
+                name: Total de manifestações por unidade
+                unit: Manifestações
+              sic:
+                name: Total de solicitações por unidade
+                unit: Solicitações
+
+            used_inputs:
+              title: Meios de entrada
+              series_name: Meio de entrada
+              no_content: Sem dados
+              sou:
+                name: Total de manifestações por meio de entrada
+                unit: Manifestações
+              sic:
+                name: Total de solicitações por meio de entrada
+                unit: Solicitações
+
+            sou_types:
+              title: Tipos de Manifestação
+              series_name: Tipo de Manifestação
+              no_content: Sem dados
+              sou:
+                name: Total de manifestações por tipo
+                unit: Manifestações
+
+            total_tickets_year_chart:
+              sou:
+                chart_year_title: 'Total de manifestações registradas:'
+                chart_year_column_title: Manifestações
+                empty: Atualize os dados para exibir o total anual de manifestações registradas
+              sic:
+                chart_year_title: 'Total de solicitações registradas:'
+                chart_year_column_title: Solicitações
+                empty: Atualize os dados para exibir o total anual de solicitações registradas
+
+
+          show:
+            sou:
+              title: 'Painel estatístico - Ouvidoria Digital (%{date})'
+            sic:
+              title: 'Painel estatístico - Acesso à Informação (%{date})'
+
+            organs:
+              title: Órgãos mais demandados
+              organs:
+                empty: Nenhum órgão demandado
+              topics:
+                empty: Sem assuntos
+
+            organ_topics:
+              name: 'Total por assunto'
+              unit: Quantidade
+              title_others: Não classificados
+              series_name: Assunto
+
+            topics:
+              title: Assuntos mais demandados
+              series_name: Assunto
+              no_content: Sem dados
+              sou:
+                name: Total de manifestações por assunto
+                unit: Manifestações
+              sic:
+                name: Total de solicitações por assunto
+                unit: Solicitações
+
+            departments:
+              title: Unidades mais demandadas
+              series_name: Unidade
+              no_content: Sem dados
+              sou:
+                name: Total de manifestações por unidade
+                unit: Manifestações
+              sic:
+                name: Total de solicitações por unidade
+                unit: Solicitações
+
+            used_inputs:
+              title: Meios de entrada
+              series_name: Meio de entrada
+              no_content: Sem dados
+              sou:
+                name: Total de manifestações por meio de entrada
+                unit: Manifestações
+              sic:
+                name: Total de solicitações por meio de entrada
+                unit: Solicitações
+
+            sou_types:
+              title: Tipos de Manifestação
+              series_name: Tipo de Manifestação
+              no_content: Sem dados
+              sou:
+                name: Total de manifestações por tipo
+                unit: Manifestações
+
+
+          summary:
+            title: Estatísticas gerais
+            no_content: Sem dados
+            other_organs:
+              sou:
+                title: Total de manifestações não pertinentes ao Poder Executivo Estadual
+              sic:
+                title: Total de solicitações não pertinentes ao Poder Executivo Estadual
+            completed:
+              sou:
+                title: Total de manifestações finalizadas
+              sic:
+                title: Total de solicitações finalizadas
+            partially_completed:
+              sou:
+                title: Total de manifestações finalizadas parcialmente
+              sic:
+                title: Total de solicitações finalizadas parcialmente
+            pending:
+              sou:
+                title: Total de manifestações pendentes
+              sic:
+                title: Total de solicitações pendentes
+            average_time_answer:
+              sou:
+                title: Tempo médio de resposta
+                label: "%{average} dias"
+              sic:
+                title: Tempo médio de resposta
+                label: "%{average} dias"
+            resolubility:
+              sou:
+                title: Resolubilidade
+              sic:
+                title: Resolubilidade
+
+            chart:
+              title: Estatísticas gerais
+              unit: Total
+              series_name: Total
+
+          summary_csai:
+            title: Estatísticas setoriais
+            no_content: Sem dados
+            other_organs:
+              sou:
+                title: Total de manifestações não pertinentes ao Poder Executivo Estadual
+              sic:
+                title: Total de solicitações não pertinentes ao Poder Executivo Estadual
+            completed:
+              sou:
+                title: Total de manifestações finalizadas
+              sic:
+                title: Total de solicitações finalizadas
+            partially_completed:
+              sou:
+                title: Total de manifestações finalizadas parcialmente
+              sic:
+                title: Total de solicitações finalizadas parcialmente
+            pending:
+              sou:
+                title: Total de manifestações pendentes
+              sic:
+                title: Total de solicitações pendentes
+            average_time_answer:
+              sou:
+                title: Tempo médio de resposta
+                label: "%{average} dias"
+              sic:
+                title: Tempo médio de resposta
+                label: "%{average} dias"
+            resolubility:
+              sou:
+                title: Resolubilidade
+              sic:
+                title: Resolubilidade
+
+            chart:
+              title: Estatísticas setoriais
+              unit: Total
+              series_name: Total
+
+          error:
+            message: Erro ao carregar o painel
+

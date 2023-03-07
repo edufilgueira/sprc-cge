@@ -1,0 +1,10 @@
+en:
+
+  shared:
+
+    answer_templates:
+
+      search:
+        label: Use answer template
+        placeholder: Search answer by name
+

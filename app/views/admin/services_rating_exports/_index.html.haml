@@ -1,0 +1,45 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:created_at, :name, :start_at, :ends_at, :worksheet_format, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: services_rating_exports, sort_columns: sort_columns, table_locale: table_locale do |services_rating_export|
+
+    - show_path = admin_services_rating_export_path(services_rating_export)
+
+    %tr
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(services_rating_export.created_at)
+
+      %td
+        = link_to show_path, title: services_rating_export.title do
+          = filtered_highlighted(services_rating_export.title.truncate(50))
+
+      %td
+        = link_to show_path do
+          = l(services_rating_export.start_at, format: :date)
+
+      %td
+        = link_to show_path do
+          = l(services_rating_export.ends_at, format: :date)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(services_rating_export.worksheet_format)
+
+
+
+      %td
+        .float-right
+
+          - if services_rating_export.success?
+            = link_to t('commands.download'), download_admin_services_rating_export_url(services_rating_export, format: services_rating_export.worksheet_format.to_sym), class: 'btn text-success btn-link'
+
+          - if can?(:manage, services_rating_export) && (services_rating_export.success? || services_rating_export.error?)
+            = link_to t('commands.remove'), admin_services_rating_export_path(services_rating_export), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link'
+

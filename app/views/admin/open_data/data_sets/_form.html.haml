@@ -1,0 +1,70 @@
+- content_for :javascript, javascript_include_tag('views/admin/open_data/data_sets/form')
+
+.container
+  = simple_form_for [:admin, data_set], as: :data_set, html: { 'data-content': 'data-set-form' } do |f|
+
+    - # determina se a edição veio da index ou da show e é usada no redirect
+    = hidden_field_tag :from, params[:from]
+
+    .row
+
+      .col-7
+
+        .row
+          .col-12
+            = f.input :title, autofocus: true
+
+        .row
+          .col-12
+            = f.input :author
+
+        .row
+          .col-12
+            - organ_select_text = t('.organ.select')
+
+            = f.input :organ_id, collection: supports_organs_and_secretaries_for_select, include_blank: false, input_html: { 'data-allow-clear': true, 'data-placeholder': organ_select_text }
+
+        .row
+          .col-12
+            = f.input :source_catalog
+
+        .row
+          .col-12
+            = f.input :description
+
+      .col-5
+
+        .data-set-vcge-categories
+
+          %h5
+            = t('.data_set_vcge_categories.title')
+
+          = f.fields_for :data_set_vcge_categories do |data_set_vcge_category|
+
+            = render 'data_set_vcge_category_fields', f: data_set_vcge_category
+
+          .links
+            = link_to_add_association t('.data_set_vcge_categories.add'), f, :data_set_vcge_categories, class: "mt-md-2 btn btn-success icon-plus"
+
+
+    %hr{'aria-hidden': 'true'}
+
+    .data-items
+
+
+      %h5
+        = t('.data_items.title')
+
+      = f.fields_for :data_items do |data_item|
+
+        = render 'data_item_fields', f: data_item
+
+      .links
+        = link_to_add_association t('.data_items.add'), f, :data_items, class: "mt-md-2 btn btn-success icon-plus"
+
+    %hr{'aria-hidden': 'true'}
+
+    .row
+      .col-12
+        = link_to t('.commands.cancel'), admin_open_data_data_sets_path, class: 'btn btn-warning pull-left'
+        = f.submit t('commands.save'), class: 'btn btn-primary float-right'

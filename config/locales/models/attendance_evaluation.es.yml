@@ -1,0 +1,13 @@
+es:
+
+  activerecord:
+
+    attributes:
+
+      attendance_evaluation:
+        clarity: Claridad (peso 2 en promedio)
+        content: Contenido (peso 5 en promedio)
+        wording: Redacción (peso 2 en pronmedio)
+        kindness: Gentileza (peso 1 en promedio)
+        average: Promedio final del servicio
+        comment: Comentario

@@ -1,0 +1,19 @@
+pt-BR:
+  admin:
+    services_rating_exports:
+      index:
+        title: Avaliação de Serviços Públicos
+        commands:
+          new: Nova extração
+
+      new:
+        title: Nova Extração
+        name: Nome da planilha
+
+      create:
+        title: 'Nova extração'
+        done: 'Exportação iniciada com sucesso. A planilha está sendo gerada em segundo plano.'
+        error: 'Falha ao iniciar a extração. Verifique os campos abaixo.'
+
+      destroy:
+        done: 'Exportação removida com sucesso'

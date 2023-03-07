@@ -1,0 +1,28 @@
+en:
+  shared:
+    transparency:
+      revenues_expenses:
+
+        index:
+          title: 'Revenues X Expenses'
+
+          stats:
+            title: 'Comparative year'
+            empty: 'No data for the year reported'
+
+          chart:
+            total:
+              title: 'Revenue (Total amount collected) x Expenses (Total amount invested) in the period filtered'
+              revenues_expenses:
+                title: 'Comparative - Revenues X Expenses (Executive Power)'
+              unit: 'Sum of values collected / expenses: R$'
+
+          intro:
+            title: 'Budget Planning and Execution'
+            description: >
+              <p>Here you can find budgetary and financial information related to the State. You can also get to know the plannings instruments by <a href="/portal-da-transparencia/paginas/leis-orcamentarias">clicking here</a>.</p>
+              <p>See how much the State of Ceará has <a href="/portal-da-transparencia/receitas/receitas-do-poder-executivo">earned</a> (where the money comes from) and how much it has <a href="/portal-da-transparencia/despesas/despesas-do-poder-executivo">spent</a> (where the money goes). Find out who has signed <a href="/portal-da-transparencia/contratos/contratos">contracts</a> or <a href="/portal-da-transparencia/contratos/convenios">agreements</a> with the State. Learn more about <a href="/portal-da-transparencia/compras">Purchases</a>, quantities and costs of goods acquired and check Bids.</p>
+              <p>Learn more about tax indicators, the Tax Management Report, Summarized Report for Budgetary Implementation, General State Balance, etc.</p>
+              <p>Look out! Here you can find more detailed information about the Executive Power. In order to learn more detailed information from the <a href="https://www.al.ce.gov.br/index.php/portal-da-transparencia">Legislative</a>, <a href="https://www.tjce.jus.br/transparencia/">Judiciary Powers</a> or the <a href="http://www.mpce.mp.br/portal-da-transparencia/">Public Ministry</a>, visit their respective websites.</p>
+              <p>In case you would like to learn more detailed information regarding non-dependent companies, or the <a href="https://www.cagece.com.br/">Water and Sewage Treatment Company – CAGECE</a>, <a href="http://www.cearaportos.ce.gov.br/#todospelaagua">Ceará Harbor Integration Company &nbsp;- CEARÁPORTOS</a>, <a href="http://www.ceasa-ce.com.br/">Ceará State Supply Company – CEASA</a>, <a href="http://www.cegas.com.br/">Ceará Gas Supply Company - CEGÁS</a>, <a href="http://www.cogerh.com.br/">Ceará State Water Supplies Management Company – COGERH</a>, <a href="http://www.adece.ce.gov.br/">Ceara State Development Agency – ADECE</a>, and the <a href="http://www.metrofor.ce.gov.br/">Metropolitan Transportation State Company - METROFOR</a>, visit their respective websites.</p>
+

@@ -1,0 +1,46 @@
+pt-BR:
+  ppa:
+    admin:
+      plans:
+        workshops:
+          index:
+            title: Encontros Regionais de elaboração
+            commands:
+              new: Adicionar Encontro Regional
+            table:
+              summary: Lista paginada com todos Encontros Regionais
+              header:
+                name: Nome
+                start_at: Data
+                commands: Comandos
+          new:
+            title: Adicionar encontro regional
+          create:
+            done: Encontro Regional criado com sucesso
+            error: Alguns erros foram encontrados
+          edit:
+            title: Alterar encontro regional
+          show:
+            title: Visualizando Encontro Regional
+          update:
+            done: Encontro Regional atualizado com sucesso
+            error: Encontro Regional não pode ser atualizado
+          destroy:
+            done: Encontro Regional removido com sucesso
+          form:
+            documents: Arquivos
+            add_document: Adicionar arquivo
+            photos: Imagens
+            add_photo: Adicionar imagem
+          document_fields:
+            file:
+              hint: Limite de 50MB por arquivo.
+          documents:
+            empty: Não existem arquivos
+            title: Arquivos
+          photo_fields:
+            file:
+              hint: Limite de 50MB por imagem.
+          photos:
+            empty: Não existem imagens
+            title: Imagens

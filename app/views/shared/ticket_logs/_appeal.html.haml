@@ -1,0 +1,26 @@
+.row
+
+  .col-12.col-md-1.no-print
+    .float-left
+
+      .alert-danger.rounded-circle.p-1
+
+        %i.fa.fa-undo.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      %h4.h6.mb-0
+        = t('.title', count: ticket_log.data[:count])
+
+      %small
+        %em
+          = l(ticket_log.created_at, format: :shorter)
+
+      %p
+        = raw(ticket_log.description)
+
+
+%hr{'aria-hidden': 'true'}
+

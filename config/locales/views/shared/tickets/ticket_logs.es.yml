@@ -1,0 +1,74 @@
+es:
+
+  shared:
+
+    tickets:
+
+      ticket_logs:
+
+        created_at:
+          title: Manifestación/solicitud recibida
+
+        comments:
+          title: Histórico de atendimiento
+
+        history:
+          comments:
+            title: Histórico de atendimiento
+            empty: Ninguma actividade reciente
+
+        index:
+
+          answer:
+            title: Respuesta(s)
+            title_internal: Posicionamiento(s)
+            ticket_description: Descripción de la manifestación o solicitud
+            final_answer: Respuesta(s)
+            final_answer_internal: Posicionamiento(s)
+            not_classified: Aguardando clasificación
+            empty: Ninguma respuesta enviada
+            empty_internal: Ningum posicionamiento enviado
+
+        invalidate: Invalidar
+
+        answer:
+          attachments: Adjuntos
+          justification: 'Consideraciones'
+          title:
+            sectoral:
+              sic: '%{type} enviado por el comité sectorial SIC %{organ}'
+              sou: '%{type} enviada por la Oidoría %{organ}'
+            subnet:
+              sic: '%{type} enviada por el comité sectorial SIC %{subnet}'
+              sou: '%{type} enviada por la Oidoría %{subnet}'
+            subnet_department:
+              sic: 'Posicionamiento hecho por el área interna %{department}'
+              sou: 'Posicionamento hecho por el área interna %{department}'
+            department:
+              sic: 'Posicionamento hecho por el área interna %{department}'
+              sou: 'Posicionamento hecho pela área interna %{department}'
+            cge:
+              sic: '%{type} enviada por la CGE'
+              sou: '%{type} enviada por la CGE'
+            call_center:
+              sic: '%{type} enviada por la Oidoría 155'
+              sou: '%{type} enviada por la Oidoría 155'
+          answer_versions:
+            sic:
+              appeal:
+                zero: Respuesta a la solicitud
+                one: Respuesta a la primera instancia del recurso
+                other: Respuesta a la segunda instancia del recurso
+              reopen:
+                zero: Respuesta a la solicitud
+                one: Respuesta a la solicitud (%{count}ª reabertura)
+                other: Respuesta a la solicitud (%{count}ª reabertura)
+            sou:
+              reopen:
+                zero: Respuesta a la manifestación
+                one: Respuesta a la manifestación (%{count}ª reabertura)
+                other: Respuesta a la manifestación (%{count}ª reabertura)
+          modified_description: Esta respuesta ha sido modificada. Haga clic aquí para ver la respuesta original.
+          signature:
+            sic: Todo ciudadano tiene derecho a recurrir, en primera instancia, ante el Comité de Gestión de Acceso a la Información (CGAI), cuando entienda que la respuesta ofrecida no cumple con lo solicitado, en los términos del artículo 17 de la Ley N ° 15.175 / 12. El plazo para presentar la apelación es de 10 días a partir del reconocimiento de la respuesta presentada por la agencia o entidad estatal.
+            sou: ''

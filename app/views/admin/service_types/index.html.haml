@@ -1,0 +1,62 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag('views/shared/organ_subnet/form')
+
+- can_create = can?(:create, ServiceType)
+- new_path = new_admin_service_type_path
+- controller_name = controller.controller_name
+- filter_path = admin_service_types_path
+
+%h2.sr-only
+  = t('.title')
+
+.card.card-custom
+
+  .card-header
+
+    %h3.card-title
+      = t('.title')
+
+
+  .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+    .remote-content{'data-remote-content': controller_name}
+
+      - filter_new_command = { title: t('.commands.new'), path: new_path, permission: can_create }
+      - filter_commands = { 'new': filter_new_command }
+      - filter_options = { filter_id: :contracts, filter_path: filter_path, commands: filter_commands }
+
+      = render "shared/admin/filters", filter_options do
+
+        .row
+          .col-4.col-md-4.col-sm-12.mt-2
+            = render "shared/admin/disable_filter"
+
+          .col-4.col-md-4.col-sm-12.mt-2
+            - checked = params[:from_subnet].present?
+            = label_tag :from_subnet do
+              = check_box_tag :from_subnet, '1', checked, { class: 'mr-2', 'data-input': 'from-subnet' }
+              = t('.subnet.info')
+
+          .col-4.col-md-4.col-sm-12.mt-2
+            .content{ 'data-content': 'organ' }
+              - organ_select_text = t('.organ.select')
+              - options = options_for_select(organs_for_select, params[:organ])
+              = label_tag :organ, t('.select.organ')
+              = select_tag :organ, options, { prompt: organ_select_text, 'data-input': 'organ', 'aria-label': organ_select_text }
+
+            .content{ 'data-content': 'subnet' }
+              - subnet_select_text = t('.subnet.select')
+              - options = options_for_select(subnets_for_select, params[:subnet])
+              = label_tag :subnet, t('.select.subnet')
+              = select_tag :subnet, options, { prompt: subnet_select_text, 'data-input': 'subnet', 'aria-label': subnet_select_text }
+
+      - # o index é carregado como remote-content e está na partial ./_index
+
+      %hr{'aria-hidden': 'true'}
+
+      .remote-content-result{ 'data-remote-content-result': controller_name }
+
+        .p-2.text-center.text-muted
+          .fa.fa-spin.fa-refresh.mx-1
+          = t('messages.loading')

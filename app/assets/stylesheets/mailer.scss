@@ -1,0 +1,9 @@
+/*
+ * ATENÇÃO no tamanho do email renderizado
+ *
+ * O gmail (correio eletronico mais popular) não renderiza emails de mais de 102 kb no preview
+ * Ref: https://kb.mailchimp.com/delivery/deliverability-research/gmail-is-clipping-my-email
+ */
+
+@import 'base/variables';
+@import 'modules/mailer';

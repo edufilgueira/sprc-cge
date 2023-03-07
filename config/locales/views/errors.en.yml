@@ -1,0 +1,8 @@
+en:
+  errors:
+    forbidden:
+      title: 'You are not allowed to access!'
+    not_found:
+      title: 'Page not found.'
+    internal_server_error:
+      title: 'Internal error! We are already working to solve it!'

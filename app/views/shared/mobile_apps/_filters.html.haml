@@ -1,0 +1,45 @@
+.card-filters
+
+  .row
+
+    - #
+    - # input search
+    - #
+    .col-12.col-md-5.mt-2
+      %label.sr-only{ for: 'search'}
+        = t('.search')
+      = text_field_tag(:search, params[:search], placeholder: t('.search'), class: 'form-control w-100 mb-3')
+
+
+    - #
+    - # button search
+    - #
+    .col-12.col-md-2.mt-2
+      = f.submit t('commands.search'), class: 'btn btn-primary btn-block'
+
+
+    - if current_user.present? && can?(:create, MobileApp)
+      - #
+      - # button new
+      - #
+      .col-12.col-md-5.text-right.mt-2
+        = link_to t('.commands.new'), new_admin_mobile_app_path, class: 'btn btn-primary pull-right'
+
+  .row
+
+    .col-lg-12{ 'data-content': 'mobile_tags_filter' }
+
+      - MobileTag.sorted.each do |tag|
+        .checkbox.small.list-inline-item.mr-2
+          - checked = params[:mobile_tags] && params[:mobile_tags].include?(tag.id.to_s)
+          = check_box_tag('mobile_tags[]', tag.id, checked, { data: { filter: tag.title }, id: tag.id })
+          = label_tag tag.id, tag.title
+
+  .pt-3
+    - filtered = params[:search].present?
+
+    - if filtered
+      %small
+        .alert.alert-warning
+          = raw t('messages.filters.warning_count', total: number_with_delimiter(total_count), filtered: number_with_delimiter(filtered_count))
+          = link_to t('messages.filters.clear'), '#!', 'data-input': 'clear-filter', class: 'float-right'

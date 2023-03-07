@@ -1,0 +1,11 @@
+pt-BR:
+  services_rating:
+    index:
+      title: Avaliações dos Serviços Públicos
+      rating: 
+        title: Sugestões
+        description: Queremos escutar você! Qual serviço público disponibilizado pelo Governo do Ceará você gostaria que fosse avaliado?
+
+    create:
+      done: Obrigado(a)! Sua sugestão foi recebida com sucesso!
+      error: Por favor, preencher o campo de Avaliações dos Serviços Públicos.

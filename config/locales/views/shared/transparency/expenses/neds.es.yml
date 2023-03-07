@@ -1,0 +1,106 @@
+es:
+  shared:
+    transparency:
+      expenses:
+
+        neds:
+          index:
+            title: Gastos por nota de empeño
+            description: 'Consulte aquí los gastos por nota de empeño, en el que es posible verificar el gasto de forma más detallada a nivel de empeño.'
+            source: |
+              <p><strong>Fuente de datos:</strong></p>
+              <p>Secretaría de Hacienda - SEFAZ</p>
+              <p>Sistema de Gestíon Gubernamental por Resultados - S2GPR</p>
+
+            chart:
+              calculated_valor_final:
+                unit: 'Suma de los valores empeñados: R$'
+                title: 'Valores de las Notas de Empeño en el mes seleccionado.'
+
+                razao_social_credor:
+                  title: Suma de los valores empeñados por acreedor
+                management_unit:
+                  title: Suma de los valores empeñados por secretarias/órgãos
+                expense_element:
+                  title: Suma de los valores empeñados por elemento
+
+              calculated_valor_pago_final:
+                unit: 'Suma de los valores pagados: R$'
+                title: 'Valores de las Notas de Empeño en el mes seleccionado.'
+
+                razao_social_credor:
+                  title: Suma de los valores pagados por acreedor
+                management_unit:
+                  title: Suma de los valores pagados por secretarias/órgãos
+                expense_element:
+                  title: Suma de los valores pagados por elemento
+
+            charts:
+              tabs:
+                razao_social_credor:
+                  title: Por acreedor
+                management_unit:
+                  title: Por unidad de gestión
+                expense_element:
+                  title: Por elemento de gastos
+
+            filters:
+              title: Consulta avanzada
+              search:
+                hint: >
+                  Usted puede buscar por el nombre de Secretarías, Órganos, Acreedores, etc.
+                  Ejemplos: 'vivienda', 'seguridad', 'tecnología', 'sec saude', entre otros.
+              date_of_issue:
+                information: |
+                  Esta información se refiere a la fecha de emisión de la Nota de Compromiso.
+
+
+            counts:
+              filtered_count:
+                title: Cantidad de notas filtradas
+              filtered_sum:
+                calculated_valor_final:
+                  title: Valor empeñado de las notas filtradas
+                calculated_valor_pago_final:
+                  title: Valor de las notas filtradas
+
+            table:
+              summary: Lista de notas de empeño de gastos
+              header:
+                numero: Número
+                date_of_issue: Fecha de emisión
+                unidade_gestora: Unidad de gestión
+                management_unit_title: Unidad de gestión
+                credor: Acreedor
+                calculated_valor_final: Valor empeñado
+                calculated_valor_pago_final: Valor pagado
+
+            stats:
+              title: Principales números relacionados a las notas de empeño
+              count: 'Notas empeñadas en <strong>%{date}</strong>'
+              calculated_valor_final: 'Valor empeñado en <strong>%{date}</strong>'
+              calculated_valor_pago_final: 'Valor pagado en <strong>%{date}</strong>'
+
+          show:
+            contract:
+              link: '%{value}'
+              none: EMPEÑO NO VINCULADO AL INSTRUMENTO CONTRACTUAL/CONVENIO
+
+            ned_items:
+              empty: Sin datos
+              title: Ítemes
+              summary: Lista de Ítemes
+              table:
+                heads:
+                  sequencial: Secuencial
+                  especificacao: Especificación
+                  unidade: Unidad
+                  quantidade: Cantidad
+                  valor_unitario: Valor unitario
+
+            npds:
+              title: Execução dos pagamentos
+              empty: Nenhum pagamento encontrado.
+              table:
+                summary: Execução dos pagamentos
+                export_file_name: 'pagamentos-%{id}'

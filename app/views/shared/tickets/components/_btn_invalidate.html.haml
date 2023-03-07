@@ -1,0 +1,12 @@
+- if can?(:invalidate, ticket) && !ticket.reopened?
+
+  - url = url_for([:new, namespace, :ticket, :invalidation, ticket_id: ticket.id, only_path: true])
+
+  = link_to url, class: 'btn btn-sm btn-danger', 'data-confirm': t('.confirm') do
+    %i.fa.fa-ban
+    
+    - if operator_cge?(current_user) 
+      = t(".invalidate.#{ticket.ticket_type}")
+    - else
+      = t(".invalidate.request")
+

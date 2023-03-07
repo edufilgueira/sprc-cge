@@ -1,0 +1,123 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :title, contract.title
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = t('.resource_title', sacc: contract.title)
+
+        .card-commands
+          = render 'shared/components/btn_link_to_print'
+
+
+      .card-block
+
+        .row
+
+          .col-12.col-sm-4
+            = dash_content_with_label(contract, :num_spu)
+            - document_url = integration_contracts_document_url(contract.descricao_url)
+          - [:num_contrato, :descricao_url].each do |attribute_name|
+            .col-12.col-sm-4
+              .content-with-label
+                %p.content-label
+                  = t(".#{attribute_name}")
+
+                %p.content-value
+                  = check_contract_modality(contract, document_url, attribute_name, exceptions, blank_contract)
+
+        - manager = contract.manager.present? ? :manager_title : :cod_gestora
+        - grantor = contract.grantor.present? ? :grantor_title : :cod_concedente
+
+        .row
+          - object_option_values.keys.each do |attribute_name|
+            = content_tag(:div, dash_content_with_label(contract, attribute_name), class: object_option_values[attribute_name])
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+          - [manager, grantor].each do |attribute_name|
+            .col-12.col-lg-4
+              = dash_content_with_label(contract, attribute_name)
+
+          .col-12.col-lg-4
+            .content-with-label
+              %p.content-label
+                = contract.class.human_attribute_name(:cod_secretaria)
+              %p.content-value
+                = contract.manager_title || contract.cod_secretaria
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+          - date_attributes.each do |attribute_name|
+            - unless hide_field?(contract, attribute_name)
+              .col-12.col-lg-4
+                = dash_content_with_label(contract, attribute_name, format: :date)
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+          - contract_values_attributes.each do |attribute_name|
+            .col-12.col-lg-4
+              = dash_content_with_label(contract, attribute_name)
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+
+          .col-12.col-lg-3
+            = dash_content_with_label(contract, :descriaco_edital)
+
+          .col-12.col-lg-3
+            - modalidade_label = contract.management_contract? ? t('.decricao_modalidade') : Integration::Contracts::Contract.human_attribute_name(:decricao_modalidade)
+            = dash_content_with_label(contract, :decricao_modalidade, { label: modalidade_label })
+          .col-12.col-lg-3
+            - if contract.management_contract?
+              .content-with-label
+                %p.content-label
+                  = t('.management_contract.follow.title')
+                %p.content-value
+                  = raw t('.management_contract.description', url: transparency_contracts_management_contract_path(contract))
+
+          .col-12.col-lg-2
+            - edital_url = integration_contracts_edital_url(contract.num_certidao)
+
+            - if edital_url.present?
+              .content-with-label
+                %p.content-label
+                  = t('.edital_url')
+
+                %p.content-value
+                  = link_to edital_url, target: :_blank do
+                    %i.fa.fa-external-link.fa-2x{'aria-hidden': 'true'}
+
+        .row
+          - [:descricao_url_ddisp, :descricao_url_inexg].each do |attribute_name|
+            - document_url = integration_contracts_document_url(contract[attribute_name])
+            - if document_url.present?
+              .col-12.col-lg-4
+                .content-with-label
+                  %p.content-label
+                    = t(".#{attribute_name}")
+
+                  %p.content-value
+                    = check_document_url(contract, document_url, attribute_name, exceptions)
+
+    = render 'shared/transparency/contracts/contracts/show/additives', contract: contract
+
+    = render 'shared/transparency/contracts/contracts/show/adjustments', contract: contract
+
+    - #
+    - # Lista carregada por ajax
+    - #
+    = render 'shared/transparency/contracts/financials', contract: contract
+
+    = render 'shared/transparency/followers/new', resource: contract

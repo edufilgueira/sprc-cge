@@ -1,0 +1,34 @@
+pt-BR:
+  transparency:
+    covid19:
+      gas_vouchers:
+        index:
+          title: Beneficiários Vale Gás
+          description: 'A entrega do "Vale Gás de Cozinha" às famílias beneficiárias ocorrerá por ordem alfabética e em três etapas/lotes, visando evitar a aglomeração de pessoas, com previsão de entrega às Prefeituras nas seguintes datas:'
+          rule_a: 'a) Primeiro Lote: Previsão de entrega em 11 de maio de 2020;'
+          rule_b: 'b) Segundo Lote: Previsão de entrega em maio de 2020;'
+          rule_c: 'c) Terceiro Lote: Previsão de entrega em junho de 2020;'
+          iframe_tableau_url: 'https://public.tableau.com/views/PainelVale_gas/PainelControleValeGas?%3Aembed=y&amp;%3AshowVizHome=no&amp;%3Adisplay_count=y&amp;%3Adisplay_static_image=y&amp;%3AbootstrapWhenNotified=true#4'
+          search_message: Faça a pesquisa pelo CPF do beneficiário.
+          waiting: Aguardando pesquisa por CPF de beneficiário
+          cpf_not_found: Seu CPF não foi localizado na lista de beneficiários do vale gás. 
+          criterion_msg: 'Verifique se você atende aos seguintes critérios:'
+          criterion1: ​1. Famílias que sejam beneficiárias do Cartão Mais Infância Ceará;
+          criterion2: 2. Famílias que sejam beneficiárias no Programa Bolsa Família, com renda “per capita” igual ou inferior a R$ 89,34 (para o cálculo dessa per capta considera-se a inclusão do valor do BF);
+          criterion3: 3. Famílias que possuam jovens em situação de vulnerabilidade social inscritos no Programa Superação;
+          cpf_found: O CPF pesquisado está coberto pelo benefício
+          name: 'Nome:'
+          lot: 'Lote:'
+          city: 'Município:'
+          cpf: 'CPF:'
+          city_hall: Procure a prefeitura do seu município para mais informações sobre o recebimento. 
+
+          files:
+            title: Principais números relacionados ao Vale Gás
+          
+
+          filters:
+            title: Consultar benefício
+            description: Consulte se seu nome está na lista de beneficiários do vale gás.
+            cpf: 'CPF'
+

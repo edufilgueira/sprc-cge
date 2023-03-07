@@ -1,0 +1,48 @@
+- if products.empty?
+  .alert.alert-info
+    = t('.no_products')
+
+- else
+
+  - products.each do |regional_product|
+
+    %p.lead.text-center
+      = regional_product.name
+
+    .row.mb-4
+      .col-md-4.col-sm-12
+        -# 1st year
+        - year = current_biennium.first
+        - annual_regional_product = regional_product.product.annual_regional_products.in_year_and_region(year, current_region).first
+        - annual_regional_goal = annual_regional_product.goals.latest
+
+        -# TODO exibir period
+        - expected = annual_regional_goal&.expected
+        - actual = annual_regional_goal&.actual
+        = render 'product_card', expected: expected, actual: actual, title: year
+        -# = render 'product_card', expected: 10_000, actual: 5_000, title: '2016'
+
+      .col-md-4.col-sm-12
+        -# 2nd year
+        - year = current_biennium.second
+        - annual_regional_product = regional_product.product.annual_regional_products.in_year_and_region(year, current_region).first
+        - annual_regional_goal = annual_regional_product.goals.latest
+
+        -# TODO exibir period
+        - expected = annual_regional_goal&.expected
+        - actual = annual_regional_goal&.actual
+        = render 'product_card', expected: expected, actual: actual, title: year
+        -# = render 'product_card', expected: 10_500, actual: 2_000, title: '2017'
+
+      .col-md-4.col-sm-12
+        -# overall
+        -# só tem 1 goal
+        - overall_regional_product = regional_product.product.regional_products.in_region(current_region).first
+        - overall_goal = overall_regional_product.goals.first
+
+        -# TODO exibir period
+        - expected = overall_goal&.expected
+        - actual = overall_goal&.actual
+
+        = render 'product_card', expected: expected, actual: actual, title: current_plan.duration_as_text
+        -# = render 'product_card', expected: 16_500, actual: 8_000, title: '2016-2017'

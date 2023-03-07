@@ -1,0 +1,30 @@
+- server = server_salary.server
+- registration = server_salary.registration
+
+
+.row
+  .col-6
+    = dash_content_with_label(server_salary, :organ_title)
+  .col-6.text-right
+    = dash_content_with_label(server_salary, :role_name)
+
+
+.row
+  .col-6
+    = dash_content_with_label(registration, :vdth_admissao)
+
+  .col-6.text-right
+    .content-with-label
+      %p.content-label
+        = Integration::Servers::Registration.human_attribute_name(:vlr_carga_horaria)
+      %p.content-value
+        = registration.vlr_carga_horaria
+
+.row
+  .col-6
+    .content-with-label
+      %p.content-label
+        = Integration::Servers::Registration.human_attribute_name(:functional_status)
+      %p.content-value
+        = registration.functional_status_str
+

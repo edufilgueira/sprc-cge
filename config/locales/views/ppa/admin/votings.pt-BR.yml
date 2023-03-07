@@ -1,0 +1,22 @@
+pt-BR:
+  ppa:
+    admin:
+      votings:
+        index:
+          title: Votação
+          new: Adicionar Votação
+        new:
+          title: Adicionar votação
+        create:
+          done: Votação criada com sucesso
+          error: Alguns erros foram encontrados
+        edit:
+          title: Alterar votação
+        update:
+          done: Votação atualizado com sucesso
+          error: Votação não pode ser atualizado
+        destroy:
+          done: Votação removido com sucesso
+        show:
+          workshops: Encontros Regionais de elaboração
+          title: Visualizando plano

@@ -1,0 +1,8 @@
+es:
+  ppa:
+    themes:
+      regional_strategies:
+        likes:
+          create:
+            success: 'Interacción de "Me Gusta" registrada. ¡Gracias!'
+            failure: 'No ha sido posible registrar la interacción de "Me gusta".'

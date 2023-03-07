@@ -1,0 +1,14 @@
+en:
+  rede_ouvir:
+    user:
+      auth:
+        sessions:
+          new:
+            title: Acesso - Rede Ouvir
+
+            back: Voltar
+            submit: Acessar
+
+            actions:
+              confirmation_instructions: Reenviar instruções de confirmação de perfil
+              forgot_password: Esqueceu sua senha?

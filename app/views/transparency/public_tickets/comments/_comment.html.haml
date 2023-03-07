@@ -1,0 +1,19 @@
+.card.card-comment.mt-3.p-2
+
+  .row
+
+    .col-12
+
+      %em
+
+        %strong.d-inline-block
+          = citizen_comment.user_title
+
+        .small.d-inline-block
+          = l(citizen_comment.created_at, format: :short)
+
+  .row
+
+    .col-12
+      .p-2.comment-description
+        = raw citizen_comment.description

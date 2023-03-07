@@ -1,0 +1,106 @@
+pt-BR:
+  shared:
+
+    footer:
+      sections:
+        noticias:
+          title: Notícias
+
+          ultimas_noticias:
+            title: Últimas notícias
+            url: 'http://www.cge.ce.gov.br/category/noticias/lista-de-noticias/'
+
+          mais_acessadas:
+            title: Mais acessadas
+            url: '#!'
+
+          todas:
+            title: Todas as notícias
+            url: 'http://www.ceara.gov.br/home-2-2-3/todas-as-noticias/'
+
+        servicos:
+          title: Serviços
+
+          temas:
+            title: Por temas
+            url: 'http://www.ceara.gov.br/servicos/#'
+
+          meus_servicos:
+            title: Meus serviços
+            url: 'http://www.ceara.gov.br/servicos/#meus'
+
+          aplicativos:
+            title: Aplicativos oficiais
+            url: '#!'
+
+        estrutura:
+          title: Estrutura
+
+          governador:
+            title: Governador
+            url: 'http://www.ceara.gov.br/governo/#governador'
+
+          vice_governadoria:
+            title: Vice-governadoria
+            url: 'http://www.ceara.gov.br/governo/#vice-governador'
+
+          secretariado:
+            title: Secretariado
+            url: 'http://www.ceara.gov.br/governo/#secretarios'
+
+          servidores:
+            title: Servidores
+            url: '#!'
+
+          orgaos:
+            title: Órgão e entidades
+            url: 'http://www.ceara.gov.br/governo/#estrutura'
+
+          historia:
+            title: História do Ceará
+            url: '/portal-da-transparencia/paginas/o-estado-do-ceara'
+
+        negocios:
+          title: Negócios
+
+          turismo:
+            title: Turismo
+            url: '#!'
+
+          industria:
+            title: Indústria
+            url: '#!'
+
+          comercio:
+            title: Comércio
+            url: '#!'
+
+      ppa_admin: Administração PPA
+
+      site_map: Mapa do site
+
+      contacts:
+
+        como_comunicar:
+          title: 'Como se comunicar conosco'
+
+          fale_conosco:
+            title: 'Fale conosco Ouvidoria'
+            url: '#!'
+
+          noticias_email:
+            title: 'Notícias por e-mail'
+            url: 'http://www.ceara.gov.br/noticias-por-e-mail/'
+
+          noticias_whatsapp:
+            title: 'Notícias por WhatsApp'
+            url: 'http://www.ceara.gov.br/noticias-por-whatsapp/'
+
+          espaco_imprensa:
+            title: 'Espaço imprensa'
+            url: 'http://www.ceara.gov.br/espaco-imprensa/'
+
+        nossos_canais:
+          title: 'Nossos canais'
+
+      if-design: "Projeto premiado no IF Design Awards 2018 na disciplina Design de Serviço/UX na categoria Governos e Instituições. Clique no selo para acessar a página do projeto na galeria do IF."

@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    attributes:
+      integration/constructions/dae/measurement:
+        integration_constructions_dae: Construction
+        id_medicao: Measurement identifier
+        id_obra: Construction identifier
+        ano_mes: Year/Month
+        ano_mes_date: Year/Month
+        data_inicio: Start date
+        data_fim: End date
+        numero_medicao: Measurement number
+        status_medicao: Measurement status
+        valor_medido: Measured value

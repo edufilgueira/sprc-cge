@@ -1,0 +1,71 @@
+= cache(cache_key) do
+
+  = render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+  .my-4
+
+    %hr{'aria-hidden': 'true'}
+
+    = render 'transparency/exports/form'
+
+    %hr{'aria-hidden': 'true'}
+
+    .fa.fa-spin.fa-refresh.m-1.text-muted.float-right{'data-remote-content-loader': ''}
+
+    .row
+      .col-12.col-lg-6
+        .content-with-label
+          - label = raw(t('.counts.city_undertakings_count.title'))
+          - value = number_with_delimiter(filtered_count)
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+
+    %hr{'aria-hidden':'true'}
+
+    - header = [:data_assinatura, :sic, :municipio, :organ_title, :undertaking_title, :mapp]
+
+    - table_locale = t('.table')
+
+    = render 'shared/components/remote_table', header: header, collection: city_undertakings, sort_columns: sort_columns, table_locale: table_locale do |city_undertaking|
+
+      - show_path = url_for(action: 'show', controller: 'city_undertakings', id: city_undertaking)
+
+
+      %tr
+
+        %td
+          - title = city_undertaking.contract&.data_assinatura || city_undertaking.convenant&.data_assinatura || '-'
+          = link_to show_path, title: title do
+            = title != '-' ? l(title, format: :date) : title
+
+        %td
+          = link_to show_path do
+            = filtered_highlighted(city_undertaking.sic)
+
+        %td
+          = link_to show_path do
+            = filtered_highlighted(city_undertaking.municipio)
+
+        %td
+          - title = city_undertaking.organ_title
+          = link_to show_path, title: title do
+            = filtered_highlighted(title&.truncate(30))
+
+        %td
+          - title = city_undertaking.undertaking_title
+          = link_to show_path, title: title do
+            = filtered_highlighted(title&.truncate(30))
+
+        %td
+          - title = city_undertaking.mapp
+          = link_to show_path, title: title do
+            = filtered_highlighted(title&.truncate(40))
+
+
+

@@ -1,0 +1,38 @@
+.row
+
+  .col-12.col-md-1.no-print
+
+    .float-left
+
+      .rounded-circle.p-1{ class: "#{answer_class(comment)}" }
+
+        %i.fa.fa-comment.fa-1x.m-2{ 'aria-hidden': 'true' }
+
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      %h4.h6.mb-0
+        - # a resposta pode ser enviada diretamento pela CGE sem encaminhamento
+        - ticket = ticket || comment.commentable
+        - organ = ticket.organ || Organ.find_by(acronym: 'CGE')
+
+        = t(".title.#{comment.answer_scope}.#{ticket.ticket_type}", type: comment.answer_type_str, organ: organ.title)
+
+      %small
+        %em
+          = l(comment.created_at, format: :shorter)
+
+      - unless comment.call_center_approved?
+        %small{class: "#{answer_class(comment)}"}
+          %em
+            = comment.answer_status_str
+
+      .attachments
+        - comment.attachments.each do |attachment|
+          - next unless attachment.document.present?
+          = render 'shared/attachments/attachment', attachment: attachment, image_size: :small
+
+%hr{'aria-hidden': 'true'}
+

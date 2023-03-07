@@ -1,0 +1,48 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+- controller_name = controller.controller_name
+- filter_path = transparency_open_data_data_sets_path
+
+
+.row.mb-4
+
+  .col-12
+
+    %h2
+      = t('.title')
+
+    %hr{'aria-hidden': 'true'}
+
+    %label
+      = t('.description')
+
+%hr{'aria-hidden': 'true'}
+
+.card.card-custom
+
+  .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+    .remote-content{'data-remote-content': controller_name}
+
+      - filter_options = { filter_id: :data_sets, filter_path: filter_path }
+
+      = render "shared/filters", filter_options
+
+      - # o index é carregado como remote-content e está na partial ./_index
+
+      %hr{'aria-hidden': 'true'}
+
+      .remote-content-result{ 'data-remote-content-result': controller_name }
+
+        .p-2.text-center.text-muted
+          .fa.fa-spin.fa-refresh.mx-1
+          = t('messages.loading')
+
+- #
+- # Formulário Pesquisa de satisfação
+- #
+- if namespace == :transparency
+  .row.mt-3
+    .col-lg-12
+      = render("shared/transparency/survey_answers/form", transparency_id: transparency_id, action: action_name, controller: controller_path, url: request.original_url)

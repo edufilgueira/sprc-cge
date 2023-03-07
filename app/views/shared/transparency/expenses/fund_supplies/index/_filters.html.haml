@@ -1,0 +1,47 @@
+.card-filters.filter-bar{'data-filter-bar': 'expenses_fund_supplies'}
+
+  = form_for transparency_expenses_fund_supplies_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+
+      .col-12.col-lg-4
+        .col-12.col-lg-4
+        = label_tag(:year, Integration::Expenses::FundSupply.human_attribute_name(:exercicio))
+
+        = text_field_tag(:year, params[:year], placeholder: year, 'data-filter-bar-bypass-clear': '', class: 'form-control w-100 year-datetimepicker')
+
+      .col-12.col-lg-4
+        = label_tag(:date_of_issue, Integration::Expenses::FundSupply.human_attribute_name(:date_of_issue_filter))
+        = text_field_tag(:date_of_issue,  params[:date_of_issue], data: { input: 'daterangepicker' }, class: 'form-control w-100')
+
+      .col-12.col-lg-4
+        - options = options_for_select(supports_organs_and_secretaries_from_executivo_for_select_with_all_option_codigo_orgao_as_id, params[:unidade_gestora])
+
+        = label_tag(:unidade_gestora, Integration::Expenses::FundSupply.human_attribute_name(:unidade_gestora))
+        = select_tag(:unidade_gestora, options)
+
+    .row.mt-3
+      .col-12.col-lg-3
+        - scope = Integration::Supports::AdministrativeRegion.where.not(codigo_regiao_resumido: nil).order(:titulo)
+        - filter_name = :classificacao_regiao_administrativa
+        - id_column_name = :codigo_regiao_resumido
+        - title_column_name = :titulo
+        - all_message = I18n.t('messages.filters.select.all.female')
+
+        - options = options_for_select(transparency_supports_domain_select_options(scope, id_column_name, title_column_name).insert(0, [all_message, ' ']))
+        = label_tag(filter_name, Integration::Expenses::FundSupply.human_attribute_name(filter_name))
+        = select_tag(filter_name, options)
+
+      .col-12.col-lg-6
+        = label_tag(:search, t('messages.filters.search.label'))
+        = text_field_tag(:search, params[:search], class: 'form-control w-100 mb-3', 'data-filter-bar-ignore-submit-on-enter': 'true')
+        %small.form-text.text-muted
+          = t('.search.hint')
+
+      .col-12.col-lg-3
+
+        - # forma simples de align-bottom no botão de busca
+        .mt-4.pt-2
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'

@@ -1,0 +1,44 @@
+pt-BR:
+
+  admin:
+
+    events:
+
+      create:
+        title: Novo evento
+        done: "O evento '%{title}' foi criado."
+        error: Falha ao criar o evento
+
+      destroy:
+        done: "O evento '%{title}' foi removido."
+
+      form:
+        commands:
+          cancel: < Voltar a lista de eventos
+          create: Criar evento
+
+      index:
+        commands:
+          new: Novo evento
+        title: Eventos
+        table:
+          summary: Lista de eventos
+          header:
+            title: Título
+            starts_at: Data
+            category: Categoria
+            commands: ''
+
+      new:
+        title: Novo evento
+
+      edit:
+        title: Edição de evento
+
+      update:
+        title: Edição de evento
+        done: "O evento '%{title}' foi atualizado."
+        error: Falha ao atualizar o evento
+
+      show:
+        title: Exibição do evento

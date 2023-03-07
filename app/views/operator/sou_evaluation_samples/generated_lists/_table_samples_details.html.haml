@@ -1,0 +1,21 @@
+.table-responsive
+  %table.table.table-hover.table-sm{summary: t('.summary')}
+    %thead
+      %tr
+        - headers = [:protocol, :rated, :sou_type]
+  
+        - headers.each_with_index do |head, index|
+          - sort_column_name = sort_columns[index]
+          %th
+            = t(".heads.#{head}")
+
+    %tbody
+      - samples_details.order(:rated).each do |detail|
+        - attributes_values = [ detail.ticket_parent_protocol, t(".rated.#{detail.rated?}"), t(".sou_types.#{detail.ticket_sou_type}") ]
+
+        %tr
+          - for attribute_value in attributes_values do
+            %td
+              = link_or_read_only_for_denunciantion(detail.ticket, attribute_value, @resource.status)
+          
+  = render 'shared/components/table/index_count', collection: samples_details, filtered: nil

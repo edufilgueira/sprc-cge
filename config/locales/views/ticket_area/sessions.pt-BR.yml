@@ -1,0 +1,8 @@
+pt-BR:
+  ticket_area:
+    sessions:
+      new:
+        title: Acompanhar manifestação
+      form:
+        login: Acompanhar manifestação
+        forgot_password: "* Esqueceu a Senha? Entrar em contato com a Central de Atendimento da Ouvidoria Geral do Estado por meio do Telefone 155 de Segunda a Sexta-feira das 08h às 20h, fazer a solicitação e confirmar seus dados cadastrais."

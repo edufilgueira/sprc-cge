@@ -1,0 +1,14 @@
+= javascript_include_tag('ckeditor/init')
+
+= simple_form_for [:failure, :operator, ticket, attendance_response], method: :post do |f|
+
+  .row
+
+    .col-12
+      = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: :mini } }
+
+  .row
+    .col-6
+      = f.submit t('.commands.failure'), class: 'btn btn-danger w-100'
+    .col-6
+      = f.submit t('.commands.success'), class: 'btn btn-success w-100', formaction: success_operator_ticket_attendance_responses_path(attendance_response, ticket_id: ticket.id)

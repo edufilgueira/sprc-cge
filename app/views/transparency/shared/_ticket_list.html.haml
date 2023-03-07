@@ -1,0 +1,99 @@
+%section{'aria-labelledby': "#{ticket_type}_list" }
+  .card
+    .card-block
+      %h4.card-title
+        = t(".#{ticket_type}.title")
+
+      .card-text
+        = t(".#{ticket_type}.description")
+
+      %hr{'aria-hidden': 'true'}
+      = form_tag(transparency_public_tickets_path, method: :get) do |f|
+        = hidden_field_tag :ticket_type, ticket_type
+        .row
+          .input-group.mb-3.col-md-6.col-12
+            = text_field_tag(:search, params[:search], class: 'form-control', placeholder: t("messages.filters.search.label"), id: :search_public_tickets)
+
+            = button_tag(type: :submit, class: 'input-group-append btn btn-orange' ) do
+              %i.fa.fa-search
+
+
+      %table.mb-0.table.table-striped.table-sm.table-responsive-sm
+        %thead
+          %tr.small
+            %th.border-0
+              = Ticket.human_attribute_name(:created_at)
+            %th.border-0
+              = Ticket.human_attribute_name(:parent_protocol)
+            %th.border-0
+              = Ticket.human_attribute_name(:status)
+            %th.border-0
+              = Ticket.human_attribute_name(:deadline_str)
+            %th.border-0
+              = Ticket.human_attribute_name(:organ)
+            %th.border-0
+              = Ticket.human_attribute_name(:description)
+
+        %tbody
+          - # TODO: move
+          - tickets = Ticket.public_tickets.from_type(ticket_type).last(8)
+
+          - if tickets.present?
+            - tickets.each do |ticket|
+              - ticket_show_path = transparency_public_ticket_path(ticket)
+
+              %tr
+                %td
+                  = link_to l(ticket.created_at, format: :date_time), ticket_show_path
+
+                %td
+                  = link_to ticket_show_path do
+                    - protocol = ticket.parent_protocol
+                    .span{'aria-label': t("ticket.protocol_title.#{ticket.ticket_type}", protocol: protocol) }
+                      = highlight(protocol, params[:search])
+
+                %td
+                  = link_to ticket_show_path  do
+                    - if ticket.internal_status.present?
+                      = ticket.internal_status_str
+                    - else
+                      %em
+                        = t('.messages.deadline.undefined')
+
+                %td
+                  = link_to ticket_show_path  do
+                    - if can?(:can_view_deadline, ticket)
+                      = t('ticket.deadline', count: ticket.deadline)
+                    - else
+                      %em
+                        = t('messages.content.undefined')
+                %td
+                  = link_to ticket_show_path  do
+                    - organs = acronym_organs_list(ticket)
+                    - if organs.present?
+                      = organs
+                    - else
+                      %em
+                        = t('messages.content.undefined')
+
+                %td
+                  - description = strip_tags(ticket.description || ticket.denunciation_description)
+                  = link_to ticket_show_path, title: description do
+                    = description.truncate(40)
+          - else
+            %tr
+              %td.text-center{ colspan: 6 }
+                = t(".#{ticket_type}.empty")
+
+    .card-footer.bg-transparent.border-0.row
+      .col-sm-4
+      .col-sm-4.font-weight-bold.small.text-right.mb-3.mb-md-0
+        = t(".#{ticket_type}.see_more_description")
+
+      .col-sm-4
+        = link_to transparency_public_tickets_path(ticket_type: ticket_type), class: 'btn btn-wide btn-tertiary btn-uppercase d-block' do
+          %span.sr-only
+            = t("a11y.link.new_window.text")
+          %i.fa.fa-plus-circle.mr-2
+          %span
+            = t(".#{ticket_type}.see_more")

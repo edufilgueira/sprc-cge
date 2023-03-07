@@ -1,0 +1,12 @@
+= javascript_include_tag('views/operator/tickets/sharings/new')
+- content_for :stylesheet, stylesheet_link_tag('views/operator/tickets/sharings/new')
+
+- ticket = ticket.parent || ticket
+
+- if can?(:protect_attachment_on_share_with_organ, ticket)
+	- ticket.attachments.each do |attachment|
+		- if can? :view, attachment
+			.col-5.permission-panel
+				= render 'shared/attachments/attachment_permission', attachment: attachment, image_size: :small, f: f, ticket: ticket
+- else
+	= t('.attachments.none')

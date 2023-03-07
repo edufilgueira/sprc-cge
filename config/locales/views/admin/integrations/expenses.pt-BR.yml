@@ -1,0 +1,53 @@
+pt-BR:
+  admin:
+    integrations:
+      expenses:
+        index:
+          title: Despesas
+          cards:
+            commands:
+              index: Visualizar dados
+
+            budget_balances:
+              title: Despesas do Poder Executivo
+              text: ''
+
+            non_profit_transfers:
+              title: Transferências a Entidades sem Fins Lucrativos
+              text: ''
+
+            profit_transfers:
+              title: Transferências a Entidades com Fins Lucrativos
+              text: ''
+
+            city_transfers:
+              title: Transferências a Municípios
+              text: ''
+
+            multi_gov_transfers:
+              title: Transferências a Instituições Multigovernamentais
+              text: ''
+
+            consortium_transfers:
+              title: Transferências a Consórcios Públicos
+              text: ''
+
+            fund_supplies:
+              title: Suprimento de Fundos
+              text: ''
+
+            neds:
+              title: Despesas por Notas de Empenho
+              text: ''
+
+            npfs:
+              title: NPF
+              text: Notas de programação financeira
+
+            nlds:
+              title: NLD
+              text: Notas de liquidação de despesa
+
+            npds:
+              title: NPD
+              text: Notas de pagamento de despesa

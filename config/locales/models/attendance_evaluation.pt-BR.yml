@@ -1,0 +1,22 @@
+pt-BR:
+
+  activerecord:
+
+    attributes:
+
+      attendance_evaluation:
+        # categorias de avaliação SIC
+        clarity: Clareza (peso 2 na média)
+        content: Conteúdo (peso 5 na média)
+        wording: Redação (peso 2 na média)
+        kindness: Gentileza (peso 1 na média)
+
+        average: Média final do atendimento
+        comment: Comentário
+
+        # categorias de avaliação SOU
+        textual_structure: Estrutura Textual (Redação, Gramática, Ortografia, etc) - Peso 1 na média
+        treatment: Tratamento (Gentileza) - Peso 2 na média
+        quality: Qualidade da Resposta (Linguagem Cidadã) - Peso 5 na média
+        classification: Classificação da Manifestação(Assunto, Tipo, Programa, etc) - Peso 2 na média
+

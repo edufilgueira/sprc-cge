@@ -1,0 +1,47 @@
+= simple_form_for [:operator, attendance] do |f|
+
+  .card.card-custom
+
+    .card-header
+
+      %h3.card-title
+        = t('.attendance_title', protocol: attendance.protocol)
+
+    .card-block
+      .row
+        .col-12
+          = f.input :service_type, collection: attendance_service_types_for_select, input_html: { autofocus: true, data: { content: 'attendance_type'} }, include_blank: t('messages.form.select')
+
+      .row{ 'data-content': 'attendance_description' }
+        .col-12
+          = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: :mini }, id: "attendance-description#{Time.now.to_i}" }
+
+      .row{ data: { content: :answer_content } }
+        .col-12
+          = f.input :answer, as: :ckeditor, required: true, input_html: { data: { input: 'answer' }, ckeditor: { toolbar: :mini }, id: "attendance-answer#{Time.now.to_i}" }
+
+        .col-12
+          = render 'shared/answer_templates/search', target: :answer
+
+  - hidden_class = attendance.reject_ticket? ? 'content-hidden' : ''
+  .content{'data-content': 'ticket', class: hidden_class }
+
+    .content{'data-content': 'general_ticket_type_content'}
+      = render 'organs', f: f
+
+    = f.simple_fields_for :ticket do |sff_ticket|
+
+      = render 'user_fields', f: sff_ticket
+
+      = render 'ticket_info_fields', f: sff_ticket
+
+      %div{"data-content": :identified}
+        = render 'contact_fields', f: sff_ticket
+
+      %div{ 'data-content': 'sou_only_fields' }
+        = render 'shared/tickets/target_address', f: sff_ticket
+
+  .row.mt-4
+    .col
+
+      = f.submit t('commands.save'), class: 'btn btn-primary float-right'

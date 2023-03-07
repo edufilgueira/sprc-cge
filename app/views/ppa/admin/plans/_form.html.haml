@@ -1,0 +1,23 @@
+-# Números "meio-mágicos":
+-# - a duração de um PPA é 4 anos
+-# - usamos 2 Planos para trás (passado)
+-# - usamos 5 Planos para frente (futuro)
+- year = Date.today.year - 8
+- year_range = year..(year + 20)
+
+= simple_form_for [:ppa_admin, ppa_plan], url: url do |f|
+
+  .row
+    .col-lg-12.mb-4
+      = f.error :base, class: 'alert alert-danger'
+    .col-lg-6
+      = f.input :start_year, collection: year_range
+    .col-lg-6
+      = f.input :end_year, collection: year_range
+    .col-lg-6        
+      = f.input :status, collection: statuses_for_select
+
+  .row.mt-3
+    .col-lg-12
+      = link_to t('commands.cancel'), ppa_admin_plans_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary pull-right'

@@ -1,0 +1,19 @@
+- if series_data.present?
+
+  - chart_types.each do |chart_type|
+
+    - series_data_values = chart_series_data_values(series_data, chart_type)
+    - series_data_keys = chart_series_data_keys(series_data, chart_type)
+
+    %hr{'aria-hidden': true}
+
+    .row
+
+      .col-12
+
+        .chart{ id: "chart_#{chart_name}_#{chart_type}", data: { title: t(".#{chart_type}.title"), unit: t(".#{chart_type}.unit"), series_name: [t(".#{chart_type}.title")], series_data_keys: [series_data_keys], series_data_values: [series_data_values], colorful: 'true' }}
+
+        - if chart_sorted_data(series_data, chart_type).length > 10
+          %small.float-right
+            %em.text-muted
+              = t('messages.chart.limited')

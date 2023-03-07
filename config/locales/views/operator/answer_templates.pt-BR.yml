@@ -1,0 +1,34 @@
+pt-BR:
+
+  operator:
+
+    answer_templates:
+
+      index:
+        title: Banco de respostas
+        empty: Nenhuma resposta encontrada
+
+        search:
+          label: Buscar por nome
+        commands:
+          new: Nova resposta
+
+        table:
+          summary: Lista paginada de banco de respostas
+          header:
+            name: Nome
+            commands: ''
+
+      new:
+        title: Nova resposta
+
+      edit:
+        title: Editar resposta
+
+      create:
+        error: Falha ao salvar resposta. Verifique os erros anotados.
+        done: Resposta salva com sucesso.
+
+      update:
+        error: Falha ao salvar resposta. Verifique os erros anotados.
+        done: Resposta salva com sucesso.

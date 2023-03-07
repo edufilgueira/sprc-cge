@@ -1,0 +1,19 @@
+pt-BR:
+
+  operator:
+
+    tickets:
+
+      attendance_evaluations:
+
+        create:
+          error: Erro ao avaliar atendimento
+          done: Atendimento avaliado com sucesso
+
+        update:
+          error: Erro ao reavaliar atendimento
+          done: Atendimento reavaliado com sucesso
+
+        form:
+          submit: Enviar avaliação
+          average_title: Média de avaliação do órgão

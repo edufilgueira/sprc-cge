@@ -1,0 +1,5 @@
+es:
+  activerecord:
+    attributes:
+      comment:
+        description: Comentario

@@ -1,0 +1,17 @@
+= content_for :javascript, javascript_include_tag('views/operator/attendances/occurrences')
+= javascript_include_tag('ckeditor/init')
+
+- if attendance.ticket.present?
+  = render partial: 'shared/ticket_logs/ticket_log', collection: attendance.ticket.sorted_ticket_logs, locals: { scope: :external }
+- else
+  = render partial: 'operator/attendances/occurrence', collection: attendance.occurrences
+
+= simple_form_for [:operator, attendance, new_occurrence], remote: true do |f|
+
+  = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: :mini }, id: "attendance-occurrences-description#{Time.now.to_i}" }
+
+  .row
+    .col
+      = f.submit t('.submit'), class: 'btn btn-primary w-100'
+    .col.pt-2
+      .fa.fa-spin.fa-spinner.mr-3.hidden-xs-up.float-right{'data-content': 'occurence-loader'}

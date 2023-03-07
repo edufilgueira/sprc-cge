@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+
+    models:
+      subnet:
+        one: 'Sub-rede'
+        other: 'Sub-redes'
+
+    attributes:
+      subnet:
+        acronym: Sigla
+        name: Nome
+        organ_id: Órgão
+        organ: Órgão
+        organ_name: Órgão
+        ignore_sectoral_validation: Manifestações não passam pela validação da setorial

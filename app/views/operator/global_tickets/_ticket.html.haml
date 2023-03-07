@@ -1,0 +1,26 @@
+%tr
+
+  %td
+    - protocol = ticket.parent_protocol
+    = highlight(protocol, params[:parent_protocol])
+
+  %td
+    = l(ticket.created_at.to_date)
+
+  %td
+    = ticket.ticket_type_str
+
+  %td
+    = ticket.internal_status_str
+
+  %td
+    = ticket.used_input_str
+
+  %td
+    - acronyms = acronym_organs_list(ticket)
+    - if acronyms.present?
+      = acronyms
+    - else
+      %em
+        = t('messages.content.undefined')
+

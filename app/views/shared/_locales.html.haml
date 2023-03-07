@@ -1,0 +1,5 @@
+- I18n.available_locales.each_with_index do |locale, index|
+  - active_css_class = I18n.locale == locale ? 'active' : ''
+  - url_with_locale = params.to_unsafe_h.merge(locale: locale)
+  = link_to url_for(url_with_locale), class: active_css_class do
+    = content_tag(:img, '', src: image_path("flags/#{locale}.png"), alt: t("app.locales.#{locale}"), class: 'locale-flag')

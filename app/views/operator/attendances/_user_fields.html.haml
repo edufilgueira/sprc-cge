@@ -1,0 +1,94 @@
+.card.card-custom
+
+  .card-header
+
+    %h3.card-title
+      = t('shared.tickets.form.person_info.title')
+
+  .card-block
+
+    .row
+      .col-12
+        %label
+          = Ticket.human_attribute_name(:person_type)
+
+        .btn-group.btn-group-justified{ 'data-toggle': 'radio-buttons', role: 'group', 'aria-label': Ticket.human_attribute_name(:person_type), 'data-input': 'person_type' }
+          - Ticket.person_types.keys.each do |type|
+            - option_label = I18n.t("ticket.person_types.#{type}")
+            - checked = (type.to_s == ticket.person_type.to_s)
+            - active_class = (checked ? 'active' : '')
+            %label.btn.btn-outline-primary{ class: active_class, for: option_label }
+              = radio_button_tag 'attendance[ticket_attributes][person_type]', type, checked, id: option_label, data: {input: type, identified: ''}
+              = option_label
+
+          -# anônimo
+          - checked = ticket.anonymous?
+          - active_class = (checked ? 'active' : '')
+          %label.btn.btn-outline-primary{ class: active_class, for: :anonymous }
+            = radio_button_tag 'attendance[ticket_attributes][anonymous]', :anonymous, checked, id: :anonymous, data: { input: :anonymous, anonymous: '' }
+            = t('.anonymous')
+
+
+    .row{'data-content': :anonymous}
+      .col-12
+        = f.input :email, label: t('.email')
+
+    %div{"data-content": :identified}
+
+      - url = search_api_v1_operator_tickets_path
+
+      - has_error = attendance.errors['ticket.name'].present?
+
+
+
+      .row{ data: { content: 'individual_person' } }
+        .col-12.col-lg-6
+          .form-group{ 'data-content': 'individual_name', class: has_error ? 'has-danger' : '' }
+            = f.label :name, required: true, class: 'form-control-label'
+            %i.fa.fa-spinner.fa-spin.fa-fw{ 'aria-hidden': 'true', 'data-content': 'loading' }
+            = f.input_field :name, { class: 'form-control loader', data: { input: 'individual_name', url: url, 'param-name': 'name' }}
+            = f.error :name
+
+        .col-12.col-lg-6
+          = f.input :social_name, wrapper_html: { data: { content: 'individual_social_name' } }
+
+        .col-12.col-lg-6
+          = f.input :gender, { collection: user_gender_for_select, selected: ticket.gender || :not_informed_gender, wrapper_html: { data: { content: 'individual_gender' } } }
+
+
+
+
+      .row{ data: { content: 'legal_person' } }
+        .col-12
+          .form-group{ 'data-content': 'legal_name', class: has_error ? 'has-danger' : '' }
+            = f.label :name, required: true, label: t('.person_types.legal.name'), class: 'form-control-label'
+            %i.fa.fa-spinner.fa-spin.fa-fw{ 'aria-hidden': 'true', 'data-content': 'loading' }
+            = f.input_field :name, { id: 'attendance_ticket_attributes_legal_name', class: 'form-control loader', data: { input: 'legal_name', url: url, 'param-name': 'name' }}
+            = f.error :name
+
+      .row
+
+        .col-12.col-lg-6
+
+          = f.input :document_type, collection: ticket_document_types_for_select, selected: ticket.document_type, input_html: { 'data-input': 'document_type' }, wrapper_html: { class: 'mb-2' }
+
+          %label{ data: { input: 'document_cnpj'}}
+            = t('.person_types.legal.cnpj')
+
+
+        .col-12.col-lg-6{ 'data-content': 'document', 'data-url': url }
+
+          - has_error = f.object.errors[:document].present?
+          .form-group{ class: has_error ? 'has-danger' : ''}
+
+            = f.label :document, class: 'form-control-label'
+
+            .row
+
+              .col-10.col-lg-10
+                = f.input :document, label: false, wrapper: false, input_html: { 'data-input': 'document' }
+
+              = link_to 'javascript:void(0)', class: 'btn btn-primary ml-1 btn-search-document', 'data-action': 'search' do
+                %i.fa.fa-search{'aria-hidden': 'true', 'data-content': 'loader'}
+
+    = render 'shared/tickets/used_input_fields', f: f, ticket: ticket

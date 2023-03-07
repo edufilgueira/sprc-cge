@@ -1,0 +1,49 @@
+.card-filters.filter-bar{'data-filter-bar': 'call_center_tickets' }
+
+  = form_for operator_call_center_tickets_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+      .col-12.col-lg-9.mb-3
+
+        .row
+          .col-12.col-lg-6
+            = text_field_tag(:search, params[:search], placeholder: t('.search.label'), class: 'form-control w-100 mb-3', title: t('.search.label'))
+
+          .col-12.col-lg-3
+            = text_field_tag(:parent_protocol, params[:parent_protocol], placeholder: t('.parent_protocol.label'), class: 'form-control w-100 mb-3', title: t('.parent_protocol.label'))
+
+      .col-12.col-lg-3.text-right
+        = f.submit t('commands.search'), class: 'btn btn-primary btn-block'
+
+    .row
+
+      .col-12.col-lg-6.mb-3
+        - options = options_for_select(organs_for_select, params[:organ])
+        = select_tag :organ, options, { include_blank: t('.select.organ') }
+
+      .col-12.col-lg-6.mb-3
+
+        - options = options_for_select(call_center_for_filter, params[:call_center_responsible_id])
+        = select_tag :call_center_responsible_id, options, { include_blank: t('.select.responsible') }
+
+    .row
+
+      .col-12.col-lg-6
+        - options = options_for_select(ticket_call_center_status_for_select, params[:call_center_status])
+        = select_tag :call_center_status, options, { include_blank: t('.select.call_center_status') }
+    
+      .col-12.col-lg-6.mb-3
+
+        - options = options_for_select(ticket_call_center_answer_types_for_select, params[:answer_type])
+        = select_tag :answer_type, options, { include_blank: t('.select.answer_type') }
+        
+    .row
+      .col-12.col-lg-6
+
+        .checkbox
+
+          %label
+            = check_box_tag :priority, '1', params[:priority].present?
+            = t('.priority')

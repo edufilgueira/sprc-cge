@@ -1,0 +1,15 @@
+- status = params[:deadline]
+- user_type = params[:ticket_type]
+- organ = params[:organ_association]
+
+.col-md-6.col-lg-4.col-sm-12.pb-3
+
+  = link_to operator_tickets_path(params) do
+
+    .operator-home-card.ticket-deadline-status{'data-deadline-status': status}
+
+      %h3.operator-home-card-title
+        = t(".#{status}")
+
+      %p.operator-home-card-count
+        = tickets_deadline_count(user_type, status, organ)

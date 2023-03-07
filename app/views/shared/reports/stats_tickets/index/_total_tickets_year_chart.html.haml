@@ -1,0 +1,10 @@
+- year = stats_ticket.year
+- last_year = stats_ticket.year - 1
+- year_data = stats_ticket.data[:years]
+
+- if year_data.present?
+  .row.chart{data: {"chart_tickets_month_year_#{ticket_type}": '', title: t(".#{ticket_type}.chart_year_title"), unit: t(".#{ticket_type}.chart_year_column_title"), series_name: [year.to_s, last_year.to_s], series_data_values: [year_data[year], year_data[last_year]], series_data_keys: [t('date.abbr_month_names').compact, t('date.abbr_month_names').compact] }}
+
+- else
+  %p.text-center
+    =t(".#{ticket_type}.empty")

@@ -1,0 +1,7 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+
+.content-details{'data-auto-update': 'solvability_report', 'data-auto-update-interval': '1000'}
+
+  = render 'show', solvability_report: solvability_report

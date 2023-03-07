@@ -1,0 +1,68 @@
+es:
+  shared:
+    transparency:
+
+      purchases:
+
+        index:
+          title: Compras
+          description: >
+            Consulte aquí cualquier compra adjudicada por el Estado.
+            Vea los mayores proveedores y los responsables por las compras etc.
+
+          source: |
+            <p><strong>Fuente de datos:</strong></p>
+            <p>Secretaria do Planejamento e Gestão - SEPLAG</p>
+            <p>Sistema de Registro de Preço - SRP</p>
+
+          chart:
+            valor_total_calculated:
+              unit: 'Valor total en R$'
+              title: 'Valor total'
+
+          charts:
+            tabs:
+              itens:
+                title: Artículos
+              fornecedores:
+                title: Proveedores
+              grupos:
+                title: Grupos
+              resp_compra:
+                title: Unidades
+
+          filters:
+            title: Consulta avanzada
+            search_placeholder: >
+              Busque por Nº Publicación, Proveedor, Órgano, Cód/Desc. del artículo,
+              Categoría o Grupo
+
+          counts:
+            purchases_count:
+              title: Cantidade de compras filtradas
+            purchases_sum:
+              title: Valor de las compras filtradas
+
+          table:
+            summary: Lista de compras
+            header:
+              numero_publicacao: Nº Publicación
+              nome_fornecedor: Proveedor
+              nome_resp_compra: Unidad
+              descricao_item: Desc. del artículo
+              quantidade_estimada: Cantidade estimada
+              valor_unitario: Valor unitario
+              valor_estimado: Valor estimado
+              valor_total_melhor_lance: Valor total
+
+          stats:
+            title: Principales numeros relacionados con las compras
+            count: 'Cantidade de compras publicadas en <strong>%{date}</strong>'
+            valor_total_calculated: 'Compras publicadas en <strong>%{date}</strong>'
+
+        show:
+          descricao_url: Íntegra de la compra
+          descricao_url_ddisp: Proceso de dispensa de licitación
+          descricao_url_inexg: Proceso de inexigibilidad de licitación
+          edital_url: Ver convocatoria
+

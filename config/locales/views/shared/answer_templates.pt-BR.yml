@@ -1,0 +1,10 @@
+pt-BR:
+
+  shared:
+
+    answer_templates:
+
+      search:
+        label: Usar modelo de resposta
+        placeholder: Buscar resposta pelo nome
+

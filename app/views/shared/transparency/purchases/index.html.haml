@@ -1,0 +1,6 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t(".title")
+
+- stats_url = transparency_purchases_path(show_stats: true)
+
+= render 'shared/transparency/index', transparency_id: :purchases, stats_type: :month, stats_url: stats_url, base_locale: t('.')

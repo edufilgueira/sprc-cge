@@ -1,0 +1,39 @@
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.title')
+
+
+      .card-block
+
+        .row
+
+          .col-12
+
+            - if accounts.present?
+              %table.table.table-hover.table-sm.table-bordered.bg-faded{summary: t('.summary')}
+
+                %thead
+
+                  %tr
+                    - heads = [:conta_corrente, :valor_inicial, :valor_debito, :valor_credito]
+
+                    - heads.each do |head|
+                      %th
+                        = t(".table.heads.#{head}")
+
+                %tbody
+                  = render partial: 'shared/revenues/account', collection: accounts
+
+            - else
+
+              .row
+
+                %i.col-md-12.text-center
+                  = t('.empty')

@@ -1,0 +1,24 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+
+= form_for operator_global_tickets_path, method: :get do |f|
+
+  .card.card-custom
+
+    .card-header
+
+      %h2.card-title
+        = t('.title')
+
+    .card-block
+      = render 'filters', f: f
+
+      - if tickets.present?
+        .mt-3
+          = render 'index', tickets: tickets
+
+      - else
+        .row
+          %i.col-md-12.text-center
+            = t('shared.tickets.index.empty')

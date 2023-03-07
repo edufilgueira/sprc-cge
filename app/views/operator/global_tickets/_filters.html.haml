@@ -1,0 +1,83 @@
+.card-filters
+
+  - #
+  - # sort params
+  - #
+  = render 'shared/sortered/hidden_filters'
+
+  .row
+    .col-12.mb-3
+
+      .row
+
+        .col-12.col-lg-3
+          = text_field_tag(:parent_protocol, params[:parent_protocol], placeholder: t('.parent_protocol.label'), class: 'form-control w-100 mb-3', title: t('.parent_protocol.label'))
+
+        - #
+        - # Pesquisar por periodo
+        - #
+        - filter_confirmed_at = params[:created_at]
+        - if filter_confirmed_at.present?
+          - filter_confirmed_at_start = filter_confirmed_at[:start]
+          - filter_confirmed_at_end = filter_confirmed_at[:end]
+
+        .col-12.col-lg-3.mb-3
+          = text_field_tag("[created_at][start]", filter_confirmed_at_start, placeholder: t('.created_at.start'),  class: 'form-control w-100 datetimepicker')
+
+        .col-12.col-lg-3.mb-3
+          = text_field_tag("[created_at][end]", filter_confirmed_at_end, placeholder: t('.created_at.end'), class: 'form-control w-100 datetimepicker')
+
+
+        .col-12.col-lg-3
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'
+
+  .row
+
+    - #
+    - # Situação
+    - #
+    .col-12.col-lg-6.mb-3
+      - options = options_for_select(ticket_all_internal_status, params[:internal_status])
+      = label_tag :internal_status, t('.select.internal_status')
+      = select_tag :internal_status, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.female') }
+
+    - #
+    - # Tipo de ticket
+    - #
+    .col-12.col-lg-6.mb-3
+      - options = options_for_select(ticket_types_for_select, params[:ticket_type])
+      = label_tag :ticket_type, t('.select.ticket_type')
+      = select_tag :ticket_type, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+  .row
+
+    - #
+    - # organ
+    - #
+    .col-12.col-lg-6.mb-3
+      - options = options_for_select(organs_for_select, params[:organ])
+      = label_tag :organ, t('.select.organ')
+      = select_tag :organ, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+    - #
+    - # Meio de entrada
+    - #
+    .col-12.col-lg-6.mb-3
+      - options = options_for_select(used_inputs_for_select, params[:used_input])
+      = label_tag :used_input, t('.select.used_input')
+      = select_tag :used_input, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+
+  - #
+  - # Warning: lista filtrada
+  - #
+  - range_filtered = (params[:created_at].present?) && (params[:created_at][:start].present? || params[:created_at][:end].present?)
+
+  - filtered = [:search, :parent_protocol, :internal_status, :ticket_type, :used_input, :organ].any? {|key| params[key].present? }
+
+  - if filtered || range_filtered
+    .mt-3
+      %small
+        .alert.alert-warning
+          = raw t('messages.filters.warning_count', total: number_with_delimiter(total_count), filtered: number_with_delimiter(filtered_count))
+          = link_to t('messages.filters.clear'), '#!', 'data-input': 'clear-filter', class: 'float-right'

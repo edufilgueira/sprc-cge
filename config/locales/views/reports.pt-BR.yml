@@ -1,0 +1,29 @@
+pt-BR:
+
+  report:
+
+    filters:
+      title: Filtros
+      ticket_type: Categoria da demanda
+      sou_type: Tipo da manifestação
+      city: Município
+      state: Estado
+      used_input: Meio de entrada
+      other_organs: Outros poderes
+      search: Palavra-chave
+      internal_status: Situação
+      organ: Órgão responsável
+      budget_program: Programa orçamentário
+      topic: Assunto
+      subtopic: Subassunto
+      deadline: Prazo
+      confirmed_at: Período
+      expired: Somente vencidos
+      priority: Somente urgentes
+      finalized: Exibir finalizados
+      denunciation: Somente denúncias
+      range: 'De %{start} à %{end}'
+      data_scope:
+        all: Setorial e sub-rede
+        subnet: Apenas sub-rede
+        sectoral: Apenas setorial

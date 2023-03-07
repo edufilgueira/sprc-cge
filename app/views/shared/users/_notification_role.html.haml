@@ -1,0 +1,16 @@
+- role = notification_role
+
+%tr
+  %td
+    = t(".roles.#{current_user.user_type}.#{role}.title")
+    %br
+      %small
+        %em
+          = t(".roles.#{current_user.user_type}.#{role}.description")
+
+  %td.text-center
+    = f.radio_button role, 'email', checked: user.notification_roles[role] == 'email'
+  %td.text-center
+    = f.radio_button role, 'system', checked: user.notification_roles[role] == 'system'
+  %td.text-center
+    = f.radio_button role, 'none', checked: user.notification_roles[role] == 'none'

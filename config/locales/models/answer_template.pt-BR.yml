@@ -1,0 +1,7 @@
+pt-BR:
+  activerecord:
+    attributes:
+
+      answer_template:
+        name: Nome
+        content: Conteúdo

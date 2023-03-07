@@ -1,0 +1,12 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :toolbar, render('shared/application/inner_navbar', active: 'protocol_login')
+
+.mb-4
+
+  %h2
+    = t('.title')
+
+  %hr
+
+= render 'form'

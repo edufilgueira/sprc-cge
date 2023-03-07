@@ -1,0 +1,8 @@
+en:
+  ppa:
+    themes:
+      regional_strategies:
+        comments:
+          create:
+            success: 'Comments successfully saved. Thank you!'
+            failure: 'Unable to save comment.'

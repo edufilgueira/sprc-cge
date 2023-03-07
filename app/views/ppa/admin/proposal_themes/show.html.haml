@@ -1,0 +1,31 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = t('.title')
+
+.card.card-custom
+
+  .card-header
+
+    .col-12
+      .float-right
+        / = link_to t('commands.remove'), ppa_admin_proposal_theme_path(ppa_proposal_theme), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link'
+
+        = link_to t('commands.edit'), edit_ppa_admin_proposal_theme_path(ppa_proposal_theme), class: 'btn text-muted btn-link'
+
+  .card-block
+
+    .row
+      .col-12.col-lg-6
+        = content_with_label(ppa_proposal_theme, :start_in)
+
+      .col-12.col-lg-6
+        = content_with_label(ppa_proposal_theme, :end_in)
+
+      .col-12.col-lg-6
+        = content_with_label(ppa_proposal_theme, :plan_name, label: PPA::ProposalTheme.human_attribute_name(:plan))
+
+      .col-12.col-lg-6
+        = content_with_label(ppa_proposal_theme, :region_name, label: PPA::ProposalTheme.human_attribute_name(:region))
+  

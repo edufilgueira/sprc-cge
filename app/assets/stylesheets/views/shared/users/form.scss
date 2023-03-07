@@ -1,0 +1,19 @@
+.user_document_type {
+  margin-bottom: 5px;
+}
+
+.radio_buttons {
+
+  label {
+    display: block;
+  }
+
+  .radio {
+    display: inline-block;
+    margin-right: 10px;
+
+    input[type=radio] {
+      margin-right: 5px;
+    }
+  }
+}

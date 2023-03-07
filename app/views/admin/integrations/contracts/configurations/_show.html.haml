@@ -1,0 +1,132 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-12.col-md-6
+            %h3.card-title
+              = t('.title')
+
+          .col-12.col-md-6
+            .float-right
+
+              - if can?(:update, configuration)
+                = link_to t('.import'), import_admin_integrations_contracts_configuration_path(configuration), method: :post, class: 'btn text-muted btn-link'
+
+              - if can?(:edit, configuration)
+                = link_to t('.edit'), edit_admin_integrations_contracts_configuration_path(configuration), class: 'btn text-muted btn-link'
+
+      .card-block
+
+        - status = configuration.status
+        - if status.present?
+          .text-center
+            .integration-status.col-md-4.offset-md-4{'data-status': status}
+              = configuration.status_str
+
+            %p
+              %em
+                - if configuration.last_importation.present?
+                  = l(configuration.last_importation, format: :shorter)
+
+          %p
+            - log = configuration.log
+            - if log.present?
+              %a{href: '#', data: { 'toggle': 'collapse', 'target': '#log'} }
+                = t('.hide_show')
+
+              .content-with-label
+                #log.collapse.content-value.w-s-pre
+                  = log.html_safe
+
+        - else
+          %i
+            = t('.empty')
+
+        %hr{'aria-hidden':'true'}
+
+        - if configuration.schedule.present?
+          = content_with_label(configuration.schedule, :cron_syntax_frequency)
+
+          %hr{'aria-hidden':'true'}
+
+        = content_with_label(configuration, :wsdl)
+
+        = content_with_label(configuration, :headers_soap_action)
+
+        = content_with_label(configuration, :user)
+
+        %hr{'aria-hidden':'true'}
+
+        %p
+
+          = t('.label.contract')
+
+        %p
+
+          = content_with_label(configuration, :contract_operation)
+          = content_with_label(configuration, :contract_response_path)
+          = content_with_label(configuration, :contract_parameters)
+
+        %hr{'aria-hidden':'true'}
+
+        %p
+
+          = t('.label.additive')
+
+        %p
+
+          = content_with_label(configuration, :additive_operation)
+          = content_with_label(configuration, :additive_response_path)
+          = content_with_label(configuration, :additive_parameters)
+
+        %hr{'aria-hidden':'true'}
+
+        %p
+
+          = t('.label.adjustment')
+
+        %p
+
+          = content_with_label(configuration, :adjustment_operation)
+          = content_with_label(configuration, :adjustment_response_path)
+          = content_with_label(configuration, :adjustment_parameters)
+
+        %hr{'aria-hidden':'true'}
+
+        %p
+
+          = t('.label.financial')
+
+        %p
+
+          = content_with_label(configuration, :financial_operation)
+          = content_with_label(configuration, :financial_response_path)
+          = content_with_label(configuration, :financial_parameters)
+
+        %hr{'aria-hidden':'true'}
+
+        %p
+
+          = t('.label.infringement')
+
+        %p
+
+          = content_with_label(configuration, :infringement_operation)
+          = content_with_label(configuration, :infringement_response_path)
+          = content_with_label(configuration, :infringement_parameters)
+
+
+        %hr{'aria-hidden':'true'}
+
+        %small
+          %em
+            = t('.created_at')
+            = l(configuration.created_at, format: :shorter)

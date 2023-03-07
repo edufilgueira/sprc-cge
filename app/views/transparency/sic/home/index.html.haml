@@ -1,0 +1,24 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+= content_for :transparency_title, t('.transparency_title')
+= content_for :transparency_description, t('.transparency_description')
+
+%h2.sr-only
+  = t('.title')
+
+= render 'general'
+
+%hr{'aria-hidden': 'true'}
+
+= render 'transparency/shared/ticket_list', ticket_type: 'sic'
+
+= render 'how'
+
+= render 'publications'
+
+= render 'stats'
+
+= render 'stats_evaluations'
+
+= render 'sensitive_information'
+
+= render 'platform/home/service_channels', networking_sic: true

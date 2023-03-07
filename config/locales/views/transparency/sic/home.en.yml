@@ -1,0 +1,106 @@
+en:
+
+  transparency:
+    sic:
+      home:
+
+        index:
+          title: Access to Information
+          transparency_title: Access to Information
+          transparency_description: >
+            Welcome to the Access to Information area on the Ceará Transparente Portal
+
+        general:
+          title: Request information
+          description: >
+            On this field, it is possible to inform your request to access information, which will be analyzed and returned with a positive or negative answer. In the field next to it, you can follow the status of the request through the protocol number and password.
+          new_ticket: Solicitar informação
+
+          follow_ticket: Follow Request
+
+        how:
+          more: Read more
+          what_is:
+            title: What is Access to Information?
+            description: >
+              All the citizens have the right to request access to information which, for some reason, have not been made available in the Transparency Portal.
+
+          how_to:
+            title: How can I use it?
+            description: >
+              In order to request access to information, all you have to do is fill out a short form which specifies which data you would like to have access to.
+
+        publications:
+          title: Access to Information
+          description: >
+            The Controller's Office and State Ombudsman's Office (CGE) announces,
+            based on the legislation applied to the matter, the jurisprudence
+            established in the decisions of the Steering Committee on Access to
+            Information, the Transparency Management Reports, the Statistical
+            Reports containing the number of requests for information received,
+            attended, not served and rejected by all the organs and entities of
+            the State Executive Branch, as well as the legislation on the subject.
+
+          reports: Transparency Management Reports
+          laws: Legislation
+          jurisprudence: Jurisprudence
+          jurisprudence_link: clicking here
+          jurisprudence_description: >
+            Check out the appeals filed by the Management Committee on Access to Information
+            %{link}.
+
+          report:
+            title: 'Transparency Management Reports'
+
+          legislation:
+            title: 'Legislation on Access to Information'
+
+          report_stats:
+            title: 'Statistical Reports on Access to Information'
+
+        stats:
+          title: Statistics of Requests to Access Information
+          description: >
+            You can learn more about the current Statistics of Requests to Access Information here. These numbers are updated on a monthly basis.
+          month: Showing data from %{month}
+          stats_1:
+            title: Done requests
+
+          stats_2:
+            title: Average time for a response
+            unit: '%{value} days'
+
+          stats_3:
+            title: Resolubility
+            unit: '%{value}%'
+
+          see_more: Access statistic panels of access to information
+
+        stats_evaluations:
+          title: 'Information Service Satisfaction Survey'
+          description: >
+            Monthly statistic panels such as the consolidated data of the Information Service Satisfaction Survey
+            from service evaluations carried out by the citizens on do Ceará Transparente.
+          month: Showing data from the period of %{month}
+
+          total_answered_tickets:
+            title: 'Answered request by the State of Ceará Government'
+
+          total_user_evaluations:
+            title: 'Queries answered by the users of Ceará Transparente'
+
+          see_more: 'Access statistic panela of the Information Service queries'
+
+        sensitive_information:
+          title: List of confidential information
+          description: >
+            In response to what article 29, Law 15175, June 28th, 2012 demands, the Sectoral Access Committee of Access to Information with the State General Controllership and Ombudsman (CGE) presents the list of classified documentation with a degree of confidentiality and the list of declassified information.
+
+          sub_title: Classified and Declassified Information
+          sub_description: >
+            The Administrative Committee of Access to Information discloses the list of classified and declassified documentation with a degree of confidentiality from the bodies and entities within the State Executive Power.
+
+          link_1: >
+            Classified and Declassified information from Agencies and Entities of the State Executive Branch
+          link_2: >
+            Portaria CGAI n° 01.2016 - Provides information about uniformity in the classification of confidential information of common matter to all agencies and entities of the State Executive Branch

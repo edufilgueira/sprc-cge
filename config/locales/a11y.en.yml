@@ -1,0 +1,26 @@
+en:
+  a11y:
+    link:
+      new_window:
+        text: Link to open new window.
+
+      go:
+        content: Go to content
+      back:
+        menu: Back to menu
+        content: Back to content beginning
+
+    anchor:
+      content: Content beginning
+      menu: Initial menu beginning
+
+    noscript: The dynamic behavior of this page does not have alternate content for browsers that do not support scripts
+
+    hidden: Hidden text!
+
+    toolbar:
+      description: Page's menu beginning
+    breadcrumbs:
+      description: Breadcrumb beginning
+
+

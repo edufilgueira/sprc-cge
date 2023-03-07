@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    attributes:
+      integration/constructions/der/measurement:
+        integration_constructions_der: Construction
+        id_medicao: Measurement identifier
+        id_obra: Construction identifier
+        id_status: Status identifier
+        ano_mes: Year/Month
+        ano_mes_date: Year/Month
+        numero_contrato_der: DER number
+        numero_contrato_sac: SACC number
+        numero_medicao: Measurement number
+        rodovia: Highway
+        status: Status
+        status_medicao: Measurement status
+        valor_medido: Measured value

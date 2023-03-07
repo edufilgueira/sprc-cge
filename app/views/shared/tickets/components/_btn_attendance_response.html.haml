@@ -1,0 +1,7 @@
+- if can?(:create, AttendanceResponse)
+
+  %small
+    - url = url_for([:new, namespace, ticket, :attendance_response, only_path: true])
+    = link_to url, class: 'btn btn-link hover-link d-inline-block', 'data-confirm': t('.confirm') do
+      %i.fa.fa-file-text-o{ 'aria-hidden': 'true' }
+      = t('.title')

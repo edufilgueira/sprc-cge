@@ -1,0 +1,33 @@
+en:
+  activerecord:
+    attributes:
+      attendance:
+        description: Request description
+        service_type: Type of service
+        service_type_str: Type of service
+        answer: Answer
+        unknown_organ: I don't know the responsible organ
+
+      attendance/service_type:
+        sou_forward: SOU Register - forwarded
+        sic_forward: SIC Register - forwarded
+        sic_completed: SIC Register - concluded
+        sou_search: SOU Query
+        sic_search: SIC Query
+        prank_call: Prank call
+        immediate_hang_up: Immediate hang up
+        hang_up: In-conversation hang up
+        missing_data: Ended due to missing information
+        no_communication: No communication
+        noise: Background/external noise
+        technical_problems: Technical problems - Cross talk
+        incorrect_click: Incorrect click
+        transferred_call: Transferred call
+
+
+    errors:
+        models:
+          attendance:
+            attributes:
+              attendance_organ_subnets:
+                blank: You need to add at least 1 body or select "I don't know the body".

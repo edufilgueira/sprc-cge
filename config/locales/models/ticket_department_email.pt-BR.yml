@@ -1,0 +1,6 @@
+pt-BR:
+  activerecord:
+    attributes:
+      ticket_department_email:
+        email: E-mail
+        active: Ativo

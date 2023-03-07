@@ -1,0 +1,45 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+- stats_url = transparency_revenues_expenses_path(show_stats: true)
+- transparency_id = 'revenues_expenses'
+- transparency_stats_id = "#{transparency_id}_stats"
+
+
+.row
+  .col-12
+    %h2
+      = t('.title')
+
+    %hr{'aria-hidden': 'true'}
+
+
+- #
+- # Intro card
+- #
+.row
+  .col-12
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.intro.title')
+
+      .card-block
+        = raw t('.intro.description')
+
+
+- #
+- # Bloco de estatísticas
+- #
+= render 'shared/transparency/index/filter_stats', base_locale: t('.'), transparency_stats_id: transparency_stats_id, stats_url: stats_url, transparency_stats_type: :year
+
+
+
+- #
+- # Pesquisa de satisfação
+- #
+.mt-3
+  = render("shared/transparency/survey_answers/form", transparency_id: transparency_id, action: action_name, controller: controller_path, url: request.original_url)
+

@@ -1,0 +1,47 @@
+.card.card-custom
+
+  .card-header
+
+    %h2.card-title
+      = t('.answer')
+
+  .card-block
+
+    .content
+
+      - ticket.final_answers_to_users.each do |ticket_log|
+        - answer = ticket_log.answer
+        - answer_class = answer_class(answer)
+
+        .row
+
+          .col-12.col-md-1.no-print
+
+            .float-left
+
+              .rounded-circle.p-1{ class: answer_class }
+
+                %i.fa.fa-comment.fa-1x.m-2{ 'aria-hidden': 'true' }
+
+
+          .col-12.col-md-11.pt-3.pt-md-1
+
+            .text-muted
+
+              .row
+
+                .col-12.col-lg-8
+
+                  %h4.h6.list-inline-item
+                    - # a resposta pode ser enviada diretamento pela CGE sem encaminhamento
+                    - organ = answer.ticket.organ || Organ.find_by(acronym: 'CGE')
+
+                    = organ.title
+
+                  .small.list-inline-item
+                    = t(".answer_versions.#{ticket.ticket_type}", count: answer.version)
+
+              %p
+                = answer_sanitizer(answer.description)
+
+        %hr{'aria-hidden': 'true'}

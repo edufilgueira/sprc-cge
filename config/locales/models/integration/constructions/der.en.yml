@@ -1,0 +1,64 @@
+en:
+  activerecord:
+    attributes:
+      integration/constructions/der:
+        base: 'Base'
+        cerca: 'Fence'
+        conclusao: 'Conclusion'
+        construtora: 'Construction company'
+        cor_status: 'Color'
+        data_fim_contrato: 'End of contract'
+        data_fim_previsto: 'Planned end'
+        distrito: 'District'
+        drenagem: 'Drainage'
+        extensao: 'Extension (km)'
+        id_obra: 'Construction ID'
+        numero_contrato_der: 'DER number'
+        numero_contrato_ext: 'EXT number'
+        numero_contrato_sic: 'SACC number'
+        obra_darte: 'Darte Work'
+        percentual_executado: 'Percent executed'
+        programa: 'Program'
+        qtd_empregos: 'Employees'
+        qtd_geo_referencias: 'Geo References'
+        revestimento: 'Coating'
+        rodovia: 'Highway'
+        servicos: 'Services'
+        sinalizacao: 'Signaling'
+        status: 'Situation'
+        supervisora: 'Supervisor'
+        terraplanagem: 'Landscaping'
+        trecho: 'Stretch'
+        ult_atual: 'Current'
+        valor_aprovado: 'Value'
+        der_status: Status
+        data_inicio_obra: 'Beginning of the work'
+        data_ordem_servico: 'Service order date'
+        dias_adicionado: 'Days added'
+        dias_suspenso: 'Suspended days'
+        municipio: 'Cities'
+        numero_ordem_servico: 'Service order number'
+        prazo_inicial: 'Initial period (days)'
+        prazo_total: 'Total time (days)'
+        total_aditivo: 'Total additive'
+        total_reajuste: 'Total readjustment'
+        valor_atual: 'Current value'
+        valor_original: 'Original value'
+        valor_pi: 'PI value'
+
+  integration/constructions/der:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'DER Construction Work %{month}-%{year}'
+
+    der_statuses:
+      canceled: 'CANCELED'
+      done: 'DONE'
+      in_progress: 'IN PROGRESS'
+      in_project: 'IN PROJECT'
+      in_bidding: 'IN BIDDING'
+      not_started: 'NOT STARTED'
+      paused: 'PAUSED'
+      project_done: 'FINISHED PROJECT'
+      bid: 'BID/CONTRACT DONE'

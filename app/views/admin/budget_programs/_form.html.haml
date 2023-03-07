@@ -1,0 +1,21 @@
+.container
+  = simple_form_for [:admin, budget_program] do |f|
+
+    .row
+      .col-12.col-md-6
+        = f.input :name, autofocus: true
+      .col-12.col-md-3
+        = f.input :code
+      .col-12.col-md-3
+        - theme_select_text = t('.theme.select')       
+        = f.association :theme, prompt: admin_themes_for_select, collection: admin_themes_for_select
+     
+    .row
+      = render 'shared/components/organ_subnet_fields', f: f
+
+    %hr{'aria-hidden': 'true'}
+
+    .row
+      .col-12
+        = link_to t('.commands.cancel'), admin_budget_programs_path, class: 'btn btn-warning pull-left'
+        = f.submit t('commands.save'), class: 'btn btn-primary float-right'

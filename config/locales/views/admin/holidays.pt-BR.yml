@@ -1,0 +1,36 @@
+pt-BR:
+
+  admin:
+
+    holidays:
+      create:
+        title: Novo feriado
+        done: "O feriado '%{title}' foi criado."
+        error: Falha ao criar o feriado
+      destroy:
+        done: "O feriado '%{title}' foi removido."
+      form:
+        commands:
+          cancel: < Voltar a lista de feriados
+          create: Criar feriado
+      index:
+        commands:
+          new: Novo feriado
+        title: Feriados
+        table:
+          header:
+            title: Feriado
+            day: Dia
+            month: Mês
+            commands: ''
+
+      new:
+        title: Novo feriado
+      edit:
+        title: Edição
+      update:
+        title: Edição de feriado
+        done: "O feriado '%{title}' foi atualizado."
+        error: Falha ao atualizar o feriado
+      show:
+        title: Exibição do feriado

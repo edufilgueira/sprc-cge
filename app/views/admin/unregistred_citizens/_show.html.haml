@@ -1,0 +1,45 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-12
+            %h3.card-title
+              = ticket.name
+      .card-block
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(ticket, :person_type_str)
+
+        %hr
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(ticket, :name)
+
+          .col-12.col-lg-4
+            = content_with_label(ticket, :social_name)
+
+          .col-12.col-lg-4
+            = content_with_label(ticket, :gender_str)
+
+        %hr
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(ticket, :email)
+
+          .col-12.col-lg-4
+            = content_with_label(ticket, :document_type_str)
+
+          .col-12.col-lg-4
+            = content_with_label(ticket, :document)
+

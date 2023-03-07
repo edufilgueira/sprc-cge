@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    models:
+      integration/results/configuration:
+        one: Result advisory configuration
+
+    attributes:
+      integration/results/configuration:
+        headers_soap_action: SOAPAction
+        password: Password
+        user: User
+        wsdl: WSDL
+        strategic_indicator_operation: Strategic indicator - SOAP method name
+        strategic_indicator_response_path: Strategic indicator - Response path
+        thematic_indicator_operation: Thematic indicator - SOAP method name
+        thematic_indicator_response_path: Thematic indicator - Response path
+

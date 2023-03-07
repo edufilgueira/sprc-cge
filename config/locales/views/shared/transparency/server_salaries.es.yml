@@ -1,0 +1,133 @@
+es:
+
+  shared:
+
+    transparency:
+
+      server_salaries:
+
+        shared: &shared
+          reference_month: "<strong>%{month_year}</strong>"
+
+        index:
+          <<: *shared
+
+          title: Informaciones sobre los Funcionarios Públicos
+          description: 'Consulte las informaciones sobre los funcionarios publicos del
+          estado activos, inactivos y pensionistas, buscando por nombre, órgano o puesto
+          de trabajo.
+          Consulte también informaciones de funcionarios públicos estatales cedidos
+          a otras esferas y Poderes, así como entre órganos del propio Poder Ejecutivo,
+          accediendo a la página <a target="_blank" href="/portal-da-transparencia/paginas/servidores-cedidos">Funcionarios Públicos Prestados</a>.'
+
+          source: |
+            <p><strong>Fuente de datos:</strong></p>
+            <p>Secretaria do Planejamento e Gestão - SEPLAG</p>
+            <p>La información proporcionada en esta página depende del envío de datos de SEPLAG y METROFOR.</p>
+
+          chart:
+            unique_count:
+              unit: 'Funcionarios Públicos'
+              title: 'Cantidade total de funcionarios públicos'
+            income_total:
+              unit: 'Gastos em R$'
+              title: 'Valores gastos con remuneración de funcionarios'
+
+            limited: '*El gráfico está limitado a los 10 valores más altos. Descargue la hoja de cálculo completa para acceder a todos los datos.'
+
+          charts:
+            tabs:
+              functional_status:
+                title: Por situación funcional
+              organ:
+                title: Por órgano
+              role:
+                title: Por puesto de trabajo
+
+          filters:
+            title: Filtros e busca por periodo
+            month: Mes
+
+            search:
+              hint: |
+                Uested puede buscar por parte del nombre de los funcionarios públicos.
+                Ejemplos: 'pedro lui', 'joa silv', 'ant francis', entre otros.
+
+
+          table:
+            summary: Lista de funcionarios públicos
+            header:
+              server_name: 'Funcionario'
+              organ: 'Órgano'
+              functional_status: Situación
+              role_name: 'Puesto/Función/Empleo'
+              income_total: 'Salario bruto'
+              income_final: 'Salario neto'
+
+          stats:
+            title: Principales numeros relacionados con los funcionarios públicos del Estado
+            unique_count: 'Total de funcionarios públicos en <strong>%{date}</strong>'
+            count: 'Total de matriculaciones en <strong>%{date}</strong>'
+
+            income_total: 'Total de salarios en <strong>%{date}</strong>'
+
+          counts:
+
+            unique_servers_count:
+              title: Total de funcionarios públicos del Estado
+
+            server_salaries_count:
+              title: Total de matriculaciones
+
+            income_total_sum:
+              title: Total de salarios
+              tooltip: Total de salarios (Considerando el Techo Gubernamental)
+
+          additional:
+            title: 'Portarias anuales de reajuste salarial de los servidores'
+            link: 'Ir a la página con las ordenanzas'
+            url: '/portal-da-transparencia/paginas/portarias-anuais-de-reajuste-salarial-dos-servidores&locale=es'
+
+        show:
+          <<: *shared
+
+          title: Páginas de Transparencia
+
+          infos:
+            source: >
+              <p>Fuente de datos: Secretaría de Planificación y Gestión (SEPLAG) - Sistema de Hoja de Pago - SFP.</p>
+              <p>Secretaría de Hacienda (SEFAZ) - Sistema de Gestão Governamental por Resultados - S2GPR (Informações sobre outros pagamentos recebidos)</p>
+
+            proceeds: >
+              <p><strong>Salario Bruto</strong>: La remuneración total, incluyendo: vencimiento base, gratificaciones, adicionales, premios, bonificaciones, ayudas, beneficios, ayuda de costo (excepto diarias), subsidios, sueldo y demás ventajas de cualquier tipo recibidas y registradas en nómina.</strong></p
+              <p><strong>Otros pagos recibidos</strong>: Corresponde a las diarias recibidas por el agente público para cubrir gastos de viaje (locomoción, alimentación y alojamiento). El valor presentado suma todas las diarias recibidas en el período y es asignado por CPF, independientemente de la matrícula del servidor en el órgano.</strong></p
+              <p><strong>Otros Descuentos</strong>: Se refiere a los descuentos de previsión, Impuesto de Renta retenido en la fuente - IRRF, faltas / retrasos, eventual reposición de cuotas remuneratorias recibidas indebidamente, pensión alimenticia, consignaciones en favor de asociaciones, sindicatos y agentes financieros..</strong></p
+              <p><strong>Abastecimiento en función del "techo" constitucional</strong>: Se refiere al abatimiento en remuneración recibida por lo techo constitucional, art. 37, inciso XI de la Constituición Federal y art. 1º da Ley Estadual nº. 14.236/2008.</strong></p
+              <p><strong>Salario neto</strong>: Se refiere a la remuneración neto recibida (excepto "otros pagamentos recibidos"), deduciendo los descuentos y eventual abatimiento en función del techo constitucional.</p>
+
+
+          debit_proceeds:
+            title: Descuentos
+            summary: Tabla de descuentos del funcionario público
+            total: Total de descuentos
+            others: Otros descuentos
+            under_roof:  Abatimiento en función del "techo" constitucional
+            empty: Ningún descueto encontrado para el mes seleccionado.
+            table:
+              heads:
+                vlr_financeiro: Valor
+                dsc_debit: Tipo del descuento
+
+          credit_proceeds:
+            title: Salarios
+            total: Total (Salario bruto)
+            empty: Ningún salario encontrado para o mes seleccionado.
+            summary: Tabla de salario del funcionario público
+            table:
+              heads:
+                vlr_financeiro: Valor
+                dsc_provento: Tipo del ingreso
+
+          total_proceeds:
+            income_dailies: Otros pagos recibidos
+            total: Salario neto

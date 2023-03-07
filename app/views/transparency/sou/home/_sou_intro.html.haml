@@ -1,0 +1,24 @@
+.card.mt-4{ 'aria-labelledby': 'sou_intro' }
+  .card-block.h-100
+    %h4.card-title
+      = t('.title')
+
+    .card-text.text-justify
+      = t('.description')
+
+    %hr{'aria-hidden': 'true'}
+
+    .list-group-flex.justify-content-start.align-items-start.pl-0
+      = link_to '/portal-da-transparencia/paginas/relatorios-de-gestao-de-ouvidoria', target: '_blank' do
+        %i.fa.fa-file-pdf-o.mr-1
+        = t('.report.title')
+
+    .list-group-flex.justify-content-start.align-items-start.pl-0
+      = link_to '/portal-da-transparencia/paginas/relatorios-de-gestao-ouvidorias-setoriais', target: '_blank' do
+        %i.fa.fa-file-pdf-o.mr-1
+        = t('.sectoral.title')
+
+    .list-group-flex.justify-content-start.align-items-start.pl-0
+      = link_to '/portal-da-transparencia/paginas/legislacao-sobre-ouvidoria', target: '_blank' do
+        %i.fa.fa-file-pdf-o.mr-1
+        = t('.legislation.title')

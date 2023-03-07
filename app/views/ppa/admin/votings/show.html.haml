@@ -1,0 +1,41 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = t('.title')
+
+.card.card-custom
+
+  .card-header
+
+    .row
+      .col-4
+        %h3.card-title
+          = [ppa_voting.start_in, ppa_voting.end_in].join(' - ')
+
+      .col-8
+        .float-right
+
+          = link_to t('commands.remove'), ppa_admin_voting_path(ppa_voting), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link'
+          = link_to t('commands.edit'), edit_ppa_admin_voting_path(ppa_voting), class: 'btn text-muted btn-link'
+
+  .card-block
+
+    .row
+      .col-12.col-lg-6
+        = content_with_label(ppa_voting, :start_in)
+
+      .col-12.col-lg-6
+        = content_with_label(ppa_voting, :end_in)
+
+      .col-12.col-lg-6
+        = content_with_label(ppa_voting, :plan_name, label: PPA::Voting.human_attribute_name(:plan))
+
+      .col-12.col-lg-6
+        = content_with_label(ppa_voting, :region_name, label: PPA::Voting.human_attribute_name(:region))
+
+.row.mt-2
+  .col-12.text-right
+    = link_to t('helpers.button.back'), ppa_admin_votings_path, class: 'btn btn-link'
+
+

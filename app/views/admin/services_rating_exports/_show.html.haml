@@ -1,0 +1,38 @@
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-12.col-md-9
+            %h3.card-title
+              = services_rating_export.title
+
+              %span.badge.badge-orange
+                = services_rating_export.created_at
+
+          .col-12.col-md-3
+            .float-right
+
+              - if services_rating_export.success?
+                = link_to t('commands.download'), download_admin_services_rating_export_url(services_rating_export, format: services_rating_export.worksheet_format.to_sym), class: 'btn text-success btn-link'
+
+              - if can?(:manage, services_rating_export) && (services_rating_export.success? || services_rating_export.error?)
+                = link_to t('commands.remove'), admin_services_rating_export_path(services_rating_export), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link'
+
+      .card-block
+
+        .row
+          .col-12
+            = dash_content_with_label(services_rating_export, :start_at, format: :date)
+
+        .row
+          .col-12
+            = dash_content_with_label(services_rating_export, :ends_at, format: :date)
+
+        .row
+          .col-12
+            = content_with_label(services_rating_export, :user_title)

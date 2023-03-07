@@ -1,0 +1,18 @@
+es:
+  activerecord:
+    attributes:
+
+      integration/contracts/financial:
+        isn_sic: Número SACC
+        num_documento: Nota de Rendimiento
+        data_documento: Data de Rendimiento
+        valor_documento: Rendimiento
+        num_pagamento: Última Nota de Pago
+        data_pagamento: Última Fecha de Pago
+        valor_pagamento: Monto total del Pagos
+
+    models:
+      integration/contracts/financial:
+        one: Nota de Rendimiento y Nota de Pago
+        other: Nota de Rendimiento y Notas de Pagos
+

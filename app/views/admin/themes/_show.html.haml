@@ -1,0 +1,29 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-8
+            %h3.card-title
+              = theme.title
+
+          .col-4
+            .float-right
+              - if can?(:edit, theme)
+                = link_to t('commands.edit'), edit_admin_theme_path(theme), class: 'btn text-muted btn-link'
+
+              - if can?(:manage, theme)
+                = render 'shared/buttons/btn_toggle_disabled', resource: theme, namespace: :admin
+
+      .card-block
+
+        = content_with_label(theme, :name)
+
+        = content_with_label(theme, :code)

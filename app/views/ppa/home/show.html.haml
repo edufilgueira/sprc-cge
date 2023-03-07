@@ -1,0 +1,8 @@
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.text-green.text-center.my-4.font-weight-bold
+  = t('.title')
+= render 'general'
+
+.card-deck.mt-5

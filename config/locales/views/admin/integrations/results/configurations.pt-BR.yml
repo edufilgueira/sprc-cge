@@ -1,0 +1,32 @@
+pt-BR:
+
+  admin:
+    integrations:
+      results:
+        configurations:
+          import:
+            done: >
+              A importação dos dados de consultoria de resultados está sendo processada
+              em segundo plano
+
+          form:
+            label: Informações de consultoria de resultados
+            hint:
+              response: 'Padrão: caminho/do/array'
+            commands:
+              cancel: Voltar para integrações
+
+          edit:
+            title: Configuração
+
+          update:
+            done: Configuração salva com sucesso.
+
+          show:
+            edit: Configurar
+            created_at: Criado
+            title: Configuração de consultoria de resultados
+            import: Importar agora
+            hide_show: Mostrar/Esconder log
+            empty: Nenhuma importação realizada
+            label: Informações de consultoria de resultados

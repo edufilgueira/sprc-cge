@@ -1,0 +1,27 @@
+pt-BR:
+  services:
+    importer:
+      log:
+        start: Importação iniciada
+        end: Importação finalizada
+        error: "Falha na importação: %{e}"
+        fail: 'Falha de importação na linha %{line}'
+        revenue: "%{lines} receitas processadas para a conta %{account}"
+        contract: "%{line} contratos e convênios importados"
+        additive: "%{line} aditivos importados"
+        adjustment: "%{line} ajustes importados"
+        financial: "%{line} empenhos e pagamentos importados"
+        infringement: "%{line} inadimplências importadas"
+        access: 'Falha ao acessar o arquivo %{filename} no endereço FTP: %{address} e diretório: %{dir} - %{e}'
+        registrations: '%{lines} registros de servidores foram processados'
+        proceeds: '%{lines} registros de proventos de servidores foram processados'
+        proceed_types: '%{lines} registros de tipos de proventos foram processados'
+        purchase: '%{line} registros de licitações finalizadas foram processados'
+        npf: '%{line} registros NPF foram processados'
+        ned: '%{line} registros NED foram processados'
+        nld: '%{line} registros NLD foram processados'
+        npd: '%{line} registros NPD foram processados'
+        organ: '%{line} registros de dados de órgãos foram processados'
+        creditor: '%{line} registros de dados de credores foram processados'
+
+        validation_fail: 'Falha de importação no registo %{line} - %{error}'

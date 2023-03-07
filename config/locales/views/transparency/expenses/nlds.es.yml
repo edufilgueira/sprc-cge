@@ -1,0 +1,7 @@
+es:
+  transparency:
+    expenses:
+      nlds:
+        index:
+          title: Notas de Liquidación de Gastos
+          description: 'Aquí usted podrá consultar informaciones de las notas de liquidación de gastos por período, unidad gestora o nombre del acreedor.'

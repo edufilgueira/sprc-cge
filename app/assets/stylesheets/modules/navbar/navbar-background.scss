@@ -1,0 +1,24 @@
+@import 'bootstrap/variables';
+
+.container {
+  &.search-main-container {
+    margin: auto;
+    z-index: 2;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, "xl")) {
+  .container {
+    &.search-main-container {
+      padding: 0;
+    }
+  }
+
+  .background-container {
+    h2 {
+      &.title {
+        font-size: 26px;
+      }
+    }
+  }
+}

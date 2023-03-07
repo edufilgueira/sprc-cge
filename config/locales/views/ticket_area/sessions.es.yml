@@ -1,0 +1,8 @@
+es:
+  ticket_area:
+    sessions:
+      new:
+        title: Acompañar manifestación
+      form:
+        login: Acompañar manifestación 
+        forgot_password: "* Ha olvidado la contraseña? Contactar la Central de Atención de la Oiddría General del Estado por el teléfono 155 de lunes a viernes de las 08h a las 20h, hacer la solicitud y confirmar sus datos de registro."

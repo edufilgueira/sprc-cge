@@ -1,0 +1,7 @@
+es:
+  activerecord:
+    attributes:
+      integration/revenues/account_configuration:
+        account_number: Número
+        title: Título
+

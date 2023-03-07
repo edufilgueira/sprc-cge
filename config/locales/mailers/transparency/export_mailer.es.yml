@@ -1,0 +1,17 @@
+es:
+  transparency:
+    export_mailer:
+
+      spreadsheet_success:
+        subject: 'Hoja de exportación de datos de transparencia'
+        title: 'Hoja de cálculo creada con éxito!'
+        description: >
+          La hoja "%{title}" que usted ha solicitado en el Ceará Transparente ha sido processada e ya está disponible para su descarga'
+          El enlace para descarga se quedará disponible hasta %{expiration}.
+
+        link: 'Para descargar la hoja haga clic <a href="%{url}">aquí</a>.'
+
+      spreadsheet_error:
+        subject: 'Hoja de exportacíon de datos de transparencia'
+        title: 'Lo siento, la hoja de cálculo no se generó!'
+        description: "Hubo un problema al procesar la hoja de cálculo '%{title}'. Estamos trabajando para resolver. En este tiempo, quédate a gusto para solicitar nuevamente."

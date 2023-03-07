@@ -1,0 +1,17 @@
+pt-BR:
+  transparency:
+    open_data:
+      data_sets:
+        index:
+          title: Dados abertos
+          description: Confira os principais dados das secretarias da Fazenda, do Planejamento e da Controladoria e Ouvidoria Geral do Estado.
+          table:
+            summary: Lista de conjuntos de dados abertos
+            header:
+              author: Autor
+              title: Título
+              organ: Órgão
+              source_catalog: Catálogo de origem
+
+        show:
+          title: Exibição do dado aberto

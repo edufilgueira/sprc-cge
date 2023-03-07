@@ -1,0 +1,22 @@
+pt-BR:
+
+  platform:
+
+    tickets:
+
+      change_types:
+        create:
+          done: Tipo do chamado alterado com sucesso.
+          fail: Não foi possível mudar o tipo do chamado.
+
+        new:
+          title: Mudar tipo da manifestação
+
+        form:
+          sou:
+            title: Mudar para SIC
+          sic:
+            title: Mudar para SOU
+
+          cancel: Cancelar
+          submit: Mudar

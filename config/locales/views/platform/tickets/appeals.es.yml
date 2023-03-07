@@ -1,0 +1,21 @@
+es:
+
+  platform:
+
+    tickets:
+
+      appeals:
+
+        new:
+          title: Nueva solicitud de recurso
+
+        alert:
+          title: Lea antes 
+          description: |
+            Usted puede presentar un recurso cuando comprender que el órgano o entidad no ha concedido la información solicitada o no ha fornecido la razón para negar la información.<br/><br/>
+            Atención: El recurso no deve abordar un nuevo sujeto, o sea, debe atenerse solamente al pedido de inicio. Si desea hacer una pregunta diferente, no entre con recurso. En ese caso, haga una nueva solicitud de información.<br/><br/>
+            Para el recurso en 1ª instancia, el Comité Gestor de Acceso a la Información es quien va a analizar su solicitud. Para el recurso en segunda instancia, su soliciud será analizada por el Consejo Estadual de Acceso a la Información.  
+
+        create:
+          done: Solicitud de recurso realizada con éxito
+          error: Error al solicitar recurso 

@@ -1,0 +1,18 @@
+pt-BR:
+  shared:
+    components:
+
+      select_states:
+        label: Estado
+        select: Selecione o estado
+
+
+      organ_subnet_fields:
+        organ:
+          select: Selecione o órgão
+        subnet:
+          info: Pertence à ouvidoria de sub-rede?
+          select: Selecione a sub-rede
+
+      remote_disable_filter:
+        disabled: Mostrar desativados

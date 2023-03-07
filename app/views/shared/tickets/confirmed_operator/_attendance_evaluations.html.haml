@@ -1,0 +1,17 @@
+- #
+- #
+- # Avaliação do atendimento do orgão no chamado
+- #
+- #
+.card.card-custom
+  .card-header
+
+    .row
+      .col-6
+        %h3.card-title
+          = t('.title')
+
+  .card-block
+
+    .content{ 'data-content': 'attendance_evaluation' }
+      = render 'shared/tickets/attendance_evaluation', ticket: ticket

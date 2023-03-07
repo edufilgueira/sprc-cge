@@ -1,0 +1,75 @@
+pt-BR:
+  shared:
+    transparency:
+      revenues:
+        transfers:
+
+          index:
+            title: Recursos Recebidos em Transferências
+            description: 'Saiba quais são e do onde vêm as verbas transferidas ao Governo do Estado do Ceará. Por exemplo: veja quanto o Ceará recebe do Governo Federal, quanto recebe do Fundo de Manutenção e Desenvolvimento da Educação Básica e de Valorização dos Profissionais da Educação (Fundeb) e de organizações internacionais.'
+
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Secretaria da Fazenda - SEFAZ</p>
+              <p>Sistema de Gestão Governamental por Resultados - S2GPR</p>
+
+            chart:
+              valor_arrecadado:
+                unit: 'Soma dos valores arrecadados em transferências: R$'
+                title: 'Valores arrecadados no mês'
+
+                secretary:
+                  title: Soma dos valores arrecadados em transferências por secretarias
+                transfer:
+                  title: Soma dos valores arrecadados por tipo de transferência
+
+            charts:
+              tabs:
+                secretary:
+                  title: Por secretaria
+                transfer:
+                  title: Por tipo de transferência
+
+            counts:
+              valor_previsto_inicial:
+                title: 'Valor previsto inicial das receitas filtradas'
+              valor_previsto_atualizado:
+                title: 'Valor previsto atualizado das receitas filtradas'
+              valor_arrecadado:
+                title: 'Valor arrecadado das receitas filtradas'
+
+            filters:
+              title: Consulta avançada
+
+              counts:
+                transfers_sum:
+                  valor_previsto_inicial:
+                    title: Valor previsto inicial das receitas filtradas
+
+                  valor_previsto_atualizado:
+                    title: Valor previsto atualizado das receitas filtradas
+
+                  valor_arrecadado:
+                    title: Valor arrecadado das receitas filtradas
+
+              node_types: Forma de exibição
+
+              search:
+                hint: |
+                  Você pode buscar por nomes de secretarias, órgãos, tipos de receitas, etc.
+
+            table:
+              summary: Lista de receitas do Poder Executivo
+              header:
+                title: Descrição
+                valor_arrecadado: Valor arrecadado
+                valor_previsto_inicial: Valor previsto inicial
+                valor_previsto_atualizado: Valor previsto atualizado
+
+              total: Total
+
+            stats:
+              title: Principais números relacionados às receitas
+              valor_arrecadado: 'Valor arrecadado em <strong>%{date}</strong>'
+              valor_previsto_inicial: 'Valor previsto inicial em <strong>%{date}</strong>'
+              valor_previsto_atualizado: 'Valor previsto atualizado em <strong>%{date}</strong>'

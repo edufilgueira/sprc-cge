@@ -1,0 +1,461 @@
+en:
+  shared:
+    tickets:
+
+      print:
+        reopen:
+          title:
+            one: 'Reopening (%{count} time)'
+            other: 'Reopening (%{count} times)'
+
+        appeal:
+          title:
+            one: 'Appeals (%{count} time)'
+            other: 'Appeals (%{count} times)'
+
+      contact_fields:
+        state: Provincia
+
+      attachment_fields:
+        file:
+          hint: 'The sum of the attachments inserted in the system cannot exceed the limit of 50MB.'
+
+
+      notice_confirmation_success:
+        title: 'Done!'
+        sic:
+          description: 'Your request has been successfully registered.'
+          deadline_description: 'The service of the Information Requests is of up to 20 days and can be extended for another 10 days as established by Law no. 15,175 / 2012.'
+          important_description: '<p><b><center>Important!</center></b></p> The Sectoral Committee on Access to Information may request additional information about the manifestation in order to facilitate the service/calculation, and it is recommended that the citizen stay accessing it for the next 5 (five) days, using the protocol and password provided above, to provide the information requested and prevent the manifestation from being invalidated.'
+        sou:
+          description: 'Your manifestation was registered with success.'
+          deadline_description: "The service of the manifestation of Ombudsman's Office is of up to 20 days and may be extended for another 10 days as established by Decree no. 30,474 / 2011."
+          important_description: '<p><b><center>Important!</center></b></p> The Ombudsman may request additional information about the manifestation in order to facilitate the service/investigation, and it is recommended that the citizen stay accessing it for the next 5 (five) days, using the protocol and password provided above, to provide the requested information and prevent the manifestation is invalidated.'
+        password_description: 'Write down your protocol number and password to see your call:'
+
+      confirmed_operator:
+        tabs:
+          infos:
+            sic:
+              title: Basic information
+            sou:
+              title: Basic information
+          classification:
+            sic:
+              title: Classification
+            sou:
+              title: Classification
+          areas:
+            sic:
+              title: SICs and departments
+            sou:
+              title: Ombudsman and departments
+          comments:
+            sic:
+              title: Comments
+            sou:
+              title: Comments
+          replies:
+            sic:
+              title: Replies
+            sou:
+              title: Replies
+          internal_replies:
+            sic:
+              title: Positioning
+            sou:
+              title: Positioning
+          history:
+            sic:
+              title: History
+            sou:
+              title: History
+          attendance_evaluations:
+            sic:
+              title: Evaluation
+            sou:
+              title: Evaluation
+          history:
+            sic:
+              title: History
+            sou:
+              title: History
+
+        attendance_evaluations:
+            title: evaluation of internal service
+
+
+      classification:
+        title: Classification
+        denunciation:
+          requirement: The classification of a statement with a denunciation is made only after the type of denunciation is defined
+        parent:
+          sic: Classification is done only on the daughter request
+          sou: Classification is done only on the daughter manifestation
+
+
+      sharings:
+        sou:
+          title: Sectorial Ombudsman involved
+          new: Add sectorial Ombudsman involved
+          share: Share with another Ombudsman
+          empty: No sectorial Ombudsman service was involved
+        sic:
+          title: Involved organs
+          new: Add involved organs
+          share: Share with another organ
+          empty: No organs were involved
+        denunciation:
+          empty: To involve other organs, classify the denunciation
+        transfers:
+          sou:
+            new: Transfer to another Ombudsman
+          sic:
+            new: Transfer to another organ
+
+      public_comments:
+        comments:
+            user:
+              title: Comments of user
+              empty: No comments found
+
+      ticket_logs:
+        title: History of service
+
+        index:
+          replies_received: "You have received %{answers_count} of %{children_count} reply(ies)"
+
+
+      ticket_internal_logs:
+        title: Internal logs
+
+      invalidate: Invalidate
+
+      forwards:
+        referrals:
+          title: Internal department involved
+          empty: No internal department was involved
+          edit: Sent to internal department
+
+        transfer_departments:
+          edit: Transfer to another internal department
+          share: Share with another internal department
+
+      transfer_departments:
+        edit: Transfer to another internal department
+        share: Share with another internal department
+
+      sou_types_toggle:
+        label: Types of manifestation
+        popover:
+          complaint:
+            title: Complaint
+            body: Write down a complaint about a negative experience you had with the State Government of Ceará.
+          denunciation:
+            title: Denunciation
+            body: Bring to the attention of the authorities of the Government of the State of Ceará any fact against the law, public order or any regulation and susceptible to punishment.
+          compliment:
+            title: Compliment
+            body: Write down your satisfaction with some positive experiences you had with the Government of the State of Ceará.
+          suggestion:
+            title: Suggestion
+            body: Share your proposals, ideas or advice with the Government of the State of Ceará.
+          request:
+            title: Request
+            body: Request a service to the Government of the State of Ceará.
+
+      sou_types_toggle_without_popover:
+        label: Type of manifestation
+
+      form:
+        change_sou_type:
+          justification: 'Justify the change in the type of manifestation:'
+
+        sic_info: 'Check if the desired information is available on the <a href="%{url}">Páginas de Transparência</a>.'
+
+        person_info:
+          title: Information of user
+          keep_secret:
+            sic: Your personal information will be visible only to the attendant.
+            sou: Your personal information will only be visible to the ombudsman.
+
+        contact_info:
+          title: Contact information
+
+        add_attachment: Add attachments
+
+        cards:
+          attachments:
+            title: Attachments (opcional)
+
+          sou:
+            description:
+              title: Description of manifestation
+
+          sic:
+            description:
+              title: Description of request
+
+          infos:
+            title: Information of user
+
+          answer:
+            title: Reply
+
+        modal:
+          title: Confirm denunciation
+          close: Close
+          body: 'You can choose to make the denunciation anonymously. Just signed out of your account and click on the "Anonymous Manifestation" option on the "Digital Ombudsman" page.'
+          footer:
+            agreements: 'I have read it and I agree with it'
+            submit: Send denunciation
+
+
+        commands:
+          sou:
+            cancel: < Go back to List of Ombudsman Manifestation
+            create: Save manifestation
+            update: Update manifestation
+          sic:
+            cancel: < Go back to List of Requests
+            create: Save request
+            update: Update request
+
+
+        fields:
+          description:
+            hint:
+              citizen:
+                sou: Give as many details as possible for your manifestation. There are no character limits.
+                sic: Give as many details as possible for your request. There are no character limits.
+              operator:
+                sou: Give as many details as possible for the manifestation. There are no character limits.
+                sic: Give as many details as possible for the request. There are no character limits.
+            anonymous_hint: To ensure your anonymity, do not write anything that can identify you.
+            operator_hint: To ensure citizen's anonymity, do not write anything that can identify the requester.
+
+          subnet:
+            select: Select a subnet
+
+          organ:
+            select: Select organ
+
+          topic:
+            unknown: I don't know how to inform the subject
+
+          rede_ouvir:
+            select: Select rede ouvir
+
+          select: Select an option
+
+          denunciation_organ_select: I do not know the type of organ
+
+          denunciation_type_ticket: Attention! Your report will be forwarded to the State's Comptroller and Ombudsman for analysis and referrals.
+                                    The field below indicates only which body is being reported, when it is possible to identify
+
+          denunciation_description:
+            citizen:
+              hint: Please describe your denunciation in as many details as possible, including the names of the people reported. There are no character limits.
+            operator:
+              hint: Please describe the denunciation in as many details as possible, including the names of the people reported. There are no character limits.
+
+          denunciation_evidence:
+            hint: Indicate what are the evidences of the fact denounced and where they can be found.
+
+          answer_type: Besides email and the internet, would you like to receive the reply in another way?
+
+          answer_phone: Phone number 1
+          answer_cell_phone: Phone number 2
+
+          answer_address_zipcode: Add zipcode
+
+        privacy_terms:
+          title: 'Privacy & Terms'
+          description: 'I have read and I agree with <a target="_blank" href="%{terms_url}">Terms of Use</a>'
+
+
+      index:
+        filters:
+          search:
+            title: Keyword search
+            label: Search protocol, name, email, documents or descriptions
+          parent_protocol:
+            title: Search protocol
+            label: Protocol
+          confirmed_at:
+            label: Period
+            start: start
+            end: end
+
+          sou:
+            commands:
+              new: New manifestation
+
+          sic:
+            commands:
+              new: New request
+
+        user_filters:
+          select:
+            organ: Organ
+            deadline: Deadline
+            status_for_citizen: Status
+            topic: Topic
+
+          finalized: Show finalized
+
+        operator_filters:
+          select:
+            internal_status: Status
+            department: department
+            sub_department: Sub department
+            organ: Organ
+            topic: Topic
+            subtopic: Subtopic
+            budget_program: Budget Program
+            service_type: Type of service
+            deadline: Deadline
+            ticket_departments_deadline: Department deadline (internal department)
+            answer_type: Type of reply
+            sou_type: Type of manifestation
+
+          priority: Only priority
+          finalized: Show finalized
+          denunciation: Only denunciation
+
+        empty: No record found
+
+
+      deadline:
+        remaining: Countdown to reply
+      show:
+        anonymous:
+          sic:
+            title: Anonymous request
+
+          sou:
+            title: anonymous manifestation
+
+        attachments:
+          title: Attachments
+          none: No attachments
+
+        actions: actions
+
+        confirmation:
+          title: Confirm datas
+
+        sou:
+          title: Information of manifestation
+          description:
+            title: Description of manifestation
+
+        sic:
+          title: Information of request
+          description:
+            title: Description of request
+
+        infos:
+          title: Information of user
+          anonymous:
+            title: Identification of manifestation
+
+        deadline:
+          title: Deadline and actions
+          created_at: Date of record
+          last_day: Deadline for response
+          status: Current status
+
+        extension:
+          title: Request extension
+
+        cancel_extension: Cancel extension
+        cancel_extension_confirmation: >
+          Are you sure you want to cancel extension?
+
+        appeal:
+          '1': "Date of appeal (first instance)"
+          '2': "Date of appeal (second instance)"
+          '3': "Date of appeal (third instance)"
+
+        ticket_department:
+          note: Note
+          deadline: Deadline for response
+
+        denunciation_organ:
+          edit: Edit denunciation organ
+
+      sou_type:
+        edit: Edit type of manifestation
+
+      ticket_department:
+        extension_in_progress: Reply extension of request
+
+      unconfirmed:
+        anonymous:
+          sic:
+            title: Anonymous Request
+
+          sou:
+            title: Anonymous manifestation
+
+        title: Confirm datas
+
+        attachments:
+          title: Attachments
+          none: No files
+
+        sou:
+          description:
+            title: Description of manifestation
+
+        sic:
+          description:
+            title: Description of request
+
+        infos:
+          title: Information of user
+
+        confirm:
+          action: Confirm opening
+
+        edit:
+          action: Back to editing
+
+      person_info:
+        person_types:
+          legal:
+            name: Corporate name
+            cnpj: Register of Corporate Taxpayers
+        anonymous: Anonymous Person
+
+        email: E-mail (Opcional)
+
+      short_details:
+        sou: Description of manifestation
+        sic: Description of request
+        attachments: Attachments
+
+      ticket_classification_fields:
+          title: Classification
+
+      ticket_denunciation_classification_fields:
+          title: Classification of denunciation
+
+      denunciation_classification_fields:
+        button: Classify denunciation
+
+      denunciation_classification:
+        title: Forward to Correction Coordination - COSCO
+        alert: Forward the Complaint to the Correctional Coordination when those involved are members of the Superior Direction or Superior Management of the bodies / entities of the State Executive Power, as well as the complaints whose investigation is the responsibility of the Correctional Coordination, under the terms of Decree no. 33,276/2019
+        confirm_alert: Are you sure you want to involve COSCO?
+
+      denunciation_couvi:
+        title: Forward to Ombudsman's Coordination - COUVI
+        alert: "Forward the complaint to the Ombudsman's Coordination when the person involved is a sectoral ombudsman, substitute ombudsman or internal control adviser and ombudsman, if any, of the Organs and Entities of the Executive Branch, when the object of the complaint is related to activities within the scope of the State System Ombudsman"
+        confirm_alert: Are you sure you want to involve COUVI?
+
+      priority_alert:
+        title:
+          sic: Information request marked as urgent
+          sou: Manifestation request marked as urgent

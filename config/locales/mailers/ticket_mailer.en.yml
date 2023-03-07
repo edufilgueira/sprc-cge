@@ -1,0 +1,43 @@
+en:
+  ticket_mailer:
+    daily_recap:
+      subject: '[Ceará transparente] Daily summary'
+      not_expired: 'Not expired:'
+      expired: 'Expired:'
+      expired_can_extend: 'Expiration extended:'
+      title: "Daily summary - "
+
+    email_reply:
+      title:
+        sic:
+          one: 'You have received the response to your information request protocol %{protocol}.'
+          other: 'You have received the response to your information request protocol %{protocol}.'
+        sou:
+          one: 'You have received the response to your Ombudsman manifestation protocol %{protocol}.'
+          other: 'You have received the response to your Ombudsman manifestation protocol %{protocol}.'
+
+      replies:
+        title: 'Response of %{author} to %{created_at}'
+
+      link:
+        title: 'You can see more details by clicking on <a href="%{url}">aqui</a>.'
+
+      subject:
+        sic: '[Ceará transparente] Response to information request'
+        sou: '[Ceará transparente] Response to Ombudsman manisfestation'
+
+    subscription_confirmation:
+      subject:
+        sic: 'Confirmation of email to Information request [%{protocol}]'
+        sou: 'Confirmation of email to Ombudsman manifestation [%{protocol}]'
+
+      template:
+        title:
+          sic: 'Confirmation to follow the information request [%{protocol}]'
+          sou: 'Confirmation to follow the Ombudsman manifestation [%{protocol}]'
+
+        explanation:
+          sic: 'After confirmation of the email, you will be notified of updates to your information request. If you want to cancel the notifications, a link will be shown in the next emails.'
+          sou: 'After confirming the e-mail, you will be notified about the updates of your Ombudsman manifestation. If you want to cancel the notifications, a link will be shown in the next emails.'
+
+        confirmation_link: '<a href="%{url}"> Click here to confirm your email</a>'

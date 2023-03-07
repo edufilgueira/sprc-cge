@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    attributes:
+      occurrence:
+        description: Description of the event
+
+  occurrences:
+    default_occurrence: Service started/edited

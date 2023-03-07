@@ -1,0 +1,49 @@
+!!! 5
+%html{lang: 'pt-BR'}
+
+  %head
+
+    = render 'shared/transparency/head'
+
+  %body{ data: { controller: controller_path } }
+    = render 'shared/transparency/facebook_sdk'
+
+    = render 'shared/a11y/content_link'
+
+    = render 'shared/ribbon'
+
+    = render 'shared/navbar_mobile'
+
+    = render 'shared/transparency/navbar'
+
+    .container
+
+      = render 'shared/transparency/notice'
+
+      = render 'shared/transparency/alert'
+
+      = render 'shared/transparency/toolbar'
+
+      = render 'shared/a11y/content_anchor'
+
+      = render 'shared/modal'
+
+      = yield
+
+    = render 'shared/application/privacy_statement'
+
+    = render 'shared/a11y/footer_links'
+
+    = render 'shared/transparency/footer'
+
+    = javascript_include_tag(:transparency)
+    = render 'shared/javascripts'
+    = yield(:javascript)
+
+    = render 'shared/google_analytics'
+
+    = render 'shared/transparency/google_maps'
+
+    = noscript_include_tag
+
+    = render 'shared/transparency/warnings/show_warning_sefaz_migration'

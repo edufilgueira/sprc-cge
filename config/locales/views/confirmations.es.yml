@@ -1,0 +1,16 @@
+es:
+  confirmations:
+    show:
+      title: Confirmación de perfil
+      instructions: >-
+        Para confirmar su perfil, por favor, defina su contraseña de acceso.
+      back: Volver 
+      submit: Confirmar
+
+    new:
+      title: Reenvío de instrucciones para la confirmación de perfil 
+      instructions: >-
+        Introduzca la dirección de correo electrónico utilizada en su perfil y nosostros te 
+        enviaremos un e-mail con instrucciones para la confirmación. 
+      back: Volver 
+      submit: Reenvío de instrucciones

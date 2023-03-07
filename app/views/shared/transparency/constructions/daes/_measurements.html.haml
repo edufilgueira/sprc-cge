@@ -1,0 +1,55 @@
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.title')
+
+      .card-block
+
+        - if measurements.present?
+          .table-responsive
+            %table.table.table-hover.table-striped.table-sm.bg-faded
+
+              %thead
+
+                %tr
+
+                  - heads = [:numero_medicao, :ano_mes_date, :data_inicio, :data_fim, :valor_medido]
+
+                  - heads.each do |head|
+                    %th
+                      = measurements.first.class.human_attribute_name(head)
+
+              %tbody
+
+                - # TODO: check if WS send smth != from integer @ numero_medicao (WS: name="numeroMedicao" type="xs:string")
+                - measurements.order('numero_medicao::integer').each do |measurement|
+
+                  %tr
+                    %td
+                      = measurement.numero_medicao
+
+                    %td
+                      = l(measurement.ano_mes_date, format: :month_year)
+
+                    %td
+                      = measurement.data_inicio.present? ? l(measurement.data_inicio.to_date) : I18n.t('messages.content.undefined')
+
+                    %td
+                      = measurement.data_fim.present? ? l(measurement.data_fim.to_date) : I18n.t('messages.content.undefined')
+
+                    %td
+                      = measurement.valor_medido
+
+
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')

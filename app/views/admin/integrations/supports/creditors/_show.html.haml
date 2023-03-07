@@ -1,0 +1,71 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-12
+            %h3.card-title
+              = creditor.title
+      .card-block
+        .row
+          .col-6
+            = content_with_label(creditor, :codigo)
+          .col-6
+            = content_with_label(creditor, :email)
+        .row
+          .col-6
+            = content_with_label(creditor, :telefone_contato)
+          .col-6
+            = content_with_label(creditor, :cpf_cnpj)
+        .row
+          .col-6
+            = content_with_label(creditor, :uf)
+          .col-6
+            = content_with_label(creditor, :nome_municipio)
+        .row
+          .col-6
+            = content_with_label(creditor, :codigo_municipio)
+          .col-6
+            = content_with_label(creditor, :bairro)
+        .row
+          .col-6
+            = content_with_label(creditor, :logradouro)
+          .col-6
+            = content_with_label(creditor, :numero)
+        .row
+          .col-6
+            = content_with_label(creditor, :codigo_distrito)
+          .col-6
+            = content_with_label(creditor, :complemento)
+        .row
+          .col-6
+            = content_with_label(creditor, :cep)
+          .col-6
+            = content_with_label(creditor, :codigo_contribuinte)
+        .row
+          .col-6
+            = content_with_label(creditor, :codigo_nit)
+          .col-6
+            = content_with_label(creditor, :codigo_pis_pasep)
+        .row
+          .col-6
+            = content_with_label(creditor, :data_atual)
+          .col-6
+            = content_with_label(creditor, :data_cadastro)
+        .row
+          .col-6
+            = content_with_label(creditor, :status)
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+es:
+  shared:
+    transparency:
+      revenues:
+        transfers:
+
+          index:
+            title: Ingresos recibidos en Transferencias
+            description: 'Conozca más sobre las transferencias, por ejemplo, la orígen del importe recibido del Gobierno Federal, de ingresos para el Fundeb o de organismos internacionales.'
+            source: |
+              <p><strong>Fuente de datos:</strong></p>
+              <p>Secretaría de Hacienda - SEFAZ</p>
+              <p>Sistema de Gestíon Gubernamental por Resultados - S2GPR</p>
+
+            chart:
+              valor_arrecadado:
+                unit: 'Suma de los valores recibidos en transferencias: R$'
+                title: 'Valores recibidos en el mes'
+
+                secretary:
+                  title: Suma de los valores recibidos en transferencias por secretarías
+                transfer:
+                  title: Suma de los valores recibidos por tipo de transferencia
+
+            charts:
+              tabs:
+                secretary:
+                  title: Por secretaría
+                transfer:
+                  title: Por tipo de transferencia
+
+            counts:
+              valor_previsto_inicial:
+                title: 'Valor previsto de inicio de los ingresos filtrados'
+              valor_previsto_atualizado:
+                title: 'Valor previsto actualizado de los ingresos filtrados'
+              valor_arrecadado:
+                title: 'Valor recibido de los ingresos filtrados'
+
+            filters:
+              title: Consulta avanzada
+
+              counts:
+                transfers_sum:
+                  valor_previsto_inicial:
+                    title: Valor previsto de inicio de los ingresos filtrados
+
+                  valor_previsto_atualizado:
+                    title: Valor previsto actualizado de los ingresos filtrados
+
+                  valor_arrecadado:
+                    title: Valor recibido de los ingresos filtrados
+
+              node_types: Forma de visualización
+
+              search:
+                hint: |
+                  Usted puede busar por parte del nombre de Secretarías, Órganos, etc. Ejemplos: 'sec faze', entre otros.
+
+            table:
+              summary: Lista de ingresos del Poder Ejecutivo.
+              header:
+                title: Descripción
+                valor_arrecadado: Valor recibido
+                valor_previsto_inicial: Valor previsto de inicio
+                valor_previsto_atualizado: Valor previsto actualizado
+
+              total: Total
+
+            stats:
+              title: Principales numeros relacionados con los ingresos
+              valor_arrecadado: 'Valor recibido en <strong>%{date}</strong>'
+              valor_previsto_inicial: 'Valor previsto de inicio en <strong>%{date}</strong>'
+              valor_previsto_atualizado: 'Valor previsto actualizado en <strong>%{date}</strong>'

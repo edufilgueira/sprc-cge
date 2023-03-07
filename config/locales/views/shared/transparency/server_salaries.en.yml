@@ -1,0 +1,125 @@
+en:
+
+  shared:
+
+    transparency:
+
+      server_salaries:
+
+        shared: &shared
+          reference_month: "<strong>%{month_year}</strong>"
+
+        index:
+          <<: *shared
+
+          title: Information about Public Servants
+          description: 'See information about active, inactive,
+          and retired state servants by searching by name, agency, or title.
+          See also information of state servants transfered
+          to other spheres and Powers, as well as to organs of the Executive Branch
+          itself, accessing the <a target="_blank" href="/portal-da-transparencia/paginas/servidores-cedidos">Transferred Public Servants page</a>.'
+
+          source: |
+            <p><strong>Data source:</strong></p>
+            <p>Secretaria do Planejamento e Gestão - SEPLAG</p>
+            <p>The information provided on this page depends on the submission of data from SEPLAG and METROFOR.</p>
+
+          chart:
+            unique_count:
+              unit: 'Servants'
+              title: 'Total servants number'
+            income_total:
+              unit: 'Spent on R$'
+              title: 'Amount spent on servants remuneration'
+
+            limited: '*The chart is limited to the 10 largest values. Download the complete worksheet to access all the data.'
+
+          charts:
+            tabs:
+              functional_status:
+                title: By functional status
+              organ:
+                title: By agency
+              role:
+                title: By role
+
+          filters:
+            title: Search and filters by period
+            month: Month
+
+            search:
+              hint: |
+                You can search by servants' name parts.
+                Examples: 'pedro lui', 'joa silv', 'ant francis'.
+
+
+          table:
+            summary: Public Servants list
+            header:
+              server_name: 'Servant'
+              organ: 'Agency'
+              functional_status: Status
+              role_name: 'Role/Function/Job'
+              income_total: 'Gross salary'
+              income_final: 'Net salary'
+
+          stats:
+            title: Major numbers related to state servants
+            unique_count: 'Servants total in <strong>%{date}</strong>'
+            count: 'Enrollment total in <strong>%{date}</strong>'
+
+            income_total: 'Total income in <strong>%{date}</strong>'
+
+          counts:
+            unique_servers_count:
+              title: State servants total
+
+            server_salaries_count:
+              title: Enrollment total
+
+            income_total_sum:
+              title: Total income
+              tooltip: Total income (Considering the Government Ceiling)
+
+          additional:
+            title: 'Annual Salary Adjustment Ordinances for Servers'
+            link: 'Go to the page to more informations'
+            url: '/portal-da-transparencia/paginas/portarias-anuais-de-reajuste-salarial-dos-servidores&locale=en'
+
+        show:
+          <<: *shared
+
+          title: Transparency Pages
+
+          infos:
+            source: >
+              <p>Data source: Secretariat of Planning and Management (SEPLAG) - Payroll System - SFP.</p> <p>Secretariat of Finance (SEFAZ) - Governmental Management System by Results - S2GPR (Information on other received payments)</ p>
+
+            proceeds: >
+              <p> <strong> Gross Salary </ strong>: Corresponds to total remuneration, including: basic salary, gratuities, bonuses, bonuses, aids, benefits, allowances (except per diem), bonuses, any kind received and recorded in payroll. </ strong> </ p ><p> <strong> Other payments received </ strong>: Corresponds to the rates received by the public agent to cover travel expenses (transportation, food and lodging). The value presented adds up to all the days received in the period and is assigned by CPF, regardless of the server's registration in the agency. </ p><p> <strong> Other Discounts </ strong>: Refers to pension discounts, Withholding Income Tax - IRRF, absences / delays, possible replacement of unduly paid compensation, alimony, appropriations for associations, trade unions and financial agents. </ strong> </ p><p> <strong> Disconunts due to the constitutional limits</ strong>: Refers to any reduction in remuneration received as a function of the constitutional limits, "art. 37, item XI" of the Federal Constitution and "art. 1" of State Law no. 14.236 / 2008. </ Strong> </ p><p> <strong> Net salary </ strong>: Refers to the net remuneration received (excluding "other payments received"), deducting the discounts and eventual deduction due to the constitutional limits.</p>
+
+          debit_proceeds:
+            title: Discounts
+            summary: Servants discounts table
+            total: Discounts total
+            others: Other discounts
+            under_roof:  Disconunts due to the constitutional limits
+            empty: No discounts found for selected month.
+            table:
+              heads:
+                vlr_financeiro: Value
+                dsc_debit: Discount type
+
+          credit_proceeds:
+            title: Salary
+            total: Total (Gross salary)
+            empty: No salary found for selected month.
+            summary: Servant salary table
+            table:
+              heads:
+                vlr_financeiro: Value
+                dsc_provento: Income type
+
+          total_proceeds:
+            income_dailies: Other payments received
+            total: Net salary

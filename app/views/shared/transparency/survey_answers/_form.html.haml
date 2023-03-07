@@ -1,0 +1,65 @@
+- survey_answer = local_assigns[:survey_answer] || Transparency::SurveyAnswer.new(transparency_page: transparency_id)
+
+- action = local_assigns[:action] || survey_answer.action
+- controller = local_assigns[:controller] || survey_answer.controller
+- url = local_assigns[:url] || survey_answer.url
+
+- # inicia fechado caso não seja a partir do create (falha de validação)
+- collapsed = local_assigns[:survey_answer].blank?
+
+= simple_form_for survey_answer, remote: true, html: { 'data-toggle': 'remote-form' } do |f|
+
+  .card.mb-4{'data-content': 'transparency-survey-answer'}
+    .card-block
+      = f.input :transparency_page, as: :hidden
+      = f.input :controller, as: :hidden, input_html: { value: controller }
+      = f.input :action, as: :hidden, input_html: { value: action }
+      = f.input :url, as: :hidden, input_html: { value: url }
+
+      - title = t('shared.transparency.survey_answers.form.title')
+
+      .row
+        .col-12
+          %h4.text-center
+            = title
+
+      .row.justify-content-center
+
+        .col-4.col-md-12.mt-4.text-center
+
+          - collection = transparency_survey_answer_options
+
+          = f.collection_radio_buttons(:answer, collection, :last, :first) do |b|
+
+            = b.label('data-input': 'icon_survey') { image_tag("views/transparency/survey_answer/#{b.value}.png", alt: b.text, title: b.text, class: 'mr-2 ml-2', role: 'button')}
+
+            = b.radio_button('class': 'content-hidden')
+
+            %p.small.mr-2.ml-2
+              = b.text
+
+          - collapsed_class = collapsed ? 'collapse' : ''
+
+      .row
+        .col-12.text-center
+          = link_to transparency_tickets_stats_evaluations_path(evaluation_type: 'transparency'), class: '' do
+            = t('.results')
+
+      .row.justify-content-center
+
+        .col-lg-8.col-12
+          .survey-answer-complements{'data-content': 'transparency-survey-answers-complements', class: collapsed_class }
+
+            %hr
+
+            = f.input :email
+
+            = f.input :message, input_html: { rows: 4 }
+
+            %hr
+
+            .row.mt-4
+              .col-6
+                = link_to t('commands.cancel'), '#!', class: 'btn btn-link', 'data-input': 'cancel-button'
+              .col-6
+                = f.submit t('commands.send'), class: 'btn btn-success w-100'

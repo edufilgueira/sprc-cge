@@ -1,0 +1,64 @@
+es:
+  shared:
+    transparency:
+      revenues:
+        registered_revenues:
+
+          index:
+            title: Ingresos lanzados 
+            description: |
+              <p>Acompañe aquí el Ingreso Lanzado, registrada después de identificado el contribuyente, el evento que genera la obligación y el valor que debe ser pago. </p>
+              <p>Los Ingresos Lanzados disponibles se refieren al Impuesto sobre Propiedad de Vehículos Automotores - IPVA. Actualmente, hay viabilidad para registro contable y divulgación en las Páginas de Transparencia de los valores contabilizados y recaudados relativos al IPVA. En cuanto a los demás tributos del Estado, considerando la sistemática tributaria y contable en vigor, se concluye por la inviabilidad de presentación de sus ingresos contabilizados. La Secretaría de Hacienda del Estado de Ceará aguarda definición de norma a nivel nacional para saber qué procedimientos contables serán necesarios para disponibilizar los demás ingresos tributarios contabilizados. A partir de la definición de la metodología general, la SEFAZ y la CGE harán todos los esfuerzos necesarios para dar cumplimiento integral a la sistemática que será definida.</p>
+
+            footer: |
+              <p>'Restituições da Receita com IPVA' se refere à devolução ao contribuinte de valores pagos a maior ou em função da perda de posse do veículo.</p>
+              <p>'Deduções da Receita com IPVA' são deduções previstas em Lei de valores destinados ao Fundeb (Fundo de Manutenção e Desenvolvimento da Educação Básica e de Valorização dos Profissionais da Educação). Os valores aqui divulgados são brutos, sem deduções referentes às transferências aos municípios.</p>
+
+            source: |
+              <p><strong>Fuente de datos:</strong></p>
+              <p>Secretaría de Hacienda - SEFAZ</p>
+              <p>Sistema de Gestíon Gubernamental por Resultados - S2GPR</p>
+
+            chart:
+              valor_lancado:
+                unit: 'Suma de ls valores de los ingresos lanzados: R$'
+                title: 'Valores en el mes'
+
+                month:
+                  title: Suma de los valores de los ingresos lanzados por mes 
+                revenue:
+                  title: Suma de los valores de los ingresos lanzados por tipo 
+
+            charts:
+              tabs:
+                month:
+                  title: Por mes
+                revenue:
+                  title: Por tipo
+                history:
+                  title: Histórico del año 
+
+            counts:
+              valor_lancado:
+                title: 'Valor total de los ingresos lanzados'
+
+            filters:
+              title: Ingresos lanzados
+
+              counts:
+                transfers_sum:
+                  valor_lancado:
+                    title: Valor de los ingresos lanzados
+
+            table:
+              summary: Lista de ingresos lanzados del Poder Ejecutivo 
+              header:
+                title: Descripción 
+                valor_lancado: Valor lanzado 
+                valor_acumulado: Valor acumulado hasta el mes 
+
+              total: Total
+
+            stats:
+              title: Principales numeros relacionados con los ingresos lanzados 
+              valor_lancado: 'Valor en <strong>%{date}</strong>'

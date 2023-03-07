@@ -1,0 +1,16 @@
+%h2.card-subtitle.mb-3.h4
+  = link_to t('.title'), '#!', data: { toggle: :collapse, target: "#departments" }, aria: { expanded: :true, controls: :departments }
+
+#departments.row.collapse.show
+  - departments = stats_ticket.data[:departments]
+
+  - if departments.blank?
+    .col-12.text-center
+      %em= t('.no_content')
+
+  - else
+    - series_data_keys = stats_department_show_serie_keys(departments)
+    - series_data_values = stats_department_show_serie_values(departments)
+    - series_data_percentages = stats_department_show_serie_percentages(departments)
+
+    .chart{ data: { "chart_departments_#{ticket_type}": '', title: t(".#{ticket_type}.name"), unit: t(".#{ticket_type}.unit"), series_name: [t('.series_name')] , series_data_keys: [series_data_keys], series_data_values: [series_data_values], series_data_percentages: [series_data_percentages], 'show-percentage': true } }

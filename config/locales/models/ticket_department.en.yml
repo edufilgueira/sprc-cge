@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    attributes:
+      ticket_department:
+        description: 'This will be the visible content by the selected internal area:'
+        note: 'Observation:'
+        deadline_ends_at: 'Deadline for an answer from the internal area:'
+        justification: 'Inform the reason:'
+        forward_justification: 'Reason:'
+        considerations: 'Considerations:'
+
+  ticket_department:
+    deadline:
+      undefined: No deadline

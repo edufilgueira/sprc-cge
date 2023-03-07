@@ -1,0 +1,23 @@
+.row{id: "occurrence-#{occurrence.id}"}
+
+  .col-12.col-md-1.no-print
+
+    .float-left
+
+      .bg-faded.rounded-circle.p-1
+
+        %i.fa.fa-pencil.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+      %p
+        = content_sanitizer(occurrence.description)
+
+      %small
+        %em
+          - date = l(occurrence.created_at, format: :shorter)
+          = t('.title', title: occurrence.created_by_title, date: date)
+
+
+%hr{'aria-hidden': 'true'}

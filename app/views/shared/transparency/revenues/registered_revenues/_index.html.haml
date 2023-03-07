@@ -1,0 +1,70 @@
+= cache(cache_key) do
+
+  = render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+  - # Marcamos essa regiao como partial do remote-content para que ela seja
+  - # inserida em outra parte do DOM! (ao lado do filtro anual, neste caso.)
+
+  .remote-content-partial{'data-remote-content-partial-target': 'totals'}
+
+    .content-with-label
+      - label = raw(t('.counts.valor_lancado.title'))
+      - value = number_to_currency(nodes_totals[:valor_lancado])
+
+      %label.content-label{'aria-label': label, title: label}
+        = label
+
+      .content-value{'aria-label': value, title: value}
+        .h3.text-muted
+          = value
+
+  .my-4
+
+    .fa.fa-spin.fa-refresh.m-1.text-muted.float-right{'data-remote-content-loader': ''}
+
+    - header = [:title, { id: :valor_lancado, html_class: 'text-right' }, { id: :valor_acumulado, html_class: 'text-right' }]
+
+    - table_locale = t('.table')
+
+    - load_children_nodes = false
+
+    = render 'shared/components/remote_table', header: header, has_footer: true, collection: nodes, sort_columns: sort_columns, table_locale: table_locale, table_html: { class: 'treeview small', id: 'registered_revenues' }, view_options: { pagination: false, count: false } do |node|
+
+      - # footer
+      - if node.nil?
+
+        %tr.font-weight-bold
+          %td.border-0
+            = table_locale[:total].upcase
+          %td.border-0.text-right
+            = number_to_currency(nodes_totals[:valor_lancado])
+          %td.border-0.text-right
+
+      - else
+
+        - node_id = node[:id]
+        - node_type = node[:type]
+        - node_path = "#{node_type}/#{node_id}"
+
+        - node_children_url = url_for(action: 'index', controller: 'revenues/registered_revenues', params: params.permit!.to_h.merge({node_path: node_path}))
+
+        - node_level = 0
+
+        - node_opened = 'false'
+
+        %tr{ data: { 'node': node_path, 'node-children-url': node_children_url, 'node-level': node_level, 'node-opened': node_opened } }
+
+          %td
+            .treeview-icons
+              .fa.fa-spin.fa-refresh.mx-1.loading
+              .fa.fa-chevron-right.closed
+              .fa.fa-chevron-down.opened
+
+            .treeview-node
+              - title = node[:title].upcase
+              = filtered_highlighted(title)
+
+          %td.text-right
+            = number_to_currency(node[:valor_lancado])
+          %td.text-right
+            = number_to_currency(node[:valor_acumulado])

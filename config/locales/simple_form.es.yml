@@ -1,0 +1,37 @@
+es:
+  simple_form:
+    "yes": 'Sí'
+    "no": 'No'
+    required:
+      text: 'obligatório'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Algunos errores se han encontrado, por favor verifique:"
+    # Labels and hints examples
+    # labels:
+    #   password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail para efetuar o sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   username: 'User name to sign in.'
+    #   password: 'No special characters, please.'
+
+    file:
+      choose: 'Elija el archivo'
+      remove: 'Remover el archivo'
+      remove_nested: 'Remover'
+
+    hints:
+      schedule:
+        cron_syntax_frequency: >
+                              Secuencia: *(minuto) *(hora) *(dia do mês) *(mês) *(dia da semana).</br>
+                              Ejemplos:</br>
+                              '0 14 * * *' = Diário a las 2:00pm</br>
+                              '0 8 * * 0' = Semanal a los domingos às 8:00am</br>
+                              '0 2 5 * *' = Mensal día 5 a las 2:00am</br>

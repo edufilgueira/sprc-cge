@@ -1,0 +1,59 @@
+// variáveis disponíveis em:
+// https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss
+
+$body-bg:                #eeeeee;
+
+$brand-primary:          #3489d1;
+$brand-success:          #5cb85c;
+$brand-info:             #4585cb;
+$brand-warning:          #ecbe3a;
+$brand-danger:           #d20911;
+
+$app-green:              #008640;
+$app-green-darken:       #28774b;
+$app-green-darken-10:    darken($app-green, 10);
+
+$app-orange:             #fb6b32;
+$app-orange-darken:      #ED5B37;
+
+$app-yellow:             #ffbd00;
+
+$app-salmon-light:       #fee1d6;
+
+$navbar-inverse-color:   rgba(255, 255, 255, 0.8);
+
+$navbar-inverse-link-hover-color: red !default;
+
+$text-gray:              #4f4f4f;
+$text-gray-light:        #636c72;
+$text-gray-lighter:      #aaaaaa;
+$text-gray-dark:         #333333;
+
+$font-family-sans-serif: 'Open Sans', sans-serif !default;
+
+$status-gray-light:      #eeeeee;
+$status-green-light:     #dff0d8;
+$status-blue-light:      #D9EDF7;
+$status-midblue-light:   #CBE5FE;
+$status-midred-light:    #FFCCCC;
+$status-red-light:       #ffcccc;
+$status-orange-light:    #ffb38a;
+$status-orange:          #f19d1f;
+$status-yellow-light:    #FFEFBF;
+$status-red-light:       #F19F9E;
+$status-gray-text:       #4f4f4f;
+$status-green-text:      #3c763d;
+$status-blue-text:       #31708f;
+$status-midblue-text:    #0D478A;
+$status-red-text:        #ff0000;
+$status-midred-text:     #8F0402;
+
+$input-black-text:       #464a4c;
+
+$border-default:         #dee2e6;
+
+$blockquote-green-light: #78C0A8;
+
+$table-gray-light:      rgb(251, 251, 251);
+$table-green-light:     rgb(229, 243, 236);
+$table-green-text:      #008640;

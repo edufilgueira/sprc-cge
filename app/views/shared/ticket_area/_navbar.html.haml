@@ -1,0 +1,38 @@
+= content_for(:navbar) do
+
+  %ul.navbar-nav.ml-auto
+
+    %li.nav-item
+      = link_to transparency_root_path, class: 'nav-link' do
+        %i.fa.fa-folder-open.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+        = t('.transparency_portal.title')
+
+    %li.nav-item
+      - active = (controller_path == 'ticket/tickets' && ticket.ticket_type == 'sou')
+
+      - active_class = (active ? 'active' : '')
+
+      = link_to new_user_session_path(ticket_type: :sou), class:  "nav-link #{active_class}" do
+        %i.fa.fa-comment.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+        = t('.tickets.title')
+        .navbar-active-indicator.hidden-md-down
+          %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+    %li.nav-item
+      - active = (controller_path == 'ticket/tickets' && ticket.ticket_type == 'sic')
+
+      - active_class = (active ? 'active' : '')
+
+      = link_to new_user_session_path(ticket_type: :sic), class:  "nav-link #{active_class}" do
+        %i.fa.fa-info-circle.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+        = t('.information_access.title')
+        .navbar-active-indicator.hidden-md-down
+          %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+    %li.nav-item
+
+      = link_to destroy_ticket_session_path, method: :delete, class: 'nav-link' do
+        %i.fa.fa-sign-out.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+        = t('.logout.title')
+
+= render 'shared/navbar'

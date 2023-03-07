@@ -1,0 +1,10 @@
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t(".title")
+
+- stats_url = transparency_constructions_daes_path(show_stats: true)
+
+= render 'shared/transparency/index', transparency_id: :constructions_daes, stats_type: :month, stats_url: stats_url, base_locale: t('.')
+
+#anchor-map

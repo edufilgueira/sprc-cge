@@ -1,0 +1,11 @@
+en:
+  shared:
+    pages:
+
+      attachments:
+        title: Attachments
+        options:
+          blank: All
+        filters:
+          year: Search by availability year
+          title: Search by subject

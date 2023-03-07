@@ -1,0 +1,35 @@
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+= content_for :transparency_title, t('.transparency_title')
+= content_for :transparency_description, t('.transparency_description')
+
+%h2.sr-only
+  = t('.title')
+
+= render 'how'
+
+= render 'general'
+
+.card-deck
+  = render 'publications'
+
+  = render 'sou_intro'
+
+%br
+
+
+= render 'events'
+
+= render 'sous'
+
+%hr{'aria-hidden': 'true'}
+
+- # CGE solicitou para não exibir manifestações públicas
+- #= render 'transparency/shared/ticket_list', ticket_type: 'sou'
+
+= render 'stats'
+
+= render 'stats_evaluations'
+
+
+= render 'platform/home/service_channels'

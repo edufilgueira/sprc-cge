@@ -1,0 +1,12 @@
+- ticket_show_path = operator_ticket_path(ticket)
+
+%td
+  = link_to ticket_show_path, title: info_details(ticket)  do
+    -if can?(:view_user_info, ticket)
+      - if ticket.name.present?
+        = highlight(ticket.name.truncate(30), params[:search])
+        = highlight("(#{ticket.social_name.truncate(30)})", params[:search]) if ticket.social_name.present?
+      - else
+        %em= t('ticket.anonymous.title')
+    - else
+      %em= t('ticket.user_info_private')

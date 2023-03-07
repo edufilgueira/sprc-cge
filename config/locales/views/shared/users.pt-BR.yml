@@ -1,0 +1,69 @@
+pt-BR:
+  shared:
+    users:
+
+      notification_role:
+        roles:
+          admin: &default_roles
+            new_ticket:
+              title: Nova Manifestação/Solicitação
+              description: Usuário é notificado sobre um novo chamado ou solicitação que precisa atuar
+            deadline:
+              title: Prazos
+              description: O usuário é notificado quando um prazo de uma demanda que precisa de sua atuação é alterado ou está próximo de se encerrar
+            transfer:
+              title: Transferências
+              description: O usuário é notificado quando o chamado ou solicitação é transferido
+            share:
+              title: Compartilhamentos
+              description: O usuário é notificado quando o chamado ou solicitação é compartilhada
+            referral:
+              title: Encaminhamentos
+              description: O usuário é notificado quando o chamado ou solicitação é encaminhada
+            invalidate:
+              title: Invalidações
+              description: O usuário administrativo é notificado se chamados em que tenha atuação foram invalidados
+            appeal:
+              title: Recursos
+              description: O usuário administrativo é notificado quando uma solicitação de informação tem recursos solicitados
+            reopen:
+              title: Reaberturas
+              description: O usuário administrativo é notificado quando uma manifestação tem reabertura solicitada
+            extension:
+              title: Extensão de prazo
+              description: O usuário administrativo é notificado quando uma solicitação de informação ou manifestação de ouvidoria passa por extensão de prazo
+            answer:
+              title: Respostas
+              description: O usuário administrativo é notificado quando uma resposta de alguma demanda em que está envolvido é dada
+            user_comment:
+              title: Comentários do cidadão
+              description: O usuário administrativo é notificado quando o cidadão faz um comentário
+            internal_comment:
+              title: Comentários internos
+              description: O usuário administrativo é notificado quando há um comentário interno em uma demanda em que está envolvido
+            attendance_allocation:
+              title: Alocação para atendente 155
+              description: Quando uma demanda é sinalizada para ser retornada pelo atendimento 155, o sistema notifica os perfis administrativos que estão envolvidos nesta demanda
+            change_ticket_type:
+              title: Mudança de tipo
+              description: O usuário administrativo é notificado quando há uma mudança de tipo em uma demanda em que ele está envolvido
+            satisfaction_survey:
+              title: Pesquisa de Satisfação do Atendimento da Ouvidoria ou do SIC
+              description: O usuário será notificado dois dias após receber uma resposta final para participar da pesquisa de satisfação para avaliar o atendimento da Ouvidoria ou do SIC
+          operator:
+            <<: *default_roles
+          user:
+            <<: *default_roles
+            user_comment:
+              title: Comentários do operador
+              description: O usuário é notificado quando o operador faz um comentário
+
+      notification_roles_form:
+        notifications: Notificações
+        email: E-mail e sistema
+        system: Apenas sistema
+        none: Nenhum
+        empty: Este perfil não possui regras de notificações
+
+      show_notification_roles:
+        empty: Este perfil não possui regras de notificações

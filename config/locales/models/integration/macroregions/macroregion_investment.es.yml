@@ -1,0 +1,22 @@
+es:
+  activerecord:
+    attributes:
+      integration/macroregions/macroregion_investiment:
+        ano_exercicio: 'Año'
+        codigo_poder: 'Código del poder'
+        descricao_poder: 'Poder'
+        codigo_regiao: 'Código de la región'
+        descricao_regiao: 'Macrorregión'
+        valor_lei: 'Presupuesto Inicial'
+        valor_lei_creditos: 'Presupuesto Atualizado'
+        valor_empenhado: 'Valor Empeñado'
+        valor_pago: 'Valor Pago'
+        perc_empenho: '% Empeño'
+        perc_pago: '% Pago'
+        perc_pago_calculated: '% Pago'
+
+  integration/macroregions:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Bienes Raíces %{month}-%{year}'

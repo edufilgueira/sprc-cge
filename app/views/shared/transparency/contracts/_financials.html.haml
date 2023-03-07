@@ -1,0 +1,38 @@
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = Integration::Contracts::Financial.model_name.human(count: 2)
+
+      .card-block
+        - total_financials = Integration::Contracts::Financial.where(isn_sic: contract.isn_sic).count
+
+        .remote-content{'data-remote-content': 'financials', 'data-url': transparency_contracts_financials_path(id: contract)}
+
+          .row
+            .col-12.text-center{'data-loading': 'spinner'}
+              %i.fa.fa-spinner.fa-spin.fa-2x.p-3{'aria-hidden': 'true'}
+
+          .remote-content-result{'data-remote-content-result': 'financials'}
+
+        .text-center
+          - if total_financials > 20
+            - xlsx = download_transparency_contracts_financial_url(id: contract, format: :xlsx)
+            - csv = download_transparency_contracts_financial_url(id: contract, format: :csv)
+
+            = link_to xlsx, class: 'btn btn-link' do
+              %small
+                = t('.download.xlsx')
+
+            = link_to csv, class: 'pl-1 btn btn-link' do
+              %small
+                = t('.download.csv')
+
+
+
+

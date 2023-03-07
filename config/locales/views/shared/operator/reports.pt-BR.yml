@@ -1,0 +1,47 @@
+pt-BR:
+
+  shared:
+
+    operator:
+
+      reports:
+
+        report_file_info:
+          title: Informações do arquivo
+          file:
+            size: Tamanho
+            total: Total
+            created_at: Criado em
+
+        report_filters:
+          title: Filtros considerados
+          filters:
+            none: Nenhum filtro definido.
+            ticket_type: Categoria da demanda
+            sou_type: Tipo da manifestação
+            city: Município
+            state: Estado
+            used_input: Meio de entrada
+            other_organs: Outros poderes
+            expired: Somente vencidos
+            organ: Órgão responsável
+            rede_ouvir_scope: Apenas rede ouvir
+            confirmed_at: Período
+            budget_program: Programa orçamentário
+            topic: Assunto
+            subtopic: Subassunto
+            deadline: Prazo
+            departments_deadline: Prazo da área interna
+            priority: Somente urgentes
+            finalized: Exibir finalizados
+            internal_status: Situação
+            search: Palavra-chave
+            denunciation: Somente denúncias
+            subnet: Sub-rede
+            parent_protocol: Protocolo
+            department: Unidade
+            sub_department: Subunidade
+            service_type: Tipo de serviço
+            data_scope: Exibir dados
+            sheets: Relatórios
+            answer_type: Tipo de resposta

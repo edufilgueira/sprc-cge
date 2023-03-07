@@ -1,0 +1,35 @@
+en:
+  shared:
+    users:
+
+      notification_role:
+        roles:
+          admin: &default_roles
+            new_ticket: New manifestation/request
+            deadline: Deadlines
+            transfer: Transfers
+            share: Sharings
+            referral: Referrals
+            invalidate: Invalidations
+            appeal: Appeal
+            reopen: Reopen
+            extension: Extension
+            answer: Answers
+            user_comment: Citizen comments
+            internal_comment: Internal comments
+            attendance_allocation: 155 assigned attendant
+          operator:
+            <<: *default_roles
+          user:
+            <<: *default_roles
+            user_comment: Operator comments
+
+      notification_roles_form:
+        notifications: Notifications
+        email: Email and system
+        system: System only
+        none: None
+        empty: This profile has no notification rules
+
+      show_notification_roles:
+        empty: This profile has no notification rules

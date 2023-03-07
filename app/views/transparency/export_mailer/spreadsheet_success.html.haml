@@ -1,0 +1,10 @@
+%h1.text-muted
+  = t('.title')
+
+%p.text-muted
+  = t('.description', title: @title, expiration: @expiration)
+
+%p.text-muted
+  = raw t('.link', url: @url)
+
+%br/

@@ -1,0 +1,7 @@
+en:
+  transparency:
+    expenses:
+      npds:
+        index:
+          title: Financial Programming Notes
+          description: 'Here you can consult information of the financial programming notes by searching by period, management unit, creditor name.'

@@ -1,0 +1,10 @@
+es:
+  activerecord:
+    attributes:
+      integration/supports/axis:
+        codigo_eixo: Código del eje
+        descricao_eixo: Descripción del eje
+
+  axis:
+    select:
+      all: Todos los ejes

@@ -1,0 +1,71 @@
+.card-filters.filter-bar{'data-filter-bar': 'purchases'}
+
+  = form_for transparency_purchases_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row.mt-3
+      .col-12.col-lg-4
+        - # TODO: ajax
+        - options = options_for_select(Integration::Supports::ManagementUnit.pluck(:titulo, :id), params[:manager_id])
+
+        = label_tag(:manager_id, Integration::Purchases::Purchase.human_attribute_name(:manager_id))
+        = select_tag(:manager_id, options, include_blank: t('messages.filters.select.all.female'))
+
+      .col-12.col-lg-4
+        = label_tag(:data_publicacao, Integration::Purchases::Purchase.human_attribute_name(:data_publicacao))
+
+        = text_field_tag(:data_publicacao, nil, data: { input: 'daterangepicker' }, class: 'form-control w-100')
+
+      .col-12.col-lg-4
+        = label_tag(:data_finalizada, Integration::Purchases::Purchase.human_attribute_name(:data_finalizada))
+
+        = text_field_tag(:data_finalizada, params[:data_finalizada], data: { input: 'daterangepicker' }, class: 'form-control w-100')
+
+    .row.mt-3
+      .col-12.col-lg-4
+        - select_options = transparency_select_options_from_model(Integration::Purchases::Purchase, :sistematica_aquisicao)
+        - options = options_for_select(select_options, params[:sistematica_aquisicao])
+
+        = label_tag(:sistematica_aquisicao, Integration::Purchases::Purchase.human_attribute_name(:sistematica_aquisicao))
+        = select_tag(:sistematica_aquisicao, options, include_blank: t('messages.filters.select.all.male'))
+
+      .col-12.col-lg-4
+        - select_options = transparency_select_options_from_model(Integration::Purchases::Purchase, :forma_aquisicao)
+        - options = options_for_select(select_options, params[:forma_aquisicao])
+
+        = label_tag(:forma_aquisicao, Integration::Purchases::Purchase.human_attribute_name(:forma_aquisicao))
+        = select_tag(:forma_aquisicao, options, include_blank: t('messages.filters.select.all.male'))
+
+      .col-12.col-lg-4
+        - select_options = transparency_select_options_from_model(Integration::Purchases::Purchase, :natureza_aquisicao)
+        - options = options_for_select(select_options, params[:natureza_aquisicao])
+
+        = label_tag(:natureza_aquisicao, Integration::Purchases::Purchase.human_attribute_name(:natureza_aquisicao))
+        = select_tag(:natureza_aquisicao, options, include_blank: t('messages.filters.select.all.male'))
+
+    .row.mt-3
+      .col-12.col-lg-4
+        - select_options = transparency_select_options_from_model(Integration::Purchases::Purchase, :tipo_aquisicao)
+        - options = options_for_select(select_options, params[:tipo_aquisicao])
+
+        = label_tag(:tipo_aquisicao, Integration::Purchases::Purchase.human_attribute_name(:tipo_aquisicao))
+        = select_tag(:tipo_aquisicao, options, include_blank: t('messages.filters.select.all.male'))
+
+      .col-12.col-lg-8
+        - select_options = transparency_select_options_from_model(Integration::Purchases::Purchase, :nome_fornecedor)
+        - options = options_for_select(select_options, params[:nome_fornecedor])
+
+        = label_tag(:nome_fornecedor, Integration::Purchases::Purchase.human_attribute_name(:nome_fornecedor))
+        = select_tag(:nome_fornecedor, options, include_blank: t('messages.filters.select.all.male'))
+
+    .row.mt-3
+      .col-12.col-lg-9
+        = label_tag(:search, t('messages.filters.search.label'))
+        = text_field_tag(:search, params[:search], placeholder: t('.search_placeholder') ,class: 'form-control w-100 mb-3', 'data-filter-bar-ignore-submit-on-enter': 'true')
+
+      .col-12.col-lg-3
+
+        - # forma simples de align-bottom no botão de busca
+        .mt-4.pt-2
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'

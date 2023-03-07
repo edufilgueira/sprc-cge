@@ -1,0 +1,30 @@
+- content_for :title, t('.title')
+-# content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :toolbar, render('shared/application/inner_navbar', active: 'login')
+
+-# Formulário para definição de senha na confirmação de conta
+= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :patch }) do |f|
+  = hidden_field_tag :confirmation_token, params[:confirmation_token]
+
+  .row.justify-content-center
+
+    .col-xl-6.col-12
+
+      .card.card-custom.mt-0.h-100
+        .card-header
+          %h2.card-title= t('.title')
+
+        .card-block.pb-0
+          %p.mb-0= t('.instructions')
+
+        .card-block.pb-0
+          = f.input :password, input_html: { autofocus: true }
+          = f.input :password_confirmation
+
+        .card-block
+          .row
+            .col-lg-4.col-12.pb-4.pb-lg-0
+              = link_to t('.back'), new_session_path(resource), class: 'btn btn-outline-primary btn-block'
+
+            .col-lg-8.col-12
+              = f.submit t('.submit'), class: 'btn btn-primary btn-block'

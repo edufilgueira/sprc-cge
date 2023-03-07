@@ -1,0 +1,70 @@
+- content_for :title, title
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+= content_for :javascript, javascript_include_tag('views/shared/tickets/index')
+
+.row.mb-4
+
+  .col-lg-9.col-12
+
+    %h2.mt-4
+      = title
+
+.card.card-custom
+
+  .card-header
+
+    %h3.card-title.font-weight-bold.border-bottom.pb-3
+      = t('.filters.subtitle.label')
+
+  .card-block
+    = form_for operator_generated_lists_path, method: :get do |f|
+      - # 'data-filter': 'permanent' é importante para que o 'Limpar filtros' não
+      - # apague o valor desse campo e vá para a área errada de chamados.
+      = hidden_field_tag(:ticket_type, ticket_type, 'data-filter': 'permanent')
+
+      .card-filters
+
+        .row
+          .col-12.col-md-3
+            %label
+              = t('.filters.code.label')
+
+            = text_field_tag(:code, params[:code], placeholder: t('.filters.code.placeholder'), class: 'form-control w-100 mb-3', title: t('.filters.code.placeholder'))
+
+          .col-12.col-md-3
+            - options = options_for_select(samples_all_status, params[:status])
+            = label_tag :status, t('.filters.status.label')
+            = select_tag :status, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.female') }
+
+          .col-12.col-md-6
+            %label
+              = t('.filters.title.label')
+
+            = text_field_tag(:title, params[:title], placeholder: t('.filters.title.placeholder'), class: 'form-control w-100 mb-3', title: t('.filters.title.placeholder'))
+
+          .col-12.col-md-4
+            %label
+              = t('.filters.created_at.label')
+
+            .row
+              - filter_created_at = params[:created_at]
+              - if filter_created_at.present?
+                - filter_created_at_start = filter_created_at[:start]
+                - filter_created_at_end = filter_created_at[:end]
+
+              .col-12.col-md-6.mb-3
+                = text_field_tag('[created_at][start]', filter_created_at_start, placeholder: t('.filters.created_at.start.placeholder'),  class: 'form-control w-100 datetimepicker')
+
+              .col-12.col-md-6.mb-3
+                = text_field_tag('[created_at][end]', filter_created_at_end, placeholder: t('.filters.created_at.end.placeholder'), class: 'form-control w-100 datetimepicker')
+
+          .col-12.col-md-2
+            = f.submit t('.filters.search'), class: 'btn btn-orange btn-block label-margin'
+            
+    - if list_samplings.any?
+      .mt-3
+        = render 'table_samples', list_samplings: list_samplings
+    - else
+      .row
+        %i.col-md-12.text-center
+          = t('shared.tickets.index.empty')

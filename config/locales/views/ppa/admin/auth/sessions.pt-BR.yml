@@ -1,0 +1,14 @@
+pt-BR:
+  ppa:
+    admin:
+      auth:
+        sessions:
+          new:
+            title: Acesso - Administradores PPA
+
+            back: Voltar
+            submit: Acessar
+
+            actions:
+              confirmation_instructions: Reenviar instruções de confirmação de perfil
+              forgot_password: Esqueceu sua senha?

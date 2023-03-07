@@ -1,0 +1,11 @@
+= javascript_include_tag(javascript)
+
+#list-theme.list-group{role: 'tablist'}
+  .list-group
+    - @available_themes.each do |theme|
+      %a.list-group-item.list-group-item-action.item-theme{ href: "#", theme_id: theme.id }
+        = theme.name
+
+    - if @available_themes.count.zero?
+      %strong
+        = t('.all_themes_rated')

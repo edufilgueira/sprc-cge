@@ -1,0 +1,21 @@
+es:
+  activerecord:
+    attributes:
+      integration/results/strategic_indicator:
+        eixo: Eje
+        resultado: Resultado
+        indicador: Indicador
+        unidade: Unidad
+        sigla_orgao: Sigla del órgano  
+        orgao: Órgano/Secretaría
+        valores_realizados: Valores realizados
+        valores_atuais: Valores actuales
+        organ_title: Órgano/Secretaría
+        axis_title: Eje
+
+  integration/results/strategic_indicator:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Indicadores estratégicos %{month}-%{year}'
+          short_title: 'Ind. estratégicos %{month}-%{year}'

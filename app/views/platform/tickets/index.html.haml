@@ -1,0 +1,54 @@
+- content_for :title, t(".#{ticket_type}.title")
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+= content_for :javascript, javascript_include_tag('views/shared/tickets/index')
+
+.row.mb-4
+
+  .col-12
+
+    %h2.mt-4.button-title
+      = t(".#{ticket_type}.title")
+
+      - if can?(:create, Ticket)
+        - new_ticket_path = send("new_#{namespace}_ticket_path", { ticket_type: ticket_type })
+
+        = link_to t(".#{ticket_type}.commands.new"), link_to_new_ticket(ticket_type: ticket_type), class: 'btn btn-tertiary pull-right mt-3 mt-md-0'
+
+    %hr{'aria-hidden': 'true'}
+
+    %label
+      = t(".#{ticket_type}.description")
+
+.card
+
+  .card-header.border-0.bg-transparent.pb-0
+
+    %h3.card-title.font-weight-bold.border-bottom.pb-3
+      = t('.filters')
+
+  .card-block.pt-0
+
+    = form_for platform_tickets_path, method: :get do |f|
+
+      - # 'data-filter': 'permanent' é importante para que o 'Limpar filtros' não
+      - # apague o valor desse campo e vá para a área errada de chamados.
+      = hidden_field_tag(:ticket_type, ticket_type, 'data-filter': 'permanent')
+
+      = render 'shared/tickets/index/filters', namespace: :platform, f: f
+
+      .hidden-xs-up{'aria-hidden': 'true'}
+        - # sem esse submit o form não está submetendo com o <enter> no input do search
+        = f.submit
+
+
+  .card-block
+
+    - if tickets.present?
+      = render 'table', tickets: tickets
+
+    - else
+
+      .row
+
+        %i.col-md-12.text-center
+          = t('shared.tickets.index.empty')

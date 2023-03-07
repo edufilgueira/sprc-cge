@@ -1,0 +1,42 @@
+.no-print
+
+  = simple_form_for new_comment, method: :patch, url: approve_operator_ticket_invalidation_path(ticket, ticket_log) do |f|
+
+    = f.input :ticket_log, as: :hidden, input_html: { value: ticket_log.id }
+
+    .row.justify-content-center.mt-4
+      .col-xl-10.col-12
+
+        .alert.alert-success.alert-dismissible.fade.show{ role: 'alert' }
+
+          .mx-4.px-4
+
+            .row.text-center.justify-content-center
+              .h3
+                %p
+                  = "#{ticket.parent_protocol} - #{t('.title')}"
+
+            .row
+              .col-lg-12
+                %p.text-muted
+                  = t('.responsable', organ: ticket_log.responsible.organ_acronym)
+
+            .row
+              .col-lg-12
+                %p.text-muted
+                  = t('.justification')
+
+            .row
+              .col-lg-12
+                %p.text-muted.small
+                  = ticket_log.description
+
+            .row
+              .col-lg-12
+                = f.input :description, as: :text, label: t('.description'), input_html: { rows: 10 }
+
+            .row
+              .col-6
+                = f.submit t('.approve'), class: 'btn btn-success w-100'
+              .col-6
+                = f.submit t('.reject'), class: 'btn btn-danger w-100', formaction:  reject_operator_ticket_invalidation_path(ticket, ticket_log)

@@ -1,0 +1,9 @@
+es:
+  activerecord:
+    attributes:
+
+      holiday:
+        title: Nombre
+        day: Día
+        month: Mes
+        month_str: Mes

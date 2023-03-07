@@ -1,0 +1,143 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, npd.title
+
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = npd.title
+
+        .card-commands
+          = render 'shared/tickets/components/btn_print'
+
+      .card-block
+
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :exercicio)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :numero)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :numero_npd_ordinaria)
+
+        .row
+
+          .col-12.col-lg-4
+            - management_unit = (npd.management_unit.present?) ? :management_unit_title : :unidade_gestora
+            = content_with_label(npd, management_unit)
+
+          .col-12.col-lg-4
+            - executing_unit = (npd.executing_unit.present?) ? :executing_unit_title : :unidade_executora
+            = content_with_label(npd, executing_unit)
+
+          .col-12.col-lg-4
+            - nome_credor = (npd.creditor.present? ? :creditor_nome : :credor)
+            = content_with_label(npd, nome_credor)
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :data_emissao)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :data_atual)
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :valor)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :natureza)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :efeito)
+
+        .row
+          .col-12
+            = content_with_label(npd, :justificativa)
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(npd, :codigo_localidade_npd_ordinaria)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :codigo_retencao)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :numero_processo_administrativo_despesa)
+
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(npd, :codigo_localidade_npd_ordinaria)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :numero_nld_ordinaria)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :codigo_natureza_receita)
+
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(npd, :servico_bancario)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :banco_origem)
+
+          .col-12.col-lg-3
+            = content_with_label(npd, :agencia_origem)
+
+          .col-12.col-lg-1
+            = content_with_label(npd, :digito_agencia_origem)
+
+
+        .row
+          .col-12.col-lg-3
+            = content_with_label(npd, :conta_origem)
+
+          .col-12.col-lg-1
+            = content_with_label(npd, :digito_conta_origem)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :banco_pagamento)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :banco_beneficiario)
+
+        .row
+          .col-12.col-lg-3
+            = content_with_label(npd, :agencia_beneficiario)
+
+          .col-12.col-lg-1
+            = content_with_label(npd, :digito_agencia_beneficiario)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :conta_beneficiario)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :digito_conta_beneficiario)
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(npd, :status_movimento_bancario)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :data_retorno_remessa_bancaria)
+
+          .col-12.col-lg-4
+            = content_with_label(npd, :processo_judicial)
+

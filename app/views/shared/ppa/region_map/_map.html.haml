@@ -1,0 +1,42 @@
+- js_css_path = 'views/shared/ppa/region_map/map'
+
+- content_for :stylesheet, stylesheet_link_tag(js_css_path)
+- content_for :javascript, javascript_include_tag(js_css_path)
+
+.card.mt-4.mt-md-0{ 'aria-labelledby': 'ppa_regions' }
+  = simple_form_for(:ppa, url: ppa_root_path, method: :get, role: :search) do |f|
+    .card-block.pb-2
+      %h4.card-title.font-weight-bold
+        = t('.title')
+
+      .card-text
+        .row
+          .col-lg-12
+            = f.input :region_code,
+             collection: regions, as: :grouped_select,
+             group_method: :ordered_cities,
+             group_label_method: :name,
+             value_method: :region_code,
+             input_html: { data: { region_select: '' } },
+             label: t('.city')
+
+            .text-muted.small
+              .hidden-md-down
+                = t('.hint')
+              .hidden-md-up
+                = t('.hint_mobile')
+
+
+    .card-block.card-map-container.p-0
+      - regions.each do |region|
+        .card.card-map-region-info.collapse.pb-2{ data: { region_code: "r#{region.code}", region_slug: "#{region.name.parameterize}" } }
+          .card-block.pb-0
+            .card-title
+              %h6.card-title.font-weight-bold.text-green
+                = region.name
+
+
+      = render 'shared/ppa/region_map/svg'
+    .card-footer.bg-faded.border-bottom-only.border-3.border-orange
+
+      = link_to t(".see_more.#{plan.status}"), '', class: 'btn btn-tertiary btn-uppercase', data: { 'monitoring-link' => url_submit }# ver monitoring-link se pode substituir

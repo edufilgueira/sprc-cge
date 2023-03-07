@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    attributes:
+
+      answer_template:
+        name: Name
+        content: Content

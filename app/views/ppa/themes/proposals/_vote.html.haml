@@ -1,0 +1,14 @@
+- if proposal.votes.where(user: current_user).exists?
+  .alert.alert-success{ role: alert }
+    = raw t('.voted', count: proposal.votes.count)
+
+- elsif proposal.closed_for_voting?
+  .alert.alert-success{ role: alert }
+    = raw t('.closed', count: proposal.votes.count)
+
+- else
+  .row
+    .col-md-3.col-sm-12
+      - vote = proposal.votes.new
+      = form_for [:ppa, proposal, vote], url: ppa_proposal_votes_path(proposal, vote) do |form|
+        = form.submit t('.vote'), class: 'btn btn-block btn-tertiary p-3 mt-2'

@@ -1,0 +1,10 @@
+.toolbar.ml-auto
+  .row
+    .toolbar-content.col-md-6
+    .toolbar-content.col-md-6
+      .pt-4.pt-lg-0
+        = form_for operator_tickets_path, method: :get do
+
+          - organ = params[:organ_association].nil? ? current_user.organ.id : params[:organ_association]
+          - options = options_for_select(organ_and_organ_associations_for_select, organ)
+          = select_tag :organ_association, options, { onchange: 'submit();', include_blank: t('messages.filters.select.organ_association'), data: { input: 'filter_organ' } }

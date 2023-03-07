@@ -1,0 +1,32 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:name, :organ_name, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: topics, sort_columns: sort_columns, table_locale: table_locale do |topic|
+
+    - show_path = can?(:show, topic) ? admin_topic_path(topic) : '#!'
+
+    %tr
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(topic.name)
+
+      %td
+        = link_to show_path do
+          - if params[:organ].present?
+            = highlight(topic.organ_full_title, topic.organ_full_title)
+          - else
+            = filtered_highlighted(topic.organ_full_title)
+
+      %td
+        .float-right
+          - if can?(:edit, topic)
+            = link_to t('commands.edit'), edit_admin_topic_path(topic), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:destroy, topic)
+            = link_to t('commands.remove'), delete_admin_topic_path(topic), method: :get, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link hover-link float-left d-inline-block'

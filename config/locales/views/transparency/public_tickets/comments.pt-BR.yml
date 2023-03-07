@@ -1,0 +1,24 @@
+pt-BR:
+
+  transparency:
+
+    public_tickets:
+
+      comments:
+
+        index:
+          title: Comentários
+          no_results_found: Sem comentários
+        form:
+          commands:
+            save: Enviar
+          unauthorized: "Você precisa <a href='%{url}'>acessar seu perfil</a> para fazer comentários"
+
+        show:
+          title: Comentários
+
+        new:
+          title: Comentários
+
+        create:
+          title: Comentários

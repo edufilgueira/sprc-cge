@@ -1,0 +1,7 @@
+pt-BR:
+  transparency:
+    expenses:
+      dailies:
+        index:
+          title: Despesa com diárias
+          description: 'Consulte aqui as despesas com diárias, que são valores recebidos por servidores do Estado para custear despesas em viagens a serviço. Aqui é possível realizar a consulta filtrando por órgão, período ou beneficiário.'

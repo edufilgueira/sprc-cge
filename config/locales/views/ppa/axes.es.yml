@@ -1,0 +1,11 @@
+es:
+  ppa:
+    axes:
+      index:
+        themes: 'Temas:'
+        query: Búsqueda 
+        theme_id: Tema
+        all: Todos
+        filtered_results: 'Visualización de resultados filtrados por el término: "%{term}".'
+        clear: Limpiar filtros
+        title: "Bienio %{biennium} del PPA en la región %{region}"

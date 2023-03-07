@@ -1,0 +1,7 @@
+%p
+  = raw(t("shared.notifications.public_ticket.#{@action}.#{@ticket.ticket_type}.body", protocol: @ticket.protocol, url: @url_public_ticket))
+
+%p
+  = raw(t("shared.notifications.public_ticket.url_unfollow", url: @url_unfollow))
+
+%br/

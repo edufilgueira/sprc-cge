@@ -1,0 +1,10 @@
+.row
+  .col-12
+
+    - if stats.present?
+      = render 'shared/transparency/revenues_expenses/index/chart', chart_name: 'revenues_expenses', series_data: stats.data[:revenues_expenses]
+    - else
+      .text-center.mt-3
+        %small.text-muted.font-italic
+          = t('.empty')
+

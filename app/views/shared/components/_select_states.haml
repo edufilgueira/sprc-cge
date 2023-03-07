@@ -1,0 +1,13 @@
+- selected = params[field_name] if local_assigns[:selected].nil?
+
+.form-group
+  = label_tag field_name, class: 'form-control-label' do
+    = t('.label')
+    - if required
+      %abbr{title: t('simple_form.required.text') }
+        = t('simple_form.required.mark')
+
+  %i.fa.fa-spinner.fa-spin.fa-fw.hidden-xs-up{ 'aria-hidden': 'true', 'data-content': 'loading' }
+  - options = options_for_select(states_for_select, selected)
+  = select_tag field_name, options, { class: 'form-control state-select', include_blank: t('.select'), data: { input: 'state', url: api_v1_cities_path, 'cities-container': cities_container } }
+

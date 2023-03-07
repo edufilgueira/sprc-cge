@@ -1,0 +1,42 @@
+es:
+
+  shared:
+
+    operator:
+
+      reports:
+
+        form:
+
+          filters:
+            title: Filtros
+            ticket_type: Tipo
+            search:
+              title: Palabra clave 
+              label: Filtrar por protocolo, nombre, e-mail, documento o descripción
+            internal_status:
+              title: Situación
+              select: Todas
+            organ:
+              title: Órgano responsable
+              select: Todos
+            budget_program:
+              title: Programa presupuestario
+              select: Todos
+            topic:
+              title: Sujeto
+              select: Todos
+            subtopic:
+              title: Subassunto
+              select: Todos
+            deadline:
+              title: Plazo
+              select: Todos
+            confirmed_at:
+              label: Período
+              start: Inicio
+              end: Fin
+            expired: Sólo vencidos
+            priority: Sólo urgentes
+            finalized: Visualizar finalizados
+            denunciation: Sólo denuncias

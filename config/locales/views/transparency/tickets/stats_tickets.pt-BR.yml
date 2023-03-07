@@ -1,0 +1,10 @@
+pt-BR:
+  transparency:
+    tickets:
+      stats_tickets:
+
+        index:
+          title: Painéis estatísticos
+
+        show:
+          title: Estatísticas gerais

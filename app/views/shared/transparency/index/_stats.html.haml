@@ -1,0 +1,24 @@
+- # Partial compartilhada por ferramentas de transparência que possuem estatísticas
+= cache(stats_cache_key) do
+
+  - if stats.blank?
+
+    .remote-content-partial{'data-remote-content-partial-target': 'stats_files'}
+
+    %hr{'aria-hidden': true}
+
+    .text-muted.text-center
+      = t('messages.filters.no_results_found')
+
+  - else
+
+  
+
+    .remote-content-partial{'data-remote-content-partial-target': 'stats_files'}
+
+      .pt-lg-2.mt-2.text-lg-right.text-center
+        = render 'shared/transparency/download_links', paths: { xlsx: xlsx_download_path, csv: csv_download_path }
+
+    %hr{'aria-hidden': true}
+
+    = yield

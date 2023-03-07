@@ -1,0 +1,16 @@
+- if !has_privacy_statement_check?
+	.card.privacy_statement.text-justify
+		%h6
+			%i.fa.fa-info-circle.text-success
+			= t('.title')
+			
+		%label.small
+			= t('.description')
+		.row
+			.col-lg-12
+				= link_to t('.privacy'),  transparency_page_path('aviso-de-privacidade'), target: 'blank'
+
+		.row
+			.col-lg-12.mt-2.text-center
+				%a.btn.btn-sm.btn-primary.btn-privacy-grant.col-lg-4{href: '#', role: 'button' }
+					= t('.accept')

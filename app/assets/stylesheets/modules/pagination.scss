@@ -1,0 +1,47 @@
+@import 'base/variables';
+
+.pagination {
+  display: inline-block;
+  border-radius: 2px;
+  margin: 0 0 30px 0;
+
+  background: #fff;
+  box-shadow: 0px 1px 2px #ddd;
+
+  span {
+    float: left;
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    border-color: #ccc;
+  }
+
+  span.gap {
+    padding: 4px;
+  }
+
+  span.current {
+    background-color: $app-green;
+    border-color: $app-green;
+    color: white;
+    padding: 4px 12px;
+  }
+
+  span > a {
+    padding: 4px 12px;
+    display: block;
+
+    color: #999;
+  }
+
+  span:first-child {
+    border-left-width: 1px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+
+  span:last-child {
+    border-right-width: 1px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+}

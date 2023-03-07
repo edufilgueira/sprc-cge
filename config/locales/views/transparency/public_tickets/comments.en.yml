@@ -1,0 +1,24 @@
+en:
+
+  transparency:
+
+    public_tickets:
+
+      comments:
+
+        index:
+          title: Comments
+          no_results_found: No comments
+        form:
+          commands:
+            save: Send
+          unauthorized: "<a href='%{url}'>Sign in</a> to make a comment"
+
+        show:
+          title: Comments
+
+        new:
+          title: Comments
+
+        create:
+          title: Comments

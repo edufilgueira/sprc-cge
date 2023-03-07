@@ -1,0 +1,8 @@
+pt-BR:
+  shared:
+    sharings:
+      sharing:
+        empty: Nenhuma Ouvidoria setorial envolvida
+
+        link:
+          protocol: "%{protocol}"

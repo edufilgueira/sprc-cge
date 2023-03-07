@@ -1,0 +1,103 @@
+es:
+  activerecord:
+
+    attributes:
+      ticket_report:
+        title: Título del informe
+        filename: Nombre del adjunto
+        status: Situación
+        status_str: Situación
+        filters: Filtros considerados
+        report_type: Tipo de informe
+        user: Creado por
+        created_at: Creado en
+        total: Total considerados
+
+  ticket_report:
+    statuses:
+      preparing: Preparando
+      generating: Generando
+      error: Error
+      success: Finalizado
+
+
+    spreadsheet:
+      worksheets:
+        summary:
+          title: Sumario
+          header:
+            title: Ubicación
+            total: Total
+          infos:
+            title: Informaciones
+            ticket_report_title: 'Nombre del informe: %{value}'
+            created_at: 'Creado en: %{value}'
+            created_by: 'Creado por: %{value}'
+            email: 'Correo electrónico: %{value}'
+            organ: 'Órgano: %{value}'
+            operator_type: 'Tipo del operador: %{value}'
+            tickets_count: 'Nuevos registros: %{value}'
+            invalidated_count: 'Total de invalidados: %{value}'
+            invalidated_and_other_organs: 'Total de invalidados y de otros poderes: %{value}'
+            reopened_at: "Manifestaciones reabiertas: %{value}"
+            appealed_at: "Recursos de solicitación de información: %{value}"
+          filters:
+            title: Filtros
+            none: Nengún filtro seleccionado.
+
+        answer_classification:
+          header:
+            title: Clasificación
+            total: Total
+          title: Percepción después del procedimiento de investigación preliminar
+          nil: (Sin valor)
+
+        person_type:
+          header:
+            title: Perfil
+            total: Total
+          title: Tipo de solicitante
+          nil: (Sin valor)
+
+        used_input:
+          header:
+            title: Medio utilizado
+            total: Total
+          title: Medio de entrada utilizado
+          nil: (Sin valor)
+
+        answer_type:
+          header:
+            title: Tipo
+            total: Total
+          title: Preferencia de respuesta
+          nil: (Sin valor)
+
+        city:
+          header:
+            state: Provincia
+            city: Municipio
+            answer_address_neighborhood: Barrio
+            total: Total
+          title: Ubicación
+          nil: (Sin valor)
+
+        internal_status:
+          header:
+            title: Estatus
+            total: Total
+          title: Estatus
+          nil: (Sin valor)
+
+        status:
+          title: Situación
+          nil: (Sin valor)
+
+        items:
+          nil: (Sin valor)
+
+    filters:
+      ticket_type: Tipo
+      organ: Órgano
+
+

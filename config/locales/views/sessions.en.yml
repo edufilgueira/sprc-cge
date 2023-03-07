@@ -1,0 +1,73 @@
+en:
+
+  sessions:
+    form:
+      title: Access your profile
+      confirmation_instructions: Resend profile verification instructions
+      forgot: Forgot your password?
+      login:
+        title: Access your profile
+        action: Sign in
+        facebook: Sign in with Facebook
+
+      register:
+        action: Do not have a profile yet?
+
+      identified_login:
+        sou:
+          title: Manifestation without profile
+          description: Send a demonstration without having to have a profile, but informing your personal data.
+          action: Perform without profile manifestation
+        sic:
+          title: Request without profile
+          description: Send a Request without having to have a profile, but informing your personal data.
+          action: Requests without profile
+        denunciation:
+          title: Denunciation without profile
+          description: Send a Denunciation without having to have a profile, but informing your personal data.
+          action: Denunciation without profile
+
+      protocol_login:
+        sou:
+          title: Anonymous Manifestation
+          action: Register an anonymous manifestation
+          description: >
+            If you do not have a profile, you can send an anonymous request. No personal data will be requested.
+        sic:
+          title: Anonymous Manifestation
+          action: Register an anonymous manifestation
+          description: >
+            If you do not have a profile, you can send an anonymous request. No personal data will be requested.
+        denunciation:
+          title: Anonymous denunciation
+          action: Make anonymous denunciation
+          description: >
+            Please contact us anonymously. You can submit an anonymous denunciation.
+            You do not need to register or provide personal data.
+
+    new:
+      title: Access your profile
+
+      ticket_types:
+
+        sic:
+          title: New Request for Access to Information
+          description: 'To request access to information, you need to access the platform with your profile.'
+
+        sou:
+          title: New manifestation of Ombudsman
+          description: 'To open a manifestation in the Digital Ombudsman, you can access your profile, identify yourself without a profile or continue anonymously.'
+
+        denunciation:
+          title: New Ombudsman denunciation
+          description: 'To file a denunciation, you can access your profile, identify yourself without needing a profile, or continue anonymously.'
+    create:
+      title: Access your profile
+      ticket_types:
+        sou:
+          title: Nova manifestação de Ouvidoria
+          description: 'To open a manifestation in the Digital Ombudsman, you can access your profile, identify yourself without a profile or continue anonymously.'
+
+        denunciation:
+          title: New Ombudsman denunciation
+          description: 'To file a denunciation, you can access your profile, identify yourself without needing a profile, or continue anonymously.'

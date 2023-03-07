@@ -1,0 +1,40 @@
+pt-BR:
+
+  extensions:
+
+    edit:
+      title: "%{ticket_title} - Solicitação de prorrogação de prazo"
+      already_evaluate: A prorrogação de prazo já foi aprovada/reprovada.
+      justification: Justificativa
+      deadline:
+        title: Prazos e providências
+        remaining: Contagem regressiva para resposta
+        created_at: Data de registro
+        last_day: Prazo final de resposta
+        status: Situação atual
+      sou:
+        description:
+          title: Descrição da manifestação
+
+      sic:
+        description:
+          title: Descrição da solicitação
+
+    form:
+      justification: Considerações
+      commands:
+        approve: Aprovar
+        reject: Reprovar
+
+    approve:
+      done: Prorrogação de prazo aprovado
+
+    reject:
+      done: Prorrogação de prazo devolvido
+      error: Não foi possível avaliar esta prorrogação
+
+    show:
+      title: "%{ticket_title} - Solicitação de prorrogação de prazo"
+      rejected:
+        justification:
+          label: Motivo da reprovação

@@ -1,0 +1,83 @@
+#
+# Arquivo de localização principal para o layout ppa (@layouts/ppa.html.haml) e seus templates
+#
+
+pt-BR:
+  ppa:
+    admin:
+      title: Administração - Participação Cidadã - Ceará Transparente
+      description: Administração - Participação Cidadã - Ceará Transparente
+
+      revision:
+        :schedules:
+          new:
+            title: Adicionar Cronograma de Revisão
+          stages:
+            review_regional_guidelines: Revisão das Diretrizes Regionais
+            proposal_consolidation: Consolidação das Propostas
+            prioritization_regional_strategies: Priorização das Estratégias Regionais
+            disclosure_final_result: Divulgação do Resultado Final
+            process_evaluation: Avaliação do Processo
+
+          show:
+            title:  Visualizar Cronograma de Revisão
+            review_regional_guidelines: |
+              Etapa: Revisão das Diretrizes Regionais
+            proposal_consolidation: |
+              Etapa: Consolidação das Propostas
+            prioritization_regional_strategies: |
+              Etapa: Priorização das Estratégias Regionais
+            disclosure_final_result: |
+              Etapa: Divulgação do Resultado Final
+            process_evaluation: |
+              Etapa: Avaliação do Processo
+
+          edit:
+            title:  Editar Cronograma de Revisão
+
+          index:
+            title: Lista de Cronograma de Revisão
+            new: Novo Cronograma de Revisão
+            stages:
+              review_regional_guidelines: Revisão das Diretrizes Regionais
+              proposal_consolidation: Consolidação das Propostas
+              prioritization_regional_strategies: Priorização das Estratégias Regionais
+              disclosure_final_result: Divulgação do Resultado Final
+              process_evaluation: Avaliação do Processo
+
+          update:
+            done: Cronograma de Revisão cadastrado com sucesso!
+            error: Erro ao tentar cadastrar Cronograma!
+
+         
+  # navbar & layout
+  shared:
+    ppa:
+      admin:
+        toolbar:
+          user:
+            logout: Sair
+
+        navbar:
+          records:
+            title: Cadastros
+          plans:
+            title: Planos
+          proposal_themes:
+            title: Proposição Temática
+          administrators:
+            title: Administradores
+          votings:
+            title: Votações
+          revision_schedules:
+            title: Módulo Revisão
+            schedule: Cronograma
+          revision_export:
+            title: Exportar dados
+
+
+    # Ainda não foi necessário!
+    # # open graph
+    # og:
+    #   title: Participação Cidadã
+    #   description: Participação Cidadã

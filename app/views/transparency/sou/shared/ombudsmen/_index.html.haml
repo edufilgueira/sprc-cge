@@ -1,0 +1,39 @@
+- content_for :title, t(".#{kind}.title")
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+= form_for request.path, method: :get do |f|
+  .row
+    .col-12
+      .input-group.mb-3
+        = text_field_tag(:search, params[:search], id: 'ombudsmen_search', autofocus: true, class: 'form-control w-100 mb-3', placeholder: t('messages.filters.search.placeholder'))
+
+        .input-group-append
+          = f.submit t('commands.search'), class: 'btn btn-orange btn-block btn-search'
+
+- if resources.present?
+
+  - resources.each do |ombudsman|
+    .card.mb-4
+      .card-block
+        %h4.card-title
+          = highlight(ombudsman.title, params[:search])
+
+        %hr
+
+        .card-text
+          - attributes_list.each do |item|
+            %p
+              %strong
+                = Ombudsman.human_attribute_name(item)
+              = highlight(resource_value(ombudsman, item), params[:search])
+
+      .card-footer.bg-transparent.border-0
+        = link_to "https://www.google.com/maps/search/#{ombudsman.address}", class: 'text-green', target: '_blank' do
+          %i.fa.fa-map-o
+          = t('.map_view')
+
+  = paginate resources
+
+- else
+  .alert.alert-info
+    = t(".#{kind}.empty")

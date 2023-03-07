@@ -1,0 +1,195 @@
+pt-BR:
+
+  operator:
+
+    sou_evaluation_samples:
+
+      index:
+        title: Avaliação da Qualidade das Respostas de Ouvidoria
+        new: Registrar nova manifestação
+        filters: Filtros
+        sou:
+          title: Avaliação da qualidade das respostas de ouvidoria
+
+      table:
+        summary: Lista paginada com todos as manifestações
+        caption: Tabela contendo todos as manifestações de Ouvidorias
+        heads:
+          confirmed_at: Criado em
+          parent_protocol: Protocolo
+          sou_type: Tipo
+          organs: Órgão(s)
+          description: Descrição
+
+      new:
+        sou:
+          title: Nova Manifestação de Ouvidoria
+
+      create:
+        sou:
+          done: Amostra Gravada com sucesso
+
+      destroy:
+        sou:
+          done: Amostra Removida com sucesso
+
+      generated_lists:
+        title: Amostras Geradas - Ouvidoria
+
+        show:
+          title: Detalhes da Amostra
+
+          generated_by:
+            title: Gerado por
+            label: 'Gerado por :'
+
+          heads:
+            number: Número
+            status: Situação
+            amount: Quantidade
+            percentage: (%) Avaliado
+            created_at: Data
+
+          average:
+            title: 'Média do Órgão'
+            label: 'Média do Órgão: '
+
+          code:
+            title: 'Número'
+            label: 'Número: '
+
+          status:
+            title: 'Status'
+            label: 'Status: '
+            open: Aberto
+            in_progress: Em Andamento
+            completed: Concluído
+
+          date:
+            title: 'Data'
+            label: 'Data: '
+
+          percentage:
+            title: 'Percentual'
+            label: 'Percentual Avaliado: '
+
+          filters:
+            title: 'Filtros utilizados na consulta'
+            label: 'Filtros utilizados na consulta:'
+
+            period:
+              label: 'Período: '
+
+            sou_type:
+              label: 'Tipo de Manifestação: '
+
+            service_type:
+              label: 'Tipo de Serviço: '
+
+            answer_type:
+              label: 'Tipo de Resposta: '
+
+            percentage:
+              label: 'Percentual: '
+
+            topic:
+              label: 'Tópico: '
+
+            organ:
+              label: 'Orgão: '
+
+          sou_types:
+            complaint: Reclamação
+            denunciation: Denúncia
+            compliment: Elogio
+            suggestion: Sugestão
+            request: Solicitação
+            service: Serviço
+          answer_types:
+            default: Padrão
+            phone: Telefone
+            letter: Carta
+            email: Email
+            twitter: Twitter
+            facebook: Facebook
+            instagram: Instagram
+            presential: Presencial
+        
+        destroy:
+          done: Amostra Removida com sucesso
+
+        index:
+          filters:
+            subtitle:
+              label: Consulta de amostras
+
+            code:
+              label:  Número
+              placeholder:  Número da amostra
+
+            status:
+              label:  Status
+              placeholder:  Status da amostra
+
+              open: Aberto
+              completed: Concluído
+
+            created_at:
+              label: Período
+
+              start:
+                placeholder: Inicio
+
+              end:
+                placeholder: Fim
+
+            title:
+              label: Título da Amostra
+              placeholder: Descrição da Amostra
+
+            search:  Buscar
+
+          index:
+            title: 'Avaliação Interna da Ouvidoria /Amostras Geradas - Ouvidoria'
+
+        table_samples:
+          heads:
+            code: Número
+            status: Situação
+            amount: Quantidade
+            percentage: (%) Avaliado
+            created_at: Data
+            title: Título
+            action: Ação
+
+          status:
+            title: 'Status'
+            label: 'Status: '
+            open: Aberto
+            in_progress: Em Andamento
+            completed: Concluído
+
+        table_samples_details:
+          heads:
+            rated: Situação
+            sou_type: Tipo
+            protocol: Protocolo
+
+          sou_types:
+            complaint: Reclamação
+            denunciation: Denúncia
+            compliment: Elogio
+            suggestion: Sugestão
+            request: Solicitação
+            service: Serviço
+
+          rated:
+            true: Avaliado
+            false: Não Avaliado
+
+          status:
+            title: Status
+            label: Status da amostra
+            open: Aberto
+            in_progress: Em Andamento
+            completed: Finalizado

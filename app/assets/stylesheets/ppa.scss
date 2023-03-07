@@ -1,0 +1,16 @@
+/**
+ *
+ * Layout ppa main Cascading Style Sheet asset
+ * ----
+ */
+@import 'base';
+@import 'views/ppa/strategies_votes/vote_steps';
+@import 'views/home/index';
+
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1180px;
+    max-width: 100%;
+  }
+}

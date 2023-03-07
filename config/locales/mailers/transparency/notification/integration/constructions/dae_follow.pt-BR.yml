@@ -1,0 +1,41 @@
+pt-BR:
+  transparency:
+    notification:
+      integration:
+        constructions:
+          dae_follow:
+
+            subject: 'A obra que você segue foi atualizada'
+
+            body:
+              title: >
+                <p>Olá! O Ceará Transparente tem novidades. A obra que você segue foi atualizada. Veja o que foi atualizado abaixo:</p>
+
+              description: >
+                <hr>
+                <strong>Descrição da obra</strong>
+                <p>%{description}</p>
+                <hr>
+                <strong>Alterações</strong>
+
+              attribute_changed: >
+                <p> - %{name_changed}: de %{attr_origin} para %{attr_changed}</p>
+
+              links: >
+                <hr>
+                <p>Acesse esta <a href="%{dae_url}">obra</a> e veja mais detalhes. E para deixar de seguir esta obra clique <a href="%{unsubscribe_url}">aqui</a>.</p>
+
+              associations_changed:
+                photos:
+                  one: >
+                    <p> - 1 foto adicionada</p>
+                  other: >
+                    <p> - %{count} fotos adicionadas</p>
+
+
+                measurements:
+                  one: >
+                    <p> - 1 medição adicionada</p>
+                  other: >
+                    <p> - %{count} medições adicionadas</p>
+

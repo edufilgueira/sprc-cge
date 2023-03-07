@@ -1,0 +1,7 @@
+= simple_form_for [:operator, ticket_department] do |f|
+
+  = f.input :deadline_ends_at, as: :string, required: false, input_html: { class: 'col-4 datetimepicker' }
+
+  .row.pt-3
+    .col-12
+      = f.submit t('.submit'), class: 'btn btn-primary w-100'

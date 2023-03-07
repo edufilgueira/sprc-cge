@@ -1,0 +1,42 @@
+%section.col-lg-4.col-md-12.mb-5{'aria-labelledby': 'stats_tickets'}
+  .card.text-center
+    = link_to transparency_tickets_stats_tickets_path do
+
+      .card-img-top.mt-2
+        %i.fa.fa-area-chart{'aria-hidden': 'true'}
+
+      .card-block.py-0
+        %h4.card-title{id: 'stats_tickets'}
+          = t('.stats_tickets.title')
+
+        %p.card-text.text-muted
+          = t('.stats_tickets.text')
+
+%section.col-lg-4.col-md-12.mb-5{'aria-labelledby': 'public_sou_tickets'}
+  .card.text-center
+    = link_to transparency_public_tickets_path(ticket_type: :sou) do
+
+      .card-img-top.mt-2
+        %i.fa.fa-comment{'aria-hidden': 'true'}
+
+      .card-block.py-0
+        %h4.card-title{id: 'public_sou_tickets'}
+          = t('.public_tickets.sou.title')
+
+        %p.card-text.text-muted
+          = t('.public_tickets.sou.text')
+
+
+%section.col-lg-4.col-md-12.mb-5{'aria-labelledby': 'public_sic_tickets'}
+  .card.text-center
+    = link_to transparency_public_tickets_path(ticket_type: :sic) do
+
+      .card-img-top.mt-2
+        %i.fa.fa-info-circle{'aria-hidden': 'true'}
+
+      .card-block.py-0
+        %h4.card-title{id: 'public_sic_tickets'}
+          = t('.public_tickets.sic.title')
+
+        %p.card-text.text-muted
+          = t('.public_tickets.sic.text')

@@ -1,0 +1,36 @@
+pt-BR:
+  commands:
+    add: Adicionar
+    authorize: Autorizar
+    back_home: Voltar ao início
+    cancel: Cancelar
+    close: Fechar
+    config: Configurar
+    download: Baixar
+    edit: Editar
+    filter: 'Filtrar'
+    filter_reset: 'Limpar filtro'
+    hide: Esconder
+    more_details: Ver mais detalhes...
+    import: Importar
+    export: Exportar
+    print: Imprimir
+    remove: Remover
+    remove_confirm: Tem certeza que deseja remover?
+    remove_confirm_extension: Existe solicitação de prorrogação de prazo pendente, caso clique em OK a manifestação será finalizada e a solicitação de prorrogação será cancelada. Deseja finalizar a manifestação assim mesmo?
+    alert_public_ticket: ATENÇÃO! Ao clicar nessa opção, recomendamos resguardar informações pessoais na descrição da solicitação, pois as informações, dados ou documentos anexados no corpo da solicitação serão visíveis para todos cidadãos. Tal ação implica em consentimento do usuário nos termos da Lei Geral de Proteção de Dados
+    save: Gravar
+    search: Buscar
+    define_sample: Definir Amostra
+    see_more: Ver mais...
+    send: Enviar
+    show: Exibir
+    confirm: Confirmar
+    enable: Habilitar
+    disable: Desabilitar
+    enable_confirm: Tem certeza que deseja habilitar?
+    disable_confirm: Tem certeza que deseja desabilitar?
+
+    disabled:
+      _true: Desabilitado
+      _false: Habilitado

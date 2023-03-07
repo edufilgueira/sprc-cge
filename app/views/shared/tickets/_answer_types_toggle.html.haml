@@ -1,0 +1,27 @@
+
+- has_error = ticket.errors[:answer_type].present?
+
+.form-group{ class: has_error ? 'has-danger' : ''}
+
+  %label.form-control-label
+    = Ticket.human_attribute_name(:answer_type)
+
+  .btn-group.btn-group-justified{ role: 'group', 'aria-label': Ticket.human_attribute_name(:answer_type), data: { toggle: 'radio-buttons', input: 'answer_type' }}
+    - types_with_exceptions = ['letter', 'phone'] 
+    - ticket_type = params[:ticket_type] || :sou
+    - answer_types.each do |type|
+      - option_label = I18n.t("ticket.answer_types.#{type}")
+      - option_description = I18n.t("ticket.answer_types_description.#{type}")
+      - checked = (type.to_s == ticket.answer_type)
+      - active_class = (checked ? 'active' : '')
+           
+     
+      - if types_with_exceptions.exclude?(type) || permission_check_for_type(type)
+        %label.btn.btn-outline-primary{ class: active_class, for: option_label, data: { input: "answer_type_#{type}", toggle: 'popover', placement: 'top', trigger: 'focus', title: option_label, content: option_description }}
+          %div{ 'data-content': "answer_type_#{type}" }
+            = radio_button_tag field_name, type, checked, id: option_label
+          = option_label
+
+  - if has_error
+    .div
+      = f.error :answer_type

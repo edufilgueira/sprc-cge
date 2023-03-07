@@ -1,0 +1,44 @@
+- nld_item_payment_retentions = nld.nld_item_payment_retentions
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.title')
+
+      .card-block
+
+        - if nld_item_payment_retentions.present?
+          %table.table.table-hover.table-sm.table-bordered.bg-faded{summary: t('.summary')}
+
+            %thead
+
+              %tr
+
+                - heads = [:codigo_retencao, :credor, :valor]
+
+                - heads.each do |head|
+                  %th
+                    = t(".table.heads.#{head}")
+
+            %tbody
+              - nld_item_payment_retentions.each do |nld_item_payment_retention|
+                %tr
+                  %td
+                    = nld_item_payment_retention.codigo_retencao
+                  %td
+                    = nld_item_payment_retention.credor
+                  %td
+                    = number_to_currency(nld_item_payment_retention.valor)
+
+
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')

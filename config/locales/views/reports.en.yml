@@ -1,0 +1,25 @@
+en:
+
+  report:
+
+    filters:
+      title: Filters
+      ticket_type: Type
+      sou_type: Manifestation type
+      city: City
+      state: State
+      used_input: Used input
+      other_organs: State Executive Power
+      search: Search
+      internal_status: Status
+      organ: Responsible agency
+      budget_program: Budget program
+      topic: Topic
+      subtopic: Subtopic
+      deadline: Deadline
+      confirmed_at: Confirmed at
+      expired: Expired only
+      priority: Priority only
+      finalized: Show closed
+      denunciation: Denunciations only
+      range: 'From %{start} to %{end}'

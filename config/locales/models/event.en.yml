@@ -1,0 +1,11 @@
+en:
+
+  activerecord:
+
+    attributes:
+
+      event:
+        title: Title
+        starts_at: Starts at
+        category: Category
+        description: Description

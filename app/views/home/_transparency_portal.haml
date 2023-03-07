@@ -1,0 +1,66 @@
+%section.col-lg-4.mb-5
+  .card.denunciation-card
+    .card-block
+      .row
+        .col-12.text-center
+          = link_to denunciation_main_url  do
+            = image_tag(asset_path(denunciation_img_path),  class: "img-fluid")
+
+  .card.corona-card
+    .card-block
+      .row
+        .col-12.text-center
+          = link_to coronavirus_main_url  do
+            = image_tag(asset_path(coronavirus_img_path),  class: "img-fluid")
+
+%section.col-lg-8.mb-5{'aria-labelledby': 'transparency_portal'}
+  .card.home-card
+    .card-block
+      .row
+        .col-md-6
+          %h4.card-title{id: 'transparency_portal'}
+            %i.fa.fa-search
+            = t('.title')
+
+          %p.card-text
+            = t('.text')
+
+          %strong
+            = t('.main_links')
+
+          - links = [:what_is, :how_to]
+
+          %ul.list-unstyled
+            - links.each do |link|
+              %li.small
+                = link_to t(".links.#{link}.title"), transparency_root_path(anchor: 'o-que-e')
+
+        .col-md-6
+          %strong
+            = t('.featured_queries.title')
+            - links = [:server_salaries, :revenues_accounts, :expenses_budget_balances, :contracts_contracts,[:public_debt, '/portal-da-transparencia/paginas/divida-publica'], [:ongoing_purchases, '/portal-da-transparencia/paginas/licitacoes'], :expenses_neds, :contracts_convenants]
+
+          .row.mt-2
+            - links.each_slice(4) do |link_col|
+              .col-md-12
+                %ul.list-unstyled
+                  - link_col.each do |link|
+                    %li.mb-3
+                      - if link.is_a? Array
+                        - transparency_link = link[1]
+                        - link_name = link[0]
+                      - else
+                        - transparency_link = [:transparency, link]
+                        - link_name = link
+
+                      = link_to transparency_link do
+                        %i.fa.fa-border.fa-border-tertiary.rounded{ class: t(".featured_queries.#{link_name}.icon") }
+                        = t(".featured_queries.#{link_name}.title")
+
+    .card-footer.bg-faded
+      = link_to transparency_root_path, class: 'btn btn-tertiary btn-uppercase' do
+        %span.sr-only
+          = t('a11y.link.new_window.text')
+        %span
+          %i.fa.fa-share
+          = t('.action')

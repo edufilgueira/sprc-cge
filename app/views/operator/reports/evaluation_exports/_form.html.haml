@@ -1,0 +1,72 @@
+.container
+  = simple_form_for [:operator, :reports, evaluation_export] do |f|
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = t('.title')
+
+      .card-block
+
+        .row
+          .col-12.col-lg-6
+            = f.input :title, autofocus: true
+
+
+        .row
+          - #
+          - # confirmed_at
+          - #
+          .col-12.col-lg-6
+
+            %label
+              = t('.filters.confirmed_at.label')
+
+            .row
+              - filter_confirmed_at = evaluation_export.filters[:confirmed_at]
+              - if filter_confirmed_at.present?
+                - filter_confirmed_at_start = filter_confirmed_at[:start]
+                - filter_confirmed_at_end = filter_confirmed_at[:end]
+
+              .col-12.col-lg-6
+                = text_field_tag("evaluation_export[filters][confirmed_at][start]", filter_confirmed_at_start, placeholder: t('.filters.confirmed_at.start'),  class: 'form-control w-100 datetimepicker')
+
+
+              .col-12.col-lg-6
+                = text_field_tag("evaluation_export[filters][confirmed_at][end]", filter_confirmed_at_end, placeholder: t('.filters.confirmed_at.end'), class: 'form-control w-100 datetimepicker')
+
+
+          - if can_select_ticket_type?(current_user)
+            .col-12.col-lg-6
+              %label{ for: :ticket_type}
+                = t('.filters.ticket_type')
+
+              - default_option = 'sou' if current_user.sou_sectoral?
+              - options = options_for_select(ticket_types_for_select, evaluation_export.filters[:ticket_type] || default_option)
+              = select_tag "evaluation_export[filters][ticket_type]", options, { 'data-select2-search': 'hidden', 'data-input': 'ticket_type' }
+          - else
+
+            - if current_user.sectoral?
+              = hidden_field_tag "evaluation_export[filters][organ]", current_user.organ_id
+            - elsif current_user.subnet_operator?
+              = hidden_field_tag "evaluation_export[filters][subnet]", current_user.organ_id
+
+          .col-12.col-lg-6
+            - options = options_for_select(sou_types_for_select(current_user), evaluation_export.filters[:sou_type])
+            = label_tag :sou_type, t('.sou_type')
+            = select_tag "evaluation_export[filters][sou_type]", options, { include_blank: t('messages.filters.select.all.male') }
+
+          .col-12.col-lg-6
+            - options = options_for_select(used_inputs_for_select, evaluation_export.filters[:used_input])
+            = label_tag :sou_type, t('.used_input')
+            = select_tag "evaluation_export[filters][used_input]", options, { include_blank: t('messages.filters.select.all.male') }
+            
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+          .col-12
+            = link_to t('commands.cancel'), operator_reports_evaluation_exports_path, class: 'btn btn-warning pull-left'
+            = f.submit t('commands.save'), class: 'btn btn-primary float-right'

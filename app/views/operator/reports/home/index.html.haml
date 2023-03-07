@@ -1,0 +1,37 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = t('.title')
+
+.row.my-4
+
+  - if can? :create, Stats::Ticket
+    .col-12.col-xl-4
+      = render 'card', report_type: :dashboards, url: operator_reports_stats_tickets_path, icon: 'fa-pie-chart'
+
+
+  - if can? :create, TicketReport
+    .col-12.col-xl-4
+      = render 'card', report_type: :ticket_reports, url: operator_reports_ticket_reports_path, icon: 'fa-bar-chart'
+
+
+  - if can? :create, GrossExport
+    .col-12.col-xl-4
+      = render 'card', report_type: :gross_exports, url: operator_reports_gross_exports_path, icon: 'fa-table'
+
+
+  - if can? :create, AttendanceReport
+    .col-12.col-xl-4
+      = render 'card', report_type: :attendance_report, url: operator_reports_attendance_reports_path, icon: 'fa-phone'
+
+  - if can? :create, EvaluationExport
+    .col-12.col-xl-4
+      = render 'card', report_type: :evaluation_export, url: operator_reports_evaluation_exports_path, icon: 'fa-star'
+
+
+  - if can? :create, SolvabilityReport
+    .col-12.col-xl-4
+      = render 'card', report_type: :solvability_reports, url: operator_reports_solvability_reports_path, icon: 'fa-area-chart'
+
+

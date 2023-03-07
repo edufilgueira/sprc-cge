@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/revenues/account:
+        conta_corrente: Conta corrente
+
+  integration/revenues/account:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Receitas %{year}'
+
+          header:
+            title: Órgão/Secretaria
+            valor_previsto_inicial: Valor Previsto
+            valor_previsto_atualizado: Valor Previsto Atualizado
+            valor_arrecadado: Valor Arrecadado

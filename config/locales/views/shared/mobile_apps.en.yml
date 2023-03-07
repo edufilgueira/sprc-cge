@@ -1,0 +1,16 @@
+en:
+
+  shared:
+
+    mobile_apps:
+
+      filters:
+        search: Search app by name or description
+        commands:
+          new: Register an app
+
+
+      mobile_app:
+        official:
+          'true': Official app
+          'false': Unofficial app 

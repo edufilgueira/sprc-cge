@@ -1,0 +1,135 @@
+es:
+  shared:
+    reports:
+        stats_tickets:
+
+          index:
+            title: Panel Estadístico
+
+            title_others_topics: Otros Sujetos
+
+            tabs:
+              sic:
+                title: Acceso à la Información
+              sou:
+                title: Oidoría Digital
+
+
+          show:
+            card:
+              organs:
+                total: 'Total'
+                topic_total: '%{value} - %{name}'
+                ticket_empty: Ningún órgano demandado
+
+              period_organ: 'Órganos más demandados(%{date})'
+
+
+            title: Estadísticas generales
+
+            last_update: 'Actualizado en: %{value}'
+
+            popover:
+              title: Sujeto
+              sou:
+                body: '%{total_tickets} manifestaciones clasificadas como: %{title}'
+              sic:
+                body: '%{total_tickets} solicitudes clasificadas como: %{title}'
+
+            button:
+              import: Actualizar datos
+              importing: Actualizando datos...
+
+            last_update: 'Actualizado en: %{value}'
+
+
+          stats_ticket:
+            card:
+              sou:
+                chart_year_title: 'Total de manifestaciones registradas:'
+                chart_year_column_title: Manifestaciones
+                stats:
+                  title: Panel Estadístico - Oidoría Digital
+
+              sic:
+                chart_year_title: 'Total de solicitudes registradas:'
+                chart_year_column_title: Solicitaciones
+                stats:
+                  title: Panel Estadístico - Acceso à la Información
+            popover:
+              title: Sujeto
+              sou:
+                body: '%{total_tickets} manifestaciones clasificadas como: %{title}'
+              sic:
+                body: '%{total_tickets} solicitacitudes clasificadas como: %{title}'
+
+            button:
+              import: Actualizar datos
+              importing: Actualizando datos...
+
+            last_update: 'Actualizado e: %{value}'
+
+
+          default_stats:
+            period: 'Estadísticas generales (%{date})'
+            period_organ: 'Órganos más demandados (%{date})'
+            total_invalid_title: Total de entradas no válidas
+            total_valid_title: Total de entradas válidas
+            total_reopened_title: Manifestaciones reabiertas
+            total_appealed_title: Recursos de solicitud de información
+
+            average_respond:
+              title: Tiempo promedio de respuesta
+              days: '%{value} días'
+
+            resolutivity:
+              title: Taja de Resolución
+              percentage: '%{value}%'
+
+            average_satisfaction:
+              title: Índice de satisfacción general (0-5)
+              average: '%{value}'
+
+
+          organ_stats:
+
+            period_organ: 'Órganos más demandados (%{date})'
+            no_content: 'Sin datos'
+
+            chart_organs:
+              series_name: Órgano
+              sou:
+                name: Total de manifestaciones por órgano
+                unit: Manifestaciones
+              sic:
+                name: Total de solicitudes por órgano
+                unit: Solicitudes
+
+            popover:
+              title: Sujeto
+              sou:
+                body: '%{total_tickets} manifestaciones clasificadas como: %{title}'
+              sic:
+                body: '%{total_tickets} solicitudes clasificadas como: %{title}'
+
+
+          total_tickets_year_chart:
+            sou:
+              chart_year_title: 'Total de manifestaciones registradas:'
+              chart_year_column_title: Manifestaciones
+
+            sic:
+              chart_year_title: 'Total de solicitudes registradas:'
+              chart_year_column_title: Solicitudes
+
+
+          organ_topics_chart:
+            name: 'Total por sujeto'
+            unit: Cantidad
+            title_others: No clasificados
+            series_name: Sujeto
+
+          error:
+            message: Error al cargar el panel
+
+

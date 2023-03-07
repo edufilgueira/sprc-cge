@@ -1,0 +1,16 @@
+es:
+  ppa:
+    past_workshops:
+      index:
+        next_workshops: Ver los proximos talleres 
+        title: Talleres de elaboración del PPA
+        form_title: Lista de talleres realizados 
+        address_title: 'Dirección:'
+        participants: 'Participantes:'
+        date_title: 'Fecha:'
+        documents: Archivos
+
+      filters:
+        city: Municipio
+        end_at: Hasta el día 
+        all: Todos

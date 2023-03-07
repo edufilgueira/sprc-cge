@@ -1,0 +1,22 @@
+.row
+  .col-12
+    %h2.text-green.text-center.my-4.font-weight-bold
+      = t('.title', plan: plan.name)
+  .col-12
+    %h2.card-subtitle.mb-3
+      = t('.subtitle')
+    %hr
+    %label= t('.description')
+
+  .col-12.mt-4
+    .alert.alert-info
+      =t('.instruction')
+      %br
+      =t('.instruction2')
+
+.row.mt-4.mb-4
+  .col-12
+    %h4.card-subtitle.mb-2
+      = "#{t('.region')}: #{region.name}"
+
+= render partial: "#{controller_path}/new/steps"

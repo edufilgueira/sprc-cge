@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    integrations:
+      expenses:
+        npds:
+          index:
+            title: Notas de Pagamento de Despesa

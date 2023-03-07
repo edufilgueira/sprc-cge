@@ -1,0 +1,96 @@
+.card-filters
+
+  - #
+  - # sort params
+  - #
+  = render 'shared/sortered/hidden_filters'
+
+  .row
+    .col-12.col-lg-9.mb-3
+
+      .row
+        .col-12.col-lg-6
+          = text_field_tag(:search, params[:search], placeholder: t('.search.label'), class: 'form-control w-100 mb-3', title: t('.search.label'))
+
+        .col-12.col-lg-3
+          = text_field_tag(:parent_protocol, params[:parent_protocol], placeholder: t('.parent_protocol.label'), class: 'form-control w-100 mb-3', title: t('.parent_protocol.label'))
+
+        .col-12.col-lg-3
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'
+
+    .col-12.col-lg-3.text-right
+      = link_to t(".commands.new"), new_operator_attendance_path, class: 'btn btn-success btn-block'
+
+  - #
+  - # Pesquisar por periodo
+  - #
+  .row
+    .col-12.col-lg-6.mb-3
+
+      %label
+        = t('.created_at.label')
+
+      .row
+        - filter_confirmed_at = params[:created_at]
+        - if filter_confirmed_at.present?
+          - filter_confirmed_at_start = filter_confirmed_at[:start]
+          - filter_confirmed_at_end = filter_confirmed_at[:end]
+
+        .col-12.col-lg-6.mb-3
+          = text_field_tag("[created_at][start]", filter_confirmed_at_start, placeholder: t('.created_at.start'),  class: 'form-control w-100 datetimepicker')
+
+        .col-12.col-lg-6.mb-3
+          = text_field_tag("[created_at][end]", filter_confirmed_at_end, placeholder: t('.created_at.end'), class: 'form-control w-100 datetimepicker')
+
+
+  .row
+    - unless current_user.call_center?
+      .col-md-4.mb-3
+        - options = options_for_select(attendance_created_by_for_select, params[:created_by_id])
+        = label_tag :created_by_id, t('.select.created_by_id')
+        = select_tag :created_by_id, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+    .col-md-4.mb-3
+      - options = options_for_select(ticket_types_for_select, params[:ticket_type])
+      = label_tag :ticket_type, t('.select.ticket_type')
+      = select_tag :ticket_type, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+    .col-md-4.mb-3
+      - options = options_for_select(sou_types_for_select(current_user), params[:sou_type])
+      = label_tag :sou_type, t('.select.sou_type')
+      = select_tag :sou_type, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+
+  .row
+    .col-md-6.mb-3
+      - ticket_type = params[:ticket_type]
+      - options = options_for_select(ticket_internal_status_for_select(ticket_type, current_user), params[:internal_status])
+      = label_tag :internal_status, t('.select.internal_status')
+      = select_tag :internal_status, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.female') }
+    .col-md-6.mb-3
+      - options = options_for_select(organs_for_select, params[:organ_id])
+      = label_tag :organ_id, t('.select.organ')
+      = select_tag :organ_id, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+  .row
+    .col-md-6.mb-3
+      - options = options_for_select(ticket_answer_types_for_select, params[:answer_type])
+      = label_tag :answer_type, t('.select.answer_type')
+      = select_tag :answer_type, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+    .col-md-6.mb-3
+      - options = options_for_select(ticket_deadlines_for_select, params[:deadline])
+      = label_tag :deadline, t('.select.deadline')
+      = select_tag :deadline, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+  .row
+    .col-12.mb-3
+      - options = options_for_select(attendance_service_types_for_select, params[:service_type])
+      = label_tag :service_type, t('.select.service_type')
+      = select_tag 'service_type[]', options, { onchange: 'submit();', multiple: 'multiple' }
+
+
+
+  - if attendance_filter_params?(params)
+    .my-4
+      %small
+        .alert.alert-warning
+          = raw t('messages.filters.warning_count', total: number_with_delimiter(total_count), filtered: number_with_delimiter(filtered_count))
+          = link_to t('messages.filters.clear'), '#!', 'data-input': 'clear-filter', class: 'float-right'

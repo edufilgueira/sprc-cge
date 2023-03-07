@@ -1,0 +1,55 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = t('.title')
+
+.card.card-custom
+
+  .card-header
+
+    .row
+      .col-8
+        %h3.card-title
+          = ppa_workshop.name
+
+      .col-4
+        .float-right
+
+          = link_to t('commands.remove'), ppa_admin_plan_workshop_path(plan, ppa_workshop), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link'
+          = link_to t('commands.edit'), edit_ppa_admin_plan_workshop_path(plan, ppa_workshop), class: 'btn text-muted btn-link'
+
+  .card-block
+
+    .row
+
+      .col-12.col-lg-4
+        = content_with_label(ppa_workshop, :city_region_name, label: PPA::Workshop.human_attribute_name(:region))
+        -#= content_with_label(ppa_workshop, :region_name, label: PPA::Workshop.human_attribute_name(:region))
+        
+      .col-12.col-lg-4
+        = content_with_label(ppa_workshop, :city_name, label: PPA::Workshop.human_attribute_name(:city))
+
+      .col-12.col-lg-8
+        = content_with_label(ppa_workshop, :address)
+
+      .col-12.col-lg-4
+        = content_with_label(ppa_workshop, :start_at)
+
+      .col-12.col-lg-4
+        = content_with_label(ppa_workshop, :end_at)
+
+      .col-12.col-lg-4
+        = content_with_label(ppa_workshop, :participants_count)
+
+      .col-12.col-lg-8
+        = content_with_label(ppa_workshop, :link)
+
+      .col-12
+        %hr
+
+      .col-12.col-lg-6
+        = render 'documents', documents: ppa_workshop.documents
+
+      .col-12.col-lg-6
+        = render 'photos', photos: ppa_workshop.photos

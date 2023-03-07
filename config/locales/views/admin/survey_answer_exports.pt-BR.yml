@@ -1,0 +1,30 @@
+pt-BR:
+  admin:
+    survey_answer_exports:
+
+      index:
+        title: Planilhas de pesquisa de satisfação de transparência
+
+        table:
+          summary: Lista de eventos
+          header:
+            created_at: Gerada em
+            name: Nome
+            start_at: Início
+            ends_at: Fim
+            worksheet_format: Formato
+            commands: ''
+
+        commands:
+          new: 'Nova extração'
+
+      new:
+        title: 'Nova extração'
+
+      create:
+        title: 'Nova extração'
+        done: 'Exportação iniciada com sucesso. A planilha está sendo gerada em segundo plano.'
+        error: 'Falha ao iniciar a extração. Verifique os campos abaixo.'
+
+      destroy:
+        done: 'Exportação removida com sucesso'

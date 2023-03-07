@@ -1,0 +1,49 @@
+pt-BR:
+  ppa:
+    proposals:
+      index:
+        title: Propostas Temáticas
+        table:
+          summary: Lista paginada com todos as propostas
+          header:
+            region: Região
+            city: Cidade
+            axis: Eixo
+            theme: Tema
+        new: Proposta de assunto para discussão
+
+      new:
+        title: Propostas Temáticas
+        new: Nova proposição temática
+        related_objective: 'Para qual objetivo você deseja elaborar uma estratégia?'
+        select_a_theme: 'Escolha um tema acima para exibir os objetivos relacionados'
+        select_theme_and_region: 'Escolha um tema e um objetivo para exibir estratégias relacionadas'
+        back: 'Cancelar'
+
+      edit:
+        title: Proposta de assunto para discussão
+        edit: Editar proposição temática
+        
+
+      comments:
+        success: 'Comentário registrado. Obrigado!'
+        failure: 'Não foi possível registrar o comentário.'
+
+      votes:
+        success: 'Voto registrado. Obrigado!'
+        failure: 'Não foi possível registrar seu voto.'
+
+      vote:
+        closed:
+          zero: A proposta não recebeu nenhum voto.
+          one: A proposta recebeu um único voto.
+          other: A proposta recebeu %{count} votos.
+        voted:
+          one:   "<strong>Você já votou.</strong> O seu é o único voto nessa proposta."
+          other: "<strong>Você já votou.</strong> Com você, %{count} cidadãos votaram nessa proposta."
+        vote: Adicionar meu voto
+
+
+      # filters
+      ensure_current_plan_open_for_proposals:
+        alert: 'O Plano vigente não está aberto a propostas nesse momento.'

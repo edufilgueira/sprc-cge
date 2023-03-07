@@ -1,0 +1,105 @@
+pt-BR:
+  shared:
+    transparency:
+      expenses:
+
+        neds:
+          index:
+            title: Despesas por nota de empenho
+            description: 'Consulte as dívidas reconhecidas oficialmente pelo Governo e a quem o governo deve pagar (notas de empenho).'
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Secretaria da Fazenda - SEFAZ</p>
+              <p>Sistema de Gestão Governamental por Resultados - S2GPR</p>
+
+            chart:
+              calculated_valor_final:
+                unit: 'Soma dos valores empenhados: R$'
+                title: 'Valores das Notas de Empenho no ano selecionado.'
+
+                razao_social_credor:
+                  title: Soma dos valores empenhados por credor
+                management_unit:
+                  title: Soma dos valores empenhados por secretarias/órgãos
+                expense_element:
+                  title: Soma dos valores empenhados por elemento
+
+              calculated_valor_pago_final:
+                unit: 'Soma dos valores pagos: R$'
+                title: 'Valores das Notas de Empenho no ano selecionado.'
+
+                razao_social_credor:
+                  title: Soma dos valores pagos por credor
+                management_unit:
+                  title: Soma dos valores pagos por secretarias/órgãos
+                expense_element:
+                  title: Soma dos valores pagos por elemento
+
+            charts:
+              tabs:
+                razao_social_credor:
+                  title: Por credor
+                management_unit:
+                  title: Por secretaria/órgão
+                expense_element:
+                  title: Por elemento de despesa
+
+            filters:
+              title: Consulta avançada
+              search:
+                hint: >
+                  Você pode buscar por parte do nome de Secretarias, Órgãos, Credores, etc.
+                  Exemplos: 'habitação', 'segurança', 'tecnologia', 'sec saude', entre outros.
+              date_of_issue:
+                information: |
+                  Essa informação refere-se à data de emissão da Nota de Empenho.
+
+            counts:
+              filtered_count:
+                title: Quantidade de notas filtradas
+              filtered_sum:
+                calculated_valor_final:
+                  title: Valor empenhado das notas filtradas
+                calculated_valor_pago_final:
+                  title: Valor pago das notas filtradas
+
+            table:
+              summary: Lista de notas de empenho de despesas
+              header:
+                numero: Número
+                date_of_issue: Data da Despesa
+                unidade_gestora: Secretaria/Órgão
+                management_unit_title: Secretaria/Órgão
+                credor: Credor
+                calculated_valor_final: Valor empenhado
+                calculated_valor_pago_final: Valor pago
+
+            stats:
+              title: Principais números relacionados às notas de empenho
+              count: 'Notas empenhadas em <strong>%{date}</strong>'
+              calculated_valor_final: 'Valor empenhado em <strong>%{date}</strong>'
+              calculated_valor_pago_final: 'Valor pago em <strong>%{date}</strong>'
+
+          show:
+            contract:
+              link: '%{value}'
+              none: EMPENHO NÃO VINCULADO AO INSTRUMENTO CONTRATUAL/CONVÊNIO
+
+            ned_items:
+              empty: Sem dados
+              title: Itens
+              summary: Lista de itens
+              table:
+                heads:
+                  sequencial: Sequencial
+                  especificacao: Especificação
+                  unidade: Unidade
+                  quantidade: Quantidade
+                  valor_unitario: Valor unitário
+
+            npds:
+              title: Execução dos pagamentos
+              empty: Nenhum pagamento encontrado.
+              table:
+                summary: Execução dos pagamentos
+                export_file_name: 'pagamentos-%{id}'

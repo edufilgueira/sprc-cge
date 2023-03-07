@@ -1,0 +1,8 @@
+pt-BR:
+
+  activerecord:
+
+    attributes:
+
+      citizen_comment:
+        description: Comentário

@@ -1,0 +1,23 @@
+.mt-4
+  .row
+
+    .col-md-4.col-12.pb-4.pb-md-0
+
+      = link_to t('.edit.action'), edit_operator_attendance_path(attendance), class: 'btn btn-warning btn-block'
+
+    .col-md-8.col-12
+
+      = link_to t('.confirm.action'), operator_attendance_path(attendance, { attendance: {ticket_attributes: { status: :confirmed, id: ticket.id }}, confirmation: true}), method: :put, class: 'btn btn-primary btn-block'
+
+= render 'show'
+
+.mt-4
+  .row
+
+    .col-md-4.col-12.pb-4.pb-md-0
+
+      = link_to t('.edit.action'), edit_operator_attendance_path(attendance), class: 'btn btn-warning btn-block'
+
+    .col-md-8.col-12
+
+      = link_to t('.confirm.action'), operator_attendance_path(attendance, { attendance: {ticket_attributes: { status: :confirmed, id: ticket.id }}, confirmation: true}), method: :put, class: 'btn btn-primary btn-block'

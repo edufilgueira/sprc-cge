@@ -1,0 +1,30 @@
+= content_for(:navbar) do
+  %ul.navbar-nav.ml-auto
+
+    %li.nav-item.dropdown
+      -#- active_class = navbar_active_admin_group_class(NavbarHelper::ADMIN_ADMIN_GROUP)
+      = link_to "", class: "dropdown-toggle nav-link #{}", role: 'button', href: "#", aria: { "haspopup": 'true', "expanded": "false"} , data: { "toggle": 'dropdown'} do
+
+        %i.fa.fa-wrench.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+        = t('.records.title')
+
+      %ul{ class: 'dropdown-menu'}
+        %li
+          = link_to t('.plans.title'), ppa_admin_plans_path
+        %li
+          = link_to t('.proposal_themes.title'), ppa_admin_proposal_themes_path
+        %li
+          = link_to t('.administrators.title'), ppa_admin_administrators_path
+        %li
+          = link_to t('.votings.title'), ppa_admin_votings_path 
+        
+        .dropdown-divider
+        %h6.dropdown-header
+          = t('.revision_schedules.title')
+      
+        %li
+          = link_to t('.revision_schedules.schedule'), ppa_admin_revision_schedules_path
+        %li
+          = link_to t('.revision_export.title'), ppa_admin_revision_export_path(ppa_plan_revising)
+
+= render 'shared/navbar'

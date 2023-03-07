@@ -1,0 +1,69 @@
+en:
+  shared:
+    transparency:
+
+      constructions:
+
+        ders:
+
+          index:
+            title: Road Works
+            description: >
+              See here all works related to construction and improvements on state roads.
+            last_update: 'Last SOP update: '
+
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Superintendência de Obras Públicas - SOP</p>
+
+            filters:
+              title: Advanced search
+              search_placeholder: >
+                Search by construction companies, supervisor, district, program, services, DER number or SACC number
+
+            chart:
+              valor_aprovado:
+                unit: 'Updated total R$'
+                title: 'Highest update values'
+
+            charts:
+              tabs:
+                servicos:
+                  title: 'Services'
+                distrito:
+                  title: 'Districts'
+                programa:
+                  title: 'Programs'
+                construtora:
+                  title: 'Construction companies'
+
+            stats:
+              title: Road works main figures
+              count: 'Active road works amount in <strong>%{date}</strong>'
+              download:
+                xlsx: 'Download ".xlsx" database'
+                csv: 'Download ".csv" database'
+
+            counts:
+              ders_count:
+                title: Filtered road works amount
+              ders_sum:
+                title: Filtered road works value
+
+            table:
+              header:
+                status: Status
+                trecho: Part
+                construtora: Construction company
+                extensao: Dimension
+                valor_aprovado: Updated value
+                numero_contrato_sic: SACC number
+              row:
+                extensao_unit: km
+
+          show:
+            schedule: Supervisory Schedule
+
+          measurements:
+            title: Measurement Worksheet
+            empty: No measurement registered.

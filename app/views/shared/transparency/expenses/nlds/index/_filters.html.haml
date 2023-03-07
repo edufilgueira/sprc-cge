@@ -1,0 +1,27 @@
+.card-filters.filter-bar{'data-filter-bar': 'expenses_nlds'}
+
+  = form_for transparency_expenses_nlds_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+      .col-12.col-lg-4
+        - options = options_for_select(supports_organs_and_secretaries_from_executivo_for_select_with_all_option_codigo_orgao_as_id, params[:unidade_gestora])
+
+        = label_tag(:unidade_gestora, Integration::Expenses::Nld.human_attribute_name(:unidade_gestora))
+        = select_tag(:unidade_gestora, options)
+
+      .col-12.col-lg-8
+        = label_tag(:date_of_issue, Integration::Expenses::Nld.human_attribute_name(:date_of_issue))
+        = text_field_tag(:date_of_issue,  params[:date_of_issue], data: { input: 'daterangepicker' }, class: 'form-control w-100')
+
+    .row.mt-3
+      .col-12.col-lg-9
+        = label_tag(:search, t('messages.filters.search.label'))
+        = text_field_tag(:search, params[:search], class: 'form-control w-100 mb-3', 'data-filter-bar-ignore-submit-on-enter': 'true')
+
+      .col-12.col-lg-3
+
+        - # forma simples de align-bottom no botão de busca
+        .mt-4.pt-2
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'

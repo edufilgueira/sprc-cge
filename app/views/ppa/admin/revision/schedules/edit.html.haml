@@ -1,0 +1,15 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.content-detail
+
+  .card.card-custom
+
+    .card-header
+
+      %h2.card-title
+        = t(".title")
+
+    .card-block
+
+      = render 'form', ppa_revision_schedules: ppa_revision_schedules, url: ppa_admin_revision_schedule_path(ppa_revision_schedule), method_req: :put

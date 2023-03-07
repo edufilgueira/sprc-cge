@@ -1,0 +1,7 @@
+-# using :plain HAML filter, and interpolating Ruby code as String with #{code}
+:plain
+  #{ yield }
+  ____
+
+  #{ t 'app.title' } - #{ t 'app.author' }
+  #{ t 'app.copyright', year: Date.today.year }

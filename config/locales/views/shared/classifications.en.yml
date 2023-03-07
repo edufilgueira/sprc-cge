@@ -1,0 +1,15 @@
+en:
+  shared:
+    classifications:
+      form:
+        save: Save classification
+
+      classification:
+        new:
+          sou: Classify manifestation
+          sic: Classify request
+        edit: Edit classification
+
+      classification_fields:
+        not_classified: No classification
+        other_organs: It is not up to the State Executive Power

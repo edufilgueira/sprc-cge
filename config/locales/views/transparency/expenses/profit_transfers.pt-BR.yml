@@ -1,0 +1,7 @@
+pt-BR:
+  transparency:
+    expenses:
+      profit_transfers:
+        index:
+          title: Transferências a Entidades com Fins Lucrativos
+          description: Aqui você poderá consultar informações de Transferências a Entidades com Fins Lucrativos.

@@ -1,0 +1,15 @@
+en:
+
+  activerecord:
+
+    attributes:
+
+      integration/servers/server:
+        dsc_cpf: 'CPF'
+        dth_nascimento: 'Birthday'
+
+        dsc_funcionario: Servant name
+        organs: Agency/Entity
+        job_roles: 'Role / Function / Employment'
+        credit_salary: Gross salary
+        total_salary: Net salary

@@ -1,0 +1,27 @@
+pt-BR:
+  ppa:
+    revision:
+      participant_profiles:
+        new:
+          title: Perfil do Participante
+          subtitle: Complemente seu perfil para Iniciar a Revisão
+        form:
+          explains:
+            genre: |
+              Homem CIS: Há identificação entre o sexo biológico com o qual nasceu e a expressão de gênero.
+              Mulher CIS: Há identificação entre o sexo biológico com o qual nasceu e a expressão de gênero.
+              Homem Trans: Não há identificação entre o sexo biológico com o qual nasceu e a expressão de gênero.
+              Mulher Trans: Não há identificação entre o sexo biológico com o qual nasceu e a expressão de gênero.
+
+            sexual_orientation: |
+              Heterossexual: Atração afetiva e/ou sexual entre pessoas do sexo ou gênero oposto.
+              Bissexual: Atração afetiva ou sexual tanto por pessoa do gênero feminino e/ou gênero masculino.
+              Lésbica: Mulher que tem atração afetiva e/ou sexual por outra mulher.
+              Gay: Homem que sente atração afetiva e/ou sexual por outro homem.
+          questions:
+            collegiate_quest: Você participa de algum colegiado de participação cidadã ?
+            other_ppa_participation_quest: Você já participou de algum encontro regional do PPA ?
+            which: Qual ?
+
+          commands:
+            save: Salvar e Iniciar Revisão

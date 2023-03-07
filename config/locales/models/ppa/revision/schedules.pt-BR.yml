@@ -1,0 +1,18 @@
+pt-BR:
+  activerecord:
+    models:
+      ppa:
+        revision/schedules:
+
+    attributes:
+      ppa/revision/schedule:
+        start_in: Período Inicial
+        end_in: Período Final
+        plan: PPA
+        stage: Etapa do Processo de Revisão
+        stage_str: Etapa do Processo de Revisão
+        review_regional_guidelines: Revisão das Diretrizes Regionais
+        proposal_consolidation: Consolidação das Propostas
+        prioritization_regional_strategies: Priorização das Estratégias Regionais
+        disclosure_final_result: Divulgação do Resultado Final
+        process_evaluation: Avaliação do Processo

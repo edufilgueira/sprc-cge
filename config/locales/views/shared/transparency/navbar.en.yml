@@ -1,0 +1,17 @@
+
+en:
+
+  shared:
+    transparency:
+      navbar:
+        default_title: Transparency
+        default_description: >
+          Welcome to the Transparency Area of Ceará Transparente Portal.
+
+        login:
+          title: Sign in
+          description: >
+            Sign in and enjoy the most of Ceará Transparente!
+
+        sign_up:
+          title: Sign up

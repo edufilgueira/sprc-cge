@@ -1,0 +1,46 @@
+- last_month = Date.today.last_month
+- params = { month: last_month.month, year: last_month.year, evaluation_type: 'sou' }
+
+- stats = Stats::Evaluation.find_by(params) || stats_evaluation_last('sou')
+
+- if stats.present?
+  - year = stats.year
+  - month = stats.month
+  - valid_month = Date.new(year, month)
+  - month_year_str = "#{month}/#{year}"
+
+  %section.mt-4{ 'aria-labelledby': 'stats_evaluations' }
+    .card
+      .card-block
+        %h4.card-text.text-justify
+          = t('.title')
+
+        .card-text.text-justify
+          = t('.description')
+
+        %hr{'aria-hidden': 'true'}
+
+        .card-text.text-justify
+          %strong.small.font-weight-bold.font-italic
+            = t('.month', month: l(valid_month, format: :month_year_long))
+
+
+        .row.justify-content-center.mt-2
+          .col-md-10.col-12
+            .row
+              .col-6.text-center.border-right.border-green.counter-arrow.active.border-right-sm-none
+                .counter.font-weight-light.text-green
+                  = stats.data['summary'].fetch('total_answered_tickets', 0)
+                = t('.total_answered_tickets.title')
+
+              .col-6.text-center
+                .counter.font-weight-light.text-green
+                  = stats.data['summary'].fetch('total_user_evaluations', 0)
+                = t('.total_user_evaluations.title')
+
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+          .col-12
+            = link_to t('.see_more'), transparency_tickets_stats_evaluations_path(evaluation_type: 'sou', month_year: month_year_str), class: 'btn btn-success btn-uppercase d-block bg-tertiary text-truncate'

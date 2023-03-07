@@ -1,0 +1,67 @@
+es:
+  shared:
+    transparency:
+
+      constructions:
+
+        ders:
+
+          index:
+            title: Obras carreteras
+            description: >
+              Consulte aquí todas las obras relacionadas con la construcción
+              y mejora en vías del estado.
+            last_update: 'Última actualización SOP: '
+
+            source: |
+              <p><strong>Fuente de datos:</strong></p>
+              <p>Superintendência de Obras Públicas - SOP</p>
+
+            filters:
+              title: Consulta avanzada
+              search_placeholder: >
+                Busque por la constructora, supervisora, distrito, programa,
+                servicios, numero SOP o numero SACC
+
+            chart:
+              valor_aprovado:
+                unit: 'Total actualizado R$'
+                title: 'Mayores valores actualizados'
+
+            charts:
+              tabs:
+                servicos:
+                  title: 'Servicios'
+                distrito:
+                  title: 'Distritos'
+                programa:
+                  title: 'Programas'
+                construtora:
+                  title: 'Constructoras'
+
+            stats:
+              title: Principales numeros relacionados con las Obras Carreteras
+              count: 'Cantidade de obras activas en <strong>%{date}</strong>'
+              download:
+                xlsx: 'Descargar planilla Excel con todos los datos'
+                csv: 'Descargar documento CSV con todos los datos'
+
+            counts:
+              ders_count:
+                title: Cantidade de obras filtradas
+              ders_sum:
+                title: Valor de las obras filtrados
+
+            table:
+              header:
+                status: Situación
+                trecho: Trecho
+                construtora: Constructora
+                extensao: Extensión
+                valor_aprovado: Valor actualizado
+                numero_contrato_sic: Numero SACC
+              row:
+                extensao_unit: km
+
+          show:
+            schedule: Cronograma Supervisora

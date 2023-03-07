@@ -1,0 +1,24 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = t('.title')
+
+.card.card-custom
+
+  .card-header
+
+    .row
+      .col-4
+        %h3.card-title
+          = [ppa_plan.start_year, ppa_plan.end_year].join(' - ')
+  
+      .col-8
+        .float-right
+
+          = link_to t('.workshops'), ppa_admin_plan_workshops_path(ppa_plan), class: 'btn btn-link'
+          / = link_to t('commands.remove'), ppa_admin_plan_path(ppa_plan), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link'
+          = link_to t('commands.edit'), edit_ppa_admin_plan_path(ppa_plan), class: 'btn text-muted btn-link'
+
+ 
+

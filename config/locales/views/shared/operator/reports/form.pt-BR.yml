@@ -1,0 +1,76 @@
+pt-BR:
+
+  shared:
+
+    operator:
+
+      reports:
+
+        form:
+
+          filters:
+            title: Filtros
+            ticket_type: Categoria da demanda
+            sou_type: Tipo da manifestação
+            city: Município
+            state: Estado
+            used_input: Meio de entrada
+            other_organs: Outros poderes
+            choose_reports: Escolher relatórios ?
+            sic_reports: Relatórios de Acesso à Informação
+            sou_reports: Relatórios de Ouvidoria
+            rede_ouvir_scope: Rede ouvir
+            search:
+              title: Palavra-chave
+              label: Filtrar por protocolo, nome, e-mail, documento ou descrição
+            internal_status:
+              title: Situação
+              select: Todas
+            organ:
+              title: Órgão responsável
+              select: Todos
+            rede_ouvir_organ:
+              title: Órgão rede ouvir responsável
+              select: Todos
+            budget_program:
+              title: Programa orçamentário
+              select: Todos
+            topic:
+              title: Assunto
+              select: Todos
+            subtopic:
+              title: Subassunto
+              select: Todos
+            deadline:
+              title: Prazo
+              select: Todos
+            departments_deadline:
+              title: Prazo da área interna
+              select: Todos
+            confirmed_at:
+              label: Período
+              start: Início
+              end: Fim
+            subnet:
+              title: Sub-rede
+            department:
+              title: Unidade
+            sub_department:
+              title: Subunidade
+            service_type:
+              title: Tipo de serviço
+            answer_type:
+              title: Tipo de resposta
+            parent_protocol:
+              title: Protocolo
+              label: Protocolo
+            data_scope:
+              title: Exibir dados
+              all: Setorial e sub-rede
+              subnet: Apenas sub-rede
+              sectoral: Apenas setorial
+
+            expired: Somente vencidos
+            priority: Somente urgentes
+            finalized: Exibir finalizados
+            denunciation: Somente denúncias

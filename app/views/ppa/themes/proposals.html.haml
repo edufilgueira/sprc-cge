@@ -1,0 +1,28 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+
+.card.card-custom
+
+	.card-header
+
+		%h2.card-title
+			= t('.title', start_year: plan.start_year, end_year: plan.end_year)
+	
+	
+	
+
+	.card-block
+		.row
+			.col-12.mb-4
+				= link_to t('.back'), ppa_plan_themes_path(plan.id, region.code), class: 'btn btn-primary btn-block col-4 float-right'
+		.row
+			.col-12
+				.remote-content{'data-remote-content': controller_name}
+					.remote-content-result{ 'data-remote-content-result': controller_name }
+						- if proposals.empty?
+							.text-muted.text-center.mb-4
+								= t('messages.filters.no_results_found')
+						- else
+							= render partial: 'proposals'					
+					

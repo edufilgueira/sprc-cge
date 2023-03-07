@@ -1,0 +1,27 @@
+pt-BR:
+  shared:
+    transparency:
+      revenues_expenses:
+
+        index:
+          title: 'Receitas x Despesas'
+
+          stats:
+            title: 'Comparativo por ano'
+            empty: 'Sem dados para o ano informado'
+
+          chart:
+            total:
+              title: 'Receitas (Valor total arrecadado) x Despesas (Valor total empenhado) no período filtrado'
+              revenues_expenses:
+                title: 'Comparativo - Receitas x Despesas (Poder Executivo)'
+              unit: 'Soma dos valores arrecadados/gastos: R$'
+
+          intro:
+            title: 'Planejamento e Execução Orçamentária'
+            description: >
+              <p>Aqui você encontra informações orçamentárias e financeiras do Estado. Também, conheça os instrumentos planejamento <a href="/portal-da-transparencia/paginas/leis-orcamentarias">clicando aqui</a>.</p>
+              <p>Veja quanto o Estado do Ceará <a href="/portal-da-transparencia/receitas/receitas-do-poder-executivo">arrecadou</a> (de onde o dinheiro vem) e quanto <a href="/portal-da-transparencia/despesas/despesas-do-poder-executivo">gastou</a> (para onde o dinheiro vai). Descubra quem possui <a href="/portal-da-transparencia/contratos/contratos">contratos</a> ou <a href="/portal-da-transparencia/contratos/convenios">convênios</a> com o Estado. Fique sabendo sobre as <a href="/portal-da-transparencia/compras">Compras</a> feitas, quantidade e custo de bens adquiridos, e consulte as Licitações.</p>
+              <p>Entenda o que são indicadores fiscais, Relatório de Gestão Fiscal, Relatório Resumido de Execução Orçamentária, Balanço Geral do Estado, etc.</p>
+              <p>Atenção! Aqui você encontra informações detalhadas sobre o Poder Executivo. Para saber informações pormenorizadas de outros poderes <a href="https://www.al.ce.gov.br/index.php/portal-da-transparencia">Legislativo</a>, <a href="https://www.tjce.jus.br/transparencia/">Judiciário</a> e <a href="http://www.mpce.mp.br/portal-da-transparencia/">Ministério Público</a>, visite os sites dessas instituições.</p>
+              <p>Caso queira obter informações pormenorizadas de empresas não dependentes, da <a href="https://www.cagece.com.br/">Companhia de Água e Esgoto do Ceará – CAGECE</a>, da <a href="http://www.cearaportos.ce.gov.br/#todospelaagua">Companhia de Integração Portuária do Ceará - CEARÁPORTOS</a>, das <a href="http://www.ceasa-ce.com.br/">Centrais de Abastecimento do Ceará - CEASA</a>, da <a href="http://www.cegas.com.br/">Companhia de Gás do Ceará - CEGÁS</a>, da<a href="https://www.cogerh.com.br/"> Companhia da Gestão de Recursos Hídricos do Estado do Ceará – COGERH</a>, <a href="http://www.adece.ce.gov.br/#todospelaagua">Agência de Desenvolvimento do Estado do Ceará – ADECE</a>, e da <a href="http://www.metrofor.ce.gov.br/">Companhia Cearense de Transportes Metropolitanos - METROFOR</a>, visite os sites relacionados.</p>

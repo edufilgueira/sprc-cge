@@ -1,0 +1,16 @@
+es:
+
+  transparency:
+    sou:
+      shared:
+        ombudsmen:
+          index:
+            map_view: Ver en el mapa 
+
+            executive:
+              title: Red de Oidorías del Poder Ejecutivo 
+              empty: Ninguna red de oidoría ha sido encontrada. 
+
+            sesa:
+              title: Red de Oidorías de la Sesa 
+              empty: Ninguna red de oidoría ha sido encontrada. 

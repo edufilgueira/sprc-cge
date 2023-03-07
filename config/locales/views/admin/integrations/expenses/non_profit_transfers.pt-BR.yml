@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    integrations:
+      expenses:
+        non_profit_transfers:
+          index:
+            title: Transferências a Entidades sem Fins Lucrativos

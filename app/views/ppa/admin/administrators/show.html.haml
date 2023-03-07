@@ -1,0 +1,29 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = t('.title')
+
+.card.card-custom
+
+  .card-header
+
+    .row
+      .col-8
+        %h3.card-title
+          = ppa_administrator.name
+
+      .col-4
+        .float-right
+
+          = link_to t('commands.remove'), ppa_admin_administrator_path(ppa_administrator), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link'
+          = link_to t('commands.edit'), edit_ppa_admin_administrator_path(ppa_administrator), class: 'btn text-muted btn-link'
+
+  .card-block
+
+    .row
+      .col-12.col-lg-6
+        = content_with_label(ppa_administrator, :email)
+
+      .col-12.col-lg-6
+        = content_with_label(ppa_administrator, :cpf)

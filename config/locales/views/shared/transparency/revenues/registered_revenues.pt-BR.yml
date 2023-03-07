@@ -1,0 +1,64 @@
+pt-BR:
+  shared:
+    transparency:
+      revenues:
+        registered_revenues:
+
+          index:
+            title: Receitas Lançadas
+            description: |
+              <p>Veja aqui a Receita Lançada, que é registrada após identificado o contribuinte, o evento que gera a obrigação e o valor a ser pago.</p>
+              <p>As Receitas lançadas disponíveis são referentes ao Imposto sobre Propriedade de Veículos Automotores - IPVA. Atualmente, há viabilidade para registro contábil e divulgação nas Páginas de Transparência dos valores Lançados e Arrecadados relativos ao IPVA. Quanto aos demais tributos estaduais, considerando a sistemática tributária e contábil em vigor, conclui-se pela inviabilidade de apresentação de suas receitas lançadas. A Secretaria da Fazenda do Estado do Ceará aguarda definição de norma em nível nacional para saber que procedimentos contábeis serão necessários para disponibilizar as demais receitas tributárias Lançadas. A partir da definição da metodologia geral, a SEFAZ e a CGE envidarão todos os esforços necessários para dar cumprimento integral à sistemática que será definida.</p>
+
+            footer: |
+              <p>'Restituições da Receita com IPVA' se refere à devolução ao contribuinte de valores pagos a maior ou em função da perda de posse do veículo.</p>
+              <p>'Deduções da Receita com IPVA' são deduções previstas em Lei de valores destinados ao Fundeb (Fundo de Manutenção e Desenvolvimento da Educação Básica e de Valorização dos Profissionais da Educação). Os valores aqui divulgados são brutos, sem deduções referentes às transferências aos municípios.</p>
+
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Secretaria da Fazenda - SEFAZ</p>
+              <p>Sistema de Gestão Governamental por Resultados - S2GPR</p>
+
+            chart:
+              valor_lancado:
+                unit: 'Soma dos valores das receitas lançadas: R$'
+                title: 'Valores no mês'
+
+                month:
+                  title: Soma dos valores das receitas lançadas por mês
+                revenue:
+                  title: Soma dos valores das receitas lançadas por tipo
+
+            charts:
+              tabs:
+                month:
+                  title: Por mês
+                revenue:
+                  title: Por tipo
+                history:
+                  title: Histórico anual
+
+            counts:
+              valor_lancado:
+                title: 'Valor total das receitas lançadas'
+
+            filters:
+              title: Receitas lançadas
+
+              counts:
+                transfers_sum:
+                  valor_lancado:
+                    title: Valor das receitas lançadas
+
+            table:
+              summary: Lista de receitas lançadas do Poder Executivo
+              header:
+                title: Descrição
+                valor_lancado: Valor lançado (R$)
+                valor_acumulado: Valor acumulado até o mês (R$)
+
+              total: Total
+
+            stats:
+              title: Principais números relacionados às receitas lançadas
+              valor_lancado: 'Valor em <strong>%{date}</strong>'

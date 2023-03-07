@@ -1,0 +1,19 @@
+pt-BR:
+  operator:
+    tickets:
+      email_replies:
+
+        edit:
+          title: 'Enviar resposta(s) por e-mail'
+
+        form:
+          email:
+            hint: 'Ao enviar a(s) resposta(s) para o e-email informado você também está editando a informação cadastrada.'
+          commands:
+            save: 'Enviar/Atualizar'
+
+        update:
+          done: "Foi enviado e-mail para o endereço %{email} com o detalhamento do protocolo %{protocol}"
+          fail: 'Falha ao enviar o e-mail'
+          errors:
+            email: 'Formato de e-mail incorreto'

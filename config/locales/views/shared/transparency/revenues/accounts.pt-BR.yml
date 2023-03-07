@@ -1,0 +1,87 @@
+pt-BR:
+  shared:
+    transparency:
+      revenues:
+        accounts:
+
+          index:
+            title: Receitas do Poder Executivo
+            description: Saiba quanto é e de onde vem o dinheiro que Estado do Ceará arrecada (receita).
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Secretaria da Fazenda - SEFAZ</p>
+              <p>Sistema de Gestão Governamental por Resultados - S2GPR</p>
+
+            chart:
+              valor_arrecadado:
+                unit: 'Soma dos valores arrecadados: R$'
+                title: 'Valores arrecadados no período filtrado'
+
+                secretary:
+                  title: Soma dos valores arrecadados por secretarias
+                consolidado:
+                  title: Soma dos valores arrecadados por tipo de receita
+                categoria_economica:
+                  title: Soma dos valores arrecadados por categoria econômica
+                origem:
+                  title: Soma dos valores arrecadados por origem
+                subfonte:
+                  title: Soma dos valores arrecadados por subfonte
+
+            charts:
+              tabs:
+                secretary:
+                  title: Por secretaria
+                consolidado:
+                  title: Por tipo de receita
+                categoria_economica:
+                  title: Por categoria econômica
+                origem:
+                  title: Por origem
+                subfonte:
+                  title: Por subfonte
+
+            counts:
+              valor_previsto_inicial:
+                title: 'Valor previsto inicial das receitas filtradas'
+              valor_previsto_atualizado:
+                title: 'Valor previsto atualizado das receitas filtradas'
+              valor_arrecadado:
+                title: 'Valor arrecadado das receitas filtradas'
+
+            filters:
+              title: Consulta avançada
+
+              counts:
+                accounts_sum:
+                  valor_previsto_inicial:
+                    title: Valor previsto inicial das receitas filtradas
+
+                  valor_previsto_atualizado:
+                    title: Valor previsto atualizado das receitas filtradas
+
+                  valor_arrecadado:
+                    title: Valor arrecadado das receitas filtradas
+
+              search:
+                hint: |
+                  Você pode buscar por parte do nome de Secretarias, Órgãos,
+                  Tipo de receita, etc. Exemplos: 'ipva', 'icms', 'multa',
+                  'sec faze', entre outros.
+
+
+            table:
+              summary: Lista de receitas do Poder Executivo
+              header:
+                title: Descrição
+                valor_arrecadado: Valor arrecadado (R$)
+                valor_previsto_inicial: Valor previsto inicial (R$)
+                valor_previsto_atualizado: Valor previsto atualizado (R$)
+
+              total: Total
+
+            stats:
+              title: Principais números relacionados às receitas
+              valor_arrecadado: 'Valor arrecadado entre <strong>%{date}</strong>'
+              valor_previsto_inicial: 'Valor previsto inicial em <strong>%{date}</strong>'
+              valor_previsto_atualizado: 'Valor previsto atualizado entre <strong>%{date}</strong>'

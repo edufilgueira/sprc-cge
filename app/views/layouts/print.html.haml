@@ -1,0 +1,26 @@
+!!! 5
+%html{lang: 'pt-BR'}
+  %head
+    %meta{ charset: 'utf-8' }
+
+    = csrf_meta_tags
+    = stylesheet_link_tag(:print, media: :all)
+
+  %body.justify-content-center
+
+    .container
+      .row.mt-3.mb-3
+        .col-4
+          = content_tag(:img, '', src: image_path('logos/logo-ceara-print.svg'), style: 'max-width: 180px;')
+
+        .col-4.text-center
+          = content_tag(:img, '', src: image_path('logos/logo-ceara-header-invert.png'), alt: t('app.title'))
+
+        .col-4.text-right
+          = content_tag(:img, '', src: image_path('logos/logo-cge-header-invert1.png'))
+
+      %hr{'aria-hidden': 'true'}
+
+      = yield
+
+    = javascript_include_tag(:print)

@@ -1,0 +1,33 @@
+.row
+  .col-lg-12
+    %h3= t('.title')
+    %p= t('.description').html_safe
+
+.row.mt-3.text-justify
+  .col-lg-12.mb-4
+    
+    - if controller_name != 'region_themes' or (controller_name == 'region_themes' and theme_has_report?(@theme))
+      = link_to link_to_theme_report_activity(@region, @axis, @theme), title: t('.report_download'), id: 'report_link_id', target: '_blank' do
+        %i.fa.fa-file-pdf-o.fa-2x{'aria-hidden': 'true'}
+        =t('.report_download')
+
+  .col-lg-3
+    %label= t('.region')
+  .col-lg-9.mb-3
+    %strong#revision_region= @region.try(:name)
+  .col-lg-3
+    %label= t('.axis')
+  .col-lg-9.mb-3
+    %strong#revision_axis= @axis.try(:name)
+  .col-lg-3
+    %label= t('.strategic_result')
+  .col-lg-9.mb-3
+    %strong#revision_strategic_result= @strategic_result
+  .col-lg-3
+    %label= t('.theme')
+  .col-lg-9.mb-3
+    %strong#revision_theme= @theme.try(:name)
+  .col-lg-3
+    %label= t('.theme_description')
+  .col-lg-9.mb-3
+    %strong#revision_theme_description= @theme.try(:description)

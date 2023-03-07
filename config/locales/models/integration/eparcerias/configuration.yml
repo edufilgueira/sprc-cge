@@ -1,0 +1,36 @@
+pt-BR:
+  activerecord:
+    attributes:
+
+      integration/eparcerias/configuration:
+        wsdl: WSDL
+        headers_soap_action: SOAPAction
+        user: Usuário
+        password: Senha
+
+        transfer_bank_order: Ordens bancárias de transferência
+        transfer_bank_order_operation: Nome do método SOAP
+        transfer_bank_order_response_path: Caminho da resposta
+
+        work_plan_attachment: Anexos de planos de trabalho
+        work_plan_attachment_operation: Nome do método SOAP
+        work_plan_attachment_response_path: Caminho da resposta
+
+        accountability: Situação das prestações de contas
+        accountability_operation: Nome do método SOAP
+        accountability_response_path: Caminho da resposta
+
+        status: Status
+        log: Log
+        last_importation: Última importação
+        import_type: Tipo de importação
+        import_type_str: Tipo de importação
+
+    models:
+      integration/eparcerias/configuration:
+        one: Importador de informações do e-Parcerias
+
+  integration/eparcerias/configuration:
+    import_types:
+      import_all: Importar de todos os convênios
+      import_active: Importar apenas os convênios ativos

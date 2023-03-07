@@ -1,0 +1,31 @@
+- content_for :title, t('.title')
+
+= simple_form_for(resource, url: password_path(resource_name), html: { method: :put }) do |f|
+
+  .row.justify-content-center
+
+    .col-xl-6.col-12
+
+      .card.card-custom.mt-0.h-100
+        .card-header
+          %h2.card-title= t('.title')
+
+        .card-block.pb-0
+          = f.hidden_field :reset_password_token
+
+          = f.input :password, label: t('.fields.password.label'), autofocus: true
+          = f.input :password_confirmation, label: t('.fields.password_confirmation.label')
+
+        .card-block.pb-0
+          .row
+            .col-12
+              .errors.text-danger
+                = resource.errors.full_messages.join
+
+        .card-block
+          .row
+            .col-lg-4.col-12.pb-4.pb-lg-0
+              = link_to t('.back'), new_session_path(resource), class: 'btn btn-outline-primary btn-block'
+
+            .col-lg-8.col-12
+              = f.submit t('.change'), class: 'btn btn-primary btn-block'

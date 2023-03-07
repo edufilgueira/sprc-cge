@@ -1,0 +1,15 @@
+.row
+	.col-lg-12
+		.card.card-custom
+			.card-header
+				%h3.card-title
+					= t('.title')
+			.card-block
+				%h6
+					= t('.subtitle')
+
+.row
+	.col-lg-12
+		.card.card-custom
+			.card-block
+				= render partial: 'form'

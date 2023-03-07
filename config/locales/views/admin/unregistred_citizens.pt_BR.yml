@@ -1,0 +1,28 @@
+pt-BR:
+
+  admin:
+
+    unregistred_citizens:
+
+      index:
+        title: Cidadãos não cadastrados
+
+        table:
+          summary: Lista paginada com todos os cidadãos não cadastrados
+          header:
+            name: Nome
+            email: E-mail
+            actions: ''
+
+        filters:
+          search:
+            placeholder: Buscar por nome e e-mail
+          select:
+            person_type: Tipo de pessoa
+
+      show:
+        title: Exibição do cidadão não cadastrado
+
+      destroy:
+        error: Falha ao excluir cidadão
+        done: Cidadão removido com sucesso

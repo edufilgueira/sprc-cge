@@ -1,0 +1,64 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, thematic_indicator.title
+
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = thematic_indicator.title
+
+        .card-commands
+          = render 'shared/tickets/components/btn_print'
+
+      .card-block
+
+        .row
+          .col-12
+            = content_with_label(thematic_indicator, :orgao)
+        .row
+          .col-12
+            = content_with_label(thematic_indicator, :axis_title)
+        .row
+          .col-12
+            = content_with_label(thematic_indicator, :theme_title)
+        .row
+          .col-12
+            = content_with_label(thematic_indicator, :indicador)
+        .row
+          .col-12
+            = content_with_label(thematic_indicator, :resultado)
+
+        .row
+          - years = thematic_indicators_valores_realizados_years(thematic_indicator)
+          - if years.present?
+            .col-6
+              .content-with-label
+                %p.content-label
+                  = Integration::Results::ThematicIndicator.human_attribute_name(:valores_realizados)
+                  - years.each do |year|
+                    .content-value
+                      %span.badge.badge-success
+                        = t(".valores_realizados.year.#{year}")
+                      - value = thematic_indicator.valores_realizados_by_year(year)[:value]
+                      = value.present? ? "#{value} (#{thematic_indicator.unidade})" : '-'
+
+          - years = thematic_indicators_valores_programados_years(thematic_indicator)
+          - if years.present?
+            .col-6
+              .content-with-label
+                %p.content-label
+                  = Integration::Results::ThematicIndicator.human_attribute_name(:valores_programados)
+                  - years.each do |year|
+                    .content-value
+                      %span.badge.badge-info
+                        = t(".valores_programados.year.#{year}")
+                      - value = thematic_indicator.valores_programados_by_year(year)[:value]
+                      = value.present? ? "#{value} (#{thematic_indicator.unidade})" : '-'

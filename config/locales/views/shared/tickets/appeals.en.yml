@@ -1,0 +1,24 @@
+en:
+
+  shared:
+
+    tickets:
+
+      appeals:
+
+        form:
+          justification: Justification
+          hint: Explain the reason for request
+          save: Request resource
+
+        answers:
+          answer: Answer(s)
+          answer_versions:
+            sic:
+              zero: Request response
+              one: First request reponse 
+              other: Second request response
+            sou:
+              zero: Response to request 
+              one: Response to request (%{count}ª reabertura)
+              other: Response to request (%{count}ª reabertura)

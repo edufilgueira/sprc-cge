@@ -1,0 +1,16 @@
+%h4.h6.mb-0
+  = t('.title', requester: ticket_log.responsible.title)
+
+%small
+  %em
+    = l(ticket_log.created_at, format: :shorter)
+
+- if operator?(current_user)
+  %p
+    = raw(extension.description)
+
+%small
+  %em
+    = ticket_log_detail_to_extension(extension)
+
+%hr{'aria-hidden': 'true'}

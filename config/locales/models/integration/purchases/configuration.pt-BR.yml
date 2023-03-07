@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      integration/purchases/configuration:
+        one: Configuração de licitações finalizadas
+
+    attributes:
+      integration/purchases/configuration:
+        headers_soap_action: SOAPAction
+        password: Senha
+        user: Usuário
+        wsdl: WSDL
+        operation: Nome do método SOAP
+        response_path: Caminho da resposta
+        month: Mês
+

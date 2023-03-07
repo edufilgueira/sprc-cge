@@ -1,0 +1,163 @@
+en:
+  shared:
+    ticket_logs:
+      confirm:
+        sou:
+          title: Manifestation received
+        sic:
+          title: Request of information received
+        author: '%{date} by %{author}'
+
+      change_sou_type:
+        title: 'Type of manifestation changed from "%{from}" to "%{to}".'
+        responsible: 'Changed by %{name}'
+        justification: 'Justification: %{justification}'
+
+      change_ticket_type:
+        sic:
+          title: "Type changed to: Request of information"
+        sou:
+          title: "Type changed to: Ombudsman manifestation"
+
+      change_denunciation_type:
+        title: "Denunciation type changed to %{to}"
+        undefined: "Not defined"
+
+      comment:
+        user:
+          anonymous_title: 'Anonymous user comment'
+          title: 'Comment of %{author}'
+
+        internal:
+          title: 'Comment of %{author}'
+
+      share:
+        sou:
+          title: '%{name} shared manifestation with Ombudsman %{to}'
+        sic:
+          title: '%{name} shared request of information with Sectorial Committee %{to}'
+
+      delete_share:
+        sou:
+          title: '%{name} removed sharing of manifestation %{protocol} from Ombudsman %{organ}'
+        sic:
+          title: '%{name} removed sharing of request of information %{protocol} from Sectorial Committee %{organ}'
+
+      transfer:
+        sou:
+          title: '%{name} transfered manifestation to Ombudsman %{to}'
+        sic:
+          title: '%{name} transfered request of information to Sectorial Committee %{to}'
+
+      invalidate:
+        waiting:
+          title:
+            sou: '%{user} requested invalidation for manifestation %{protocol}'
+            sic: '%{user} requested invalidation for SIC request %{protocol}'
+
+        approved:
+          title:
+            sou: 'Manifestation %{protocol} invalidaded by %{user}'
+            sic: 'Request of information %{protocol} invalidaded by %{user}'
+
+        rejected:
+          title:
+            sou: 'Invalidation of manifestation %{protocol} rejected by %{user}'
+            sic: 'Invalidation of request of information %{protocol} rejected by %{user}'
+
+      forward:
+        sou:
+          title: '%{name} involved internal departament %{to}'
+        sic:
+          title: '%{name} involved internal departament %{to}'
+        email: 'E-mails: %{emails}'
+
+      evaluation:
+        title: User has answered the customer satisfaction survey
+
+      reopen:
+        sou:
+          title:
+            zero: '%{responsible} reopened the manifestation'
+            one: '%{responsible} reopened the manifestation (%{count} vez)'
+            other: '%{responsible} reopened the manifestation (%{count} vezes)'
+        sic:
+          title:
+            zero: '%{responsible} reopened the request'
+            one: '%{responsible} reopened the request (%{count} vez)'
+            other: '%{responsible} reopened the request (%{count} vezes)'
+
+      extension:
+        in_progress:
+          title: '%{requester} requested extension of deadline'
+          chief_responsible: 'Sent to leader - %{organ}'
+          coordination_responsible: 'Sent to Ombudsman Coordination'
+          status:
+
+        rejected:
+          title: '%{user} extension of deadline has been rejected'
+
+        cancelled:
+          title: '%{user} extension of deadline has been cancelled'
+
+        approved:
+          title: '%{user} extension of deadline has been approved'
+
+      occurrence:
+        title: '%{date} by %{title}'
+
+      appeal:
+        title:
+          zero: 'User has requested SIC appeal'
+          one: 'User has requested an appeal in %{count}ª SIC instance'
+          other: 'User has requested an appeal in %{count}ª SIC instance'
+
+      attendance_response:
+        title:
+          success: Response successfully given
+          failure: Failure of response
+        subtitle: '%{date} by %{title}'
+
+      attendance_finalized:
+        title: Attendance finalized
+
+      create_attachment:
+        title: "%{name} attachment was added"
+
+      destroy_attachment:
+        title: "%{name} attachment was removed"
+
+      create_classification:
+        title:
+          sou: "%{name} manifestation was classified %{protocol}"
+          sou: "%{name} request was classified %{protocol}"
+
+      update_classification:
+        title:
+          sou: "%{name} manifestation classification was updated %{protocol}"
+          sou: "%{name} classification of request was updated %{protocol}"
+
+      edit_department_deadline:
+        title: '%{organ_acronym} changed the deadline from %{department_acronym} to %{deadline_ends_at}'
+
+      priority:
+        title: "%{name} has marked as urgent"
+
+      attendance_updated:
+        title: '%{name} edited the attendance'
+
+      answer_updated:
+        title: '%{name} edited %{acronym} answer'
+
+      answer_cge_approved:
+        title: '%{name} approved %{acronym} answer'
+
+      answer_cge_rejected:
+        title: '%{name} rejected %{acronym} answer'
+
+      update_ticket:
+        title:
+          sou: '%{name} updated manifestation informations'
+          sic: '%{name} updated request informations'
+
+        attributes_changed: 'Data changed: %{attributes}'

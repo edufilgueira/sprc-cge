@@ -1,0 +1,35 @@
+es:
+  ppa:
+    workshops:
+      index:
+        past_workshops: Ver los talleres realizados 
+        next_workshops: Ver los próximos talleres 
+        address_title: 'Dirección:'
+        date_title: 'Fecha:'
+        documents: Archivos
+
+        title: Talleres de elaboración del PPA 
+        what_is_workshops: ¿Qué son los talleres de elaboración del PPA? 
+        ppa_description: En resumen, ¿Qué es el PPA? 
+        methodology: ¿Cuál es la metodología de los talleres? 
+        how_to_participate: ¿Cómo participar de los talleres del PPA?
+
+        workshops_description: El Encuentro Regional es un momento en que el Gobierno de Ceará escucha, debate, evalúa y propone sugerencias conjuntamente con la población. Es el momento en que el Gobierno va hasta usted para escuchar sus opiniones, evaluaciones e ideas de mejora en los servicios ofrecidos y en el alcance de resultados que usted espera.
+      
+        ppa_description: El Plan Plurianual (PPA) es una ley que dirige la actuación del Gobierno por medio de directrices, objetivos y metas a medio plazo, con foco principal en la mejora de los resultados que son esperados por la sociedad en cada región del Estado. El PPA es elaborado en el primer año de cada gobierno y tiene una duración de cuatro años, a fin de garantizar la continuidad de los proyectos, incluso si hay cambio de gobierno. Uno de los principales elementos orientadores del PPA es la participación de la sociedad en todas sus etapas. Para que esto suceda, el Gobierno del Estado promueve encuentros en todas las regiones de planificación.
+
+        methodology_description: En los Encuentros Regionales de Elaboración la población será dividida, de acuerdo con sus temas de interés, en cuatro grupos representando los Ejes adoptados en el PPA. En cada grupo se presentarán presentaciones de los principales obstáculos encontrados en la región, y luego la población definirá un Objetivo Estratégico para cada Eje, así como las estrategias que deberán ser seguidas para solucionar los obstáculos señalados. Por último, la población, en plenaria, va a priorizar las estrategias.
+
+        how_to_descripction: El PPA ofrece las líneas generales y los gastos prioritarios
+          para los próximos cuatro años. Él tiene las fases de Elaboración,
+          Monitoreo, Evaluación y Revisión, y todas ellas se construyen
+          con el apoyo de la sociedad.
+
+      workshops_list:
+        title: Lista de los próximos talleres 
+        past_workshops: Ver talleres realizados  
+
+      filters:
+        city: Municipio
+        start_at: A partir de
+        all: Todos

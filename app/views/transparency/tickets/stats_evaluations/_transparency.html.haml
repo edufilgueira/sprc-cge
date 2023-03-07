@@ -1,0 +1,50 @@
+.row.text-center.pt-2
+  .col-12
+    .row
+      .col-md-2.col-12
+        %i.fa.fa-file-text-o.fa-3x.text-primary{'aria-hidden': 'true'}
+      .col-md-3.col-12
+        %label.h1.text-muted.m-1
+          = data_summary_hash['total']
+      .col-md-7.col-12.text-md-left
+        %label.text-muted.mt-md-2.mt-lg-3
+          = t('.summary.total.title')
+
+%hr{'aria-hidden': 'true'}
+
+.row.text-center.pt-2
+  .col-12
+    - average = data_summary_hash['average']
+    - icon_name = stats_evaluations
+
+    .row
+      .col-md-2.col-12
+        = image_tag("views/transparency/survey_answer/#{stats_evaluation_transparency_average_icon(average)}.png", {'aria-hidden': 'true'})
+      .col-md-3.col-12
+        %label.h1.text-muted.m-1
+          = number_with_precision(average, precision: 2) || '-'
+
+      .col-md-7.col-12.text-md-left
+        %label.text-muted.mt-md-2.mt-lg-3
+          = t('.summary.average.title')
+
+%hr{'aria-hidden': 'true'}
+
+.row.no-gutters
+  .col-lg-1.col-12
+  - transparency_survey_answer_options.each do |kind|
+    .col-lg-2.col-12
+      .card.m-1
+        .row
+          .col-12.text-center
+            %label.small.text-muted
+              = kind.first
+        .row
+          .col-12.text-center
+            = image_tag("views/transparency/survey_answer/#{kind.second}_color.png", {'aria-hidden': 'true'})
+        .row.mt-2
+          .col-12.text-center
+            %label.h4.text-muted
+              = data_summary_hash[kind.second]
+
+  .col-lg-1.col-12

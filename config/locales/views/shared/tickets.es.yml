@@ -1,0 +1,475 @@
+es:
+  shared:
+    tickets:
+
+      print:
+        reopen:
+          title:
+            one: 'Reaperturas (%{count} tiempo)'
+            other: 'Reaperturas (%{count} veces)'
+
+        appeal:
+          title:
+            one: 'Medio (%{count} tiempo)'
+            other: 'Medio (%{count} veces)'
+
+      contact_fields:
+        state: State
+
+      attachment_fields:
+        file:
+          hint: 'The sum of the attachments inserted in the system cannot exceed the limit of 50MB.'
+
+
+      notice_confirmation_success:
+        title: 'Listo!'
+        sic:
+          description: Su solicitación ha sido registrada con éxito.
+          deadline_description: 'El atendimiento de las Solicitaciones de Información es de hasta 20 días y puede ser prorrogado por otros 10 días conforme establece la Ley nº. 15.175/2012.'
+          important_description: '<p><b><center>¡Importante!</center></b></p> La Comisión Sectorial de Acceso a la Información podrá solicitar información adicional sobre la manifestación con el fin de facilitar el servicio / cálculo, y se recomienda que el ciudadano permanezca accediendo a ella durante los próximos 5 (cinco) días, utilizando el protocolo y contraseña proporcionados anteriormente. para proporcionar la información solicitada y evitar que la manifestación sea invalidada.'
+        sou:
+          description: Su manifestación ha sido registrada con éxito.
+          deadline_description: 'El plazo de atención de la manifestación de Oidoría es de hasta 20 días pudiendo ser prorrogado por otros 10 días conforme establece el Decreto nº. 30.474/2011.'
+          important_description: '<p><b><center>¡Importante!</center></b></p> El Defensor del Pueblo podrá solicitar información adicional sobre la manifestación con el fin de facilitar el servicio / investigación, y se recomienda que el ciudadano permanezca accediendo a la misma durante los próximos 5 (cinco) días, utilizando el protocolo y contraseña proporcionados anteriormente, para brindar la información solicitada. y evitar que la manifestación quede invalidada.'
+        password_description: 'Apunte su número de protocolo y su contraseña para consultar su llamada:'
+
+      confirmed_operator:
+        tabs:
+          infos:
+            sic:
+              title: Informaciones básicas
+            sou:
+              title: Informaciones básicas
+          classification:
+            sic:
+              title: Clasificación
+            sou:
+              title: Clasificación
+          areas:
+            sic:
+              title: SICs y áreas
+            sou:
+              title: Oidorías y áreas
+          comments:
+            sic:
+              title: Comentarios
+            sou:
+              title: Comentarios
+          replies:
+            sic:
+              title: Respuestas
+            sou:
+              title: Respuestas
+          internal_replies:
+            sic:
+              title: Posicionamientos
+            sou:
+              title: Posicionamientos
+          history:
+            sic:
+              title: Histórico
+            sou:
+              title: Histórico
+          attendance_evaluations:
+            sic:
+              title: Evaluación
+            sou:
+              title: Evaluación
+          history:
+            sic:
+              title: Histórico
+            sou:
+              title: Histórico
+
+        attendance_evaluations:
+            title: Evaluación interna del atendimiento
+
+
+      classification:
+        title: Clasificación
+        denunciation:
+          requirement: La clasificación de una declaración con una queja se realiza solo después de definir el tipo de queja
+        parent:
+          sic: La clasificación es hecha solamente en la solicitación hija
+          sou: La clasificación es hecha solamente en la manifestación hija
+
+
+      sharings:
+        sou:
+          title: Oidorías sectoriales involucradas
+          new: Añadir Oidorías sectoriales involucradas
+          share: Compartir con otra Oidoría
+          empty: Ninguna Oidoría sectorial involucrada
+        sic:
+          title: Órganos involucrados
+          new: Añadir órgano involucrado
+          share: Compartir con otro órgano
+          empty: Ningún órgano involucrado
+        denunciation:
+          empty: Para involucrar otros órganos, clasifique la denuncia
+        transfers:
+          sou:
+            new: Transferir a otra oidoría
+          sic:
+            new: Transferir a otro órgano
+
+      public_comments:
+        comments:
+            user:
+              title: Comentarios del ciudadano
+              empty: No hay comentarios
+
+      ticket_logs:
+        title: Histórico del atendimiento
+
+        index:
+          replies_received: "Usted ha recibido %{answers_count} de %{children_count} respuesta(s)"
+
+
+      ticket_internal_logs:
+        title: Comentarios internos
+
+      invalidate: Invalidar
+
+      forwards:
+        referrals:
+          title: Áreas internas involucradas
+          empty: Ninguna área interna involucrada
+          edit: Encaminar al área interna
+
+        transfer_departments:
+          edit: Transferir a otra área interna
+          share: Compartir con otra área interna
+
+      transfer_departments:
+        edit: Transferir a otra área interna
+        share: Compartir con otra área interna
+
+      sou_types_toggle:
+        label: Tipo de manifestación
+        popover:
+          complaint:
+            title: Queja
+            body: Registre una queja o protesta sobre una experiencia negativa que usted ha tenido con el Gobierno del Estado de Ceará.
+          denunciation:
+            title: Denuncia
+            body: Lleve al conocimiento de las autoridades del Gobierno del Estado de Ceará algún hecho contrario a la ley, al orden público o a algún reglamento y susceptible de pena.
+          compliment:
+            title: Alabanza
+            body: Registre su satisfación con alguna experiencia positiva que usted ha tenido con el Gobierno del Estado de Ceará.
+          suggestion:
+            title: Sugerencia
+            body: Comparta con el Gobierno del Estado de Ceará sus propuestas, ideas o consejos.
+          request:
+            title: Solicitación
+            body: Solicite la realización de un servicio al Gobierno del Estado de Ceará.
+
+      sou_types_toggle_without_popover:
+        label: Tipo de manifestación
+
+      form:
+        topic:
+          unknown: I don't know how to inform the subject
+        change_sou_type:
+          justification: 'Justifique el cambio en el tipo de manifestación:'
+
+        sic_info: 'Compruebe si la información deseada está disponible en el <a href="%{url}">Páginas de Transparencia</a>.'
+
+        person_info:
+          title: Informaciones del ciudadano
+          keep_secret:
+            sic: Sus informaciones personales solo serán visibles al empleado.
+            sou: Sus informaciones personales solo serán visibles al oidor.
+
+        contact_info:
+          title: Informaciones de contacto
+
+        add_attachment: Añadir adjunto
+
+        cards:
+          attachments:
+            title: Adjuntos (opcional)
+
+          sou:
+            description:
+              title: Descripción de la manifestación
+
+          sic:
+            description:
+              title: Descripción de la solicitación
+
+          infos:
+            title: Informaciones del ciudadano
+
+          answer:
+            title: Respuesta inmediata
+
+        modal:
+          title: Confirmación de denuncia
+          close: Cerrar
+          body: 'Usted puede optar por hacer la denuncia de forma anónima. Basta con salir de su cuenta y hacer clic en la opción "Manifestación Anónima", en la página "Oidoría Digital". '
+          footer:
+            agreements: 'Lo leí y estoy de acuerdo'
+            submit: Enviar denuncia
+
+
+        commands:
+          sou:
+            cancel: < Volver a la lista de Manifestaciones de Oidorías
+            create: Guardar manifestación
+            update: Actualizar manifestación
+          sic:
+            cancel: < Volver a la lista de Solicitaciones
+            create: Guardar solicitación
+            update: Actualizar solicitación
+
+
+        fields:
+          description:
+            hint:
+              citizen:
+                sou: Describa su manifestación con el máximo posible de detalles. No hay límites de caracteres.
+                sic: Describa su solicitación con el máximo posible de detalles. No hay límites de caracteres.
+              operator:
+                sou: Describa la manifestación con el máximo posible de detalles. No hay límites de caracteres.
+                sic: Describa la solicitación con el máximo posible de detalles. No hay límites de caracteres.
+            anonymous_hint: Para garantizar su anonimato, no escriba nada que pueda identificarle.
+            operator_hint: Para garantizar el anonimato del ciudadano, no escriba nada que pueda identificarlo.
+
+          subnet:
+            select: Seleccione una Subred responsable
+
+          organ:
+            select: Seleccione un órgano responsable
+
+          topic:
+            unknown: No se como informar el tema
+
+          rede_ouvir:
+            select: Seleccione una rede ouvir responsable
+
+          select: Seleccione una opción
+
+          denunciation_organ_select: No sé cuál es el órgano
+
+          denunciation_type_ticket: ¡Atención! Su informe será enviado al Contralor y Ombudsman del Estado para su análisis y referencias.
+                                    El campo a continuación indica solo qué cuerpo se informa, cuando es posible identificar
+
+          denunciation_description:
+            citizen:
+              hint: Descreba su denuncia con el mayor número posible de detalles, incluso mencione los nombres de las personas denunciadas. No hay límites de caracteres.
+            operator:
+              hint: Descreba la denuncia con el mayor número posible de detalles, incluso mencione los nombres de las personas denunciadas. No hay límites de caracteres.
+
+          denunciation_evidence:
+            hint: Indique cuáles son las evidencias del hecho denunciado y dónde pueden ser encontradas.
+
+          answer_type: Además del correo electrónico e internet, ¿a usted le gustaría recibir la respuesta de otra forma?
+
+          answer_phone: Teléfono 1
+          answer_cell_phone: Teléfono 2
+
+          answer_address_zipcode: Introduzca el código postal
+
+        privacy_terms:
+          title: Privacidad y Términos
+          description: 'Lo leí y estoy de acuerdo con los <a target="_blank" href="%{terms_url}">Términos de Uso</a>'
+
+
+      index:
+        filters:
+          search:
+            title: Búsqueda por palabra clave
+            label: Búsqueda por protocolo, nombre, correo electrónico, documento o descripción
+          parent_protocol:
+            title: Búsqueda por protocolo
+            label: Protocolo
+          confirmed_at:
+            label: Periodo
+            start: Inicio
+            end: Fin
+
+          sou:
+            commands:
+              new: Nueva manifestación
+
+          sic:
+            commands:
+              new: Nueva solicitación
+
+        user_filters:
+          select:
+            organ: Órgano
+            deadline: Plazo
+            status_for_citizen: Situación
+            topic: Asunto
+
+          finalized: Mostrar finalizados
+
+        operator_filters:
+          select:
+            internal_status: Situación
+            department: Unidad
+            sub_department: Subunidad
+            organ: Órgano
+            topic: Asunto
+            subtopic: Subasunto
+            budget_program: Programa presupuestario
+            service_type: Tipo de servicio
+            deadline: Plazo
+            ticket_departments_deadline: Plazo de la unidad (área interna)
+            answer_type: Tipo de respuesta
+            sou_type: Tipo de manifestación
+            subnet: Subred
+
+          priority: Solamente urgentes
+          finalized: Mostrar finalizados
+          denunciation: Solo denuncias
+          extension_in_progress: Solamente pedidos de prorrogación
+
+        empty: No se encontraron registros
+
+
+
+      deadline:
+        remaining: Cuenta regresiva para respuesta
+
+      show:
+        anonymous:
+          sic:
+            title: Solicitación anónima
+
+          sou:
+            title: Manifestación anónima
+
+        attachments:
+          title: Adjuntos
+          none: No hay archivos
+
+        actions: Acciones
+
+        confirmation:
+          title: Confirme los datos rellenados
+
+        sou:
+          title: Informaciones de manifestación
+          description:
+            title: Descripción de la manifestación
+
+        sic:
+          title: Informaciones de la solicitación
+          description:
+            title: Descripción de la solicitación
+
+        infos:
+          title: Informaciones del ciudadano
+          anonymous:
+            title: Identificación de la manifestación
+
+        deadline:
+          title: Plazos y providencias
+          created_at: Fecha del registro
+          last_day: Plazo final de la respuesta
+          status: Situación actual
+
+        extension:
+          title: Solicitar prórroga
+
+        cancel_extension: Cancelar solicitación de prórroga
+        cancel_extension_confirmation: >
+          ¿Está seguro de que desea cancelar la solicitud?
+
+        appeal:
+          '1': "Fecha de apertura del recurso (primera instancia)"
+          '2': "Fecha de apertura del recurso (segunda instancia)"
+          '3': "Fecha de apertura del recurso (tercera instancia)"
+
+        ticket_department:
+          note: Observación
+          deadline: Plazo final para la respuesta
+
+        denunciation_organ:
+          edit: Editar el órgano denunciado
+
+        target_address:
+          title: Lugar de ocurrencia
+
+      sou_type:
+        edit: Editar tipo de manifestación
+
+      ticket_department:
+        extension_in_progress: Responder solicitud de prórroga
+        edit: '%{title} - <a href="%{url}">Editar el plazo del área interna</a> '
+
+      unconfirmed:
+        anonymous:
+          sic:
+            title: Solicitación anónima
+
+          sou:
+            title: Manifestación anónima
+
+        title: Confirme los datos
+
+        attachments:
+          title: Adjuntos
+          none: No hay adjuntos
+
+        sou:
+          description:
+            title: Descripción de la manifestación
+
+        sic:
+          description:
+            title: Descripción de la solicitación
+
+        infos:
+          title: Informaciones del ciudadano
+
+        confirm:
+          action: Confirmar apertura
+
+        edit:
+          action: Volver a edición
+
+      person_info:
+        person_types:
+          legal:
+            name: Razón social
+            cnpj: CNPJ
+        anonymous: Persona anónima
+
+        email: Correo Electrónico (Opcional)
+
+      short_details:
+        sou: Descripción de la manifestación
+        sic: Descripción de la solicitación
+
+        attachments: Adjuntos
+
+      ticket_classification_fields:
+          title: Clasificación
+
+      ticket_denunciation_classification_fields:
+          title: Clasificación de la denuncia
+
+      denunciation_classification_fields:
+        button: Clasificar denuncia
+
+      denunciation_classification:
+        title: 'Reenviar a la Coordinación de Corrección - COSCO?'
+        alert: 'Envíe la queja a la Coordinación Correccional cuando los involucrados sean miembros de la Dirección Superior o Gerencia Superior de los órganos / entidades del Poder Ejecutivo del Estado, así como las quejas cuya investigación es responsabilidad de la Coordinación Correccional, según los términos del Decreto no. 33,276/2019'
+        confirm_alert: '¿Está seguro de que desea involucrar a COSCO?'
+
+      denunciation_couvi:
+        title: 'Reenviar al Coordinador de corrección - COUVI'
+        alert: 'Envíe la queja a la Coordinación del Defensor del Pueblo cuando la persona involucrada sea un defensor del pueblo sectorial, un defensor del pueblo sustituto o un asesor de control interno y un defensor del pueblo, en su caso, de los Órganos y Entidades del Poder Ejecutivo, cuando el objeto de la queja esté relacionado con actividades dentro del alcance del Sistema Estatal Defensor del pueblo'
+        confirm_alert: '¿Está seguro de que desea involucrar a COUVI?'
+
+      target_address:
+        title: Lugar de ocurrencia
+
+      priority_alert:
+        title:
+          sic: Solicitud marcada como urgente
+          sou: Manifestación marcada como urgente

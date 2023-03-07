@@ -1,0 +1,75 @@
+pt-BR:
+  shared:
+    transparency:
+      expenses:
+
+        fund_supplies:
+          index:
+            title: Suprimento de Fundos
+            description: 'Consulte aqui as despesas com suprimento de fundos, que são valores recebidos por servidores do Estado para atender aos casos de dispêndios emergenciais.'
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Secretaria da Fazenda - SEFAZ</p>
+              <p>Sistema de Gestão Governamental por Resultados - S2GPR</p>
+
+            chart:
+              calculated_valor_final:
+                unit: 'Valores empenhados: R$'
+                title: 'Valores das Notas de Empenho no ano selecionado.'
+
+                razao_social_credor:
+                  title: Valores empenhados por credor
+                management_unit:
+                  title: Valores empenhados por secretarias/órgãos
+                item_despesa:
+                  title: Valores empenhados por item de despesa
+                efeito:
+                  title: Valores empenhados por efeito
+
+            charts:
+              tabs:
+                razao_social_credor:
+                  title: Por credor
+                management_unit:
+                  title: Por secretaria/órgão
+                item_despesa:
+                  title: Por item de despesa
+
+            filters:
+              title: Consulta avançada
+              search:
+                hint: |
+                  Você pode buscar por parte do nome dos credores, unidade gestora.
+                  Exemplos: 'sec educa', 'seplag', entre outros.
+
+            counts:
+              filtered_count:
+                title: Quantidade de suprimentos de fundos filtrados
+              filtered_sum:
+                valor:
+                  title: Valor empenhado das suprimentos de fundos filtrados
+                valor_pago:
+                  title: Valor pago das suprimentos de fundos filtrados
+
+            table:
+              summary: Lista de Suprimentos de Fundos
+              header:
+                numero: Nota de empenho
+                date_of_issue: Data de emissão
+                unidade_gestora: Unidade gestora
+                management_unit_title: Secretaria/Órgão
+                item_despesa: Item de despesa
+                credor: Credor
+                valor: Valor empenhado
+                valor_pago: Valor pago
+
+            stats:
+              title: Principais números relacionados aos Suprimentos de Fundos
+              count: 'Quantidade em <strong>%{date}</strong>'
+              valor: 'Valor empenhado em <strong>%{date}</strong>'
+              valor_pago: 'Valor pago em <strong>%{date}</strong>'
+
+          show:
+            contract:
+              link: '%{value}'
+              none: EMPENHO NÃO VINCULADO AO INSTRUMENTO CONTRATUAL/CONVÊNIO

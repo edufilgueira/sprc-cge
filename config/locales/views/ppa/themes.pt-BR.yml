@@ -1,0 +1,26 @@
+pt-BR:
+  ppa:
+    themes:
+      index:
+        title: PPA (%{start_year} - %{end_year}) - Proposição Temática - %{region}
+        query: 'Filtrar pelo nome do tema:'
+        themes: Temas
+        filtered_results: Resultados Filtrados
+        clear: Limpar
+        has_proposal: Possui proposta cadastrada
+        all_proposals: Exibir todas as propostas cadastradas
+        info: Para a realização dos Encontros Regionais de Elaboração do PPA 2020-2023, o Governo do Estado gostaria de saber dos cidadãos quais temas devem ser priorizados nas discussões de cada Região. Para isso, você cidadão poderá escolher quais temas quer debater e nos falar um pouco mais sobre o que pretende debater. Antes dos Encontros, analisaremos todas as respostas e prepararemos um material específico para a demanda de cada região.
+
+      proposals:
+      
+        title:  PPA (%{start_year} - %{end_year}) - Proposição Temática
+        subtitle:  "- %{theme}"
+        back: Voltar para Temas
+
+        table:
+          header:
+            region: Região
+            axis: Eixo
+            theme: Tema
+  
+  

@@ -1,0 +1,116 @@
+pt-BR:
+  ppa:
+    revision:
+      prioritizations:
+        themes_list:
+          all_themes_rated: Todos os temas desse eixo já foram avaliados
+        update:
+          done: Configuração salva com sucesso.
+          error: Não foi possível atualizar
+        edit:
+          title: Priorização das Estratégias Regionais
+          description: >-
+            Concluída a etapa de revisão das estratégias regionais para os últimos 
+            dois anos do PPA 2020-2023 (2022 e 2023), começará agora a fase de priorização 
+            dessas demandas regionais, para que a sociedade cearense possa indicar quais 
+            estratégias são mais importantes  para o desenvolvimento da sua região nos próximos dois anos.<br><br>
+            Esse momento é de extrema importância no processo de planejamento do Governo do Estado, 
+            visto que os recursos financeiros são limitados, o que exige que sejam 
+            definidas prioridades; ou seja, é necessário definir para onde a destinação 
+            de recursos se faz mais necessária e estratégica em sua região.<br><br>
+            Neste sentido, seguindo o mesmo critério inicial de seleção de até duas 
+            regiões de planejamento, você poderá priorizar até duas estratégias regionais por Tema.<br><br>
+            Para começar, basta seguir os passos indicados abaixo. Contamos com sua contribuição!
+        create:
+          done: Configuração salva com sucesso.
+        show:
+          title: 'Resumo'
+          new_region: 'Revisar nova região'
+          new_theme: 'Revisar novo tema'
+          finish: 'Encerrar Revisão'
+          revised_themes: 'Temas selecionados'
+          no_revised_themes: 'Nenhum tema revisado'
+          regional_strategies_prioritized: Estratégias Priorizadas
+          theme: Tema
+          description: Descrição
+          priority: Prioridade
+        conclusion:
+          description: O governo do Estado agradece sua participação!
+        multistep_form:
+          title: Siga os passos para participar da revisão
+          region: Região
+          theme: Tema
+          revision: Revisão
+          resume: Resumo
+          conclusion: Conclusão
+          prioritizations: Priorização
+        multisteps:
+          region:
+            title: Região
+            description: Selecione o município da região em que você deseja participar.
+          theme:
+            title: "Tema - Região: "
+            axes: Eixos
+            themes: Temas
+            description: Selecione os Temas (Políticas Públicas) que são de maior interesse para você.
+          revision:
+            back_to_resume: 'Voltar para resumo'
+            top:
+              title: Revisão das situações-problemas e estratégias regionais
+              description: >
+                Siga os seguintes passos para a realização dessa atividade:<br><br>
+                Passo 1 - Indique se as situações-problemas registradas nesse Tema continuam existindo em sua região (caso não se sinta à vontade para opinar sobre alguma existente na lista, é possível deixar em branco);<br>
+                Passo 2 - Caso você não encontre alguma situação-problema que considere particularmente importante, você pode acrescentar novas;<br>
+                Passo 3 – Indique se as estratégias estipuladas para a sua região nesse Tema continuam sendo importantes no período atual (caso não se sinta à vontade para opinar sobre alguma existente na lista, é possível deixar em branco);<br>
+                Passo 4 - Se alguma das estratégias já existente não contribui para a solução da nova situação-problema que você cadastrou, proponha uma nova estratégia para solucionar essa questão.<br><br>
+                Você também pode visualizar as entregas (bens e serviços) alinhadas às estratégias regionais estabelecidas pela região neste Tema e realizadas em 2020 clicando no link do relatório disponível logo abaixo.<br>
+              report_download: 'Relatório com as iniciativas e entregas do PPA alinhadas às Estratégias Regionais'
+              region: Região
+              axis: Eixo
+              theme: Tema
+              strategic_result: Resultado Estrategico
+              theme_description: Descrição do Tema
+            problem_situation:
+              title: Situação-Problema
+              description: (Registrada no processo de elaboração do PPA %{ppa_plan})
+              table:
+                title: Descrição
+                persist: Ainda persiste na região?
+              no_problem_situations: "Para este tema, não tiveram situações-problemas apontadas durante a elaboração do PPA"
+            regional_strategy:
+              title: Estratégia Regional
+              description: (Estabelecida para o PPA %{ppa_plan})
+              table:
+                title: Estratégias Regionais
+                persist: Você confirma a permanência dessa estratégia?
+              no_regional_strategies: "Para este tema, não tiveram estratégias apontadas durante a elaboração do PPA"
+            new_regional_strategy:
+              quest: Você deseja propor uma nova Estratégia Regional para tratar determinada situação-problema específica?
+            new_problem_situation:
+              quest: Você deseja registrar uma nova situação-problema existente em sua região?
+              all: Todas
+
+        multistep_form_edit:
+          btn_go_to_resume: Cancelar e ir para resumo
+
+        multistep_form_new:
+          button_to_abort: Cancelar revisão
+
+          revision:
+            back_to_resume: Voltar para resumo
+        conclusion: Conclusão
+      operations:
+        new:
+          title: Priorizar Estratégias Regionais
+          description: Escolha até três Eixos para ter acesso à priorização dos Temas de seu interesse (máximo duas estratégias por Tema).
+          region: "Região:"
+          theme: "Tema:"
+          axis: "Eixo:"
+          theme_description: "Descrição do Tema:"
+          regional_strategies:
+            title: Estratégias Regionais
+            description: Selecione no máximo duas estratégias regionais a serem priorizadas na região
+          problem_situations:
+            title: Situações-problema
+            description: Relação de situações-problema revisadas para a região
+          previous: Anterior

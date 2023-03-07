@@ -1,0 +1,30 @@
+en:
+  activerecord:
+    models:
+      integration/expenses/npf:
+        one: Financial Programming Note
+        other: Financial Programming Notes
+
+    attributes:
+      integration/expenses/npf:
+        exercicio: Period
+        unidade_gestora: Management unit
+        unidade_executora: Executing unit
+        numero: Number
+        natureza: Nature
+        efeito: Effect
+        data_emissao: Issue date
+        date_of_issue: Issue date
+        grupo_fin: Financial group
+        fonte_rec: Resource source
+        credor: Creditor
+        codigo_projeto: Project code
+        numero_parcela: Installment number
+        isn_parcela: Installments ISN number
+        numeroconvenio: Agreement number
+        data_atual: Current date
+
+        date_of_issue: Issue date
+        management_unit_title: Secretariat/Agency
+        executing_unit_title: Executing unit
+        creditor_nome: Creditor

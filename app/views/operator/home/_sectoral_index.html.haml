@@ -1,0 +1,24 @@
+- tabs = %w[ticket_index department_index]
+
+.mt-4
+  %hr
+
+  %nav.nav.nav-pills{id: 'tabs', role: 'tablist', 'aria-orientation': 'horizontal'}
+
+    - tabs.each_with_index do |tab, index|
+
+      - html_class = (index == 0 ? 'active' : '')
+
+      %a.nav-link{id: "tabs-#{tab}-tab", 'data-toggle': 'pill', href: "#tabs-#{tab}", role: 'tab', class: html_class}
+        - title = t(".tabs.#{tab}.title")
+        = title
+
+  .tab-content{id: 'tabsContent'}
+
+    - tabs.each_with_index do |tab, index|
+
+      - html_class = (index == 0 ? 'active show' : '')
+
+      .tab-pane.fade{id: "tabs-#{tab}", "aria-labelledby": "#tabs-#{tab}-tab", role: 'tabpanel', class: html_class}
+
+        = render tab

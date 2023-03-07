@@ -1,0 +1,22 @@
+pt-BR:
+  transparency:
+    shared:
+      mobile_apps:
+        index:
+          official:
+            title: Aplicativos oficiais
+          unofficial:
+            title: Iniciativas da Sociedade
+
+          empty: Nenhum registro encontrado
+
+          filters:
+            title: Filtros
+
+    society_mobile_apps:
+      index:
+        title: Iniciativas da Sociedade
+
+    mobile_apps:
+      index:
+        title: Aplicativos oficiais

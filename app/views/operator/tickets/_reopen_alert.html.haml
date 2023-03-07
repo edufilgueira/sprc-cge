@@ -1,0 +1,22 @@
+- last_reopen = ticket.ticket_logs.reopen.last
+
+- if last_reopen.present?
+  .no-print
+
+    .row.justify-content-center.mt-4
+      .col-xl-10.col-12
+
+        .alert.alert-warning.alert-dismissible.fade.show{ role: 'alert' }
+
+          .m-2
+
+            %h3.row.justify-content-center
+              %i.fa.fa-exclamation-triangle
+              %span.pl-2
+                = t('.title', count: ticket.reopened)
+
+            .content-with-label
+              %p.content-label
+                = t('.justification')
+              %p.content-value
+                = raw(last_reopen.description)

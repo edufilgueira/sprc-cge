@@ -1,0 +1,7 @@
+pt-BR:
+
+  admin:
+    integrations:
+      macroregion_investiments:
+        index:
+          title: Investimentos por macrorregiões

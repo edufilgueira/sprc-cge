@@ -1,0 +1,68 @@
+es:
+  shared:
+    transparency:
+
+      constructions:
+
+        daes:
+
+          index:
+            title: Obras de edificaciones
+            description: 'Vea aquí todas las obras estatales de edificios que tienen la Superintendencia de Obras Públicas como responsable técnico o contratista.'
+            last_update: 'Última actualización SOP: '
+
+            source: |
+              <p><strong>Fuente de datos:</strong></p>
+              <p>Superintendência de Obras Públicas - SOP</p>
+
+            filters:
+              title: Consulta avanzada
+              search:
+                hint: |
+                    Usted puede buscar por parte del Nº SACC, nombre de la contratada,
+                    ciudad, secretaría, descripción entre otros.
+
+            chart:
+              valor:
+                unit: 'Total gasto R$'
+                title: 'Mayores valores'
+              count:
+                unit: 'Cantidade'
+                title: 'Numero de obras'
+
+            charts:
+              tabs:
+                descricao:
+                  title: 'General'
+                municipio:
+                  title: 'Ciudad'
+                secretaria:
+                  title: 'Secretaría'
+                contratada:
+                  title: 'Contratada'
+
+            stats:
+              title: Principales números relacionados con las obras
+              count: 'Cantidade de obras activas en <strong>%{date}</strong>'
+
+            counts:
+              daes_count:
+                title: Cantidad de las obras filtradas
+              daes_sum:
+                title: Valor de las obras filtradas
+
+            table:
+              summary: Lista de contratos y convenios
+              header:
+                numero_sacc: SACC
+                secretaria: Secretaría
+                contratada: Contratada
+                descricao: Descripción
+                municipio: Ciudad
+                status: Situación
+                valor: Valor
+
+            blank_coordinates: Sin registros georeferenciados
+
+
+          show:

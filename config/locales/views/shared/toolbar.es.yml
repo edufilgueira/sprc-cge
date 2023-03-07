@@ -1,0 +1,44 @@
+es:
+
+  shared:
+
+    toolbar_menu:
+
+      user:
+        title: Hola, %{name}
+        edit: Editar perfil
+        logout: Salir
+
+    transparency:
+      toolbar:
+        menu: Menu de navegação
+        server_salaries: Salarios de los funcionarios publicos del estado
+        revenues:
+          accounts: Ingresos del Poder Ejecutivo
+          transfers: Ingresos - Ingresos Recibidos en Transferencias
+        expenses:
+          budget_balances: Gastos del Poder Ejecutivo
+          neds: Gastos - Notas de Empeño
+          npds: Gastos - Notas de Pago de Gasto
+          nlds: Gastos - Notas de Liquidación de Gasto
+          npfs: Gastos - Notas de Programación Financiera
+
+        contracts: Contractos
+        convenants: Convenios
+        management_contracts: Contractos de Gestión
+
+        constructions:
+          ders: Obras DER
+          daes: Obras DAE
+
+        purchases: Licitaciones finalizadas
+        real_states: Bienes Raíces
+
+        results:
+          strategic_indicators: Consultoría de Resultados - Ind. Estratégicos
+          thematic_indicators: Consultoría de Resultados - Ind. Temáticos
+
+        stats_tickets: Estadísticas SIC/Oidoría
+        open_data: Datos abiertos
+        ceara_gov: Portal del Gobierno del Estado do Ceará
+        citizen_access: Acceo Ciudadano

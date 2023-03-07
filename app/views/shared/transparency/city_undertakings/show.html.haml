@@ -1,0 +1,85 @@
+- title = city_undertaking.title.truncate(200)
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, title
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = title
+
+        .card-commands
+          = render 'shared/tickets/components/btn_print'
+
+
+      .card-block
+
+        .row
+
+          .col-12.col-sm-2
+            = dash_content_with_label(city_undertaking, :expense_str)
+
+          .col-12.col-sm-10
+            = dash_content_with_label(city_undertaking, :organ_title)
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+          .col-12
+            = dash_content_with_label(city_undertaking, :undertaking_title)
+
+        .row
+          .col-12
+            = dash_content_with_label(city_undertaking, :mapp)
+
+        .row
+          .col-12.col-sm-4
+            - # TODO: add relation @ import
+            - contract = Integration::Contracts::Contract.find_by(isn_sic: city_undertaking.sic)
+            - convenant = Integration::Contracts::Convenant.find_by(isn_sic: city_undertaking.sic)
+            .content-with-label
+              %p.content-label
+                = Integration::CityUndertakings::CityUndertaking.human_attribute_name(:sic)
+              %p.content-value
+                - if contract.present?
+                  = link_to transparency_contracts_contract_path(contract) do
+                    = city_undertaking.sic
+                    %i.fa.fa-share-square-o
+                - elsif convenant.present?
+                  = link_to transparency_contracts_convenant_path(convenant) do
+                    = city_undertaking.sic
+                    %i.fa.fa-share-square-o
+                - else
+                  = city_undertaking.sic
+
+          .col-12.col-sm-8
+            = dash_content_with_label(city_undertaking, :creditor_title)
+
+        %hr{'aria-hidden': 'true'}
+
+        %h2.card-title.mt-3
+          = t('.valor_programado')
+
+        - (1..8).each_slice(4) do |row|
+          .row
+            - row.each do |i|
+              .col-12.col-sm-3
+                = dash_content_with_label(city_undertaking, "valor_programado#{i}")
+
+        %hr{'aria-hidden': 'true'}
+
+        %h2.card-title.mt-3
+          = t('.valor_executado')
+
+        - (1..8).each_slice(4) do |row|
+          .row
+            - row.each do |i|
+              .col-12.col-sm-3
+                = dash_content_with_label(city_undertaking, "valor_executado#{i}")
+
+

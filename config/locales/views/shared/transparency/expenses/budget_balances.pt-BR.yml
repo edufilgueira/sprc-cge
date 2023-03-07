@@ -1,0 +1,91 @@
+pt-BR:
+  shared:
+    transparency:
+      expenses:
+        budget_balances:
+
+          index:
+            title: Despesas do Poder Executivo
+            description: Saiba quanto e como o governo gasta o dinheiro que arrecada (despesas).
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Secretaria da Fazenda - SEFAZ</p>
+              <p>Sistema de Gestão Governamental por Resultados - S2GPR</p>
+
+            chart:
+              calculated_valor_orcamento_atualizado:
+                unit: 'Soma dos orçamentos atualizados: R$'
+                title: 'Valores pagos no período'
+
+                secretary:
+                  title: Soma dos orçamentos atualizados por secretarias
+                function:
+                  title: Soma dos orçamentos atualizados por função
+                sub_function:
+                  title: Soma dos orçamentos atualizados por subfunção
+                government_program:
+                  title: Soma dos orçamentos atualizados por programa de governo
+                administrative_region:
+                  title: Soma dos orçamentos atualizados por região administrativa
+
+            charts:
+              tabs:
+                secretary:
+                  title: Por secretaria
+                function:
+                  title: Por função
+                sub_function:
+                  title: Por subfunção
+                government_program:
+                  title: Por programa de governo
+                administrative_region:
+                  title: Por região administrativa
+
+            counts:
+              valor_orcamento_inicial:
+                title: 'Orçamento inicial das despesas filtradas'
+
+              valor_orcamento_atualizado:
+                title: 'Orçamento atualizado das despesas filtradas'
+
+              valor_empenhado:
+                title: 'Empenhado'
+
+              valor_liquidado:
+                title: 'Liquidado'
+
+              valor_pago:
+                title: 'Pago'
+
+            filters:
+              title: Consulta avançada
+
+              search:
+                hint: |
+                  Você pode buscar por parte do nome de Secretarias, Órgãos, função, subfunção, natureza da despesa, elemento de despesa, etc. Exemplos: 'habitação', 'segurança', 'tecnologia', 'sec saude', entre outros.
+
+
+            table:
+              summary: Lista de despesas do Poder Executivo
+              header:
+                title: Descrição
+                valor_orcamento_inicial: Orçamento <br>inicial (R$)
+                valor_orcamento_atualizado: Orçamento <br>atualizado (R$)
+                valor_empenhado: Empenhado (R$)
+                valor_liquidado: Liquidado (R$)
+                valor_pago: Pago (R$)
+
+              total: Total
+
+            stats:
+              title: Principais números relacionados às despesas
+              valor_orcamento_inicial:
+                title: 'Orçamento inicial em <strong>%{date}</strong>'
+              valor_orcamento_atualizado:
+                title: 'Orçamento atualizado entre <strong>%{date}</strong>'
+              valor_empenhado:
+                title: 'Empenhado entre <strong>%{date}</strong>'
+              valor_liquidado:
+                title: 'Liquidado entre <strong>%{date}</strong>'
+              valor_pago:
+                title: 'Pago entre <strong>%{date}</strong>'

@@ -1,0 +1,16 @@
+%h4.card-subtitle.mb-3
+  = t('.title')
+
+- departments = stats_ticket.data[:departments]
+
+- if departments.blank?
+
+  .row.col-md-12.text-center
+    %em= t('.no_content')
+
+- else
+  - series_data_keys = stats_department_index_serie_keys(departments)
+  - series_data_values = stats_department_index_serie_values(departments)
+  - series_data_percentages = stats_department_index_serie_percentages(departments)
+
+  .chart{ data: { "chart_departments_#{ticket_type}": '', title: t(".#{ticket_type}.name"), unit: t(".#{ticket_type}.unit"), series_name: [t('.series_name')] , series_data_keys: [series_data_keys], series_data_values: [series_data_values], series_data_percentages: [series_data_percentages], 'show-percentage': true } }

@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    integrations:
+      expenses:
+        dailies:
+          index:
+            title: Despesas com diárias

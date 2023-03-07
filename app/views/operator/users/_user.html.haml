@@ -1,0 +1,39 @@
+- if can?(:show, user)
+  - user_show_path = operator_user_path(user)
+- else
+  - user_show_path = '#!'
+
+%tr
+  %td
+    - icon_class = user.disabled? ? 'times' : 'check'
+    = link_to user_show_path, { title: t('commands.more_details') } do
+      %i{class: "fa fa-#{icon_class}"}
+
+  %td
+    - title = user.name
+    = link_to user_show_path, { title: title } do
+      = filtered_highlighted(title.truncate(25))
+
+  %td
+    - title = user.email
+    = link_to user_show_path, { title: title } do
+      = filtered_highlighted(title.truncate(25))
+
+  %td
+    - title = user.operator_type_str
+    = link_to user_show_path, { title: title } do
+      = filtered_highlighted(title.truncate(20))
+
+  %td
+    - title = user.department_acronym
+    = link_to user_show_path, { title: title } do
+      = filtered_highlighted(title.present? ? title.truncate(20) : "")
+
+  %td
+    .pull-left
+
+      - if can?(:edit, user)
+        = link_to t('commands.edit'), edit_operator_user_path(user), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+      - if can?(:toggle_disabled, user)
+        = render 'shared/buttons/btn_toggle_disabled', resource: user, namespace: :operator

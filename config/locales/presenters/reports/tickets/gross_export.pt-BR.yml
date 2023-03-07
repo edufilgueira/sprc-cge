@@ -1,0 +1,32 @@
+pt-BR:
+  presenters:
+    reports:
+      tickets:
+        gross_export:
+          summary:
+            sheet_name: Sumário
+            title: 'Período do Relatório: %{begin} à %{end}'
+
+            infos:
+              name_report: 'Nome do relatório: %{name}'
+              created_by: 'Criado por: %{name}'
+              created_at: 'Criado em: %{date}'
+              creator_email: 'E-mail: %{email}'
+              operator_type: 'Tipo de operador: %{operator_type}'
+              tickets_count: 'Novos registros: %{count}'
+              tickets_invalidated_count: 'Total de invalidados: %{count}'
+              tickets_other_organs_count: 'Total de outros poderes: %{count}'
+              reopened_at:
+                sou: "Manifestações reabertas: %{count}"
+                sic: "Solicitações reabertas: %{count}"
+              appeals_at: "Recursos de solicitação de informação: %{count}"
+
+          last_answer_status:
+            answered_on_time: Sim
+            answered_out_time: Não
+            in_progress: Em atendimento
+            delayed: Em Atendimento fora do prazo
+
+          answers:
+            description: "%{date} %{user} - %{description}"
+            approved_by: "%{date} Aprovado por: %{user}"

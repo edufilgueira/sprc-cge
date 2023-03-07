@@ -1,0 +1,60 @@
+es:
+  shared:
+    transparency:
+      expenses:
+
+        dailies:
+          index:
+            title: Gastos con diarias
+            description: 'Consulte aquí los gastos con diarias, que son valores recibidos por funcionarios del Estado para para costear gastos en viajes a servicio. Aquí es posible realizar la consulta filtrando por órgano, periodo o beneficiario.'
+            source: |
+              <p><strong>Fuente de datos:</strong></p>
+              <p>Secretaría de Hacienda - SEFAZ</p>
+              <p>Sistema de Gestíon Gubernamental por Resultados - S2GPR</p>
+
+            chart:
+              valor:
+                unit: 'Valores de las diarias: R$'
+                title: 'Valores con diarias en el mes seleccionado.'
+
+                creditor:
+                  title: Valores de las diarias por acreedor
+                management_unit:
+                  title: Valores de las diarias por secretarias/órgãos
+
+            charts:
+              tabs:
+                creditor:
+                  title: Por acreedor
+                management_unit:
+                  title: Por unidad de gestión
+
+            filters:
+              title: Consulta avanzada
+
+            counts:
+              filtered_count:
+                title: Cantidad de procesos de diarias filtradas
+              filtered_sum:
+                valor:
+                  title: Valor de procesos de diarias filtradas
+
+            table:
+              summary: Lista de diarias a municipios
+              header:
+                numero: Nota
+                date_of_issue: Fecha de emisión
+                unidade_gestora: Unidad de gestión
+                management_unit_title: Unidad de gestión
+                credor: Acreedor
+                valor: Valor Pago
+
+            stats:
+              title: Principales números relacionados a las diarias
+              count: 'Cantidad de procesos de diarios en <strong>%{date}</strong>'
+              valor: 'Valor en <strong>%{date}</strong>'
+
+          show:
+            contract:
+              link: '%{value}'
+              none: EMPEÑO NO VINCULADO AL INSTRUMENTO CONTRACTUAL/CONVENIO

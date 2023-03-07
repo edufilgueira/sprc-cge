@@ -1,0 +1,39 @@
+pt-BR:
+  admin:
+    ombudsmen:
+      index:
+        title: 'Informações das Ouvidorias'
+
+        commands:
+          new: 'Nova Ouvidoria'
+
+        table:
+          summary: Lista de órgãos
+          header:
+            title: Nome
+            email: E-mail
+            kind: Tipo
+            commands: ''
+
+        filters:
+          select:
+            kind: Tipo
+
+      form:
+        commands:
+          cancel: 'Cancelar'
+
+      new:
+        title: 'Nova Ouvidoria'
+
+      create:
+        error: 'Falha ao criar. Verifique os campos marcados abaixo.'
+        done: 'Ouvidoria criada com sucesso.'
+
+      update:
+        error: 'Falha ao atualizar. Verifique os campos marcados abaixo.'
+        done: 'Ouvidoria atualizada com sucesso.'
+
+      destroy:
+        error: 'Falha ao remover a ouvidoria.'
+        done: 'Ouvidoria removida com sucesso.'

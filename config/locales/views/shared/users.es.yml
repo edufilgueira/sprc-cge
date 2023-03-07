@@ -1,0 +1,35 @@
+es:
+  shared:
+    users:
+
+      notification_role:
+        roles:
+          admin: &default_roles
+            new_ticket: Nueva Manifestación/Solicitud
+            deadline: Plazos
+            transfer: Transferencias
+            share: Compartir
+            referral: Expedición
+            invalidate: Invalidacinoes
+            appeal: Recursos 
+            reopen: Reaperturas
+            extension: Extensión de plazo
+            answer: Respuestas
+            user_comment: Comentarios del ciudadano
+            internal_comment: Comentários internos
+            attendance_allocation: Asignación para empleado 155
+          operator:
+            <<: *default_roles
+          user:
+            <<: *default_roles
+            user_comment: Comentarios del operador
+
+      notification_roles_form:
+        notifications: Notificaciones 
+        email: Email y sistema
+        system: Sólo sistema
+        none: Ningún
+        empty: Este perfil no tiene reglas de notificaciones 
+
+      show_notification_roles:
+        empty: Este perfil no tiene reglas de notificaciones 

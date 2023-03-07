@@ -1,0 +1,173 @@
+:ruby
+  cards = {
+
+    city_undertakings: {
+      configuration_class: Integration::CityUndertakings::Configuration,
+      configuration_controller: 'admin/integrations/city_undertakings/configurations',
+      data_path: admin_integrations_city_undertakings_path,
+      icon: 'fa-map-o'
+    },
+
+    organs: {
+      configuration_class: Integration::Supports::Organ::Configuration,
+      configuration_controller: 'admin/integrations/supports/organ/configurations',
+      data_path: admin_integrations_supports_organs_path,
+      icon: 'fa-sitemap'
+    },
+
+    creditors: {
+      configuration_class: Integration::Supports::Creditor::Configuration,
+      configuration_controller: 'admin/integrations/supports/creditor/configurations',
+      data_path: admin_integrations_supports_creditors_path,
+      icon: 'fa-credit-card'
+    },
+
+    axes: {
+      configuration_class: Integration::Supports::Axis::Configuration,
+      configuration_controller: 'admin/integrations/supports/axis/configurations',
+      data_path: admin_integrations_supports_axes_path,
+      icon: 'fa-cogs'
+    },
+
+    themes: {
+      configuration_class: Integration::Supports::Theme::Configuration,
+      configuration_controller: 'admin/integrations/supports/theme/configurations',
+      data_path: admin_integrations_supports_themes_path,
+      icon: 'fa-info-circle'
+    },
+
+    servers: {
+      configuration_class: Integration::Servers::Configuration,
+      configuration_controller: 'admin/integrations/servers/configurations',
+      data_path: admin_integrations_server_salaries_path,
+      icon: 'fa-users'
+    },
+
+    revenues: {
+      configuration_class: Integration::Revenues::Configuration,
+      configuration_controller: 'admin/integrations/revenues/configurations',
+      data_path: admin_integrations_revenues_accounts_path,
+      icon: 'fa-line-chart'
+    },
+
+    expenses: {
+      configuration_class: Integration::Expenses::Configuration,
+      configuration_controller: 'admin/integrations/expenses/configurations',
+      data_path: admin_integrations_expenses_path,
+      icon: 'fa-bar-chart'
+    },
+
+    domain: {
+      configuration_class: Integration::Supports::Domain::Configuration,
+      configuration_controller: 'admin/integrations/supports/domain/configurations',
+      data_path: nil,
+      icon: 'fa-database'
+    },
+
+    contracts: {
+      configuration_class: Integration::Contracts::Configuration,
+      configuration_controller: 'admin/integrations/contracts/configurations',
+      data_path: admin_integrations_contracts_contracts_path,
+      icon: 'fa-file-text-o'
+    },
+
+    convenants: {
+      configuration_class: Integration::Contracts::Configuration,
+      configuration_controller: 'admin/integrations/contracts/configurations',
+      data_path: admin_integrations_contracts_convenants_path,
+      icon: 'fa-handshake-o'
+    },
+
+    eparcerias: {
+      configuration_class: Integration::Eparcerias::Configuration,
+      configuration_controller: 'admin/integrations/eparcerias/configurations',
+      data_path: nil,
+      icon: 'fa-globe'
+    },
+
+    constructions: {
+      configuration_class: Integration::Constructions::Configuration,
+      configuration_controller: 'admin/integrations/constructions/configurations',
+      data_path: {
+        daes: admin_integrations_constructions_daes_path,
+        ders: admin_integrations_constructions_ders_path
+      },
+      icon: 'fa-credit-card'
+    },
+
+    purchases: {
+      configuration_class: Integration::Purchases::Configuration,
+      configuration_controller: 'admin/integrations/purchases/configurations',
+      data_path: admin_integrations_purchases_path,
+      icon: 'fa-shopping-cart'
+    },
+
+    real_states: {
+      configuration_class: Integration::RealStates::Configuration,
+      configuration_controller: 'admin/integrations/real_states/configurations',
+      data_path: admin_integrations_real_states_path,
+      icon: 'fa-home'
+    },
+
+    results: {
+      configuration_class: Integration::Results::Configuration,
+      configuration_controller: 'admin/integrations/results/configurations',
+      data_path: admin_integrations_results_path,
+      icon: 'fa-check'
+    },
+
+    macroregion_investments: {
+      configuration_class: Integration::Macroregions::Configuration,
+      configuration_controller: 'admin/integrations/macroregion_investiments/configurations',
+      data_path: admin_integrations_macroregion_investiments_path,
+      icon: 'fa-check'
+    }
+  }
+
+- cards.each do |card_id, card_data|
+
+  - configuration = card_data[:configuration_class].last
+  - configuration_path = nil
+
+  - if configuration
+    - configuration_path = url_for({ controller: card_data[:configuration_controller], action: :show, id: configuration })
+
+  - data_path = card_data[:data_path]
+  - icon = card_data[:icon]
+
+  %section.col-lg-4.col-md-12.mb-5{'aria-labelledby': "integration-cards-#{card_id}"}
+    .card.text-center
+      .card-img-top.mt-2.row
+        .col-4.offset-4
+          %i.fa{'aria-hidden': 'true', class: icon}
+
+        - if configuration.present?
+          .col-2.offset-1.mt-3{title: configuration.status_str }
+            - status = configuration.status
+            - if status.present?
+              .text-center
+                .integration-status.dashboard{'data-status': status}
+
+      .card-block.py-0
+        %h4.card-title{id: "integration-cards-#{card_id}"}
+          = t(".#{card_id}.title")
+
+        %p.card-text.text-muted
+          = t(".#{card_id}.text")
+
+      .card-block
+        - if configuration_path.present?
+          = link_to t(".#{card_id}.config"), configuration_path, class: 'btn btn-outline-primary'
+
+        - if data_path.present?
+
+          - if data_path.is_a?(Hash)
+
+            - data_path.each do |child_path_id, child_path|
+
+              = link_to t(".#{card_id}.data.#{child_path_id}"), child_path, class: 'btn btn-outline-primary'
+
+          - else
+
+            = link_to t(".#{card_id}.data"), data_path, class: 'btn btn-outline-primary'
+

@@ -1,0 +1,5 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+- content_for :javascript, javascript_include_tag(javascript)
+
+= render 'show', page: page

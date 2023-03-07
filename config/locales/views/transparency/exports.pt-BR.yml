@@ -1,0 +1,38 @@
+pt-BR:
+  transparency:
+    exports:
+
+      form:
+        link:
+          title: 'Gerar planilha com os dados filtrados'
+
+        title: 'Gerar planilha com os dados filtrados'
+
+        info: >
+          O email é necessário porque é por ele que vamos enviar um link para você baixar a planilha.
+          O link ficará disponível por dois dias.
+
+        name:
+          label: Título da planilha
+
+          hint: >
+            Título da planilha com os dados filtrados (Máximo: 32 caracteres).
+            Ex: 'Planilha do mês de Janeiro'
+
+        email:
+          label: E-mail para receber a planilha
+          hint: >
+            É necessário informar o endereço de e-mail para onde a planilha será enviada após ser construída.
+
+        worksheet_format:
+          label: Formato
+          hint: Formato (extensão) da planilha.
+
+        export: Gerar planilha
+
+      create:
+        done: >
+          A planilha solicitada está sendo construída. Em alguns minutos você receberá a planilha no e-mail informado.
+          Não esqueça de fazer o download assim que possível, pois o link ficará indisponível dentro de %{expiration} dias.
+
+        error: 'Falha na geração da planilha. Verifique os campos marcados abaixo.'

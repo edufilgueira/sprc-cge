@@ -1,0 +1,25 @@
+pt-BR:
+
+  admin:
+    integrations:
+      expenses:
+        configurations:
+
+          import:
+            done: A importação dos dados de despesas está sendo processada em segundo plano
+          form:
+            range_description: Ao manter as datas de início e fim em branco a importação automática, por padrão, importará dados do dia anterior
+            commands:
+              cancel: Voltar para integrações
+          edit:
+            title: Configuração
+          update:
+            error: Falha ao atualizar as configurações.
+            done: "Configuração salva com sucesso."
+          show:
+            edit: Configurar
+            created_at: Criado
+            title: Configuração de Despesas
+            import: Importar agora
+            hide_show: Mostrar/Esconder log
+            empty: Nenhuma importação realizada

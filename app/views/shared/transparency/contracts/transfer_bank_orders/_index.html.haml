@@ -1,0 +1,50 @@
+- if transfer_bank_orders.present?
+
+  .table-responsive
+
+    - convenant = transfer_bank_orders.first.convenant
+    - total_transfer_bank_orders = Integration::Eparcerias::TransferBankOrder.where(contract: convenant).count
+
+    - data_attributes = { summary: t('.summary') }
+
+    - if total_transfer_bank_orders <= 20
+      - export_file_name = I18n.t('shared.transparency.contracts.contracts.show.transfer_bank_orders.table.export_file_name', id: contract.isn_sic)
+
+      - data_attributes = data_attributes.merge({'data-toggle': 'table-export', 'data-filename': export_file_name })
+
+    %table.table.table-hover.table-sm.table-bordered.bg-faded{ data_attributes }
+
+      %thead
+
+        %tr
+
+          - heads = [:numero_ordem_bancaria, :tipo_ordem_bancaria, :nome_benceficiario, :valor_ordem_bancaria, :data_pagamento]
+
+          - heads.each do |head|
+            %th
+              = Integration::Eparcerias::TransferBankOrder.human_attribute_name(head)
+
+      %tbody
+
+        - transfer_bank_orders.each do |transfer_bank_order|
+          %tr
+            %td
+              = transfer_bank_order.numero_ordem_bancaria
+            %td
+              = transfer_bank_order.tipo_ordem_bancaria
+            %td
+              = transfer_bank_order.nome_benceficiario
+            %td.w-15
+              = number_to_currency(transfer_bank_order.valor_ordem_bancaria)
+            %td
+              = l(transfer_bank_order.data_pagamento.to_date)
+
+  .text-center.mt-2
+    = paginate transfer_bank_orders, remote: true
+
+- else
+
+  .row
+
+    %i.col-md-12.text-center
+      = t('.empty')

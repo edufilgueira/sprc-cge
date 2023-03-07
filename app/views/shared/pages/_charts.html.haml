@@ -1,0 +1,6 @@
+- page.cached_charts.each do |chart|
+
+  .card-block
+
+    .chart{data: { title: chart[:title], unit: chart[:unit], series: chart[:series].to_json }}
+

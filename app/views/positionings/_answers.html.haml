@@ -1,0 +1,29 @@
+- ticket_logs = ticket.final_answers_to_operators
+- answers_awaiting = ticket.final_answers_awaiting
+
+
+- #
+- # Sem repostas
+- #
+- if answers_awaiting.blank? && ticket_logs.blank?
+  %em
+    = t('.empty')
+  %hr{ 'aria-hidden': 'true' }
+
+
+
+= render 'shared/answers/already_positioned', ticket_department: ticket_department
+
+- #
+- # Respostas
+- #
+- ticket_logs.each do |ticket_log|
+  = render 'shared/tickets/ticket_logs/answer', answer: ticket_log.answer, namespace: :positionings
+
+- #
+- # Aguardando aprovação
+- #
+- answers_awaiting.each do |ticket_log|
+
+  - answer = ticket_log.answer
+  = render 'shared/answers/answer_awaiting', answer: answer, answer_form: answer, namespace: :positionings

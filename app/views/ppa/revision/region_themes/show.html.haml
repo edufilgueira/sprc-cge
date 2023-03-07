@@ -1,0 +1,76 @@
+.fieldset
+  .col-12
+    %h2.font-weight-bold
+      = "#{@region.name} - #{@theme.name}"
+
+
+    = link_to edit_ppa_revision_review_problem_situation_strategy_region_theme_path(plan_id: plan.id, review_problem_situation_strategy_id: resource.problem_situation_strategy_id, review_problem_situation_strategy_id: resource.problem_situation_strategy_id, id: resource.id), class: 'btn btn-primary float-right' do
+      = t('.edit_theme')
+  %br
+
+  .col-12
+    .justify-content-center
+      %h5
+        %b= t('.problem_situation.title')
+      %ul
+        %li
+          %b= t('.register_process', ppa_plan: plan.name)
+          - resource.problem_situations.each do |problem_situation|
+            %ul
+              %li
+                %p
+                  = problem_situation.description
+                %p
+                  - if !problem_situation.persist.nil?
+                    %b= "#{t('.answer')}: #{t('boolean.' + problem_situation.persist.to_s)}"
+                  - else
+                    %b= "#{t('.answer')}: #{t('.no_answer')}"
+        %li
+          %b= t('.new_proposals')
+          - if resource.new_regional_strategies.where.not(description: '').count.zero?
+            %p= t('.problem_situation.without_news')
+          - resource.new_problem_situations.where.not(description: '').each do |new_problem_situation|
+            %ul
+              %li
+                %p
+                  = new_problem_situation.description
+                  %b
+                    = "#{t('.county')}: "
+                    - if new_problem_situation.city.present?
+                      = new_problem_situation.city.name
+                    - else
+                      = t('.all')
+      %br
+      %h5
+        %b= t('.regional_strategy.title')
+      %ul
+        %li
+          %b= t('.register_process', ppa_plan: plan.name)
+          - resource.regional_strategies.each do |regional_strategy|
+            %ul
+              %li
+                %p
+                  = regional_strategy.strategy.name
+
+                %p
+                  - if !regional_strategy.persist.nil?
+                    %b= "#{t('.answer')}: #{t('boolean.' + regional_strategy.persist.to_s)}"
+                  - else
+                    %b= "#{t('.answer')}: #{t('.no_answer')}"
+        %li
+          %b= t('.new_proposals')
+          - if resource.new_regional_strategies.where.not(description: '').count.zero?
+            %p= t('.regional_strategy.without_news')
+          - resource.new_regional_strategies.where.not(description: '').each do |new_regional_strategy|
+            %ul
+              %li
+                %p
+                  = new_regional_strategy.description
+
+  %br
+
+  .row
+    .col-12
+      .float-right
+        = link_to ppa_revision_review_problem_situation_strategy_region_theme_path(plan_id: plan.id, review_problem_situation_strategy_id: resource.problem_situation_strategy_id, id: resource.id), data: { confirm: 'Deseja realmente excluir esse tema ?'}, method: :delete, class: 'btn btn-danger' do
+          = t('.remove_theme')

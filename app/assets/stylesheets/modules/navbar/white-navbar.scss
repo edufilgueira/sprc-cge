@@ -1,0 +1,119 @@
+@import 'bootstrap/variables';
+@import 'base/variables';
+
+.navbar-container {
+  margin-top: -70px;
+}
+
+.navbar-background {
+  background: #005339; /* Old browsers */
+  background: -moz-linear-gradient(left, #005339 0%, #008645 52%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #005339 0%,#008645 52%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #005339 0%,#008645 52%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005339', endColorstr='#008645',GradientType=1 ); /* IE6-9 */
+
+  height: 70px;
+}
+
+.white-navbar {
+  color: $text-gray-dark;
+  border-bottom: 4px solid $app-yellow;
+  background-color: white;
+  padding: 0.7rem 0.5rem;
+
+  img {
+    max-height: 42px;
+    margin-right: 10px;
+  }
+
+  .title {
+    font-size: 12px;
+  }
+
+  .nav-item {
+    padding: 0 0.2rem;
+    max-width: unset;
+    margin-right: auto;
+
+    border-right: solid 1px gray;
+    font-size: 0.95em;
+    text-transform: none;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &[aria-expanded="true"] {
+      a {
+        color: $app-yellow;
+      }
+    }
+  }
+
+  a {
+    padding: 0;
+    line-height: 24px;
+    font-weight: 600;
+    color: $text-gray-dark;
+  }
+
+  .fa {
+    padding: 4px;
+    margin-bottom: 0;
+
+    background-color: $app-yellow;
+    color: white;
+  }
+}
+
+.navbar-submenu {
+  background-color: $app-yellow;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+
+  &.search-container {
+    background-color: white;
+    border-top: solid 4px $app-yellow;
+    box-shadow: 0 3px 1px 0 #0000005e;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, "xl")) {
+  .white-navbar-container {
+    padding: 0;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, "lg")) {
+
+  .white-navbar-container {
+    width: 100%;
+  }
+
+  .navbar-background {
+    height: auto;
+  }
+
+  .navbar-container {
+    margin-top: 0;
+
+    .logo-container {
+      margin: auto;
+      text-align: center;
+    }
+
+    .white-navbar {
+      border-bottom: 0;
+      background-color: $app-green;
+      padding: 0.7rem 0.5rem;
+
+      min-height: 80px;
+    }
+  }
+}

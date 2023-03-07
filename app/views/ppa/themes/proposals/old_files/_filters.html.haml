@@ -1,0 +1,25 @@
+- search_placeholder = local_assigns[:search_placeholder] || t('messages.filters.search.label')
+
+.card-filters.filter-bar{ 'data-filter-bar': filter_id }
+
+  = form_for filter_path, method: :get, remote: true, html: { class: 'proposals-search-form' } do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+      .col-6
+
+        = label_tag t('.search')
+        = text_field_tag :search, params[:search], class: 'form-control'
+
+      .col-3
+        .align-button-bottom
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block btn-search'
+
+      - if commands.dig(:new, :permission)
+        .col-3
+          .align-button-bottom
+            = link_to commands.dig(:new, :title), commands.dig(:new, :path), class: 'btn btn-success btn-block'
+
+    - # Adiciona outros filtros, além da barra de busca, passados pelo bloco
+    = yield

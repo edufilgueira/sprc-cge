@@ -1,0 +1,10 @@
+en:
+  shared:
+    transparency:
+      survey_answers:
+        form:
+          title: 'How satisfied are you with this page?'
+          results: 'See results'
+
+        create:
+          title: 'Thank you! Your message has been successfully received!'

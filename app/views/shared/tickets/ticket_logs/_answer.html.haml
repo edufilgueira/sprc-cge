@@ -1,0 +1,154 @@
+- if can?(:view, answer) || namespace == :positionings
+  - answer_class = answer_class(answer)
+  - ticket_log = answer.ticket_log
+  - data_content1 = { 'content': 'evaluation-intro', 'answer-evaluation-intro-id': answer.id }
+  - data_content2 = { 'content': 'evaluation-form', 'answer_evaluation-form-id': answer.id } 
+  - edit_path = edit_operator_ticket_change_answer_certificate_path(answer.ticket, answer)
+
+  .row
+
+    .col-12.col-md-1.no-print
+
+      .float-left
+
+        .rounded-circle.p-1{ class: answer_class }
+
+          %i.fa.fa-comment.fa-1x.m-2{ 'aria-hidden': 'true' }
+
+
+    .col-12.col-md-11.pt-3.pt-md-1
+
+      .text-muted
+
+        .row
+
+          .col-12.col-lg-8
+
+            %h4.h6
+
+              - organ = answer_organ_responsible_from_log(ticket_log)
+              - department = answer_department_responsible_from_log(ticket_log)
+              - subnet = answer_subnet_responsible_from_log(ticket_log)
+
+              = verifid_parent_or_cosco_couvi(ticket, organ, answer, department, subnet)
+            %i.small.list-inline-item
+              = l(answer.created_at, format: :shorter)
+
+            %i.small
+              - kind = ticket.sou? || ticket.child? ? :reopen : :appeal
+              = t(".answer_versions.#{ticket.ticket_type}.#{kind}", count: answer.version)
+
+
+          - if can?(:reopen_ticket_with_immediate_answer, ticket)
+            - unless namespace == :positionings || params[:print] == 'true'
+              .col-12.col-lg-4
+                = render 'shared/tickets/components/btn_reopen', 
+                  namespace: namespace, 
+                  answer: answer
+
+
+        - #
+        - # Label do status
+        - #
+        %p
+          %small{ class: answer_class }
+            %em
+              = answer.status_str
+
+        - #
+        - # Resposta
+        - #
+        %blockquote
+          = answer_sanitizer(answer.description)
+
+          %i.small.list-inline-item
+            = answer.as_author
+
+        - #
+        - # Considerações
+        - #
+        - justification = ticket_log&.description
+        
+        - if current_user.present? && current_user.operator? && justification.present?
+          %p
+            %small
+              %em
+                = "#{t('.justification')}: #{justification}"
+
+        - #
+        - # Resposta original
+        - #
+        - if operator?(current_user) && answer.modified_description?
+          .small
+            %em
+              = link_to '#answer_original_description', 
+                class: 'btn btn-sm btn-link text-muted pl-0', 
+                role: "button", 'data-toggle': "collapse", aria: { expanded: "false", 
+                  controls: "answer_original_description" } do
+
+                %i.fa.fa-exclamation-triangle{ 'aria-hidden': 'true' }
+                = t('.modified_description')
+
+            %blockquote#answer_original_description.collapse
+              = answer_sanitizer(answer.original_description)
+        %p.content-label
+          = t(".signature.#{ticket.ticket_type}")
+        .row.no-print
+          .col-6
+            = content_with_label(answer, :classification_str)
+          .col-6
+            = content_with_label(answer, :answer_type_str)
+
+          - #
+          - # Certificado
+          - #
+          .row.no-print
+            .col-12
+              - if answer.certificate.present?
+                .content-with-label
+                  %p.content-label
+                    = Answer.human_attribute_name(:certificate)
+                  %p.content-value
+                    = link_to answer.certificate_filename, 
+                      attachment_url(answer, :certificate), target: :_blank
+
+                    - if can? :change_answer_certificate, answer
+                      = link_to t('commands.edit'), edit_path, class: 'btn btn-sm btn-link'
+
+        - #
+        - # Anexos
+        - #
+        - if answer.attachments.present?
+          .row.no-print
+            .col-12
+              .attachments
+                .content-with-label
+                  %p.content-label
+                    = t('.attachments')
+                  - answer.attachments.each do |attachment|
+                    - next unless attachment.document.present?
+                    = render 'shared/attachments/attachment', 
+                      attachment: attachment, image_size: :small
+
+        - #
+        - # Pesquisa de satisfação
+        - #
+        - if can?(:evaluate, answer)
+
+          - if can?(:reopen_ticket_with_immediate_answer, ticket)
+
+            - if view_evaluation_question(answer.ticket)
+            
+              .content.no-print{'data-content': 'ticket_evaluation'}
+                .evaluation-intro{ data: data_content1 }
+
+                  %p.font-weight-bold
+                    = t('shared.answers.evaluations.intro.title')
+
+                .evaluation-form{ data: data_content2 }
+                  = render "shared/answers/evaluations/form", 
+                    new_evaluation: new_evaluation, 
+                    namespace: namespace, 
+                    answer: answer
+
+  %hr{'aria-hidden': 'true'}

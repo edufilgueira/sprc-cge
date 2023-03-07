@@ -1,0 +1,59 @@
+- data_item = f.object
+
+.nested-fields.my-2.border.p-3.content{'data-content': 'data-item'}
+
+  .row
+    .col-8
+      %h6
+        = t('.title')
+
+    .col-4
+      .float-right
+        = link_to_remove_association "", f, { class: 'fa fa-trash fa-2x', 'aria-label': t('simple_form.file.remove') }
+
+  .row
+    .col-md-6
+      = f.input :title
+
+    .col-md-6
+      = f.input :description
+
+  .row
+    .col-6
+      = f.input :document_public_filename
+    .col-6
+      = f.input :document_format
+
+  .row
+    .col-md-12
+      - select_text = t('.data_item_type.select')
+
+      = f.input :data_item_type, collection: OpenData::DataItem.data_item_types.keys.map{|data_item_type| [t("open_data/data_item.data_item_types.#{data_item_type}"), data_item_type] }, include_blank: false, input_html: { 'data-allow-clear': true, 'data-placeholder': select_text, 'data-input': 'data-item-type' }
+
+  .content{'data-item-type': 'webservice'}
+
+    .row
+      .col-12
+        = f.input :wsdl
+    .row
+      .col-6
+        = f.input :operation
+      .col-6
+        = f.input :headers_soap_action
+    .row
+      .col-6
+        = f.input :parameters, hint: t('.parameters.hint')
+      .col-6
+        = f.input :response_path, hint: t('.response_path.hint')
+
+  .content{'data-item-type': 'file'}
+
+    .row
+      .col-12
+        - if data_item.persisted? && data_item.document.present?
+          = link_to data_item.download_url, title: data_item.document_filename do
+            .fa.fa-download
+            = data_item.document_filename
+        - else
+          = f.input :document, as: :file
+

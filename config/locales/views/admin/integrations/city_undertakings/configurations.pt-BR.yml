@@ -1,0 +1,32 @@
+pt-BR:
+
+  admin:
+    integrations:
+      city_undertakings:
+        configurations:
+          import:
+            done: >
+              A importação dos dados de investimentos por município está
+              sendo processada em segundo plano
+
+          form:
+            label: Informações de investimentos por município
+            hint:
+              response: 'Padrão: caminho/do/array'
+            commands:
+              cancel: Voltar para integrações
+
+          edit:
+            title: Configuração
+
+          update:
+            done: Configuração salva com sucesso.
+
+          show:
+            edit: Configurar
+            created_at: Criado
+            title: Configuração de investimentos por município
+            import: Importar agora
+            hide_show: Mostrar/Esconder log
+            empty: Nenhuma importação realizada
+            label: Informações de investimentos por município

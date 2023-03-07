@@ -1,0 +1,98 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.row.mb-4
+
+  .col-lg-9.col-12
+
+    %h2.mt-4
+      = t('.title')
+
+.card.card-custom
+
+  .card-header
+
+    .card-block
+      - unless percentage_evaluated(@resource) < 100
+        .row
+          .col
+            %h4.card-subtitle.mb-3
+              = t('.average.label')
+              = organ_average_attendance_evaluation
+
+      .row
+        .col
+          %h4.card-subtitle.mb-3
+            = t('.code.label')
+            = @resource.code
+
+      .row
+        .col
+          %h4.card-subtitle.mb-3
+            = t('.status.label')
+            = t(".status.#{@resource.status}")
+
+      .row
+        .col
+          %h4.card-subtitle.mb-3
+            = t('.date.label')
+            = @resource.created_at.to_date
+      .row
+        .col
+          %h4.card-subtitle.mb-3
+            = t('.percentage.label')
+            = number_to_percentage(percentage_evaluated(@resource), precision: 2 )
+      .row
+        .col
+          %h4.card-subtitle.mb-3
+            = t('.generated_by.label')
+            = find_user(@resource.created_by_id).name unless @resource.created_by_id.nil?
+      .row
+        .col
+          %h4.card-subtitle.mb-3
+            = t('.filters.label')
+
+      .row
+        .col
+          %h6.card-subtitle.mb-3
+            = t('.filters.period.label')
+            - unless (@resource.filters.nil? || (@resource.filters['start'].blank? || @resource.filters['end'].blank?) )
+              = "#{ @resource.filters['start']} à #{@resource.filters['end'] }" 
+
+      .row
+        .col
+          %h6.card-subtitle.mb-3
+            = t('.filters.organ.label')
+            = Organ.find(@resource.filters['organ']).acronym unless (@resource.filters.nil? || @resource.filters['organ'].blank?)
+
+      .row
+        .col
+          %h6.card-subtitle.mb-3
+            = t('.filters.topic.label')
+            = Topic.find(@resource.filters['topic']).name unless (@resource.filters.nil? || @resource.filters['topic'].blank?)
+
+      .row
+        .col
+          %h6.card-subtitle.mb-3
+            = t('.filters.sou_type.label')
+            = t(".sou_types.#{@resource.filters['sou_type']}") unless (@resource.filters.nil? || @resource.filters['sou_type'].blank?)
+
+      .row
+        .col
+          %h6.card-subtitle.mb-3
+            = t('.filters.answer_type.label')
+            = t(".answer_types.#{@resource.filters['answer_type']}") unless (@resource.filters.nil? || @resource.filters['answer_type'].blank?)
+
+      .row
+        .col
+          %h6.card-subtitle.mb-3
+            = t('.filters.service_type.label')
+            = ServiceType.find(@resource.filters['service_type']).name unless (@resource.filters.nil? || @resource.filters['service_type'].blank?)
+
+      .row
+        .col
+          %h6.card-subtitle.mb-3
+            = t('.filters.percentage.label')
+            = "#{@resource.filters['percentage']}%" unless (@resource.filters.nil? || @resource.filters['percentage'].blank?)
+
+    .mt-3
+      = render 'table_samples_details', samples_details: @resource.sou_evaluation_sample_details.page(params[:page]).per(20)

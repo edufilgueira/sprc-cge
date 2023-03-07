@@ -1,0 +1,26 @@
+- attendance_response = ticket_log.resource
+
+.row
+
+  .col-12.col-md-1.no-print
+    .float-left
+
+      .rounded-circle.p-1{ class: attendance_response.failure? ? 'alert-warning' : 'alert-success'}
+
+        %i.fa.fa-phone.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      %h4.h6.mb-0
+        = t(".title.#{attendance_response.response_type}")
+
+      %small
+        %em
+        = t('.subtitle', date: l(ticket_log.created_at, format: :shorter), title: ticket_log.responsible_title)
+
+      %p
+        = content_sanitizer(attendance_response.description)
+
+%hr{'aria-hidden': 'true'}

@@ -1,0 +1,48 @@
+- attendance_show_path = operator_attendance_path(attendance)
+- ticket = attendance.ticket
+
+%tr{ class: (ticket_highlight_row(ticket) if ticket.present?) }
+
+  %td
+    = link_to l(attendance.created_at.to_date), attendance_show_path
+
+  %td
+    - protocol = attendance.protocol.to_s
+    = link_to highlight(protocol, params[:search]), attendance_show_path
+
+
+  %td
+    = link_to attendance.service_type_str, attendance_show_path
+
+  %td
+    - ticket_type = ticket.present? ? ticket.ticket_type_str : '-'
+    = link_to ticket_type, attendance_show_path
+
+  %td
+    - deadline = ticket&.deadline
+    - deadline_str = deadline.present? ? t('ticket.deadline', count: deadline) : '-'
+    = link_to deadline_str, attendance_show_path
+
+
+  %td
+    - if ticket.present?
+      = link_to attendance_show_path, title: info_details(ticket)  do
+        - name = ticket.name
+        - if name.present?
+          = highlight(name.truncate(30), params[:search])
+        - else
+          %em
+            = t('messages.content.undefined')
+    - else
+      = '-'
+
+  - description = content_sanitizer(attendance.description.to_s)
+
+  %td
+    = link_to attendance_show_path, title: strip_tags(description) do
+      = highlight(description.truncate(40), params[:search])
+
+  %td.d-inline-flex
+    = link_to attendance_show_path, title: strip_tags(description), class: 'btn text-muted btn-link hover-link d-inline-block' do
+      %i.fa.fa-search
+    = render 'operator/attendances/components/btn_clone', attendance: attendance

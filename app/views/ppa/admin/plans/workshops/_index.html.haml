@@ -1,0 +1,27 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:name, :start_at, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: ppa_workshops, sort_columns: sort_columns, table_locale: table_locale do |ppa_workshop|
+
+    - show_path = ppa_admin_plan_workshop_path(plan, ppa_workshop)
+
+    %tr
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(ppa_workshop.name)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(l(ppa_workshop.start_at, format: :date))
+
+      %td
+        .float-right
+          = link_to t('commands.edit'), edit_ppa_admin_plan_workshop_path(plan, ppa_workshop), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          = link_to t('commands.remove'), ppa_admin_plan_workshop_path(plan, ppa_workshop), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link hover-link float-left d-inline-block'

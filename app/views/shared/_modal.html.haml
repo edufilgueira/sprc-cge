@@ -1,0 +1,10 @@
+#modalAlert.modal{ role: "dialog", 'aria-labelledby': "modalAlertTitle", tabindex: -1 }
+  .modal-dialog.modal-lg{ role: "document" }
+    .modal-content
+      .modal-header
+        = content_tag(:img, '', src: image_path('logos/badge-ceara.png'), alt: t('app.title'))
+        %h4#modalAlertTitle.modal-title
+        %button.modal-close{ type: "button", 'data-dismiss': "modal", 'aria-label': "Fechar" }
+          %span{ 'aria-hidden': "true" }
+            x
+      .modal-body

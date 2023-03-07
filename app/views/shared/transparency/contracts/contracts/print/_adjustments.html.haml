@@ -1,0 +1,44 @@
+.row.mt-4
+
+  .col
+
+    %h3.h5.text-center
+      = t('shared.transparency.contracts.contracts.show.adjustments.title')
+
+    - if adjustments.present?
+
+      %table.table.table-striped.table-sm.table-print{summary: t('shared.transparency.contracts.contracts.show.adjustments.summary')}
+
+        %thead
+          %tr
+            - heads = [:descricao_tipo_ajuste, {id: :descricao_observacao, class: 'w-50'}, :data_termino, {id: :valor_ajuste_destino, class: 'text-right'}]
+
+            - heads.each do |head|
+              - if head.is_a?(Hash)
+                %th{class: head[:class]}
+                  = t("shared.transparency.contracts.contracts.show.adjustments.table.heads.#{head[:id]}")
+              - else
+                %th
+                  = t("shared.transparency.contracts.contracts.show.adjustments.table.heads.#{head}")
+
+        %tbody
+          - adjustments.each do |adjustment|
+
+            %tr
+              %td
+                = adjustment.descricao_tipo_ajuste
+
+              %td.w-50
+                = adjustment.descricao_observacao
+
+              %td
+                = resource_value(adjustment, :data_termino, format: :date) if adjustment.data_termino.year > 1900
+
+              %td.text-right
+                = resource_value(adjustment, :total_adjustment)
+
+    - else
+
+      .row
+        %i.col-md-12.text-center
+          = t('shared.transparency.contracts.contracts.show.adjustments.empty')

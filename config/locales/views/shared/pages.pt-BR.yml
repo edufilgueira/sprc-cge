@@ -1,0 +1,11 @@
+pt-BR:
+  shared:
+    pages:
+
+      attachments:
+        title: Anexos
+        options:
+          blank: Todos
+        filters:
+          year: Buscar por ano da disponibilização
+          title: Buscar por assunto

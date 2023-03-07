@@ -1,0 +1,25 @@
+= javascript_include_tag('ckeditor/init')
+
+= simple_form_for ticket_department_email, url: [:positioning, id: ticket_department_email.token], method: :patch do |f|
+
+  = f.simple_fields_for :answer do |answer|
+
+    .row
+      .col-12
+        = answer.input :description, as: :ckeditor, label: t('.description'), input_html: { ckeditor: { toolbar: :mini } }
+
+    .row
+      .col-12
+        = answer.simple_fields_for :attachments do |attachment|
+          = render 'shared/comments/attachment_fields', f: attachment
+
+        .links.my-2.mb-4
+          = link_to_add_association t('.commands.add_attachment'), answer, :attachments, partial: 'shared/comments/attachment_fields'
+
+  .row.mt-2
+    .col.align-self-end
+      = f.submit t('.commands.add'), class: 'btn btn-primary w-100'
+
+
+
+

@@ -1,0 +1,229 @@
+.card.card-custom
+
+  .card-header
+
+    .row
+      .col
+        %h3.card-title
+          = ticket.title
+
+  - # Prazos e situação
+
+  .card-block.card-header
+    %h4.card-subtitle.mb-3
+      = t('.deadline.title')
+
+    - if ticket.confirmed?
+      .row
+        .col-sm-6
+          .content-with-label
+            %label.content-label{ class: remaining_days_to_deadline_class(ticket.remaining_days_to_deadline) }
+              = t('.deadline.remaining')
+
+            %p.content-value{ class: remaining_days_to_deadline_class(ticket.remaining_days_to_deadline) }
+              %b
+                = ticket.remaining_days_to_deadline
+    .row
+      .col-6
+        .content-with-label
+          %label.content-label
+            = t('.deadline.created_at')
+
+          %p.content-value
+            = l(ticket.created_at, format: :date)
+
+      - if ticket.confirmed?
+        .col-6
+          .content-with-label
+            %label.content-label
+              = t('.deadline.last_day')
+
+            %p.content-value
+              = ticket.response_deadline
+
+
+    .row
+      .col-12
+        .content-with-label
+          %label.content-label
+            = t('.deadline.status')
+
+          - if ticket.child? || ticket.tickets.empty?
+
+            %p.content-value
+              = status_for_operator(ticket)
+
+          - else
+
+            = render partial: 'shared/tickets/preview_children', collection: ticket.sorted_tickets, as: :ticket_child
+
+
+  - # Informações pessoais
+  .card-block.card-header
+    %h4.card-subtitle
+      = t('.infos.title')
+
+    .row
+      .col-6
+        = content_with_label(ticket.parent || ticket, :parent_protocol)
+      .col-6
+        = content_with_label(ticket.parent || ticket, :plain_password)
+
+    - if ticket.anonymous?
+      .content-with-label
+
+        %p.content-label
+          = t(".anonymous.#{ticket.ticket_type}.title")
+
+      = content_with_label(ticket, :used_input_str)
+
+      - if ticket.used_input_url.present?
+        = render 'shared/tickets/used_input_url', ticket: ticket
+    - else
+
+      = content_with_label(ticket, :person_type_str)
+
+      = content_with_label(ticket, :name)
+
+      .row
+        .col-6
+          = content_with_label(ticket, :document_type_str)
+        .col-6
+          = content_with_label(ticket, :document)
+      .row
+        .col-6
+          = content_with_label(ticket, :used_input_str)
+        - if ticket.used_input_url.present?
+          .col-6
+            = render 'shared/tickets/used_input_url', ticket: ticket
+
+  - # Descrição da manifestação
+
+  - if ticket.sou? || ticket.organ.present?
+
+    .card-block.card-header
+      %h4.card-subtitle
+        = t(".ticket.title")
+
+      - if ticket.sou?
+        = content_with_label(ticket, :sou_type_str)
+
+      - if ticket.organ.present?
+        %abbr{'aria-label':ticket.organ_name, title: ticket.organ_name}
+          = content_with_label(ticket, :organ_acronym)
+
+      - if ticket.priority?
+        = content_with_label(ticket, :priority)
+
+      - if ticket.denunciation?
+
+        - if can?(:view_denunciation, ticket)
+          = content_with_label(ticket, :denunciation_organ_acronym)
+
+        = content_with_label(ticket, :denunciation_description, { label: t('.denunciation_description') })
+
+        = content_with_label(ticket, :denunciation_date_str)
+
+        = content_with_label(ticket, :denunciation_place_str)
+
+        = content_with_label(ticket, :denunciation_witness_str)
+
+        = content_with_label(ticket, :denunciation_evidence_str)
+
+
+  - #
+  - # Classificação
+  - #
+  - classification = ticket.classification || (ticket.tickets.present? && ticket.tickets.first.classification)
+  - if classification.present?
+
+    .card-block.card-header
+      %h4.card-subtitle
+        = t('.classification.title')
+
+      = render 'shared/classifications/classification_fields', classification: classification
+
+
+  - #
+  - # Informações de contato
+  - #
+  - unless ticket.anonymous?
+    .card-block.card-header
+      %h4.card-subtitle
+        = t('.contact.title')
+
+      .row
+        .col-12
+          = content_with_label(ticket, :answer_type_str)
+
+      .row
+        .col-6
+          = content_with_label(ticket, :email)
+        .col-3
+          = content_with_label(ticket, :answer_phone)
+        .col-3
+          = content_with_label(ticket, :answer_cell_phone)
+      .row
+        .col-3
+          = content_with_label(ticket, :answer_whatsapp)
+
+      .row
+        .col-6
+          = content_with_label(ticket, :answer_address_street)
+
+        .col-3
+          = content_with_label(ticket, :answer_address_number)
+
+        .col-3
+          = content_with_label(ticket, :answer_address_zipcode)
+
+      .row
+        .col-6
+          = content_with_label(ticket, :answer_address_complement)
+
+        .col-3
+          = content_with_label(ticket, :answer_address_neighborhood)
+
+        .col-3
+          = content_with_label(ticket, :city_title)
+
+      .row
+        .col-6
+          = content_with_label(ticket, :answer_twitter)
+
+        .col-4
+          = content_with_label(ticket, :answer_facebook)
+
+        .col-4
+          = content_with_label(ticket, :answer_instagram)
+
+
+  - #
+  - # Local da ocorrência
+  - #
+  .card-block.card-header
+
+    %h4.card-subtitle
+      = t(".target_address.title")
+
+    .row
+      .col-12.col-md-6
+        = content_with_label(ticket, :target_address_zipcode)
+
+      .col-12.col-md-6
+        = content_with_label(ticket, :target_city_title)
+
+    .row
+      .col-12.col-md-6
+        = content_with_label(ticket, :target_address_street)
+
+      .col-12.col-md-6
+        = content_with_label(ticket, :target_address_number)
+
+    .row
+      .col-12.col-md-6
+        = content_with_label(ticket, :target_address_neighborhood)
+
+      .col-12.col-md-6
+        = content_with_label(ticket, :target_address_complement)
+

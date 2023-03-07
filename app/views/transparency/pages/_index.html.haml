@@ -1,0 +1,20 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:title, :content]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: pages, sort_columns: sort_columns, table_locale: table_locale do |page|
+
+    - show_path = transparency_page_path(page)
+
+    %tr
+      %td.col-4
+        = link_to show_path do
+          = filtered_highlighted(page.title)
+
+      %td.col-8
+        = link_to show_path do
+          = strip_tags(page.content)&.truncate(50)

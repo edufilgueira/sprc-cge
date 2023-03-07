@@ -1,0 +1,11 @@
+- attachment = f.object
+
+.nested-fields.row.mb-3
+  .col-11
+    - if attachment.persisted?
+      = link_to attachment.document_filename, attachment_url(attachment, :document, filename: attachment.document_filename.try(:parameterize)), target: :_blank
+    - else
+      = f.input :document, as: :attachment, direct: true, label: false, hint: t('.file.hint'), input_html: { 'aria-label': t('simple_form.file.choose') }
+
+  .col-1
+    = link_to_remove_association '', f, { class: 'fa fa-trash-o fa-2x text-danger', 'aria-label': t('simple_form.file.remove') }

@@ -1,0 +1,119 @@
+pt-BR:
+  services:
+    reports:
+      tickets:
+        gross_export:
+          sou:
+            sheet_name: Ouvidoria
+            title: Relatório de Resolubilidade
+
+            headers:
+              sou_type: Tipo de manifestação
+              denunciation_organ: Órgão denunciado
+              denunciation_type: Tipo de denúncia
+              denunciation_assurance: Percepção sobre o Fato
+              organ: Órgão
+              subnet: Subrede
+              departments: Áreas internas
+              departments_classification: Unidades
+              subdepartment: Sub-unidades
+              protocol: Protocolo
+              created_by: Criado por
+              anonymous: Anônimo
+              description: Descrição
+              shared: Compartilhado
+              other_organs: Outros poderes
+              internal_status: Situação interna
+              topic: Assunto
+              subtopic: Sub assunto
+              budget_program: Programa orçamentário
+              service_type: Tipo de serviço
+              origem_input: Meio de entrada
+              year: Ano
+              month: Mês
+              confirmed_at: Data de registro
+              answered_at: Data da finalização
+              final_answer_at: Data da resposta final
+              answer_time_in_days: Tempo de resposta (dias)
+              immediate_answer: Resposta imediata
+              last_answer_status: Manifestação respondida no prazo
+              last_answer_status_department: Área respondeu no prazo
+              answers_description: Respostas
+              answers_department_created_at: Data resposta interna
+              reopened: Reabertura(s)
+              reopened_description: Descrição da Reabertura
+              neighborhood: Bairro
+              city: Município
+              state: Estado
+              country: País
+              answer_type: Preferência de resposta
+              deadline: Prazo
+              evaluation: Avaliação do atendimento (nota do usuário)
+              has_extension: Prorrogação de prazo
+              answer_classification: Classificação da resposta
+              person_type: Tipo de manifestante
+              user_name: Nome
+              user_social_name: Nome social
+              user_email: E-mail
+              user_phone: Telefone 1
+              user_cell_phone: Telefone 2
+              gender: Gênero
+
+          summary:
+            sheet_name: Sumário
+            title: 'Período do Relatório: %{begin} à %{end}'
+
+
+          sic:
+            sheet_name: Acesso à informação
+            title: 'Período do Relatório: %{begin} à %{end}'
+
+            headers:
+              organ: Órgão
+              subnet: Subrede
+              departments: Áreas internas
+              departments_classification: Unidades
+              subdepartment: Sub-unidades
+              protocol: Protocolo
+              created_by: Criado por
+              anonymous: Anônimo
+              description: Descrição
+              shared: Compartilhado
+              other_organs: Outros poderes
+              internal_status: Situação interna
+              topic: Assunto
+              subtopic: Sub assunto
+              budget_program: Programa orçamentário
+              service_type: Tipo de serviço
+              origem_input: Meio de entrada
+              year: Ano
+              month: Mês
+              confirmed_at: Data de registro
+              answered_at: Data da finalização
+              final_answer_at: Data da resposta final
+              answer_time_in_days: Tempo de resposta (dias)
+              immediate_answer: Resposta imediata
+              last_answer_status: Solicitação respondida no prazo
+              last_answer_status_department: Área respondeu no prazo
+              answers_description: Respostas
+              answers_department_created_at: Data resposta interna
+              appeals: Recurso(s)
+              neighborhood: Bairro
+              city: Município
+              state: Estado
+              answer_type: Preferência de resposta
+              deadline: Prazo
+              evaluation: Avaliação do atendimento (nota do usuário)
+              has_extension: Prorrogação de prazo
+              answer_classification: Classificação da resposta
+              attendance_evaluation: Avaliação interna do atendimento
+              average_attendance_evaluation_organ: Média da avaliação interna do atendimento do órgão
+              person_type: Tipo de solicitante
+              user_name: Nome
+              user_social_name: Nome social
+              user_phone: Telefone 1
+              user_cell_phone: Telefone 2
+              user_email: E-mail
+              gender: Gênero
+              reopened: Reabertura(s)
+              reopened_description: Descrição da Reabertura

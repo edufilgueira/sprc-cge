@@ -1,0 +1,27 @@
+en:
+  activerecord:
+    attributes:
+      integration/servers/registration:
+        dsc_matricula: 'Enrollment'
+        dsc_cargo: 'Role / Function / Employment'
+        cod_situacao_funcional: 'Functional status code'
+        status_situacao_funcional: 'Functional status'
+        dsc_cpf: 'CPF'
+        dth_nascimento: 'Birthday'
+        vlr_carga_horaria: 'Workload'
+        num_folha: 'Sheet number'
+        vdth_admissao: 'Admission date'
+        cod_afastamento: 'Clearance code'
+        dth_afastamento: 'Clearance date'
+        organ_acronym: 'Agency/Entity'
+        organ_title: 'Agency/Entity'
+        organ_id: 'Agency/Entity'
+        functional_status: 'Functional status'
+
+  integration/servers/registration:
+    functional_statuses:
+      all: All status
+      functional_status_active: Active
+      functional_status_retired: Retired
+      functional_status_pensioner: Pensioner
+      functional_status_intern: Trainee / Scholar

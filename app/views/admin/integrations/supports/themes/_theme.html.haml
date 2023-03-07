@@ -1,0 +1,10 @@
+%tr
+  %td
+    = link_to admin_integrations_supports_theme_path(theme) do
+      = highlight(theme.codigo_tema, params[:search])
+
+  %td
+    - theme_description = theme.descricao_tema
+    = link_to admin_integrations_supports_theme_path(theme), title: theme_description do
+      = highlight(theme_description, params[:search])
+

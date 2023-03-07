@@ -1,0 +1,14 @@
+.row.mt-3
+
+  .col-12.col-lg-5
+    = subtopic.title
+
+  .col-12.col-lg-2
+    = t('.replace_by')
+    = t('simple_form.required.mark')
+
+  .col-12.col-lg-5
+    - url = subtopics_api_v1_admin_classifications_path
+    - selected = params[:target_subtopics] && params[:target_subtopics]["#{subtopic.id}"]
+    - options = params[:target_topic].present? ? options_for_select(subtopics_by_topic_for_select(params[:target_topic]), selected) : ''
+    = select_tag "target_subtopics[#{subtopic.id}]", options, { class: 'form-control', include_blank: t('messages.form.select'), data: { placeholder: t('messages.form.select'), input: 'subtopic', url: url, 'param-name': 'topic' }}

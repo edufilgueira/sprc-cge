@@ -1,0 +1,71 @@
+- server = server_salary.server
+
+- #
+- # Info geral
+- #
+.row
+  .col-12
+    %h2.h4
+      = server_salary.title
+
+  .col-12
+    = l(server_salary.date, format: :month_year_long)
+
+%hr{'aria-hidden': 'true'}
+
+.ml-2.mr-2
+  - all_server_salaries.each_with_index do |server_salary, index|
+
+    .page-break-after
+      - #
+      - # Matrícula
+      - #
+      .row
+        .col-12
+          %h2.h5
+            = server_salary.registration.organ_and_role
+
+      .row.ml-2.mr-2
+        .col-12
+          = render 'shared/transparency/server_salaries/print/registration_header', server_salary: server_salary
+
+
+      %hr{'aria-hidden': 'true'}
+
+
+      - #
+      - # Salários
+      - #
+      .row.ml-2.mr-2
+        .col-12
+          = render 'shared/transparency/server_salaries/print/credit_proceeds', server_salary: server_salary
+
+
+      %hr{'aria-hidden': 'true'}
+
+      - #
+      - # Descontos
+      - #
+      .row.ml-2.mr-2
+        .col-12
+          = render 'shared/transparency/server_salaries/print/debit_proceeds', server_salary: server_salary
+
+
+      %hr{'aria-hidden': 'true'}
+
+      - #
+      - # Total
+      - #
+      .row.ml-2.mr-2
+        .col-12
+          = render 'shared/transparency/server_salaries/print/total_proceeds', server_salary: server_salary
+
+
+  %hr{'aria-hidden': 'true'}
+
+
+- [:source, :proceeds].each do |info|
+  .row
+    .col-12
+      .small
+        = raw(t("shared.transparency.server_salaries.show.infos.#{info}"))

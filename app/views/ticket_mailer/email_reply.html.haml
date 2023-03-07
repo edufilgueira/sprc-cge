@@ -1,0 +1,21 @@
+%h1.text-muted
+  = t(".title.#{@ticket.ticket_type}", count: @replies.count, protocol: @ticket.protocol)
+
+- @replies.each do |reply|
+
+  %hr
+
+  %blockquote
+    = raw("#{reply.description}")
+
+    %span.text-muted
+      - created_at = l(reply.created_at, format: :long)
+      = t('.replies.title', author: reply.as_author, created_at: created_at)
+
+%hr
+
+%span.text-muted
+  - url = @ticket.from_registered_user? ? platform_ticket_url(@ticket) : ticket_area_ticket_url(@ticket)
+  = raw(t('.link.title', url: url))
+
+%br/

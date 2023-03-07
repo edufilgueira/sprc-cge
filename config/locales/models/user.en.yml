@@ -1,0 +1,116 @@
+en:
+  activerecord:
+    attributes:
+
+      user:
+        document: Document
+        document_type: Document type
+        document_type_str: Document type
+        email: Email
+        email_confirmation: Email confirmation
+        name: Name
+        password: Password
+        password_confirmation: Password confirmation
+        user_type: User type
+        operator_type: Operator type
+        organ: Organ
+        department: Unit
+        subnet: Subnet
+        user_type_str: User type
+        operator_type_str: Operator type
+        organ_name: Organ
+        organ_acronym: Organ
+        department_name: Unit
+        subnet_name: Subnet
+        person_type: Profile type
+        person_type_str: Profile type
+        provider: Provider
+        social_name: Social name
+        gender: Gender
+        gender_str: Gender
+        denunciation_tracking: Denunciation tracking
+        education_level: Education level
+        education_level_str: Education level
+        birthday: Birthday
+        server: Are you a server?
+        city: City
+        city_id: City
+        city_title: City
+        state: State
+        positioning: Can you work as as internal area member?
+        internal_subnet: Do you belong to any subnet?
+        subnet_full_acronym: Subnet
+
+      user/gender:
+        not_informed_gender: Do not inform
+        female: Female
+        male: Male
+        other_gender: Other
+
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: Password is too short.
+            password_confirmation:
+              confirmation: Confirmation does not match the password.
+            cpf:
+              invalid: invalid CPD
+            cnpj:
+              invalid: invalid CNPJ
+            department_id:
+              invalid_organ_association: Department not exist to organ selected
+              invalid_subnet_association: Department not exist to subnet selected
+            sub_department_id:
+              invalid_department_association: Subdepartment not exist to department selected
+  user:
+    need_to_change_password: Information that is required to perform a password update. Please change personalized and stay updated with Ceará Transparente's security policies. Use the edit form of your profile to modify your password and keep the data displayed.
+    document_types:
+      cpf: CPF
+      rg: RG
+      cnh: CNH
+      ctps: CTPS
+      passport: Passport
+      voter_registration: Voter registration
+      cnpj: CNPJ
+      registration: institutional enrollment
+      other: Other
+
+    user_types:
+      admin: Administrator
+      operator: Operator
+      user: User
+
+      color_classes:
+        admin: danger
+        operator: warning
+        user: info
+
+    operator_types:
+      cge: CGE Operator
+      cge_denunciation_tracking: Denunciation Tracking
+      call_center_supervisor: Supervisor 155
+      sou_sectoral: SOU Sectoral Operator
+      sic_sectoral: SIC Sectoral Operator
+      internal: Internal Operator
+      call_center: Call center 155
+      chief: Leader
+      subnet_sectoral: Subnet operator
+      subnet_chief: Subnet leader
+
+    person_types:
+      individual: Individual
+      legal: Legal
+
+    genders:
+      not_informed_gender: Not informed
+      female: Female
+      male: Male
+      other_gender: Other
+
+    education_levels:
+      primary_school: Primary school
+      high_school: High School
+      bachelors_degree: Bachelors degree
+      postgraduate: Postgraduated

@@ -1,0 +1,23 @@
+en:
+
+  shared:
+
+    transparency:
+
+      events:
+
+        index:
+          title: Events
+
+        filters:
+          starts_at:
+            label: Period
+            start: Start
+            end: End
+
+        event:
+          commands:
+            show: See event
+
+        show:
+          title: Event show

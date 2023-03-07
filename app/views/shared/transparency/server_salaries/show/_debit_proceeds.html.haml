@@ -1,0 +1,55 @@
+- registration = server_salary.registration
+- date = server_salary.date
+- debit_proceeds = registration.debit_proceeds(date).sorted
+- grouped_proceeds = transparency_server_salaries_grouped_proceeds(debit_proceeds)
+
+- if debit_proceeds.present?
+
+  %table.table.table-hover.table-striped.table-sm{summary: t('shared.transparency.server_salaries.show.debit_proceeds.summary')}
+
+    %thead
+
+      %tr
+        %th
+          = t("shared.transparency.server_salaries.show.debit_proceeds.table.heads.dsc_debit")
+        %th.w-25
+          = t("shared.transparency.server_salaries.show.debit_proceeds.table.heads.vlr_financeiro")
+
+    %tbody
+
+      - if admin?(current_user)
+        - grouped_proceeds.each do |dsc_provento, vlr_financeiro|
+
+          %tr
+            %td
+              = dsc_provento
+            %td
+              = number_to_currency(vlr_financeiro)
+
+      - else
+        %tr
+          %td
+            = t('shared.transparency.server_salaries.show.debit_proceeds.under_roof')
+          %td
+            = number_to_currency(server_salary.discount_under_roof)
+
+        %tr
+
+          %td
+            = t('shared.transparency.server_salaries.show.debit_proceeds.others')
+          %td
+            = number_to_currency(server_salary.discount_others)
+
+
+      %tr.font-weight-bold
+
+        %td
+          = t('shared.transparency.server_salaries.show.debit_proceeds.total')
+        %td
+          = number_to_currency(server_salary.discount_total)
+
+- else
+
+  .row
+    %i.col-md-12.text-center
+      = t('shared.transparency.server_salaries.show.debit_proceeds.empty')

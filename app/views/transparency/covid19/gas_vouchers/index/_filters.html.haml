@@ -1,0 +1,20 @@
+.card-filters.filter-bar{'data-filter-bar': transparency_id}
+
+  = form_for transparency_covid19_gas_vouchers_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+      .col-12.col-lg-3
+        %label= t('.cpf')
+        = text_field_tag(:cpf, 
+          params[:cpf], 
+          class: 'form-control string required w-100 mb-3', 
+          required: true, 
+          'data-mask': 'cpf')
+
+      .col-12.col-lg-3
+
+        - # forma simples de align-bottom no botão de busca
+        .mt-4.pt-2
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'

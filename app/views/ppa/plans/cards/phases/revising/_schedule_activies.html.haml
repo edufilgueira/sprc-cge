@@ -1,0 +1,26 @@
+
+.row
+  .col-lg-6.col-md-12
+    .card.ppa-card-schedule
+      .card-block
+        %h4.card-title
+          = t('.title')
+        .row
+          .col-12.text-justify
+            = t('.description').html_safe
+
+  .col-lg-6.col-md-12
+    .card.ppa-card-schedule.bg-tertiary.text-white
+      .card-block
+        %h4.card-title
+          = t('.see_down_schedule').html_safe
+        - if revision_schedule.present?
+          - for schedule in revision_schedule
+            .row.mt-3
+              .col-12.text-justify
+                - if schedule.start_in == schedule.end_in
+                  = "#{l schedule.start_in} - "
+                - else
+                  = "#{l schedule.start_in} a #{l schedule.end_in} - "
+                = t(".stages.#{schedule.stage}")
+

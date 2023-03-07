@@ -1,0 +1,34 @@
+@import 'base/variables';
+
+@import 'bootstrap';
+@import 'components/bootstrap-datetimepicker-custom';
+
+@import 'components';
+@import 'modules';
+@import 'switchery';
+
+// vendor
+@import 'googleapis';
+
+
+abbr[title] {
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 1.70rem;
+}
+
+.privacy_statement {
+  position: fixed; 
+  bottom: 0; 
+  right: 0; 
+  z-index: 99; 
+  margin-bottom: 4em; 
+  margin-right: 1em; 
+  background-color: #fff;
+  padding: 1.25rem;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
+
+
+}

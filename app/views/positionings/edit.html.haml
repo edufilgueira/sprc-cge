@@ -1,0 +1,101 @@
+- content_for :title, t(".title", ticket_title: ticket.title)
+
+- if ticket.reopened?
+  = render 'operator/tickets/reopen_alert'
+
+- if ticket.appeals?
+  = render 'operator/tickets/appeal_alert'
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+        %h2.card-title
+          = t(".title", ticket_title: ticket.title)
+
+      - #
+      - # Prazos e situação
+      - #
+      .card-block.card-header
+        %h3.card-subtitle.mb-3
+          = t('.deadline.title')
+
+        .row
+          .col
+            .content-with-label
+              - days = ticket_department.remaining_days_to_deadline
+              %label.content-label{ class: remaining_days_to_deadline_class(days) }
+                = t('.deadline.remaining')
+
+              %p.content-value{ class: remaining_days_to_deadline_class(days) }
+                %b
+                  = days
+        .row
+          .col-6
+            .content-with-label
+              %label.content-label
+                = t('.deadline.created_at')
+
+              %p.content-value
+                = l(ticket.created_at, format: :date)
+
+          .col-6
+            .content-with-label
+              %label.content-label
+                = t('.deadline.last_day')
+
+              %p.content-value
+                = ticket_department.response_deadline
+
+
+        .row
+          .col-12
+            .content-with-label
+              %label.content-label
+                = t('.deadline.status')
+
+              %p.content-value
+                = status_for_operator(ticket)
+
+
+      - #
+      - # Descrição
+      - #
+      .card-block.card-header
+        %h3.card-subtitle
+          = t(".#{ticket.ticket_type}.description.title")
+
+        - if ticket.sou?
+          = content_with_label(ticket, :sou_type_str)
+
+        .content-with-label
+          %p.content-label
+            = Ticket.human_attribute_name(:description)
+          .content-value
+            = raw ticket_department.description
+
+        = content_with_label(ticket_department, :considerations)
+
+
+      - #
+      - # Anexos
+      - #
+      .card-block.card-header
+
+        %h3.card-subtitle
+          = t('.attachments.title')
+
+        .attachments.mt-4
+          = render 'shared/attachments/index', ticket: ticket
+
+
+      .card-block.card-header
+        %h3.card-subtitle.mb-4
+          = t('.answers.title')
+
+        = render 'answers', ticket: ticket
+
+        = render 'form', ticket_department_email: ticket_department_email

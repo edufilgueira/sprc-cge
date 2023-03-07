@@ -1,0 +1,48 @@
+@import 'base/variables';
+@import 'bootstrap/variables';
+@import 'modules/tickets/stats';
+
+.counter {
+  font-size: 44px;
+}
+
+.header-search-container {
+  .form-control,
+  .btn-home-search {
+    border: 0;
+    border-radius: 0;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.25);
+  }
+}
+
+
+// XXX Diminuindo a fonte de todas tabelas de transparência
+table {
+  thead {
+    font-size: 12px;
+  }
+
+  tr {
+    td {
+      a {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &.table {
+    th {
+      padding: 0.1rem;
+    }
+    td {
+      padding: 0rem;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1180px;
+    max-width: 100%;
+  }
+}

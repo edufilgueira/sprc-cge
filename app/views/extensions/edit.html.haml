@@ -1,0 +1,73 @@
+- content_for :title, t(".title", ticket_title: ticket.title)
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = t(".title", ticket_title: ticket.title)
+
+      .card-block.card-header
+        %h4.card-subtitle.mb-3
+          = t('.deadline.title')
+
+        .row
+          .col
+            .content-with-label
+              - days = ticket.remaining_days_to_deadline
+              %label.content-label{ class: remaining_days_to_deadline_class(days) }
+                = t('.deadline.remaining')
+
+              %p.content-value{ class: remaining_days_to_deadline_class(days) }
+                %b
+                  = days
+        .row
+          .col-6
+            .content-with-label
+              %label.content-label
+                = t('.deadline.created_at')
+
+              %p.content-value
+                = l(ticket.created_at, format: :date)
+
+          .col-6
+            .content-with-label
+              %label.content-label
+                = t('.deadline.last_day')
+
+              %p.content-value
+                = ticket.response_deadline
+
+
+        .row
+          .col-12
+            .content-with-label
+              %label.content-label
+                = t('.deadline.status')
+
+              %p.content-value
+                = status_for_operator(ticket)
+
+
+      .card-block.card-header
+        %h4.card-subtitle
+          = t(".#{ticket.ticket_type}.description.title")
+
+        - if ticket.sou?
+          = content_with_label(ticket, :sou_type_str)
+
+        = render 'shared/tickets/description', ticket: ticket
+
+      .card-block.card-header
+        %h4.card-subtitle
+          = t('.justification')
+
+        .content-with-label.mt-3
+          = content_sanitizer(extension.description)
+
+      .card-block
+        = render 'form', extension: extension

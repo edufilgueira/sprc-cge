@@ -1,0 +1,17 @@
+%h2.card-subtitle.mb-3.h4
+  = link_to t('.title'), '#!', data: { toggle: :collapse, target: "#topics" }, aria: { expanded: :true, controls: :topics }
+
+#topics.row.collapse.show
+  - topics = stats_ticket.data[:topics]
+
+  - if topics.blank?
+
+    .col-md-12.text-center
+      %em= t('.no_content')
+
+  - else
+    - series_data_keys = stats_topic_show_serie_keys(topics)
+    - series_data_values = stats_topic_show_serie_values(topics)
+    - series_data_percentages = stats_topic_show_serie_percentages(topics)
+
+    .chart{ data: { "chart_topics_#{ticket_type}": '', title: t(".#{ticket_type}.name"), unit: t(".#{ticket_type}.unit"), series_name: [t('.series_name')] , series_data_keys: [series_data_keys], series_data_values: [series_data_values], series_data_percentages: [series_data_percentages], 'show-percentage': true } }

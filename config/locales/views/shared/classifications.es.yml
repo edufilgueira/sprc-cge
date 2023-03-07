@@ -1,0 +1,15 @@
+es:
+  shared:
+    classifications:
+      form:
+        save: Guardar classificación
+
+      classification:
+        new:
+          sou: Clasificar manifestación
+          sic: Clasificar solicitud
+        edit: Editar clasificación 
+
+      classification_fields:
+        not_classified: Sin clasificación 
+        other_organs: No corresponde al Poder Ejecutivo Estadual

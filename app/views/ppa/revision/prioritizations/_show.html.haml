@@ -1,0 +1,30 @@
+- if region_theme.present?
+	.row
+		.col-lg-12
+			%hr
+		.col-lg-12
+			%h5= t('.regional_strategies_prioritized')
+		
+			
+		.col-12.mt-2
+			%strong= t('.theme')
+			%label= region_theme.theme.name		
+			= link_to t('commands.remove'), ppa_revision_prioritization_path(plan_id: plan.id, id: prioritization.id, region_theme_id: region_theme.id), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link pull-right'
+
+	.row.mt-4
+		.col-lg-12
+			- if region_theme.regional_strategies.exists?
+				%table.table.table-hover.table-sm
+					%thead
+						%th= t('.description')
+						%th= t('.priority')
+
+					%tbody
+						- region_theme.regional_strategies.each do |regional_strategy|
+							%tr
+								%td= regional_strategy.strategy.name
+								- if regional_strategy.priority
+									%td= t("boolean.#{regional_strategy.priority}")
+								- else 
+									%td= '-'
+							

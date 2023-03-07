@@ -1,0 +1,55 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.mb-4
+
+  .row
+
+    .col-md-6.col-xs-12
+
+      %h2.font-weight-bold
+        = t('.title')
+
+    .col-md-6.col-xs-12
+
+      .pull-right
+        = link_to t('.past_workshops'), ppa_past_workshops_path, class: 'btn btn-primary mr-2'
+        = link_to t('.next_workshops'), '#workshops-list', class: 'btn btn-success',
+          data: { 'smooth-scroll' => true, 'smooth-scroll-target' => '#workshops-list' }
+
+  %hr
+
+  .row
+
+    .col-md-6.col-xs-12.mb-4
+      %h5.mb-4.mt-4.d-flex
+        = t('.how_to_estagios')
+
+      = t('.how_to_estagios_txt')  
+
+    .col-md-6.col-xs-12.mb-4
+      %h5.mb-4.mt-4.d-flex
+        = t('.how_to_encontro')
+
+      = t('.how_to_encontro_txt')
+
+    .col-md-6.col-xs-12.mb-4
+      %h5.mb-4.mt-4.d-flex
+        = t('.how_to_encontro2')
+
+      = t('.how_to_encontro2_txt')
+
+    .col-md-6.col-xs-12.mb-4
+      %h5.mb-4.mt-4.d-flex
+        = t('.how_to_encontro3')
+
+      = t('.how_to_encontro3_txt')
+  
+          
+
+
+  .row
+
+    .col-md-12.col-lg-12#workshops-list
+
+      = render 'workshops_list'

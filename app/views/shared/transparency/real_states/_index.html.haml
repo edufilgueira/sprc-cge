@@ -1,0 +1,76 @@
+= cache(cache_key) do
+
+  = render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+  .my-4
+
+    %hr{'aria-hidden': 'true'}
+
+    = render 'transparency/exports/form'
+
+    %hr{'aria-hidden': 'true'}
+
+    .fa.fa-spin.fa-refresh.m-1.text-muted.float-right{'data-remote-content-loader': ''}
+
+    .row
+      .col-12.col-lg-6
+        .content-with-label
+          - label = raw(t('.counts.real_states_count.title'))
+          - value = number_with_delimiter(filtered_count)
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+
+    %hr{'aria-hidden': 'true'}
+
+    - header = [:service_id, :descricao_imovel, :manager_title, :property_type_title, :occupation_type_title, :municipio, :endereco]
+
+    - table_locale = t('.table')
+
+    = render 'shared/components/remote_table', header: header, collection: real_states, sort_columns: sort_columns, table_locale: table_locale do |real_state|
+
+      - show_path = url_for(action: 'show', controller: 'real_states', id: real_state)
+
+
+      %tr
+
+        %td
+          = link_to show_path do
+            = filtered_highlighted(real_state.service_id)
+
+        %td
+          - title = real_state.descricao_imovel
+          = link_to show_path, title: title do
+            = filtered_highlighted(title&.truncate(40))
+
+        %td
+          - title = real_state.manager_title
+          = link_to show_path, title: title do
+            = filtered_highlighted(title&.truncate(30))
+
+        %td
+          - title = real_state.property_type_title
+          = link_to show_path, title: title do
+            = filtered_highlighted(title&.truncate(30))
+
+        %td
+          - title = real_state.occupation_type_title
+          = link_to show_path, title: title do
+            = filtered_highlighted(title&.truncate(30))
+
+        %td
+          - title = real_state.municipio
+          = link_to show_path, title: title do
+            = filtered_highlighted(title)
+
+        %td
+          - title = real_state.endereco
+          = link_to show_path, title: title do
+            = filtered_highlighted(title)
+
+

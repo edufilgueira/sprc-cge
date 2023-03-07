@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/constructions/der/measurement:
+        integration_constructions_der: Obra
+        id_medicao: Identificador da medição
+        id_obra: Identificador da obra
+        id_status: Identificador da situação
+        ano_mes: Ano/mês
+        ano_mes_date: Ano/mês
+        numero_contrato_der: Número DER
+        numero_contrato_sac: Número SACC
+        numero_medicao: Número da medição
+        rodovia: Rodovia
+        status: Situação
+        status_medicao: Situação da medição
+        valor_medido: Valor medido

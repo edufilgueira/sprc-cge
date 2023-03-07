@@ -1,0 +1,13 @@
+%h1.text-muted
+  = @notification.subject
+
+%br
+
+%p.text-muted
+  = raw @notification.body
+
+%br
+%hr{'aria-hidden': 'true'}
+
+%p.text-muted
+  = raw t('.footer.body', link: link_to(root_url, root_url))

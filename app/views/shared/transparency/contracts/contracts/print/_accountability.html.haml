@@ -1,0 +1,24 @@
+- accountability_status = contract.accountability_status
+
+.row.mt-4
+  .col
+
+    %h3.h5.text-center
+      = Integration::Contracts::Contract.human_attribute_name(:accountability_status)
+
+    - if accountability_status.present?
+      %p
+        = accountability_status
+    - else
+      .row
+        %i.col-md-12.text-center
+          = t('shared.transparency.contracts.contracts.show.accountability.empty')
+
+    %hr{'aria-hidden': 'true'}
+
+    %small
+      - # Para contratos anteriores a 01/09/2015, há uma legenda diferente.
+      - if contract.data_assinatura < Date.new(2015, 9, 1)
+        = raw(t('shared.transparency.contracts.contracts.show.accountability.legend.before_2015'))
+      - else
+        = raw(t('shared.transparency.contracts.contracts.show.accountability.legend.after_2015'))

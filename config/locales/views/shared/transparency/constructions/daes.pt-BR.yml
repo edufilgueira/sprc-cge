@@ -1,0 +1,73 @@
+pt-BR:
+  shared:
+    transparency:
+
+      constructions:
+
+        daes:
+
+          index:
+            title: Obras de edificações
+            description: 'Consulte aqui todas as obras estaduais de edificações que têm a Superintendência de Obras Públicas como responsável técnica ou contratante.'
+            last_update: 'Última Atualização SOP:'
+
+            filters:
+              title: Consulta avançada
+              search:
+                hint: |
+                    Você pode buscar por parte do Nº SACC, nome da contratada,
+                    município, secretaria e descrição, entre outros.
+
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Superintendência de Obras Públicas - SOP</p>
+
+            chart:
+              valor:
+                unit: 'Total gasto R$'
+                title: 'Maiores valores'
+              count:
+                unit: 'Quantidade'
+                title: 'Número de obras'
+
+            charts:
+              tabs:
+                descricao:
+                  title: 'Geral'
+                municipio:
+                  title: 'Município'
+                secretaria:
+                  title: 'Secretaria'
+                contratada:
+                  title: 'Contratada'
+
+            stats:
+              title: Principais números relacionados à obras
+              count: 'Quantidade de obras ativas em <strong>%{date}</strong>'
+
+            counts:
+              daes_count:
+                title: Quantidade de obras filtradas
+              daes_sum:
+                title: Valor das obras filtradas
+
+            table:
+              summary: Lista de contratos e convênios
+              header:
+                numero_sacc: SACC
+                secretaria: Secretaria
+                contratada: Contratada
+                descricao: Descrição
+                municipio: Município
+                status: Situação
+                valor: Valor
+
+            blank_coordinates: Sem registros georreferenciados
+
+          measurements:
+            title: Planilha de Medições
+            empty: Sem medições
+
+          photos:
+            title: Fotos da obra
+            empty: Sem fotos

@@ -1,0 +1,142 @@
+en:
+  shared:
+    transparency:
+      contracts:
+        management_contracts:
+
+          index:
+            title: Management contracts
+            description: Consult here any management contract signed by the State. See who was hired, what service should be done, how much was paid, the date of completion, etc.
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Controladoria e Ouvidoria Geral do Estado - CGE</p>
+              <p>Sistema de Acompanhamento de Contratos e Convênio - SACC</p>
+
+            chart:
+              valor_atualizado_concedente:
+                unit: 'Sum of the active contracts values: R$'
+                title: 'Values of active contracts in the month'
+
+                creditor:
+                  title: Sum of active contracts value per supplier
+                manager:
+                  title: Sum of active contracts value per unit
+                tipo_objeto:
+                  title: Sum of active contracts value per contract scope
+
+            charts:
+              tabs:
+                creditor:
+                  title: Per supplier
+                manager:
+                  title: Per unit
+                tipo_objeto:
+                  title: Per contract scope
+
+            filters:
+              title: Advanced search
+              search:
+                hint: |
+                  You can search by the SACC No., Contract No., unit name, name or CNPJ of the contractor and parts of the object of the contract. Examples: 'sec saude', 'education', 'snack', among others.
+
+              select:
+                cod_gestora: All
+
+            counts:
+              contracts_count:
+                title: Filtered contracts amount
+              contracts_sum:
+                title: Filtered contracts updated value
+                tolltip: It is the original value of the contracts plus the value of their amendments - amendments or apostilles - considering the entire period of validity of the contractual instrument.
+
+            table:
+              summary: Management contracts list
+              header:
+                data_assinatura: Signature date
+                isn_sic: SACC Nº
+                num_contrato: Contrato Nº
+                descricao_objeto: Scope
+                valor_atualizado_concedente: Updated value <i class="fa fa-question-circle" title="It is the original value of the contracts plus the value of their amendments - amendments or apostilles - considering the entire period of validity."></i>
+                calculated_valor_empenhado: Committed value <i class="fa fa-question-circle" title="It is the total value of the commitments made, considering the entire period of validity of the contractual instrument."></i>
+                calculated_valor_pago: Paid value <i class="fa fa-question-circle" title="It is the total value of payments made, considering the entire period of validity of the contractual instrument."></i>
+                cod_gestora: Secretariat/Agency
+                cod_concedente: Grantor
+                creditor: Creditor
+
+            stats:
+              title: Main figures related to management contracts
+              count: 'Number of active contracts on <strong>%{date}</strong>'
+              valor_atualizado_concedente: 'Sum of active values on <strong>%{date}</strong>'
+
+          show:
+            attachments_url: 'Documents related to the accountability'
+            resource_title: 'SACC Nº: %{sacc}'
+            descricao_url: Entire contract
+            descricao_url_ddisp: Bidding exemption process
+            descricao_url_inexg: Bidding unenforceability process
+            edital_url: Check bidding notice
+            cod_secretaria: Agency/Secretariat
+
+            additives:
+              title: Additives
+              empty: No additives registered
+              table:
+                heads:
+                  descricao_tipo_aditivo: Type
+                  data_termino: End date
+                  valor: Value
+                  descricao_observacao: Scope
+                  descricao_url: See all
+
+            adjustments:
+              title: Adjustments
+              empty: No adjustments registered
+              table:
+                heads:
+                  descricao_tipo_ajuste: Description type
+                  descricao_observacao: Scope
+                  data_termino: End date
+                  valor_ajuste_destino: Value
+                  descricao_url: See all
+
+            financials:
+              title: Note of Commitment and Notes of Payments
+              empty: No Note of Commitment and Notes of Payments registered
+              table:
+                export_file_name: 'Payments-%{id}'
+                heads:
+                  num_documento: Commitment note
+                  data_documento: Commitment date
+                  valor_documento: Commitment value
+                  num_pagamento: Payment note
+                  data_pagamento: Payment date
+                  valor_pagamento: Payment value
+
+            infringements:
+              title: Defaults
+              empty: No defaults registered
+              table:
+                heads:
+                  cod_financiador: Funder
+                  descricao_entidade: Entity
+                  descricao_financiador: Funder description
+                  descricao_motivo_inadimplencia: Reason
+                  data_lancamento: Launching date
+                  valor_atualizado_total: Value
+
+            transfer_bank_orders:
+              empty: There are no bank transfer orders for this agreement
+
+            accountability:
+              empty: No accountability information of this agreement
+              legend: |
+                <p> Accountability Status: </ p>
+                  <ul>
+                    <li> <strong> Waiting for Accountabilities </ strong>: Accountability has not yet been submitted; </ li>
+                    <li> <strong> Accountabilities not submitted </ strong>: The deadline to submit the Accountability has expired; </ li>
+                    <li> <strong> Awaiting accountabilities analysis </ strong>: Accountability submitted, but the Grantor did not initiate the analysis; </ li>
+                    <li> <strong> Accountabilities under analysis </ strong>: Accountability sent and the Grantor started the analysis; </ li>
+                    <li> <strong> Unanalyzed accountabilities </ strong>: The deadline for the Grantor to analyze the accountabilities has expired; </ li>
+                    <li> <strong> Approved </ strong>: Accountability Approved; </ li>
+                    <li> <strong> Reproved </ strong>: Accountability Reproved; </ li>
+                  </ul>

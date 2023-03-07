@@ -1,0 +1,118 @@
+.row
+  .col-12
+
+    %h2.h4
+      = t('shared.transparency.contracts.contracts.show.resource_title', sacc: contract.title)
+
+    .row
+      .col-6
+        = dash_content_with_label(contract, :num_spu)
+
+      .col-6.text-right
+        = dash_content_with_label(contract, :num_contrato)
+
+    .row
+      .col-12
+        = dash_content_with_label(contract, :descricao_nome_credor)
+
+    .row
+      .col-6
+        = dash_content_with_label(contract, :cpf_cnpj_financiador)
+
+      .col-6.text-right
+        = dash_content_with_label(contract, :status_str)
+
+    .row
+      .col-12
+        = dash_content_with_label(contract, :descricao_objeto)
+
+    .row
+      .col-12
+        = dash_content_with_label(contract, :descricao_justificativa)
+
+    .row
+      .col-6
+        = dash_content_with_label(contract, :descricao_situacao)
+
+      .col-6.text-right
+        = dash_content_with_label(contract, :tipo_objeto)
+
+.row.page-break
+  .col-12
+
+    - manager = contract.manager.present? ? :manager_title : :cod_gestora
+    - grantor = contract.grantor.present? ? :grantor_title : :cod_concedente
+
+    .row
+      .col-6
+        = dash_content_with_label(contract, grantor)
+
+      .col-6.text-right
+        = dash_content_with_label(contract, manager)
+
+    .row
+      .col-6
+        .content-with-label
+          %p.content-label
+            = contract.class.human_attribute_name(:cod_secretaria)
+
+          %p.content-value
+            = contract.manager_title || contract.cod_secretaria
+
+      .col-6.text-right
+        = dash_content_with_label(contract, :data_publicacao_doe, format: :date)
+
+    .row
+      .col-6
+        = dash_content_with_label(contract, :data_assinatura, format: :date)
+
+      .col-6.text-right
+        = dash_content_with_label(contract, :data_termino, format: :date)
+
+    .row
+
+      .col-6
+        = dash_content_with_label(contract, :valor_contrato)
+
+      .col-6.text-right
+        = dash_content_with_label(contract, :calculated_valor_aditivo)
+
+    .row
+      .col-6
+        = dash_content_with_label(contract, :valor_ajuste)
+
+      .col-6.text-right
+        = dash_content_with_label(contract, :valor_can_rstpg)
+
+    .row
+      .col-6
+        = dash_content_with_label(contract, :valor_atualizado_concedente)
+
+      .col-6.text-right
+        = dash_content_with_label(contract, :calculated_valor_empenhado)
+
+    .row
+      .col-6
+        = dash_content_with_label(contract, :calculated_valor_pago)
+
+
+    .row
+      .col-6
+        = dash_content_with_label(contract, :descriaco_edital)
+
+      .col-6.text-right
+        - modalidade_label = contract.management_contract? ? t('.decricao_modalidade') : Integration::Contracts::Contract.human_attribute_name(:decricao_modalidade)
+        = dash_content_with_label(contract, :decricao_modalidade, { label: modalidade_label })
+
+.row.page-break
+  .col-12
+    = render 'shared/transparency/contracts/contracts/print/additives', contract: contract
+
+.row.page-break
+  .col-12
+    = render 'shared/transparency/contracts/contracts/print/adjustments', contract: contract
+
+    - #
+    - # Lista carregada por ajax; não deve ser exibida na tela de impressão pos pode haver milhares
+    - #
+    / = render 'shared/transparency/contracts/financials', contract: contract

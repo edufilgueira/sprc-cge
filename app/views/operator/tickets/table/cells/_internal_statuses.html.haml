@@ -1,0 +1,17 @@
+- ticket_show_path = operator_ticket_path(ticket)
+
+%td
+  = link_to ticket_show_path do
+    - if ticket_alert_reopen_appeal?(ticket)
+      %i.fa.fa-exclamation-triangle{'aria-hidden':'true', class: 'text-warning', title: t(".reopen_appeal.#{ticket.ticket_type}") }
+
+
+    - if ticket.tickets.present?
+      - ticket.tickets.each_with_index do |child, index|
+        = content_tag(:br) if index > 0
+        = status_for_operator(child)
+
+    - else
+      = status_for_operator(ticket)
+
+

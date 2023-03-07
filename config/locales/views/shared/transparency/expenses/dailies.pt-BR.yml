@@ -1,0 +1,64 @@
+pt-BR:
+  shared:
+    transparency:
+      expenses:
+
+        dailies:
+          index:
+            title: Despesas com diárias
+            description: 'Veja aqui as despesas dos servidores com viagens a serviço (diárias). É possível pesquisar por órgão, período ou beneficiário.'
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Secretaria da Fazenda - SEFAZ</p>
+              <p>Sistema de Gestão Governamental por Resultados - S2GPR</p>
+
+            chart:
+              calculated_valor_final:
+                unit: 'Valores das diárias: R$'
+                title: 'Valores com diárias no ano selecionado.'
+
+                creditor:
+                  title: Valores empenhados das diárias por beneficiário
+                management_unit:
+                  title: Valores empenhados das diárias por secretarias/órgãos
+
+            charts:
+              tabs:
+                creditor:
+                  title: Por beneficiário
+                management_unit:
+                  title: Por secretaria/órgão
+
+            filters:
+              title: Consulta avançada
+              search:
+                hint: |
+                  Você pode buscar por parte do nome dos beneficiários, unidade gestora.
+                  Exemplos: 'sec educa', 'seplag', entre outros.
+
+            counts:
+              filtered_count:
+                title: Quantidade de processos de diárias filtrados
+              filtered_sum:
+                calculated_valor_final:
+                  title: Valor dos processos de diárias filtrados
+
+            table:
+              summary: Lista de diárias
+              header:
+                numero: Nota do pagamento
+                date_of_issue: Data
+                unidade_gestora: Secretaria/Órgão
+                management_unit_title: Secretaria/Órgão
+                credor: Beneficiário
+                calculated_valor_final: Valor pago
+
+            stats:
+              title: Principais números relacionados às diárias
+              count: 'Quantidade de processos de diárias em <strong>%{date}</strong>'
+              valor: 'Valor pago em <strong>%{date}</strong>'
+
+          show:
+            contract:
+              link: '%{value}'
+              none: EMPENHO NÃO VINCULADO AO INSTRUMENTO CONTRATUAL/CONVÊNIO

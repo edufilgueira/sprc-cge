@@ -1,0 +1,13 @@
+#card-multisteps-flow.card{style: 'display:none;'}
+  = render partial: 'shared/ppa/revision/multistep_forms/multistep_flow'
+
+
+  %fieldset{id: 'fieldset_region'}
+    = render multistep_path(:region)
+
+  %fieldset{id: 'fieldset_theme'}
+    = render multistep_path(:theme)
+
+  %fieldset{id: 'fieldset_revision'}
+    = render partial: multistep_path(controller_name.to_sym)
+

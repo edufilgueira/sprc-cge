@@ -1,0 +1,12 @@
+- #
+- # Comentários internos visível apenas aos operadores
+- #
+= render "shared/tickets/ticket_internal_logs", ticket: ticket, comment_form_url: comment_form_url
+
+- if can? :view_public_comment, Ticket
+  - #
+  - #
+  - # Histórico de comentários
+  - #
+  - #
+  = render 'shared/tickets/public_comments', ticket: ticket, comment_form_url: comment_form_url

@@ -1,0 +1,26 @@
+.row.mb-5
+
+.row.text-justify
+  .col-md-12
+    %p
+      = t(".#{plan.status}.description").html_safe
+
+.row.text-justify
+  .col-md-12
+    = t('.detail_explain')
+    = link_to '../guia_seplag.pdf', target: :_blank do
+      %i{ class: 'fa fa-file-text-o' }
+      = t('.methodological_guide')
+    -# = link_to '../caderno_regional_seplag.odt', target: :_blank do
+    -#   %i{ class: 'fa fa-file-text-o' }
+    -#   = t('.regional_notebook')
+
+.row.text-justify
+  .col-md-12
+    %p
+      %h6.font-weight-bold
+        = t('.review_result')
+    = t('.disclosure')
+    = link_to '../resultado_final_v2.pdf', target: :_blank do
+      %i{ class: 'fa fa-file-text-o' }
+      = t('.final_result')

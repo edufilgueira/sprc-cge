@@ -1,0 +1,263 @@
+@import 'bootstrap/variables';
+@import 'base/variables';
+
+.navbar {
+  background-color: $app-green;
+
+  .fa {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+
+  .nav-item {
+    max-width: 100px;
+    margin-right: 5px;
+
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+
+  .toolbar-menu-container {
+    .fa {
+      font-size: 14px;
+    }
+  }
+
+  .dropdown-menu {
+    a {
+      display: block;
+      padding: 3px 20px;
+      clear: both;
+      color: #636c72;
+      white-space: nowrap;
+      font-size: 11px;
+      text-decoration: none;
+
+      &:hover {
+        color: #262626;
+        text-decoration: none;
+        background-color: #f5f5f5;
+      }
+    }
+
+    .divider {
+      height: 1px;
+      margin: 9px 0;
+      overflow: hidden;
+      background-color: #e5e5e5;
+    }
+  }
+
+  .navbar-active-indicator {
+    display: none;
+    height: 0;
+
+    color: $app-yellow;
+
+    .fa {
+      font-size: 44px;
+    }
+  }
+
+  .active {
+    .navbar-active-indicator {
+      display: block;
+    }
+  }
+
+  .navbar-link-text {
+    min-height: 34px;
+  }
+
+  .navbar-toggler-left {
+    margin-top: 15px;
+  }
+}
+
+.inner_navbar {
+   /* padding do inner_navbar deve ser similar a do breadcrumb */
+   // padding: 0.75rem 1rem;
+
+   float: right;
+
+   .nav-item {
+    font-size: 14px;
+
+    .nav-link.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
+
+.navbar-bottom-line {
+  margin-bottom: 12px;
+
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid $app-yellow;
+}
+
+@media (max-width: map-get($grid-breakpoints, "lg")) {
+
+  .navbar {
+
+    .container {
+      width: 100%;
+    }
+
+    .navbar-nav {
+      padding-right: 18px;
+
+      .nav-item {
+        display: block;
+        margin: auto;
+
+        width: 100%;
+        max-width: initial;
+        margin-right: 28px;
+
+        font-size: 15px;
+        text-align: right;
+      }
+    }
+
+    .navbar-brand {
+      img {
+        margin-top: 10px;
+        width: 220px;
+      }
+    }
+
+    .navbar-link-text {
+      min-height: initial;
+    }
+
+    .dropdown-menu {
+      border: none;
+      background-color: $app-green;
+
+      a {
+        color: rgba(255, 255, 255, 0.8);
+        text-align: right;
+      }
+
+      .divider {
+        background-color: $app-green;
+      }
+    }
+  }
+
+  .inner_navbar {
+    .nav-item {
+      font-size: 13px;
+    }
+  }
+}
+
+.navbar-container {
+  background-image: asset_url('views/transparency/navbar-banner.jpg');
+  height: 308px;
+  background-repeat: repeat-x;
+  background-position: bottom center;
+}
+
+.navbar-container-ppa {
+  margin-top: -70px;
+  height: 108px;
+}
+
+.background-container {
+  color: white;
+
+  p {
+    color: black;
+  }
+
+  h2 {
+    &.title {
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+}
+
+.header-search-container {
+  .form-control,
+  .btn-home-search {
+    border: 0;
+    border-radius: 0;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, "lg")) {
+  .navbar-mobile {
+    .nav {
+      display: block;
+    }
+  }
+
+  .background-container {
+    h2 {
+      &.title {
+        font-size: 26px;
+      }
+    }
+  }
+
+  .navbar-container {
+    background-color: $app-green;
+  }
+}
+
+.navbar-head-search-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 50;
+
+  .input-group {
+    margin-top: -1px;
+  }
+
+  .search-container {
+    .form-control {
+      font-size: 22px;
+      line-height: 42px;
+
+      border: 0;
+      font-weight: lighter;
+      font-family: 'Open Sans';
+      font-size: 22px;
+      padding: 15px 32px;
+
+      color: $app-yellow;
+    }
+  }
+
+  .search-box-search,
+  .search-box-cancel {
+    line-height: 50px;
+    margin-top: 1px;
+  }
+}
+
+.search-container-old {
+  font-size: 22px;
+  line-height: 72px;
+
+  .form-control {
+    border: 0;
+    color: #fb6b32;
+    font-size: 22px;
+    font-weight: lighter;
+    font-family: 'Open Sans';
+  }
+
+  .btn-link {
+    margin-top: -15px;
+    color: white;
+    cursor: pointer;
+  }
+}

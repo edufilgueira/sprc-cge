@@ -1,0 +1,66 @@
+en:
+  shared:
+    transparency:
+
+      purchases:
+
+        index:
+          title: Completed biddings
+          description: >
+            Check here any biddings awarded by the State. See the largest suppliers and those responsible for purchasing etc.
+
+          source: |
+            <p><strong>Data source:</strong></p>
+            <p>Secretaria do Planejamento e Gestão - SEPLAG</p>
+            <p>Sistema de Registro de Preço - SRP</p>
+
+          chart:
+            valor_total_calculated:
+              unit: 'Total value in R$'
+              title: 'Total value'
+
+          charts:
+            tabs:
+              itens:
+                title: Itens
+              fornecedores:
+                title: Suppliers
+              grupos:
+                title: Groups
+              resp_compra:
+                title: Units
+
+          filters:
+            title: Advanced search
+            search_placeholder: >
+              Search by publication number, supplier, agency, item code, category or group
+
+          counts:
+            purchases_count:
+              title: Quantity of filtered biddings
+            purchases_sum:
+              title: Value of filtered biddings
+
+          table:
+            summary: Purchases list
+            header:
+              numero_publicacao: Publication No.
+              nome_fornecedor: Supplier
+              nome_resp_compra: Unit
+              descricao_item: Item description
+              quantidade_estimada: Estimated amount
+              valor_unitario: Unitary value
+              valor_estimado: Estimated value
+              valor_total_melhor_lance: Total value
+
+          stats:
+            title: Main numbers related to biddings
+            count: 'Purchases amount published in <strong>%{date}</strong>'
+            valor_total_calculated: 'Purchases published in <strong>%{date}</strong>'
+
+        show:
+          descricao_url: Complete information of biddings
+          descricao_url_ddisp: Bidding exemption process
+          descricao_url_inexg: Bidding unenforceability process
+          edital_url: Check bidding notice
+

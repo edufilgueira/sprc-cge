@@ -1,0 +1,45 @@
+pt-BR:
+
+  admin:
+
+    mobile_tags:
+
+      create:
+        title: Nova categoria de aplicativo
+        done: "Categoria '%{title}' criada"
+        error: Falha ao criar categoria
+
+      destroy:
+        done: "Categoria '%{title}' removida"
+
+      index:
+        title: Categorias de aplicativo
+        empty: Nenhum registro encontrado
+
+        filters:
+          title: Filtros
+
+      filters:
+        search: Buscar categoria por nome
+        commands:
+          new: Nova categoria
+
+      table:
+        summary: Tabela de categorias de aplicativos
+        heads:
+          name: Nome
+          actions: ''
+
+      new:
+        title: Nova categoria de aplicativo
+
+      edit:
+        title: Edição de categoria de aplicativo
+
+      update:
+        title: Edição de categoria de aplicativo
+        done: "Categoria '%{title}' atualizada"
+        error: Falha ao atualizar categoria
+
+      show:
+        title: Categoria de aplicativo

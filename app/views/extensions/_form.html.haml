@@ -1,0 +1,11 @@
+= javascript_include_tag('ckeditor/init')
+
+= simple_form_for extension, url: [:approve, :extension, id: extension_user.token] do |f|
+
+  = f.input :justification, label: t('.justification'), as: :ckeditor, input_html: { ckeditor: { toolbar: :mini } }
+
+  .row.mt-2
+    .col-6
+      = f.submit t('.commands.approve'), class: 'btn btn-success w-100'
+    .col-6
+      = f.submit t('.commands.reject'), class: 'btn btn-danger w-100', formaction: reject_extension_path(id: extension_user.token)

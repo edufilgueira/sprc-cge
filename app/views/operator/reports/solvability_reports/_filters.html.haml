@@ -1,0 +1,38 @@
+- report.filters = request.query_parameters if report.filters.blank?
+- filters = report.filters
+
+.row.col-12
+
+  - #
+  - # confirmed_at
+  - #
+  .col-12.col-lg-4.mb-3
+
+    %label
+      = t('.confirmed_at.label')
+
+    .row
+      - filter_confirmed_at = filters[:confirmed_at]
+      - if filter_confirmed_at.present?
+        - filter_confirmed_at_start = filter_confirmed_at[:start]
+        - filter_confirmed_at_end = filter_confirmed_at[:end]
+
+      .col-12.col-lg-6
+        = text_field_tag("solvability_report[filters][confirmed_at][start]", filter_confirmed_at_start, placeholder: t('.confirmed_at.start'),  class: 'form-control w-100 datetimepicker')
+
+
+      .col-12.col-lg-6
+        = text_field_tag("solvability_report[filters][confirmed_at][end]", filter_confirmed_at_end, placeholder: t('.confirmed_at.end'), class: 'form-control w-100 datetimepicker')
+
+
+  - #
+  - # ticket_type
+  - #
+  .col-12.col-lg-4.mb-3
+
+    %label{ for: 'ticket_type'}
+      = t('.ticket_type')
+
+    - default_option = 'sou' if current_user.sou_sectoral?
+    - options = options_for_select(ticket_types_for_select, filters[:ticket_type] || default_option)
+    = select_tag "solvability_report[filters][ticket_type]", options, { 'data-select2-search': 'hidden', 'data-input': 'ticket_type' }

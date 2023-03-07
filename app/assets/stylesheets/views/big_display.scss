@@ -1,0 +1,16 @@
+// Adicionando opções de container maior para monitores maiores
+
+@media (min-width: 100px) {
+  .container {
+      width: 100%;
+      max-width: 100%;
+  }
+}
+
+
+@media (min-width: 1500px) {
+  .container {
+      width: 1400px;
+      max-width: 100%;
+  }
+}

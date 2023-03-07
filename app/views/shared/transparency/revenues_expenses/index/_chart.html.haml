@@ -1,0 +1,11 @@
+- if series_data.present?
+
+  %hr{'aria-hidden': true}
+
+  - chart_type = :total
+  - series_data_values = series_data.values.map{|v| v[chart_type]}
+  - series_data_keys = series_data.map{|k, v| v[:title].present? ? v[:title] : k}
+
+  .row
+    .col-12
+      .chart{ id: "chart_#{chart_name}_#{chart_type}", data: { title: t(".#{chart_type}.#{chart_name}.title"), unit: t(".#{chart_type}.unit"), series_name: [t(".#{chart_type}.title")], series_data_keys: [series_data_keys], series_data_values: [series_data_values], colorful: 'true' }}

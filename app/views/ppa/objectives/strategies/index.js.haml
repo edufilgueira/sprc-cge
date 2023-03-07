@@ -1,0 +1,7 @@
+%label
+  %strong= t('.label')
+
+%ul.list-group
+  - strategies.each do |strategy|
+    %li.list-group-item
+      %label= strategy.name

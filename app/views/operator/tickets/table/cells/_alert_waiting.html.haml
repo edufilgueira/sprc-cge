@@ -1,0 +1,6 @@
+- ticket_show_path = operator_ticket_path(ticket)
+
+%td
+  - if ticket_alert_waiting?(ticket)
+    = link_to ticket_show_path, class: 'text-warning', title: t('.title') do
+      %i.fa.fa-exclamation-triangle{'aria-hidden':'true'}

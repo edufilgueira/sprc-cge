@@ -1,0 +1,231 @@
+- items = %w(revenues_accounts expenses management maps)
+- t_expense = 'cards.expenses.links'
+- t_revenue = 'cards.revenues_accounts.links'
+- t_management = 'cards.management.links'
+- t_maps = 'cards.maps.links'
+
+- content_for :top_4_revenues_accounts do
+  .row.mt-3
+    .col-md-3
+      %ul.list-unstyled
+        %li.small.mb-2
+          = link_to t(".#{t_revenue}.link2.title"), transparency_revenues_accounts_path
+
+        %li.small.mb-2
+          = link_to t(".#{t_revenue}.link4.title"), transparency_revenues_registered_revenues_path
+
+    .col-md-6
+      %ul.list-unstyled
+        %li.small.mb-2
+          = link_to t(".#{t_revenue}.link3.title"), transparency_revenues_transfers_path
+
+        %li.small.mb-2
+          = link_to t(".#{t_revenue}.link8.title"), transparency_revenues_expenses_path
+
+- content_for :top_4_expenses do
+  .row.mt-3
+    .col-md-3
+      %ul.list-unstyled
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link1.title"), transparency_expenses_budget_balances_path
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link2.title"), transparency_expenses_neds_path
+
+          - # Aguardando integrador Depesas Extraorçamentárias #617
+          - #%li.small.mb-2
+          - #= link_to t(".#{t_expense}.link3.title"), '#!'
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link4.title"), transparency_expenses_dailies_path
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link5.title"), transparency_expenses_fund_supplies_path
+
+        %li.small.mb-2
+          - url = '/portal-da-transparencia/paginas/divida-publica'
+          = link_to t(".#{t_expense}.link28.title"), url
+
+
+    .col-md-3
+      %ul.list-unstyled
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link9.title"), transparency_server_salaries_path
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link8.title"), t(".#{t_expense}.link8.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link18.title"), transparency_city_undertakings_path
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link16.title"), transparency_macroregion_investiments_path
+
+    .col-md-3
+      %ul.list-unstyled
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link10.title"), transparency_contracts_contracts_path
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link11.title"), transparency_contracts_management_contracts_path
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link12.title"), transparency_contracts_convenants_path
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link14.title"), transparency_purchases_path
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link13.title"), t(".#{t_expense}.link13.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_maps}.link1.title"), transparency_constructions_daes_path
+
+        %li.small.mb-2
+          = link_to t(".#{t_maps}.link2.title"), transparency_constructions_ders_path
+
+
+    .col-md-3
+      %ul.list-unstyled
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link23.title"), t(".#{t_expense}.link23.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link29.title"), t(".#{t_expense}.link29.link")  
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link24.title"), t(".#{t_expense}.link24.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link25.title"), t(".#{t_expense}.link25.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link26.title"), t(".#{t_expense}.link26.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link6.title"), t(".#{t_expense}.link6.link")
+
+
+- content_for :top_4_management do
+  .row.mt-3
+    .col-md-3
+      %ul.list-unstyled
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link3.title"), t(".#{t_management}.link3.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link2.title"), t(".#{t_management}.link2.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_expense}.link22.title"), t(".#{t_expense}.link22.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link4.title"), t(".#{t_management}.link4.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link39.title"), t(".#{t_management}.link39.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link5.title"), t(".#{t_management}.link5.link")
+
+    .col-md-3
+      %ul.list-unstyled
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link6.title"), t(".#{t_management}.link6.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link35.title"), t(".#{t_management}.link35.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link19.title"), t(".#{t_management}.link19.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link28.title"), t(".#{t_management}.link28.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link10.title"), t(".#{t_management}.link10.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link9.title"), t(".#{t_management}.link9.link")
+
+    .col-md-3
+      %ul.list-unstyled
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link23.title"), t(".#{t_management}.link23.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link37.title"), t(".#{t_management}.link37.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link22.title"), t(".#{t_management}.link22.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link24.title"), t(".#{t_management}.link24.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link36.title"), t(".#{t_management}.link36.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link38.title"), t(".#{t_management}.link38.link")  
+
+
+    .col-md-3
+      %ul.list-unstyled
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link15.title"), t(".#{t_management}.link15.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link16.title"), t(".#{t_management}.link16.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link17.title"), t(".#{t_management}.link17.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link7.title"), transparency_real_states_path
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link25.title"), t(".#{t_management}.link25.link")
+
+        %li.small.mb-2
+          = link_to t(".#{t_management}.link27.title"), t(".#{t_management}.link27.link")
+
+- content_for :top_4_maps do
+  .row.mt-3
+    .col-md-3
+      %ul.list-unstyled
+        %li.small.mb-2
+          = link_to t(".#{t_maps}.link1.title"), transparency_constructions_daes_path(anchor: 'anchor-map')
+
+        %li.small.mb-2
+          = link_to t(".#{t_maps}.link2.title"), transparency_constructions_ders_path(anchor: 'anchor-map')
+
+    .col-md-3
+      %ul.list-unstyled
+        %li.small.mb-2
+          = link_to t(".#{t_maps}.link3.title"), 'http://www.hidro.ce.gov.br/', target: '_blank'
+
+        %li.small.mb-2
+          = link_to t(".#{t_maps}.link4.title"), 'http://atlas.cogerh.com.br/', target: '_blank'
+
+
+%section.card.card-green.border-0{ 'aria-labelledby': 'top_4_sections' }
+  .card-header.py-4-5.rounded.hidden-md-down
+    %ul.nav.nav-pills.nav-justified#firstTab{ role: "tablist" }
+      - items.each_with_index do |item, i|
+        %li.nav-item.tri-nav-item.border-right.px-4.text-left{ id: "#{item}_tab", data: { toggle: "tab" }, href: "##{item}", role: "tab", aria: { controls: item, selected: "true" }, class: ('active' if i.zero?) }
+          %i.fa.fa-2x.w-100.d-block{ class: "fa-#{item}" }
+          %h4.my-2
+            = t(".cards.#{item}.title")
+          %p
+            = t(".cards.#{item}.text")
+
+  .tab-content#firstTabContent
+    - items.each_with_index do |item, i|
+      .tab-pane.tab-pane-top-4.fade{ id: item, role: "tabpanel", aria: { labelledby: "#{item}_tab" }, class: ('show active' if i.zero?) }
+        .card-body.p-4.pt-md-5
+          %strong.text-orange
+            = t(".cards.#{item}.links.title")
+
+          = content_for("top_4_#{item}".to_sym)

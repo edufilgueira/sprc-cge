@@ -1,0 +1,4 @@
+- url_for_link = url_for(action: :show, print: :true)
+= link_to url_for_link, class: "btn btn-link btn-print hover-link d-inline-block" , target: :_blank do
+  %i.fa.fa-print{ 'aria-hidden': 'true' }
+  = t('shared.tickets.components.btn_print.title')

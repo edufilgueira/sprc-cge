@@ -1,0 +1,169 @@
+.row
+  .col-12
+    %h2.h4
+      = city_transfer.title
+
+  %hr{'aria-hidden': 'true'}
+
+- if city_transfer.especificacao_geral.present?
+  .row
+    .col-12
+      = content_with_label(city_transfer, :especificacao_geral)
+
+.row
+  .col-12
+    = content_with_label(city_transfer, :items_description)
+
+
+.row
+  - # a ned pode ser de um contrato ou de um convênio.
+  - contract = city_transfer.contract || city_transfer.convenant
+  .col-12
+    .content-with-label
+      %p.content-label
+        = ::Integration::Expenses::Ned.human_attribute_name(:contract)
+
+      %p.content-value
+        - if contract.present?
+          = t('shared.transparency.expenses.neds.show.contract.link', value: contract.title)
+
+        - else
+          = t('shared.transparency.expenses.neds.show.contract.none')
+
+
+.row
+  .col-6
+    = content_with_label(city_transfer, :cpf_cnpj_credor)
+
+  .col-6.text-right
+    - if city_transfer.is_a?(Integration::Expenses::Daily) && city_transfer.server_salary.present?
+      - server_salary = city_transfer.server_salary
+      - label = city_transfer.razao_social_credor
+
+      .content-with-label
+        %p.content-label
+          = ::Integration::Expenses::Daily.human_attribute_name(:razao_social_credor)
+
+        %p.content-value
+          = label
+
+    - else
+      = content_with_label(city_transfer, :razao_social_credor)
+
+
+.row
+  .col-6
+    - management_unit = (city_transfer.management_unit.present?) ? :management_unit_title : :unidade_gestora
+    = content_with_label(city_transfer, management_unit)
+
+  .col-6.text-right
+    - executing_unit = (city_transfer.executing_unit.present?) ? :executing_unit_title : :unidade_executora
+    = content_with_label(city_transfer, executing_unit)
+
+
+%hr{'aria-hidden': 'true'}
+
+
+.row
+  .col-6
+    = content_with_label(city_transfer, :calculated_valor_final)
+
+  .col-6.text-right
+    = content_with_label(city_transfer, :calculated_valor_pago_final)
+
+
+.row
+  .col-6
+    = content_with_label(city_transfer, :calculated_valor_pago_exercicio)
+
+  .col-6.text-right
+    = content_with_label(city_transfer, :calculated_valor_pago_apos_exercicio)
+
+
+.row
+  .col-6
+    = content_with_label(city_transfer, :calculated_valor_liquidado_exercicio)
+
+  .col-6.text-right
+    = content_with_label(city_transfer, :calculated_valor_liquidado_apos_exercicio)
+
+
+%hr{'aria-hidden': 'true'}
+
+
+.row.page-break
+  .col-6
+    = content_with_label(city_transfer, :data_emissao)
+
+  .col-6.text-right
+    = content_with_label(city_transfer, :numero_processo_protocolo_original)
+
+.row
+  .col-6
+    = content_with_label(city_transfer, :classificacao_orcamentaria_reduzido)
+
+  .col-6.text-right
+    = content_with_label(city_transfer, :classificacao_orcamentaria_completo)
+
+
+.row
+  .col-6
+    = content_with_label(city_transfer, :natureza)
+
+  .col-6.text-right
+    = content_with_label(city_transfer, :efeito)
+
+
+.row
+  .col-6
+    = content_with_label(city_transfer, :function_title)
+
+  .col-6.text-right
+    = content_with_label(city_transfer, :sub_function_title)
+
+
+.row
+  .col-6
+    = content_with_label(city_transfer, :government_program_title)
+
+  .col-6.text-right
+    = content_with_label(city_transfer, :government_action_title)
+
+
+.row
+  .col-6
+    = content_with_label(city_transfer, :modalidade_licitacao)
+
+  .col-6.text-right
+    = content_with_label(city_transfer, :resource_source_title)
+
+
+.row
+  .col-6
+    = content_with_label(city_transfer, :expense_nature_item_title)
+
+  .col-6.text-right
+    = content_with_label(city_transfer, :projeto)
+
+
+%hr{'aria-hidden': 'true'}
+
+
+
+- #
+- # Itens
+- #
+.row.page-break
+  .col-12
+    = render 'shared/transparency/expenses/city_transfers/print/ned_items'
+
+
+%hr{'aria-hidden': 'true'}
+
+- #
+- # Npds
+- #
+.row.page-break
+  .col-12
+    = render 'shared/transparency/expenses/city_transfers/print/npds'
+

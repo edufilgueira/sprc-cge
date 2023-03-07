@@ -1,0 +1,31 @@
+@import 'base/variables';
+
+body[data-controller=search_contents] {
+
+  .search-result-card {
+    text-align: left;
+    border-left: 3px solid $app-yellow;
+
+    .card-title {
+      font-weight: bold;
+    }
+
+    .btn {
+      white-space: normal;
+    }
+  }
+
+  .btn-search {
+    margin-top: 1px;
+    border: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    cursor: pointer;
+  }
+}
+
+.search-title {
+  a {
+    color: $text-gray-dark;
+  }
+}

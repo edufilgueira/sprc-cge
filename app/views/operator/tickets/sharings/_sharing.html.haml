@@ -1,0 +1,7 @@
+.row
+  %p.col-12.col-md-6
+    - if ticket.child?
+      = status_for_operator(sharing)
+
+    - else
+      = link_to status_for_operator(sharing), operator_ticket_path(sharing)

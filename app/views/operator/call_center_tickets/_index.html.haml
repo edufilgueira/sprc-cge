@@ -1,0 +1,121 @@
+- filtered = [:search, :parent_protocol, :ticket_type, :organ, :call_center_responsible_id, :priority].any? {|key| params[key].present? && params[key] != '__is_null__' }
+
+- filtered_feedback = params[:call_center_feedback] == 'with_feedback'
+
+- if filtered || filtered_feedback
+  .my-4
+    .alert.alert-warning
+      = raw t('messages.filters.warning_count', total: number_with_delimiter(total_count), filtered: number_with_delimiter(filtered_count))
+      = link_to t('messages.filters.clear'), '#!', 'data-input': 'clear-filter', class: 'float-right'
+
+
+= form_tag update_checked_operator_call_center_tickets_path(params: permitted_params), method: :patch do
+
+  .my-4
+
+    - if current_user.call_center_supervisor? && tickets.present?
+      = label_tag 'ticket[call_center_responsible_id]', t('.call_center_responsible.label')
+      .row
+        .col-12.col-lg-6
+          - options = options_for_select(call_center_responsible_for_select)
+          = select_tag 'ticket[call_center_responsible_id]', options, { include_blank: t('.call_center_responsible.no_responsible'), data: { select2_search: :hidden } }
+
+        .col-12.col-lg-6
+          = submit_tag t('.call_center_responsible.commands.save'), class: 'btn btn-primary'
+
+
+  - rejected_columns = current_user.call_center? ? [:call_center_responsible_id] : [:actions]
+  - header = [ :created_at, :deadline, :call_center_responsible_id, :call_center_allocation_at, :call_center_feedback_at, :parent_protocol, :call_center_status, :organ, :name, :answer_type, :description, :actions ] - rejected_columns
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: tickets, sort_columns: sort_columns, table_locale: table_locale, check_all: current_user.call_center_supervisor?  do |ticket|
+
+    - ticket_show_path = operator_call_center_ticket_path(ticket)
+
+    %tr{ class: ticket_highlight_row(ticket) }
+
+      - if current_user.call_center_supervisor?
+
+        %td
+          - checked = params[:checked_tickets].present? && params[:checked_tickets][ticket.id].present?
+          = check_box_tag 'checked_tickets[]', ticket.id, checked, class: 'checkbox'
+
+
+      %td
+        = link_to l(ticket.created_at.to_date), ticket_show_path
+
+      %td
+        = link_to ticket_show_path  do
+          - if !ticket.with_feedback?
+            = t('ticket.deadline', count: ticket.deadline)
+          - else
+            %em
+              = t('messages.content.undefined')
+
+
+      - if current_user.call_center_supervisor?
+        %td
+          = link_to ticket_show_path  do
+            - if ticket.call_center_responsible_name.present?
+              = ticket.call_center_responsible_name
+            - else
+              %em
+                = t('messages.content.undefined')
+
+
+      %td
+        = link_to ticket_show_path  do
+          - if ticket.call_center_allocation_at.present?
+            = l(ticket.call_center_allocation_at, format: :date_time)
+          - else
+            %em
+              = t('messages.content.undefined')
+
+      %td
+        = link_to ticket_show_path  do
+          - if ticket.call_center_feedback_at.present?
+            = l(ticket.call_center_feedback_at, format: :date_time)
+          - else
+            %em
+              = t('messages.content.undefined')
+
+      %td
+        - protocol = ticket.parent_protocol
+        = link_to highlight(protocol, params[:search]), ticket_show_path, title: t("ticket.protocol_title.#{ticket.ticket_type}", protocol: protocol)
+
+
+      %td
+        = link_to ticket.call_center_status_str, ticket_show_path
+
+
+      %td
+        = link_to ticket_show_path  do
+          - organs = acronym_organs_list(ticket)
+          - if organs.present?
+            = organs
+          - else
+            %em
+              = t('messages.content.undefined')
+
+
+      %td
+        - name = ticket.name
+        = link_to name&.truncate(50), ticket_show_path, title: name
+
+
+      
+      %td
+        = link_to I18n.t("ticket.answer_types.#{ticket.answer_type}"), ticket_show_path
+      
+      - description = content_sanitizer(description_for_operator(current_user, ticket))
+
+      %td
+        = link_to ticket_show_path, title: strip_tags(description) do
+          = highlight(description.truncate(40), params[:search])
+
+      - if current_user.call_center?
+
+        %td
+          = link_to ticket_show_path, title: strip_tags(description) do
+            .fa.fa-search

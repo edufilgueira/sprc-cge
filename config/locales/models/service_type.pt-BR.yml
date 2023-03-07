@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    attributes:
+
+      service_type:
+        name: Nome
+        organ: Órgão
+        subnet: Sub-rede
+        organ_name: Nome do órgão
+        code: Código
+
+  service_type:
+    no_characteristic: NÃO SE APLICA

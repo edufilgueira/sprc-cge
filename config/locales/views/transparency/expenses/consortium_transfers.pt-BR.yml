@@ -1,0 +1,7 @@
+pt-BR:
+  transparency:
+    expenses:
+      consortium_transfers:
+        index:
+          title: Transferências a Consórcios Públicos
+          description: Aqui você poderá consultar informações de Transferências a Consórcios Públicos.

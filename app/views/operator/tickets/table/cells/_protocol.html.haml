@@ -1,0 +1,7 @@
+- ticket_show_path = operator_ticket_path(ticket)
+
+%td
+  = link_to ticket_show_path, title: t("ticket.protocol_title.#{ticket.ticket_type}", protocol: ticket.parent_protocol) do
+    - call_center_status = ticket.call_center_status_str
+    = highlight(ticket.parent_protocol, params[:search])
+    = call_center_status.present? && ticket.final_answer? ? "[#{call_center_status}]" : ''

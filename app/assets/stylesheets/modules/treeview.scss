@@ -1,0 +1,56 @@
+@import 'base/variables';
+
+table.treeview {
+  tbody {
+    tr {
+      cursor: pointer;
+
+      .treeview-icons {
+        float: left;
+
+        padding-left: 3px;
+        padding-top: 4px;
+
+        color: $app-green;
+        font-size: 0.7em;
+
+        .fa {
+          margin: 0.1em 0.5em;
+        }
+      }
+
+      .treeview-node {
+        display: inline;
+      }
+
+      &[data-node-opened='leaf'] {
+        .treeview-icons {
+          visibility: hidden;
+          width: 1.58em;
+        }
+      }
+
+      .opened { display: none; }
+      .loading { display: none; }
+      .closed { display: inline-block; }
+
+      &[data-node-opened='true'] {
+        .opened { display: inline-block; }
+        .loading { display: none; }
+        .closed { display: none; }
+      }
+
+      &[data-node-loading='true'] {
+        .opened { display: none; }
+        .loading { display: inline-block; }
+        .closed { display: none; }
+      }
+
+      @for $i from 1 through 18 {
+        &[data-node-level='#{$i}'] > td:first-child {
+          padding-left: 0.8em * $i;
+        }
+      }
+    }
+  }
+}

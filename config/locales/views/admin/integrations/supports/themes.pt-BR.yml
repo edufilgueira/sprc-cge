@@ -1,0 +1,19 @@
+pt-BR:
+  admin:
+    integrations:
+      supports:
+        themes:
+
+          index:
+            title: Temas
+            empty: Nenhum registro encontrado
+
+          table:
+            summary: Lista de temas
+            heads:
+              codigo_tema: Código do tema
+              descricao_tema: Descrição do tema
+
+          filters:
+            search:
+              label: Buscar por código ou descrição

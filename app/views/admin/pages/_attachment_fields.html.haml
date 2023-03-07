@@ -1,0 +1,19 @@
+- attachment = f.object
+
+.nested-fields.my-3.list-group-item.align-items-start
+
+  .col-md-4
+    - if attachment.persisted? && attachment.document.present?
+      = render 'attachment_persisted', attachment: attachment, image_size: :small
+
+    - else
+      = f.input :document, as: :attachment, direct: true, hint: t('.file.hint'), input_html: { class: 'form-control-file', 'aria-label': t('simple_form.file.choose') }
+
+  .col-md-4
+    = f.input :title, required: true
+
+  .col-md-3
+    = f.input :imported_at, required: true, as: :string, input_html: { class: 'datetimepicker' }
+
+  .col-md-1
+    = link_to_remove_association '', f, { class: 'fa fa-trash mt-md-4 fa-2x', 'aria-label': t('simple_form.file.remove') }

@@ -1,0 +1,62 @@
+pt-BR:
+  shared:
+    transparency:
+      expenses:
+
+        npds:
+          index:
+            title: Notas de Pagamento de Despesa
+            description: Consulte aqui as Notas de Pagamento de Despesa.
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Secretaria da Fazenda - SEFAZ</p>
+              <p>Sistema de Gestão Governamental por Resultados - S2GPR</p>
+
+            chart:
+              valor:
+                unit: 'Soma dos valores: R$'
+                title: 'Valores das Notas de Pagamento de Despesa no ano selecionado.'
+
+                creditor:
+                  title: Soma dos valores por credor
+                management_unit:
+                  title: Soma dos valores por secretarias/órgãos
+                natureza:
+                  title: Soma dos valores por natureza
+                efeito:
+                  title: Soma dos valores por efeito
+
+            charts:
+              tabs:
+                creditor:
+                  title: Por credor
+                management_unit:
+                  title: Por secretaria/órgão
+                natureza:
+                  title: Por natureza
+                efeito:
+                  title: Por efeito
+
+            filters:
+              title: Consulta avançada
+
+            counts:
+              npds_count:
+                title: Quantidade de notas filtradas
+              npds_sum:
+                title: Valor das notas filtradas
+
+            table:
+              summary: Lista de Notas de Pagamento de Despesa
+              header:
+                numero: Número
+                date_of_issue: Data de emissão
+                unidade_gestora: Unidade gestora
+                management_unit_title: Secretaria/Órgão
+                credor: Credor
+                valor: Valor
+
+            stats:
+              title: Principais números relacionados às notas
+              count: 'Notas em <strong>%{date}</strong>'
+              valor: 'Valor em <strong>%{date}</strong>'

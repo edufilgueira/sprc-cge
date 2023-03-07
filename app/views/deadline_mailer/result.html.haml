@@ -1,0 +1,38 @@
+!!!
+%html{lang: 'pt-BR'}
+  %head
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type' }/
+
+    -# critical styles
+    :css
+      .preserve-whitespace {
+        white-space: pre-wrap;
+      }
+
+    -# "premailer-rails" gem will transform it to inline styles
+    = stylesheet_link_tag :mailer, media: :all
+
+    -# allow custom, per-template, styles, which will be transformed to inline too by premailer
+    = content_for :css if content_for? :css
+
+  %body
+    .container
+      .container
+        %p
+          = @message
+
+        - if @outdated_tickets.count.positive?
+          %h2
+            = t('.outdated_tickets')
+
+          - @outdated_tickets.each do |outdated_ticket|
+            %p
+              = "Ticket id: #{outdated_ticket.id} | Protocolo: #{outdated_ticket.protocol}"
+
+        - if @invalid_tickets.count.positive?
+          %h2
+            = t('.invalid_tickets')
+
+          - @invalid_tickets.each do |invalid_ticket|
+            %p
+              = "Ticket id: #{invalid_ticket.id} | Protocolo: #{invalid_ticket.protocol}"

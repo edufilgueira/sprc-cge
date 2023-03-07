@@ -1,0 +1,14 @@
+- ticket_log_status = ticket_log.data[:status]
+
+.row
+  .col-12.col-md-1.no-print
+    .float-left
+
+      .rounded-circle.p-1{class: "#{extension_class(ticket_log_status)}"}
+
+        %i.fa.fa-clock-o.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+      = render "shared/ticket_logs/extension/#{ticket_log_status}", ticket_log: ticket_log, extension: ticket_log.resource

@@ -1,0 +1,19 @@
+= javascript_include_tag('ckeditor/init')
+
+= simple_form_for [:operator, answer_template] do |f|
+
+  .row
+    .col-lg-12
+      = f.input :name
+
+  .row
+    .col-12
+      = f.input :content, as: :ckeditor, input_html: { ckeditor: { toolbar: :mini } }
+
+
+  %hr{'aria-hidden': 'true'}
+
+  .row.mt-3
+    .col-lg-12
+      = link_to t('commands.cancel'), operator_answer_templates_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary pull-right'

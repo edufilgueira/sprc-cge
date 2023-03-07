@@ -1,0 +1,31 @@
+- controller_name = controller.controller_name
+
+.card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+  %h3.card-subtitle.mb-3
+    = t('.title')
+
+  .remote-content{'data-remote-content': controller_name}
+
+    .card-filters.filter-bar{'data-filter-bar': :attachments}
+
+      = form_for page, url: [:attachments, namespace, page], method: :get, remote: true do |f|
+
+        .row.my-2
+          .col-12.col-md-4
+            = label_tag :year, t('.filters.year')
+
+            - options = options_for_select(page_attachments_years_for_select(page), params[:year])
+            = select_tag :year, options, { include_blank: t('.options.blank') }
+
+          .col-12.col-md-4
+            = label_tag :title, t('.filters.title')
+            = text_field_tag :title, '', class: 'form-control'
+
+      - # o index é carregado como remote-content e está na partial ./_index
+
+    .remote-content-result{ 'data-remote-content-result': controller_name }
+
+      .p-2.text-center.text-muted
+        .fa.fa-spin.fa-refresh.mx-1
+        = t('messages.loading')

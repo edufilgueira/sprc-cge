@@ -1,0 +1,53 @@
+pt-BR:
+
+  services:
+
+    reports:
+
+      tickets:
+
+        evaluations:
+
+          summary:
+            sheet_name: Sumário
+            title: 'ÍNDICE DE SATISFAÇÃO DO CIDADÃO COM %{type} NO PERÍODO DE: %{begin} à %{end}'
+            total:
+              sou: Total de pesquisas de satisfação em Ouvidoria
+              sic: Total de pesquisas de satisfação em Acesso à Informação
+            average: Média por questão
+            satisfaction: Índice Geral de Satisfação
+            notes_avg: 'Média das Notas:'
+            satisfaction_avg: 'Índice de Satisfação:'
+            expectation: Expectativa do Cidadão
+            expectation_index: 'Índice de Expectativa:'
+            resolvability:
+              title: Índice de Resolutividade
+              positive: Sim
+              negative: Não
+              partially: Parcialmente
+            result: Resultado
+            index: Índice
+
+          sou:
+            sheet_name: Ouvidoria
+            title: Pesquisas de satisfação
+
+          sic:
+            sheet_name: Acesso à Informação
+            title: Pesquisas de satisfação
+
+          headers:
+            protocol: Protocolo
+            organ: Órgão
+            created_at: Criado em
+            sou_type: Tipo de Entrada
+            used_input: Meio de Entrada
+            question_01_a: Satisfação Geral
+            question_01_b: Tempo de Resposta
+            question_01_c: Canal Utilizado
+            question_01_d: Qualidade da Resposta
+            question_02: Grau de Satisfação Antes
+            question_03: Grau de Satisfação Depois
+            question_04: Comentários
+            question_05: Resolutividade
+            average: Média

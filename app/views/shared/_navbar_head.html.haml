@@ -1,0 +1,34 @@
+- logo_suffix = acessibility? ? '' : '-invert'
+
+.container
+  = render 'shared/application/top_bar'
+
+.container.no-print.white-navbar-container
+
+  %nav.navbar.navbar-toggleable.white-navbar.justify-content-between
+
+    .logo-container
+      = link_to root_path do
+        = content_tag(:img, '', src: image_path("logos/logo-ceara-header#{logo_suffix}.png"), alt: t('app.title'), class: 'float-left hidden-lg-down')
+
+        = content_tag(:img, '', src: image_path('logos/logo-ceara-header.png'), alt: t('app.title'), class: 'hidden-xl-up')
+
+      = content_tag(:img, '', src: image_path("logos/logo-cge-header#{logo_suffix}1.png"), alt: t('app.title'), class: 'float-left hidden-lg-down')
+      
+    .hidden-md-down
+      = render 'shared/navbar_menu', classes: 'small'
+
+    %i.fa.fa-search.hidden-md-down{ data: { toggle: "collapse" }, href: "#searchContainer", role: "button", aria: { expanded: "false", controls: "searchContainer" } }
+
+
+
+.navbar-head-search-container
+
+  #searchContainer.container.collapse.search-main-container.hidden-md-down
+    .search-container.rounded-bottom
+
+      - global_search_options = { search_box_id: 'navbar', search_box_placeholder: t('.search.placeholder'), search_box_title: '' }
+
+      = render 'shared/global_search', global_search_options: global_search_options
+
+= render 'shared/navbar_dropdown'

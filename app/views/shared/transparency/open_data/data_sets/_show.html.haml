@@ -1,0 +1,140 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-12.col-md-6
+            %h3.card-title
+              = data_set.title
+
+          .col-12.col-md-6
+            .float-right
+
+              - if can?(:edit, data_set)
+                = link_to t('commands.import'), import_admin_open_data_data_set_path(data_set), method: :post, class: 'btn btn-link'
+                = link_to t('commands.edit'), edit_admin_open_data_data_set_path(data_set, from: :show), class: 'btn btn-link'
+
+      .card-block
+
+        .row
+          .col-12
+            = content_with_label(data_set, :description)
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(data_set.organ, :title)
+
+          .col-12.col-lg-4
+            = content_with_label(data_set, :source_catalog)
+
+          .col-12.col-lg-4
+            = content_with_label(data_set, :author)
+
+        .row
+          .col-12
+
+            .content-with-label
+
+              %p.content-label
+                = OpenData::DataSet.human_attribute_name(:vcge_categories)
+
+              %p.content-value
+
+                - if data_set.vcge_categories.blank?
+
+                  %em
+                    = t('messages.content.undefined')
+
+                - else
+
+                  - categories = data_set.vcge_categories.pluck(:title).map do |category_title|
+                    .badge.badge-pill.badge-info
+                      = category_title
+
+        .row
+          .col-12
+
+            .content-with-label
+
+              %p.content-label
+                = OpenData::DataSet.human_attribute_name(:data_items)
+
+              %p.content-value
+                - if data_set.data_items.blank?
+
+                  %em
+                    = t('messages.content.undefined')
+
+                - else
+                  - data_set.data_items.reverse_order.each do |data_item|
+                    - download_url = data_item.download_url
+
+                    - if download_url.present? || namespace == :admin
+
+                      .my-3.p-3.border
+                        .row
+                          .col-12.col-lg-8
+                            = content_with_label(data_item, :title)
+
+                          .col-12.col-lg-4
+                            = content_with_label(data_item, :data_item_type_str)
+
+                        .row
+                          .col-12
+                            = content_with_label(data_item, :description)
+
+                        - if namespace == :admin && data_item.webservice?
+
+                          %hr{'aria-hidden': 'true'}
+
+                          .row
+                            .col-12
+                              .status{title: data_item.status_str }
+                                - status = data_item.status
+                                - if status.present?
+                                  .integration-status.dashboard{'data-status': status}
+
+                              .data-item-error
+                                - if data_item.status_fail?
+                                  %strong
+                                    = OpenData::DataItem.human_attribute_name(:last_error)
+
+                                  %p
+                                    = data_item.last_error
+                                - else
+                                  %p
+                                    = data_item.status_str
+
+                          %hr{'aria-hidden': 'true'}
+
+                          .row
+                            .col-6
+                              = content_with_label(data_item, :wsdl)
+                            .col-6
+                              = content_with_label(data_item, :operation)
+                            .col-6
+                              = content_with_label(data_item, :parameters)
+                            .col-6
+                              = content_with_label(data_item, :response_path)
+                            .col-6
+                              = content_with_label(data_item, :headers_soap_action)
+                            .col-6
+                              = content_with_label(data_item, :processed_at)
+
+                        - if download_url.present?
+
+                          %hr{'aria-hidden': 'true'}
+
+                          .row
+                            .col-12
+
+                              = link_to download_url, title: data_item.document_filename do
+                                .fa.fa-download
+                                = data_item.document_filename

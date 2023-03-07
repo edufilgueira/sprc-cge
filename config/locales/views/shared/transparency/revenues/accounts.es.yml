@@ -1,0 +1,86 @@
+es:
+  shared:
+    transparency:
+      revenues:
+        accounts:
+
+          index:
+            title: Ingresos del Poder Ejecutivo
+            description: Consulte aquí los ingresos del Poder Ejecutivo
+            source: |
+              <p><strong>Fuente de datos:</strong></p>
+              <p>Secretaría de HACIENDA - SEFAZ</p>
+              <p>Sistema de Gestión de Gobierno por Resultados - S2GPR</p>
+
+            chart:
+              valor_arrecadado:
+                unit: 'Suma de los valores recibidos: R$'
+                title: 'Valores recibidos en el período filtrado'
+
+                secretary:
+                  title: Suma de los valores recibidos por secretarías
+                consolidado:
+                  title: Suma de los valores recibidos por tipo de ingreso
+                categoria_economica:
+                  title: Suma de los valores recibidos por categoría económica
+                origem:
+                  title: Suma de los valores recibidos por origen
+                subfonte:
+                  title: Suma de los valores recibidos por subfuente
+
+            charts:
+              tabs:
+                secretary:
+                  title: Por secretaría
+                consolidado:
+                  title: Por tipo de ingreso
+                categoria_economica:
+                  title: Por categoría económica
+                origem:
+                  title: Por origen
+                subfonte:
+                  title: Por subfuente
+
+            counts:
+              valor_previsto_inicial:
+                title: 'Valor previsto inicial de los ingresos filtrados'
+              valor_previsto_atualizado:
+                title: 'Valor previsto actualizado de los ingesos filtrados'
+              valor_arrecadado:
+                title: 'Valor recibido de los ingresos filtrados'
+
+            filters:
+              title: Consulta avanzada
+
+              counts:
+                accounts_sum:
+                  valor_previsto_inicial:
+                    title: Valor previsto de início de los ingresos filtrados
+
+                  valor_previsto_atualizado:
+                    title: Valor previsto actualizado de los ingresos filtrados
+
+                  valor_arrecadado:
+                    title: Valor recibido de los ingresos filtrados
+
+              search:
+                hint: |
+                  Usted puede buscar por parte del nombre de Secretarías, Órganos, tipo de ingreso etc. Ejemplos: 'ipva', 'icms', 'multa',
+                  'sec faze', entre otros.
+
+
+            table:
+              summary: Lista de ingresos del Poder Ejecutivo
+              header:
+                title: Descripción
+                valor_arrecadado: Valor recibido (R$)
+                valor_previsto_inicial: Valor previsto de inicio (R$)
+                valor_previsto_atualizado: Valor previsto actualizado (R$)
+
+              total: Total
+
+            stats:
+              title: Principales numeros relacionados con los ingresos
+              valor_arrecadado: 'Valor arrecadado entre <strong>%{date}</strong>'
+              valor_previsto_inicial: 'Valor previsto de inicio en <strong>%{date}</strong>'
+              valor_previsto_atualizado: 'Valor previsto actualizado entre <strong>%{date}</strong>'

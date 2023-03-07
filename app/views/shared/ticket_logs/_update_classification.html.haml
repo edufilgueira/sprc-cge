@@ -1,0 +1,42 @@
+- ticket = ticket_log.ticket
+- if operator?(current_user)
+  .row
+
+    .col-12.col-md-1.no-print
+      .float-left
+
+        .rounded-circle.p-1.alert-warning
+
+          %i.fa.fa-edit.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+    .col-12.col-md-11.pt-3.pt-md-1
+
+      .text-muted
+
+        %h4.h6.mb-0
+          = t(".title.#{ticket.ticket_type}", name: responsible_or_user(ticket_log).as_author, protocol: ticket.parent_protocol)
+        
+        .small
+          %em
+            = l(ticket_log.created_at, format: :shorter)
+
+        - data_attributes = ticket_log.data
+
+        - if data_attributes[:items].present?
+
+          - collapse_id = "collapse_update_classification_#{ticket_log.id}"
+
+          %a{'data-toggle': 'collapse', 'href': "##{collapse_id}", 'role': 'button', 'aria-expanded': 'false', 'aria-controls': collapse_id}
+            = Classification.model_name.human
+
+          .collapse{id: collapse_id}
+            - data_attributes[:items].each do |key, value|
+              .small
+                %b
+                  = "#{Classification.human_attribute_name(key).upcase}:"
+                = value.present? ? value : '-'
+
+
+
+  %hr{'aria-hidden': 'true'}
+

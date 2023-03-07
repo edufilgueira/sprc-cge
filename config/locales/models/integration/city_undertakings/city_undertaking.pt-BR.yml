@@ -1,0 +1,37 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/city_undertakings/city_undertaking:
+        expense: Tipo de despesa
+        expense_str: Tipo de despesa
+        organ_id: Secretaria
+        creditor_id: Credor
+        undertaking_id: Empreendimento
+        organ_title: Secretaria
+        creditor_title: Credor
+        undertaking_title: Empreendimento
+        municipio: Município
+        tipo_despesa: Tipo de despesa
+        sic: Nº SACC
+        mapp: Projeto
+        valor_programado1: Valor programado 1
+        valor_programado2: Valor programado 2
+        valor_programado3: Valor programado 3
+        valor_programado4: Valor programado 4
+        valor_programado5: Valor programado 5
+        valor_programado6: Valor programado 6
+        valor_programado7: Valor programado 7
+        valor_programado8: Valor programado 8
+        valor_executado1: Valor executado 1
+        valor_executado2: Valor executado 2
+        valor_executado3: Valor executado 3
+        valor_executado4: Valor executado 4
+        valor_executado5: Valor executado 5
+        valor_executado6: Valor executado 6
+        valor_executado7: Valor executado 7
+        valor_executado8: Valor executado 8
+
+  integration/city_undertakings/city_undertaking:
+    expenses:
+      contract: Contrato
+      convenant: Convênio

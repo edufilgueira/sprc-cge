@@ -1,0 +1,122 @@
+pt-BR:
+  shared:
+    answers:
+      evaluations:
+
+        intro:
+          title: 'Avalie o atendimento respondendo a Pesquisa de Satisfação'
+          button: 'Responder pesquisa'
+
+        questions:
+          title: 'Pesquisa de Satisfação'
+
+          sou:
+            question_01:
+              title: 'QUESTÃO N. 1'
+              description: 'Utilizando a escala de 1 a 5, indique o quanto você ficou satisfeito:'
+            question_01_a:
+              description: '<strong>a.</strong> De modo geral qual sua satisfação com o Serviço de Ouvidoria neste atendimento (considere a atenção, compromisso e respeito do ouvidor e sua equipe)?'
+              very_bad: 'TOTALMENTE INSATISFEITO'
+              very_well: 'TOTALMENTE SATISFEITO'
+            question_01_b:
+              description: '<strong>b.</strong> Qual sua satisfação com o tempo da resposta?'
+              very_bad: 'TOTALMENTE INSATISFEITO'
+              very_well: 'TOTALMENTE SATISFEITO'
+            question_01_c:
+              description: '<strong>c.</strong> Qual sua satisfação com o canal de atendimento que você utilizou para registrar a sua manifestação? (considere a comunicação, facilidade de uso, celeridade e funcionalidade). <br><strong>Você utilizou o canal: [used_input]</strong>'
+              very_bad: 'TOTALMENTE INSATISFEITO'
+              very_well: 'TOTALMENTE SATISFEITO'
+            question_01_d:
+              description: '<strong>d.</strong> Qual sua satisfação com a qualidade da resposta apresentada? (considere se a resposta atende aos questionamentos apresentados e se a ouvidoria justifica uma eventual impossibilidade de atendimento)'
+              very_bad: 'TOTALMENTE INSATISFEITO'
+              very_well: 'TOTALMENTE SATISFEITO'
+            question_02:
+              title: 'QUESTÃO N. 2'
+              description: 'Antes de realizar esta manifestação, você achava que a qualidade do serviço de Ouvidoria era:'
+              very_bad: 'MUITO BAIXA'
+              very_well: 'MUITO ALTA'
+            question_03:
+              title: 'QUESTÃO N. 3'
+              description: 'Agora você avalia que o serviço realizado pela Ouvidoria foi:'
+              very_bad: 'MUITO PIOR DO QUE ESPERAVA'
+              very_well: 'MUITO MELHOR DO QUE ESPERAVA'
+            question_04:
+              title: 'QUESTÃO N. 4'
+              description: 'O que você não gostou ou achou que podemos melhorar em nosso atendimento?'
+              placeholder: 'Descreva sua avaliação no atendimento'
+            question_05:
+              title: 'QUESTÃO N. 5'
+              description: 'Você considera que a demanda foi resolvida?'
+              'yes': 'Sim'
+              'no': 'Não'
+              partially: Parcialmente
+
+          sic:
+            question_01:
+              title: 'QUESTÃO N. 1'
+              description: 'Utilizando a escala de 1 a 5, indique o quanto você ficou satisfeito:'
+            question_01_a:
+              description: '<strong>a.</strong> De modo geral qual sua satisfação com o Serviço de Informação neste atendimento (considere a atenção, compromisso e respeito do ouvidor e sua equipe)?'
+              very_bad: 'TOTALMENTE INSATISFEITO'
+              very_well: 'TOTALMENTE SATISFEITO'
+            question_01_b:
+              description: '<strong>b.</strong> Qual sua satisfação com o tempo da resposta?'
+              very_bad: 'TOTALMENTE INSATISFEITO'
+              very_well: 'TOTALMENTE SATISFEITO'
+            question_01_c:
+              description: '<strong>c.</strong> Qual sua satisfação com o canal de atendimento que você utilizou para registrar a sua manifestação? (considere a comunicação, facilidade de uso, celeridade e funcionalidade). <br><strong>Você utilizou o canal: [used_input]</strong>'
+              very_bad: 'TOTALMENTE INSATISFEITO'
+              very_well: 'TOTALMENTE SATISFEITO'
+            question_01_d:
+              description: '<strong>d.</strong> Qual sua satisfação com a qualidade da resposta apresentada? (considere se a resposta atende aos questionamentos apresentados e se a ouvidoria justifica uma eventual impossibilidade de atendimento)'
+              very_bad: 'TOTALMENTE INSATISFEITO'
+              very_well: 'TOTALMENTE SATISFEITO'
+            question_02:
+              title: 'QUESTÃO N. 2'
+              description: 'Antes de realizar esta manifestação, você achava que a qualidade do Serviço de Informação ao Cidadão era:'
+              very_bad: 'MUITO BAIXA'
+              very_well: 'MUITO ALTA'
+            question_03:
+              title: 'QUESTÃO N. 3'
+              description: 'Agora você avalia que o serviço realizado pelo Serviço de Informação ao Cidadão foi:'
+              very_bad: 'MUITO PIOR DO QUE ESPERAVA'
+              very_well: 'MUITO MELHOR DO QUE ESPERAVA'
+            question_04:
+              title: 'QUESTÃO N. 4'
+              description: 'O que você não gostou ou achou que podemos melhorar em nosso atendimento?'
+              placeholder: 'Descreva sua avaliação no atendimento'
+
+          call_center:
+            question_01:
+              title: 'QUESTÃO N. 1'
+              description: 'Utilizando a escala de 1 a 5, indique o quanto você ficou satisfeito:'
+            question_01_a:
+              description: '<strong>a.</strong> De modo geral qual sua satisfação com a Central 155 neste atendimento'
+              very_bad: 'TOTALMENTE INSATISFEITO'
+              very_well: 'TOTALMENTE SATISFEITO'
+            question_01_b:
+              description: '<strong>b.</strong> Com o tempo de retorno da resposta'
+              very_bad: 'TOTALMENTE INSATISFEITO'
+              very_well: 'TOTALMENTE SATISFEITO'
+            question_01_c:
+              description: '<strong>c.</strong> Com o canal utilizado para o registro de sua manifestação'
+              very_bad: 'TOTALMENTE INSATISFEITO'
+              very_well: 'TOTALMENTE SATISFEITO'
+            question_01_d:
+              description: '<strong>d.</strong> Com a qualidade da resposta apresentada'
+              very_bad: 'TOTALMENTE INSATISFEITO'
+              very_well: 'TOTALMENTE SATISFEITO'
+            question_02:
+              title: 'QUESTÃO N. 2'
+              description: 'Antes de realizar esta manifestação, você achava que a qualidade da Central 155 era:'
+              very_bad: 'TOTALMENTE INSATISFEITO'
+              very_well: 'TOTALMENTE SATISFEITO'
+            question_03:
+              title: 'QUESTÃO N. 3'
+              description: 'Agora você avalia que o serviço realizado pela Central 155 foi:'
+              very_bad: 'MUITO PIOR DO VOCÊ QUE ESPERAVA'
+              very_well: 'MUITO MELHOR DO VOCÊ QUE ESPERAVA'
+            question_04:
+              title: 'QUESTÃO N. 4'
+              description: 'O que você não gostou ou achou que podemos melhorar em nosso atendimento?'
+              placeholder: 'Descreva sua avaliação no atendimento'

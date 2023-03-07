@@ -1,0 +1,49 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-12
+            %h3.card-title
+              = attachment_image_tag(mobile_app, :icon, :fill, 48, 48)
+              = mobile_app.title
+
+      .card-block
+
+        .row
+          .col-lg-12
+
+            .content-with-label
+
+              %p.content-label
+                = MobileApp.human_attribute_name(:mobile_tags)
+
+              %p.content-value
+                - mobile_tags = mobile_app.mobile_tags.map { |tag| tag.title }
+                = mobile_tags.join(", ")
+
+        .row
+          .col-lg-12
+            = content_with_label(mobile_app, :description)
+
+        .row
+          .col-lg-12
+            = content_with_label(mobile_app, :link_apple_store)
+
+        .row
+          .col-lg-12
+            = content_with_label(mobile_app, :link_google_play)
+
+        .row
+          .col-lg-12
+            = content_with_label(mobile_app, :official)

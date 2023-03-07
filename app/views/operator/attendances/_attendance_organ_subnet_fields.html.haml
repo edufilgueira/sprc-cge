@@ -1,0 +1,23 @@
+.nested-fields{ 'data-content': 'organ' }
+
+  .row
+    .col-lg-11
+      - organ_select_text = t('shared.tickets.form.fields.organ.select')
+      - data = { 'input': 'organ', 'dependent-select': 'subnets', 'child-container': '[data-dependent-select-child=subnets]', 'param-name': 'organ_id', 'url': api_v1_subnets_path(subnet: true) }
+      = f.association :organ, prompt: organ_select_text, collection: organs_for_select_with_subnet_info, input_html: { data: data, 'aria-label': organ_select_text }
+
+
+    .col-md-1
+      = link_to_remove_association '', f, { class: 'fa fa-times mt-md-4', 'aria-label': t('simple_form.file.remove') }
+
+  .row{'data-content': 'subnet'}
+    .col-lg-9
+
+      - subnet_select_text = t('shared.tickets.form.fields.subnet.select')
+      - data = { 'input': 'subnet', 'dependent-select-child': 'subnets', 'dependent-select-blank': subnet_select_text }
+      = f.association :subnet, prompt: subnet_select_text, collection: subnets_for_select, input_html: { data: data, 'aria-label': subnet_select_text }
+
+    .col-lg-3.pt-4
+      = f.input :unknown_subnet, wrapper_html: { class: 'bg-faded rounded my-1 px-2 pt-2 pb-1' }, input_html: { class: 'mr-2', 'data-input': 'unknown_subnet' }, label_html: { class: 'd-block' }
+
+  %hr{ 'aria-hidden': 'true' }

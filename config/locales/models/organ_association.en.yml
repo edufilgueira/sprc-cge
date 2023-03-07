@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    attributes:
+
+      organ_association:
+        organ: Organ
+        organ_association: Associated Organ
+        _destroy: Delete
+
+    errors:
+      models:
+        organ_association:
+          attributes:
+
+  organ_association:
+    select:
+      all: All organs

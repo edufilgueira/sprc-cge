@@ -1,0 +1,41 @@
+- date = params[:date] || Date.current.strftime('%m/%Y')
+
+= form_for url_for(action: 'index', controller: 'revenues'), method: :get do |f|
+
+  .card-filters
+
+    - #
+    - # sort params
+    - #
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+      .col-12
+
+        .row
+
+          .col-12.col-lg-6
+            = text_field_tag(:search, params[:search], placeholder: t('.search.label'), class: 'form-control w-100 mb-3', title: t('.search.label'))
+
+          .col-12.col-lg-6
+            - options = options_for_select(supports_organs_for_select, params[:organ])
+            = select_tag :organ, options, { onchange: 'submit();', include_blank: t('.select.organ') }
+        .row
+
+          .col-12.col-lg-4.mt-2
+            - options = options_for_select(account_configurations_for_select, params[:integration_revenues_account_configuration_id])
+            = select_tag :integration_revenues_account_configuration_id, options, { onchange: 'submit();', include_blank: t('messages.filters.select.account_configuration') }
+
+          .col-12.col-lg-4.mt-2
+            = text_field_tag(:date, date, placeholder: t('messages.filters.select.date'), class: 'form-control w-100 month-datetimepicker')
+
+          .col-12.col-lg-4.mt-2
+            = f.submit t('commands.search'), class: 'btn btn-primary btn-block'
+
+    - filtered = (params[:search].present? || params[:integration_revenues_account_configuration_id].present? || params[:organ].present?)
+
+    - if filtered
+      .my-4
+        .alert.alert-warning
+          = raw t('messages.filters.warning_count', total: number_with_delimiter(total_count), filtered: number_with_delimiter(filtered_count))
+          = link_to t('messages.filters.clear'), '#!', 'data-input': 'clear-filter', class: 'float-right'

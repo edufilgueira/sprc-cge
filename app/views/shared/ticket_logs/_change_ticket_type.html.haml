@@ -1,0 +1,22 @@
+.row
+
+  .col-12.col-md-1.no-print
+    .float-left
+
+      .bg-faded.rounded-circle.p-1
+
+        %i.fa.fa-exchange.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+      - data_attributes = ticket_log.data
+
+      %h4.h6.mb-0
+        = raw(tickets_change_ticket_type_message(data_attributes))
+
+      %small
+        %em
+          = ticket_log_date_author(ticket_log)
+
+%hr{'aria-hidden': 'true'}

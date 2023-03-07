@@ -1,0 +1,72 @@
+- content_for :javascript, javascript_include_tag('views/admin/pages/form')
+
+= simple_form_for [:admin, page] do |f|
+
+  .row
+    .col-12
+      = f.input :title, autofocus: true
+
+  .row
+    .col-6
+      = f.input :menu_title
+
+    .col-3
+      = f.input :status, { collection: page_status_for_select, selected: page.active?, input_html: { 'data-input': 'status', 'data-select2-search': 'hidden' } }
+
+    .col-3
+      = f.input :show_survey
+
+  - if page.pages.blank?
+    .row
+      .col-12
+        - select_text = t('.select.parent_menu')
+        = f.association :parent, include_blank: select_text, collection: scoped_parents_menu_title_for_select(page), input_html: { 'data-input': 'parent', 'aria-label': select_text }, label: t('.select.label'), hint: t('.select.hint')
+
+
+  .row
+    .col-12
+      = f.input :content, as: :ckeditor, input_html: { ckeditor: { wordcount: { showCharCount: true, maxCharCount: -1 } } }
+
+    .col-12
+      = link_to '#helper-collapse', 'data-toggle': "collapse", role: "button", aria: { expanded: "false", controls: "helper-collapse" }, class: 'btn btn-sm btn-link text-muted' do
+        = t('.insert_collapse')
+        %i.fa.fa-info-circle{ 'aria-hidden': 'true'}
+
+      #helper-collapse.collapse
+        .card.card-body.border-0
+          = render 'collapse_template'
+
+
+  %hr{'aria-hidden': 'true'}
+
+  %h3.card-title
+    = t('.attachments.title')
+
+  .row
+    .col
+      = f.simple_fields_for :attachments do |attachment|
+        = render 'attachment_fields', f: attachment
+
+      .links.mt-4
+        = link_to_add_association t('.add_attachment'), f, :attachments, partial: 'attachment_fields'
+
+  %hr{'aria-hidden': 'true'}
+
+  %h3.card-title
+    = t('.charts.title')
+
+  .row{data: {chart_container: ''}}
+    .col
+      = f.simple_fields_for :page_charts do |chart|
+        = render 'page_chart_fields', f: chart
+
+      .links.mt-4
+        = link_to_add_association t('.add_chart'), f, :page_charts
+
+
+  %hr{'aria-hidden': 'true'}
+
+  .row
+    .col-12
+      = link_to t('.commands.cancel'), admin_pages_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary pull-right'

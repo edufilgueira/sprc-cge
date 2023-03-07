@@ -1,0 +1,55 @@
+.mt-4
+  - user_type = :sou
+
+  .row.justify-content-center
+
+    .col-12
+      .card.card-custom.my-4
+
+        .card-header
+
+          %h2.h5.p-2
+            .row
+              .col-lg-8.col-12
+                %b= link_to t(".stats.title"), operator_tickets_path(ticket_type: user_type)
+
+              - if can?(:create_ticket, Ticket.new)
+                .col-lg-4.col-12.text-right.mt-4.mt-lg-0
+                  = link_to t(".new.title"), new_operator_ticket_path(ticket_type: user_type), class: 'btn btn-success w-100'
+        .card-block
+          .row
+            - Ticket::FILTER_DEADLINE.keys.each do |status|
+              .col-md-6.col-lg-4.col-sm-12.pb-3
+                = link_to operator_tickets_path({ticket_type: user_type, without_denunciation: false, deadline: status, organ: current_user.organ_id}) do
+
+                  .operator-home-card.ticket-deadline-status{'data-deadline-status': status}
+
+                    %h3.operator-home-card-title
+                      = t(".#{status}.title")
+
+                    %p.operator-home-card-count
+                      = tickets_couvi_deadline_count(user_type, status)
+
+
+            .col-md-6.col-lg-4.col-sm-12.pb-3
+              = link_to operator_tickets_path(reopened: true, ticket_type: user_type, organ: current_user.organ_id) do
+
+                .operator-home-card{'data-internal-status': 'reopened'}
+
+                  %h3.operator-home-card-title
+                    = t('.reopened.title')
+
+                  %p.operator-home-card-count
+                    = tickets_couvi_reopened_count(user_type)
+
+
+            - [:cge_validation, :partial_answer].each do |internal_status|
+              .col-md-6.col-lg-4.col-sm-12.pb-3
+                = link_to operator_tickets_path(ticket_type: user_type, internal_status: internal_status, without_denunciation: !current_user.sectoral_denunciation?, organ: current_user.organ_id) do
+                  .operator-home-card{'data-internal-status': internal_status}
+
+                    %h3.operator-home-card-title
+                      = t(".#{internal_status}.title")
+
+                    %p.operator-home-card-count
+                      = send("tickets_couvi_by_internal_status_count", user_type, internal_status)

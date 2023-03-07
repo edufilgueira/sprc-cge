@@ -1,0 +1,74 @@
+- # classes attribute used for "old" operator header
+- classes ||= 'btn btn-secondary text-gray-dark'
+- namespace ||= nil
+-#
+-# Notifications Dropdown
+-# Para usuários ou ticket (protocolo) autenticados
+-#
+
+.row
+
+  .col-lg-3.col-12
+
+    - if signed_in? && namespace.present?
+      - authenticated_user = current_user || current_ticket
+      - namespace = authenticated_user.namespace
+
+      .dropdown.w-100
+        %a.text-white.w-100.dropdown-toggle{ class: classes, href: '#!', id: 'dropdownMenuLink', 'data-toggle':'dropdown', 'aria-haspopup':'true', 'aria-expanded':'false'}
+          %i.fa.fa-bell{'aria-hidden':'true'}
+          - total_unread = authenticated_user.mailbox.notifications(read: false).count
+          - if total_unread > 0
+            %span.notification.badge.badge-danger
+              = total_unread > 99 ? '+99' : total_unread
+
+
+        .dropdown-menu{'aria-labelledby':'dropdownMenuLink'}
+
+          - max_number_of_notifications = 5
+          - last_notifications = authenticated_user.mailbox.notifications.order(created_at: :desc).limit(max_number_of_notifications)
+
+          - if last_notifications.empty?
+            %i.small.dropdown-item
+              = t('shared.notifications.index.empty')
+
+          - else
+            - last_notifications.each do |notification|
+              = link_to url_for([namespace, :notification, id: notification.id]), class: 'dropdown-item' do
+                %i.mr-2{class: "fa #{read_or_unread_icon(notification, authenticated_user)}"}
+                = notification.subject.truncate(30)
+
+          .dropdown-divider
+          = link_to url_for([namespace, :notifications]), class: 'dropdown-item' do
+            %i{'aria-hidden': 'true'}
+            = t('shared.notifications.index.dropdown.more')
+
+  .col-lg-9.col-12
+
+    .pt-4.pt-lg-0
+
+      -#
+      -# User Dropdown
+      -# apenas para usuários autenticados
+      -#
+      - if user_signed_in? && namespace.present?
+
+        .dropdown.w-100
+          - user_title = current_user.title
+          %a.text-white.w-100.dropdown-toggle{ class: classes, href: '#!', id: 'dropdownMenuLink', 'data-toggle': 'dropdown', 'aria-haspopup': 'true', 'aria-expanded': 'false', title: user_title}
+            %i.fa.fa-user{'aria-hidden': 'true'}
+            = user_association(current_user)
+            = t('.user.title', name: user_title.truncate(20))
+
+          .dropdown-menu{'aria-labelledby':'dropdownMenuLink'}
+
+            = link_to url_for([:edit, current_user.namespace, current_user]), class: 'dropdown-item' do
+              %i.fa.fa-edit{'aria-hidden':'true'}
+              = t('.user.edit')
+
+            .dropdown-divider
+
+            = link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do
+
+              %i.fa.fa-sign-out{'aria-hidden':'true'}
+              = t('.user.logout')

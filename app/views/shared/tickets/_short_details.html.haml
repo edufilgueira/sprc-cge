@@ -1,0 +1,10 @@
+%h3.card-subtitle
+  = t(".#{ticket.ticket_type}")
+
+= render 'shared/tickets/description', ticket: ticket
+
+.content-with-label.form-group
+  %p.content-label
+    = t('.attachments')
+  %p
+    = render 'shared/attachments/index', ticket: ticket

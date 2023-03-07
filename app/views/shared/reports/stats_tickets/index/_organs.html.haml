@@ -1,0 +1,47 @@
+%h4.card-subtitle.mb-3
+  = t('.title')
+
+- organs = stats_ticket.data[:organs]
+
+- if organs.blank?
+
+  .row.col-md-12.text-center
+    %em
+      = t('.no_content')
+
+- else
+
+  - organs.first(5).each do |key, organ|
+
+    .row.col-md-12.mb-3
+      .row.col-md-12
+        .content-with-label
+          %label.content-label= Organ.find(key).acronym
+
+          .content-value
+            %big= "#{organ[:count]} (#{organ[:percentage]}%)"
+
+      - if organ[:topics_count] > 0
+        .row.col-md-12.topic-chart
+          - topics = stats_organ_topics_index_serie_data(organ)
+          - topics.each do |topic|
+            - popover_title = t('.popover.title')
+            - popover_body = t(".popover.#{ticket_type}.body", total_tickets: topic[:count], title: topic[:title])
+
+            - # Subtraimos 0.01 para evitar que a soma das porcentagens ultrapasse 100% e quebre em duas linhas
+            - css_width = topic[:percentage] > 0 ? topic[:percentage] - 0.01 : topic[:percentage]
+
+            .topic-chart-item{ style: "width: #{css_width}%;", title: popover_title, data: { placement: :top, toggle: :popover, trigger: 'hover focus', content: popover_body } }
+              %span.sr-only
+                = popover_title
+                = popover_body
+
+      - else
+        %em= t('.topics.empty')
+
+
+  - series_data_keys = stats_organ_index_serie_keys(organs)
+  - series_data_values = stats_organ_index_serie_values(organs)
+  - series_data_percentages = stats_organ_index_serie_percentages(organs)
+
+  .chart{ data: {"chart_organs_#{ticket_type}": '',title: t(".chart_organs.#{ticket_type}.name"), unit: t(".chart_organs.#{ticket_type}.unit"), series_name: [t('.chart_organs.series_name')] , series_data_keys: [series_data_keys], series_data_values: [series_data_values], series_data_percentages: [series_data_percentages], 'show-percentage': true }}

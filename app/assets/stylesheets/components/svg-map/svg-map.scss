@@ -1,0 +1,39 @@
+.region {
+  path {
+    pointer-events: all;
+
+    cursor: pointer;
+  }
+
+  g:nth-child(2),
+  g:nth-child(3) {
+    visibility: hidden;
+  }
+
+  &:hover {
+    g:nth-child(3) {
+      cursor: pointer;
+      visibility: visible;
+    }
+  }
+
+  &:active, &[selected='selected'] {
+    g:nth-child(3) {
+      visibility: hidden;
+    }
+
+    g:nth-child(2) {
+      visibility: visible;
+    }
+  }
+
+  &[highlighted='true'] {
+    g:nth-child(3) {
+      visibility: visible;
+    }
+
+    g:nth-child(2) {
+      visibility: hidden;
+    }
+  }
+}

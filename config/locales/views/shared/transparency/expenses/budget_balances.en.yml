@@ -1,0 +1,91 @@
+en:
+  shared:
+    transparency:
+      expenses:
+        budget_balances:
+
+          index:
+            title: Executive Power Expenses
+            description: Check here the expenses of the Executive Power.
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Secretary of Finance - SEFAZ</p>
+              <p>Governmental Management System by Results - S2GPR</p>
+
+            chart:
+              calculated_valor_orcamento_atualizado:
+                unit: 'Updated sums of budgets: BRL'
+                title: 'Figures paid in the range'
+
+                secretary:
+                  title: Updated sums of budgets by Secretary
+                function:
+                  title: Updated sums of budgets by function
+                sub_function:
+                  title: Updated sums of budgets by sub-function
+                government_program:
+                  title: Updated sums of budgets by government program
+                administrative_region:
+                  title: Updated sums of budgets by administrative region
+
+            charts:
+              tabs:
+                secretary:
+                  title: By Secretary
+                function:
+                  title: By function
+                sub_function:
+                  title: By sub-function
+                government_program:
+                  title: By government program
+                administrative_region:
+                  title: By administrative region
+
+            counts:
+              valor_orcamento_inicial:
+                title: 'Initial budget of filtered expenses'
+
+              valor_orcamento_atualizado:
+                title: 'Updated budget of filtered expenses'
+
+              valor_empenhado:
+                title: 'Spent'
+
+              valor_liquidado:
+                title: 'Settled'
+
+              valor_pago:
+                title: 'Paid'
+
+            filters:
+              title: Advanced search
+
+              search:
+                hint: |
+                  You can search by part of the Secretary name, Bodies, function, sub-function, nature of expense, element of expense, etc. Examples: 'housing', 'security', 'technology', 'health secretary', among others.
+
+
+            table:
+              summary: List of expenses of the Executive Power
+              header:
+                title: Description
+                valor_orcamento_inicial: Initial budget
+                valor_orcamento_atualizado: Updated budget
+                valor_empenhado: Spent
+                valor_liquidado: Settled
+                valor_pago: Paid
+
+              total: Total
+
+            stats:
+              title: Main numbers related to expenses
+              valor_orcamento_inicial:
+                title: 'Initial budget on <strong>%{date}</strong>'
+              valor_orcamento_atualizado:
+                title: 'Budget updated between <strong>%{date}</strong>'
+              valor_empenhado:
+                title: 'Spent between <strong>%{date}</strong>'
+              valor_liquidado:
+                title: 'Settled between <strong>%{date}</strong>'
+              valor_pago:
+                title: 'Paid between <strong>%{date}</strong>'

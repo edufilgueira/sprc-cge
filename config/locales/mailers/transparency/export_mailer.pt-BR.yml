@@ -1,0 +1,17 @@
+pt-BR:
+  transparency:
+    export_mailer:
+
+      spreadsheet_success:
+        subject: 'Planilha de exportação de dados de transparência'
+        title: 'Planilha gerada com sucesso!'
+        description: >
+          A planilha "%{title}" que você solicitou no Ceará Transparente foi processada e já está disponível para download.
+          O link para o download ficará disponível até %{expiration}.
+
+        link: 'Para baixar a planilha clique <a href="%{url}">aqui</a>.'
+
+      spreadsheet_error:
+        subject: 'Planilha de exportação de dados de transparência'
+        title: 'Desculpe, a planilha não foi gerada!'
+        description: "Houve um problema ao processar a planilha '%{title}'. Estamos trabalhando para resolver. Neste tempo fique a vontade para solicitar novamente."

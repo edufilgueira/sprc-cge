@@ -1,0 +1,9 @@
+pt-BR:
+
+  shared:
+
+    admin:
+
+      disable_filter:
+
+        disabled: Mostrar desativados

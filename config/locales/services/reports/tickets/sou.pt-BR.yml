@@ -1,0 +1,192 @@
+pt-BR:
+  services:
+    reports:
+      tickets:
+        sou:
+          summary:
+            sheet_name: Sumário
+            title: 'Período do Relatório: %{begin} à %{end}'
+
+          used_input:
+            sheet_name: Meios de Entrada
+            title: Relatório por Meio de Entrada
+            total: Total
+
+          sou_type:
+            sheet_name: Tipos de Manifestação
+            title: Relatório por Tipo de Manifestação
+            total: Total
+
+          perception_denounced_fact:
+            sheet_name: Percepção sobre denúncia
+            title: Relatório por Fato Denunciado
+            total: Total
+
+          organ:
+            sheet_name: Órgãos
+            title: Relatório por órgão
+            empty: Sem órgão
+            total: Total
+
+          topic:
+            sheet_name: Assunto
+            title: Assunto
+            empty: Sem assunto
+            organ:
+              title: Orgão
+            count:
+              title: Quantidade
+            percentage:
+              title: Porcentagem
+
+          answer_classification:
+            sheet_name: Classificação resposta
+            title: Relatório de classificação da resposta/demanda
+            empty: Sem classificação
+            total: Total
+
+          evaluation:
+            sheet_name: Pesquisa de satisfação
+            title: Relatório de média por questão
+            total: Total de pesquisas respondidas
+            resolubility_title: Índice de Resolutividade
+
+          solvability:
+            sheet_name: Resolubilidade
+            title: Relatório de Resolubilidade
+            rows:
+              final_answers_in_deadline: 'Total de Manifestações finalizadas no prazo'
+              final_answers_out_deadline: 'Total de Manifestações finalizadas fora do prazo'
+              attendance_in_deadline: 'Total de Manifestações pendentes no prazo'
+              attendance_out_deadline: 'Total de Manifestações pendentes fora do prazo'
+              total: Total
+
+          denunciation_type:
+            sheet_name: Tipos de Denúncia
+            title: Relatório de Tipos de Denúncia
+            rows:
+              in_favor_of_the_state: 'Total de denúncias para o Estado'
+              against_the_state: 'Total de denúncias contra o Estado'
+              without_type: 'Total de denúncias sem tipo definido'
+              total: Total
+
+
+          gender:
+            sheet_name: Gêneros
+            empty: Em branco
+            headers:
+              gender: Gênero
+              count: Quantidade
+              percentage: '%'
+
+          budget_program:
+            sheet_name: Programa Orçamentário
+            headers:
+              organ: Órgão
+              name: Programa Orçamentário
+              count: Quantidade
+              percentage: Porcentagem
+
+          service_type:
+            sheet_name: Tipo de serviço
+            headers:
+              organ: Órgão
+              name: Tipo de serviço
+              count: Quantidade
+              percentage: Porcentagem
+
+          sou_type_by_topic:
+            sheet_name: Tipo_Assunto
+            headers:
+              sou_type: Tipo
+              topic: Assunto
+              subtopic: Subassunto
+              organ: Órgão
+              count: Quantidade
+              percentage: Porcentagem
+
+          sub_department:
+            sheet_name: Unidade Subunidade
+            headers:
+              organ: Órgão
+              department: Unidade
+              name: Subunidade
+              count: Quantidade
+              percentage: Porcentagem
+
+          reopened:
+            sheet_name: Reabertos
+            headers:
+              protocol: Protocolo
+              organ: Órgão
+              count: Quantidade de reaberturas
+
+          internal_status:
+            sheet_name: Situação
+            title: Relatório por Situação
+            total: Total
+            headers:
+              internal_status: Situação
+              count: Quantidade
+              percentage: Porcentagem
+
+          state:
+            sheet_name: "Localização_Estado"
+            empty: Indefinido
+            total: Total
+            headers:
+              name: Estado
+              count: Quantidade
+              percentage: Porcentagem
+
+          city:
+            sheet_name: "Localização_Município"
+            empty: Indefinido
+            total: Total
+            headers:
+              name: Município
+              count: Quantidade
+              percentage: Porcentagem
+
+          neighborhood:
+            sheet_name: "Localização_Bairro"
+            empty: Indefinido
+            total: Total
+            headers:
+              name: Bairro
+              count: Quantidade
+              percentage: Porcentagem
+
+          subtopic:
+            sheet_name: Subassunto
+            empty: Sem subassunto
+            topic:
+              title: Assunto
+            subtopic:
+              title: Subassunto
+            organ:
+              title: Orgão
+            count:
+              title: Quantidade
+            percentage:
+              title: Porcentagem
+
+          average_answer_department:
+            sheet_name: Médio Resposta Unidades
+            title: Tempo médio de resposta das áreas internas
+            headers:
+              organ: Órgão
+              department: Área interna
+              average: Tempo médio em dias
+              total: Total de respostas
+
+          average_answer_sub_department:
+            sheet_name: Médio Resp. Subunidades
+            title: Tempo médio de resposta das áreas internas
+            headers:
+              organ: Órgão
+              department: Área interna
+              average: Tempo médio em dias
+              total: Total de respostas
+
+

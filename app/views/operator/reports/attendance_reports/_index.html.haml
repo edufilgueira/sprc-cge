@@ -1,0 +1,14 @@
+.row
+  .col-12
+    - if attendance_reports.blank?
+
+      .text-muted.text-center
+        = t('messages.filters.no_results_found')
+
+    - else
+
+      = render attendance_reports
+
+    .mt-4.clearfix
+      .float-right
+        = paginate attendance_reports

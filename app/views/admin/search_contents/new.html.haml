@@ -1,0 +1,16 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.content-detail
+
+  = render 'shared/admin/current_locale_alert'
+
+  .card.card-custom
+
+    .card-header
+
+      %h2.card-title
+        = t(".title")
+
+    .card-block
+
+      = render 'form', search_content: search_content

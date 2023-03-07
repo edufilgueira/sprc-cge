@@ -1,0 +1,74 @@
+en:
+
+  shared:
+
+    tickets:
+
+      ticket_logs:
+
+        created_at:
+          title: Manifestation/request received
+
+        comments:
+          title: Service record
+
+        history:
+          comments:
+            title: history of Service
+            empty: No recent activity
+
+        index:
+
+          answer:
+            title: Answer(s)
+            title_internal: Positioning (s)
+            ticket_description: Description of manifestation/request
+            final_answer: Answer(s)
+            final_answer_internal: Positioning (s)
+            not_classified: Waiting for classification
+            empty: No reply was sent
+            empty_internal: No positioning was sent
+
+        invalidate: Invalidated
+
+        answer:
+          attachments: attachments
+          justification: 'Considerations'
+          title:
+            sectoral:
+              sic: '%{type} sent by SIC %{organ} sectorial committee'
+              sou: '%{type} sent by %{organ} Ombusdsman'
+            subnet:
+              sic: '%{type} sent by SIC %{subnet} sectorial committee'
+              sou: '%{type} sent by %{subnet}Ombusdsman'
+            subnet_department:
+              sic: 'Positioning drawn by %{department} internal department'
+              sou: 'Positioning drawn by %{department} internal department'
+            department:
+              sic: 'Positioning drawn by %{department} internal department'
+              sou: 'Positioning drawn by %{department} internal department'
+            cge:
+              sic: '%{type} sent by CGE'
+              sou: '%{type} sent by CGE'
+            call_center:
+              sic: '%{type} sent by Call Center 155'
+              sou: '%{type} sent by Call Center 155'
+          answer_versions:
+            sic:
+              appeal:
+                zero: Response to request
+                one: Response to first request
+                other: Response to second request
+              reopen:
+                zero: Response to request
+                one: Response to request (%{count}ª reabertura)
+                other: Response to request (%{count}ª reabertura)
+            sou:
+              reopen:
+                zero: Response to Manifestation
+                one: Response to Manifestation (%{count}ª reabertura)
+                other: Response to Manifestation (%{count}ª reabertura)
+          modified_description: Response has been changed. Click here to see the origional one.
+          signature:
+            sic: Every citizen has the right to appeal, in the first instance, to the Management Committee for Access to Information (CGAI), when he understands that the answer offered does not meet what was requested, under the terms of Article 17 of Law No. 15,175 / 12. The deadline for filing the appeal is 10 days from the acknowledgment of the response submitted by the state agency or entity.
+            sou: ''

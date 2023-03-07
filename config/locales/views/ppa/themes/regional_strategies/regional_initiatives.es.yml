@@ -1,0 +1,27 @@
+es:
+  ppa:
+    themes:
+      regional_strategies:
+        regional_initiatives:
+          show:
+            title: "%{theme} - Bienio %{biennium} en la región %{region}"
+            initiative: 'Iniciativa'
+            expected_vs_actual_budget: 'Presupuesto Anticipado vs. Presupuesto Realizado'
+            products_execution: 'Ejecución física de lo(s) producto(s)'
+            chart_x_label: En Reales (R$)
+
+            categories:
+              biennium: Bienio<br/>%{biennium}
+              total:    Total<br/>%{duration}
+
+            empty_budget_info: Sin datos presupuestarios sobre la iniciativa
+
+          products:
+            no_products: Sin productos asociados a la iniciativa en questión
+
+          product_card:
+            actual: Realizado
+            expected: Programado
+            progress: "%{amount}%% terminado"
+            progress_unavailable: "No considerado"
+            unavailable: "N/D"

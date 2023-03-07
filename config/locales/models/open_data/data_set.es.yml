@@ -1,0 +1,12 @@
+es:
+  activerecord:
+    attributes:
+      open_data/data_set:
+        author: 'Autor'
+        description: 'Descripción'
+        organ: 'Órgano'
+        organ_id: 'Órgano'
+        source_catalog: 'Catálogo de Origen'
+        title: 'Título'
+        vcge_categories: 'Categorías VCGE'
+        data_items: 'Recursos'

@@ -1,0 +1,48 @@
+pt-BR:
+  ppa:
+    workshops:
+      index:
+        past_workshops: Ver encontros realizados
+        next_workshops: Veja os próximos encontros
+        address_title: 'Endereço:'
+        date_title: 'Data:'
+        documents: Arquivos
+        link_title: 'Link para inscrição:'
+
+        title: Encontros de elaboração do PPA
+        what_is_workshops: O que são os Encontros Regionais de elaboração do PPA?
+        ppa_description: Em resumo, o que é o PPA?
+        methodology: Qual a metodologia dos encontros?
+        how_to_participate: Como participar dos encontros do PPA?
+        how_to_estagios: Quais são os estágios da etapa de elaboração?
+        how_to_encontro: O que é um encontro regional?
+        how_to_encontro2: O que eu farei no encontro regional de elaboração?
+        how_to_encontro3: Para onde vão as minhas contribuições nos encontros regionais?
+        
+        workshops_description: O Encontro Regional é um momento em que o Governo do Ceará escuta, debate, avalia e propõe sugestões conjuntamente com a população. É o momento em que o Governo vai até você para ouvir suas opiniões, avaliações e ideias de melhoria nos serviços ofertados e no alcance de resultados que você espera.
+      
+        ppa_description: O Plano Plurianual (PPA) é uma lei que direciona a atuação do Governo por meio de diretrizes, objetivos e metas de médio prazo, com foco principal na melhoria dos resultados que são esperados pela sociedade em cada região do Estado. O PPA é elaborado no primeiro ano de cada governo e tem duração de quatro anos, a fim de garantir a continuidade dos projetos, mesmo se houver troca de governo. Um dos principais elementos norteadores do PPA é a participação da sociedade em todas suas etapas. Para que isso aconteça, o Governo do Estado promove Encontros em todas as Regiões de Planejamento.
+
+        methodology_description: Nos Encontros Regionais de Elaboração a população será dividida, de acordo com seus temas de interesse, em quatro grupos representando os Eixos adotados no PPA. Em cada grupo ocorrerão apresentações dos principais entraves encontrados na região, e em seguida a população definirá um Objetivo Estratégico para cada Eixo, bem como as estratégias que deverão ser seguidas para solucionar os entraves apontados. Por fim, a população, em plenária, irá priorizar as estratégias.
+
+        how_to_descripction: O PPA oferece as linhas gerais e gastos prioritários
+          para os próximos quatro anos. Ele tem as fases de Elaboração, 
+          Monitoramento, Avaliação e Revisão, e elas todas são construídas 
+          com o apoio da sociedade.
+
+        how_to_estagios_txt: Neste ano, a etapa de elaboração contará com três estágios, o primeiro é online onde você seleciona os principais temas a serem tratados e discutidos durante o encontro na sua região. O segundo são os Encontros Regionais, onde serão idealizadas estratégias norteadoras para as políticas públicas em sua região. Por último, haverá uma etapa online, assim como a primeira, de priorização das estratégias a serem realizadas em sua região, onde você poderá dizer o que é mais importante de se realizar primeiro.
+        how_to_encontro_txt: O Encontro Regional é um momento em que o Governo do Ceará encontra, escuta, debate, avalia e propõe sugestões conjuntamente com a população dependendo de qual etapa do PPA que se encontra. São nos Encontros que as suas opiniões, avaliações e ideias de melhoria nos serviços ofertados são escutadas pelo Governo. Se você tem alguma ideia do que fazer para contribuir para o futuro do nosso Ceará, os Encontros Regionais do PPA são os momentos ideais para exercer a sua cidadania.
+        how_to_encontro2_txt: Os Encontros Regionais contam com uma apresentação do panorama da região, muita discussão para que o governo possa agir da melhor forma em sua região. Serão então realizadas atividades onde todos poderão dizer a sua visão do que deve ser realizado. Lembre-se, informando-se antes das Oficinas, você tem mais chances de melhorar a sua participação e de se tornar um parceiro do Governo do Ceará!
+        how_to_encontro3_txt: As contribuições feitas por você nos Encontros Regionais serão organizadas pela Secretaria do Planejamento e Gestão por região em um relatório final e utilizada nas etapas de elaboração do PPA 2020-2023 como norteadoras das políticas. Logo, participar das Oficinas é um meio de fazer com que as suas demandas não caiam no esquecimento do Governo e o lugar para fazer com que as suas opiniões e sugestões sejam o pontapé inicial para o Ceará melhorar!
+
+            
+
+      workshops_list:
+        title: Lista dos próximos encontros
+        past_workshops: Ver encontros realizados
+
+      filters:
+        city: Município
+        start_at: A partir de
+        all: Todos
+        

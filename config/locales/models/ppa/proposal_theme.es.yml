@@ -1,0 +1,20 @@
+es:
+  activerecord:
+    models:
+      ppa/proposal_theme:
+        one: Proposición Temática
+        other: Proposición Temática
+
+    attributes:
+      ppa/proposal_theme:      
+        start_in: Fecha inicio
+        end_in: Fecha término
+        plan: Plan
+        region: Región
+      
+    errors:
+      models:
+        ppa/proposal_theme:
+          attributes:
+            end_at:
+              invalid_range: Es necesario que la fecha de fín sea posterior a la de inicio. 

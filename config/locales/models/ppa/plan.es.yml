@@ -1,0 +1,20 @@
+es:
+  activerecord:
+    models:
+      ppa/plan:
+        one: Plan plurianual
+        other: Planes plurianuales
+
+    attributes:
+      ppa/plan:
+        start_year: Año de inicio
+        end_year: Año de fín        
+
+    errors:
+      models:
+        ppa/plan:
+          attributes:
+            base:
+              invalid_range: Período inválido, ya existe un plan con fecha inicial mayor que la fecha deseada
+            end_year:
+              invalid_duration: Período debe ser de %{duration} años

@@ -1,0 +1,30 @@
+.card-filters.filter-bar{'data-filter-bar': :comment }
+
+  - ticket = comment_form.ticket
+
+  - if current_user.present?
+
+    = simple_form_for comment_form, url: transparency_public_ticket_comments_path(public_ticket_id: ticket), remote: true do |f|
+
+      .row
+        .col-12
+          = f.input :description, input_html: { rows: 3 }
+
+      .row
+        .col-12.text-right
+
+          = button_tag class: 'btn btn-primary btn-sm' do
+            %i.fa.fa-spin{ 'data-content': 'loader' }
+            = t('.commands.save')
+
+
+  - else
+
+    .row
+      .col-12.text-center
+        %em
+          - redirect_to = transparency_public_ticket_path(ticket)
+          = raw t('.unauthorized', url: new_user_session_path(redirect_to: redirect_to))
+
+    = form_tag transparency_public_ticket_comments_path(public_ticket_id: comment_form.ticket.id), method: :get, remote: true
+

@@ -1,0 +1,42 @@
+pt-BR:
+
+  admin:
+
+    rede_ouvir_organs:
+      create:
+        title: Novo órgão da Rede Ouvir
+        done: "O órgão da Rede Ouvir '%{title}' foi criado."
+        error: Falha ao criar o órgão da Rede Ouvir
+      destroy:
+        done: "O órgão da Rede Ouvir '%{title}' foi removido."
+      form:
+        commands:
+          cancel: < Voltar a lista de órgãos da Rede Ouvir
+          change_password: Trocar de senha
+          create: Criar órgão da Rede Ouvir
+      index:
+        commands:
+          new: Novo órgão da Rede Ouvir
+        title: Órgãos da Rede Ouvir
+        table:
+          summary: Lista de órgãos da Rede Ouvir
+          header:
+            acronym: Sigla
+            name: Nome
+            commands: ''
+            status: ''
+
+      new:
+        title: Novo órgão da Rede Ouvir
+      edit:
+        title: Edição
+      update:
+        title: Edição de órgão
+        done: "O órgão da Rede Ouvir '%{title}' foi atualizado."
+        error: Falha ao atualizar o órgão da Rede Ouvir
+      show:
+        title: Exibição do órgão da Rede Ouvir
+
+      toggle_disabled:
+        disabled: Órgão da Rede Ouvir desabilitado!
+        enabled: Órgão da Rede Ouvir habilitado!

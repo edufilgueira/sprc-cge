@@ -1,0 +1,21 @@
+.nested-fields.card.card-custom
+  .card-block
+    .row
+      .col-sm-4
+        = f.input :title
+      .col-sm-4
+        = f.input :series_type, collection: series_type_for_select, input_html: { 'data-select2-search': 'hidden' }
+      .col-sm-4.pt-2
+        = link_to_remove_association t('.remove_series_datum'), f, class: 'd-block mt-4'
+
+
+    %h5.card-title.h6
+      = t('.series_items.title')
+
+    .row
+      .col
+        = f.simple_fields_for :page_series_items do |series_item|
+          = render 'page_series_item_fields', f: series_item
+
+        .links.mt-4
+          = link_to_add_association t('.add_series_item'), f, :page_series_items

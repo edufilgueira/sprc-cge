@@ -1,0 +1,25 @@
+.card.card-custom
+
+  .card-header
+
+    %h3.card-title
+      = t('.title')
+
+  .card-block
+
+    .content{'data-content': 'sou_only_fields'}
+
+      .content{'data-content': 'sou_type_fields'}
+        .row
+          .col-12
+            = render 'shared/tickets/sou_types_toggle', ticket: ticket, field_name: "attendance[ticket_attributes][sou_type]", f: f, anonym: false
+
+      .content{'data-content': 'denunciation_ticket_type_content'}
+        = render 'denunciation_fields', f: f
+
+    - if ticket.tickets.present?
+      = render partial: 'shared/tickets/preview_children', collection: ticket.sorted_tickets, as: :ticket_child
+
+    - else
+      .content{'data-content': 'general_ticket_type_content'}
+        = render 'general_ticket_type_content', f: f

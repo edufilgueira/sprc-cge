@@ -1,0 +1,39 @@
+
+- is_executive_ombudsman = (results[:id] == 'ExecutiveOmbudsman')
+
+- if results[:results].present?
+
+  %ul.list-unstyled
+
+    - results[:results].each do |result|
+
+      %li
+        = link_to result[:link], class: 'search-box-result' do
+          = result[:title]
+
+          - if is_executive_ombudsman
+
+            - # A busca de ouvidoria tem resultado diferente.
+
+            .mt-2
+              - result[:description].keys.each do |item|
+                %p
+                  %strong
+                    = ExecutiveOmbudsman.human_attribute_name(item)
+
+                  = result[:description][item]
+
+          - else
+
+            %p
+              = result[:description]
+
+- else
+
+  %p.text-center.my-3
+
+    = ( results[:status] == :timeout ? t('messages.global_search.timeout') : t('messages.global_search.no_results') )
+
+.search-box-see-more
+
+  = link_to t('commands.see_more'), results[:show_more_url]

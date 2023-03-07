@@ -1,0 +1,49 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+
+%h2.font-weight-bold
+  = axis.name
+
+%h3
+  = t('.title', theme: theme.name, biennium: current_biennium.to_s, region: current_region.name.titleize_with_accents)
+
+%hr.border-2
+
+.row
+  .col-md-12
+    .card.rounded
+      .card-block.m-4
+
+        %p.text-muted
+          = t '.initiative'
+
+        %h3.font-weight-bold.mb-4
+          = regional_initiative.name
+
+        -# XXX só tem um budget por biênio!
+        - biennium_budget = regional_initiative&.budgets&.first
+        - biennium_expected = biennium_budget&.expected
+        - biennium_actual = biennium_budget&.actual
+
+        -# XXX só tem um
+        - overall_budget = regional_initiative.initiative.regional_initiatives.in_region(current_region).first&.budgets&.first
+        - overall_expected = overall_budget&.expected
+        - overall_actual = overall_budget&.actual
+
+
+        - if overall_budget.present?
+          - categories = [t('.categories.biennium', biennium: current_biennium.to_s), t('.categories.total', duration: current_plan.duration_as_text)]
+          - series = [ { name: 'Planejado', data: [biennium_expected.to_f, overall_expected.to_f] }, { name: 'Realizado', data: [biennium_actual.to_f, overall_actual.to_f] } ].to_json
+
+          #ppa_budget_chart_container{ data: { title: t('.expected_vs_actual_budget'), series: series, categories: categories, label: t('.chart_x_label') } }
+        - else
+          .alert.alert-info
+            = t('.empty_budget_info')
+
+
+        %hr.border-2.mt-4.mb-4
+
+        %p.font-weight-bold.mt-4
+          = t('.products_execution')
+
+        = render 'products', products: regional_initiative.products

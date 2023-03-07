@@ -1,0 +1,8 @@
+en:
+  ppa:
+    proposals:
+      votes:
+
+        # filters
+        ensure_open_for_voting:
+          alert: Voting time is not open for this proposal

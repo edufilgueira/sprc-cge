@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    integrations:
+      expenses:
+        profit_transfers:
+          index:
+            title: Transferências a Entidades com Fins Lucrativos

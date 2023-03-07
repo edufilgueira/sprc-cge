@@ -1,0 +1,194 @@
+pt-BR:
+  home:
+    index:
+      home: Página inicial
+      title: Controladoria e Ouvidoria Geral do Estado
+      cge_title: Controladoria e Ouvidoria <br>Geral do Estado
+      breadcrumb_title: Início
+      search:
+        title: De qual informação você precisa?
+
+      sign_in_description: >
+        Identifique-se e aproveite o Ceará Transparente em seu potencial máximo!
+
+      sign_up:
+        title: Criar perfil
+
+      login:
+        title: Fazer login
+
+      description: >
+        <p>
+        O Ceará Transparente é um espaço de diálogo entre você e o Governo. Aqui, você tem acesso a informações sobre orçamento e gastos públicos.
+        Você ainda pode registrar e acompanhar manifestações nos canais de Ouvidoria do Governo.
+        </p>
+      sections:
+        title: Portais de acesso
+
+    transparency_portal:
+      title: Transparência
+      text: >
+        Consulte informações, Dados Abertos e Páginas de Transparência.
+      action: Acessar Páginas de Transparência
+      ppa_action: Acessar PPA
+      main_links: Acesso rápido
+
+      coronavirus:
+        title: Coronavírus
+        btn: Mais informações
+        expenses:
+          title: Despesas
+          url: '/portal-da-transparencia/paginas/coronavirus-despesas'
+          url_siec:  ''
+        law:
+          title: Legislação
+          url: '/portal-da-transparencia/paginas/coronavirus-legislacao'
+
+      links:
+        what_is:
+          title: 'O que são Páginas de Transparência?'
+          link: '#!'
+
+        how_to:
+          title: 'Como usar as Páginas de Transparência?'
+          link: '#!'
+
+      featured_queries:
+        title: Consultas em destaque
+
+        open_data_data_sets:
+          title: Dados abertos
+          icon: fa-open_data_data_sets
+        server_salaries:
+          title:  Servidores
+          icon: fa-users
+        revenues_accounts:
+          title:  Receitas do Executivo
+          icon: fa-line-chart
+        real_states:
+          title:  Bens Imóveis
+          icon: fa-home
+        expenses_budget_balances:
+          title:  Despesas do Executivo
+          icon: fa-money
+        ongoing_purchases:
+          title: Licitações em andamento
+          icon: fa-file-text-o
+        purchases:
+          title: Licitações finalizadas
+          icon: fa-file-text-o
+        contracts_contracts:
+          title: Contratos
+          icon: fa-file-text-o
+        contracts_convenants:
+          title: Convênios
+          icon: fa-handshake-o
+        expenses_neds:
+          title: Despesas por empenho
+          icon: fa-money
+        public_debt:
+          title: Dívida Pública
+          icon: fa-dollar
+
+    card:
+      main_links: Acesso rápido
+
+      tickets:
+        title: Ouvidoria
+        text: >
+          Faça aqui uma sugestão, elogio, denúncia, reclamação ou solicite algum serviço.
+
+        icon: fa-comment-o
+        action: Registrar nova manifestação
+        sub_action: Acompanhar manifestação
+
+      information_access:
+        title: Acesso à informação
+        text: 'Solicite uma informação que você não encontrou no %{link}'
+        action: Solicitar informação
+        sub_action: Acompanhar Solicitação
+        icon: fa-info-circle
+        transparency_portal:
+          title: 'Páginas de Transparência'
+
+      ppa:
+        title: Participação Cidadã (PPA)
+        text: >
+          Acompanhe as metas, objetivos e planejamentos Estaduais e
+          também participe das manifestações públicas de ouvidoria.
+        icon: fa-user-o
+        action: Acessar participação Cidadã
+        sub_action: Propor Nova Diretriz
+
+      support:
+        title: Canais de atendimento
+        text: >
+          A rede de Ouvidoria e Acesso à Informação do estado do Ceará também
+          pode ser acessada fora do sistema Ceará Transparente
+        icon: fa-flag-o
+        sub_action: Ver canais de atendimento
+
+    cards:
+      tickets:
+        links:
+          what_is:
+            title: 'O que é Ouvidoria?'
+
+          access:
+            title: 'Acessar página de Ouvidoria'
+
+          public_tickets:
+            title: 'Chamados públicos'
+
+      information_access:
+        links:
+          what_is:
+            title: 'O que é o Acesso à Informação?'
+
+          access:
+            title: 'Acessar página de Acesso à Informação'
+
+          law:
+            title: 'Lei de Acesso à Informação'
+
+          public_requests:
+            title: 'Solicitações públicas'
+
+          transparency:
+            title: 'Portal da Transparência'
+
+      ppa:
+        links:
+          what_is:
+            title: 'O que é Participação Cidadã?'
+
+          access:
+            title: 'Acompanhar planejamento'
+
+          how_to:
+            title: 'Como usar a Participação Cidadã'
+
+      support:
+        links:
+          network:
+            title: 'Rede de Ouvidorias'
+
+          social:
+            title: 'Redes Sociais'
+
+          a155:
+            title: 'Central de Atendimento 155'
+
+          email:
+            title: 'E-mail'
+
+
+    privacy_policy:
+      title: Política de Privacidade
+      description: >
+        Descrição da Política de Privacidade
+
+    terms_of_use:
+      title: Termos de Uso
+      description: >
+        Descrição dos termos de uso

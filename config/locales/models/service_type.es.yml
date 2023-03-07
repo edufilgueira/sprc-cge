@@ -1,0 +1,9 @@
+es:
+  activerecord:
+    attributes:
+
+      service_type:
+        name: Nome
+        organ: Órgão
+        organ_name: Nome do órgão
+        code: Código

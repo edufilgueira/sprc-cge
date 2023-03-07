@@ -1,0 +1,18 @@
+= simple_form_for ppa_revision_schedule, url: url, method: method_req do |f|
+
+  .row
+    .col-lg-12.mb-4
+      = f.error :base, class: 'alert alert-danger'
+    .col-lg-6
+      = f.association :plan
+    .col-lg-6
+      = f.input :stage, collection: stages_for_select
+    .col-lg-6
+      = f.input :start_in, as: :string, input_html: { class: 'datetimepicker' }
+    .col-lg-6
+      = f.input :end_in, as: :string, input_html: { class: 'datetimepicker' }
+
+  .row.mt-3
+    .col-lg-12
+      = link_to t('commands.cancel'), ppa_admin_revision_schedules_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary pull-right'

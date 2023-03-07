@@ -1,0 +1,59 @@
+en:
+  activerecord:
+    attributes:
+      integration/expenses/budget_balance:
+        year: Year
+
+        secretary: Secretariat
+        organ: Agency
+
+        management_unit: Secretariat/Agency
+        cod_unid_gestora: Secretariat/Agency
+
+        budget_unit: Budget Unit
+        codigo_unidade_orcamentaria: Budget Unit
+
+        function: Function
+        cod_funcao: Funtion
+
+        sub_function: Subfunction
+        cod_subfuncao: Subfunction
+
+        government_program: Government Program
+        cod_programa: Government Program
+        integration_supports_government_program_id: Government Program
+
+        government_action: Government action
+        cod_acao: Government action
+
+        administrative_region: Administrative region
+        cod_localizacao_gasto: Administrative region
+
+        expense_nature: Expenditure nature
+        cod_natureza_desp: Expenditure nature
+
+        qualified_resource_source: Resource source
+        cod_fonte: Resource source
+
+        finance_group: Financial group
+        cod_grupo_fin: Financial group
+
+        economic_category: Economic category
+        cod_categoria_economica: Economic category
+
+        application_modality: Application modality
+        cod_modalidade_aplicacao: Application modality
+
+        expense_element: Expense element
+        cod_elemento_despesa: Expense element
+
+        cod_grupo_desp: Expense group
+
+
+      integration/expenses/budget_balance/cod_grupo_desp:
+        PES: 'PESSOAL E ENCARGOS'
+        PRI: 'PRIORITÁRIO'
+        MAN: 'FUNCIONAMENTO E MANUTENÇÃO'
+        FIN: 'FINALÍSTICO'
+        TRA: 'TRANSFERÊNCIA'
+        SDD: 'SERVIÇO DA DÍVIDA'

@@ -1,0 +1,18 @@
+%h4.card-subtitle.mb-3
+  = t('.title')
+
+- used_inputs = stats_ticket.data[:used_inputs]
+
+
+- if used_inputs.blank?
+
+  .row.col-md-12.text-center
+    %em= t('.no_content')
+
+- else
+
+  - series_data_keys = stats_used_input_index_serie_keys(used_inputs)
+  - series_data_values = stats_used_input_index_serie_values(used_inputs)
+  - series_data_percentages = stats_used_input_index_serie_percentages(used_inputs)
+
+  .chart{ data: { "chart_used_inputs_#{ticket_type}": '', title: t(".#{ticket_type}.name"), unit: t(".#{ticket_type}.unit"), series_name: [t('.series_name')] , series_data_keys: [series_data_keys], series_data_values: [series_data_values], series_data_percentages: [series_data_percentages], 'show-percentage': true } }

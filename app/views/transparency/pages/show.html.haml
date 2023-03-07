@@ -1,0 +1,42 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet) if is_page_controller?
+- content_for :javascript, javascript_include_tag(javascript) if is_page_controller?
+
+= style_for_big_display
+
+- #
+- # Alerta Pesquisa de satisfação
+- #
+
+- # So exibe o aviso qnd a pagina for Transparency::PagesController, 
+- # pois agora tem outras paginas fazendo render file desta view
+- # e nao pode exibir o alerta abaixo, pois apareceria no meio da pagina
+- if page.show_survey? and is_page_controller?
+  .my-4
+    .alert.alert-warning
+      = t('shared.transparency.survey_answer.title').html_safe
+
+.card.card-custom
+
+  .card-header
+
+    %h2.card-title
+      = page.title
+
+    .card-commands
+      = render 'shared/tickets/components/btn_print'
+
+  .card-block
+
+    = raw page.content
+
+  - if page.attachments.present?
+    = render 'shared/pages/attachments', page: page
+
+  = render 'shared/pages/charts', page: page
+
+  - #
+  - # Formulário Pesquisa de satisfação
+  - #
+  - if page.show_survey?
+    = render("shared/transparency/survey_answers/form", transparency_id: page.slug, action: action_name, controller: controller_path, url: request.original_url)

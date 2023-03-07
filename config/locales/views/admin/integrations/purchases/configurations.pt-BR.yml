@@ -1,0 +1,32 @@
+pt-BR:
+
+  admin:
+    integrations:
+      purchases:
+        configurations:
+          import:
+            done: >
+              A importação dos dados de licitações finalizadas está sendo processada
+              em segundo plano
+
+          form:
+            label: Informações de licitações finalizadas
+            hint:
+              response: 'Padrão: caminho/do/array'
+            commands:
+              cancel: Voltar para integrações
+
+          edit:
+            title: Configuração
+
+          update:
+            done: Configuração salva com sucesso.
+
+          show:
+            edit: Configurar
+            created_at: Criado
+            title: Configuração de licitações finalizadas
+            import: Importar agora
+            hide_show: Mostrar/Esconder log
+            empty: Nenhuma importação realizada
+            label: Informações de licitações finalizadas

@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    models:
+      rede_ouvir_organ:
+        one: Rede Ouvir
+
+    attributes:
+      rede_ouvir:
+
+
+    errors:
+      models:
+        rede_ouvir:
+          attributes:
+
+    select:
+      all: Todos os órgãos da rede_ouvir

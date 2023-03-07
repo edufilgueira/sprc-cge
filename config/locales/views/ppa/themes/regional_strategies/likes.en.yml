@@ -1,0 +1,8 @@
+en:
+  ppa:
+    themes:
+      regional_strategies:
+        likes:
+          create:
+            success: 'Registered "Like" interaction. Thank you!'
+            failure: 'Unable to register "Like" interaction.'

@@ -1,0 +1,17 @@
+- ticket_type = params[:ticket_type]
+
+- content_for :title, title
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :toolbar, render('shared/application/inner_navbar', active: 'login')
+
+.mb-4
+
+  %h2
+    = title
+
+  %hr
+
+  .text-muted
+    = description
+
+= render 'form'

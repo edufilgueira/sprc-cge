@@ -1,0 +1,53 @@
+.mt-4
+
+  - workshop_pairs = past_workshops.each_slice(2).to_a
+  - workshop_pairs.each do |workshop_pair|
+
+    .card-deck.mb-4
+
+      - workshop_pair.each do |workshop|
+
+        .card.orange-bottom
+          .card-block
+            .card-body
+              %h4.card-title.mb-4
+                = workshop_title workshop
+
+              .row
+                .col-md-8.col-xs-12
+                  %p
+                    %strong
+                      = t '.participants'
+                    = workshop.participants_count
+
+                  %p
+                    %strong
+                      = t '.address_title'
+                    = workshop.address_with_city
+
+                  %p
+                    %strong
+                      = t '.date_title'
+                    = workshop_duration(workshop)
+
+                .col-md-4.col-xs-12.text-truncate
+
+                  - if workshop.documents.any?
+
+                    %p.font-weight-bold
+                      = t('.documents')
+
+                      %ul.list-unstyled
+                        - workshop.documents.each do |document|
+
+                          %li
+                            = link_to document.attachment_url, target: :_blank do
+                              %i{ class: 'fa fa-file-text-o' }
+                              = document.attachment_filename
+
+          - if workshop.photos.any?
+            = render 'photos_caroseul', photos: workshop.photos, id: workshop.id
+
+  .row
+    .col-md-12.text-center
+      = paginate past_workshops, remote: true

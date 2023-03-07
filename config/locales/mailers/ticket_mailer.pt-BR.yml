@@ -1,0 +1,89 @@
+pt-BR:
+  deadline_mailer:
+    result:
+      subject_success: 'Deadlines atualizados com sucesso!'
+      subject_failure: 'Tickets com erros no deadline!'
+      outdated_tickets: 'Tickets desatualizados (campo deadline_ends_at não foi atualizado)'
+      invalid_tickets: 'Tickets com dados inválidos'
+      success_body_message: 'Todos os tickets tiveram seus deadlines atualizados com sucesso!'
+      failure_body_message: "Atenção os tickets de ids %{ticket_joined_ids} não tiveram seu deadline atualizado corretamente. Total %{ticket_ids_count}."
+  ticket_mailer:
+    daily_recap:
+      subject: '[Ceará transparente] Resumo diário'
+      not_expired: 'Dentro do prazo:'
+      expired: 'Atrasadas:'
+      expired_can_extend: 'Atrasadas prorrogáveis:'
+      title: "Resumo diário - "
+
+    sectoral_daily_recap:
+      subject: '[Ceará transparente] Resumo diário'
+      title: "Resumo diário"
+      subtitle: "Manifestações de Ouvidoria e Solicitações de Informação"
+      subtitle_range: "Período – %{starts_at} à %{ends_at} (acumulado no ano)"
+
+      sou:
+        title: '1 - Ouvidoria'
+        item:
+          total: "1.1 Quantidade de manifestações recebidas: %{value}"
+          replied: "1.2 Quantidade de manifestações respondidas: %{value}"
+          confirmed:
+            title: "1.3 Quantidade de manifestações em aberto:"
+            not_expired: "1.3.1 Em aberto – no prazo (15 dias): %{value}"
+            expired_can_extend: "1.3.2 Em aberto – atrasadas prorrogáveis: %{value}"
+            not_expired_extended: "1.3.3 Em aberto – no prazo (30 dias): %{value}"
+            expired: "1.3.4 Em atraso: %{value}"
+          solvability: "1.4 Percentual de respostas no prazo (Resolubilidade): %{value}%"
+          answer_time_average: "1.5 Prazo Médio de Resposta (em dias): %{value}"
+          answer_satisfaction_rate: "1.6 Média da Satisfação com a Resposta (escala de 1 até 5): %{value}"
+
+      sic:
+        title: '2 - Acesso à Informação'
+        item:
+          total: "2.1 Quantidade de solicitações de informação recebidas: %{value}"
+          replied: "2.2 Quantidade de solicitações de informação respondidas: %{value}"
+          confirmed:
+            title: "2.3 Quantidade de solicitações de informação em aberto:"
+            not_expired: "2.3.1 Em aberto – no prazo (20 dias): %{value}"
+            expired_can_extend: "2.3.2 Em aberto – atrasadas prorrogáveis: %{value}"
+            not_expired_extended: "2.3.3 Em aberto – no prazo (30 dias): %{value}"
+            expired: "2.3.4 Em atraso: %{value}"
+          solvability: "2.4 Percentual de respostas no prazo (Resolubilidade): %{value}%"
+          answer_time_average: "2.5 Prazo Médio de Resposta (em dias): %{value}"
+          answer_satisfaction_rate: "2.6 Média da Satisfação com a Resposta (escala de 1 até 5): %{value}"
+
+
+
+    email_reply:
+      title:
+        sic:
+          one: 'Você recebeu a resposta para sua solicitação de informação de protocolo %{protocol}.'
+          other: 'Você recebeu respostas para sua solicitação de informação de protocolo %{protocol}.'
+        sou:
+          one: 'Você recebeu a resposta para sua manifestação de ouvidoria de protocolo %{protocol}.'
+          other: 'Você recebeu respostas para sua manifestação de ouvidoria de protocolo %{protocol}.'
+
+      replies:
+        title: 'Resposta de %{author} em %{created_at}'
+
+      link:
+        title: 'Você pode ver mais detalhes clicando <a href="%{url}">aqui</a>.'
+
+      subject:
+        sic: '[Ceará transparente] Resposta da sua solicitação de informação'
+        sou: '[Ceará transparente] Resposta da sua manifestação de ouvidoria'
+
+    subscription_confirmation:
+      subject:
+        sic: 'Confirmação de email da solicitação de Informação [%{protocol}]'
+        sou: 'Confirmação de email da manifestação de Ouvidoria [%{protocol}]'
+
+      template:
+        title:
+          sic: 'Confirmação para seguir a solicitação de Informação [%{protocol}]'
+          sou: 'Confirmação para seguir a manifestação de Ouvidoria [%{protocol}]'
+
+        explanation:
+          sic: 'Após a confirmação do e-mail, você será notificado sobre as atualizações da sua solicitação de Informação. Caso queira cancelar as notificações, um link será disponibilizado nos próximos e-mails.'
+          sou: 'Após a confirmação do e-mail, você será notificado sobre as atualizações da sua manifestação de Ouvidoria. Caso queira cancelar as notificações, um link será disponibilizado nos próximos e-mails.'
+
+        confirmation_link: '<a href="%{url}">Clique aqui para confirmar o e-mail</a>'

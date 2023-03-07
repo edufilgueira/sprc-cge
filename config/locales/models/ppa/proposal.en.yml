@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    models:
+      ppa/proposal:
+        one: Proposal
+        other: Proposals
+
+    attributes:
+      ppa/proposal:
+        city: City
+        created_at: Proposition date
+        justification: Justification
+        objective: Objective
+        strategy: Strategy
+        theme: Theme
+        user: Author
+        votes_count: Votes

@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    attributes:
+
+      theme:
+        name: Name
+        code: Code
+
+    errors:
+      models:
+        theme:
+          attributes:

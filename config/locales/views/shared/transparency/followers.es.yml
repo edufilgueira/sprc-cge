@@ -1,0 +1,23 @@
+es:
+  shared:
+    transparency:
+      followers:
+
+        title: Siga-me
+        submit: Seguir
+        description: Siga-me informando seu e-mail e receba, quando houver, as atualizações mais importantes desta página.
+
+        email:
+          placeholder: Informe seu e-mail
+
+        edit:
+          title: 'Clique aqui se deseja realmente parar de seguir a página'
+
+        unsubscribe:
+          title: 'Você não está mais seguindo esta página. Seu e-mail foi removido!'
+
+        success:
+          title: >
+            Sucesso! Você está seguindo esta página do Ceará Transparente pelo e-mail informado!
+            <br>
+            Agora você receberá novidades toda vez que esta página for atualizada!

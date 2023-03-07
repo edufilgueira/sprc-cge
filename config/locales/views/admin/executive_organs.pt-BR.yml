@@ -1,0 +1,44 @@
+pt-BR:
+
+  admin:
+
+    executive_organs:
+      create:
+        title: Novo órgão
+        done: "O órgão '%{title}' foi criado."
+        error: Falha ao criar o órgão
+      destroy:
+        done: "O órgão '%{title}' foi removido."
+      form:
+        commands:
+          cancel: < Voltar a lista de órgãos
+          change_password: Trocar de senha
+          create: Criar órgão
+        organ_association:
+          add: Adicionar
+      index:
+        commands:
+          new: Novo órgão
+        title: Órgãos do poder executivo
+        table:
+          summary: Lista de órgãos
+          header:
+            acronym: Sigla
+            name: Nome
+            commands: ''
+            status: ''
+
+      new:
+        title: Novo órgão
+      edit:
+        title: Edição
+      update:
+        title: Edição de órgão
+        done: "O órgão '%{title}' foi atualizado."
+        error: Falha ao atualizar o órgão
+      show:
+        title: Exibição do órgão
+
+      toggle_disabled:
+        disabled: Órgão desabilitado!
+        enabled: Órgão habilitado!

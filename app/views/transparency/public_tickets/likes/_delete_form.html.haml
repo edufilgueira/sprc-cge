@@ -1,0 +1,5 @@
+= simple_form_for ticket_like, url: transparency_public_ticket_like_path(public_ticket_id: ticket_like.ticket, id: ticket_like), remote: true, method: :delete, html: { class: 'd-inline-block' } do |f|
+
+  = f.button :button, class: "btn btn-link hover-link #{ticket_like.persisted? ? '' : 'text-muted'}" do
+    %i.fa.fa-thumbs-up{ 'aria-hidden': 'true' }
+    = t(".title")

@@ -1,0 +1,23 @@
+pt-BR:
+  activerecord:
+    models:
+      integration/supports/creditor/configuration:
+        one: Configuração de credores
+
+    attributes:
+      integration/supports/creditor/configuration:
+        wsdl: WSDL
+        headers_soap_action: SOAPAction
+        user: Usuário
+        password: Senha
+        operation: Nome do método SOAP
+        response_path: Caminho da resposta
+        started_at: Início
+        finished_at: Fim
+
+    errors:
+      models:
+        integration/supports/creditor/configuration:
+          attributes:
+            finished_at:
+              youngest: A data de finalização deve ser posterior a data de início

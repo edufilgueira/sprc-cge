@@ -1,0 +1,80 @@
+@import 'base/variables';
+
+// controle das cores dos status de importadores
+
+.integration-status {
+
+  border-radius: 15px;
+  padding: 5px;
+  margin-bottom: 10px;
+
+  &[data-status=status_queued] {
+    background-color: $status-gray-light;
+    color: $status-gray-text;
+
+    border-color: $status-gray-text;
+  }
+
+  &[data-status=status_in_progress] {
+    background-color: $status-blue-light;
+    color: $status-blue-text;
+
+    border-color: $status-blue-text;
+  }
+
+  &[data-status=status_success] {
+    background-color: $status-green-light;
+    color: $status-green-text;
+
+    border-color: $status-green-text;
+  }
+
+  &[data-status=status_fail] {
+    background-color: $status-red-light;
+    color: $status-red-text;
+
+    border-color: $status-red-text;
+  }
+
+  &.dashboard {
+    display: inline-block;
+    float: left;
+    width: 2.5em;
+    height: 2.5em;
+    margin-right: 1em;
+    padding: 0.5em 0px;
+    border-radius: 100%;
+
+    font-size: 14px;
+    text-align: center;
+
+    &::before {
+      font-family: FontAwesome;
+    }
+
+    &[data-status=status_queued] {
+      &::before {
+        content: "\f16c"; //fa-stack-overflow
+      }
+    }
+
+    &[data-status=status_in_progress] {
+      &::before {
+        content: "\f021"; //fa-refresh
+      }
+    }
+
+    &[data-status=status_success] {
+      &::before {
+        content: "\f164"; //fa-thumbs-up
+      }
+    }
+
+    &[data-status=status_fail] {
+      &::before {
+        content: "\f165"; //fa-thumbs-down
+      }
+    }
+  }
+}
+

@@ -1,0 +1,27 @@
+.table-responsive
+  %table.table.table-hover.table-sm.table-sorted{summary: t('.summary')}
+
+    %thead
+
+      %tr
+
+        - sou_heads = [:created_at, :updated_at, :parent_protocol, :sou_type, :internal_status, :deadline, :organs, :description]
+
+        - sic_heads = [:created_at, :updated_at, :parent_protocol, :internal_status, :deadline, :organs, :description]
+
+        - heads = params[:ticket_type] == 'sic' ? sic_heads : sou_heads
+
+        - heads.each_with_index do |head, index|
+          - sort_column_name = sort_columns[index]
+
+          %th{ class: "#{sortered_table_active_class(sort_column_name)}" }
+            - if sort_column_name
+              = sortered_table_header(sort_column_name, t(".heads.#{head}"))
+            - else
+              = t(".heads.#{head}")
+
+    %tbody
+      %tbody
+        = render tickets
+
+  = render 'shared/components/table/index_count', collection: tickets, filtered_count: filtered_count, total_count: total_count, filtered: ticket_filter_params?(params)

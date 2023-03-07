@@ -1,0 +1,8 @@
+pt-BR:
+  ppa:
+    themes:
+      regional_strategies:
+        likes:
+          create:
+            success: 'Interação de "Gostei" registrada. Obrigado!'
+            failure: 'Não foi possível registrar a interação de "Gostei".'

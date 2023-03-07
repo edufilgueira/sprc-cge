@@ -1,0 +1,25 @@
+.table-responsive
+	%table.table.table-hover.table-striped.table-sm.table-sorted
+
+		%thead
+			%tr
+				- heads = [:region, :axis, :theme]
+				- heads.each do |head|
+					%th= t(".table.header.#{head}")
+				%th
+
+			- proposals.each do |proposal|
+				- show_path = edit_ppa_plan_region_theme_proposal_path(plan.id, region.code, proposal.theme.id, proposal)
+				- icon_class = 'check'
+				%tr
+					%td.align-middle= proposal.region_name
+					%td.align-middle= proposal.theme_axis_name
+					%td.align-middle= proposal.theme_name
+					%td
+						= link_to show_path, class: 'btn btn-link align-middle float-left d-inline-block' do
+							= t('commands.edit')
+				%tr
+					%td{colspan: 5}
+						= simple_format proposal.justification.truncate(300)
+	.mt-4.text-center
+		= paginate proposals, remote: true

@@ -1,0 +1,17 @@
+es:
+  activerecord:
+    attributes:
+
+      page:
+        title: Título
+        content: Contenido
+        menu_title: Título del menú
+        status: ¿Activo?
+        status_str: ¿Página Activa?
+        parent_menu_title: Pertenece al menú
+        show_survey: ¿Exhibir encuesta de satisfación?
+        slug: Hipocorístico (utilizado para crear enlaces a la página)
+      page/status:
+        active: Sí
+        inactive: No
+

@@ -1,0 +1,19 @@
+%ol.breadcrumb.pl-0
+
+  - if breadcrumbs.present?
+
+    %span.sr-only
+      = t("a11y.breadcrumbs.description")
+
+    - truncate_length = 70
+
+    - truncate_length = 140 if breadcrumbs.count < 3
+
+    - last_breadcrumb = breadcrumbs.last
+
+    - breadcrumbs.each do |breadcrumb|
+      - next if breadcrumbs.last == breadcrumb
+      %li.breadcrumb-item
+        - title = breadcrumb[:title]
+        = link_to truncate(title, length: truncate_length), breadcrumb[:url], title: t('app.breadcrumb.title', title: title)
+    %li.breadcrumb-item.active{ title: last_breadcrumb[:title] }= truncate(last_breadcrumb[:title], length: truncate_length)

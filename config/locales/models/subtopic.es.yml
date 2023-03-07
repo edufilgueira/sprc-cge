@@ -1,0 +1,21 @@
+es:
+  activerecord:
+    attributes:
+
+      subtopic:
+        name: Nombre
+        organ: Órgano
+        organ_name: Nombre del órgano
+        _disable: Inhabilitado
+        disabled_at: Inhabilitado en
+
+
+    models:
+      subtopic:
+        one: 'Subtema'
+        other: 'Subtemas'
+
+    errors:
+      models:
+        topic:
+          attributes:

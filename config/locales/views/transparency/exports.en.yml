@@ -1,0 +1,38 @@
+en:
+  transparency:
+    exports:
+
+      form:
+        link:
+          title: 'Generate sheet with filtered data'
+
+        title: 'Generate sheet with filtered data'
+
+        info: >
+          The email is necessary because it is for him that we will send a link for you to download the worksheet.
+          The link will be available for two days.
+        name:
+          label: Worksheet title
+
+          hint: >
+            Title of the worksheet with the filtered data (Maximum: 32 characters).
+            <br/>
+            Ex: "Worksheet of January"
+
+        email:
+          label: E-mail to receive the worksheet
+          hint: >
+            You must enter the e-mail address where the worksheet will be sent after it is built.
+
+        worksheet_format:
+          label: Format
+          hint: Format (extension) of the worksheet.
+
+        export: Generate worksheet
+
+      create:
+        done: >
+          The requested worksheet is being built. In a few minutes you will receive the worksheet in the informed e-mail.
+          Do not forget to download as soon as possible, as the link will be unavailable within %{expiration} days.
+
+        error: 'Failed to generate worksheet. Check the fields marked below.'

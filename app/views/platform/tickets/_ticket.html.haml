@@ -1,0 +1,51 @@
+- ticket_show_path = link_to_platform_ticket_show_path(ticket)
+
+%tr
+
+  %td
+    = link_to l(ticket.created_at, format: :date_time), ticket_show_path
+
+  %td
+    = link_to l(ticket.updated_at, format: :date_time), ticket_show_path
+
+  %td
+    = link_to ticket_show_path do
+      - protocol = ticket.parent_protocol
+      .span{'aria-label': t("ticket.protocol_title.#{ticket.ticket_type}", protocol: protocol) }
+        = highlight(protocol, params[:search])
+
+  - if ticket.sou?
+    %td
+      = link_to ticket_show_path  do
+        = ticket.sou_type_str
+
+
+  %td
+    = link_to ticket_show_path  do
+      - if ticket.internal_status.present?
+        = ticket.internal_status_str
+      - else
+        %em
+          = t('messages.content.undefined')
+
+  %td
+    = link_to ticket_show_path  do
+      - if can?(:can_view_deadline, ticket)
+        = t('ticket.deadline', count: ticket.deadline)
+      - else
+        %em
+          = t('.messages.deadline.undefined')
+
+  %td
+    = link_to ticket_show_path  do
+      - organs = acronym_organs_list(ticket)
+      - if organs.present?
+        = organs
+      - else
+        %em
+          = t('messages.content.undefined')
+
+  %td
+    - description = content_sanitizer(ticket.description || ticket.denunciation_description)
+    = link_to ticket_show_path, title: strip_tags(description) do
+      = highlight(description.truncate(40), params[:search])

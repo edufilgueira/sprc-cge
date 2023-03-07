@@ -1,0 +1,127 @@
+= hidden_field_tag('ticket[anonymous]', ticket.anonymous)
+
+.card.card-custom
+
+  .card-header
+
+    %h3.card-title
+      = t('shared.tickets.form.person_info.title')
+
+  .card-block
+
+    - if ticket.anonymous?
+      .row
+        .col-md-6
+          = f.input :email, autofocus: true, label: t('.email')
+
+    - unless anonymous_param
+
+      - if user?(current_user)
+        .row
+          .col-6
+            = content_with_label(current_user, :name)
+
+          .col-6
+            = content_with_label(current_user, :email)
+
+        - if ticket.sic? && user_facebook?(current_user)
+
+          .row
+
+            .col-12.col-md-6
+              = f.input :document_type, collection: ticket_document_types_for_select, selected: ticket.document_type
+
+            .col-12.col-md-6
+              = f.input :document, required: true, input_html: { 'data-input': 'document' }
+
+      - else
+
+        .row
+
+          .col-12
+
+            %label
+              = Ticket.human_attribute_name(:person_type)
+
+            .btn-group.btn-group-justified{ 'data-toggle': 'radio-buttons', role: 'group', 'aria-label': Ticket.human_attribute_name(:person_type), 'data-input': 'person_type' }
+              - Ticket.person_types.keys.each do |type|
+                - option_label = I18n.t("ticket.person_types.#{type}")
+                - checked = (type.to_s == ticket.person_type.to_s)
+                - active_class = (checked ? 'active' : '')
+
+                %label.btn.btn-outline-primary{ class: active_class, for: option_label }
+                  = radio_button_tag 'ticket[person_type]', type, checked, id: option_label, data: {input: type, identified: ''}
+                  = option_label
+
+              - unless current_user.nil? || ticket_type == 'sic'
+                - checked = ticket.anonymous?
+                - active_class = (checked ? 'active' : '')
+                %label.btn.btn-outline-primary{ class: active_class, for: :anonymous }
+                  = radio_button_tag 'ticket[anonymous]', :anonymous, checked, id: :anonymous, data: { input: :anonymous, anonymous: '' }
+                  = t('.anonymous')
+
+
+        .row{'data-content': :anonymous}
+          .col-12
+            = f.input :email, label: t('.email')
+
+
+        %div{'data-content': :identified}
+          .row{ data: { content: 'legal_person' } }
+            .col-12
+              = f.input :name, required: true, label: t('.person_types.legal.name'), wrapper_html: { data: { content: 'legal_name' } }
+
+          .row{ data: { content: 'individual_person' } }
+
+            - has_error = ticket.errors['ticket.name'].present?
+
+            .col-12.col-lg-6
+              .form-group{ 'data-content': 'individual_name', class: has_error ? 'has-danger' : '' }
+
+                - url =  operator?(current_user) ? search_api_v1_operator_tickets_path : ""
+
+                = f.label :name, required: true, class: 'form-control-label'
+                %i.fa.fa-spinner.fa-spin.fa-fw{ 'aria-hidden': 'true', 'data-content': 'loading' }
+                = f.input_field :name, { class: 'form-control loader', data: { input: 'individual_name', url: url, 'param-name': 'name' }}
+                = f.error :name
+
+            .col-12.col-lg-6
+              = f.input :social_name, wrapper_html: { data: { content: 'individual_social_name' } }
+
+          - if ticket.sic?
+            .row
+
+              .col-12.col-lg-6
+
+                = f.input :document_type, collection: ticket_document_types_for_select, selected: ticket.document_type, input_html: { 'data-input': 'document_type' }, wrapper_html: { class: 'mb-2' }
+
+                %label{ data: { input: 'document_cnpj'}}
+                  = t('.person_types.legal.cnpj')
+
+
+              - if operator?(current_user)
+
+                .col-12.col-lg-6{ 'data-content': 'document', 'data-url': url }
+
+                  - has_error = f.object.errors[:document].present?
+                  .form-group{ class: has_error ? 'has-danger' : ''}
+
+                    = f.label :document, class: 'form-control-label'
+
+                    .row
+
+                      .col-10.col-lg-10
+                        = f.input :document, label: false, wrapper: false, input_html: { 'data-input': 'document' }
+
+
+                      = link_to 'javascript:void(0)', class: 'btn btn-primary ml-1 btn-search-document', 'data-action': 'search' do
+                        %i.fa.fa-search{'aria-hidden': 'true', 'data-content': 'loader'}
+
+
+              - else
+
+                .col-12.col-md-6
+                  = f.input :document, input_html: { 'data-input': 'document' }
+
+      - if operator?(current_user)
+        = render 'shared/tickets/used_input_fields', f: f, ticket: ticket

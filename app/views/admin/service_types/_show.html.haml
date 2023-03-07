@@ -1,0 +1,34 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-8
+            %h3.card-title
+              = service_type.title
+
+          .col-4
+            .float-right
+              - if can?(:edit, service_type)
+                = link_to t('commands.edit'), edit_admin_service_type_path(service_type), class: 'btn text-muted btn-link'
+
+              - if can?(:manage, service_type)
+                = render 'shared/buttons/btn_toggle_disabled', resource: service_type, namespace: :admin
+
+
+      .card-block
+
+        = content_with_label(service_type, :name)
+
+        = content_with_label(service_type, :code)
+
+        = content_with_label(service_type, :organ_name)
+
+        = content_with_label(service_type, :subnet_name)

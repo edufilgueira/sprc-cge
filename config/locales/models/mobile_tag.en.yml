@@ -1,0 +1,8 @@
+en:
+
+  activerecord:
+
+    attributes:
+
+      mobile_tag:
+        name: Name

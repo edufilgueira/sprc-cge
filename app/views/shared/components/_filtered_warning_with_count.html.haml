@@ -1,0 +1,5 @@
+- if filtered
+  .my-4
+    .alert.alert-warning
+      = raw t('messages.filters.warning_count', total: number_with_delimiter(total_count), filtered: number_with_delimiter(filtered_count))
+      = link_to t('messages.filters.clear'), '#!', 'data-input': 'clear-filter', class: 'float-right'

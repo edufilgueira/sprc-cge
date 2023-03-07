@@ -1,0 +1,44 @@
+en:
+
+  shared:
+
+    toolbar_menu:
+
+      user:
+        title: Hello, %{name}
+        edit: Edit profile
+        logout: Exit
+
+    transparency:
+      toolbar:
+        menu: Navigation section menu
+        server_salaries: State servants salaries
+        revenues:
+          accounts: Executive director revenue
+          transfers: Revenue - Resources transfers
+        expenses:
+          budget_balances: Federal Executive Expenses
+          neds: Expenses - Note of Commitment
+          npds: Expenses - Payment of Expenditure
+          nlds: Expenses - Liquidation of Public Expenditure Note
+          npfs: Espenses - Financial Programming Note
+
+        contracts: contracts
+        convenants: Agreements
+        management_contracts: Management contracts
+
+        constructions:
+          ders: DERS constructions
+          daes: DAES constructions
+
+        purchases: Purchases
+        real_states: Real state
+
+        results:
+          strategic_indicators: Strategic Indicators - Consulting Results
+          thematic_indicators: Thematic Indicators - Consulting Results
+
+        stats_tickets: SIC/OMBUDSMAN Statistics
+        open_data: Open data
+        ceara_gov: State of Ceara Government Portal
+        citizen_access: User access

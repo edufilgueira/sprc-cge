@@ -1,0 +1,26 @@
+= javascript_include_tag('https://use.fontawesome.com/0e2d62fd8a.js', async: true)
+
+%meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}/
+
+- if ENV['STAGE'] != 'production'
+  %meta{content: 'noindex, nofollow', name: 'robots'}/
+
+%title= layout_head_data[:title]
+
+- layout_head_data[:meta].each do |name, content|
+  %meta{ name: name, content: content }/
+
+- layout_head_data[:open_graph].each do |name, content|
+  %meta{ property: "og:#{name}", content: content }/
+
+- layout_head_data[:facebook].each do |name, content|
+  %meta{ property: "fb:#{name}", content: content }/
+
+%link{href: asset_path('favicon.ico'), rel: 'shortcut icon'}/
+
+= render 'shared/stylesheets'
+= stylesheet_link_tag(:platform, media: :all)
+= render 'shared/accessibility'
+= yield(:stylesheet)
+
+= csrf_meta_tags

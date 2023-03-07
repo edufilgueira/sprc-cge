@@ -1,0 +1,21 @@
+en:
+  activerecord:
+    attributes:
+
+      subtopic:
+        name: Name
+        organ: Body
+        organ_name: Body's name
+        _disable: Disabled
+        disabled_at: Disabled on
+
+
+    models:
+      subtopic:
+        one: 'Sub-topic'
+        other: 'Sub-topics'
+
+    errors:
+      models:
+        topic:
+          attributes:

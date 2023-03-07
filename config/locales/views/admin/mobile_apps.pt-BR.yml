@@ -1,0 +1,33 @@
+pt-BR:
+
+  admin:
+
+    mobile_apps:
+
+      create:
+        title: Cadastrar novo aplicativo
+        done: "Aplicativo '%{title}' criado"
+        error: Falha ao criar aplicativo
+
+      destroy:
+        done: "Aplicativo '%{title}' removido"
+
+      index:
+        title: Aplicativos
+        empty: Nenhum registro encontrado
+        filters:
+          title: Filtros
+
+      new:
+        title: Cadastrar novo aplicativo
+
+      edit:
+        title: Edição de aplicativo
+
+      update:
+        title: Edição de aplicativo
+        done: "Aplicativo '%{title}' atualizado"
+        error: Falha ao atualizar aplicativo
+
+      show:
+        title: Aplicativo

@@ -1,0 +1,34 @@
+en:
+  commands:
+    add: Add
+    authorize: Authorize
+    back_home: Back to home
+    cancel: Cancel
+    close: Close
+    config: Configure
+    download: Download
+    edit: Edit
+    filter: 'Filter'
+    filter_reset: 'Clean filters'
+    hide: Hide
+    more_details: See more...
+    import: Import
+    export: Export
+    print: Print
+    remove: Delete
+    remove_confirm: Are you sure you want to delete?
+    remove_confirm_extension: There is a pending extension request, if you click OK, the manifestation will be finalized and the extension request will be cancelled. Do you want to end the demonstration anyway?
+    save: Save
+    search: Search
+    see_more: See more...
+    send: Send
+    show: Show
+    confirm: Confirm
+    enable: Enable
+    disable: Disable
+    enable_confirm: Are you sure you want to enable?
+    disable_confirm: Are you sure you want to disable?
+
+    disabled:
+      _true: Disabled
+      _false: Enabled

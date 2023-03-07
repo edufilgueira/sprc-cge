@@ -1,0 +1,72 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+
+.row.show_resume.d-none
+  .col-lg-12
+    .row
+      .col-lg-12
+        %h2.font-weight-bold
+          = t('ppa.revision.prioritizations.edit.title')
+
+    .row
+      .col-lg-12
+        %label.text-justify{ style: 'font-size: 14px' }
+          %label.text-justify= t('ppa.revision.review_problem_situation_strategies.new.description').html_safe
+
+    .row
+      .col-lg-12
+        .card
+          = render partial: 'shared/ppa/revision/multistep_forms/multistep_flow'
+
+          .row
+            .col-12
+              .float-right
+                %a.btn.btn-primary{ href: edit_ppa_revision_prioritization_path(plan_id: plan.id, id: prioritization.id), style: 'margin-right: 10px;' }
+                  = t('.new_theme')
+
+
+    .row
+      .col-lg-12
+        .card
+          .fieldset
+            .row
+              .col-12
+                %h5
+                  %b= t('.revised_themes')
+
+            .row
+              .col-12
+                .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+                  .remote-content{'data-remote-content': controller_name}
+
+                    - region = nil
+                    - axis = nil
+                    - theme = nil
+
+
+                    - revised_region_themes.each do |region_theme|
+                      - axis = nil if region_theme.region.name != region
+
+                      = region_theme.region.name if region_theme.region.name != region
+                      - region = region_theme.region.name
+
+                      .col-12.ml-2
+                        = region_theme.theme.axis.name if region_theme.theme.axis.name != axis
+                        - axis = region_theme.theme.axis.name
+
+                        .col-12.ml-4
+                          - if region_theme.theme.name != theme
+                            = link_to region_theme.theme.name, ppa_revision_prioritization_path(region_theme_id: region_theme.id), class: 'theme_prioritization_link', remote: true
+                          - theme = region_theme.theme.name
+
+                    .row.mt-4
+                      .col-12
+                        .remote-content-result{ 'data-remote-content-result': controller_name }
+
+          %br
+          .row
+            .col-12.mt-4
+              %a.btn.btn-primary{ href: ppa_revision_prioritization_conclusion_path(plan_id: plan.id, prioritization_id: prioritization.id) }
+                = t('.finish')
+          %br

@@ -1,0 +1,7 @@
+pt-BR:
+  transparency:
+    expenses:
+      nlds:
+        index:
+          title: Notas de Liquidação de Despesa
+          description: 'Aqui você poderá consultar informações das notas de liquidação de despesas pesquisando por período, unidade gestora, nome do credor.'

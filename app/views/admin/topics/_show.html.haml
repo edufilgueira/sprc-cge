@@ -1,0 +1,46 @@
+- content_for :title, topic.title
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-12.col-md-6
+            %h3.card-title
+              = topic.title
+
+          .col-12.col-md-6
+            .float-right
+
+              - if can?(:manage, topic)
+                = link_to t('.commands.remove'), delete_admin_topic_path(topic), class: 'btn text-danger btn-link'
+
+              - if can?(:edit, topic)
+                = link_to t('commands.edit'), edit_admin_topic_path(topic), class: 'btn text-muted btn-link'
+
+      .card-block
+
+        = content_with_label(topic, :organ_name)
+
+        - if subtopics.present?
+          %hr{'aria-hidden': 'true'}
+
+          %h4.h6
+            = Subtopic.model_name.human(count: 2)
+
+          .row
+            .col-12
+              - subtopics.each do |subtopic|
+                %p
+                  - if subtopic.disabled?
+                    %del=subtopic.title
+                    %small= t('.subtopics.disabled_at', disabled_at: l(subtopic.disabled_at, format: :shorter))
+                  - else
+                    = subtopic.title
+

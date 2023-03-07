@@ -1,0 +1,15 @@
+@import 'base/variables';
+
+.bg-tertiary {
+  color: white;
+  background-color: $app-green;
+}
+
+.bg-gray {
+  background-color: $text-gray-lighter;
+}
+
+.bg-white {
+  background-color: white !important;
+}
+

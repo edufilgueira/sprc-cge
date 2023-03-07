@@ -1,0 +1,17 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+
+.content-detail
+
+  .card.card-custom
+
+    .card-header
+
+      %h2.card-title
+        = t(".title")
+
+    .card-block
+
+      = render 'form', user: user

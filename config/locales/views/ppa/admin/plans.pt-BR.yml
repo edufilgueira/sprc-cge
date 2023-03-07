@@ -1,0 +1,22 @@
+pt-BR:
+  ppa:
+    admin:
+      plans:
+        index:
+          title: Planos Plurianuais
+          new: Adicionar Plano
+        new:
+          title: Adicionar plano plurianual
+        create:
+          done: Plano criado com sucesso
+          error: Alguns erros foram encontrados
+        edit:
+          title: Alterar plano
+        update:
+          done: Plano atualizado com sucesso
+          error: Plano não pode ser atualizado
+        destroy:
+          done: Plano removido com sucesso
+        show:
+          workshops: Encontros Regionais de elaboração
+          title: Visualizando plano

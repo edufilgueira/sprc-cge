@@ -1,0 +1,511 @@
+pt-BR:
+  shared:
+    tickets:
+
+      print:
+        reopen:
+          title:
+            one: 'Reaberturas (%{count} vez)'
+            other: 'Reaberturas (%{count} vezes)'
+
+        appeal:
+          title:
+            one: 'Recursos (%{count} vez)'
+            other: 'Recursos (%{count} vezes)'
+
+      contact_fields:
+        state: Estado
+
+      attachment_fields:
+        file:
+          hint: 'A soma dos anexos inseridos no sistema não pode ultrapassar o limite de 50MB.'
+
+
+      notice_confirmation_success:
+        title: 'Pronto!'
+        sic:
+          description: Sua solicitação foi registrada com sucesso.
+          deadline_description: 'O atendimento das Solicitações de Informação é de até 20 dias podendo ser prorrogado por mais 10 dias conforme estabelece a Lei nº. 15.175/2012.'
+          important_description: '<p><b><center>Importante!</center></b></p> O Comitê Setorial de Acesso a Informação poderá solicitar informações complementares sobre a manifestação objetivando facilitar o atendimento/apuração, sendo recomendado que o cidadão fique acessando-a nos próximos 5 (cinco) dias, por meio do protocolo e senha fornecidos acima, para prestar as informações solicitadas e evitar que a manifestação seja invalidada.'
+        sou:
+          description: Sua manifestação foi registrada com sucesso.
+          deadline_description: 'O prazo de atendimento da manifestação de Ouvidoria é de até 20 dias, podendo ser prorrogado por mais 10 dias, conforme estabelece o Decreto Estadual n° 33.485/2020.'
+          important_description: '<p><b><center>Importante!</center></b></p> A Ouvidoria poderá solicitar informações complementares sobre a manifestação objetivando facilitar o atendimento/apuração, sendo recomendado que o cidadão fique acessando-a nos próximos 5 (cinco) dias, por meio do protocolo e senha fornecidos acima, para prestar as informações solicitadas e evitar que a manifestação seja invalidada.'
+        password_description: 'Anote seu número de protocolo e sua senha para consultar seu chamado:'
+
+      confirmed_operator:
+        tabs:
+          infos:
+            sic:
+              title: Informações básicas
+            sou:
+              title: Informações básicas
+          classification:
+            sic:
+              title: Classificação
+            sou:
+              title: Classificação
+          areas:
+            sic:
+              title: SICs e áreas
+            sou:
+              title: Ouvidorias e áreas
+          comments:
+            sic:
+              title: Comentários
+            sou:
+              title: Comentários
+          replies:
+            sic:
+              title: Respostas
+            sou:
+              title: Respostas
+          internal_replies:
+            sic:
+              title: Posicionamentos
+            sou:
+              title: Posicionamentos
+          history:
+            sic:
+              title: Histórico
+            sou:
+              title: Histórico
+          attendance_evaluations:
+            sic:
+              title: Avaliação
+            sou:
+              title: Avaliação
+
+          internal_evaluation:
+            sic:
+              title: Avaliação Interna
+            sou:
+              title: Avaliação Interna - Ouvidoria
+
+          history:
+            sic:
+              title: Histórico
+            sou:
+              title: Histórico
+
+        attendance_evaluations:
+            title: Avaliação interna do atendimento
+
+        internal_evaluation:
+          title: Avaliação interna da resposta orgão
+
+
+      classification:
+        title: Classificação
+        denunciation:
+          requirement: A classificação de uma manifestação com denúncia é feita somente após o tipo de denúncia estar definido
+        parent:
+          sic: A classificação é feita somente na solicitação filha
+          sou: A classificação é feita somente na manifestação filha
+
+
+      sharings:
+        sou:
+          title: Ouvidorias setoriais envolvidas
+          new: Adicionar Ouvidorias setoriais envolvidas
+          share: Compartilhar com outra Ouvidoria
+          empty: Nenhuma Ouvidoria setorial envolvida
+        sic:
+          title: Órgãos envolvidos
+          new: Adicionar órgãos envolvidos
+          share: Compartilhar com outro órgão
+          empty: Nenhum órgão envolvido
+        denunciation:
+          empty: Para envolver outros órgãos, classifique a denúncia
+        transfers:
+          sou:
+            new: Transferir para outra ouvidoria
+          sic:
+            new: Transferir para outro órgão
+
+      public_comments:
+        comments:
+            user:
+              title: Comentários do cidadão
+              empty: Nenhum comentário
+
+      ticket_logs:
+        title: Histórico de atendimento
+
+        index:
+          replies_received: "Você recebeu %{answers_count} de %{children_count} resposta(s)"
+
+
+      ticket_internal_logs:
+        title: Comentários internos
+
+      invalidate: Invalidar
+
+      forwards:
+        referrals:
+          title: Áreas internas envolvidas
+          empty: Nenhuma área interna envolvida
+          edit: Encaminhar para área interna
+          unclassified: É necessario classificar para envolver áreas internas
+
+        transfer_departments:
+          edit: Transferir para outra área interna
+          share: Compartilhar com outra área interna
+
+      transfer_departments:
+        edit: Transferir para outra área interna
+        share: Compartilhar com outra área interna
+
+      sou_types_toggle:
+        label: Tipo da manifestação
+        popover:
+          complaint:
+            title: Reclamação
+            body: Demonstração de insatisfação relativa à política ou serviço público.
+          denunciation:
+            title: Denúncia
+            body: Comunicação de prática de ato ilícito ou irregular cometido por colaborador, órgão, entidade, prestador de serviço público ou usuário de política ou serviço, cuja solução dependa da atuação do controle interno ou externo.
+          compliment:
+            title: Elogio
+            body: Demonstração, reconhecimento ou satisfação sobre política ou serviço público oferecido ou atendimento recebido.
+          suggestion:
+            title: Sugestão
+            body: Proposição de ideia ou formulação de proposta de uma nova política ou serviço público ou aprimoramento de um já existente.
+          request:
+            title: Solicitação
+            body: Requerimento de adoção de providência por parte da Administração Pública ou prestador responsável pela política ou prestação de um serviço público.
+
+      sou_types_toggle_without_popover:
+        label: Tipo da manifestação
+
+      form:
+
+        change_sou_type:
+          justification: 'Justifique a alteração no tipo da manifestação:'
+
+        sic_info: 'Confira se a informação desejada está disponível no <a href="%{url}">Páginas de Transparência</a>.'
+
+        person_info:
+          title: Informações do cidadão
+          keep_secret:
+            sic: Suas informações pessoais ficarão visíveis apenas para o atendente.
+            sou: Suas informações pessoais ficarão visíveis apenas para o ouvidor.
+
+        contact_info:
+          title: Informações de contato
+
+        add_attachment: Adicionar anexo
+
+        cards:
+          attachments:
+            title: Anexos (opcional)
+
+          sou:
+            description:
+              title: Descrição da manifestação
+
+          sic:
+            description:
+              title: Descrição da solicitação
+
+          infos:
+            title: Informações do cidadão
+
+          answer:
+            title: Resposta imediata
+
+        modal:
+          title: Confirmação de denúncia
+          close: Fechar
+          body: 'Você pode optar por fazer a denúncia de forma anônima. Basta sair da sua conta e clicar na opção "Manifestação Anônima", na página "Ouvidoria Digital". '
+          footer:
+            agreements: 'Li e estou de acordo'
+            submit: Enviar denúncia
+
+
+        commands:
+          sou:
+            cancel: < Voltar a lista de Manifestações de Ouvidorias
+            create: Salvar manifestação
+            update: Atualizar manifestação
+          sic:
+            cancel: < Voltar a lista de Solicitações
+            create: Salvar solicitação
+            update: Atualizar solicitação
+
+
+        fields:
+          description:
+            hint:
+              citizen:
+                sou: Descreva sua manifestação com o máximo possível de detalhes. Não há limites de caracteres.
+                sic: Descreva sua solicitação com o máximo possível de detalhes. Não há limites de caracteres.
+              operator:
+                sou: Descreva a manifestação com o máximo possível de detalhes. Não há limites de caracteres.
+                sic: Descreva a solicitação com o máximo possível de detalhes. Não há limites de caracteres.
+            anonymous_hint: Para garantia do anonimato, certifique-se de que na descrição da manifestação não contém informações pessoais ou elementos que venham a identificá-lo.
+            operator_hint: Para garantir o anonimato do cidadão, não escreva nada que possa identificá-lo.
+
+          subnet:
+            select: Selecione uma Sub-rede responsável
+
+          organ:
+            select: Selecione o órgão responsável
+
+          topic:
+            select: Selecione o assunto
+            label: Assunto
+            unknown: Não sei informar o assunto
+
+          rede_ouvir:
+            select: Selecione a rede ouvir responsável
+
+          select: Selecione uma opção
+
+          denunciation_organ_select: Não sei qual é o órgão responsável
+
+          denunciation_type_ticket: Atenção! Sua Denúncia será direcionada para a Controladoria e Ouvidoria Geral do Estado, para análise e encaminhamentos. 
+                                    O campo abaixo indica apenas qual órgão está sendo denunciado, quando for possível identificar. Caso deseje compartilhar 
+                                    essa denúncia com outro órgão, por favor, informe no final do texto da manifestação, que a equipe responsável analisará e efetuará o compartilhamento da demanda.
+
+          denunciation_description:
+            citizen:
+              hint: Para garantia do sigilo, certifique-se de que na descrição da manifestação não contém informações pessoais ou elementos que venham a identificá-lo.
+            operator:
+              hint: Para garantia do sigilo/anonimato, certifique-se de que na descrição da manifestação não contém informações pessoais ou elementos que venham a identificar o(a) manifestante.
+
+          denunciation_evidence:
+            hint: Indique quais são as evidências do fato denunciado e onde elas podem ser encontradas.
+
+          answer_type: Além de e-mail e internet, você gostaria de receber a resposta de outra forma?
+
+          answer_phone: Telefone 1
+          answer_cell_phone: Telefone 2
+
+          answer_address_zipcode: Insira o cep
+
+        privacy_terms:
+          title: Privacidade & Termos
+          description: 'Li e concordo com os <a target="_blank" href="%{terms_url}">Termos de Uso</a>'
+
+
+      index:
+        filters:
+          search:
+            title: Busca por palavra-chave
+            label: Buscar por protocolo, nome, e-mail, documento ou descrição
+          parent_protocol:
+            title: Busca por protocolo
+            label: Protocolo
+          confirmed_at:
+            label: Período
+            start: Início
+            end: Fim
+          list_sample: Listar amostras
+
+          sou:
+            commands:
+              new: Nova manifestação
+
+          sic:
+            commands:
+              new: Nova solicitação
+
+        user_filters:
+          select:
+            organ: Órgão
+            deadline: Prazo
+            status_for_citizen: Situação
+            topic: Assunto
+
+          finalized: Exibir finalizados
+
+        operator_filters:
+          select:
+            internal_status: Situação
+            department: Unidade
+            sub_department: Subunidade
+            organ: Órgão
+            topic: Assunto
+            subtopic: Subassunto
+            budget_program: Programa orçamentário
+            service_type: Tipo de serviço
+            deadline: Prazo
+            ticket_departments_deadline: Prazo da unidade (área interna)
+            answer_type: Tipo de resposta
+            sou_type: Tipo de manifestação
+            subnet: Sub-rede
+
+          priority: Somente urgentes
+          finalized: Exibir finalizados
+          denunciation: Apenas denúncias
+          without_denunciation: Sem denúncias
+          extension_in_progress: Somente pedidos de prorrogação
+          second_extension_in_progress: Somente pedidos de segunda prorrogação
+          rede_ouvir: Rede Ouvir
+          rede_ouvir_cge: Rede Ouvir - Governo Estadual
+          other_organs: Apenas outros poderes
+          percentage:
+            label: Percentual do Filtro
+            title: Percentual %
+
+
+        empty: Nenhum registro encontrado
+
+
+      deadline:
+        remaining: Contagem regressiva para resposta
+
+      show:
+        citizen_topic:
+          label: Assunto inserido pelo cidadão
+        anonymous:
+          sic:
+            title: Solicitação anônima
+
+          sou:
+            title: Manifestação anônima
+
+        attachments:
+          title: Anexos
+          none: Nenhum arquivo
+
+        actions: Ações
+
+        confirmation:
+          title: Confirme os dados preenchidos
+
+        sou:
+          title: Informações da manifestação
+          description:
+            title: Descrição da manifestação
+
+        sic:
+          title: Informações da solicitação
+          description:
+            title: Descrição da solicitação
+
+        infos:
+          title: Informações do cidadão
+          anonymous:
+            title: Identificação da manifestação
+
+        deadline:
+          title: Prazos e providências
+          created_at: Data de registro
+          last_day: Prazo final de resposta
+          status: Situação atual
+
+        extension:
+          title: Solicitar prorrogação
+
+        cancel_extension: Cancelar solicitação prorrogação
+        cancel_extension_confirmation: >
+          Você tem certeza que deseja cancelar a solicitação?
+
+        appeal:
+          '1': "Data da abertura do recurso (primeira instância)"
+          '2': "Data da abertura do recurso (segunda instância)"
+          '3': "Data da abertura do recurso (terceira instância)"
+
+        ticket_department:
+          note: Observação
+          deadline: Prazo final de resposta
+
+        denunciation_organ:
+          edit: Editar órgão denunciado
+
+        denunciation_type_str: Tipo de denúncia
+        denunciation_type:
+          edit: Editar tipo de denúncia
+
+        target_address:
+          title: Local da ocorrência
+
+        undefined: Indefinido
+
+      sou_type:
+        edit: Editar tipo da manifestação
+
+      ticket_department:
+        extension_in_progress: Responder pedido de prorrogação
+        edit: Editar o prazo da área interna
+        poke:
+          title: 'Cobrar área interna'
+          info: Envia uma notificação para lembrar a área interna sobre o prazo da demanda.
+          confirm: Deseja realmente cobrar área interna?
+        renew_referral:
+          title: 'Solicitar novo posicionamento'
+          confirm: Deseja realmente solicitar um novo posicionamento?
+
+      unconfirmed:
+        anonymous:
+          sic:
+            title: Solicitação anônima
+
+          sou:
+            title: Manifestação anônima
+
+        title: Confirme os dados
+
+        attachments:
+          title: Anexos
+          none: Nenhum arquivo
+
+        sou:
+          description:
+            title: Descrição da manifestação
+
+        sic:
+          description:
+            title: Descrição da solicitação
+
+        infos:
+          title: Informações do cidadão
+
+        confirm:
+          action: Confirmar abertura
+
+        edit:
+          action: Voltar para edição
+
+      person_info:
+        person_types:
+          legal:
+            name: Razão social
+            cnpj: CNPJ
+        anonymous: Pessoa anônima
+
+        email: E-mail (Opcional)
+
+      short_details:
+        sou: Descrição da manifestação
+        sic: Descrição da solicitação
+        attachments: Anexos
+
+      ticket_classification_fields:
+          title: Classificação
+
+      ticket_denunciation_classification_fields:
+          title: Classificação de denúncia
+
+      denunciation_classification_fields:
+        button: Classificar denúncia
+
+      denunciation_classification:
+        title: Encaminhar para Coordenadoria de Correição - COSCO
+        alert: Encaminhar a Denúncia para a Coordenadoria de Correição quando os envolvidos forem integrantes da Direção Superior ou Gerência Superior dos órgãos/entidades do Poder Executivo Estadual, bem como as denúncias cuja apuração seja de responsabilidade da Coordenadoria de Correição, nos termos do Decreto nº. 33.276/2019
+        confirm_alert: Tem certeza que deseja envolver a COSCO?
+
+      denunciation_couvi:
+        title: Encaminhar para Coordenadoria de Ouvidoria - COUVI
+        alert: Encaminhar a denúncia para a Coordenadoria de Ouvidoria quando o envolvido for ouvidor setorial, ouvidor substituto ou assessor de controle interno e ouvidoria, quando houver, dos Órgãos e Entidades do Poder Executivo, quando o objeto da denúncia for relacionado às atividades no âmbito do Sistema Estadual de Ouvidoria
+        confirm_alert: Tem certeza que deseja envolver a COUVI?
+
+      target_address:
+        title: Local da ocorrência
+
+      priority_alert:
+        title:
+          sic: Solicitação marcada como urgente
+          sou: Manifestação marcada como urgente

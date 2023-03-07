@@ -1,0 +1,26 @@
+- ticket_for_comments = ticket.parent || ticket
+- url = local_assigns[:namespace] ? url_for([:history, namespace, ticket_for_comments]) : nil
+
+.content{data: { content: 'ticket_history', content_url: url } }
+  - #
+  - # Histórico de atendimento
+  - #
+  .card.card-custom
+
+    .card-header
+
+      %h3.card-title
+        = t('.comments.title')
+
+    .card-block
+
+      .comments
+        - ticket_logs = operator?(current_user) ? (ticket.sorted_ticket_protect_attachments_logs + ticket_for_comments.sorted_ticket_logs_for_operator).sort : ticket_for_comments.sorted_ticket_logs_for_user
+
+        - if ticket_logs.present?
+          = render partial: 'shared/ticket_logs/ticket_log', collection: ticket_logs
+
+        - else
+
+          %em
+            = t('.comments.empty')

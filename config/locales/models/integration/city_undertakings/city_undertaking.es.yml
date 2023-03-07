@@ -1,0 +1,37 @@
+es:
+  activerecord:
+    attributes:
+      integration/city_undertakings/city_undertaking:
+        expense: Tipo de gasto
+        expense_str: Tipo de gasto
+        organ_id: Secretaría 
+        creditor_id: Acreedor
+        undertaking_id: Obra
+        organ_title: Secretaría
+        creditor_title: Acreedor
+        undertaking_title: Empreendimento
+        municipio: Municipio
+        tipo_despesa: Tipo de gasto
+        sic: Nº SACC
+        mapp: Proyecto
+        valor_programado1: Valor programado 1
+        valor_programado2: Valor programado 2
+        valor_programado3: Valor programado 3
+        valor_programado4: Valor programado 4
+        valor_programado5: Valor programado 5
+        valor_programado6: Valor programado 6
+        valor_programado7: Valor programado 7
+        valor_programado8: Valor programado 8
+        valor_executado1: Valor ejecutado 1
+        valor_executado2: Valor ejecutado 2
+        valor_executado3: Valor ejecutado 3
+        valor_executado4: Valor ejecutado 4
+        valor_executado5: Valor ejecutado 5
+        valor_executado6: Valor ejecutado 6
+        valor_executado7: Valor ejecutado 7
+        valor_executado8: Valor ejecutado 8
+
+  integration/city_undertakings/city_undertaking:
+    expenses:
+      contract: Contrato
+      convenant: Convenio

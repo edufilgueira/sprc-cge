@@ -1,0 +1,10 @@
+en:
+  services_rating:
+    index:
+      title: Public Service Assessments
+      rating: 
+        title: Suggestions
+        description: We want to hear from you! Which public service provided by the Government of Ceará would you like to be evaluated?
+    create:
+      done: Required to)! Your suggestion was successfully received!
+      error: Please fill in the Public Service Assessments field.

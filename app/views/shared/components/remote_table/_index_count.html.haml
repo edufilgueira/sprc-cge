@@ -1,0 +1,19 @@
+%hr{'aria-hidden': true}
+
+- view_options = local_assigns[:view_options] || { pagination: true, count: true }
+
+- if view_options[:count]
+  .row.mt-4.text-right
+    .col-12
+      .muted.small.m-1
+        - if filtered
+          = raw t('messages.filters.total_count', count: total_count, total: number_with_delimiter(total_count), filtered: number_with_delimiter(filtered_count))
+        - else
+          = raw t('messages.filters.count', count: total_count, total: number_with_delimiter(total_count))
+
+- if view_options[:pagination]
+
+
+  .row.mt-4.text-center
+    .col-12
+      = paginate collection, remote: true

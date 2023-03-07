@@ -1,0 +1,105 @@
+#
+# Estamos usando a gem `devise-i18n`, que já fornece traduções. Aqui, estamos personalizando-as.
+# veja mais em https://github.com/tigrish/devise-i18n/blob/master/rails/locales/pt-BR.yml
+#
+es:
+  devise:
+    errors:
+      messages:
+        confirmation_period_expired: >-
+          Perfil no confirmado. Por favor, solicite el reenvío de instrucciones de confirmación de perfil.
+
+    failure:
+      invalid: '%{authentication_keys} o contraseña inválidos!'
+      not_found_in_database: '%{authentication_keys} o contraseña inválidos!'
+      already_authenticated: ''
+      disabled: 'Su perfil está bloqueado.'
+
+    confirmations:
+      confirmed: Su perfil fue confirmado con éxito.
+      new:
+        resend_confirmation_instructions: Reenviar instrucciones de confirmación
+      send_instructions: >-
+        En algunos minutos, usted recibirá un correo electrónico con las instrucciones para confirmar su perfil.
+        Por favor, verifique la carpeta de spam.
+      send_paranoid_instructions: >-
+        Si su e-mail existe en nuestra base de datos, usted recibirá un correo electrónico con instrucciones
+        sobre cómo confirmar su perfil en algunos minutos.
+    passwords:
+      send_instructions: >-
+        En un momento, usted recibirá un e-mail con instrucciones para el cambio de su contraseña.
+        Por favor, verifique la carpeta de spam.
+
+    registrations:
+      signed_up: |- # flash message após criação de perfil (Cidadão)
+        Bienvenido(a)! Su perfil ha sido creado con éxito y usted ya lo puede utilizar el Ceará Transparente.
+        En algunos instantes usted recibirá un correo electrónico para confirmar su perfil. No se olvide de confirmalo (por favor, verifique la carpeta de spam).
+
+    unlocks:
+      send_instructions: >-
+        En un instante, recibirá un correo electrónico con instrucciones para desbloquear su cuenta.
+
+    omniauth_callbacks:
+      user:
+        error: Error al iniciar sesión con facebook, por favor llene los campos obligatorios
+        success: Sesión iniciada con éxito
+
+    sessions:
+      already_authenticated: Usted ya está autenticado. Haga clic en "Salir" e inténtelo de nuevo.
+      ticket:
+        signed_in:
+          sou: 'Manifestación encontrada con éxito.'
+          sic: 'Solicitud encontrada con éxito.'
+        signed_out: 'Saliu con éxito.'
+
+
+    # mailer translations.
+    mailer:
+      # custom subjects per-model with "#{model}_subject" (ex: user_subject, admin_subject, ...)
+      confirmation_instructions:
+        subject: "Instrucciones de confirmación de perfil"
+        # user_subject: "Bem-vindo(a)! Por favor, confirme sua conta no Alpop"
+        ppa_admin_subject: "[Ceará Transparente - PPA] Instrucciones de confirmación de perfil"
+
+        greetings: "Sea bienvenido(a), %{name}!"
+        instructions:  |-
+          Falta poco para finalizar su registro.
+          Necesitamos que confirme su perfil a continuación:
+
+        btn:
+          confirm: Confirmar mi perfil
+
+      reset_password_instructions:
+        subject: "Instrucciones para cambio de contraseña"
+        # user_subject: "Recuperação de senha"
+        ppa_admin_subject: "[Ceará Transparente - PPA] Instrucciones para cambio de contraseña"
+
+        greetings: "Hola, %{name}!"
+        instructions: >-
+          Para cambier su contraseña, use el botón de abajo. Te llevará a un formulario donde
+          podrás crear una nueva contraseña.
+
+        btn:
+          reset_password: Cambiar mi contraseña
+
+        expiration_notice: >-
+          El botón para cambiar su contraseña expirará en %{duration_in_hours} horas.
+
+        dismiss_notice: |-
+          Si usted no está intentando cambiar su contraseña, por favor, desconsidere este mensaje y no se preocupe - su cuenta está segura.
+          Probablemente alguien se equivocó el correo electrónico al intentar recuperar la contraseña escribiendo su correo electrónico en su lugar.
+
+      unlock_instructions:
+        subject: "Instrucciones para desbloquear su cuenta"
+        # user_subject: "Desbloqueie sua conta"
+        # ppa_admin_subject: "[Ceará Transparente - PPA] Instruções para desbloqueio de conta"
+
+      email_changed:
+        subject: "E-mail cambiado"
+        # user_subject: "Seu e-mail foi alterado"
+        # ppa_admin_subject: "[Ceará Transparente - PPA] E-mail alterado"
+
+      password_change:
+        subject: "Contraseña cambiada"
+        # user_subject: "Sua senha foi alterada"
+        # ppa_admin_subject: "[Ceará Transparente - PPA] Senha alterada"

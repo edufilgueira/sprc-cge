@@ -1,0 +1,22 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/macroregions/macroregion_investiment:
+        ano_exercicio: 'Ano'
+        codigo_poder: 'Código do poder'
+        descricao_poder: 'Poder'
+        codigo_regiao: 'Código da região'
+        descricao_regiao: 'Macrorregião'
+        valor_lei: 'Orçamento Inicial'
+        valor_lei_creditos: 'Orçamento Atualizado'
+        valor_empenhado: 'Valor Empenhado'
+        valor_pago: 'Valor Pago'
+        perc_empenho: '% Empenho'
+        perc_pago: '% Pago'
+        perc_pago_calculated: '% Pago'
+
+  integration/macroregions:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Bens Imóveis %{month}-%{year}'

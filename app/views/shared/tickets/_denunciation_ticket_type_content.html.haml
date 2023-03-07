@@ -1,0 +1,54 @@
+- ticket_object = f.object.sou_type.nil? ? ticket : f.object
+
+.row
+  .col-lg-12
+    = label_tag 'denunciation_type_ticket', t('shared.tickets.form.fields.denunciation_type_ticket')
+    %p
+   
+  .col-lg-7
+    - denunciation_organ_select_text = t('shared.tickets.form.fields.organ.select')
+    - data = { 'input': 'denunciation_organ', 'dependent-select': 'denunciation_topics', 'child-container': '[data-dependent-select-child=denunciation_topics]', 'param-name': 'organ', 'url': topics_api_v1_operator_classifications_path(paginate: false) }
+    = f.association :denunciation_organ, include_blank: denunciation_organ_select_text, collection: organs_for_select, selected: ticket_object.denunciation_organ_id, input_html: { data: data, 'aria-label': denunciation_organ_select_text }
+  .col-lg-5.pt-4
+    .bg-faded.rounded.my-1.px-2.pt-2.pb-1
+      = check_box_tag 'unknown_denunciation_organ', '1', @unknown_denunciation_organ, class: 'mr-1', 'data-input': 'unknown_denunciation_organ'
+      = label_tag 'unknown_denunciation_organ', t('shared.tickets.form.fields.denunciation_organ_select')
+
+-if user_enabled_to_view_topic(current_user) && !ticket.sic?
+  .row{'data-content': 'denunciation_topic'}
+    .col-lg-7
+      -# autoload em ticket-classification-helper.js
+      = f.association :citizen_topic, { input_html: { 'data-placeholder': t('messages.form.select'), 'data-input': 'denunciation_topic', 'data-url': topics_api_v1_operator_classifications_path, 'data-param-name': 'denunciation_organ', 'data-text': f.object.name }}
+
+    .col-lg-5.pt-4
+      .bg-faded.rounded.my-1.px-2.pt-2.pb-1
+        = check_box_tag 'unknown_denunciation_topic', '1', @unknown_denunciation_topic, class: 'mr-2', 'data-input': 'unknown_denunciation_topic'
+        = label_tag 'unknown_denunciation_topic', t('shared.tickets.form.fields.topic.unknown')
+
+- unless attendance_155
+  .row
+    .col-12
+      - user_scope = current_user&.operator? ? 'operator' : 'citizen'
+      - hint = t('shared.tickets.form.fields.description.anonymous_hint') if ticket.sou?
+      = f.input :denunciation_description, as: :ckeditor, required: true , input_html: { ckeditor: { toolbar: :mini }, value: ticket_object.denunciation_description }, hint: raw(hint || '')
+
+.row
+  .col-12
+    = f.input :denunciation_date, required: true, input_html: { value: ticket_object.denunciation_date }
+
+.row
+  .col-12
+    = f.input :denunciation_place, required: true, input_html: { value: ticket_object.denunciation_place }
+
+.row
+  .col-12
+    - denunciation_assurance_select_text = t('shared.tickets.form.fields.select')
+    = f.input :denunciation_assurance, prompt: denunciation_assurance_select_text, collection: ticket_denunciation_assurances_for_select, selected: ticket_object.denunciation_assurance, required: true, input_html: { 'data-input': 'denunciation_organ', 'aria-label': denunciation_assurance_select_text }
+
+.row
+  .col-12
+    = f.input :denunciation_witness, as: :ckeditor, required: true, input_html: { ckeditor: { toolbar: :mini }, value: ticket_object.denunciation_witness }
+
+.row
+  .col-12
+    = f.input :denunciation_evidence, as: :ckeditor, required: true, input_html: { ckeditor: { toolbar: :mini }, value: ticket_object.denunciation_evidence }, hint: t('shared.tickets.form.fields.denunciation_evidence.hint')

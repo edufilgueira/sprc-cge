@@ -1,0 +1,84 @@
+- content_for :javascript, javascript_include_tag(javascript)
+
+= simple_form_for [participant_profile] do |f|
+
+  .row
+    .col-12
+      = f.input :age, collection: participant_profile_ages_for_select
+  .row
+    .col-12.col-lg-6
+      = f.label :genre, title: t('.explains.genre') do
+        = t('activerecord.attributes.ppa/revision/participant_profile.genre')
+        %i.fa.fa-question-circle{ 'aria-hidden': 'true' }
+
+      = f.input :genre, label: false, collection: participant_profile_genre_for_select
+    .col-12.col-lg-6
+      = f.input :other_genre, label: t('.questions.which'), disabled: true
+
+  .row
+    .col-12.col-lg-6
+      = f.label :sexual_orientation, title: t('.explains.sexual_orientation') do
+        = t('activerecord.attributes.ppa/revision/participant_profile.sexual_orientation')
+        %i.fa.fa-question-circle{ 'aria-hidden': 'true' }
+      = f.input :sexual_orientation, label: false, collection: participant_profile_sexual_orientation_for_select
+    .col-12.col-lg-6
+      = f.input :other_sexual_orientation, label: t('.questions.which'), disabled: true
+
+  .row
+    .col-12.col-lg-6
+      = f.input :deficiency, collection: participant_profile_deficiency_for_select
+    .col-12.col-lg-6
+      = f.input :other_deficiency, label: t('.questions.which'), disabled: true
+
+  .row
+    .col-12.col-lg-6
+      = f.input :breed, collection: participant_profile_breed_for_select
+    .col-12.col-lg-6
+      = f.input :ethnic_group, collection: participant_profile_ethnic_group_for_select
+
+  .row
+    .col-12
+      = f.input :educational_level, collection: participant_profile_educational_level_for_select
+
+  .row
+    .col-12
+      = f.input :family_income, collection: participant_profile_family_income_for_select
+
+  .row
+    .col-12.col-lg-6
+      = f.input :representative, collection: participant_profile_representative_for_select
+    .col-12.col-lg-6
+      = f.input :representative_description
+
+  .row
+    .col-12.col-lg-6
+      %label
+        = t('.questions.collegiate_quest')
+
+      .radio
+        %label
+          = radio_button_tag :check_collegiate, 'false', false
+          = t('boolean.false')
+
+        %label
+          = radio_button_tag :check_collegiate, 'true', false
+          = t('boolean.true')
+    .col-12.col-lg-6
+      = f.input :collegiate, disabled: true
+
+  %label
+    = t('.questions.other_ppa_participation_quest')
+
+  .radio
+    %label
+      = radio_button :ppa_revision_participant_profile, 'other_ppa_participation', false
+      = t('boolean.false')
+
+    %label
+      = radio_button :ppa_revision_participant_profile, 'other_ppa_participation', true
+      = t('boolean.true')
+
+    = hidden_field_tag 'plan_id', plan.id
+  .row
+    .col-12
+      = f.submit t('.commands.save'), class: 'btn btn-primary float-right'

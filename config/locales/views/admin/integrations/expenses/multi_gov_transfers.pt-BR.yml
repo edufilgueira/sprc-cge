@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    integrations:
+      expenses:
+        multi_gov_transfers:
+          index:
+            title: Transferências a Instituições Multigovernamentais

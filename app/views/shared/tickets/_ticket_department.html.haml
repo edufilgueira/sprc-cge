@@ -1,0 +1,35 @@
+- if can?(:update, ticket_department)
+  .row
+    .col-12
+
+      %label
+        = ticket_department.title
+
+        %small
+          %i
+            - if ticket_department.deadline.present?
+              = I18n.t('ticket.deadline_with_label', count: ticket_department.deadline)
+            - else
+              = I18n.t('ticket_department.deadline.undefined')
+
+        .dropdown.d-inline-block.ml-2
+          = link_to '#!', class: "dropdown-toggle no-caret text-gray-dark", data: { toggle: :dropdown }, aria: { haspopup: :true, expanded: :false } do
+            %i.fa.fa-bars
+
+          .dropdown-menu.dropdown-menu-right
+            = link_to edit_operator_ticket_department_path(ticket_department), class: 'dropdown-item', data: { toggle: :tooltip } do
+              %i.fa.fa-calendar
+              = t('.edit')
+            = link_to poke_operator_ticket_department_path(ticket_department), class: 'dropdown-item', data: { toggle: :tooltip, confirm: t('.poke.confirm') }, title: t('.poke.info') do
+              %i.fa.fa-info-circle
+              = t('.poke.title')
+
+            - if can?(:renew_referral, ticket_department)
+              = link_to renew_referral_operator_ticket_department_path(ticket_department), class: 'dropdown-item', data: { toggle: :tooltip, confirm: t('.renew_referral.confirm') } do
+                %i.fa.fa-info-circle
+                = t('.renew_referral.title')
+
+- else
+  .row
+    .col-12
+      = ticket_department.title

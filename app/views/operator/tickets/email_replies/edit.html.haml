@@ -1,0 +1,18 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = t('.title')
+
+      .card-block
+
+        .content
+          = render 'form', ticket: ticket

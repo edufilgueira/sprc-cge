@@ -1,0 +1,48 @@
+#
+# Estamos usando a gem `devise-i18n`, que já fornece traduções. Aqui, estamos personalizando-as.
+# veja mais em https://github.com/tigrish/devise-i18n/blob/master/rails/locales/pt-BR.yml
+#
+en:
+  ppa:
+    admin:
+      auth:
+        # mailer translations.
+        mailer:
+          # custom subjects per-model with "#{model}_subject" (ex: user_subject, admin_subject, ...)
+          confirmation_instructions:
+            # subject: XXX fica em `locales/devise.*.yml`, na chave "devise.mailer.#{mail}.#{model}_subject"
+
+            greetings: "Welcome(a), %{name}!"
+            instructions:  |-
+              Your registration is almost complete!
+              In order to ensure your registration, please confirm your profile below: 
+
+            btn:
+              confirm: Confirm your profile 
+
+          reset_password_instructions:
+            # subject: XXX fica em `locales/devise.*.yml`, na chave "devise.mailer.#{mail}.#{model}_subject"
+
+            greetings: "Hello, %{name}!"
+            instructions: >-
+              To reset the password of your account, click on the button below.  
+              It will take you to a form where you can create a new password. 
+
+            btn:
+              reset_password: Reset my password 
+
+            expiration_notice: >-
+              Note: This session will expire in %{duration_in_hours} hours.
+
+            dismiss_notice: |-
+              In case you are not trying to change your password, please disconsider this message and do not worry - your account is secure.
+              Someone has probably missed the email when trying to recover the password by typing their address in the place.
+
+          unlock_instructions:
+            # subject: XXX fica em `locales/devise.*.yml`, na chave "devise.mailer.#{mail}.#{model}_subject"
+
+          email_changed:
+            # subject: XXX fica em `locales/devise.*.yml`, na chave "devise.mailer.#{mail}.#{model}_subject"
+
+          password_change:
+            # subject: XXX fica em `locales/devise.*.yml`, na chave "devise.mailer.#{mail}.#{model}_subject"

@@ -1,0 +1,35 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:status, :acronym, :name, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: executive_organs, sort_columns: sort_columns, table_locale: table_locale do |executive_organ|
+
+    - show_path = can?(:show, executive_organ) ? admin_executive_organ_path(executive_organ) : '#!'
+
+    %tr
+
+      %td
+        - icon_class = executive_organ.disabled? ? 'times' : 'check'
+        = link_to show_path, title: t("commands.disabled._#{executive_organ.disabled?}") do
+          %i{class: "fa fa-#{icon_class}"}
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(executive_organ.acronym)
+
+      %td
+        - organ_name = executive_organ.name
+        = link_to show_path, title: organ_name do
+          = filtered_highlighted(organ_name.truncate(70))
+
+      %td
+        .float-right
+          - if can?(:edit, executive_organ)
+            = link_to t('commands.edit'), edit_admin_executive_organ_path(executive_organ), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:manage, executive_organ)
+            = render 'shared/buttons/btn_toggle_disabled', resource: executive_organ, namespace: :admin

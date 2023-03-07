@@ -1,0 +1,9 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t(".title")
+
+- base_locale = t('.')
+- base_locale[:description] = t('.description', url: transparency_contracts_management_contracts_path)
+
+- stats_url = transparency_contracts_contracts_path(show_stats: true)
+
+= render 'shared/transparency/index', transparency_id: :contracts_contracts, stats_type: :month, stats_url: stats_url, base_locale: base_locale

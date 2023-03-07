@@ -1,0 +1,6 @@
+.row
+  .col-12
+    = f.input :used_input, collection: ticket_used_input_for_select, selected: ticket.used_input, input_html: { data: { select2_search: :hidden, input: :used_input } }
+.row{ data: { content: :used_input_url } }
+  .col-12
+    = f.input :used_input_url

@@ -1,0 +1,4 @@
+.form-group{ data: { content: :answer_template, url: search_api_v1_operator_answer_templates_path, target: target } }
+  = label_tag :search_template, t('.label'), class: 'form-control-label'
+  %i.fa.fa-spinner.fa-spin.fa-fw{ 'aria-hidden': 'true', 'data-content': 'loading' }
+  = text_field_tag :search_template, nil, class: 'form-control w-100 mb-3', placeholder: t('.placeholder')

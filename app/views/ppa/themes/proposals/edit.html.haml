@@ -1,0 +1,22 @@
+/ - content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+
+= javascript_include_tag('ckeditor/init')
+
+
+%h2.font-weight-bold
+	= t('.title')
+
+%hr.border-2
+
+.row
+	.col-md-12
+		.mb-4.card.rounded.border-shadow
+			.container.mt-4.mb-4
+				.row
+					.col-12
+						%h4
+							= t('.edit')
+				= simple_form_for([proposal], html: { data: { 'proposal-form' => '' } }, 
+					url: ppa_plan_region_theme_proposal_path(plan.id, region.code, theme.id, proposal)) do |f|
+					= render partial: 'form', locals: {f: f}

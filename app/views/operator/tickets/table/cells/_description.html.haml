@@ -1,0 +1,6 @@
+- ticket_show_path = operator_ticket_path(ticket)
+
+%td
+  - description = content_sanitizer(description_for_operator(current_user, ticket))
+  = link_to ticket_show_path, title: strip_tags(description) do
+    = highlight(description.truncate(40), params[:search])

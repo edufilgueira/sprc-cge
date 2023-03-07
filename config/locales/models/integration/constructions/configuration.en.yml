@@ -1,0 +1,25 @@
+en:
+  activerecord:
+    models:
+      integration/constructions/configuration:
+        one: Construction settings
+
+    attributes:
+      integration/constructions/configuration:
+        headers_soap_action: SOAPAction
+        password: Password
+        user: User name
+        der_wsdl: WSDL DER
+        dae_wsdl: WSDL DAE
+        der_operation: SOAP DER method name
+        der_response_path: DER answer path
+        dae_operation: SOAP DAE method name
+        dae_response_path: DAE answer path
+        der_contract_operation: SOAP CONTRACTS DER method path
+        der_contract_response_path: CONTRACTS DER answer path
+        der_measurement_operation: SOAP MEASUREMENTS DER method path
+        der_measurement_response_path: MEASUREMENTS DER answer path
+        dae_measurement_operation: SOAP MEASUREMENTS DAE method path
+        dae_measurement_response_path: MEASUREMENTS DAE answer path
+        dae_photo_operation: SOAP PHOTOS DAE method path
+        dae_photo_response_path: PHOTOS DAE answer path

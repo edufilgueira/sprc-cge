@@ -1,0 +1,55 @@
+@import 'base/variables';
+@import 'select2';
+
+label {
+  color: $text-gray-light;
+}
+
+select:disabled, select.custom-select:disabled {
+  color: $text-gray-lighter;
+}
+
+.label-margin {
+  margin-top: 30px;
+}
+
+
+[data-toggle="radio-buttons"] > .btn input[type="radio"],
+[data-toggle="radio-buttons"] > .btn input[type="checkbox"],
+[data-toggle="radio-buttons"] > .btn-group > .btn input[type="radio"],
+[data-toggle="radio-buttons"] > .btn-group > .btn input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .btn-group .btn {
+    padding: 0.2em;
+    font-size: 0.8em;
+  }
+}
+
+.form-group {
+  .checkbox {
+    label {
+      input {
+        margin-right: .5em;
+      }
+    }
+  }
+}
+
+.align-button-bottom {
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  left: 15px;
+}
+
+.has-danger {
+
+  .cke_4, .select2-selection {
+    border-color: #d20911;
+  }
+}

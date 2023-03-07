@@ -1,0 +1,16 @@
+pt-BR:
+  ppa:
+    past_workshops:
+      index:
+        next_workshops: Ver os próximos Encontros Regionais
+        title: Encontros de elaboração do PPA
+        form_title: Lista de encontros regionais realizados
+        address_title: 'Endereço:'
+        participants: 'Participantes:'
+        date_title: 'Data:'
+        documents: Arquivos
+
+      filters:
+        city: Município
+        end_at: Até o dia
+        all: Todos

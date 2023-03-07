@@ -1,0 +1,26 @@
+- if gas_vouchers.present?
+	.row
+		.col-12.text-success.mb-2
+			%strong= t('.cpf_found')
+		- [:cpf, :name, :lot, :city].each do |field|
+			.col-12.text-justify
+				%label= t(".#{field.to_s}")
+				%strong= gas_vouchers.first.send(field)
+		.col-12.text-justify.mt-2
+			%label= t(".city_hall")
+
+
+
+- else
+	.row
+		.col-12.text-justify.mb-4.text-warning
+			%strong= t(".cpf_not_found")
+
+		- [:criterion_msg, :criterion1, :criterion2, :criterion3].each do |field|
+			.col-12.text-justify
+				%label= t(".#{field.to_s}")
+
+		.col-12.mt-2
+			%label= 'Caso queira realizar alguma reclamação' 
+			= link_to 'clique aqui', new_user_session_path(ticket_type: :sou)
+		

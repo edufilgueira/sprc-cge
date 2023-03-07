@@ -1,0 +1,35 @@
+- tag_name = "#{parent_form_alias}[new_regional_strategies_attributes]"
+
+%hr
+
+.row.mt-3
+  .col-lg-12
+    .text-muted.d-inline.ml-1
+      = t('.quest')
+
+    .radio.d-inline
+      %label
+        = radio_button_tag :check_new_regional_strategy, 'true', nil
+        = t('boolean.true')
+
+      %label
+        = radio_button_tag :check_new_regional_strategy, 'false', nil
+        = t('boolean.false')
+
+.new_regional_strategies
+  - if is_edit_region_theme?
+    - aux = 0
+    = f.fields_for :new_regional_strategies do |f_new|
+      .row.mt-3
+        .col-lg-12
+          - aux += 1
+          = f_new.label :description, "#{aux}."
+          = f_new.text_field :description
+  - else
+    - (0..2).each do |index|
+      .row.mt-3
+        .col-lg-12
+          - tag_name_indexed = "#{tag_name}[#{index}]"
+
+          = label_tag "#{tag_name_indexed}[description]", "#{index+1}"
+          = text_field_tag "#{tag_name_indexed}[description]", ''

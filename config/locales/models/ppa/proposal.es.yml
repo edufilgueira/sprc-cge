@@ -1,0 +1,17 @@
+es:
+  activerecord:
+    models:
+      ppa/proposal:
+        one: Propuesta
+        other: Propuestas
+
+    attributes:
+      ppa/proposal:
+        city: Ciudad 
+        created_at: Fecha de la proposición 
+        justification: Justificación 
+        objective: Objetivo 
+        strategy: Estratégia
+        theme: Tema
+        user: Autor
+        votes_count: Votos

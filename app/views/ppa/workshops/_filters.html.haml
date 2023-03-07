@@ -1,0 +1,25 @@
+- search_placeholder = local_assigns[:search_placeholder] || t('messages.filters.search.label')
+
+.card-filters.filter-bar{'data-filter-bar': filter_id}
+
+  = form_for filter_path, method: :get, remote: true, html: { class: 'workshops-search-form' } do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+      .col-4
+
+        = label_tag t('.city')
+        = select_tag :city_id, options_from_collection_for_select(PPA::City.all, :id, :name, params[:city_id]), prompt: t('.all')
+
+      .col-4
+
+        = label_tag t('.start_at')
+        = text_field_tag :start_at, '', class: 'form-control datetimepicker'
+
+      .col-4
+        .align-button-bottom
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block btn-search'
+
+    - # Adiciona outros filtros, além da barra de busca, passados pelo bloco
+    = yield

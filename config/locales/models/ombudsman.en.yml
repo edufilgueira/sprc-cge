@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    attributes:
+
+      ombudsman:
+        title: 'Title'
+        contact_name: 'Ombudsman:'
+        phone: 'Telephone number:'
+        email: 'E-mail address:'
+        address: 'Address:'
+        operating_hours: 'Working hours:'

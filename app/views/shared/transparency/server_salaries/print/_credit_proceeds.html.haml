@@ -1,0 +1,43 @@
+- registration = server_salary.registration
+- date = server_salary.date
+- credit_proceeds = registration.credit_proceeds(date).sorted
+- grouped_proceeds = transparency_server_salaries_grouped_proceeds(credit_proceeds)
+
+.row
+  .col-12
+    %h3.h5.text-center
+      = t('shared.transparency.server_salaries.show.credit_proceeds.title')
+
+    - if credit_proceeds.present?
+      %table.table.table-striped.table-sm{summary: t('shared.transparency.server_salaries.show.credit_proceeds.summary')}
+
+        %thead
+          %tr
+            %th
+              = t("shared.transparency.server_salaries.show.credit_proceeds.table.heads.dsc_provento")
+            %th.text-right
+              = t("shared.transparency.server_salaries.show.credit_proceeds.table.heads.vlr_financeiro")
+
+        %tbody
+          - grouped_proceeds.each do |dsc_provento, vlr_financeiro|
+            %tr
+              %td
+                = dsc_provento
+
+              %td.text-right
+                = number_to_currency(vlr_financeiro)
+
+          %tr.font-weight-bold
+            %td
+              = t('shared.transparency.server_salaries.show.credit_proceeds.total')
+
+            %td.text-right
+              = number_to_currency(server_salary.income_total)
+
+    - else
+
+      .row
+
+        %i.col-md-12.text-center
+          = t('shared.transparency.server_salaries.show.credit_proceeds.empty')
+

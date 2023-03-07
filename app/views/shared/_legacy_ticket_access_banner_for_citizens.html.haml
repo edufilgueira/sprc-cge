@@ -1,0 +1,6 @@
+-# - url = 'http://sou.cge.ce.gov.br/manifestacaoPublicaConsulta.seam'
+- url = 'https://cearatransparente.ce.gov.br/SOU/inicialPublico.seam'
+- date = Date.new(2018, 7, 18)
+
+.alert.alert-warning.mb-0
+  = raw t('.content', url: url, date: I18n.l(date, format: :day_month))

@@ -1,0 +1,19 @@
+- other_tickets = children_except(ticket)
+
+- if other_tickets.present?
+  %p.content-label
+    = t('.other_organs')
+
+  - other_tickets.each do |other_ticket|
+    .row.col-12
+      %p.content-value
+        = status_for_operator(other_ticket)
+
+
+- ticket_departments = TicketDepartment.where(ticket_id: ticket)
+
+- if ticket_departments.present?
+  %p.content-label
+    = t('.departments')
+
+  = render partial: 'shared/tickets/ticket_department', collection: ticket_departments, locals: { ticket: ticket }

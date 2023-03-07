@@ -1,0 +1,64 @@
+en:
+  activerecord:
+    attributes:
+      integration/expenses/ned:
+        exercicio: Period
+        unidade_gestora: Secretariat/Agency
+        unidade_executora: Executing unit
+        numero: Note of commitment number
+        natureza: Nature
+        efeito: Effect
+        data_emissao: Issue date
+        valor: Committed value
+        valor_pago: Paid value
+        classificacao_orcamentaria_reduzido: Reduced budget classification
+        classificacao_orcamentaria_completo: Complete budget classification
+        item_despesa: Expense item
+        expense_nature_item_title: Expense item
+        cpf_ordenador_despesa: Expense orderer CPF
+        credor: Creditor
+        cpf_cnpj_credor: Creditor CPF/CNPJ
+        razao_social_credor: Company official name (Razão Social)
+        numero_npf_ordinario: NPF ordinary number
+        projeto: Project
+        numero_parcela: Installment number
+        isn_parcela: Installment number ISN
+        numero_proposta: Proposal number
+        numero_processo_protocolo_original: Process original protocol
+        especificacao_geral: General specification
+        data_atual: Current date
+
+        date_of_issue: Expense Date
+        date_of_issue_filter: Period
+        management_unit_title: Secretariat/Agency
+        executing_unit_title: Executing unit
+        creditor_nome: Creditor
+        contract: Contract
+
+        classificacao_unidade_orcamentaria: Budget unit
+        classificacao_funcao: Function
+        classificacao_subfuncao: Subfunction
+        classificacao_programa_governo: Government program
+        classificacao_acao_governamental: Government action
+        classificacao_regiao_administrativa: Administrative region
+        classificacao_natureza_despesa: Expenditure nature
+        classificacao_fonte_recursos: Resources source
+        classificacao_subfonte: Sub source
+        classificacao_tipo_despesa: Expenditure type
+        classificacao_elemento_despesa: Expenditure element
+
+        calculated_valor_final: 'Committed value'
+        calculated_valor_pago_final: 'Paid value'
+
+        calculated_valor_pago_exercicio: 'Amount paid on commitment'
+        calculated_valor_pago_apos_exercicio: 'Amount paid in years after commitment'
+        calculated_valor_liquidado_exercicio: 'Net amount paid on commitment'
+        calculated_valor_liquidado_apos_exercicio: 'Net amount paid in years after commitment'
+        items_description: Commitment description
+
+        function_title: 'Function'
+        sub_function_title: 'Subfunction'
+        resource_source_title: 'Resource source'
+        government_program_title: 'Government program'
+        government_action_title: 'Government action'
+        modalidade_licitacao: 'Bidding modality'

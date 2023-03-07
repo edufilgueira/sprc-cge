@@ -1,0 +1,30 @@
+en:
+
+  tickets:
+
+    new:
+      sic:
+        identified:
+          title: Identified Request
+        anonymous:
+          title: Anonymous Request
+      sou:
+        identified:
+          title: Identified Manifestation
+        anonymous:
+          title: Anonymous Manifestation
+
+    create:
+
+      sic:
+        identified:
+          title: Identified Request
+        anonymous:
+          title: Anonymous Request
+        error: Unable to create the request
+      sou:
+        identified:
+          title: Identified Manifestation
+        anonymous:
+          title: Anonymous Manifestation
+        error: Unable to create the manifestation

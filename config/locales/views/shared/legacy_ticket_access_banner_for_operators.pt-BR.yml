@@ -1,0 +1,6 @@
+pt-BR:
+  shared:
+    legacy_ticket_access_banner_for_operators:
+      content: >-
+        Para chamados iniciados antes do dia %{date}, por favor
+        <a href="%{url}" target="_blank">acesse aqui</a>

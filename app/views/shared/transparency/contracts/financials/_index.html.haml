@@ -1,0 +1,82 @@
+- if financials.present?
+
+  .table-responsive
+
+    - total_financials = Integration::Contracts::Financial.where(isn_sic: contract.isn_sic).count
+
+    - data_attributes = { summary: t('.summary') }
+
+    - if total_financials <= 20
+      - export_file_name = I18n.t('shared.transparency.contracts.contracts.show.financials.table.export_file_name', id: contract.isn_sic)
+
+      - data_attributes = data_attributes.merge({'data-toggle': 'table-export', 'data-filename': export_file_name })
+
+    %table.table.table-hover.table-striped.table-sm.bg-faded{ data_attributes }
+
+      %thead
+
+        %tr
+
+          - heads = [:num_documento, :data_documento, :valor_documento, :num_pagamento, :data_pagamento, :valor_pagamento]
+
+          - heads.each do |head|
+            %th
+              = Integration::Contracts::Financial.human_attribute_name(head)
+
+      %tbody
+
+        - financials.each do |financial|
+          %tr
+            %td
+              .a
+                - label = resource_value(financial, :num_documento)
+                - ned = financial.ned
+
+                - if ned.present?
+                  - path = (namespace == :admin ? admin_integrations_expenses_ned_path(ned) : transparency_expenses_ned_path(ned))
+                  = link_to path do
+                    = label
+                    .fa.fa-external-link
+                - else
+                  = label
+
+            %td
+              .a
+                = resource_value(financial, :data_documento, format: :date)
+            %td
+              .a
+                = resource_value(financial, :valor_documento)
+            %td
+
+              - if financial.num_pagamento.present?
+                .a
+                  - label = resource_value(financial, :num_pagamento)
+                  - npf = financial.npf
+
+                  - if npf.present?
+                    - path = (namespace == :admin ? admin_integrations_expenses_npf_path(npf) : transparency_expenses_npf_path(npf))
+                    = link_to path do
+                      = label
+                      .fa.fa-external-link
+                  - else
+                    = label
+
+            %td
+              - if financial.num_pagamento.present?
+                .a
+                  = resource_value(financial, :data_pagamento, format: :date)
+
+            %td
+              - if financial.num_pagamento.present?
+                .a
+                  = resource_value(financial, :valor_pagamento)
+
+  .text-center.mt-2
+    = paginate financials, remote: true
+
+- else
+
+  .row
+
+    %i.col-md-12.text-center
+      = t('.empty')

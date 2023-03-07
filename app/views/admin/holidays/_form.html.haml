@@ -1,0 +1,22 @@
+.container
+  = simple_form_for [:admin, holiday] do |f|
+
+    .row
+      .col-md-5.col-lg-6
+        = f.input :title, autofocus: true
+
+      .col-md-3.col-lg-2
+        = f.input :day, as: :select, collection: (1..31)
+
+      .col-md-4
+        - options = t('date.month_names').compact.each_with_index.map{ |month, index| [month, index + 1] }
+
+        = f.input :month, as: :select, collection: options
+
+
+    %hr{'aria-hidden': 'true'}
+
+    .row
+      .col-12
+        = link_to t('.commands.cancel'), admin_holidays_path, class: 'btn btn-warning pull-left'
+        = f.submit t('commands.save'), class: 'btn btn-primary float-right'

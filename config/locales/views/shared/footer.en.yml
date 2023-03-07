@@ -1,0 +1,105 @@
+en:
+  shared:
+
+    footer:
+      sections:
+        noticias:
+          title: News
+
+          ultimas_noticias:
+            title: Latest news
+
+
+          mais_acessadas:
+            title: Most read
+
+
+          todas:
+            title: All the news
+
+
+        servicos:
+          title: Services
+
+          temas:
+            title: By theme
+
+
+          meus_servicos:
+            title: My services
+
+
+          aplicativos:
+            title: Official Apps
+
+
+        estrutura:
+          title: Structure
+
+          governador:
+            title: Governor
+
+
+          vice_governadoria:
+            title: Vice-governor
+
+
+          secretariado:
+            title: Secretariat
+
+
+          servidores:
+            title: Public servants
+
+
+          orgaos:
+            title: Sectoral bodies and entities
+
+
+          historia:
+            title: Ceará history
+            url: '/portal-da-transparencia/paginas/o-estado-do-ceara'
+
+        negocios:
+          title: Business
+
+          turismo:
+            title: Tourism
+
+
+          industria:
+            title: Industry
+
+
+          comercio:
+            title: Trade
+
+
+      ppa_admin: PPA Administration
+
+      site_map: Site map
+
+      contacts:
+
+        como_comunicar:
+          title: 'How to communicate with us'
+
+          fale_conosco:
+            title: 'Talk to our Ombudsman'
+
+
+          noticias_email:
+            title: 'News by email'
+
+
+          noticias_whatsapp:
+            title: 'News by WhatsApp'
+
+
+          espaco_imprensa:
+            title: 'Press Space'
+
+        nossos_canais:
+          title: 'Our Channels'
+
+      if-design: "Awarded project at the iF Design Awards 2018 in the discipline Design of Service/UX in the category Governments and Institutions. Click the stamp to access the project page in the iF gallery."

@@ -1,0 +1,22 @@
+- content_for :title, t(".title.#{ticket.ticket_type}", protocol: ticket.parent_protocol)
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+- namespace = :operator
+
+%h2
+  = t(".title.#{ticket.ticket_type}", protocol: ticket.parent_protocol)
+
+= render 'operator/tickets/note_alert', ticket: ticket.parent || ticket
+
+.row
+
+  .col-12
+    - comment_form_url = [namespace, comment]
+
+    = render 'shared/tickets/show', namespace: namespace, ticket: ticket, comment: comment, comment_form_url: comment_form_url
+
+    = render 'shared/tickets/ticket_logs', ticket: ticket, answer_form_url: nil, namespace: namespace
+
+    = render 'shared/tickets/public_comments', ticket: ticket, comment_form_url: comment_form_url
+
+    = render 'shared/tickets/ticket_logs/history', ticket: ticket, namespace: namespace

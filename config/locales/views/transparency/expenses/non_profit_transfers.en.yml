@@ -1,0 +1,7 @@
+en:
+  transparency:
+    expenses:
+      non_profit_transfers:
+        index:
+          title: Transfers to Non-Profit Entities
+          description: Here you can view information on Transfers to Non-Profit Entities.

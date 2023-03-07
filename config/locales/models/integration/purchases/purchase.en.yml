@@ -1,0 +1,58 @@
+en:
+  activerecord:
+    attributes:
+      integration/purchases/purchase:
+        numero_publicacao: Publication number
+        numero_viproc: VIPROC number
+        num_termo_participacao: Participation term number
+        cnpj: CNPJ
+        nome_resp_compra: Name of the person responsible for the completed bid (Unit)
+        uf_resp_compra: UF of the person responsible for the completed bidding process
+        macro_regiao_org: Macrorregion
+        micro_regiao_org: Microregion
+        municipio_resp_compra: City of the person responsible for the completed bidding process
+        cpf_cnpj_fornecedor: CPF/CNPJ contractor
+        nome_fornecedor: Supplier name
+        tipo_fornecedor: Supplier type
+        uf_fornecedor: Supplier UF (Federation Unit)
+        macro_regiao_fornecedor: Supplier macroregion
+        micro_regiao_fornecedor: Supplier microregion
+        municipio_fornecedor: Supplier city
+        tipo_material_servico: Material/Service type
+        nome_grupo: Group name
+        codigo_item: Item code
+        descricao_item: Item descriptiom
+        unidade_fornecimento: Supply unit
+        marca: Brand
+        natureza_aquisicao: Nature of acquisition
+        tipo_aquisicao: Acquisition type
+        sistematica_aquisicao: Acquisition systematic
+        forma_aquisicao: Acquisition form
+        tratamento_diferenciado: Different treatment
+        data_publicacao: Publication date
+        quantidade_estimada: Estimated Amount
+        valor_unitario: Unitary value
+        data_finalizada: End date
+        valor_total_melhor_lance: Total value
+        valor_estimado: Estimated value
+        valor_total_estimado: Estimated total value
+        aquisicao_contrato: Contract acquisition
+        prazo_entrega: Delivery deadline
+        prazo_pagamento: Payment deadline
+        exige_amostras: Requires samples
+        data_carga: Loading date
+        ano: Year
+        mes: Month
+        ano_mes: Year/Month
+        codigo_classe_material: Material class code
+        nome_classe_material: Material class name
+        registro_preco: Price registration
+        unid_compra_regiao_planej: Purchase unit and management region
+        fornecedor_regiao_planejamento: Supplier and management region
+        unidade_gestora: Management unit
+        grupo_lote: Group/lot
+        descricao_item_referencia: Reference item description
+        id_item_aquisicao: Acquisition item code
+        cod_item_referencia: Reference item code
+        manager_id: Unit
+        valor_total_calculated: Estimated total value

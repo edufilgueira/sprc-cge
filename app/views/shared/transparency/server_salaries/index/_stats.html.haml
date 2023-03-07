@@ -1,0 +1,52 @@
+
+= render 'shared/transparency/index/stats', stats: stats, paths: { xlsx: xlsx_download_path, csv: csv_download_path } do
+  = cache(cache_key) do
+
+    .row
+      .col-12
+        - total_data = stats.data[:total]
+        - stats_month_year = Date.new(stats.year, stats.month)
+        - last_stats_date = l(stats_month_year, format: :month_year_long)
+
+        .row
+          .col-12.col-lg-4
+            .content-with-label
+              - label = raw(t('shared.transparency.server_salaries.index.stats.count', date: last_stats_date))
+              - value = number_with_delimiter(total_data[:count])
+
+              %label.content-label{'aria-label': label, title: label}
+                = label
+
+              .content-value{'aria-label': value, title: value}
+                .h3.text-muted
+                  = value
+
+          .col-12.col-lg-4
+            .content-with-label
+              - label = raw(t('shared.transparency.server_salaries.index.stats.unique_count', date: last_stats_date))
+              - value = number_with_delimiter(total_data[:unique_count])
+
+              %label.content-label{'aria-label': label, title: label}
+                = label
+
+              .content-value{'aria-label': value, title: value}
+                .h3.text-muted
+                  = value
+
+          .col-12.col-lg-4
+            .content-with-label
+              - label = raw(t('shared.transparency.server_salaries.index.stats.income_total', date: last_stats_date))
+              - value = number_to_currency(total_data[:income_total] - total_data[:discount_under_roof])
+
+              %label.content-label{'aria-label': label, title: label}
+                = label
+
+              .content-value{'aria-label': value, title: value}
+                .h3.text-muted
+                  = value
+
+          .col-12
+            - charts_tabs = [:functional_status, :organ, :role]
+            - charts_path = 'server_salaries'
+
+            = render 'shared/transparency/index/charts', stats: stats, charts_path: charts_path, charts_tabs: charts_tabs, base_locale: t('shared.transparency.server_salaries.index.charts')

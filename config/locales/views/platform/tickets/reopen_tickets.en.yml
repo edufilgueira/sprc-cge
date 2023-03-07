@@ -1,0 +1,21 @@
+en:
+
+  platform:
+
+    tickets:
+
+      reopen_tickets:
+
+        new:
+          sou:
+            title: Reopen manifestation
+          sic:
+            title: Reopen request
+
+        create:
+          sou:
+            done: Manifestation successfully reopened. The deadline has been restarted
+            error: Unable to reopen manifestation
+          sic:
+            done: Request successfully reopened. The deadline has been restarted
+            error: Unable to reopen request

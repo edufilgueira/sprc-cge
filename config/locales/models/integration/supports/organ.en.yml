@@ -1,0 +1,13 @@
+en:
+  activerecord:
+    attributes:
+      integration/supports/organ:
+        codigo_entidade: Entity code
+        codigo_folha_pagamento: Payroll code
+        codigo_orgao: Agency code
+        descricao_administracao: Administrative description
+        descricao_entidade: Entity description
+        descricao_orgao: Agency description
+        title: Agency
+        poder: Power
+        sigla: Agency acronym

@@ -1,0 +1,9 @@
+pt-BR:
+  ppa:
+    admin:
+      revision:
+        exports:
+          show:
+            title: Exportação de dados de Revisão PPA %{ppa}
+            description: "O arquivo com os dados exportados, serão enviados para o email %{email}"
+            wait: Aguarde o email em sua caixa de entrada

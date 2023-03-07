@@ -1,0 +1,49 @@
+pt-BR:
+  activerecord:
+    models:
+      integration/expenses/npd:
+        one: Nota de Liquidação de Despesa
+        other: Notas de Liquidação de Despesa
+
+    attributes:
+      integration/expenses/npd:
+        exercicio: Exercício
+        unidade_gestora: Unidade gestora
+        unidade_executora: Unidade executora
+        numero: Número da nota de pagamento
+        natureza: Natureza
+        efeito: Efeito
+
+        numero_npd_ordinaria: Número NPD ordinária
+        codigo_localidade_npd_ordinaria: Código localidade da NPD ordinária
+        codigo_retencao: Código da retenção
+        justificativa: Justificativa
+        numero_processo_administrativo_despesa: Número processo administrativo da despesa
+        data_emissao: Data de emissão
+        date_of_issue: Data de emissão
+        credor: Credor
+        documento_credor: Documento do credor
+        valor: Valor
+        numero_nld_ordinaria: Número da NLD ordinária
+        codigo_natureza_receita: Código da natureza da receita
+        servico_bancario: Serviço bancário
+        banco_origem: Banco de origem
+        agencia_origem: Agência de origem
+        digito_agencia_origem: Dígito da agência de origem
+        conta_origem: Conta de origem
+        digito_conta_origem: Dígito da conta de origem
+        banco_pagamento: Banco do pagamento
+        codigo_localidade: Código da localidade
+        banco_beneficiario: Banco do beneficiário
+        agencia_beneficiario: Agência do beneficiário
+        digito_agencia_beneficiario: Dígito da agência do beneficiário
+        conta_beneficiario: Conta do beneficiário
+        digito_conta_beneficiario: Dígito da conta do beneficiário
+        status_movimento_bancario: Status do movimento bancário
+        data_retorno_remessa_bancaria: Data de retorno da remessa bancária
+        processo_judicial: Processo judicial
+        data_atual: Data atual
+
+        management_unit_title: Secretaria/Órgão
+        executing_unit_title: Unidade executora
+        creditor_nome: Credor

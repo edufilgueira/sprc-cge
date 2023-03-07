@@ -1,0 +1,28 @@
+en:
+
+  platform:
+
+    users:
+
+      form:
+        commands:
+          change_password: Change password
+        person_types:
+          legal:
+            name: Company name 
+            cnpj: Register of Corporate Taxpayers  
+        fields:
+          education_level:
+            select: Select education level 
+          city:
+            select: Select city 
+          unconfirmed_email:
+            tooltip: "Waiting for e-mail to be confirmed <b>%{email}</b>"
+
+      edit:
+        title: Edit profile
+        breadcrumb_title: Edit profile
+
+      update:
+        done: Profile successfully updated 
+        error: Error when updating profile 

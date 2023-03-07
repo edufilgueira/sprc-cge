@@ -1,0 +1,44 @@
+.row.mt-4
+
+  .col
+
+    %h3.h5.text-center
+      = t('shared.transparency.contracts.contracts.show.additives.title')
+
+    - if additives.present?
+
+      %table.table.table-striped.table-sm.table-print{summary: t('shared.transparency.contracts.contracts.show.additives.summary')}
+
+        %thead
+          %tr
+            - heads = [:descricao_tipo_aditivo, {id: :descricao_observacao, class: 'w-50'}, :data_termino, {id: :valor, class: 'text-right'}]
+
+            - heads.each do |head|
+              - if head.is_a?(Hash)
+                %th{class: head[:class]}
+                  = t("shared.transparency.contracts.contracts.show.additives.table.heads.#{head[:id]}")
+              - else
+                %th
+                  = t("shared.transparency.contracts.contracts.show.additives.table.heads.#{head}")
+
+        %tbody
+          - additives.each do |additive|
+
+            %tr
+              %td
+                = additive.descricao_tipo_aditivo
+
+              %td.w-50
+                = additive.descricao_observacao
+
+              %td
+                = l(additive.data_termino.to_date) if additive.data_termino.year > 1900
+
+              %td.text-right
+                = number_to_currency(additive.valor_acrescimo + additive.valor_reducao)
+
+    - else
+
+      .row
+        %i.col-md-12.text-center
+          = t('shared.transparency.contracts.contracts.show.additives.empty')

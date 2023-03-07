@@ -1,0 +1,28 @@
+en:
+  activerecord:
+    attributes:
+
+      organ:
+        acronym: Acronym
+        code: Code
+        description: Description
+        ignore_cge_validation: SOU manifestations are not validated by CGE
+        name: Name
+        subnet: Ombudsman sub-network is present
+
+    errors:
+      models:
+        organ:
+          attributes:
+
+  organ:
+    select:
+      all: All bodies
+
+    secretary:
+      select:
+        all: All secretaries
+
+    secretary_and_organ:
+      select:
+        all: All

@@ -1,0 +1,7 @@
+en:
+  transparency:
+    expenses:
+      npds:
+        index:
+          title: Expense Payment Notes
+          description: 'Here you can consult information of expenses payment notes by searching by period, management unit, creditor name.'

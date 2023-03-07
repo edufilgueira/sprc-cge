@@ -1,0 +1,15 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t('.title', protocol: attendance.protocol)
+= javascript_include_tag('ckeditor/init') # precisa ficar aqui para eager init!
+- content_for :javascript, javascript_include_tag(javascript)
+
+%h2.sr-only
+  = t('.title', protocol: attendance.protocol)
+
+.row
+  .col-12
+
+    - if ticket.present? && ticket.in_progress?
+      = render 'unconfirmed'
+    - else
+      = render 'confirmed'

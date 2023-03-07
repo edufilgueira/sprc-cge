@@ -1,0 +1,7 @@
+es:
+  transparency:
+    expenses:
+      neds:
+        index:
+          title: Notas de Rendimiento de Gasto
+          description: Aquí usted podrá consultar informaciones sobre las notas de rendimiento de gasto buscando por período, unidad gestora, nombre del acreedor o especificación del gasto.

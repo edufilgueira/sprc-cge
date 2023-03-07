@@ -1,0 +1,34 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/expenses/city_transfer:
+        model_name: Transferência a município
+
+  integration/expenses/city_transfer:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Transferência a município %{year}'
+
+          header:
+            exercicio: Exercício
+            date_of_issue: Data de emissão
+            management_unit_title: Unidade gestora
+            budget_unit_title: Unidade orçamentária
+            executing_unit_title: Unidade executora
+            creditor_nome: Credor
+            function_title: Função
+            sub_function_title: Subfunção
+            government_program_title: Programa de governo
+            government_action_title: Ação de governo
+            administrative_region_title: Região administrativa
+            expense_nature_title: Natureza da despesa
+            resource_source_title: Fonte de recurso
+            expense_type_title: Tipo da despesa
+            valor: Valor empenhado
+            valor_pago: Valor pago
+            calculated_valor_final: Valor final
+            calculated_valor_pago_final: Valor pago final
+            calculated_valor_suplementado: Valor suplementado
+            calculated_valor_anulado: Valor anulado
+            calculated_valor_pago_anulado: Valor pago anulado

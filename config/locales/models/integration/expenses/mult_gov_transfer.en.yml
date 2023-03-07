@@ -1,0 +1,31 @@
+en:
+  activerecord:
+    models:
+      integration/expenses/multi_gov_transfer: 'Transfers to Multigovernmental Institutions'
+
+  integration/expenses/multi_gov_transfer:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Transfers to Multigovernmental Institutions %{year}'
+
+          header:
+            exercicio: Period
+            date_of_issue: Issue date
+            management_unit_title: Secretariat/Agency
+            budget_unit_title: Budget unit
+            executing_unit_title: Executing unit
+            creditor_nome: Creditor
+            function_title: Function
+            sub_function_title: Subfunction
+            government_program_title: Government program
+            government_action_title: Government action
+            administrative_region_title: Administrative region
+            expense_nature_title: Expenditure nature
+            resource_source_title: Resource source
+            expense_type_title: Expenditure type
+            calculated_valor_final: Final value
+            calculated_valor_pago_final: Final paid value
+            calculated_valor_suplementado: Supplemented value
+            calculated_valor_anulado: Annulled value
+            calculated_valor_pago_anulado: Annulled paid value

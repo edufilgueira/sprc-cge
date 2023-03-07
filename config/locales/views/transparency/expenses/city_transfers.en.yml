@@ -1,0 +1,7 @@
+en:
+  transparency:
+    expenses:
+      city_transfers:
+        index:
+          title: Transfers to Cities
+          description: Here you can consult information of Transfers to Cities.

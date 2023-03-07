@@ -1,0 +1,61 @@
+.card-filters.filter-bar{'data-filter-bar': filter_id}
+
+  = form_for filter_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    = hidden_field_tag(:ticket_type, ticket_type, 'data-filter': 'permanent')
+
+    .row
+      .col-12.col-lg-6
+        - placeholder = local_assigns[:search_placeholder] || t('messages.filters.search.label')
+        = text_field_tag(:search, params[:search], class: 'form-control w-100 mb-3', 'data-filter-bar-ignore-submit-on-enter': 'true', placeholder: placeholder)
+
+      .col-12.col-lg-3
+        = f.submit t('commands.search'), class: 'btn btn-primary btn-block'
+
+    .row.mt-2
+
+      - if ticket_type == 'sou'
+        - #
+        - # sou_type
+        - #
+        .col-12.col-lg-6.mb-3
+
+          - options = options_for_select(sou_types_for_select(current_user), params[:sou_type])
+          = label_tag :sou_type, t('.select.sou_type')
+          = select_tag :sou_type, options, { include_blank: t('messages.filters.select.all.male') }
+
+
+      - #
+      - # organ
+      - #
+      .col-12.col-lg-6.mb-3
+
+        - options = options_for_select(organs_for_select, params[:organ])
+        = label_tag :organ, t('.select.organ')
+        = select_tag :organ, options, { include_blank: t('messages.filters.select.all.male') }
+
+      - #
+      - # topic
+      - #
+      .col-12.col-lg-6.mb-3
+
+        - options = options_for_select(topics_for_select, params[:topic])
+        = label_tag :topic, t('.select.topic')
+        = select_tag :topic, options, { include_blank: t('messages.filters.select.all.male') }
+
+      - #
+      - # tema
+      - #
+      .col-12.col-lg-6.mb-3
+
+        - options = options_for_select(themes_for_select, params[:theme])
+        = label_tag :theme, t('.select.theme')
+        = select_tag :theme, options, { include_blank: t('messages.filters.select.all.male') }
+
+    - filtered = (params[:search].present? || params[:sou_type].present? || params[:organ].present? || params[:topic].present? || params[:theme].present?)
+
+    = render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered
+
+

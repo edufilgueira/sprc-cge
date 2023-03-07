@@ -1,0 +1,33 @@
+%section.card.card-green.border-0.mb-4.rounded{ 'aria-labelledby': 'top_queries_sections' }
+  .card-header.text-center
+    %h4.my-2
+      %i.fa.fa-search-plus
+      = t('.cards.title')
+
+  .card-body
+    %ul.list-group.list-group-flush.list-group-flex.list-group-flex-20
+
+      - %w(server_salaries revenues_accounts expenses_budget_balances expenses_neds public_debts contracts_contracts contracts_convenants).each do |item|
+
+        %li.list-group-item
+          - if item == "public_debts"
+            - t_base = 'home.transparency_portal.featured_queries.public_debt'
+            = link_to '/portal-da-transparencia/paginas/divida-publica' do
+              %i.fa.fa-1-5x.fa-border.fa-border-tertiary.mr-2.rounded.text-green{ class: t("#{t_base}.icon") }
+              = t("#{t_base}.title")
+          - else
+            %i.fa.fa-1-5x.fa-border.fa-border-tertiary.mr-2.rounded.text-green{ class: "fa-#{item}" }
+            = link_to t(".cards.#{item}.title"), [:transparency, item]
+
+      - %w(licitation).each do |item|
+        %li.list-group-item
+          %i.fa.fa-1-5x.fa-border.fa-border-tertiary.mr-2.rounded.text-green{ class: t(".cards.#{item}.icon") }
+          = link_to t(".cards.#{item}.title"), t(".cards.#{item}.link")
+
+      %li.list-group-item
+        %i.fa.fa-1-5x.fa-border.fa-border-tertiary.mr-2.rounded.text-green{ class: t(".cards.address.icon") }
+        = link_to t(".cards.address.title"), t(".cards.address.link")
+
+      %li.list-group-item
+        %i.fa.fa-1-5x.fa-border.fa-border-tertiary.mr-2.rounded.text-green{ class: t(".cards.access.icon") }
+        = link_to t(".cards.access.title"), t(".cards.access.link"), target: '_blank'

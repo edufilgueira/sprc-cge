@@ -1,0 +1,26 @@
+- header = %i[strategy user created_at votes_count]
+
+- table_locale = t('.table')
+
+= render 'shared/components/filtered_warning', filtered: filtered?
+
+= render 'shared/components/remote_table', header: header, collection: proposals, sort_columns: sort_columns, table_locale: table_locale do |proposal|
+
+  - link = ppa_proposal_path(proposal)
+
+  %tr
+    %td
+      - strategy_text = filtered_highlighted(proposal.strategy)
+      = link_to truncate(strategy_text, escape: false, length: 90), link,
+          data: { toggle: 'tooltip', placement: 'top' }, title: proposal.strategy
+
+    %td
+      - author_name = filtered_highlighted(proposal.user_name)
+      = link_to truncate(author_name, escape: false), link,
+          data: { toggle: 'tooltip', placement: 'top' }, title: proposal.user_name
+
+    %td.text-right
+      = link_to l(proposal.created_at, format: :short), link
+
+    %td.text-right
+      = proposal.votes_count

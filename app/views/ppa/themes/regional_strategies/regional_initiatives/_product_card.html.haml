@@ -1,0 +1,30 @@
+.card.p-4.border-shadow
+  %h4.text-center.mb-4
+    = title
+
+  .row
+    .col-md-6.col-sm-12.text-center
+      %h6.font-weight-bold
+        = t('.expected')
+
+      -# = number_to_currency expected
+      = expected.nil? ? t('.unavailable') : number_with_delimiter(expected.to_i)
+
+    .col-md-6.col-sm-12.text-center
+      %h6.font-weight-bold
+        = t('.actual')
+
+      -# = number_to_currency actual
+      = actual.nil? ? t('.unavailable') : number_with_delimiter(actual.to_i)
+
+  -# TODO handle empty values
+  -# - progress = expected.blank? ? 0 : ((actual.to_f / expected) * 100).to_i
+  - progress = expected.blank? || expected == 0 || actual.blank? ? 0 : ((actual.to_f / expected) * 100)&.to_i
+  .progress.mt-4
+    .progress-bar{ role: 'progressbar', style: "width: #{progress}%; height: 5px", aria: { valuenow: progress, valuemin: 0, valuemax: 100 } }
+
+  %span.text-info.text-center.mt-2
+    - if expected.nil? || actual.nil?
+      = t('.progress_unavailable')
+    - else
+      = t('.progress', amount: progress)

@@ -1,0 +1,36 @@
+- content_for :title, t('.title')
+
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+  .row.justify-content-center
+
+    .col-xl-6.col-12
+
+      .card.card-custom.mt-0.h-100
+        .card-header
+          %h2.card-title= t('.title')
+
+        .card-block.pb-0
+          = f.input :email, autofocus: true
+          = f.input :password
+
+          .errors.text-danger.text-right
+            = alert
+          .notice.text-success.text-right
+            = notice
+
+        .card-block
+          .row
+            .col-lg-4.col-12.pb-4.pb-lg-0
+              = link_to t('.back'), new_session_path(resource), class: 'btn btn-outline-primary btn-block'
+
+            .col-lg-8.col-12
+              = f.submit t('.submit'), class: 'btn btn-primary btn-block'
+
+        .card-block
+          .row
+            .col-12.mt-2.text-center
+              = link_to t('.actions.confirmation_instructions'), new_confirmation_path(resource)
+
+            .col-12.mt-2.text-center
+              = link_to t('.actions.forgot_password'), new_password_path(resource)

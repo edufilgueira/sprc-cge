@@ -1,0 +1,33 @@
+pt-BR:
+  ppa:
+    admin:
+      administrators:
+        index:
+          title: Administradores
+          new: Adicionar administrador
+          locked: Acesso bloqueado
+          lock: bloquear
+          unlock: liberar
+        new:
+          title: Adicionar administrador
+          info: As intruções para criação de senha serão enviadas para o email escolhido.
+        create:
+          done: Administrador criado com sucesso
+          error: Alguns erros foram encontrados
+        edit:
+          title: Alterar administrador
+        show:
+          title: Visualizando administrador
+        update:
+          done: Administrador atualizado com sucesso
+          error: Administrador não pode ser atualizado
+        destroy:
+          done: Administrador removido com sucesso
+        toggle_lock:
+          cannot_toggle_lock_one_self: Não é possível limitar seu próprio acesso
+          lock:
+            done:  Administrador %{name} bloqueado
+            error: Não foi possível bloquear o administrador %{name}
+          unlock:
+            done:  Administrador %{name} desbloqueado
+            error: Não foi possível desbloquear o administrador %{name}

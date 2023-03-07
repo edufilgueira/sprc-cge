@@ -1,0 +1,22 @@
+%h2.h4
+  = t('.title', organ_acronym: organ.acronym)
+
+- if filtered_resources.blank?
+
+  .text-muted.text-center
+    = t('messages.filters.no_results_found')
+
+- else
+
+  %table.table.table-sm
+
+    %thead
+      %th.w-50= t('.table.header.subnet_acronym')
+      %th.w-50.text-right= t('.table.header.name')
+
+    %tbody
+      - filtered_resources.each do |department|
+
+        %tr
+          %td= department.subnet_acronym
+          %td.text-right= department.name

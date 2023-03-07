@@ -1,0 +1,132 @@
+- #
+- # classificação do ticket
+- #
+.row
+
+  .col-12
+
+    - if operator_cge?(current_user)
+
+      - answer_ticket = answer.ticket
+      - classification = answer_ticket.classification
+
+      %h4.h5
+        = t('.classification.title', ticket_title: answer_ticket.title)
+
+      = render 'shared/classifications/classification_fields', classification: classification
+
+      %hr{ 'aria-hidden': 'true'}
+
+- #
+- # Resposta completa
+- #
+.row
+
+  .col-12.col-md-1.no-print
+
+    .float-left
+
+      .rounded-circle.p-1{ class: answer_class(answer) }
+
+        %i.fa.fa-comment.fa-1x.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      .row
+
+        .col-12.col-lg-8
+
+          - #
+          - # Resposta detalhes
+          - #
+          %h4.h6
+            - ticket_log = answer.ticket_log
+            - organ = answer_organ_responsible_from_log(ticket_log)
+            - department = answer_department_responsible_from_log(ticket_log)
+            - subnet = answer_subnet_responsible_from_log(ticket_log)
+
+            = t("shared.tickets.ticket_logs.answer.title.#{answer.answer_scope}.#{ticket.ticket_type}", type: answer.answer_type_str, organ: organ&.acronym, department: department&.acronym, subnet: subnet&.acronym, ouvidoria: nil)
+
+          %i.small
+            = l(answer.created_at, format: :shorter)
+
+        - #
+        - # Resposta descrição
+        - #
+        %blockquote
+          = answer_sanitizer(answer.description)
+
+          %i.small
+            = answer.as_author
+
+      - #
+      - # Detalhes da resposta (autor, certificado, tipo, classificação)
+      - #
+      - unless can? :approve_answer, answer
+        .row
+          .col-12.col-md-6
+            - unless operator_internal?(current_user) || namespace == :positionings
+              = content_with_label(answer, :answer_type_str)
+
+          .col-12.col-md-6
+            - if answer.classification.present?
+              = content_with_label(answer, :classification_str)
+
+      - #
+      - # Certificado
+      - #
+      .row
+        .col-12
+          - if answer.certificate.present?
+            .content-with-label
+              %p.content-label
+                = Answer.human_attribute_name(:certificate)
+              %p.content-value
+                = link_to answer.certificate_filename, attachment_url(answer, :certificate), target: :_blank
+
+      - #
+      - # Anexos
+      - #
+      - if answer.attachments.present?
+        .row
+          .col-12
+            .attachments
+              .content-with-label
+                %p.content-label
+                  = t('.attachments')
+                - answer.attachments.each do |attachment|
+                  - next unless attachment.document.present?
+                  = render 'shared/attachments/attachment', attachment: attachment, image_size: :small
+
+      - #
+      - # Aprovar/Reprovar
+      - #
+      - if can? :approve_answer, answer
+
+        = simple_form_for answer_form, url: [:approve_answer, namespace, answer_form, ticket_id: ticket.id], remote: true, data: { 'content': 'comments-form' } do |f|
+
+
+          - if can? :edit_answer, answer
+
+            .row
+
+              .col-12
+                = f.input :classification, collection: ticket_answer_classifications_for_select(ticket), input_html: { data: { 'select2-search': 'hidden', input: 'answer_classification' } }
+
+              .col-12
+                = f.input :answer_type, collection: answer_types_for_select(ticket), input_html: { data: { 'select2-search': 'hidden', input: :answer_type } }
+
+            .content-with-label
+              = f.input :description, label: t('.answer'), as: :ckeditor, input_html: { ckeditor: { toolbar: :answers }, id: "comment-description-#{answer.id}" }
+
+          = f.input :justification, as: :text, label: t('.justification'), input_html: { rows: 10 }
+
+          .row
+            .col-6
+              = f.submit t('.approve'), class: 'btn btn-success w-100'
+            .col-6
+              = f.submit t('.reject'), class: 'btn btn-danger w-100', formaction: reject_answer_operator_answer_path(answer, ticket_id: ticket.id)
+
+%hr{'aria-hidden': 'true'}

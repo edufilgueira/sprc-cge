@@ -1,0 +1,43 @@
+- registration = server_salary.registration
+- date = server_salary.date
+- debit_proceeds = registration.debit_proceeds(date).sorted
+
+.row
+  .col-12
+    %h3.h5.text-center
+      = t('shared.transparency.server_salaries.show.debit_proceeds.title')
+
+    - if debit_proceeds.present?
+      %table.table.table-striped.table-sm{summary: t('shared.transparency.server_salaries.show.debit_proceeds.summary')}
+
+        %thead
+          %tr
+            %th
+              = t("shared.transparency.server_salaries.show.debit_proceeds.table.heads.dsc_debit")
+            %th.text-right
+              = t("shared.transparency.server_salaries.show.debit_proceeds.table.heads.vlr_financeiro")
+
+        %tbody
+          %tr
+            %td
+              = t('shared.transparency.server_salaries.show.debit_proceeds.under_roof')
+            %td.text-right
+              = number_to_currency(server_salary.discount_under_roof)
+
+          %tr
+            %td
+              = t('shared.transparency.server_salaries.show.debit_proceeds.others')
+            %td.text-right
+              = number_to_currency(server_salary.discount_others)
+
+
+        %tr.font-weight-bold
+          %td
+            = t('shared.transparency.server_salaries.show.debit_proceeds.total')
+          %td.text-right
+            = number_to_currency(server_salary.discount_total)
+
+    - else
+      .row
+        %i.col-md-12.text-center
+          = t('shared.transparency.server_salaries.show.debit_proceeds.empty')

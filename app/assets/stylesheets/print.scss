@@ -1,0 +1,114 @@
+@import 'base/variables';
+@import 'bootstrap';
+@import 'modules/content';
+
+@page {
+  margin: 1cm;
+}
+
+* {
+  font-family: $font-family-sans-serif !important;
+  background: transparent !important;
+  color: #000 !important;
+  text-shadow: none !important;
+  filter: none !important;
+  -ms-filter: none !important;
+  -webkit-print-color-adjust: exact;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4em;
+}
+
+body > .container {
+  width: 100%;
+  margin-top: 5px;
+}
+
+footer, video, audio, object, embed,
+.navbar-bottom-line, .toolbar {
+  display: none;
+}
+
+.print {
+  display: block;
+}
+
+.no-print {
+  display: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+tr, img {
+  page-break-inside: avoid;
+}
+
+p, h2, h3, h4, h5, h6 {
+  orphans: 3;
+  widows: 3;
+}
+
+h2, h3, h4, h5, h6 {
+  page-break-after: avoid;
+}
+
+p a {
+  word-wrap: break-word;
+}
+
+blockquote {
+  width: 95%;
+  margin: 20px auto;
+  font-family: $font-family-sans-serif;
+  color: #555555;
+  padding: 2.0em 30px 1.2em 40px;
+  border-left: 6px solid lightgray;
+  line-height: 1.4;
+  position: relative;
+}
+
+blockquote::before {
+  font-family: $font-family-sans-serif;
+  content: "\201C";
+  color: lightgray;
+  font-size: 3.5em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
+blockquote::after {
+  content: '';
+}
+
+blockquote span {
+  display: block;
+  font-style: normal;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 1em;
+}
+
+.table-print {
+  th, td {
+    font-size: 10px;
+  }
+}
+
+.content-label {
+  page-break-after: avoid !important;
+}
+
+/* forcing page breaks on wkhtmltopdf */
+.page-break {
+  page-break-before: always !important;
+}
+
+.page-break-after {
+  page-break-after: always !important;
+}

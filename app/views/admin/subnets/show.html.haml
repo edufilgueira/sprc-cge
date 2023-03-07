@@ -1,0 +1,33 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, subnet.title
+
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-8
+            %h3.card-title
+              = subnet.acronym
+
+          .col-4
+            .float-right
+
+              - if can?(:edit, subnet)
+                = link_to t('commands.edit'), edit_admin_subnet_path(subnet), class: 'btn text-muted btn-link'
+
+              - if can?(:manage, subnet)
+                = render 'shared/buttons/btn_toggle_disabled', resource: subnet, namespace: :admin
+
+      .card-block
+
+        = content_with_label(subnet, :name)
+        = content_with_label(subnet, :organ_name)
+        = content_with_label(subnet, :ignore_sectoral_validation)

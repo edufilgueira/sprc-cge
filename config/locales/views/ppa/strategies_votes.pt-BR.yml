@@ -1,0 +1,36 @@
+pt-BR:
+  ppa:
+    strategies_votes:
+      index:
+        title: Participe do PPA (%{plan})
+        description: >
+          É exercício de democracia e cidadania participar do PPA de seu Estado,
+          pois, por meio disso, é possível pensar em conjunto um futuro melhor para todos.
+          Por intermédio do PPA, a sociedade civil pode opinar, debater,
+          avaliar e construir junto com o governo melhores políticas públicas.
+
+      new:
+        title: PPA (%{plan})
+        subtitle: Votação de Estratégias
+        region_schedule_dont_exist: A região %{region} não está com prazo aberto para votação.
+        description: Aqui você vai indicar para o governo quais são as prioridades para o desenvolvimento de sua região. Para cada tema, você pode escolher uma estratégia que, na sua opinião, deve ser priorizada para os próximos quatro anos.
+        region: Região
+        instruction: Escolha qual das estratégias de governo você gostaria de priorizar.
+        instruction2: Clique em "Encerrar Votação" somente após a escolha em todos os Temas de seu interesse.
+        card:
+          theme: Tema
+          strategy_not_found: Não foram indicadas estratégias para este tema no encontro ocorrido na sua região.
+        steps:
+          end_voting: Encerrar Votação
+          theme: Tema
+          instruction: Selecione os temas e escolha qual das estratégias de governo você gostaria de priorizar.
+          conclusion_instruction: Após clicar em "Encerrar Votação", não será possível modificar seus votos.
+        verify_user_has_vote: Não é possível votar mais de uma vez. Você já realizou a votação estratégica.
+      create:
+        without_vote: É preciso escolher no mínimo uma estratégia.
+      show:
+        title: PPA (%{plan})
+        subtitle: Votação de Estratégias Concluída!
+        description: Obrigado pela sua participação.
+        redirect: Você será redirecionado para a página inicial do portal.
+

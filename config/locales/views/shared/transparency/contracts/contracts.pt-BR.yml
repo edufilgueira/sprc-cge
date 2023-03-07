@@ -1,0 +1,211 @@
+pt-BR:
+  shared:
+    transparency:
+      contracts:
+        contracts:
+
+          index:
+            title: Contratos
+            description: |
+              Consulte aqui qualquer contrato firmado pelo Estado a partir de 2007.
+              Veja quem foi contratado, qual o serviço que deve ser feito, quanto já foi pago, a data de conclusão etc.
+              Você também pode acompanhar a execução dos <a href="%{url}">contratos de gestão</a>.
+
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Controladoria e Ouvidoria Geral do Estado - CGE</p>
+              <p>Sistema de Acompanhamento de Contratos e Convênio - SACC</p>
+
+            chart:
+              valor_atualizado_concedente:
+                unit: "Soma dos valores dos contratos ativos: R$"
+                title: 'Valores dos contratos ativos no mês'
+
+                creditor:
+                  title: Soma dos valores dos contratos ativos por contratado
+                manager:
+                  title: Soma dos valores dos contratos ativos por unidades
+                tipo_objeto:
+                  title: Soma dos valores dos contratos ativos por tipo de objeto
+                decricao_modalidade:
+                  title: Soma dos valores dos contratos ativos por modalidade de licitação
+
+            charts:
+              tabs:
+                creditor:
+                  title: Por contratado
+                manager:
+                  title: Por unidade
+                tipo_objeto:
+                  title: Por tipo de objeto
+                decricao_modalidade:
+                  title: Por modalidade de licitação
+
+            filters:
+              title: Consulta avançada
+              search:
+                hint: |
+                  Você pode buscar por parte do Nº SACC, Nº do Contrato, nome da
+                  unidade, nome ou CNPJ do contratado e partes do objeto do contrato.
+                  Exemplos: 'sec saude', 'educacao', 'merenda', entre outros.
+              situation_description:
+                information: |
+                  AGUARDANDO PUBLICAÇÃO DO ADITIVO -  Instrumento com Aditivo pendente de publicação no Diário Oficial do Estado(DOE) ou no Ceará Transparente;
+                  CONCLUÍDO - Instrumento com objeto concluído;
+                  CONCLUÍDO COM DÍVIDA - Instrumento com objeto concluído, que apresenta pagamentos pendentes;
+                  EM EXECUÇÃO [BLOQUEADO SOLICITAÇÃO DE PARCELA] - Instrumento que apresenta condição impeditiva à execução, decorrente de fato superveniente;
+                  EM EXECUÇÃO [NORMAL] - Instrumento com a execução transcorrendo normalmente;
+                  INABILITADO [PERÍODO ELEITORAL] - Restrição imposta por conta do período eleitoral conforme o § 10 do art. 73 da Lei nº 9.504/97;
+                  LIBERADO [PERÍODO ELEITORAL] - Encerrada a restrição imposta por conta do período eleitoral disposto no § 10 do art. 73 da Lei nº 9.504/97;
+                  PARALISADO - Se ocorrer por fato atribuível à Administração Pública, haverá a prorrogação automática do cronograma de execução;
+                  RESCINDIDO - Instrumento encerrado de maneira unilateral pelo Estado ou bilateral pelas partes relacionadas;
+                  RESCINDIDO COM DÍVIDA - Instrumento encerrado de maneira unilateral pelo Estado ou bilateral pelas partes relacionadas, que apresenta pagamentos pendentes;
+                  SUSPENSO - Decorre de ato unilateral da Administração, acompanhado de motivação, apoiado em razões de interesse público, decorrente de fato superveniente;
+                  VENCIDO - Instrumento com a vigência encerrada.
+              contractor_description:
+                information: |
+                  Órgão ou entidade pública do Estado do Ceará responsável pela contratação.
+              effective_date_description:
+                information: |
+                  Período em que o contrato inicia seus efeitos – data de assinatura, data de publicação ou data definida no instrumento contratual – com término definido no dia estabelecido no instrumento contratual e suas alterações.
+              signature_date_description:
+                information: |
+                  Período em que o contrato foi assinado pelas partes envolvidas – contratante e contratado
+            counts:
+              contracts_count:
+                title: Quantidade de contratos filtrados
+              contracts_sum:
+                title: Valor atualizado dos contratos filtrados
+                tolltip: É o valor original dos contratos acrescido do valor de suas alterações – aditivos ou apostilamentos – considerando todo o período de vigência do instrumento contratual.
+
+            table:
+              summary: Lista de contratos e convênios
+              header:
+                data_assinatura: Data de assinatura
+                isn_sic: Nº SACC
+                num_contrato: Nº Contrato
+                cod_concedente: Contratante
+                descricao_objeto: Objeto
+                valor_atualizado_concedente: Valor atualizado <i class="fa fa-question-circle" title="É o valor original dos contratos acrescido do valor de suas alterações – aditivos ou apostilamentos – considerando todo o período de vigência."></i>
+                calculated_valor_empenhado: Valor empenhado <i class="fa fa-question-circle" title="É o valor total dos empenhos realizados, considerando todo o período de vigência do instrumento contratual"></i>
+                calculated_valor_pago: Valor pago <i class="fa fa-question-circle" title="É o valor total dos pagamentos realizados, considerando todo o período de vigência do instrumento contratual."></i>
+                cod_gestora: Secretaria/Órgão
+                creditor: Contratado
+
+            stats:
+              title: Principais números relacionados aos contratos
+              count: 'Quantidade de contratos ativos em <strong>%{date}</strong>'
+              valor_atualizado_concedente: 'Soma dos valores ativos em <strong>%{date}</strong>'
+              valor_atualizado_concedente_tooltip: Compreende os contratos vigentes, ou seja, àqueles que ainda não está vencido ou não foi rescindido
+              tooltips:
+                active_information: Contrato ativo é aquele que ainda não está vencido ou não foi rescindido.
+
+          show:
+            resource_title: 'Nº SACC: %{sacc}'
+            descricao_url: Íntegra do contrato
+            descricao_url_ddisp: Processo de dispensa de licitação
+            descricao_url_inexg: Processo de inexibilidade de licitação
+            edital_url: Ver edital
+            num_contrato: 'Número Contrato'
+            blank_contract: 'PARA ESTA DESPESA NÃO HÁ TERMO DE CONTRATO DISPONÍVEL PARA DOWNLOAD, POIS SE TRATA DE UMA AQUISIÇÃO DISPENSADA DA FORMALIZAÇÃO DO TERMO DE CONTRATO, CONFORME § 4º DO ART. 62 DA LEI NACIONAL Nº 8.666/93.'
+            decricao_modalidade: Modalidade
+
+            additives:
+              title: Aditivos
+              empty: Não existem aditivos registrados
+              table:
+                export_file_name: 'aditivos-%{id}'
+                heads:
+                  descricao_tipo_aditivo: Tipo
+                  data_aditivo: Data do Aditivo
+                  data_termino: Data Término
+                  valor: Valor
+                  descricao_observacao: Objeto
+                  descricao_url: Íntegra
+
+            adjustments:
+              title: Ajustes
+              empty: Não existem ajustes registrados
+              table:
+                export_file_name: 'ajustes-%{id}'
+                heads:
+                  descricao_tipo_ajuste: Descrição tipo
+                  descricao_observacao: Objeto
+                  data_ajuste: Data do Ajuste
+                  data_termino: Data Término
+                  valor_ajuste_destino: Valor
+                  descricao_url: Íntegra
+
+            financials:
+              title: Nota de Empenho e Notas de Pagamentos
+              empty: Não existem nota de empenho e notas de pagamentos registradas
+              table:
+                export_file_name: 'pagamentos-%{id}'
+                heads:
+                  num_documento: Nota de Empenho
+                  data_documento: Data de Empenho
+                  valor_documento: Empenho
+                  num_pagamento: Nota de Pagamento
+                  data_pagamento: Data de Pagamento
+                  valor_pagamento: Pagamento
+
+            infringements:
+              title: Inadimplências do Instrumento
+              empty: Não existem inadimplências do instrumento registradas
+              table:
+                export_file_name: 'inadimplencias-%{id}'
+                heads:
+                  cod_financiador: Financiador
+                  descricao_entidade: Entidade
+                  descricao_financiador: Descrição financiador
+                  descricao_motivo_inadimplencia: Motivo
+                  data_lancamento: Data lançamento
+                  valor_atualizado_total: Valor
+
+            transfer_bank_orders:
+              empty: Não existem ordens de transferência bancária para este convênio
+              table:
+                export_file_name: 'ordens-bancarias-pagamento-%{id}'
+
+            accountability:
+              empty: Não existe informação da prestação de contas deste convênio
+              legend:
+                after_2015: |
+                  <p>Situações de Prestação de Contas:</p>
+                  <ul>
+                    <li><strong>Aguardando a Prestação de Contas</strong>: Ainda não foi enviada a Prestação de Contas;</li>
+                    <li><strong>Prestação de Contas não apresentada</strong>: Expirou o prazo de apresentar a Prestação de Contas;</li>
+                    <li><strong>Aguardando análise de Prestação de Contas</strong>: Prestação de contas enviada, mas a Concedente não iniciou a análise;</li>
+                    <li><strong>Prestação de Contas em Análise</strong>: Prestação de Contas enviada e o Concedente iniciou a análise;</li>
+                    <li><strong>Prestação de Contas não analisadas</strong>: Expirou o prazo de análise, por parte da Concedente, da Prestação de Contas;</li>
+                    <li><strong>Aprovada</strong>: Prestação de contas aprovada;</li>
+                    <li><strong>Reprovada</strong>: Prestação de contas reprovada;</li>
+                  </ul>
+
+                before_2015: |
+                  <p>Situações de Prestação de Contas:</p>
+                  <ul>
+                    <li><strong>Não analisada</strong>: Prestação de Contas não analisadas pela concedente;</li>
+                    <li><strong>Aprovada</strong>: Prestação de Contas analisadas e aprovada</li>
+                    <li><strong>Reprovada</strong>: Prestação de Contas analisadas e reprovadas;</li>
+                    <li><strong>Sem Prestação de Contas</strong>: A convenente não apresentou prestação de contas;</li>
+                  </ul>
+
+            management_contract:
+              follow:
+                title: Acompanhe esse contrato
+              description: 'Acompanhe aqui a execução desse Contrato de Gestão: <a href="%{url}">Clique aqui</a>'
+
+        transfer_bank_orders:
+          download:
+            xlsx: Baixar XLSX
+            csv: Baixar CSV
+          index:
+            empty: Não existem ordens de transferência bancária para este convênio
+
+        financials:
+          download:
+            xlsx: Baixar XLSX
+            csv: Baixar CSV
+          index:
+            empty: Não existem Nota de Empenho e Notas de Pagamentos para este contrato/convênio

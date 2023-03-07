@@ -1,0 +1,152 @@
+- ticket_for_comments = ticket.parent || ticket
+- ticket_logs = ticket_for_comments.sorted_ticket_logs_for_user
+
+.row
+  .col-12
+    %h2.h3
+      = content_tag(:img, '', src: image_path("logos/logo-#{ticket.ticket_type}.jpg"), style: 'max-width: 50px;')
+      = ticket.title
+
+.ml-3
+
+  - if  can?(:view_user_print_password, ticket) || namespace == :ticket_area
+    .row
+      .col-6
+        = content_with_label(ticket.parent || ticket, :parent_protocol)
+      .col-6.text-right
+        = content_with_label(ticket.parent || ticket, :plain_password)
+
+  .row
+    .col-6
+      = content_with_label(ticket, :used_input_str)
+
+    .col-6.text-right
+      - if ticket.sou?
+        = content_with_label(ticket, :sou_type_str)
+
+
+  .row
+    .col-4
+      = content_with_label(get_parent(ticket), :created_at)
+
+    .col-4.text-center
+      = content_with_label(ticket, :response_deadline, label: t('shared.tickets.show.deadline.last_day'))
+
+    .col-4.text-right
+      = content_with_label(ticket, :internal_status_str)
+
+  .row
+    .col-4
+      = content_with_label(ticket, :organ_acronym)
+
+    .col-4.text-center
+      = content_with_label(ticket, :subnet_acronym)
+
+    .col-4.text-right
+      .content-with-label
+        %p.content-label
+          - ticket_departments = ticket.ticket_departments
+          = TicketDepartment.model_name.human(count: ticket_departments.count)
+
+        - # .content-value
+        - if ticket_departments.present?
+          = render partial: 'shared/tickets/print/ticket_department', collection: ticket_departments
+        - else
+          %p.content-value
+            %em
+              = t('messages.content.undefined')
+
+  - classification = ticket.classification
+  - if classification.present?
+    .row
+      .col-6
+        = content_with_label(classification, :topic_name)
+
+      .col-6.text-right
+        = content_with_label(classification, :subtopic_name)
+
+
+  - #
+  - # Denúncia
+  - #
+  - if ticket.denunciation?
+    .row
+      .col-6
+        = content_with_label(ticket, :denunciation_organ_acronym)
+
+      .col-6
+        = content_with_label(ticket, :denunciation_date_str)
+
+    .row
+      .col-12
+        = content_with_label(ticket, :denunciation_place_str)
+
+    .row
+      .col-6
+        .content-with-label
+          %p.content-label
+            = Ticket.human_attribute_name(:denunciation_witness)
+        .content-value
+          = raw(ticket.denunciation_witness_str)
+
+      .col-6
+        .content-with-label
+          %p.content-label
+            = Ticket.human_attribute_name(:denunciation_evidence)
+          .content-value
+            = raw(ticket.denunciation_evidence_str)
+
+%hr{'aria-hidden': 'true'}
+
+.row.ml-3
+  = render 'shared/tickets/description', ticket: ticket
+
+%hr{'aria-hidden': 'true'}
+
+
+- #
+- # Respostas
+- #
+- ticket_logs = ticket.final_answers_to_users
+- ticket_logs.each do |ticket_log|
+  .row.ml-3.page-break
+    = render 'shared/tickets/print/answers', answer: ticket_log.answer, namespace: namespace
+
+
+%hr{'aria-hidden': 'true'}
+
+
+- #
+- # Reaberturas
+- #
+- reopens = ticket.ticket_logs.reopen
+- if reopens.present?
+  .col-12
+    %h3.h5
+      = t('.reopen.title', count: ticket.reopened)
+
+  - reopens.each do |reopen|
+    %blockquote
+      .col-12
+        = raw(reopen.description)
+      .col-12
+        %i.small.list-inline-item
+          = l(reopen.created_at, format: :shorter)
+
+
+- #
+- # Recursos
+- #
+- appeals = ticket.ticket_logs.appeal
+- if appeals.present?
+  .col-12
+    %h3.h5
+      = t('.appeal.title', count: ticket.appeals)
+
+  - appeals.each do |appeal|
+    %blockquote
+      .col-12
+        = raw(appeal.description)
+      .col-12
+        %i.small.list-inline-item
+          = l(appeal.created_at, format: :shorter)

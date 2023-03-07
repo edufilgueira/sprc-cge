@@ -1,0 +1,31 @@
+.row
+  .col-12.col-md-1.no-print
+    .float-left
+
+      .rounded-circle.p-1.alert-warning
+
+        %i.fa.fa-edit.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      %h4.h6.mb-0
+        = t(".title.#{ticket.ticket_type}", name: responsible_or_user(ticket_log).as_author, protocol: ticket.parent_protocol)
+
+      .small
+        %em
+          - data_attributes = ticket_log.data
+          - attributes_changed = data_attributes[:ticket_changes]
+
+      %p.small
+        %em
+          = ticket_log_date_author(ticket_log)
+
+      %p
+        - attributes_str = attributes_changed.keys.map { |key| Ticket.human_attribute_name(key.to_sym) }.join('; ')
+
+        = t('.attributes_changed', attributes: attributes_str)
+
+%hr{'aria-hidden': 'true'}
+

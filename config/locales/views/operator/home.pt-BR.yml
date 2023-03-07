@@ -1,0 +1,127 @@
+pt-BR:
+  operator:
+    home:
+      index:
+        search: 'Buscar protocolo'
+        title: Início
+        breadcrumb_title: Início
+
+      attendance_index:
+        no_range_filter: Sem filtro de período*
+        attendances:
+          title: Atendimentos
+          filters:
+            range: Filtrar por período
+
+          responses_count:
+            title: Quantidade de retornos/tentativas por atendente
+            operator_name:
+              title: 'Nome do atendente'
+            responses:
+              title: 'Quantidade'
+
+          created_count:
+            title: Quantidade de atendimentos por atendente
+            operator_name:
+              title: 'Nome do atendente'
+            responses:
+              title: 'Quantidade'
+
+        stats:
+          incomplete: Outros
+          sic: Acesso à Informação
+          sou: Ouvidoria Digital
+          daily: Diário
+          weekly: Semanal
+          monthly: Mensal
+          all: Todo período
+          waiting_confirmation: Aguardando Confirmação
+
+
+      call_center_tickets_index:
+        title: Responder atendimentos
+        stats:
+          waiting_feedback: Aguardando retorno
+
+      ticket_index:
+        new:
+          title:
+            sic: Nova Solicitação
+            sou: Nova Manifestação
+        sou:
+          stats:
+            title: Ouvidoria Digital
+
+        sic:
+          stats:
+            title: Acesso à Informação
+
+        stats:
+          in_progress: Não confirmados
+          confirmed: Confirmados
+          replied: Respondidos
+
+          in_filling: Em preenchimento
+          waiting_confirmation: Aguardando confirmação
+          waiting_referral: Aguardando encaminhamento
+          sectoral_attendance: Em atendimento - setorial
+          internal_attendance: Em atendimento - área interna
+          sectoral_validation: Em validação - setorial
+          cge_validation: Em validação - CGE
+          partial_answer: Respondidos parcialmente
+          final_answer: Finalizados
+          invalidated: Invalidados
+          completed: Finalizados
+          appeal: Recurso aberto
+
+      sectoral_index:
+        tabs:
+          ticket_index:
+            title: Painel
+          department_index:
+            title: Áreas internas
+
+      department_index:
+        empty: Nenhuma área interna encontrada
+        description: >
+          Consulte aqui as áreas internas que ainda não deram retorno.
+
+      denunciation_index:
+        sou:
+          stats:
+            title: Ouvidoria Digital
+
+        denunciation:
+
+          title: Denúncias
+
+          card:
+            title: Denúncias
+
+            cosco_sectoral_attendance:
+              title: Denúncias<br>Coordenadoria de Correição
+            cge_validation:
+              title: Denúncias<br>Diversas Respondidas
+            waiting_referral:
+              title: Denúncias<br>Aguardando Encaminhamento
+            awaiting_invalidation:
+              title: Denúncias<br>Em pedido de invalidação
+            coordination:
+              title: Denúncias<br>Coordenadoria de Ouvidoria
+      couvi:
+        cge_validation:
+          title: Em validação - CGE
+        partial_answer:
+          title: Parcialmente respondidos
+        stats:
+          title: Manifestações Diversas
+        new:
+          title: Nova Manifestação
+        reopened:
+          title: Reabertos
+        not_expired:
+          title: Dentro do prazo
+        expired_can_extend:
+          title: Atrasadas prorrogáveis
+        expired:
+          title: Atrasadas

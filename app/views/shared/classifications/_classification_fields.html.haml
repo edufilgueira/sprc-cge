@@ -1,0 +1,31 @@
+- if classification.present? && classification.persisted?
+
+  - if classification.other_organs?
+    .text-center.mb-3
+      = t('.other_organs')
+
+  - else
+    .row
+      .col-6
+        = content_with_label(classification, :topic_name)
+      .col-6
+        = content_with_label(classification, :subtopic_name)
+
+    .row
+      .col-6
+        = content_with_label(classification, :department_name)
+      .col-6
+        = content_with_label(classification, :sub_department_name)
+
+    .row
+      .col-6
+        = content_with_label(classification, :budget_program_name)
+      .col-6
+        = content_with_label(classification, :service_type_name)
+
+- else
+
+  .mb-3
+
+    %em
+      = t('.not_classified')

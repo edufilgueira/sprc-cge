@@ -1,0 +1,62 @@
+en:
+  shared:
+    transparency:
+      expenses:
+
+        npds:
+          index:
+            title: Statements of Payment of Expenses
+            description: Check here the Statements of Payment of Expenses.
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Secretary of Finance - SEFAZ</p>
+              <p>Governmental Management System by Results - S2GPR</p>
+
+            chart:
+              valor:
+                unit: 'Sum of amounts: BRL'
+                title: 'Amount of the Statements of Payment of Expenses in the selected month.'
+
+                creditor:
+                  title: Sum of the amounts by creditor
+                management_unit:
+                  title: Sum of the amounts by management unit
+                natureza:
+                  title: Sum of the amounts by nature
+                efeito:
+                  title: Sum of the amounts by effect
+
+            charts:
+              tabs:
+                creditor:
+                  title: By creditor
+                management_unit:
+                  title: By management unit
+                natureza:
+                  title: By nature
+                efeito:
+                  title: By effect
+
+            filters:
+              title: Advanced search
+
+            counts:
+              npds_count:
+                title: Quantity of filtered Statements
+              npds_sum:
+                title: Amount on the filtered Statements
+
+            table:
+              summary: List of Statements of Payment of Expenses
+              header:
+                numero: Number
+                date_of_issue: Date of issue
+                unidade_gestora: Management unit
+                management_unit_title: Management unit
+                credor: Creditor
+                valor: Value
+
+            stats:
+              title: Main numbers related to the Statements
+              count: 'Statements on <strong>%{date}</strong>'
+              valor: 'Amount on <strong>%{date}</strong>'

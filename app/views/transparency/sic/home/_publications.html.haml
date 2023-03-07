@@ -1,0 +1,30 @@
+- # TODO: add itens and remove "sem anexos"
+%section.mt-4{ 'aria-labelledby': 'publications' }
+  .card
+    .card-block
+      %h4.card-title#lei-de-acesso-a-informacao
+        = t('.title')
+
+      .card-text
+        = t('.description')
+
+      %hr{'aria-hidden': 'true'}
+
+      .card-text
+        %h6.font-weight-bold
+          = t('.reports')
+
+        .list-group-flex.justify-content-start.align-items-start.pl-0
+          = link_to '/portal-da-transparencia/paginas/relatorios-de-gestao-da-transparencia', target: '_blank' do
+            %i.fa.fa-file-pdf-o.mr-1
+            = t('.report.title')
+
+        .list-group-flex.justify-content-start.align-items-start.pl-0
+          = link_to '/portal-da-transparencia/paginas/legislacao-sobre-acesso-a-informacao', target: '_blank' do
+            %i.fa.fa-file-pdf-o.mr-1
+            = t('.legislation.title')
+
+        .list-group-flex.justify-content-start.align-items-start.pl-0
+          = link_to '/portal-da-transparencia/paginas/relatorios-estatisticos-de-acesso-a-informacao', target: '_blank' do
+            %i.fa.fa-file-pdf-o.mr-1
+            = t('.report_stats.title')

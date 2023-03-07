@@ -1,0 +1,194 @@
+en:
+  home:
+    index:
+      home: Home
+      title: "Controllership and General Ombudsman's Office"
+      cge_title: "Controllership and General Ombudsman's Office"
+      breadcrumb_title: Home
+      search:
+        title: What information do you need?
+
+      sign_in_description: >
+        Sign in and enjoy the most of Ceará Transparente!
+
+      sign_up:
+        title: Sign up
+
+      login:
+        title: Sign in
+
+      description: >
+        <p>
+        Ceará Transparente is a space for dialogue between you and the Government. Here you have access to information about budget and extension.
+        You can still register and monitor manifestations in the Government Ombudsman channels.
+        </p>
+      sections:
+        title: Access portals
+
+    transparency_portal:
+      title: Transparency
+      text: >
+        Check information, Open Data and Transparency Pages.
+      action: Access Transparency Pages
+      ppa_action: Access PPA
+      main_links: Quick access
+
+      coronavirus:
+        title: Coronavírus
+        btn: Informations
+        expenses:
+          title: Expenses
+          url: '/portal-da-transparencia/paginas/coronavirus-despesas'
+          url_siec:  ''
+        law:
+          title: Legislation
+          url: '/portal-da-transparencia/paginas/coronavirus-legislacao'
+
+      links:
+        what_is:
+          title: 'What is Transparency?'
+          link: '#!'
+
+        how_to:
+          title: 'How can I use it?'
+          link: '#!'
+
+      featured_queries:
+        title: Highlighted searches
+
+        open_data_data_sets:
+          title: Open Data
+          icon: fa-open_data_data_sets
+        server_salaries:
+          title:  Servants
+          icon: fa-users
+        revenues_accounts:
+          title:  Revenues
+          icon: fa-line-chart
+        real_states:
+          title:  Real estate
+          icon: fa-home
+        expenses_budget_balances:
+          title:  Expenditures
+          icon: fa-money
+        ongoing_purchases:
+          title: Ongoing biddings
+          icon: fa-file-text-o
+        purchases:
+          title: Completed biddings
+          icon: fa-file-text-o
+        contracts_contracts:
+          title:  Contracts
+          icon: fa-file-text-o
+        contracts_convenants:
+          title:  Agreements
+          icon: fa-handshake-o
+        expenses_neds:
+          title: Expenditures for commitment
+          icon: fa-money
+        public_debt:
+          title: Public Debt
+          icon: fa-dollar
+
+    card:
+      main_links: Quick access
+
+      tickets:
+        title: Ombudsmen
+        text: >
+          Create a manifestation to register a suggestion, praise, query or complaint.
+        icon: fa-comment-o
+        action: Log a new Manifestation
+        sub_action: Follow Manifestation
+
+      information_access:
+        title: Access to Information
+        text: 'Request information that is not found on %{link}'
+        action: Request information
+        sub_action: Follow request
+        icon: fa-info-circle
+        transparency_portal:
+          title: 'Transparency Pages'
+
+      ppa:
+        title: Citizen Participation (MAP)
+        text: >
+          Welcome to the citizen participation area.
+          Here you can follow workshops, assess, monitor and take part in the Multiannual Plan (MAP).
+        icon: fa-user-o
+        action: Access Citizen Participation
+        sub_action: Propose New Guideline
+
+      support:
+        title: Citizen Service Channels
+        text: >
+          The State of Ceará's network of Ombudsman and Access to Information also
+          can be accessed outside Ceará Transparente system
+        icon: fa-flag-o
+        sub_action: Go to Service Channels
+
+    cards:
+      tickets:
+        links:
+          what_is:
+            title: 'What is the Ombudsman?'
+
+          access:
+            title: 'Access Ombudsman Page'
+
+          public_tickets:
+            title: 'Public Manifestations'
+
+      information_access:
+        links:
+          what_is:
+            title: 'What is Access to Information?'
+
+          access:
+            title: 'Go to Access to Information page'
+
+          law:
+            title: 'Access to Information Law'
+
+          public_requests:
+            title: 'Public Requests'
+
+          transparency:
+            title: 'Transparency'
+
+      ppa:
+        links:
+          what_is:
+            title: 'What is citizen participation?'
+
+          access:
+            title: 'Follow the planning'
+
+          how_to:
+            title: 'How to use Citizen Participation?'
+
+      support:
+        links:
+          network:
+            title: 'Ombudsman Network'
+
+          social:
+            title: 'Social Medias'
+
+          a155:
+            title: '155 Central'
+
+          email:
+            title: 'E-mail'
+
+
+    privacy_policy:
+      title: Privacy Policy
+      description: >
+        Privacy Policy description
+
+    terms_of_use:
+      title: Terms of Use
+      description: >
+        Terms of Use description
+

@@ -1,0 +1,70 @@
+es:
+  shared:
+    transparency:
+
+      real_states:
+
+        index:
+          title: Bienes raíces 
+          description: >
+            Consulte aquí cualquier bien inmueble del Estado.
+            Vea cuales son los bienes, cuales son los mayores areas construyidas y quienes son los responsables por los bienes etc. 
+          value_unit: m<sup>2</sup>
+
+          chart:
+            count:
+              unit: 'Cantidade'
+              title: 'Cantidade de Bienes Raíces'
+
+          charts:
+            tabs:
+              property_type:
+                title: Tipos de propriedad
+              occupation_type:
+                title: Tipos de ocupación 
+              manager:
+                title: Órganos 
+              municipio:
+                title: Municipios 
+
+          filters:
+            title: Consulta avanzada 
+            search_placeholder: >
+              Busque por descripción, municipio, barrio, cep, complemento, lote ou cuadra
+            occupation_type:
+              select:
+                all: Todos los tipos de ocupación  
+
+            property_type:
+              select:
+                all: Todos los tipos de propriedad 
+
+          counts:
+            real_states_count:
+              title: Cantidade de bienes raíces filtrados
+            real_states_sum:
+              title: Valor del área de la construcción (proyección) de los bienes raíces filtrados
+
+          table:
+            summary: Lista de bienes raíces 
+            header:
+              service_id: Código de identificación 
+              descricao_imovel: Descripción 
+              manager_title: Órgano 
+              property_type_title: Tipo da propriedad 
+              occupation_type_title: Tipo de la ocupación 
+              endereco: Dirección 
+              municipio: Municipio 
+
+          stats:
+            title: Principales numeros relacionados con los bienes raíces 
+            count: 'Cantidade de bienes raíces publicados hasta <strong>%{date}</strong>'
+            value_unit: m<sup>2</sup>
+            area_projecao_construcao: 'Área de bienes raíces publicados hasta <strong>%{date}</strong>'
+
+        show:
+          descricao_url: Íntegra del biene inmueble 
+          descricao_url_ddisp: Proceso de dispensa de licitación 
+          descricao_url_inexg: Proceso de inexigibilidad de licitación
+          edital_url: Ver convocatoria
+

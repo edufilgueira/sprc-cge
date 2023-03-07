@@ -1,0 +1,26 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:name, :email, :actions]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: users, sort_columns: sort_columns, table_locale: table_locale do |user|
+
+    - show_path = can?(:show, user) ? admin_citizen_path(user) : '#!'
+
+    %tr
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(user.name)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(user.email)
+
+      %td
+        .float-right
+          - if can?(:destroy, user)
+            = link_to t('commands.remove'), admin_citizen_path(user), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link hover-link float-left d-inline-block'

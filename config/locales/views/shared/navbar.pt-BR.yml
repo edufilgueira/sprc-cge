@@ -1,0 +1,287 @@
+pt-BR:
+  shared:
+
+    navbar:
+      toggle_navigation: Exibir menu de navegação
+
+      transparency_menu:
+        transparency:
+          title: Acessar transparência
+        data:
+          title: Consultar dados
+        what_is:
+          title: O que é Transparência
+        map:
+          title: Mapas Interativos
+        news:
+          title: Notícias
+        apps:
+          title: Iniciativas da Sociedade
+        whats_new:
+          title: Novidades
+
+      tickets_menu:
+        tickets:
+          title: Acessar Ouvidoria
+        new:
+          title: Nova manifestação
+        watch:
+          title: Acompanhar manifestação
+        public:
+          title: Manifestações públicas
+        what_is:
+          title: O que é Ouvidoria
+
+      information_menu:
+        information:
+          title: Acessar Acesso à Informação
+        new:
+          title: Nova solicitação
+        watch:
+          title: Acompanhar solicitação
+        public:
+          title: Solicitações públicas
+        what_is:
+          title: O que é Acesso à Informação
+
+      ppa_menu:
+        ppa:
+          title: Acessar PPA
+        new:
+          title: Propor nova diretriz
+        watch:
+          title: Acompanhar planejamento
+
+      services_menu:
+        services:
+          title: Serviços e Avaliações
+        envelope:
+          title: Carta de serviços
+        official:
+          title: Aplicativos oficiais
+        public:
+          title: Serviços Eletrônicos
+        rating:
+          title: Avaliação de Serviços
+
+
+
+    navbar_menu: &navbar_menu
+      home:
+        title: Início
+
+      open_data:
+        title: Dados Abertos
+
+      tickets:
+        title: Ouvidoria
+
+      transparency:
+        title: Transparência
+
+      information:
+        title: Acesso à Informação
+
+      ppa:
+        title: Participação Cidadã
+
+      services:
+        title: Serviços e Avaliações
+
+      about:
+        title: Sobre o Portal
+
+      lgpd:
+        title: LGPD
+
+      site_map:
+        title: Mapa do Site
+
+      search:
+        title: Buscar na plataforma
+
+      logout:
+        title: Sair
+
+    navbar_head:
+      search:
+        placeholder: De qual informação você precisa?
+
+    admin:
+      navbar:
+        users:
+          title: Usuários administrativos
+        citizens:
+          title: Cidadãos cadastrados
+        unregistred_citizens:
+          title: Cidadãos não cadastrados
+        executive_organs:
+          title: Órgãos do poder executivo
+        rede_ouvir_organs:
+          title: Órgãos da Rede Ouvir
+        departments:
+          title: Unidades
+        topics:
+          title: Assuntos
+        open_data:
+          title: Dados abertos
+        pages:
+          title: Páginas
+        events:
+          title: Eventos
+        mobile_apps:
+          title: Aplicativos
+        mobile_tags:
+          title: Categorias de aplicativo
+        service_types:
+          title: Tipos de serviços
+        integrations:
+          title: Integrações
+        themes:
+          title: Temas
+        budget_programs:
+          title: Programas orçamentários
+        admin:
+          title: Administrativo
+        ticket:
+          title: SIC/Ouvidoria
+        transparency:
+          title: Transparência
+        home:
+          title: Acessar o portal
+        holidays:
+          title: Feriados
+        search_contents:
+          title: Resultados de busca
+        subnets:
+          title: Sub-redes
+        survey_answer_exports:
+          title: Pesquisa de satisfação
+        ombudsmen:
+          title: Informações das Ouvidorias
+        services_rating:
+          title: Avaliação de Serviços Públicos
+
+    application:
+      top_bar: &top_bar
+        portal_governo:
+          title: Portal do governo
+          link: 'http://www.ceara.gov.br/'
+
+        gabinete_governador:
+          title: Gabinete do governador
+          link: 'http://www.gabgov.ce.gov.br/'
+
+        cge:
+          title: CGE
+          link: 'http://www.cge.ce.gov.br/'
+
+        seplag:
+          title: Seplag
+          link: 'http://www.seplag.ce.gov.br/'
+
+        acesso_cidadao:
+          title: Acesso cidadão
+          link: 'http://web3.seplag.ce.gov.br/Csonline/ConsultaCesec/pg_cs_servico.aspx'
+
+        login:
+          title: Acessar perfil
+
+        faq:
+          title: Dúvidas frequentes
+          link: '/portal-da-transparencia/paginas/duvidas-frequentes'
+
+        sign_up:
+          title: Criar perfil
+
+        alto_contraste:
+          title: Alto contraste
+
+        acessibilidade:
+          title: Acessibilidade
+          link: '/portal-da-transparencia/paginas/acessibilidade'
+
+      navbar: &shared_navbar
+        cge_title: >
+          Controladoria e Ouvidoria<br>
+          Geral do Estado
+
+        search:
+          placeholder: De qual informação você precisa?
+
+        home:
+          title: Início
+
+        transparency_portal:
+          title: Páginas de Transparência
+
+        global_tickets:
+          title: Consulta SIC/OUVIDORIA
+
+        tickets:
+          title: Ouvidoria Digital
+
+        information_access:
+          title: Acesso à Informação
+
+        reports:
+          title: Relatórios e estatísticas
+
+        open_data:
+          title: Dados Abertos
+
+        logout:
+          title: Sair
+
+      home_navbar: &shared_inner_navbar
+        login:
+          title: Acessar perfil
+
+        register:
+          title: Criar novo perfil
+
+        protocol_login:
+          title: Acompanhar manifestação
+
+      inner_navbar:
+        <<: *shared_inner_navbar
+
+    operator:
+      navbar:
+        <<: *shared_navbar
+        attendances:
+          title: Atendimentos
+        call_center_tickets:
+          title: Responder atendimentos
+        dashboard:
+          title: Painéis
+        users:
+          title: Usuários
+        topics:
+          title: Assuntos
+        departments:
+          title: Unidades
+        subnet_departments:
+          title: Unidades de sub-redes
+        answer_templates:
+          title: Banco de respostas
+        sou_evaluation_samples:
+          title: Av. Interna Ouvidoria
+
+    navbar_mobile:
+      <<: *navbar_menu
+      <<: *top_bar
+
+    platform:
+      navbar:
+        <<: *shared_navbar
+
+    ticket_area:
+      navbar:
+        <<: *shared_navbar
+
+    transparency:
+      navbar:
+        <<: *shared_navbar
+
+

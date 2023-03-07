@@ -1,0 +1,34 @@
+es:
+  commands:
+    add: Añadir
+    authorize: Autorizar
+    back_home: Volver al inicio
+    cancel: Cancelar
+    close: Cerrar
+    config: Configurar
+    download: Descargar
+    edit: Editar
+    filter: 'Filtrar'
+    filter_reset: 'Limpiar filtro'
+    hide: Esconder
+    more_details: Ver más detalles...
+    import: Importar
+    export: Exportación
+    print: Imprimir
+    remove: Remover
+    remove_confirm: Tem certeza que deseja remover?
+    remove_confirm_extension: Hay una solicitud de extensión pendiente, si hace clic en Aceptar, la manifestación se finalizará y la solicitud de extensión se cancelará. ¿Quieres terminar la demostración de todos modos?
+    save: Gravar
+    search: Buscar
+    see_more: Ver mas...
+    send: Enviar
+    show: Exhibir
+    confirm: Confirmar
+    enable: Habilitar
+    disable: Inabilitar
+    enable_confirm: ¿Está seguro de que desea habilitar?
+    disable_confirm: ¿Está seguro de que desea inabilitar?
+
+    disabled:
+      _true: Inabilitado
+      _false: Habilitado

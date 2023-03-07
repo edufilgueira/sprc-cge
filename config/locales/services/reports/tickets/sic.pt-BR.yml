@@ -1,0 +1,200 @@
+pt-BR:
+  services:
+    reports:
+      tickets:
+        sic:
+          summary:
+            sheet_name: Sumário
+            title: 'Período do Relatório: %{begin} à %{end}'
+
+          used_input:
+            sheet_name: Meios de Entrada
+            title: Relatório por Meio de Entrada
+            total: Total
+
+          organ:
+            sheet_name: Órgãos
+            title: Relatório por órgão
+            call_center_demand: 'Os 15 órgãos mais demandados pela central 155 + CSAI'
+            call_center_organ_forwarded: 'Os 15 órgãos mais demandados pela central 155'
+            organs_demand: 'Os 15 órgãos mais demandados CSAI'
+            total: Total
+
+          most_wanted_topics:
+            sheet_name: Assuntos mais demandados
+            title: Relatório por assuntos
+            call_center_topic_demand_count: Assuntos mais demandados da Central 155
+            topics_by_organs_demand_count: 03 Assuntos mais demandados dos 15 órgãos que receberam mais demandas CSAI
+
+          answer_classification:
+            sheet_name: Classificação resposta
+            title: Relatório de classificação da resposta/demanda
+            empty: Sem classificação
+            total: Total
+
+
+          evaluation:
+            sheet_name: Pesquisa de satisfação
+            title: Relatório de média por questão
+            total: Total de pesquisas respondidas
+
+          percentage_on_time:
+            sheet_name: Solicitações no Prazo
+            title: Porcentagem de Solicitações Atendidas no Prazo
+            rows:
+              all_on_time: 'Central + CSAI:'
+              call_center_on_time: 'Central:'
+              csai_on_time: 'CSAI:'
+              total_count: 'Total de solicitações registradas'
+              total_completed_count: 'Total de solicitações finalizadas'
+
+          average_time_answer:
+            sheet_name: Tempo Médio de Resposta
+            title: Tempo Médio de Resposta
+
+          solvability:
+            sheet_name: Resolubilidade
+            title: Ranking de Resolubilidade dos Comitês Setoriais de Acesso à Informação
+            organ: Órgão
+            solvability: Índice resolubilidade
+            total: Quantidade de informação cadastradas
+            total_unscoped: Total
+
+          solvability_deadline:
+            sheet_name: Respondidas por prazo
+            title: Solicitações respondidas dos órgãos por prazo
+            call_center_csai: Total Central 155 + CSAI
+            call_center: Total Central 155
+            csai: Total CSAI
+            organ: Órgão
+            type: Tipo
+            total: Total
+            types:
+              until_20: Solicitações respondidas até 20 dias
+              between_21_30:
+                with_deadline: Solicitações respondidas com prazo de prorrogação de 21 a 30 dias
+                without_deadline: Solicitações respondidas sem prazo de prorrogação de 21 a 30 dias
+              more_than_30: Solicitações respondidas com mais de 30 dias
+
+          gender:
+            sheet_name: Gêneros
+            empty: Em branco
+            headers:
+              gender: Gênero
+              count: Quantidade
+              percentage: '%'
+
+          budget_program:
+            sheet_name: Programa Orçamentário
+            headers:
+              organ: Órgão
+              name: Programa Orçamentário
+              count: Quantidade
+              percentage: Porcentagem
+
+          service_type:
+            sheet_name: Tipo de serviço
+            headers:
+              organ: Órgão
+              name: Tipo de serviço
+              count: Quantidade
+              percentage: Porcentagem
+
+          sub_department:
+            sheet_name: Unidade Subunidade
+            headers:
+              organ: Órgão
+              department: Unidade
+              name: Subunidade
+              count: Quantidade
+              percentage: Porcentagem
+
+          topic:
+            sheet_name: Assunto
+            title: Assunto
+            empty: Sem assunto
+            subtopic:
+              title: Subassunto
+            organ:
+              title: Orgão
+            count:
+              title: Quantidade
+            percentage:
+              title: Porcentagem
+
+          internal_status:
+            sheet_name: Situação
+            total: Total
+            headers:
+              internal_status: Situação
+              count: Quantidade
+              percentage: Porcentagem
+
+          state:
+            sheet_name: "Localização_Estado"
+            empty: Indefinido
+            total: Total
+            headers:
+              name: Estado
+              count: Quantidade
+              percentage: Porcentagem
+
+          city:
+            sheet_name: "Localização_Município"
+            empty: Indefinido
+            total: Total
+            headers:
+              name: Município
+              count: Quantidade
+              percentage: Porcentagem
+
+          neighborhood:
+            sheet_name: "Localização_Bairro"
+            empty: Indefinido
+            total: Total
+            headers:
+              name: Bairro
+              count: Quantidade
+              percentage: Porcentagem
+
+          subtopic:
+            sheet_name: Subassunto
+            empty: Sem subassunto
+            topic:
+              title: Assunto
+            subtopic:
+              title: Subassunto
+            organ:
+              title: Orgão
+            count:
+              title: Quantidade
+            percentage:
+              title: Porcentagem
+
+          average_answer_department:
+            sheet_name: Médio Resposta Unidades
+            title: Tempo médio de resposta das áreas internas
+            headers:
+              organ: Órgão
+              department: Área interna
+              average: Tempo médio em dias
+              total: Total de respostas
+
+          average_answer_sub_department:
+            sheet_name: Médio Resp. Subunidades
+            title: Tempo médio de resposta das áreas internas
+            headers:
+              organ: Órgão
+              department: Área interna
+              average: Tempo médio em dias
+              total: Total de respostas
+
+          answer_type:
+            sheet_name: Preferência de Resposta
+            title: Relatório de Preferência de Resposta
+            total: Total
+
+          answer_preference:
+            sheet_name: Preferência de Resposta
+            title: Relatório de Preferência de Resposta
+            total: Total

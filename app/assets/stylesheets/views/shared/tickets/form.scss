@@ -1,0 +1,49 @@
+@import 'bootstrap/variables';
+
+@media (max-width: map-get($grid-breakpoints, "md")) {
+  .btn-group {
+    .btn {
+      padding: 0.2em;
+      font-size: 0.8em;
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  .btn-group {
+    .btn {
+      padding: 0.1em;
+      font-size: 0.7em;
+    }
+  }
+}
+
+.modal {
+
+  .modal-footer {
+    justify-content: space-between;
+  }
+
+  .modal-title {
+    font-size: 20px;
+  }
+
+}
+
+.ticket_document_type {
+  margin-bottom: 5px;
+}
+
+.sou-types-btn-group {
+  .btn {
+    background: #fff;
+
+    &:hover, &:focus {
+      background-color: #3489d1;
+    }
+
+    &.active {
+      background-color: #3489d1;
+    }
+  }
+}

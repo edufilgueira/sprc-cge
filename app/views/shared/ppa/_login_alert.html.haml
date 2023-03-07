@@ -1,0 +1,5 @@
+.alert.alert-info
+  - login        = link_to t('.login'), new_user_session_path(redirect_to: request.fullpath)
+  - registration = link_to t('.create'), new_user_registration_path(redirect_to: request.fullpath)
+
+  = t('.authentication_needed_html', login_link: login, registration_link: registration)

@@ -1,0 +1,32 @@
+%section{'aria-labelledby': 'general' }
+  .card-deck
+    .card.mb-4.mb-md-0
+      .card-block
+        %h4.card-title
+          = t('.title')
+
+        .card-text
+          = t('.description')
+
+      .card-footer.bg-transparent.border-bottom-only.border-3.border-orange
+        = link_to new_user_session_path(ticket_type: 'sic'), class: 'btn btn-wide btn-tertiary btn-uppercase' do
+          %span.sr-only
+            = t('a11y.link.new_window.text')
+          %span
+            %i.fa.fa-pencil
+            = t('.new_ticket')
+
+    = simple_form_for(Ticket.new, url: session_path(:ticket), html: { class: 'card' }) do |f|
+      .card-block
+        %h4.card-title
+          = t('.follow_ticket')
+
+        .row
+          .col-sm-6.col-12
+            = f.input :protocol, input_html: { autofocus: true }
+
+          .col-sm-6.col-12
+            = f.input :password
+
+      .card-footer.bg-transparent.border-bottom-only.border-3.border-orange
+        = f.submit t('.follow_ticket'), class: 'btn btn-wide btn-tertiary btn-uppercase'

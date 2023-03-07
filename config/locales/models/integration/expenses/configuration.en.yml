@@ -1,0 +1,58 @@
+en:
+  activerecord:
+    models:
+      integration/expenses/configuration:
+        one: Expenses settings
+
+    attributes:
+      integration/expenses/configuration:
+
+        npf: Financial Programming Note (NPF)
+        npf_wsdl: WSDL
+        npf_headers_soap_action: SOAPAction
+        npf_operation: SOAP method name
+        npf_response_path: Response path
+        npf_user: User
+        npf_password: Password
+
+        ned: Expense Commitment Note (NED)
+        ned_wsdl: WSDL
+        ned_headers_soap_action: SOAPAction
+        ned_operation: method
+        ned_response_path: Response path
+        ned_user: User
+        ned_password: Password
+
+        nld: Expense Settlement Note (NLD)
+        nld_wsdl: WSDL
+        nld_headers_soap_action: SOAPAction
+        nld_operation: method
+        nld_response_path: Response path
+        nld_user: User
+        nld_password: Password
+
+        npd: Expenses Payment Note (NPD)
+        npd_wsdl: WSDL
+        npd_headers_soap_action: SOAPAction
+        npd_operation: method
+        npd_response_path: Response path
+        npd_user: User
+        npd_password: Password
+
+        budget_balance: Budget Balance
+        budget_balance_wsdl: WSDL
+        budget_balance_headers_soap_action: SOAPAction
+        budget_balance_operation: method
+        budget_balance_response_path: Response path
+        budget_balance_user: User
+        budget_balance_password: Password
+
+        started_at: Started at
+        finished_at: Finished at
+
+    errors:
+      models:
+        integration/expenses/configuration:
+          attributes:
+            finished_at:
+              youngest: End date must be after start date

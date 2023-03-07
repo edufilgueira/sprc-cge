@@ -1,0 +1,8 @@
+es:
+
+  shared:
+
+    admin:
+
+      current_locale_alert:
+        alert: "Esta pagina está en el idioma <strong>%{lang}</strong>"

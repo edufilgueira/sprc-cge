@@ -1,0 +1,5 @@
+pt-BR:
+  shared:
+    servers:
+      filters:
+        roles: Todos os cargos

@@ -1,0 +1,37 @@
+en:
+
+  ticket_area:
+
+    tickets:
+
+      edit:
+        title: Edit
+
+
+      update:
+        sou:
+          title: Edit ombudsman manifestation
+          done: "Manifestation successfully updated"
+          error: Unable to update manifestation
+
+        sic:
+          title: Edit access to information request
+          done: "Request successfully updated"
+          error: Unable to update request
+
+      show:
+
+        sic:
+          identified:
+            commands:
+              new: New identified request 
+          anonymous:
+            commands:
+              new: New anonymous request 
+        sou:
+          identified:
+            commands:
+              new: New identified manifestation
+          anonymous:
+            commands:
+              new: New anonymous manifestation

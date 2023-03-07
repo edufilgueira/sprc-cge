@@ -1,0 +1,75 @@
+pt-BR:
+
+  operator:
+
+    tickets:
+
+      sharings:
+
+        new:
+          sou:
+            title:
+              add: "(%{protocol}) Adicionar Ouvidorias setoriais envolvidas"
+              share: "(%{protocol}) Compartilhar com Ouvidoria"
+
+            breadcrumb:
+              title:
+                add: Adicionar Ouvidorias setoriais envolvidas
+                share: Compartilhar com Ouvidoria
+          sic:
+            title:
+              add: "(%{protocol}) Adicionar órgãos envolvidos"
+              share: "(%{protocol}) Compartilhar com outros órgãos"
+
+            breadcrumb:
+              title:
+                add: Adicionar órgãos envolvidos
+                share: Compartilhar com outros órgãos
+
+        create:
+          done: Compartilhado com órgão(s).
+          fail: Falha ao compartilhar.
+          invalid: Falha ao compartilhar.
+          sou:
+            title:
+              add: "(%{protocol}) Adicionar Ouvidorias setoriais envolvidas"
+              share: "(%{protocol}) Compartilhar com Ouvidoria"
+
+          sic:
+            title:
+              add: "(%{protocol}) Adicionar órgãos envolvidos"
+              share: "(%{protocol}) Compartilhar com outros órgãos"
+
+        destroy:
+          done: Compartilhamento removido.
+          fail: Falha ao remover compartilhamento.
+
+
+        form:
+          sou:
+            title: Ouvidorias envolvidas
+            add: Adicionar nova Ouvidoria
+          sic:
+            title: Órgãos envolvidos
+            add: Adicionar novo órgão
+          action_button:
+            cancel: Sair sem salvar
+            save: Salvar e compartilhar
+
+        ticket_fields:
+          description:
+            hint: Este será o conteúdo visível pelo órgão selecionado
+            label:
+              sou: Descrição da manifestação
+              sic: Descrição da solicitação
+          link:
+            protocol: "%{acronym} - %{protocol}"
+          remove: Remover órgão
+          attachments: Anexos
+          add_attachment: Adicionar Anexos
+          protected: Protegido
+
+        sharing:
+          empty:
+            sou: Nenhuma Ouvidoria setorial envolvida
+            sic: Nenhum órgão envolvido

@@ -1,0 +1,105 @@
+#
+# Estamos usando a gem `devise-i18n`, que já fornece traduções. Aqui, estamos personalizando-as.
+# veja mais em https://github.com/tigrish/devise-i18n/blob/master/rails/locales/pt-BR.yml
+#
+en:
+  devise:
+    errors:
+      messages:
+        confirmation_period_expired: >-
+          profile not confirmed. Please, request new instructions for confirming your profile.
+
+    failure:
+      invalid: '%{authentication_keys} or invalid password!'
+      not_found_in_database: '%{authentication_keys} or invalid password!'
+      already_authenticated: ''
+      disabled: 'Your profile is locked.'
+
+    confirmations:
+      confirmed: Your profile has been successfully confirmed.
+      new:
+        resend_confirmation_instructions: Resend verification instructions
+      send_instructions: >-
+        You will soon receive an email with instructions for confirming your profile.
+        Please check you spam folder.
+      send_paranoid_instructions: >-
+        If your email exists in our database, you will receive an email with instructions on how to
+        confirm your profile in a few minutes.
+    passwords:
+      send_instructions: >-
+        You will soon receive an email with instructions for changing your password.
+        Please check you spam folder.
+
+    registrations:
+      signed_up: |- # flash message após criação de perfil (Cidadão)
+        Welcome! Your profile has been successfully created, therefore you are able to browse Ceará Transparente.
+        In a few moments, you will receive an email to confirm your profile. Don't forget to confirm it! (please, check your spam folder)
+
+    unlocks:
+      send_instructions: >-
+        You will soon receive an email with instructions for unlocking your account.
+
+    omniauth_callbacks:
+      user:
+        error: Failed to log in with Facebook, please fill in the required fields
+        success: You have successfully signed in.
+
+    sessions:
+      already_authenticated: You are already authenticated. Click "Sign out" and try again.
+      ticket:
+        signed_in:
+          sou: 'Expression of interest successfully found.'
+          sic: 'Request successfully found.'
+        signed_out: 'You have been successfully signed out.'
+
+
+    # mailer translations.
+    mailer:
+      # custom subjects per-model with "#{model}_subject" (ex: user_subject, admin_subject, ...)
+      confirmation_instructions:
+        subject: "Instructions to confirm profile"
+        # user_subject: "Bem-vindo(a)! Por favor, confirme sua conta no Alpop"
+        ppa_admin_subject: "[Ceará Transparente - PPA] Instructions to confirm profile"
+
+        greetings: "Welcome, %{name}!"
+        instructions:  |-
+          There is little left to complete your registration.
+          To do this, you need to confirm your profile below:
+
+        btn:
+          confirm: Confirm your profile
+
+      reset_password_instructions:
+        subject: "Instructions to reset password"
+        # user_subject: "Recuperação de senha"
+        ppa_admin_subject: "[Ceará Transparente - PPA] Instructions to reset password"
+
+        greetings: "Hello, %{name}!"
+        instructions: >-
+          To reset your password, use the button below. It will take you to a form where you can create a new password.
+
+
+        btn:
+          reset_password: Reset my password
+
+        expiration_notice: >-
+          This session will expire in %{duration_in_hours} hours.
+
+        dismiss_notice: |-
+          If you are not trying to change your password, please ignore this message and do not worry - your account is secure.
+          Someone has probably missed the email when they tried to recover the password by typing their address in the place.
+
+      unlock_instructions:
+        subject: "Instructions to unlock account"
+        # user_subject: "Desbloqueie sua conta"
+        # ppa_admin_subject: "[Ceará Transparente - PPA] Instruções para desbloqueio de conta"
+
+      email_changed:
+        subject: "E-mail has been changed"
+        # user_subject: "Seu e-mail foi alterado"
+        # ppa_admin_subject: "[Ceará Transparente - PPA] E-mail alterado"
+
+      password_change:
+        subject: "Passaword has been changed"
+        # user_subject: "Sua senha foi alterada"
+        # ppa_admin_subject: "[Ceará Transparente - PPA] Senha alterada"

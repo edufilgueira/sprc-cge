@@ -1,0 +1,50 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:status, :code, :organ_acronym, :subnet_acronym, :name, :theme, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: budget_programs, sort_columns: sort_columns, table_locale: table_locale do |budget_program|
+
+    - show_path = can?(:show, budget_program) ? admin_budget_program_path(budget_program) : '#!'
+
+    %tr
+      %td
+        - icon_class = budget_program.disabled? ? 'times' : 'check'
+        = link_to show_path, title: t("commands.disabled._#{budget_program.disabled?}") do
+          %i{class: "fa fa-#{icon_class}"}
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(budget_program.code)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(budget_program.organ_acronym)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(budget_program.subnet_acronym)
+
+      %td
+        - budget_program_name = budget_program.name
+        = link_to show_path, title: budget_program_name do
+          = filtered_highlighted(budget_program_name.truncate(50))
+
+      %td
+        - theme_name = budget_program.theme_name
+        = link_to show_path, title: theme_name do
+          - if theme_name.present?
+            = filtered_highlighted(theme_name.truncate(30))
+          - else
+            = '-'
+
+      %td
+        .float-right
+          - if can?(:edit, budget_program)
+            = link_to t('commands.edit'), edit_admin_budget_program_path(budget_program), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:manage, budget_program)
+            = render 'shared/buttons/btn_toggle_disabled', resource: budget_program, namespace: :admin

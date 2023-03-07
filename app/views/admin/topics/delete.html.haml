@@ -1,0 +1,17 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+
+.content-detail
+
+  %h3.card-title.d-block
+    = t(".title")
+
+  %p.text-muted
+    =t(".description")
+
+  .card.card-custom
+
+    .card-block
+
+      = render 'admin/topics/delete/form', topic: topic

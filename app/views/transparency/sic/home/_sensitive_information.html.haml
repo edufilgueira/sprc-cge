@@ -1,0 +1,25 @@
+%section.my-4{ 'aria-labelledby': 'sensitive_information' }
+  .card
+    .card-block
+      .card-title.mb-4
+        %h4.font-weight-bold
+          = t('.title')
+
+      .card-text
+        = t('.description')
+
+      %h6.font-weight-bold.mt-4
+        = t('.sub_title')
+
+      .card-text
+        = t('.sub_description')
+
+      .row.mt-3
+        .col-md-6.col-12
+          = link_to '/portal-da-transparencia/paginas/rol-de-documentos-classificados-com-grau-de-sigilo-e-o-rol-de-documentos-desclassificados-dos-orgaos-e-entidades-do-poder-executivo-estadual' do
+            %i.fa.fa-file-pdf-o
+            = t('.link_1')
+        .col-md-6.col-12.mt-4.mt-md-0
+          = link_to '/portal-da-transparencia/paginas/portaria-cgai-n-01-2016' do
+            %i.fa.fa-file-pdf-o
+            = t('.link_2')

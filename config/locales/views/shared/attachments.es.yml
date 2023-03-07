@@ -1,0 +1,8 @@
+es:
+  shared:
+    attachments:
+      index:
+        attachments:
+          none: Ningún archivo
+      attachment_permission:
+        protected: Progedido

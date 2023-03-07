@@ -1,0 +1,7 @@
+en:
+  transparency:
+    expenses:
+      profit_transfers:
+        index:
+          title: Transfers to Profit Entities
+          description: Here you can view information on Transfers to Profit Entities.

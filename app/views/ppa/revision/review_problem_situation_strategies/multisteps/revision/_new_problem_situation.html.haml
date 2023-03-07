@@ -1,0 +1,44 @@
+- tag_name = "#{parent_form_alias}[new_problem_situations_attributes]"
+
+%hr
+
+.row.mt-3
+  .col-lg-12
+    .text-muted.d-inline.ml-1
+      = t('.quest')
+
+    .radio.d-inline
+      %label
+        = radio_button_tag :check_new_problem_situation, 'true', nil
+        = t('boolean.true')
+
+      %label
+        = radio_button_tag :check_new_problem_situation, 'false', nil
+        = t('boolean.false')
+
+.new_problem_situations
+  - if is_edit_region_theme?
+    - aux = 0
+
+    = f.fields_for :new_problem_situations do |f_new|
+      .row.mt-3
+        .col-lg-8.mt-5
+          - aux += 1
+          = f_new.label :description, "#{aux}."
+          = f_new.text_field :description
+        .col-lg-4
+
+          = f_new.label :city_id, "Município"
+          = f_new.select :city_id, options_for_select(cities_by_region(@region.id).collect {|city| [ city[:name], city[:id] ] }, selected: f_new.object.try(:city_id)), { include_blank: 'Todos' }, class: 'city_for_new_problem_situation'
+  - else
+    - (0..2).each do |index|
+      .row.mt-3
+        .col-lg-8.mt-5
+
+          = label_tag "#{index+1}"
+          = text_field_tag "#{tag_name}[#{index}][description]", ''
+
+        .col-lg-4
+          = label_tag "Município"
+          = select_tag "#{tag_name}[#{index}][city_id]", [], class: "city_for_new_problem_situation"
+

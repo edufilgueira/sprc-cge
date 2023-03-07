@@ -1,0 +1,18 @@
+pt-BR:
+  activerecord:
+    attributes:
+      evaluation_export:
+        title: Título
+        starts_at: Início
+        ends_at: Fim
+        organ: Órgão
+        subnet: Subrede
+        ticket_type: Tipo
+        status: status
+
+  evaluation_export:
+    statuses:
+      preparing: Preparando
+      generating: Gerando
+      error: Erro
+      success: Finalizado

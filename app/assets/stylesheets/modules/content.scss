@@ -1,0 +1,35 @@
+@import 'base/variables';
+
+.content-hidden {
+  display: none;
+}
+
+
+.content-with-label {
+
+  font-size: 15px;
+
+  p.content-label {
+    color: $text-gray-light;
+
+    font-weight: bold;
+
+    margin-bottom: 0;
+    margin-top: 1em;
+  }
+
+  p.content-value {
+    color: $text-gray;
+    word-break: break-all;
+
+    em {
+      color: $text-gray-light;
+      font-weight: 300;
+    }
+  }
+}
+
+.bg-transparent {
+    background-color: transparent !important;
+}
+

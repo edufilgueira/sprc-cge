@@ -1,0 +1,32 @@
+.card.card-custom
+  .card-header
+    .row
+      .col-12.col-lg-8
+        %h3.card-title
+          = t('.title')
+
+  .card-block
+
+    - #
+    - # Respostas
+    - #
+    - ticket_logs = ticket.final_answers_to_users
+
+    - unless ticket_logs.blank?
+      .row.mb-4
+        .col-12.text-center
+          %h4
+            = t('.replies_received', answers_count: ticket_logs.size, children_count: ticket_children_can_answer_count(ticket))
+
+
+    - ticket_logs.each do |ticket_log|
+      = render 'shared/tickets/ticket_logs/answer', answer: ticket_log.answer, namespace: :transparency
+
+
+    - if ticket_logs.blank?
+
+      - #
+      - # Sem repostas
+      - #
+      %em
+        = t('.empty')

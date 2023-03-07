@@ -1,0 +1,33 @@
+.card{ 'aria-labelledby': 'workshops' }
+  .card-block.pb-0
+    %h4.card-title.font-weight-bold
+      = t('.title')
+
+    .card-text.text-justify
+      = t('.description')
+
+    .card-text.mt-2.mb-4
+      = t('.see_down_schedule')
+
+  .card-text.text-white.bg-tertiary.text-center.text-shadow.ppa-counter
+    .card-block
+
+      - if regions_vote_schedule.present?
+
+        - for region_vote in regions_vote_schedule
+
+          .row
+            .col-lg-6.col-md-6.col-sm-6.text-left
+              - region_name = region_vote.region.name
+              %div{title: region_name}= region_name
+            .col-lg-6.col-md-6.col-sm-6.text-right
+              = "#{l region_vote.start_in} à #{l region_vote.end_in}"
+
+      - else
+
+        - 6.times do
+          %br
+        %h4= t('.whithout_votings_schedule')
+
+  .card-footer.bg-faded.border-bottom-only.border-3.border-orange
+    %br

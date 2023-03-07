@@ -1,0 +1,62 @@
+en:
+  shared:
+    transparency:
+      revenues:
+        registered_revenues:
+
+          index:
+            title: Registered revenues
+            description: |
+              <p> See here the registered revenue, which is registered after the taxpayer has been identified, the event that generates the obligation and the amount to be paid. </ p> <p> Available Revenues are related to Property Tax on Automotive Vehicles - IPVA. Currently, there is viability for accounting registration and disclosure in the Pages of Transparency of the Registered and Charged values related to IPVA. As for other state taxes, considering the tax and accounting system in force, it is concluded that it is unfeasible to present its proceeds. The Ceará State Treasury Department is awaiting definition of a national standard to know what accounting procedures will be necessary to make available the other registered tax revenues. From general methodology definition, SEFAZ and CGE will make all necessary efforts to fully comply with the system to be defined. </p>
+
+            footer: |
+              <p> 'Reimbursement of Revenue with IPVA' refers to the return to the taxpayer of over paid amounts or due to the vehicle ownership loss</ p> <p> 'Deductions from Revenue with IPVA' are deductions provided by the Law of values destined to Fundeb (Fund for Maintenance and Development of Basic Education and Appreciation of Education Professionals). The amounts disclosed here are gross, without deductions referring to transfers to municipalities. </p>
+
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Secretary of Finance - SEFAZ</p>
+              <p>Governmental Management System by Results - S2GPR</p>
+
+            chart:
+              valor_lancado:
+                unit: 'Registered revenues amounts sum: R$'
+                title: 'Registered revenues amounts in the month'
+
+                month:
+                  title: Registered revenues amounts sum per month
+                revenue:
+                  title: Registered revenues amounts sum per type
+
+            charts:
+              tabs:
+                month:
+                  title: Per month
+                revenue:
+                  title: Per type
+                history:
+                  title: Annual history
+
+            counts:
+              valor_lancado:
+                title: 'Registered revenues total amount'
+
+            filters:
+              title: Registered revenues
+
+              counts:
+                transfers_sum:
+                  valor_lancado:
+                    title: Registered revenues value
+
+            table:
+              summary: Executive Power registered revenues list
+              header:
+                title: Description
+                valor_lancado: Registered value
+                valor_acumulado: Accumulated amount up to the month
+
+              total: Total
+
+            stats:
+              title: Main registered revenue-related figures
+              valor_lancado: 'Value on <strong>%{date}</strong>'

@@ -1,0 +1,16 @@
+- ticket_show_path = operator_ticket_path(ticket)
+
+%td
+  - if can?(:can_view_deadline, ticket)
+    - ticket_department = ticket.ticket_department_by_user(current_user)
+    - deadline = (operator_internal?(current_user) && ticket_department.present?) ? ticket_department.deadline : ticket.deadline
+
+    = link_to ticket_show_path do
+      - if deadline.blank?
+        %i= I18n.t('messages.content.undefined')
+      - else
+        - if ticket_alert_deadline?(ticket, current_user)
+          %i.fa.fa-exclamation-triangle{'aria-hidden': 'true', class: 'text-danger', title: t('.title') }
+        = t('ticket.deadline', count: deadline)
+  - else
+    %em= link_to t('.undefined'), ticket_show_path

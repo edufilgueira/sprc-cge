@@ -1,0 +1,20 @@
+pt-BR:
+  activerecord:
+
+    models:
+      department:
+        one: 'Unidade'
+        other: 'Unidades'
+
+    attributes:
+      department:
+        acronym: Sigla
+        name: Nome
+        organ_id: Órgão
+        organ: Órgão
+        organ_name: Órgão
+        subnet: Sub-rede
+        subnet_name: Sub-rede
+
+  department:
+    no_characteristic: NÃO SE APLICA

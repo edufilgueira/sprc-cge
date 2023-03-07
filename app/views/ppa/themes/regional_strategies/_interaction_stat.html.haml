@@ -1,0 +1,5 @@
+%i.fa.fa-4x.m-2{ 'aria-hidden': 'true', class: "fa-#{icon}" }
+%p.font-weight-bold.mb-0.display-4
+  = regional_strategy.public_send(method).count
+%p
+  = t(".#{method}")

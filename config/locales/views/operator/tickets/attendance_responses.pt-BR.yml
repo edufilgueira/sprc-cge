@@ -1,0 +1,23 @@
+pt-BR:
+
+  operator:
+
+    tickets:
+
+      attendance_responses:
+
+        new:
+          title: "%{ticket_title} - Registrar tentativa de retorno"
+
+        form:
+          commands:
+            failure: Registrar tentativa de retorno sem sucesso
+            success: Registrar retorno com successo
+
+        failure:
+          error: Erro ao registrar ocorrência
+          done: Ocorrência registrada com sucesso
+
+        success:
+          error: Erro ao registrar ocorrência
+          done: Ocorrência registrada com sucesso

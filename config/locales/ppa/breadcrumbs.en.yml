@@ -1,0 +1,28 @@
+en:
+  ppa:
+    breadcrumbs:
+      region_with_biennium: "%{biennium} - %{region}"
+
+      home:
+        show:
+          title: Citizen Participation (PPA)
+
+      workshops:
+        index:
+          title: Elaboration Workshops
+
+      past_workshops:
+        index:
+          title: Elaboration Workshops
+
+      proposal_themes:
+        index:
+          title: Proposals Themes
+
+      proposals:
+        index:
+          title: Proposals
+        new:
+          title: New proposals
+        show:
+          title: Proposal details

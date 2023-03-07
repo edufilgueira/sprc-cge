@@ -1,0 +1,31 @@
+es:
+  activerecord:
+    attributes:
+      integration/real_states/real_state:
+        manager_id: Órgano
+        property_type_id: Tipo de la propriedad
+        occupation_type_id: Tipo de la ocupación 
+        manager_title: Órgano 
+        property_type_title: Tipo de la propriedad 
+        occupation_type_title: Tipo de la ocupación 
+        service_id: Código de identificación 
+        descricao_imovel: Descripción 
+        estado: Estado
+        municipio: Municipio
+        area_projecao_construcao: Área de proyección de la construcción (m2)
+        area_medida_in_loco: Área medida in loco (m2)
+        area_registrada: Área registrada (m2)
+        frente: Frente (m)
+        fundo: Fondo (m)
+        lateral_direita: Lateral derecho (m)
+        lateral_esquerda: Lateral izquierdo (m)
+        taxa_ocupacao: Tasa de ocupación (%)
+        fracao_ideal: Fracción ideal
+        numero_imovel: Número del inmueble 
+        utm_zona: UTM Zona
+        bairro: Barrio 
+        cep: CEP
+        endereco: Dirección 
+        complemento: Complemento
+        lote: Lote
+        quadra: Cuadra

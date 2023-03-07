@@ -1,0 +1,195 @@
+es:
+  shared:
+    transparency:
+      contracts:
+        contracts:
+
+          index:
+            title: Contratos
+            description: |
+              Consulte aquí cualquier contrato firmado por el Estado.
+              Ver quién fue contratado, cuál es el servicio que se debe hacer, cuánto ya se ha pagado, la fecha de finalización etc.
+              Usted también puede acomapañar la ejecución de los <a href="%{url}">contratos de gestión</a>.
+
+            source: |
+              <p><strong>Fuente de datos:</strong></p>
+              <p>Controladoria e Ouvidoria Geral do Estado - CGE</p>
+              <p>Sistema de Acompanhamento de Contratos e Convênio - SACC</p>
+
+            chart:
+              valor_atualizado_concedente:
+                unit: "Suma de los valores de los contratos activos: R$"
+                title: 'Valores de los contratos activos en el mes'
+
+                creditor:
+                  title: Suma de los valores de los contratos activos contratado
+                manager:
+                  title: Suma de los valores de los contratos activos unidades
+                tipo_objeto:
+                  title: Suma de los valores de los contratos activos tipo de objecto
+                decricao_modalidade:
+                  title: Suma de los valores de los contratos activos modalidade de licitación
+
+            charts:
+              tabs:
+                creditor:
+                  title: Por contratado
+                manager:
+                  title: Por unidad
+                tipo_objeto:
+                  title: Por tipo de objecto
+                decricao_modalidade:
+                  title: Por modalidade de licitación
+
+            filters:
+              title: Consulta avanzada
+              search:
+                hint: |
+                  Usted puede buscar por parte del Nº SACC, Nº del Contrato, nombre de la
+                  unidad, nombre o CNPJ del contractado y partes del objecto del contrato.
+                  Ejemplos: 'sec saude', 'educacao', 'merenda', entre otros.
+              situation_description:
+                information: |
+                  A LA ESPERA DE PUBLICACIÓN ADICIONAL - Instrumento con Aditivo pendiente de publicación en el Diario Oficial del Estado (DOE) o en Ceará Transparente;
+                  COMPLETED - Instrumento con objeto completado;
+                  COMPLETADO CON DEUDA - Instrumento con objeto terminado, que presenta pagos pendientes;
+                  EN EJECUCIÓN [SOLICITUD BLOQUEADA DE PLAZO] - Instrumento que presenta impedimento a la ejecución, por hecho superviniente;
+                  BAJO RENDIMIENTO [NORMAL] - Instrumento con ejecución procediendo normalmente;
+                  DISCAPACITADO [PERIODO ELECTORAL] - Restricción impuesta por razón del período electoral de conformidad con el § 10 del art. 73 de la Ley Nº 9.504 / 97;
+                  LIBERADO [PERIODO ELECTORAL] - La restricción impuesta con motivo del período electoral previsto en el § 10 del art. 73 de la Ley Nº 9.504 / 97;
+                  DETENIDO - Si se produce por un hecho imputable a la Administración Pública, se producirá una prórroga automática del cronograma de ejecución;
+                  TERMINADO - Instrumento rescindido unilateralmente por el Estado o bilateralmente por partes relacionadas;
+                  TERMINADO EN DEUDA - Instrumento cerrado unilateralmente por el Estado o bilateralmente por partes relacionadas, que presenta pagos pendientes;
+                  SUSPENDIDA - Surge de un acto unilateral de la Administración, acompañado de motivación, sustentada en razones de interés público, derivadas de un hecho superviniente;
+                  EXPIRED: instrumento con plazo vencido.
+              contractor_description:
+                information: |
+                  Organismo o entidad pública del Estado de Ceará responsable de la contratación.
+              effective_date_description:
+                information: |
+                  Período en el que el contrato comienza a surtir efectos - fecha de firma, fecha de publicación o fecha definida en el instrumento contractual - con un final definido en el día establecido en el instrumento contractual y sus modificaciones.
+              signature_date_description:
+                information: |
+                  Período en el que el contrato fue firmado por las partes involucradas - contratante y contratante.
+
+            counts:
+              contracts_count:
+                title: Cantidad de contratos filtrados
+              contracts_sum:
+                title: Valor de los contratos filtrados
+                tolltip: Es el valor original de los contratos más el valor de sus modificaciones - enmiendas o apostillas - considerando todo el período de vigencia del instrumento contractual.
+
+            table:
+              summary: Lista de contratos e convenios
+              header:
+                data_assinatura: Fecha de la firma
+                isn_sic: Nº SACC
+                num_contrato: Nº Contrato
+                cod_concedente: Contratante
+                descricao_objeto: Objecto
+                valor_atualizado_concedente: Valor actualizado <i class="fa fa-question-circle" title="Es el valor original de los contratos más el valor de sus modificaciones - enmiendas o apostillas - considerando todo el período de vigencia."></i>
+                calculated_valor_empenhado: Valor comprometido <i class="fa fa-question-circle" title="Es el valor total de los compromisos adquiridos, considerando todo el período de vigencia del instrumento contractual."></i>
+                calculated_valor_pago: Valor pago <i class="fa fa-question-circle" title="Es el valor total de los pagos realizados, considerando todo el período de vigencia del instrumento contractual."></i>
+                cod_gestora: Unidad
+                creditor: Contractado
+
+            stats:
+              title: Principales numeros relacionados con los contratos
+              count: 'Cantidad de contratos activos en <strong>%{date}</strong>'
+              valor_atualizado_concedente: 'Mayores proveedores activos en <strong>%{date}</strong>'
+              valor_atualizado_concedente_tooltip: Comprende los contratos vigentes, es decir, los que aún no han vencido o no han sido rescindidos
+              tooltips:
+                active_information: Un contrato activo es uno que aún no ha expirado o no ha sido rescindido.
+
+          show:
+            resource_title: 'Nº SACC: %{sacc}'
+            descricao_url: Íntegra del contrato
+            descricao_url_ddisp: Proceso de dispensa de licitación
+            descricao_url_inexg: Proceso de inexcusable licitación
+            edital_url: Ver convocatoria
+            num_contrato: Numero Contrato
+            blank_contract: 'PARA ESTE GASTO NO HAY PLAZO DE CONTRATO DISPONIBLE PARA DESCARGAR, PORQUE ES UNA ADQUISICIÓN DISPENSADA DE LA FORMALIZACIÓN DEL PLAZO DEL CONTRATO, DE ACUERDO CON EL § 4 DEL ART. 62 DE LEY NACIONAL N ° 8.666 / 93.'
+
+
+            additives:
+              title: Aditivos
+              empty: No existen aditivos registrados
+              table:
+                export_file_name: 'aditivos-%{id}'
+                heads:
+                  descricao_tipo_aditivo: Tipo
+                  data_aditivo: Additive Data
+                  data_termino: Fecha de finalización
+                  valor: Valor
+                  descricao_observacao: Objecto
+                  descricao_url: Completo
+
+            adjustments:
+              title: Ajustes
+              empty: No hay ajustes registrados
+              table:
+                export_file_name: 'ajustes-%{id}'
+                heads:
+                  descricao_tipo_ajuste: Descripción tipo
+                  descricao_observacao: Objecto
+                  data_ajuste: Datos de ajuste
+                  data_termino: Fecha de finalización
+                  valor_ajuste_destino: Valor
+                  descricao_url: Completo
+
+            financials:
+              title: Nota de Rendimiento y Notas de Pagos
+              empty: No existen nota de rendimiento y notas de pagos registradas
+              table:
+                export_file_name: 'pagos-%{id}'
+                heads:
+                  num_documento: Nota de Rendimiento
+                  data_documento: Data de Rendimiento
+                  valor_documento: Rendimiento
+                  num_pagamento: Nota de Pagos
+                  data_pagamento: Fecha de Pagos
+                  valor_pagamento: Pagos
+
+            infringements:
+              title: Incumplimiento del instrumento
+              empty: No existen incumplimientos del instrumento registrados
+              table:
+                export_file_name: 'inadimplencias-%{id}'
+                heads:
+                  cod_financiador: Financiero
+                  descricao_entidade: Entidad
+                  descricao_financiador: Descripción financiero
+                  descricao_motivo_inadimplencia: Motivo
+                  data_lancamento: Fecha e lanzamiento
+                  valor_atualizado_total: Valor
+
+            transfer_bank_orders:
+              empty: No hay órdenes de transferencia bancaria para este convenio
+              table:
+                export_file_name: 'ordens-bancarias-pagamento-%{id}'
+
+            accountability:
+              empty: No existe información de la prestación de cuentas de este convenio
+              legend: |
+                <p>Situaciones de Rendimiento de Cuentas:</p>
+                <ul>
+                  <li><strong>Aguardando el Rendimiento de Cuentas</strong>: Todavía el Rendimiento de Cuentas no ha sido enviado;</li>
+                  <li><strong>Rendimiento de Cuentas no presentada</strong>: El plazo de presentación del Rendimiento de Cuentas ha expirado;</li>
+                  <li><strong>Aguardando el análisis de Rendimiento de Cuentas</strong>: Rendimiento de Cuentas enviado, pero el Cedente no ha iniciado el análisis;</li>
+                  <li><strong>Rendimiento de Cuentas en Análisis</strong>: Rendimiento de Cuentas enviado y el Cedente ha iniciado el análisis;</li>
+                  <li><strong>Rendimiento de Cuentas no analisado</strong>: El plazo de análisis ha expirado, por parte del Cedente, del Rendimiento de Cuentas;</li>
+                  <li><strong>Aprovada</strong>: Rendimiento de Cuentas aprobado;</li>
+                  <li><strong>Reprovada</strong>: Rendimiento de Cuentas reprobado;</li>
+                </ul>
+
+            management_contract:
+              follow:
+                title: Acompañe este contrato
+              description: 'Acompañe aquí la ejecución de este Contrato de Gestión: <a href="%{url}">Clique aqui</a>'
+
+        transfer_bank_orders:
+          download:
+            xlsx: Descarregar XLSX
+            csv: Descarregar CSV
+          index:
+            empty: No hay órdenes de transferencia bancaria para este convenio

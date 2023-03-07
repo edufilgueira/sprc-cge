@@ -1,0 +1,23 @@
+pt-BR:
+  activerecord:
+    attributes:
+      survey_answer_export:
+
+        name: Nome da planilha
+        worksheet_format: Formato do arquivo
+        start_at: Data inicial
+        ends_at: Data final
+        status: Situação
+        user_title: Usuário que gerou
+
+
+  survey_answer_export:
+    worksheet_formats:
+      xlsx: '.xlsx (Excel 7 ou superior)'
+      csv: '.csv'
+
+    statuses:
+      queued: Na fila
+      in_progress: Em progresso
+      error: Falha
+      success: Arquivo disponível

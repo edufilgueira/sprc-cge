@@ -1,0 +1,62 @@
+pt-BR:
+
+  operator:
+
+    home:
+
+      cards:
+
+        internal_status:
+
+          sectoral_validation:
+            title: Respondidos pelas áreas
+
+          partial_answer:
+            title: Parcialmente respondidos
+
+          final_answer:
+            title: Finalizados
+
+          waiting_referral:
+            title: Aguardando encaminhamento
+
+          cge_validation:
+            title: Em validação - CGE
+
+          appeal:
+            title: Solicitações de recurso
+
+          awaiting_invalidation:
+            title: Em pedido de invalidação
+
+        partial_answer_expired:
+          title: Respostas Parciais Vencidas
+
+        reopened:
+          title: Reabertos
+
+        deadline:
+          not_expired: Dentro do prazo
+          expired: Atrasadas
+          expired_can_extend: Atrasadas prorrogáveis
+
+
+        priority:
+          title: Urgentes
+
+        extension_in_progress:
+          title: Pedidos de prorrogação
+
+        extension_in_progress_to_cge:
+          title:  Solicitação de Prorrogação à CGE
+
+        extension_to_cge_denied:
+          title: Solicitação de Prorrogação à CGE Negada
+
+        rede_ouvir:
+          rede_ouvir_cge:
+            title: 'Rede Ouvir - Gestão Estadual'
+
+        coordination:
+          second_extension_in_progress:
+            title: Pedidos de Segunda Prorrogação

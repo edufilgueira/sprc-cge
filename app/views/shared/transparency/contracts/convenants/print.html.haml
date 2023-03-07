@@ -1,0 +1,176 @@
+.row
+  .col-12
+
+    %h2.h4
+      = t('.resource_title', sacc: convenant.title)
+
+    .row
+      .col-6
+        = dash_content_with_label(convenant, :num_spu)
+
+      .col-6.text-right
+        = dash_content_with_label(convenant, :num_contrato)
+
+    .row
+      .col-12
+        = dash_content_with_label(convenant, :descricao_nome_credor)
+
+    .row
+      .col-6
+        = dash_content_with_label(convenant, :cpf_cnpj_financiador)
+
+      .col-6.text-right
+        = dash_content_with_label(convenant, :descricao_situacao)
+
+    .row
+      .col-6
+        = dash_content_with_label(convenant, :status_str)
+
+      .col-6.text-right
+        = dash_content_with_label(convenant, :infringement_status_str)
+
+    .row
+      .col-12
+        = dash_content_with_label(convenant, :descricao_objeto)
+
+    .row
+      .col-12
+        = dash_content_with_label(convenant, :descricao_justificativa)
+
+    .row
+      .col-6
+        = dash_content_with_label(convenant, :tipo_objeto)
+
+.row.page-break
+  .col-12
+    - manager = convenant.manager.present? ? :manager_title : :cod_gestora
+    - grantor = convenant.grantor.present? ? :grantor_title : :cod_concedente
+
+    .row
+      .col-6
+        = dash_content_with_label(convenant, grantor)
+
+      .col-6.text-right
+        = dash_content_with_label(convenant, manager)
+
+    .row
+      .col-6
+        .content-with-label
+          %p.content-label
+            = convenant.class.human_attribute_name(:cod_secretaria)
+
+          %p.content-value
+            = convenant.manager_title || convenant.cod_secretaria
+
+      .col-6.text-right
+        = dash_content_with_label(convenant, :data_publicacao_portal, format: :date)
+
+    .row
+      .col-6
+        = dash_content_with_label(convenant, :data_publicacao_doe, format: :date)
+
+      .col-6.text-right
+        = dash_content_with_label(convenant, :data_assinatura, format: :date)
+
+    .row
+      .col-6
+        = dash_content_with_label(convenant, :data_termino, format: :date)
+
+      .col-6.text-right
+        .content-with-label
+          %p.content-label
+            = Integration::Contracts::Convenant.human_attribute_name(:valor_contrato)
+
+          %p.content-value
+            = resource_value(convenant, :valor_contrato)
+
+    .row
+      .col-6
+        = dash_content_with_label(convenant, :valor_can_rstpg)
+
+      .col-6.text-right
+        .content-with-label
+          %p.content-label
+            = Integration::Contracts::Convenant.human_attribute_name(:valor_original_concedente)
+            %i.fa.fa-question-circle{'data-toggle': 'tooltip', title: t('.tooltips.valor_original_concedente')}
+
+          %p.content-value
+            = resource_value(convenant, :valor_original_concedente)
+
+    .row
+      .col-6
+        .content-with-label
+          %p.content-label
+            = Integration::Contracts::Convenant.human_attribute_name(:valor_original_contrapartida)
+            %i.fa.fa-question-circle{'data-toggle': 'tooltip', title: t('.tooltips.valor_original_contrapartida')}
+
+          %p.content-value
+            = resource_value(convenant, :valor_original_contrapartida)
+
+      .col-6.text-right
+        .content-with-label
+          %p.content-label
+            = Integration::Contracts::Convenant.human_attribute_name(:valor_atualizado_concedente)
+            %i.fa.fa-question-circle{'data-toggle': 'tooltip', title: t('.tooltips.valor_atualizado_concedente')}
+
+          %p.content-value
+            = resource_value(convenant, :valor_atualizado_concedente)
+
+    .row
+      .col-6
+        .content-with-label
+          %p.content-label
+            = Integration::Contracts::Convenant.human_attribute_name(:valor_atualizado_contrapartida)
+            %i.fa.fa-question-circle{'data-toggle': 'tooltip', title: t('.tooltips.valor_atualizado_contrapartida')}
+
+          %p.content-value
+            = resource_value(convenant, :valor_atualizado_contrapartida)
+
+      .col-6.text-right
+        .content-with-label
+          %p.content-label
+            = Integration::Contracts::Convenant.human_attribute_name(:valor_atualizado_total)
+            %i.fa.fa-question-circle{'data-toggle': 'tooltip', title: t('.tooltips.valor_atualizado_total')}
+
+          %p.content-value
+            = resource_value(convenant, :valor_atualizado_total)
+
+    .row
+      .col-6
+        = dash_content_with_label(convenant, :calculated_valor_empenhado)
+
+      .col-6.text-right
+        = dash_content_with_label(convenant, :calculated_valor_pago)
+
+
+.row.page-break
+  .col-12
+    = render 'shared/transparency/contracts/contracts/print/additives', contract: convenant, additives: additives
+
+.row.page-break
+  .col-12
+    = render 'shared/transparency/contracts/contracts/print/adjustments', contract: convenant, adjustments: adjustments
+
+
+    - #
+    - # Lista carregada por ajax, não deve entrar na página de impressão
+    - #
+    / = render 'shared/transparency/contracts/financials', contract: convenant
+
+.row.page-break
+  .col-12
+    = render 'shared/transparency/contracts/contracts/print/infringements', contract: convenant, infringements: infringements
+
+
+    - #
+    - # Lista carregada por ajax, não deve entrar na página de impressão
+    - #
+    / = render 'shared/transparency/contracts/transfer_bank_orders', contract: convenant
+
+    - # XXX: foi informado que não existe 'anexos' e talvez devamos remover tod
+    = # render 'shared/transparency/contracts/contracts/show/work_plan_attachments', contract: convenant, contract: convenant
+
+.row.page-break
+  .col-12
+    - if integration_contracts_accountability_visible?(convenant)
+      = render 'shared/transparency/contracts/contracts/print/accountability', contract: convenant

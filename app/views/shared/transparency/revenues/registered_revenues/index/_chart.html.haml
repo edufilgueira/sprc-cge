@@ -1,0 +1,31 @@
+- chart_types = [:valor_lancado]
+
+- if series_data.present?
+
+  - chart_types.each do |chart_type|
+
+    - filtered_data = series_data.reject{|key, value| value.blank? || value[chart_type].nil? || value[chart_type].zero?}
+
+    - if chart_name == :month
+      - sorted_data = filtered_data.sort_by{|k,data| k}
+      - limited_data = sorted_data.to_h
+      - series_data_keys = limited_data.keys.map{|k| I18n.t("date.month_names")[k]}
+    - else
+      - sorted_data = filtered_data.sort_by{|k,data| data[chart_type]}.reverse!
+      - limited_data = sorted_data.first(10).to_h
+      - series_data_keys = limited_data.map{|k, v| v[:title].present? ? v[:title] : k}
+
+    - series_data_values = limited_data.values.map{|v| v[chart_type]}
+
+    %hr{'aria-hidden': true}
+
+    .row
+
+      .col-12
+
+        .chart{ id: "chart_#{chart_name}_#{chart_type}", data: { title: t(".#{chart_type}.#{chart_name}.title"), unit: t(".#{chart_type}.unit"), series_name: [t(".#{chart_type}.title")], series_data_keys: [series_data_keys], series_data_values: [series_data_values], colorful: 'true' }}
+
+        - if sorted_data.length > 10 && (chart_name != :month)
+          %small.float-right
+            %em.text-muted
+              = t('messages.chart.limited')

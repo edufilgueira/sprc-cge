@@ -1,0 +1,41 @@
+en:
+  shared:
+    transparency:
+
+      footer:
+        new_ticket:
+          sou:
+            title: Speak to the Ombudsman
+          sic:
+            title: Access to Information Access
+
+      menu_download:
+        xlsx: Download XLSX file
+        csv: Download CSV file
+
+      download_links:
+        xlsx:
+          title: 'Download Excel worksheet with data'
+          hint: 'Use Excel 7 or newer to open the worksheet'
+
+        csv:
+          title: 'Download CSV worksheet with data'
+
+      search:
+        hint: 'Note: This search ignores the other filters'
+
+        creditor_name:
+          contract: Search by creditor name
+          convenant: Search by creditor name
+          expense: Search by creditor name
+          daily: Search by payee name
+
+
+      tree_organizer:
+        title: View mode
+        default: Using default view.
+        restore_default: Restore default view
+        select: Select to add to view
+
+      survey_answer:
+        title: Did you like the page? <a href="#new_transparency_survey_answer">Click here</a> and say what you think!

@@ -1,0 +1,36 @@
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = Integration::Eparcerias::TransferBankOrder.model_name.human(count: 2)
+
+      .card-block
+
+        - total_transfer_bank_orders = Integration::Eparcerias::TransferBankOrder.where(contract: convenant).count
+
+
+        .remote-content{'data-remote-content': 'transfer_bank_orders', 'data-url': transparency_contracts_transfer_bank_orders_path(id: convenant)}
+
+          .row
+            .col-12.text-center{'data-loading': 'spinner'}
+              %i.fa.fa-spinner.fa-spin.fa-2x.p-3{'aria-hidden': 'true'}
+
+          .remote-content-result{'data-remote-content-result': 'transfer_bank_orders'}
+
+        .text-center
+          - if total_transfer_bank_orders > 20
+            - xlsx = download_transparency_contracts_transfer_bank_order_url(id: convenant, format: :xlsx)
+            - csv = download_transparency_contracts_transfer_bank_order_url(id: convenant, format: :csv)
+
+            = link_to xlsx, class: 'btn btn-link' do
+              %small
+                = t('.download.xlsx')
+
+            = link_to csv, class: 'pl-1 btn btn-link' do
+              %small
+                = t('.download.csv')

@@ -1,0 +1,42 @@
+en:
+
+  shared:
+
+    operator:
+
+      reports:
+
+        form:
+
+          filters:
+            title: Filters
+            ticket_type: Type
+            search:
+              title: Keyword
+              label: Filter by protocol, name, email, document or description
+            internal_status:
+              title: Status
+              select: All
+            organ:
+              title: Responsible organ
+              select: All
+            budget_program:
+              title: Budget program
+              select: All
+            topic:
+              title: Topic
+              select: All
+            subtopic:
+              title: Subtopic
+              select: All
+            deadline:
+              title: Deadline
+              select: All
+            confirmed_at:
+              label: Period
+              start: Start
+              end: End
+            expired: Only expired
+            priority: Only priorities
+            finalized: Show finalized
+            denunciation: Only denunciations

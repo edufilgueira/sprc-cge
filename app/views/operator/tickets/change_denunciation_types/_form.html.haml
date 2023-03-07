@@ -1,0 +1,23 @@
+= simple_form_for ticket, url: operator_ticket_change_denunciation_types_path(ticket), method: :post do |f|
+
+  .row.justify-content-center
+
+    .col-xl-10.col-12
+      .card.card-custom
+
+        .card-header
+
+          %h3.card-title
+            = t(".title")
+
+        .card-block
+
+          .row
+            .col-12
+              = f.input :denunciation_type, collection: denunciation_types, include_blank: 'Sem tipo'
+
+
+      .row.mt-4
+        .col-12
+          .float-right
+            = f.submit t("shared.tickets.form.commands.sou.create"), class: 'btn btn-primary'

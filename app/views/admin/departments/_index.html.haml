@@ -1,0 +1,43 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:status, :organ_acronym, :subnet_acronym, :acronym, :name, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: departments, sort_columns: sort_columns, table_locale: table_locale do |department|
+
+    - show_path = can?(:show, department) ? admin_department_path(department) : '#!'
+
+    %tr
+
+      %td
+        - icon_class = department.disabled? ? 'times' : 'check'
+        = link_to show_path, title: t("commands.disabled._#{department.disabled?}") do
+          %i{class: "fa fa-#{icon_class}"}
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(department.organ_acronym)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(department.subnet_acronym)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(department.acronym)
+
+      %td
+        - department_name = department.name
+        = link_to show_path, title: department_name do
+          = filtered_highlighted(department_name.truncate(60))
+
+      %td
+        .float-right
+          - if can?(:edit, department)
+            = link_to t('commands.edit'), edit_admin_department_path(department), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:manage, department)
+            = render 'shared/buttons/btn_toggle_disabled', resource: department, namespace: :admin

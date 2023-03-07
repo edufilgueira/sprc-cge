@@ -1,0 +1,27 @@
+- show_revenue_path = url_for(action: 'show', controller: 'revenues', id: revenue.id)
+
+%tr
+
+  %td
+    - department_name = revenue.organ_acronym || revenue.unidade
+    - department_title = revenue.organ_title || revenue.unidade
+    = link_to department_name.truncate(25), show_revenue_path, title: department_title
+
+  %td
+    = link_to revenue.year, show_revenue_path
+
+  %td
+    = link_to I18n.t("date.month_names")[revenue.month], show_revenue_path
+
+  %td
+    = link_to revenue.poder, show_revenue_path
+
+  %td
+    - account_configuration_title = revenue.account_configuration_title
+    = link_to account_configuration_title.truncate(40), show_revenue_path, title: account_configuration_title
+
+  %td
+    = link_to number_to_currency(revenue.valor_credito), show_revenue_path
+
+  %td
+    = link_to number_to_currency(revenue.valor_debito), show_revenue_path

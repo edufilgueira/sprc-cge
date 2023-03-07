@@ -1,0 +1,7 @@
+- if ticket_department.answered?
+  - ticket = ticket_department.ticket
+  - answer = answer_active_by_ticket_department(ticket_department)
+  - email = answer&.user&.email || answer&.ticket_department_email&.email
+
+  .alert.alert-warning
+    = raw t('.description', email: email, department_name: ticket_department.department_name, protocol: ticket.parent_protocol)

@@ -1,0 +1,80 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/expenses/budget_balance:
+        year: Ano
+
+        secretary: Secretaria
+        organ: Órgão
+
+        management_unit: Secretaria/Órgão
+        cod_unid_gestora: Secretaria/Órgão
+
+        budget_unit: Unidade orçamentária
+        codigo_unidade_orcamentaria: Unidade orçamentária
+
+        function: Função
+        cod_funcao: Função
+
+        sub_function: Subfunção
+        cod_subfuncao: Subfunção
+
+        government_program: Programa de governo
+        cod_programa: Programa de governo
+        integration_supports_government_program_id: Programa de governo
+
+        government_action: Ação de governo
+        cod_acao: Ação de governo
+
+        administrative_region: Região administrativa
+        cod_localizacao_gasto: Região administrativa
+
+        expense_nature: Natureza da despesa
+        cod_natureza_desp: Natureza da despesa
+
+        qualified_resource_source: Fonte do recurso
+        cod_fonte: Fonte do recurso
+
+        finance_group: Grupo financeiro
+        cod_grupo_fin: Grupo financeiro
+
+        economic_category: Categoria Econômica
+        cod_categoria_economica: Categoria Econômica
+
+        application_modality: Modalidade de Aplicação
+        cod_modalidade_aplicacao: Modalidade de Aplicação
+
+        expense_element: Elemento de Despesa
+        cod_elemento_despesa: Elemento de Despesa
+
+        cod_grupo_desp: Grupo de Despesas
+
+
+      integration/expenses/budget_balance/cod_grupo_desp:
+        PES: 'PESSOAL E ENCARGOS'
+        PRI: 'PRIORITÁRIO'
+        MAN: 'FUNCIONAMENTO E MANUTENÇÃO'
+        FIN: 'FINALÍSTICO'
+        TRA: 'TRANSFERÊNCIA'
+        SDD: 'SERVIÇO DA DÍVIDA'
+
+  integration/expenses/budget_balance:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Despesas %{year}'
+
+          header:
+            title: 'Órgão/Secretaria'
+            valor_orcamento_atualizado: 'Orçamento atualizado (R$)'
+            valor_empenhado: 'Empenhado (R$) '
+            valor_liquidado: 'Liquidado (R$)'
+            valor_pago: 'Pago (R$)'
+
+            calculated_valor_orcamento_atualizado: 'Orçamento atualizado (R$)'
+            calculated_valor_empenhado: 'Empenhado (R$) '
+            calculated_valor_liquidado: 'Liquidado (R$)'
+            calculated_valor_pago: 'Pago (R$)'
+
+
+

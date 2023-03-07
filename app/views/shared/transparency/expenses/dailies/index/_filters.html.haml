@@ -1,0 +1,43 @@
+.card-filters.filter-bar{'data-filter-bar': 'expenses_dailies'}
+
+  = form_for transparency_expenses_dailies_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+
+      .col-12.col-lg-4
+        = label_tag(:year, Integration::Expenses::Daily.human_attribute_name(:exercicio))
+
+        = text_field_tag(:exercicio, params[:exercicio] || year, placeholder: year, 'data-filter-bar-bypass-clear': '', class: 'form-control w-100 year-datetimepicker')
+
+      .col-12.col-lg-4
+        = label_tag(:date_of_issue, Integration::Expenses::Daily.human_attribute_name(:date_of_issue_filter))
+        = text_field_tag(:date_of_issue,  params[:date_of_issue], data: { input: 'daterangepicker' }, class: 'form-control w-100')
+
+      .col-12.col-lg-4
+        - options = options_for_select(supports_organs_and_secretaries_from_executivo_for_select_with_all_option_codigo_orgao_as_id, params[:unidade_gestora])
+
+        = label_tag(:unidade_gestora, Integration::Expenses::Daily.human_attribute_name(:unidade_gestora))
+        = select_tag(:unidade_gestora, options)
+    .row
+
+      .col-12.col-lg-6.mt-3
+        = label_tag(:search, t('messages.filters.search.label'))
+        = text_field_tag(:search, params[:search], class: 'form-control w-100', 'data-filter-bar-ignore-submit-on-enter': 'true')
+        %small.form-text.text-muted
+          = t('.search.hint')
+
+      .col-12.col-lg-6.mt-3{ data: { content: 'creditor' } }
+
+        - url = search_api_v1_transparency_creditors_path(group: :dailies)
+        = label_tag(:creditor, t('shared.transparency.search.creditor_name.daily'))
+        %i.fa.fa-spinner.fa-spin.fa-fw{ 'aria-hidden': 'true', 'data-content': 'loading' }
+        = search_field_tag :search_datalist, params[:search_datalist], class: 'form-control loader', data: { input: 'creditor', url: url, 'param-name': 'nome', 'visible-properties': 'nome' }
+        %small.form-text.text-muted
+          = t('shared.transparency.search.hint')
+
+
+    .row
+      .col-12.mt-3
+        = f.submit t('commands.search'), class: 'btn btn-primary btn-block w-25 pull-right'

@@ -1,0 +1,60 @@
+%hr
+.row.mb-3
+  .col-12
+    %h3
+      = t('.title')
+
+.row
+  .col-lg-6.col-sm-12
+    %ul.list-unstyled
+      - site_map_transparency_default.each do |t|
+        %li.mb-2
+          = link_to t[:title], t[:link]
+
+
+    %ul.list-unstyled
+      %li.mb-2
+        %h5
+          = t('.news_sections.title')
+
+      - site_map_transparency_news_sections.each do |t|
+        %li.mb-2
+          = link_to t[:title], t[:link]
+
+
+
+    %ul.list-unstyled
+      %h5
+        = t('.expenses.title')
+
+      - site_map_transparency_expenses.each do |t|
+        %li.mb-2
+          = link_to t[:title], t[:link]
+
+
+    %ul.list-unstyled
+      %h5
+        = t('.revenues.title')
+
+      - site_map_transparency_revenues.each do |t|
+        %li.mb-2
+          = link_to t[:title], t[:link]
+
+
+  .col-lg-6.col-sm-12
+    %ul.list-unstyled
+      %h5
+        = t('.management.title')
+
+      - site_map_transparency_management.each do |t|
+        %li.mb-2
+          = link_to t[:title], t[:link]
+
+
+    %ul.list-unstyled
+      %h5
+        = t('.maps.title')
+
+      - site_map_transparency_maps.each do |t|
+        %li.mb-2
+          = link_to t[:title], t[:link]

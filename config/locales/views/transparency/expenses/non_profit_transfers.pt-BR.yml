@@ -1,0 +1,8 @@
+pt-BR:
+  transparency:
+    expenses:
+      non_profit_transfers:
+        index:
+          title: Transferências a Entidades sem Fins Lucrativos
+          description: Saiba quanto o governo do Estado do Ceará transfere em dinheiro para organizações sem fins lucrativos.
+

@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    attributes:
+      attendance_report:
+        title: Título
+        starts_at: Início
+        ends_at: Fim
+        status: status
+
+  attendance_report:
+    statuses:
+      preparing: Preparando
+      generating: Gerando
+      error: Erro
+      success: Finalizado

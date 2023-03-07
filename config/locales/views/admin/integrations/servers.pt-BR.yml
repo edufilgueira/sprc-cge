@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    integrations:
+      servers:
+        index:
+          title: Informações sobre Servidores Públicos
+          empty: Nenhum registro encontrado

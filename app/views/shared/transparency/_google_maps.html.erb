@@ -1,0 +1,3 @@
+<%- if ENV['GOOGLE_MAPS_API_KEY'].present? %>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&libraries=visualization" async defer></script>
+<% end %>

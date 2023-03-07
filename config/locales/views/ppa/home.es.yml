@@ -1,0 +1,126 @@
+es:
+  ppa:
+    home:
+      top_4_ppa:
+        cards:
+          elaborating:
+            title: HACIENDO EJERCICIO
+            links:
+              link2:
+                title: Voto de acceso
+              title: '%{start_year} - %{end_year}'
+            icon: 'fa fa-2x fa-file-text-o'
+
+          monitoring:
+            title: SUPERVISIÓN
+            links:
+              link2:
+                title: Acceder al Monitor
+              title: '%{start_year} - %{end_year}'
+            icon: 'fa fa-2x fa-eye'
+
+
+          evaluating:
+            title: EVALUACIÓN
+            links:
+              link2:
+                title: Revisión de acceso
+              title: '%{start_year} - %{end_year}'
+            icon: 'fa fa-2x fa-check-square-o'
+
+          revising:
+            title: REVISIÓN
+            links:
+              link2:
+                title: Acceder la Revisión
+              title: '%{start_year} - %{end_year}'
+            icon: 'fa fa-2x fa-pencil-square-o'
+
+      show:
+        title: Participa en el PPA
+
+      headline:
+        title: Participacióm Ciudadana
+        description: >
+          Bienvenido al área de participación ciudadana. Aquí usted puede acompañar talleres, evaluar, monitorear y participar en el Plan Plurianual (PPA).
+
+      general:
+        cards:
+          ppa1:
+            title: Elaborar
+            icon: fa-file-text-o
+            class: 'ml-auto'
+
+          ppa2:
+            title: Monitorear
+            icon: fa-eye
+            class: ''
+
+          ppa3:
+            title: Evaluar
+            icon: fa-check-square-o
+            class: 'mr-auto'
+
+        what_is:
+          title: ¿Qué es la participación?
+          description: >
+            Es un derecho de todos los ciudadanos de compartir con el Gobierno el espacio de decisión de los rumbos de las más diversas políticas públicas.
+
+        why:
+          title: ¿Y por qué participar?
+          description: >
+            La participación ciudadana es importante para la creación conjunta de un futuro mejor para todos. Es donde la sociedad civil puede opinar, debatir y construir junto con el Gobierno mejores políticas públicas.
+
+
+        what_is_ppa:
+          title: ¿Qué es el Plan Plurianual (PPA)?
+          description: >
+            Es un plan que dirige la actuación del gobierno a través de objetivos y metas con enfoque principal en la mejora de los resultados esperados por la sociedad en cada región del Estado.
+
+        steps:
+          title: ¿Cuáles son las etapas del PPA?
+          description: 'El Plan Plurianual tiene cuatro etapas:'
+          step: 'ETAPA %{i}:'
+          step1: >
+            El PPA es la base que orienta todas las acciones gubernamentales, definiendo los resultados esperados y las ofertas prioritarias de bienes y servicios
+          step2: >
+            Después de su elaboración, las leyes presupuestarias definirán el valor a ser gastado para alcanzar los resultados esperados.
+
+          step3: >
+            Después de concretado, la ejecución del presupuesto del Estado de Ceará puede ser acompañada y entonces se evalúa si las metas están siendo alcanzadas, de manera a propiciar que lleguemos a los objetivos planificados.
+
+          step4: >
+            Por medio del monitoreo y posteriormente de la evaluación, la sociedad puede ejercer su derecho de ciudadanía y evaluar si el Gobierno está logrando proporcionar los intereses sociales.
+
+      workshops:
+        title: Talleres de elaboración del PPA
+        description: >
+          Los Talleres Regionales son momentos de encuentro, debate, evaluación y sugerencias. Es cuando el gobierno va hacia usted para escuchar sus opiniones e ideas de mejora en los servicios ofrecidos.
+          ¡En breve información sobre los Talleres de Elaboración!
+
+        links: Acceso rápido
+        last: Ver el último taller (%{name}, %{date})
+        counter: para el inicio de los talleres del PPA
+        see_more: ver encuentros regionales
+        coming_soon: '¡En breve información sobre los Talleres de Elaboración!'
+        soon: 'En breve'
+
+      map:
+        title: Seleccione una región y un bienio del PPA
+        city: Ciudad
+        biennium: Bienio
+        hint: >
+          Seleccione un municipio para encontrar la región correspondiente.
+          O haga clic en una región de mapa
+
+        hint_mobile: >
+          Seleccione un municipio para encontrar la región correspondiente.
+
+        see_more: Participa en el PPA en esta región
+
+      bienniums:
+        strategies: Estrategias
+        initiatives: Iniciativas
+        products: Productos
+        proposals: Propuestas
+        biennium: 'Bienio de %{biennium}'

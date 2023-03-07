@@ -1,0 +1,11 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :toolbar, render('shared/application/inner_navbar', active: '')
+
+- unless ticket.sic? && ticket.anonymous?
+
+  .mb-4
+
+    %h2.sr-only
+      = t('.title')
+
+    = render 'form', ticket: ticket

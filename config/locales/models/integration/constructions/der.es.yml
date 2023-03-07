@@ -1,0 +1,64 @@
+es:
+  activerecord:
+    attributes:
+      integration/constructions/der:
+        base: 'Base'
+        cerca: 'Cerca'
+        conclusao: 'Conclusión'
+        construtora: 'Constructora'
+        cor_status: 'Color'
+        data_fim_contrato: 'Fin del contrato'
+        data_fim_previsto: 'Fin previsto'
+        distrito: 'Distrito'
+        drenagem: 'Drenaje'
+        extensao: 'Extensión (km)'
+        id_obra: 'ID de la obra'
+        numero_contrato_der: 'Número DER'
+        numero_contrato_ext: 'Número EXT'
+        numero_contrato_sic: 'Número SACC'
+        obra_darte: 'Obra Darte'
+        percentual_executado: 'Porcentual executado'
+        programa: 'Plan'
+        qtd_empregos: 'Empleados'
+        qtd_geo_referencias: 'Etiquetas geográficas'
+        revestimento: 'Revestimiento'
+        rodovia: 'Carretera'
+        servicos: 'Servicios'
+        sinalizacao: 'Señalización'
+        status: 'Situación' 
+        supervisora: 'Supervisor'
+        terraplanagem: 'Movimiento de tierras'
+        trecho: 'Tramo'
+        ult_atual: 'Actual'
+        valor_aprovado: 'Valor'
+        der_status: Situación
+        data_inicio_obra: 'Inicio de la obra'
+        data_ordem_servico: 'Fecha orden servicio'
+        dias_adicionado: 'Días agregados'
+        dias_suspenso: 'Días suspensos'
+        municipio: 'Municipio'
+        numero_ordem_servico: 'Número orden servicio'
+        prazo_inicial: 'Plazo inicial (días)'
+        prazo_total: 'Plazo total (días)'
+        total_aditivo: 'Total aditivo'
+        total_reajuste: 'Total reajuste'
+        valor_atual: 'Valor actual'
+        valor_original: 'Valor original'
+        valor_pi: 'Valor PI'
+
+  integration/constructions/der:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Obras DER %{month}-%{year}'
+
+    der_statuses:
+      canceled: 'CANCELADO'
+      done: 'CONCLUIDO'
+      in_progress: 'EN PROCESO'
+      in_project: 'EN PROYECTO'
+      in_bidding: 'EN LICITACIÓN'
+      not_started: 'NO INICIADO'
+      paused: 'PARALIZADO'
+      project_done: 'PROYETO CONCLUIDO'
+      bid: 'LICITADO/CONTRATADO'

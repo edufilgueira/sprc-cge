@@ -1,0 +1,50 @@
+= simple_form_for configuration, as: :configuration, url: admin_integrations_constructions_configuration_path(configuration) do |f|
+
+  .row
+    .col-4
+      = f.input :user, autofocus: true
+    .col-4
+      = f.input :password, input_html: { value: configuration.password }
+    .col-4
+      = f.input :headers_soap_action
+
+  %hr{'aria-hidden':'true'}
+
+  .row
+    .col-12
+      = f.input :der_wsdl
+
+  - %w(der der_contract der_measurement).each do |item|
+    .row
+      .col-6
+        = f.input "#{item}_operation"
+      .col-6
+        = f.input "#{item}_response_path"
+
+
+  %hr{'aria-hidden':'true'}
+
+  .row
+    .col-12
+      = f.input :dae_wsdl
+
+  - %w(dae dae_measurement dae_photo).each do |item|
+    .row
+      .col-6
+        = f.input "#{item}_operation"
+      .col-6
+        = f.input "#{item}_response_path"
+
+  %hr{'aria-hidden':'true'}
+
+  .row
+    .col-md-6
+      = f.simple_fields_for :schedule do |s|
+        = s.input :cron_syntax_frequency, hint: true
+
+  %hr{'aria-hidden': 'true'}
+
+  .row
+    .col-12
+      = link_to t('.commands.cancel'), admin_integrations_root_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary float-right'

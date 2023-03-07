@@ -1,0 +1,91 @@
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.title')
+
+      .card-block
+
+        - if financials.present?
+          - export_file_name = t('.table.export_file_name', id: contract.isn_sic)
+
+          .table-responsive
+            %table.table.table-hover.table-striped.table-sm.bg-faded{summary: t('.summary'), 'data-toggle': 'table-export', 'data-filename': export_file_name}
+
+              %thead
+
+                %tr
+                  %th
+                    = t(".table.heads.num_documento")
+                  %th
+                    = t(".table.heads.data_documento")
+                  %th
+                    = t(".table.heads.valor_documento")
+                  %th
+                    = t(".table.heads.num_pagamento")
+                  %th
+                    = t(".table.heads.data_pagamento")
+                  %th
+                    = t(".table.heads.valor_pagamento")
+
+              %tbody
+                - financials.each do |financial|
+                  %tr
+                    %td
+                      .a
+                        - label = resource_value(financial, :num_documento)
+                        - ned = financial.ned
+
+                        - if ned.present?
+                          - path = (namespace == :admin ? admin_integrations_expenses_ned_path(ned) : transparency_expenses_ned_path(ned))
+                          = link_to path do
+                            = label
+                            .fa.fa-external-link
+                        - else
+                          = label
+
+                    %td
+                      .a
+                        = resource_value(financial, :data_documento, format: :date)
+                    %td
+                      .a
+                        = resource_value(financial, :valor_documento)
+                    %td
+
+                      - if financial.num_pagamento.present?
+
+                        .a
+                          - label = resource_value(financial, :num_pagamento)
+                          - npf = financial.npf
+
+                          - if npf.present?
+                            - path = (namespace == :admin ? admin_integrations_expenses_npf_path(npf) : transparency_expenses_npf_path(npf))
+                            = link_to path do
+                              = label
+                              .fa.fa-external-link
+                          - else
+                            = label
+
+                    %td
+                      - if financial.num_pagamento.present?
+
+                        .a
+                          = resource_value(financial, :data_pagamento, format: :date)
+
+                    %td
+                      - if financial.num_pagamento.present?
+
+                        .a
+                          = resource_value(financial, :valor_pagamento)
+
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')

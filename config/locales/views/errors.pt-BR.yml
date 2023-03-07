@@ -1,0 +1,8 @@
+pt-BR:
+  errors:
+    forbidden:
+      title: 'Você não tem permissão de acesso!'
+    not_found:
+      title: 'Página não encontrada!'
+    internal_server_error:
+      title: 'Ops! Erro interno! Já estamos trabalhando para resolver!'

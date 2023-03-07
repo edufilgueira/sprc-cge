@@ -1,0 +1,21 @@
+- # navbar interna usada na área externa da plataforma.
+- # recebe o local 'active' indicando o menu ativo.
+
+- active = local_assigns[:active]
+
+%ul.nav.inner_navbar
+
+  .sr-only
+    = t("a11y.toolbar.description")
+
+  %li.nav-item
+    - active_class = (active == 'login' ?  'active' : '')
+    = link_to t('shared.application.inner_navbar.login.title'), new_user_session_path, class: "nav-link #{active_class}"
+
+  %li.nav-item
+    - active_class = (active == 'protocol_login' ?  'active' : '')
+    = link_to t('shared.application.inner_navbar.protocol_login.title'), new_ticket_session_path, class: "nav-link #{active_class}"
+
+  %li.nav-item
+    - active_class = (active == 'register' ?  'active' : '')
+    = link_to t('shared.application.inner_navbar.register.title'), new_user_registration_path, class: "nav-link #{active_class}"

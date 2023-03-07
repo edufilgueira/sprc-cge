@@ -1,0 +1,57 @@
+---
+engines:
+  brakeman:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+      - javascript
+      - python
+      - php
+  eslint:
+    enabled: true
+  fixme:
+    enabled: true
+    checks:
+      TODO:
+        enabled: false
+      XXX:
+        enabled: false
+  rubocop:
+    enabled: true
+ratings:
+  paths:
+  - Gemfile.lock
+  - "**.erb"
+  - "**.haml"
+  - "**.rb"
+  - "**.rhtml"
+  - "**.slim"
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.module"
+  - "**.php"
+  - "**.py"
+exclude_paths:
+- config/
+- db/
+- spec/
+- vendor/
+- lib/tasks/
+- app/assets/javascripts/ckeditor/
+
+checks:
+  method-count:
+    enabled: false
+  file-lines:
+    enable: false
+  method-lines:
+    enabled: false
+  method-complexity:
+    config:
+      threshold: 6 # default é 5

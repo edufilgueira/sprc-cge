@@ -1,0 +1,28 @@
+en:
+  activerecord:
+    attributes:
+      integration/supports/creditor:
+        bairro: Neighbourhood
+        cep: CEP (ZIP)
+        codigo: Code
+        codigo_contribuinte: Taxpayer ID
+        codigo_distrito: District code
+        codigo_municipio: City code
+        codigo_nit: NIT code
+        codigo_pis_pasep: PIS/PASESP
+        complemento: Additional info
+        cpf_cnpj: CPF/CNPJ
+        data_atual: Current date
+        data_cadastro: Register date
+        email: E-mail
+        logradouro: Street
+        nome: Name
+        nome_municipio: City
+        numero: Number
+        status: Status
+        telefone_contato: Telephone
+        uf: State (UF)
+
+  integration/supports/creditor:
+    select:
+      all: All creditors

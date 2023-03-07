@@ -1,0 +1,25 @@
+pt-BR:
+
+  operator:
+
+    tickets:
+
+      transfer_departments:
+        edit:
+          title: Transferir para outra área interna
+          description:
+            title: Descrição da manifestação
+          attachments:
+            title: Anexos
+          form:
+            title: Transferência de área interna
+        update:
+          error: Falha ao transferir. Verifique os erros abaixo.
+          done: Transferência realizada com sucesso.
+        form:
+          department:
+            from: De
+            to: Para
+          justification:
+            label: Motivo da transferência
+          save: Salvar alterações

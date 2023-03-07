@@ -1,0 +1,23 @@
+en:
+  activerecord:
+    attributes:
+      integration/results/thematic_indicator:
+        eixo: Axis
+        tema: Theme
+        resultado: Result
+        indicador: Indicator
+        unidade: Unit
+        sigla_orgao: Agency Acronym
+        orgao: Agency/Secretariat
+        valores_realizados: Achieved values
+        valores_programados: Programmed values
+        organ_title: Agency/Secretariat
+        axis_title: Axis
+        theme_title: Theme
+
+  integration/results/thematic_indicator:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Thematic indicators %{month}-%{year}'
+          short_title: 'Strategic ind. %{month}-%{year}'

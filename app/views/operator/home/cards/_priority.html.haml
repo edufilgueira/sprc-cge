@@ -1,0 +1,15 @@
+- params = params.merge({ priority: true, without_denunciation: !current_user.sectoral_denunciation?})
+- organ_association = params[:organ_association]
+- ticket_type = params[:ticket_type]
+
+.col-md-6.col-lg-4.col-sm-12.pb-3
+
+  = link_to operator_tickets_path(params) do
+
+    .operator-home-card.warning
+
+      %h3.operator-home-card-title
+        = t('.title')
+
+      %p.operator-home-card-count
+        = tickets_sectoral_priority_count(ticket_type, organ_association)

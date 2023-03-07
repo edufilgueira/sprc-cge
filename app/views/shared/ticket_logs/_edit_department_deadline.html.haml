@@ -1,0 +1,22 @@
+.row
+
+  .col-12.col-md-1.no-print
+    .float-left
+
+      .bg-faded.rounded-circle.p-1
+
+        %i.fa.fa-clock-o.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      %h4.h6.mb-0
+        - data = ticket_log.data
+        = t('.title', organ_acronym: data[:organ_acronym], department_acronym: data[:department_acronym], deadline_ends_at: data[:deadline_ends_at])
+
+      %small
+        %em
+          = l(ticket_log.created_at, format: :shorter)
+
+%hr{'aria-hidden': 'true'}

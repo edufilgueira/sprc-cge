@@ -1,0 +1,21 @@
+en:
+  ppa:
+    themes:
+      regional_strategies:
+        regional_initiatives:
+          show:
+            title: "%{theme} - %{biennium} biennium in %{region}"
+            initiative: 'Initiative'
+            expected_vs_actual_budget: 'Estimated Budget vs. Actual budget'
+            products_execution: 'Product(s) physical implementation'
+            chart_x_label: Reais (R$)
+
+          products:
+            no_products: No products associated with the initiative in question
+
+          product_card:
+            actual: Actual
+            expected: Estimated
+            progress: "%{amount}%% finished"
+            progress_unavailable: "Progress unavailable"
+            unavailable: "Unavailable"

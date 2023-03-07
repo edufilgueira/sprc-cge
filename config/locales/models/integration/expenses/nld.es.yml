@@ -1,0 +1,37 @@
+es:
+  activerecord:
+    models:
+      integration/expenses/nld:
+        one: Nota de Liquidación de Gasto
+        other: Notas de Liquidación de Gasto
+
+    attributes:
+      integration/expenses/nld:
+        exercicio: Ejercicio
+        unidade_gestora: Unidad de gestión
+        unidade_executora: Unidad ejecutora
+        numero: Número
+        natureza: Naturaleza
+        efeito: Efecto
+
+        tipo_de_documento_da_despesa: Tipo de documento de gasto
+        numero_do_documento_da_despesa: Número del documento de gasto
+        data_do_documento_da_despesa: Fecha del documento de gasto
+        processo_administrativo_despesa: Proceso administrativo del gasto
+        data_emissao: Fecha de emisión
+        date_of_issue: Fecha de emisión
+        valor: Valor
+        valor_retido: Valor retenido
+        cpf_ordenador_despesa: CPF del ordenador del gasto
+        credor: Acreedor
+        numero_npf_ordinaria: Número de la NPF ordinaria
+        numero_nota_empenho_despesa: Número de la NED
+        ned: Nota de empeño del gasto
+        tipo_despesa_extra_orcamentaria: Tipo de gasto extra presupuestario
+        especificacao_restituicao: Especificación de la restitución
+        exercicio_restos_a_pagar: Ejercicio restos a pagar
+        data_atual: Fecha actual
+
+        management_unit_title: Secretaría/Órgano
+        executing_unit_title: Unidad ejecutora
+        creditor_nome: Acreedor

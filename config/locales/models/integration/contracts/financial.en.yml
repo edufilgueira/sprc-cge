@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    attributes:
+
+      integration/contracts/financial:
+        isn_sic: Número SACC
+        num_documento: Commitment note
+        data_documento: Commitment date
+        valor_documento: Commitment
+        num_pagamento: Last Payment Note
+        data_pagamento: Last Payment date
+        valor_pagamento: Total Payment Amount
+
+    models:
+      integration/contracts/financial:
+        one: Commitment notes and Payment note
+        other: Commitment notes and Payments notes
+

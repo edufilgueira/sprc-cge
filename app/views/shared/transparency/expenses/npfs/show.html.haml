@@ -1,0 +1,93 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, npf.title
+
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = npf.title
+
+        .card-commands
+          = render 'shared/tickets/components/btn_print'
+
+      .card-block
+
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :exercicio)
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :numero)
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :numero_npf_ord)
+
+        .row
+
+          .col-12.col-lg-4
+            - management_unit = (npf.management_unit.present?) ? :management_unit_title : :unidade_gestora
+            = content_with_label(npf, management_unit)
+
+          .col-12.col-lg-4
+            - executing_unit = (npf.executing_unit.present?) ? :executing_unit_title : :unidade_executora
+            = content_with_label(npf, executing_unit)
+
+          .col-12.col-lg-4
+            - nome_credor = (npf.creditor.present? ? :creditor_nome : :credor)
+            = content_with_label(npf, nome_credor)
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :data_emissao)
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :data_atual)
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :valor)
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :natureza)
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :efeito)
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :tipo_proc_adm_desp)
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :grupo_fin)
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :fonte_rec)
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :codigo_projeto)
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :numero_parcela)
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :isn_parcela)
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(npf, :numeroconvenio)

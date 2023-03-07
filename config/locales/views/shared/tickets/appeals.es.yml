@@ -1,0 +1,24 @@
+es:
+
+  shared:
+
+    tickets:
+
+      appeals:
+
+        form:
+          justification: Justificación
+          hint: Explique el motivo de la solicitud
+          save: Solicitar recurso
+
+        answers:
+          answer: Respuesta(s)
+          answer_versions:
+            sic:
+              zero: Respuesta a la solicitud
+              one: Respuesta a primera instancia del recurso
+              other: Respuesta a segunda instancia del recurso
+            sou:
+              zero: Respuesta à manifestación
+              one: Respuesta à manifestación (%{count}ª reabertura)
+              other: Respuesta à manifestación (%{count}ª reabertura)

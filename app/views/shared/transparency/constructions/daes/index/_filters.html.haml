@@ -1,0 +1,54 @@
+.card-filters.filter-bar{'data-filter-bar': 'daes'}
+
+  = form_for transparency_constructions_daes_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+      .col-12.col-lg-4
+        - options = options_for_select(integration_constructions_dae_status_for_select_with_all_option, params[:dae_status])
+
+        = label_tag(:dae_status, Integration::Constructions::Dae.human_attribute_name(:dae_status))
+
+        = select_tag(:dae_status, options)
+
+      .col-12.col-lg-4
+        - options = options_for_select(supports_organs_and_secretaries_from_executivo_for_select_with_all_option, params[:organ_id])
+
+        = label_tag(:organ_id, Integration::Constructions::Dae.human_attribute_name(:secretaria))
+
+        = select_tag(:organ_id, options)
+
+
+      .col-12.col-lg-4
+        - select_options = transparency_select_options_from_model(Integration::Constructions::Dae, :municipio)
+        - options = options_for_select(select_options, params[:municipio])
+
+        = label_tag(:municipio, Integration::Constructions::Dae.human_attribute_name(:municipio))
+        = select_tag(:municipio, options, include_blank: t('messages.filters.select.all.male'))
+
+
+    .row.mt-3
+      .col-12.col-lg-6
+        = label_tag(:data_inicio, Integration::Constructions::Dae.human_attribute_name(:data_inicio))
+
+        = text_field_tag(:data_inicio, nil, data: { input: 'daterangepicker' }, class: 'form-control w-100')
+
+      .col-12.col-lg-6
+        = label_tag(:data_fim_previsto, Integration::Constructions::Dae.human_attribute_name(:data_fim_previsto))
+
+        = text_field_tag(:data_fim_previsto, params[:data_fim_previsto], data: { input: 'daterangepicker' }, class: 'form-control w-100')
+
+
+    .row.mt-3
+      .col-12.col-lg-9
+        = label_tag(:search, t('messages.filters.search.label'))
+        = text_field_tag(:search, params[:search], class: 'form-control w-100', 'data-filter-bar-ignore-submit-on-enter': 'true')
+        %small.form-text.text-muted
+          = t('.search.hint')
+
+      .col-12.col-lg-3
+
+        - # forma simples de align-bottom no botão de busca
+        .mt-4.pt-2
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'

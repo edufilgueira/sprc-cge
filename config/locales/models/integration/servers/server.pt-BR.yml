@@ -1,0 +1,19 @@
+pt-BR:
+
+  activerecord:
+
+    attributes:
+
+      integration/servers/server:
+        dsc_cpf: 'CPF'
+        dth_nascimento: 'Data de nascimento'
+
+        dsc_funcionario: Nome do servidor
+        organs: Órgão/Entidade
+        job_roles: Cargo/Função/Emprego
+        credit_salary: Salário bruto
+        total_salary: Salário líquido
+
+
+
+

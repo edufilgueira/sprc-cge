@@ -1,0 +1,22 @@
+en:
+
+  platform:
+
+    tickets:
+
+      appeals:
+
+        new:
+          title: New appeal request
+
+        alert:
+          title: Read before
+          description:
+            You shall file an appeal when you understand that the agency or entity did not provide the requested information or did not provide the reason for denying the information. <br/> <br/>
+          Caution: The resource should not address a new subject, that is, it should stick exclusively to the initial request. If you would like to ask a different question, do not submit an appeal. In this case, make a new request for information. <br/> <br/>
+            For the first appeal request, the Committee of Access to Information is who will analyze your request. For the second one, your request will be analyzed by the Access of Information State Council.
+
+        create:
+          done: Appeal request successfully implemented
+          error: Error occured when requesting resource
+

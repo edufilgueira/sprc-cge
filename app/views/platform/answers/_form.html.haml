@@ -1,0 +1,13 @@
+- #
+- # Usado para carregar eventos necessários para selecionar a nota da avaliação
+- # no retorno da parial
+- #
+- # XXX Verificar como podemos initicializar o component bootstrap ao carregar
+- # XXX a partial ou após o 'remote-form:after'
+- # XXX e remover 'ticket_logs#_toggleBtnGroup'
+- #
+= javascript_include_tag('views/shared/tickets/ticket_logs')
+
+= simple_form_for new_evaluation, :url => platform_answer_evaluations_path(answer_id: answer), method: :post, remote: true do |f|
+
+  = render 'shared/answers/evaluation_form', f: f

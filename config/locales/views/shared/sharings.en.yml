@@ -1,0 +1,8 @@
+en:
+  shared:
+    sharings:
+      sharing:
+        empty: No sectoral Ombudsman involved
+
+        link:
+          protocol: "%{protocol}"

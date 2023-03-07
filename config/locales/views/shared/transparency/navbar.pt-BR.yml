@@ -1,0 +1,15 @@
+pt-BR:
+  shared:
+    transparency:
+      navbar:
+        default_title: Transparência
+        default_description: >
+          Bem-vindo à área de Transparência do Portal Ceará Transparente.
+
+        login:
+          title: Fazer login
+          description: >
+            Identifique-se e aproveite o Ceará Transparente em seu potencial máximo!
+
+        sign_up:
+          title: Criar perfil

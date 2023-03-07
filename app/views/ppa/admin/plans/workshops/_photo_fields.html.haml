@@ -1,0 +1,15 @@
+- photo = f.object
+
+.nested-fields.mb-2
+  .col-12.p-1.pl-4.border
+    .row
+      - if photo.persisted?
+        .col-lg-8
+          = attachment_image_tag photo, :attachment, :fill, 50, 50
+
+      - else
+        .col-lg-8
+          = f.input :attachment, as: :attachment, label: false, hint: t('.file.hint'), input_html: { class: 'form-control-file', 'aria-label': t('simple_form.file.choose') }
+
+      .col-lg-2
+        = link_to_remove_association '', f, { class: 'fa fa-trash ml-2', 'aria-label': t('simple_form.file.remove') }

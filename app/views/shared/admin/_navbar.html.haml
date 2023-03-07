@@ -1,0 +1,120 @@
+= content_for(:navbar) do
+
+
+  %ul.navbar-nav.ml-auto
+
+
+    %li.nav-item.dropdown
+      - active_class = navbar_active_admin_group_class(NavbarHelper::ADMIN_ADMIN_GROUP)
+      = link_to "", class: "dropdown-toggle nav-link #{active_class}", role: 'button', href: "#", aria: { "haspopup": 'true', "expanded": "false"} , data: { "toggle": 'dropdown'} do
+
+        %i.fa.fa-wrench.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+        = t('.admin.title')
+
+      %ul{ class: 'dropdown-menu'}
+
+        %li
+          = link_to t('.holidays.title'), admin_holidays_path
+
+        %li{ class: 'divider', role: 'separator' }
+
+        %li
+          = link_to t('.executive_organs.title'), admin_executive_organs_path
+
+        %li
+          = link_to t('.rede_ouvir_organs.title'), admin_rede_ouvir_organs_path
+
+        %li
+          = link_to t('.subnets.title'), admin_subnets_path
+
+        %li
+          = link_to t('.departments.title'), admin_departments_path
+
+        %li{ class: 'divider', role: 'separator' }
+
+        %li
+          = link_to t('.search_contents.title'), admin_search_contents_path
+
+        %li{ class: 'divider', role: 'separator' }
+
+        %li
+          = link_to t('.users.title'), admin_users_path
+
+        %li
+          = link_to t('.citizens.title'), admin_citizens_path
+
+        %li
+          = link_to t('.unregistred_citizens.title'), admin_unregistred_citizens_path
+
+        %li{ class: 'divider', role: 'separator' }
+
+        %li
+          = link_to t('.ombudsmen.title'), admin_ombudsmen_path
+
+    %li.nav-item.dropdown
+      - active_class = navbar_active_admin_group_class(NavbarHelper::ADMIN_TICKET_GROUP)
+      = link_to "#", class: "dropdown-toggle nav-link #{active_class}", role: 'button', href: "#", aria: { "haspopup": 'true', "expanded": "false"} , data: { "toggle": 'dropdown'} do
+
+        %i.fa.fa-comment.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+        = t('.ticket.title')
+
+      %ul{ class: 'dropdown-menu'}
+
+        %li
+          = link_to t('.home.title'), root_path
+
+        %li{ class: 'divider', role: 'separator' }
+
+        %li
+          = link_to t('.topics.title'), admin_topics_path
+        %li
+          = link_to t('.themes.title'), admin_themes_path
+        %li
+          = link_to t('.budget_programs.title'), admin_budget_programs_path
+        %li
+          = link_to t('.service_types.title'), admin_service_types_path
+        %li
+          = link_to t('.services_rating.title'), admin_services_rating_exports_path
+
+
+    %li.nav-item.dropdown
+      - active_class = navbar_active_admin_group_class(NavbarHelper::ADMIN_TRANSPARENCY_GROUP)
+      = link_to "#", class: "dropdown-toggle nav-link #{active_class}", role: 'button', href: "#", aria: { "haspopup": 'true', "expanded": "false"} , data: { "toggle": 'dropdown'} do
+
+        %i.fa.fa-info-circle.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+        = t('.transparency.title')
+
+      %ul{ class: 'dropdown-menu'}
+
+        %li
+          = link_to t('.open_data.title'), admin_open_data_data_sets_path
+
+        %li
+          = link_to t('.integrations.title'), admin_integrations_path
+
+        %li
+          = link_to t('.pages.title'), admin_pages_path
+
+        %li
+          = link_to t('.events.title'), admin_events_path
+
+        %li{ class: 'divider', role: 'separator' }
+
+        %li
+          = link_to t('.mobile_apps.title'), admin_mobile_apps_path
+
+        %li
+          = link_to t('.mobile_tags.title'), admin_mobile_tags_path
+
+        %li
+          = link_to t('.survey_answer_exports.title'), admin_survey_answer_exports_path
+
+
+
+    %li.nav-item
+      = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
+
+        %i.fa.fa-sign-out.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+        = t('app.logout')
+
+= render 'shared/navbar'

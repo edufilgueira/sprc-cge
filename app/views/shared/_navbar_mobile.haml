@@ -1,0 +1,92 @@
+- items = [:portal_governo, :cge, :acessibilidade]
+
+%ul.navbar-nav.navbar-mobile{ data: { mobile_menu: '' } }
+
+  %li
+    %ul.nav
+      %li.nav-item.mb-3
+        = link_to root_path do
+          = content_tag(:img, '', src: image_path('logos/logo-ceara-header-invert.png'), alt: t('app.title'))
+
+  %li.locales
+    = render 'shared/locales', mobile: true
+
+  %li.nav-item
+    %span.nav-link
+      = t('.transparency.title')
+
+  %li
+    = render 'shared/navbar/transparency_menu'
+
+  %li.nav-item.mt-3
+    %span.nav-link
+      = t('.tickets.title')
+
+  %li
+    = render 'shared/navbar/tickets_menu'
+
+  %li.nav-item.mt-3
+    %span.nav-link
+      = t('.information.title')
+
+  %li
+    = render 'shared/navbar/information_menu'
+
+  %li.nav-item.mt-3
+    %span.nav-link
+      = link_to t('.ppa.title'), ppa_root_path, class: 'nav-link unique_menu_option'
+
+  %li.nav-item.mt-3
+    %span.nav-link
+      = t('.services.title')
+
+  %li
+    = render 'shared/navbar/services_menu'
+
+
+  %li.divisor
+
+  %li
+    %ul.nav
+
+      - if signed_in?
+        %li.nav-item
+          = link_to t('.logout.title'), destroy_user_session_path, method: :delete, class: 'nav-link'
+
+      - else
+        %li.nav-item
+          = link_to t('.sign_up.title'), new_user_registration_path, class: 'nav-link'
+
+        %li.nav-item
+          = link_to t('.login.title'), new_user_session_path, class: 'nav-link'
+
+  %li.divisor
+
+  %li
+    %ul.nav
+      - items.each do |item|
+        %li.nav-item
+          = link_to t(".#{item}.title"), t(".#{item}.link"), class: 'nav-link'
+
+      %li.nav-item
+        = link_to t('.alto_contraste.title'), url_for(acessibility: !acessibility?), class: 'nav-link'
+
+      %li.nav-item
+        = link_to 'A+', 'javascript:;', class: 'nav-link d-inline-block pry-2 mr-3 btn-a11y-increase-font-size'
+        = link_to 'A-', 'javascript:;', class: 'nav-link d-inline-block p-2 mr-3 btn-a11y-decrease-font-size'
+        = link_to 'A',  'javascript:;', class: 'nav-link d-inline-block p-2 btn-a11y-reset-font-size'
+
+
+
+  %li.divisor
+
+  %li
+    %ul.nav
+      %li.nav-item
+        = link_to t('.search.title'), search_contents_path, class: 'nav-link'
+
+
+
+.close{ data: { close_mobile_menu: '' } }
+  .fa.fa-times
+

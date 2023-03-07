@@ -1,0 +1,118 @@
+pt-BR:
+
+  transparency:
+    sic:
+      home:
+
+        index:
+          title: Acesso à informação
+          transparency_title: Acesso à Informação
+          transparency_description: >
+            Bem vindo à área de Acesso à Informação do Portal Ceará Transparente.
+
+        general:
+          title: Solicitar informação
+          description: >
+            Clique abaixo em Solicitar informação e preencha o formulário com sua solicitação de acesso à informação, que será analisada e respondida de maneira positiva ou negativa. No campo ao lado, você acompanha o andamento da solicitação por meio do número do protocolo e da senha.
+
+          new_ticket: Solicitar informação
+
+          follow_ticket: Acompanhar solicitação
+
+        how:
+          more: 'Leia mais'
+          what_is:
+            title: O que é Acesso à Informação?
+            description: >
+              Todos os cidadãos e cidadãs têm direito a solicitar o acesso a informações que, por alguma razão, não tenham estejam disponíveis no Portal da Transparência. No Ceará, o direito a solicitar esses dados é garantido pela Lei Federal 12.527, sancionada em 18 de novembro de 2011, e pela Lei Estadual nº 15.175, sancionada em 28 de junho de 2012.
+
+          how_to:
+            title: Como usar?
+            description: >
+              Para solicitar acesso a uma informação basta preencher um breve formulário dizendo os dados aos quais você deseja ter acesso. Qualquer pedido de informação deve ser respondido em até 20 dias, podendo ser prorrogado esse prazo, mediante justificativa, por mais 10 dias. Caso o pedido seja negado, você pode fazer um recurso no prazo de 10 dias ao Comitê Gestor de Acesso à Informação.
+
+        publications:
+          title: Acesso à informação
+          description: >
+            A Controladoria e Ouvidoria Geral do Estado (CGE) divulga, com base
+            na legislação aplicada à matéria, a jurisprudência firmada nas decisões
+            do Comitê Gestor de Acesso à Informação, os Relatórios de Gestão da
+            Transparência, os Relatórios Estatísticos contendo a quantidade de pedidos
+            de informação recebidos, atendidos, não atendidos e indeferidos por todos
+            os órgãos e entidades do Poder Executivo Estadual, bem como a legislação
+            acerca do tema.
+
+          reports: Relatórios de Gestão da Transparência
+          laws: Legislação
+          jurisprudence: Jurisprudência
+          jurisprudence_link: clicando aqui
+          jurisprudence_description: >
+            Confira os recursos interpostos pelo Comitê Gestor de Acesso à Informação
+            %{link}.
+
+          report:
+            title: 'Relatórios de Gestão'
+
+          legislation:
+            title: 'Legislação'
+
+          report_stats:
+            title: 'Relatórios Estatísticos de Acesso à Informação'
+
+        stats:
+          title: Estatísticas de solicitações de acesso à informação
+          description: >
+            Aqui, você consegue visualizar as estatísticas de solicitações de
+            Acesso à Informação referentes ao período vigente. Esses números
+            são atualizados mensalmente.
+          month: Exibindo dados do período de %{month}
+          stats_1:
+            title: Total de solicitações finalizadas
+
+          stats_2:
+            title: Tempo médio de resposta
+            unit: '%{value} dias'
+
+          stats_3:
+            title: Resolubilidade
+            unit: '%{value}%'
+
+          see_more: Acessar painéis estatísticos de Acesso à Informação
+
+        stats_evaluations:
+          title: 'Pesquisa de satisfação do serviço de informação'
+          description: >
+            Painéis estatísticos mensais como dos dados consolidados da pesquisa de satisfação do serviço de informação,
+            das avaliações de atendimento realizadas pelos cidadãos do Ceará Transparente.
+          month: Exibindo dados do período de %{month}
+
+          total_answered_tickets:
+            title: 'Solicitações atendidas pelo Governo do Estado do Ceará'
+
+          total_user_evaluations:
+            title: 'Pesquisas respondidas pelos usuários do Ceará Transparente'
+
+          see_more: 'Acessar painéis estatísticos das pesquisas do serviço de informação'
+
+        sensitive_information:
+          title: Relação de informações sigilosas
+          description: >
+            Em atendimento ao que determina o art. 29 da Lei 15.175 de 28 de
+            junho de 2012, o Comitê Setorial de Acesso à Informação da
+            Controladoria e Ouvidoria Geral do Estado (CGE) apresenta o
+            rol de documentos classificados com grau de sigilo e rol de
+            informações desclassificadas.
+
+          sub_title: Informações Classificadas e Desclassificadas
+          sub_description: >
+            O Comitê Gestor de Acesso à Informação apresenta o rol de documentos
+            classificados e desclassificados com grau de sigilo dos órgãos e
+            entidades do Poder Executivo Estadual.
+
+          link_1: >
+            Informações Classificadas e Desclassificadas dos Órgãos e Entidades
+            do Poder Executivo Estadual
+          link_2: >
+            Portaria CGAI n° 01.2016 - Dispõe sobre a Uniformização na
+            Classificação de Informação Sigilosa de Matéria Comum a Todos os
+            Órgãos e Entidades do Poder Executivo Estadual

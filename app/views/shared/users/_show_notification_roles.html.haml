@@ -1,0 +1,17 @@
+- notification_roles = user.notification_roles
+
+- if notification_roles.present?
+
+  .content-with-label
+    %p.content-label
+      = t("shared.users.notification_roles_form.notifications")
+      - user.notification_roles.keys.each do |role|
+        .content-value
+          %span.badge.badge-info
+            = t("shared.users.notification_role.roles.#{current_user.user_type}.#{role}.title")
+          = t("shared.users.notification_roles_form.#{user.notification_roles[role]}")
+
+- else
+  .col-12.text-center
+    %i.text-muted
+      = t('.empty')

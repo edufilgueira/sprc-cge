@@ -1,0 +1,8 @@
+en:
+
+  integration/base_configuration:
+    statuses:
+      status_queued: In the import queue
+      status_in_progress: Import in progress
+      status_success: Import successfully done
+      status_fail: Import failed

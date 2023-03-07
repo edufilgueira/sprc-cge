@@ -1,0 +1,28 @@
+pt-BR:
+
+  platform:
+
+    users:
+
+      form:
+        commands:
+          change_password: Trocar de senha
+        person_types:
+          legal:
+            name: Razão social
+            cnpj: CNPJ
+        fields:
+          education_level:
+            select: Selecione a formação
+          city:
+            select: Selecione o município
+          unconfirmed_email:
+            tooltip: "Aguardando confirmação do e-mail <b>%{email}</b>"
+
+      edit:
+        title: Editar perfil
+        breadcrumb_title: Editar perfil
+
+      update:
+        done: Perfil atualizado com sucesso
+        error: Falha ao atualizar perfil

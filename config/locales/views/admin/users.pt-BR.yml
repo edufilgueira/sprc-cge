@@ -1,0 +1,106 @@
+pt-BR:
+
+  admin:
+
+    users:
+
+      create:
+        title: Novo usuário administrativo
+        done: "O usuário '%{title}' foi criado."
+        error: Falha ao criar o usuário administrativo
+
+      destroy:
+        done: "O usuário '%{title}' foi removido."
+
+      form:
+        commands:
+          cancel: < Voltar a lista de usuários administrativos
+          change_password: Trocar de senha
+          create: Criar usuário administrativo
+        fields:
+          operator_type:
+            select: Selecione o tipo
+          organ:
+            select: Selecione o órgão
+          department:
+            select: Selecione a unidade
+          sub_department:
+            select: Selecione a sub-unidade
+          education_level:
+            select: Selecione a formação
+          city:
+            select: Selecione o município
+          unconfirmed_email:
+            tooltip: "Aguardando confirmação do e-mail <b>%{email}</b>"
+
+        person_types:
+          legal:
+            name: Razão social
+            cnpj: CNPJ
+
+      index:
+        title: Usuários administrativos
+        commands:
+          new:
+            'Novo usuário administrativo'
+
+        table:
+          summary: Lista paginada com todos os usuários administrativo
+          header:
+            name: Nome
+            email: E-mail
+            user_type: Tipo de usuário
+            operator_type: Tipo de operador
+            organ: Órgão/Unidade
+            commands: ''
+            status: ''
+
+        filters:
+          search:
+            label: Campo de busca por nome e e-mail
+            placeholder: Buscar por nome e e-mail
+          commands:
+            new: Novo usuário
+          select:
+            user_type: Tipo de usuário
+            operator_type: Tipo de operador
+            person_type: Tipo de pessoa
+            organ: Órgão
+
+      filters:
+        denunciation_tracking:
+          label: Apenas triagem de denúncias
+
+        rede_ouvir:
+          label: Apenas Rede Ouvir
+
+
+      table:
+        heads:
+          name: Nome
+          email: E-mail
+          user_type: Tipo
+          operator_type: Operador
+          organ_acronym: Órgão
+          actions: ''
+
+      new:
+        title: Novo usuário administrativo
+
+      edit:
+        title: Edição
+
+      update:
+        title: Edição de usuário administrativo
+        done: "O usuário '%{title}' foi atualizado."
+        error: Falha ao atualizar o usuário
+
+      show:
+        title: Exibição do usuário administrativo
+        fields:
+          unconfirmed_email:
+            tooltip: "Aguardando confirmação do e-mail <b>%{email}</b>"
+
+      toggle_disabled:
+        disabled: Usuário desabilitado!
+        enabled: Usuário habilitado!

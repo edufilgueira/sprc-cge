@@ -1,0 +1,16 @@
+= simple_form_for ticket, :url => operator_ticket_invalidations_path(ticket), html: { method: :post } do |f|
+
+  .row
+    .col-12
+      %label.content-label{for: 'justification'}
+        = t('.justification')
+
+      = text_area_tag(:justification, nil, { type: :text, autofocus: true, rows: 10, class: 'form-control text'})
+
+      %small.text-muted
+        = t('.hint')
+
+  .row.mt-4
+    .col-12
+      - submit_title = operator_cge?(current_user)? t(".save") : t(".request")
+      = f.submit submit_title, class: 'btn btn-danger'

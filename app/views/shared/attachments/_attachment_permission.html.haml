@@ -1,0 +1,13 @@
+- filename = attachment.document_filename
+- url = document_url(attachment)
+
+.attachment-card
+	%figure.d-inline-block.text-center.m-2
+		= link_to document_image_tag(attachment, image_size), url, download: filename, target: :_blank 
+		
+		%figcaption.small
+			= link_to truncate(filename), url, download: filename, target: :_blank
+	
+	%div.float-right
+		= t('.protected')
+		= f.check_box :protected_attachment_ids, { class: 'js-switch float-right', checked: f.object.has_attribute_protected_attachment(attachment.id) }, attachment.id, nil

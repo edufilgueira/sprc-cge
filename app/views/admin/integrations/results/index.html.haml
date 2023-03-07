@@ -1,0 +1,23 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t('.title')
+
+%h2.sr-only
+  = t('.title')
+
+%section.row.mt-5.text-gray{'aria-labelledby': 'sections'}
+
+  %h3.sr-only{id: 'sections'}
+    = t('.sections.title')
+
+  - cards = [:strategic_indicators, :thematic_indicators]
+  - cards.each do |card|
+
+    %section.col-lg-4.col-md-12.mb-5{'aria-labelledby': card}
+      .card.text-center
+
+        .card-block.py-0
+          %h4.card-title.mt-2{id: card}
+            = t(".cards.#{card}.title")
+
+        .card-block
+          = link_to t(".cards.#{card}.index"), url_for(action: :index, controller: "admin/integrations/results/#{card}"), class: 'btn btn-outline-primary'

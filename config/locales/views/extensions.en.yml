@@ -1,0 +1,40 @@
+en:
+
+  extensions:
+
+    edit:
+      title: "%{ticket_title} - Deadline extension request"
+      already_evaluate: Extension of deadline has already been approved / disapproved.
+      justification: Justification
+      deadline:
+        title: Deadlines and arrangements
+        remaining: Countdown to Reply
+        created_at: Created at
+        last_day: Answer deadline
+        status: Status
+      sou:
+        description:
+          title: Manifestation description
+
+      sic:
+        description:
+          title: Request description
+
+    form:
+      justification: Justifications
+      commands:
+        approve: Approve
+        reject: Reject
+
+    approve:
+      done: Deadline extension approved
+
+    reject:
+      done: Deadline extension rejected
+      error: This deadline extension could not be evaluated
+
+    show:
+      title: "%{ticket_title} - Deadline extension request"
+      rejected:
+        justification:
+          label: Motivo da reprovação

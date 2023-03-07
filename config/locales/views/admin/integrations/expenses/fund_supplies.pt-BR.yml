@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    integrations:
+      expenses:
+        fund_supplies:
+          index:
+            title: Suprimento de Fundos

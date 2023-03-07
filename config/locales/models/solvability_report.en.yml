@@ -1,0 +1,21 @@
+en:
+  activerecord:
+
+    attributes:
+      solvability_report:
+        title: Report title
+        filename: Name of file
+        status: Status
+        status_str: Status
+        filters: Filters considered
+        report_type: Report type
+        user: Created by
+        created_at: Created by
+        total: Total considered
+
+  solvability_report:
+    statuses:
+      preparing: Preparing
+      generating: Generating
+      error: Error
+      success: Success

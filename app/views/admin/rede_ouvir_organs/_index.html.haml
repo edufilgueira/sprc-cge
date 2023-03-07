@@ -1,0 +1,35 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:status, :acronym, :name, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: rede_ouvir_organs, sort_columns: sort_columns, table_locale: table_locale do |rede_ouvir_organ|
+
+    - show_path = can?(:show, rede_ouvir_organ) ? admin_rede_ouvir_organ_path(rede_ouvir_organ) : '#!'
+
+    %tr
+
+      %td
+        - icon_class = rede_ouvir_organ.disabled? ? 'times' : 'check'
+        = link_to show_path, title: t("commands.disabled._#{rede_ouvir_organ.disabled?}") do
+          %i{class: "fa fa-#{icon_class}"}
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(rede_ouvir_organ.acronym)
+
+      %td
+        - organ_name = rede_ouvir_organ.name
+        = link_to show_path, title: organ_name do
+          = filtered_highlighted(organ_name.truncate(70))
+
+      %td
+        .float-right
+          - if can?(:edit, rede_ouvir_organ)
+            = link_to t('commands.edit'), edit_admin_rede_ouvir_organ_path(rede_ouvir_organ), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:manage, rede_ouvir_organ)
+            = render 'shared/buttons/btn_toggle_disabled', resource: rede_ouvir_organ, namespace: :admin

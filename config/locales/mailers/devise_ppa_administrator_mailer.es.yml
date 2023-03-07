@@ -1,0 +1,48 @@
+#
+# Estamos usando a gem `devise-i18n`, que já fornece traduções. Aqui, estamos personalizando-as.
+# veja mais em https://github.com/tigrish/devise-i18n/blob/master/rails/locales/pt-BR.yml
+#
+es:
+  ppa:
+    admin:
+      auth:
+        # mailer translations.
+        mailer:
+          # custom subjects per-model with "#{model}_subject" (ex: user_subject, admin_subject, ...)
+          confirmation_instructions:
+            # subject: XXX fica em `locales/devise.*.yml`, na chave "devise.mailer.#{mail}.#{model}_subject"
+
+            greetings: "Bienvenido(a), %{name}!"
+            instructions:  |-
+              Falta poco para finalizar su registro.
+              Para esto, precisamos que usted confirme su perfil abajo:
+
+            btn:
+              confirm: Confirmar mi perfil
+
+          reset_password_instructions:
+            # subject: XXX fica em `locales/devise.*.yml`, na chave "devise.mailer.#{mail}.#{model}_subject"
+
+            greetings: "Hola, %{name}!"
+            instructions: >-
+              Para cambiar su contraseña, use el botón abajo. El te llevará a un formulario em que
+              podrá crear una nueva contraseña.
+
+            btn:
+              reset_password: Cambiar mi contraseña
+
+            expiration_notice: >-
+              Este enlace expirará en %{duration_in_hours} horas.
+
+            dismiss_notice: |-
+              Se usted no está ententando cambiar su contraseña, por favor, desconsidere este mensaje y no se preocupe – su cuenta está segura.
+              El probable es que alguién se equivocó el correo electrónico al intentar recuperar la contraseña, escribiendo su correo electrónico.
+
+          unlock_instructions:
+            # subject: XXX fica em `locales/devise.*.yml`, na chave "devise.mailer.#{mail}.#{model}_subject"
+
+          email_changed:
+            # subject: XXX fica em `locales/devise.*.yml`, na chave "devise.mailer.#{mail}.#{model}_subject"
+
+          password_change:
+            # subject: XXX fica em `locales/devise.*.yml`, na chave "devise.mailer.#{mail}.#{model}_subject"

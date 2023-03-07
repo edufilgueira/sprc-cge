@@ -1,0 +1,4 @@
+- if can?(:edit, ticket)
+  = link_to send("edit_#{namespace}_ticket_path", ticket), class: 'btn btn-link btn-print hover-link d-inline-block', 'data-confirm': t(".confirm.#{ticket.ticket_type}") do
+    %i.fa.fa-edit{ 'aria-hidden': 'true' }
+    = t('commands.edit')

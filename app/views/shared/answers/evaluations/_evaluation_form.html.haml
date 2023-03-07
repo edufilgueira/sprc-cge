@@ -1,0 +1,90 @@
+- t_base = 'shared.answers.evaluations.questions'
+- used_input = ticket.used_input
+- msg = f.object.errors.messages
+
+.no-print.row
+
+  .col-10
+
+    %hr{ 'aria-hidden': 'true' }
+
+    - evaluation_type = f.object.evaluation_type
+    %p.font-weight-bold
+
+
+    - #
+    - # QUESTÃO 1
+    - #
+    %small.text-success.font-weight-bold
+      = t("#{t_base}.#{evaluation_type}.question_01.title")
+    
+    %p.text-muted
+      = t("#{t_base}.#{evaluation_type}.question_01.description")
+
+    - questions_1 = first_question_fields_concated(used_input, evaluation_type, msg)
+
+    - questions_1.each do |question|
+      = render 'shared/answers/evaluations/evaluation_btn_group', 
+          question_description: question[:question_description], 
+          evaluation_error: question[:evaluation_error], 
+          field_name: question[:field_name], 
+          evaluation_type: evaluation_type, f: f
+
+
+    %hr{'aria-hidden': 'true'}
+
+
+    - #
+    - # QUESTÃO 2 E 3
+    - #
+    - other_question_fields = [:question_02, :question_03]
+
+    - other_question_fields.each_with_index do |field_name, _index|
+      - question_description = t("#{t_base}.#{evaluation_type}.#{field_name}.description")
+      - evaluation_error = f.object.errors.messages[field_name]
+
+      %small.text-success.font-weight-bold
+        = t("#{t_base}.#{evaluation_type}.#{field_name}.title")
+
+      = render 'shared/answers/evaluations/evaluation_btn_group', 
+          question_description: question_description, 
+          evaluation_error: evaluation_error, 
+          field_name: field_name, 
+          evaluation_type: evaluation_type, f: f
+
+
+      %hr{'aria-hidden': 'true'}
+
+
+    - #
+    - # QUESTÃO 4
+    - #
+    %small.text-success.font-weight-bold
+      = t("#{t_base}.#{evaluation_type}.question_04.title")
+
+    =f.input :question_04, as: :text, 
+      label: t("#{t_base}.#{evaluation_type}.question_04.description"), 
+      input_html: { rows: 4, placeholder: t("#{t_base}.#{evaluation_type}.question_04.placeholder") }
+
+    - if evaluation_type == 'sou'
+      - #
+      - # QUESTÃO 5
+      - #
+      - question_description = t("#{t_base}.#{evaluation_type}.question_05.description")
+      - evaluation_error = f.object.errors.messages[:question_05]
+
+      %small.text-success.font-weight-bold
+        = t("#{t_base}.#{evaluation_type}.question_05.title")
+
+      = render 'shared/answers/evaluations/evaluation_btn_group_yes_no', 
+          question_description: question_description, 
+          evaluation_error: evaluation_error, 
+          field_name: :question_05, f: f
+
+    - #
+    - # BOTÃO ENVIAR
+    - #
+    .row
+      .col-12.col-lg-3
+        = f.submit t('.save'), class: "btn btn-sm btn-primary w-100", 'data-disable-with': t('.saving')
+%br

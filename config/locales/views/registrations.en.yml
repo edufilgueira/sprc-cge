@@ -1,0 +1,29 @@
+en:
+
+  registrations:
+    form:
+      labels:
+        document: Document
+        full_name: Full name
+
+      fields:
+        education_level:
+          select: Select education level
+        city:
+          select: Select city
+
+      register: Create profile
+
+      person_types:
+        legal:
+          name: Business Name (Razão Social)
+          cnpj: CNPJ
+
+    new:
+      title: Sign up
+
+    create:
+      title: Sign up
+
+    edit:
+      title: Change information

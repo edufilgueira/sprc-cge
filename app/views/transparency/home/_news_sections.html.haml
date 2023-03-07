@@ -1,0 +1,35 @@
+- # TODO: dados "provisórios", adicionar i18n com dados finais
+%section#noticias{ 'aria-labelledby': 'news_sections' }
+  %h2.font-weight-bold.mt-4
+    = t('.title')
+    %hr.my-4
+
+  %p
+    = t('.description')
+
+  .card-deck
+    .card
+      .card-block
+        %h5.font-weight-bold
+          = t('.title_1')
+
+        %hr
+
+        .card-text.mb-3
+          = t('.description_1')
+
+      .card-footer.border-bottom-only.border-3.border-orange.text-center
+        = link_to t('.read_more'), 'https://www.cge.ce.gov.br/imprensa/todas-noticias', class: 'btn btn-link text-green', target: '_blank'
+
+    .card
+      .card-block
+        %h5.font-weight-bold
+          = t('.title_2')
+
+        %hr
+
+        .card-text.mb-3
+          = t('.description_2')
+
+      .card-footer.border-bottom-only.border-3.border-orange.text-center
+        = link_to t('.read_more'), 'http://www.ceara.gov.br/home-2-2-3/todas-as-noticias/', class: 'btn btn-link text-green', target: '_blank'

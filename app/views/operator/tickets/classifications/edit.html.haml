@@ -1,0 +1,33 @@
+- content_for :title, t(".title.#{ticket.ticket_type}")
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = t(".title.#{ticket.ticket_type}")
+
+      .card-block
+
+        .content
+
+          %h3.card-subtitle
+            = t(".description.title.#{ticket.ticket_type}")
+
+          = render 'shared/tickets/description', ticket: ticket
+
+          .content-with-label.form-group
+            %p.content-label
+              = t('.attachments.title')
+            %p
+              = render 'shared/attachments/index', ticket: ticket
+
+          %hr{'aria-hidden': 'true'}
+
+          = render 'form', ticket: ticket, classification: classification

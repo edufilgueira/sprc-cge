@@ -1,0 +1,15 @@
+es:
+  activerecord:
+    attributes:
+      ticket_department:
+        description: 'Este será el contenido visible por el área interna seleccionada:'
+        note: 'Observación:'
+        deadline_ends_at: 'Plazo para la respuesta del área interna:'
+        justification: 'Introduzca el motivo:'
+        forward_justification: 'Motivo:'
+        considerations: 'Consideraciones:'
+
+  ticket_department:
+    deadline:
+      undefined: Sin plazo
+

@@ -1,0 +1,55 @@
+- # Partial compartilhada pelas ferramentas relacionadas com ned (fund_supply, profit_transfer...)
+
+%tr
+
+  %td
+    = link_to show_path do
+      - if filtered_params?([:numero])
+        = highlight(ned.numero, ned.numero)
+      - else
+        = filtered_highlighted(ned.numero)
+
+  %td
+    = link_to show_path do
+      - date_of_issue = l(ned.date_of_issue)
+      - if filtered_params?([:date_of_issue])
+        = highlight(date_of_issue, date_of_issue)
+      - else
+        = filtered_highlighted(date_of_issue)
+
+  %td
+    - management_unit_name = ned.management_unit_acronym || ned.unidade_gestora
+    - management_unit_title = ned.management_unit_title || ned.unidade_gestora
+
+    = link_to show_path, title: management_unit_title do
+      - if filtered_params?([:unidade_gestora])
+        = highlight(management_unit_name.truncate(30), management_unit_name.truncate(30))
+      - else
+        = filtered_highlighted(management_unit_name.truncate(30))
+
+  %td
+    = link_to show_path, title: ned.razao_social_credor do
+      - value = ned.razao_social_credor.truncate(30)
+
+      - if filtered_params?([:search_datalist])
+        = highlight(value, value)
+      - else
+        = filtered_highlighted(value)
+
+  - unless ned.instance_of?(::Integration::Expenses::Ned)
+
+    %td
+      = link_to show_path, title: ned.expense_nature_item_title do
+        - if filtered_params?([:item_despesa])
+          = highlight(ned.expense_nature_item_title, ned.expense_nature_item_title)
+        - else
+          = filtered_highlighted(ned.expense_nature_item_title)
+
+
+  %td.text-right
+    = link_to show_path do
+      = number_to_currency(ned.calculated_valor_final)
+
+  %td.text-right
+    = link_to show_path do
+      = number_to_currency(ned.calculated_valor_pago_final)

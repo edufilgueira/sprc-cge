@@ -1,0 +1,78 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = revenue.title
+
+        .card-commands
+          = render 'shared/tickets/components/btn_print'
+
+      .card-block
+
+        .row
+
+          .col-12
+            - if revenue.organ.present?
+              = content_with_label(revenue, :organ_title)
+            - else
+              = content_with_label(revenue, :unidade)
+
+        .row
+
+          .col-12.col-sm-4
+            = content_with_label(revenue, :poder)
+
+          .col-12.col-sm-4
+            = content_with_label(revenue, :administracao)
+
+          .col-12.col-sm-4
+            = content_with_label(revenue, :conta_contabil)
+
+        .row
+
+          .col-12.col-sm-4
+
+            .content-with-label
+
+              %p.content-label
+                = revenue.class.human_attribute_name(:valor_debito)
+
+              %p.content-value
+                = number_to_currency(revenue.valor_debito)
+
+          .col-12.col-sm-4
+
+            .content-with-label
+
+              %p.content-label
+                = revenue.class.human_attribute_name(:valor_credito)
+
+              %p.content-value
+                = number_to_currency(revenue.valor_credito)
+
+          .col-12.col-sm-4
+            = content_with_label(revenue, :year)
+
+        .row
+
+          .col-12.col-sm-4
+
+            .content-with-label
+
+              %p.content-label
+                = revenue.class.human_attribute_name(:month)
+
+              %p.content-value
+                = I18n.t("date.month_names")[revenue.month]
+
+    = render 'shared/revenues/accounts'
+
+

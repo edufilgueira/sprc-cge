@@ -1,0 +1,28 @@
+pt-BR:
+
+  admin:
+
+    citizens:
+
+      index:
+        title: Cidadãos
+
+        table:
+          summary: Lista paginada com todos os cidadãos
+          header:
+            name: Nome
+            email: E-mail
+            actions: ''
+
+        filters:
+          search:
+            placeholder: Buscar por nome e e-mail
+          select:
+            person_type: Tipo de pessoa
+
+      show:
+        title: Exibição do cidadão
+
+      destroy:
+        error: Falha ao excluir cidadão
+        done: Cidadão removido com sucesso

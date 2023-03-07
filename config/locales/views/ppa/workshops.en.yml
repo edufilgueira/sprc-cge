@@ -1,0 +1,36 @@
+en:
+  ppa:
+    workshops:
+      index:
+        past_workshops: See completed workshops
+        next_workshops: See the next workshops
+        address_title: 'Address:'
+        date_title: 'Date:'
+        documents: Files
+
+        title: MAP elaboration workshops
+        what_is_workshops: What are MAP elaboration workshops?
+        ppa_description: In short, what is MAP?
+        methodology: What is the workshop methodology?
+        how_to_participate: How to take part in MAP workshops?
+
+
+        workshops_description: The Regional Meeting is a moment in which the Government of Ceará listens, debates, evaluates and proposes suggestions together with the population. It is the moment when the Government goes to you to hear your opinions, evaluations and ideas for improvement in the services offered and in achieving the results you expect.
+      
+        ppa_description: The Multi-Year Plan (PPA) is a law that directs the Government's actions through medium-term guidelines, objectives and targets, with a primary focus on improving the results that are expected by society in each region of the State. The PPA is prepared in the first year of each government and lasts for four years in order to guarantee the continuity of the projects, even if there is a change of government. One of the main guiding elements of the PPA is the participation of society in all its stages. For this to happen, the State Government promotes Meetings in all Regions of Planning.
+
+        methodology_description: In the Regional Elaboration Meetings the population will be divided, according to their themes of interest, into four groups representing the Axes adopted in the PPA. In each group there will be presentations of the main obstacles encountered in the region, and then the population will define a Strategic Objective for each Axis, as well as the strategies that must be followed to solve the obstacles mentioned. Finally, the population, in plenary, will prioritize the strategies.
+
+        how_to_descripction: The PPA offers the outline and priority expenditures
+          for the next four years. It has the phases of Elaboration,
+          Monitoring, Evaluation and Review, and they are all built
+          with the support of society.
+
+      workshops_list:
+        title: Upcoming workshops list
+        past_workshops: See latest workshops
+
+      filters:
+        city: City
+        start_at: From
+        all: All

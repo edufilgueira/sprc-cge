@@ -1,0 +1,417 @@
+pt-BR:
+  activerecord:
+    attributes:
+
+      ticket:
+        answer_type: 'Como você gostaria de receber a resposta?'
+        answer_type_str: 'Forma de resposta'
+
+        answer_phone: 'Telefone 1'
+        answer_cell_phone: 'Telefone 2'
+        city: Município
+        city_id: Município
+        city_title: Município
+        created_at: Criado em
+        answer_address_street: 'Rua/Av.'
+        answer_address_number: 'Número'
+        answer_address_zipcode: 'CEP'
+        answer_address_neighborhood: 'Bairro'
+        answer_address_complement: 'Complemento'
+        answer_twitter: Perfil Twitter
+        answer_facebook: Perfil Facebook
+        answer_instagram: Perfil Instagram
+        answer_whatsapp: Whatsapp
+
+
+        description: Descrição
+        deadline_str: Prazo
+        email: E-mail
+        name: Nome completo
+        organ: Órgão responsável
+        citizen_topic: Assunto
+        organ_acronym: Órgão responsável
+        topic: Assunto
+        subnet: Sub-rede responsável
+        subnet_acronym: Sub-rede responsável
+        password: Senha
+        plain_password: Senha
+        protocol: Protocolo
+        parent_protocol: Protocolo
+        status: Situação
+        status_str: Situação
+        ticket_type: Tipo
+        ticket_type_str: Tipo
+        unknown_organ: Não sei qual é o órgão responsável
+        unknown_subnet: Encaminhar para o órgão responsável
+        unknown_classification: Não sei a classificação
+        sou_type: Tipo de manifestação
+        sou_type_str: Tipo de manifestação
+        internal_status: Situação
+        internal_status_str: Situação
+        evaluation: Avalie o atendimento com uma nota de 0 a 10
+        justification: Informe o motivo
+        document_type: Tipo de documento
+        document_type_str: Tipo de documento
+        document: Documento
+        person_type: Tipo do perfil
+        person_type_str: Tipo do perfil
+        anonymous: Anônimo
+        used_input: Meio de entrada
+        used_input_str: Meio de entrada
+        call_center_responsible: Responsável
+        call_center_responsible_name: Responsável
+        call_center_status: Situação
+        call_center_status_str: Situação
+        priority: Urgente
+        social_name: Nome social
+        gender: Gênero
+        gender_str: Gênero
+        reopened: Reaberta
+        appeals: Recurso
+        public_ticket: Tornar solicitação de informação visível para todos os cidadãos.
+        parent_public_ticket: Tornar solicitação de informação visível para todos os cidadãos.
+        attachments: Anexos
+        note: Observações (visível somente para ouvidores)
+
+        denunciation_type: Tipo de denúncia
+        denunciation_organ: Órgão denunciado
+        denunciation_organ_acronym: Órgão denunciado
+        denunciation_description: Escreva aqui sua denúncia
+        denunciation_description_str: Descrição da denúncia
+        denunciation_date: Quando o fato ocorreu ou continua ocorrendo?
+        denunciation_date_str: Data do acontecido
+        denunciation_place: 'Indique o local/unidade onde o fato ocorreu: '
+        denunciation_place_str: Local/Unidade do acontecimento
+        denunciation_assurance: 'Sobre o fato sendo denunciado, você tem: '
+        denunciation_assurance_str: 'Sobre o fato sendo denunciado'
+        denunciation_witness: 'Existem pessoas envolvidas? Se sim, indique-as: '
+        denunciation_witness_str: Pessoas envolvidas
+        denunciation_evidence: 'Existem evidências? Se sim, indique-as: '
+        denunciation_evidence_str: Evidências
+        denunciation_against_operator: Desfavor do Ouvidor, Desfavor do Dirigente ou Oriunda de Outros Poderes/Governadoria
+
+        used_input: Meio de entrada utilizado
+        used_input_str: Meio de entrada utilizado
+        used_input_url: Link da reclamação
+        answer_classification: Percepção após o procedimento de apuração preliminar
+        answer_classification_str: Percepção após o procedimento de apuração preliminar
+
+        immediate_answer: Finalizar de imediato
+
+        target_address_zipcode: CEP
+        target_city: Município
+        target_city_title: Município
+        target_address_street: Rua/Av.
+        target_address_number: Número
+        target_address_neighborhood: Bairro
+        target_address_complement: Complemento
+
+      ticket/denunciation_type:
+        in_favor_of_the_state: 'Para o Estado'
+        against_the_state: 'Contra o Estado'
+
+      ticket/answer_type:
+        default: Não (apenas via e-mail e internet)
+        phone: Sim, por telefone
+        letter: Sim, por carta
+
+      ticket/denunciation_assurance:
+        assured: Certeza
+        suspicion: Suspeita
+        rumor: Ouviu falar
+        legacy_assurance: Sistema legado
+
+      ticket/denunciation_classification:
+        against_leader: Envolve dirigente máximo
+        against_operator: Envolve ouvidor setorial/substituto
+        against_others: Oriundo de outro poder
+        various_denunciation: Denúncias diversas
+        cosco: Comissão de denúncias
+
+      ticket/used_input:
+        phone: Telefone
+        system: Internet
+        presential: Presencial
+        email: E-mail
+        facebook: Facebook
+        letter: Carta
+        phone_155: Telefone 155
+        complaint_here: Reclame Aqui
+        consumer_gov: consumidor.gov.br
+        instagram: Instagram
+        traveling_government: Governo Itinerante
+        suggestions_box: Caixa de sugestões
+        legacy: Sistema Legado
+        twitter: Twitter
+        ceara_app: Ceará App
+        whatsapp: Whatsapp
+
+      ticket/answer_type:
+        default: Sistema
+        letter: Carta
+        phone: Telefone
+        email: E-mail
+        twitter: Twitter
+        facebook: Facebook
+        instagram: Instagram
+        presential: Presencial
+        whatsapp: Whatsapp
+
+      ticket/sou_type:
+        complaint: Reclamação
+        denunciation: Denúncia
+        compliment: Elogio
+        suggestion: Sugestão
+        request: Solicitação
+        service: Serviço
+
+      ticket/person_type:
+        individual: Pessoa física
+        legal: Pessoa jurídica
+
+      ticket/ticket_type:
+        sic: Acesso à Informação
+        sou: Ouvidoria
+
+      ticket/internal_status:
+        in_filling: Em preenchimento
+        waiting_confirmation: Aguardando confirmação
+        waiting_referral: Aguardando encaminhamento
+        sectoral_attendance: Em atendimento - setorial
+        internal_attendance: Em atendimento - área interna
+        sectoral_validation: Em validação - setorial
+        cge_validation: Em validação - CGE
+        partial_answer: Finalizado Parcialmente
+        final_answer: Finalizado
+        invalidated: Invalidado
+        completed: Finalizado
+        appeal: Recurso
+        awaiting_invalidation: Em pedido de invalidação
+        subnet_validation: Em validação - sub-rede
+        subnet_attendance: Em atendimento - sub-rede
+
+      ticket/statuses_for_citizen:
+        active: Em atendimento
+        inactive: Finalizado
+
+      ticket/internal_status/appeal:
+          '1': Recurso solicitado (primeira instância)
+          '2': Recurso solicitado (segunda instância)
+          '3': Recurso solicitado (terceira instância)
+
+      ticket/deadline: &deadline
+        not_expired: Dentro do prazo
+        expired: Atrasadas
+        expired_can_extend: Atrasadas prorrogáveis
+
+      ticket/departments_deadline:
+        <<: *deadline
+
+      ticket/gender:
+        not_informed_gender: Não informar
+        female: Feminino
+        male: Masculino
+        other_gender: Outro
+
+      ticket/call_center_status:
+        waiting_allocation: Aguardando alocação
+        waiting_feedback: Aguardando retorno
+        with_feedback: Atendimento finalizado
+
+      ticket/answer_classification:
+        sic_attended_personal_info: Atendido (informação pessoal)
+        sic_attended_rejected_partially: Atendido parcialmente
+        sic_rejected_secret: Não atendido por se tratar de informação sigilosa
+        sic_rejected_need_work: Não atendido (exige trabalho adicional)
+        # sic_rejected_reserved: Não atendido (sigiloso/reservado)
+        sic_rejected_personal_info: Não atendido (informação pessoal)
+        sic_not_attended_info_unclear: Não atendido (solicitação não especificada de forma clara e precisa)
+        sic_not_attended_info_nonexistent: Não atendido (informação inexistente)
+        sic_rejected_ultrasecret: Não atendido (ultrassecreto)
+        sic_rejected_generic: Não atendido (solicitações genéricas, desproporcionais ou desarrazoadas)
+        sic_not_attended_other_organs: Não atendido (competência outros poderes)
+        sic_attended_active: Atendido (transparência ativa)
+        sic_attended_passive: Atendido (transparência passiva)
+        appeal_deferred: Deferido
+        appeal_rejected: Não atendido
+        appeal_deferred_partially: Deferido parcialmente
+        appeal_loss_object: Perda de objeto
+        appeal_loss_object_partially: Perda parcial do objeto
+        appeal_not_allowed: Não admitido
+        sou_demand_well_founded: Demanda Procedente
+        sou_demand_unfounded: Demanda Improcedente
+        sou_well_founded_partially: Parcialmente Procedente
+        sou_could_not_verify: Não foi possível constatar
+        sou_waitting_determination_result: Aguardando Resultado de apuração
+        other_organs: Não compete ao Poder Executivo Estadual
+        legacy_classification: Sistema Legado
+
+
+    errors:
+      models:
+        ticket:
+          attributes:
+            parent:
+              parent_association: Uma manifestação/solicitação não pode ser atribuido como pai para ele mesmo
+              child_association: Uma manifestação/solicitação filho não pode possuir filhos
+
+            cpf:
+              invalid: CPF inválido
+            cnpj:
+              invalid: CNPJ inválido
+  ticket:
+
+    anonymous:
+      title: Manifestação anônima
+
+    user_info_private: '-'
+
+
+    answer_types:
+      default: Sistema
+      letter: Carta
+      phone: Telefone
+      email: E-mail
+      twitter: Twitter
+      facebook: Facebook
+      instagram: Instagram
+      presential: Presencial
+      whatsapp: Whatsapp
+
+    answer_types_description:
+      default: Para consultar sua resposta, você precisa acessar este site novamente e informar seu número de protocolo ou e-mail e sua senha.
+      letter: Informe abaixo um endereço completo pelo qual você deseja receber sua resposta por carta.
+      phone: Informe abaixo um número de telefone pelo qual você deseja receber sua resposta.
+      email: Informe abaixo o e-mail pelo qual você deseja receber sua resposta.
+      twitter: 'Informe abaixo o link para sua conta no Twitter e siga a página da Controladoria e Ouvidoria Geral do Estado do Ceará no Twitter: <a href="https://twitter.com/cgeceara">https://twitter.com/cgeceara</a>. Você receberá sua resposta por mensagem direta no seu perfil.'
+      facebook: 'Informe abaixo o link para sua conta no Facebook e siga a página da Controladoria e Ouvidoria Geral do Estado do Ceará no Facebook: <a href="https://pt-br.facebook.com/cgeceara">https://pt-br.facebook.com/cgeceara</a>. Você receberá sua resposta por mensagem direta no seu messenger do seu perfil.'
+      instagram: 'Informe abaixo o link para sua conta no Instagram e siga a página da Controladoria e Ouvidoria Geral do Estado do Ceará no Instagram: <a href="https://www.instagram.com/cgeceara">https://www.instagram.com/cgeceara</a>. Você receberá sua resposta por mensagem direta no seu perfil.'
+      presential: 'Compareça ao órgão indicado no seu pedido de informação e receba pessoalmente sua resposta.'
+      whatsapp: Informe abaixo um número de whatsapp pelo qual você deseja receber sua resposta.
+
+    ticket_types:
+      sic: Acesso à Informação
+      sou: Ouvidoria
+
+    protocol_title:
+      sou: "Manifestação %{protocol}"
+      sic: "Solicitação %{protocol}"
+
+    sou_types:
+      complaint: Reclamação
+      denunciation: Denúncia
+      compliment: Elogio
+      suggestion: Sugestão
+      request: Solicitação
+      service: Serviço
+
+    statuses:
+      in_progress: Não confirmado
+      confirmed: Confirmado
+      replied: Respondido
+      not_replied: Não respondido
+
+    denunciation_types:
+      in_favor_of_the_state: 'Para o Estado'
+      against_the_state: 'Contra o Estado'
+
+    document_types:
+      cpf: CPF
+      rg: RG
+      cnh: CNH
+      ctps: CTPS
+      passport: Passaporte
+      voter_registration: Título de eleitor
+      cnpj: CNPJ
+      other: Outro
+
+    person_types:
+      individual: Pessoa física
+      legal: Pessoa jurídica
+
+    used_inputs:
+      phone: Telefone
+      system: Internet
+      presential: Presencial
+      email: E-mail
+      facebook: Facebook
+      letter: Carta
+      phone_155: Telefone 155
+      complaint_here: Reclame Aqui
+      consumer_gov: consumidor.gov.br
+      instagram: Instagram
+      traveling_government: Governo Itinerante
+      suggestions_box: Caixa de sugestões
+      legacy: Sistema Legado
+      twitter: Twitter
+      ceara_app: Ceará App
+      whatsapp: Whatsapp
+
+    internal_statuses:
+      in_filling: Em preenchimento
+      waiting_confirmation: Aguardando confirmação
+      waiting_referral: Aguardando encaminhamento
+      sectoral_attendance: Em atendimento - setorial
+      internal_attendance: Em atendimento - área interna
+      sectoral_validation: Em validação - setorial
+      cge_validation: Em validação - CGE
+      partial_answer: Finalizado Parcialmente
+      final_answer: Finalizado
+      invalidated: Invalidado
+      completed: Finalizado
+      appeal: Recurso
+      awaiting_invalidation: Em pedido de invalidação
+      subnet_attendance: Em atendimento - sub-rede
+      subnet_validation: Em validação - sub-rede
+
+    answer_classifications:
+      sic_attended_personal_info: Atendido (informação pessoal)
+      sic_attended_rejected_partially: Atendido parcialmente
+      sic_rejected_secret: Não atendido por se tratar de informação sigilosa
+      sic_rejected_need_work: Não atendido (exige trabalho adicional)
+      # sic_rejected_reserved: Não atendido (sigiloso/reservado)
+      sic_rejected_personal_info: Não atendido (informação pessoal)
+      sic_not_attended_info_unclear: Não atendido (solicitação não especificada de forma clara e precisa)
+      sic_not_attended_info_nonexistent: Não atendido (informação inexistente)
+      sic_rejected_ultrasecret: Não atendido (ultrassecreto)
+      sic_rejected_generic: Não atendido (solicitações genéricas, desproporcionais ou desarrazoadas)
+      sic_not_attended_other_organs: Não atendido (competência outros poderes)
+      sic_attended_active: Atendido (transparência ativa)
+      sic_attended_passive: Atendido (transparência passiva)
+      appeal_deferred: Deferido
+      appeal_rejected: Não atendido
+      appeal_deferred_partially: Deferido parcialmente
+      appeal_loss_object: Perda de objeto
+      appeal_loss_object_partially: Perda parcial do objeto
+      appeal_not_allowed: Não admitido
+      sou_demand_well_founded: Demanda Procedente
+      sou_demand_unfounded: Demanda Improcedente
+      sou_well_founded_partially: Parcialmente Procedente
+      sou_could_not_verify: Não foi possível constatar
+      sou_waitting_determination_result: Aguardando Resultado de apuração
+      other_organs: Não compete ao Poder Executivo Estadual
+      legacy_classification: Sistema Legado
+
+    expireds:
+      "true": Sim
+      "false": Não
+
+    deadline:
+      one: '1 dia'
+      other: '%{count} dias'
+
+    deadline_with_label:
+      one: 'Prazo: %{count} dia'
+      other: 'Prazo: %{count} dias'
+
+    genders:
+      not_informed_gender: Não informado
+      female: Feminino
+      male: Masculino
+      other_gender: Outro
+      empty: Vazio
+
+    call_center_statuses:
+      waiting_allocation: Aguardando alocação
+      waiting_feedback: Aguardando retorno
+      with_feedback: Atendimento finalizado

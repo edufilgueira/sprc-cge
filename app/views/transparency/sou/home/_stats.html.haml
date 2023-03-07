@@ -1,0 +1,65 @@
+- # TODO: move
+- stats = Stats::Ticket.current(:sou) || Stats::Ticket.new(ticket_type: :sou, month_start: 1, month_end: Date.current.month, year: Date.current.year)
+- total_sou_types = stats.data.fetch(:total_sou_types, {})
+- valid_count = total_sou_types.values.sum
+- summary = stats.data.fetch(:summary, {})
+
+%section.mt-4{ 'aria-labelledby': 'stats' }
+  .card
+    .card-block
+      %h4.card-text.text-justify
+        = t('.title')
+
+      .card-text.text-justify
+        = t('.description')
+
+      %hr{'aria-hidden': 'true'}
+
+      .card-text.text-center
+        %strong.small.font-weight-bold.font-italic
+          = t('.month', month: stats.formated_date)
+
+      .row.mt-2
+        .col-md-3.text-center.border-right.border-green.active.border-right-sm-none
+          .counter.font-weight-light.text-green
+            = number_with_delimiter(valid_count)
+          = t('.stats_1.title')
+
+        .col-md-3.text-center.border-right.border-green.border-right-sm-none
+          .counter.font-weight-light.text-green
+            = t('.stats_2.unit', value: number_with_delimiter(summary.fetch(:average_time_answer, 0)))
+          = t('.stats_2.title')
+
+        .col-md-3.text-center
+          .counter.font-weight-light.text-green
+            = t('.stats_3.unit', value: number_with_delimiter(summary.fetch(:resolubility, 0)))
+          = t('.stats_3.title')
+    .card-footer.bg-tertiary.p-4
+      .row
+        .col-md-7
+          .row.text-center
+            .col-md-2.col-6.mt-2.mt-md-0
+              = total_sou_types.fetch('compliment', 0)
+              .small
+                = t('.summary.stats_1')
+            .col-md-2.col-6.mt-2.mt-md-0
+              = total_sou_types.fetch('complaint', 0)
+              .small
+                = t('.summary.stats_2')
+            .col-md-2.col-6.mt-2.mt-md-0
+              = total_sou_types.fetch('denunciation', 0)
+              .small
+                = t('.summary.stats_3')
+            .col-md-2.col-6.mt-2.mt-md-0
+              = total_sou_types.fetch('suggestion', 0)
+              .small
+                = t('.summary.stats_4')
+            .col-md-2.col-6.mt-2.mt-md-0
+              = total_sou_types.fetch('request', 0)
+              .small
+                = t('.summary.stats_5')
+
+
+        .col-md-5.mt-3.mt-md-0
+          = link_to t('.see_more'), transparency_tickets_stats_tickets_path, class: 'btn btn-outline-light white-space-normal btn-uppercase d-block'
+

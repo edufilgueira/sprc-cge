@@ -1,0 +1,18 @@
+es:
+
+  shared:
+
+    transparency:
+
+      filters:
+
+        range:
+          label: Período
+          start: Principio
+          end: Fin
+
+        filters:
+          starts_at:
+            label: Período
+            start: Principio
+            end: Fin

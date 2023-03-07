@@ -1,0 +1,46 @@
+es:
+  ppa:
+    proposals:
+      new:
+        title: Crear Propuesta
+        new: Nueva propuesta
+        related_objective: '¿Para qué objetivo desea elaborar una estrategia?'
+        select_a_theme: 'Seleccione un tema anterior para ver los objetivos relacionados'
+        select_theme_and_region: 'Elija un tema y un objetivo para mostrar estrategias relacionadas'
+        back: 'Cancelar'
+
+      comments:
+        success: 'Comentario registrado. ¡Gracias!'
+        failure: 'No fue posible registrar el comentario.'
+
+      votes:
+        success: 'Voto registrado. ¡Gracias!'
+        failure: 'No fue posible registrar su voto.' 
+
+      vote:
+        closed:
+          zero: La propuesta no recebió votos. 
+          one: La propuesta recibió un voto.  
+          other: La propuesta recebió %{count} votos.
+        voted:
+          one:   "<strong>Usted ha votado.</strong> El suyo es el unico voto en esta propuesta."
+          other: "<strong>Usted ha votado.</strong> Con usted, %{count} ciudadanos votaron en esta propuesta."
+        vote: Añadir mi voto
+
+      show:
+        title: Detalles de la propuesta
+        strategy: Estrategia 
+        justification: Justificación 
+        vote: Votar en esta estrategia si usted piensa que debe ser priorizada
+        add_vote: Añadir mi voto
+        comments: Comentarios
+        plan: Plan
+
+      create:
+        success: 'Propuesta creada con éxito'
+        failure: 'No fue posible crear la propuesta'
+
+
+      # filters
+      ensure_current_plan_open_for_proposals:
+        alert: 'El Plan vigente no está abierto a propuestas en ese momento.'

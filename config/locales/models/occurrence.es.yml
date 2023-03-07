@@ -1,0 +1,8 @@
+es:
+  activerecord:
+    attributes:
+      occurrence:
+        description: Descripción de la ocurrencia
+
+  occurrences:
+    default_occurrence: Atención iniciada/editada

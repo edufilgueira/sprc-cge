@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    attributes:
+      evaluation:
+        question_01_a: 'Questão 1a'
+        question_01_b: 'Questão 1b'
+        question_01_c: 'Questão 1c'
+        question_01_d: 'Questão 1d'
+        question_02: 'Questão 2'
+        question_03: 'Questão 3'
+        question_04: 'Questão 4'

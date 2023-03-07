@@ -1,0 +1,30 @@
+es:
+  activerecord:
+    models:
+      integration/expenses/npf:
+        one: Nota de Programación Financiera
+        other: Notas de Programación Financiera
+
+    attributes:
+      integration/expenses/npf:
+        exercicio: Ejercicio
+        unidade_gestora: Unidad de gestión
+        unidade_executora: Unidad ejecutora
+        numero: Número
+        natureza: Naturaleza
+        efeito: Efecto
+        data_emissao: Fecha de emisión
+        date_of_issue: Fecha de emisión
+        grupo_fin: Grupo financiero
+        fonte_rec: Fuente de recursos
+        credor: Acreedor
+        codigo_projeto: Código del proyecto
+        numero_parcela: Número de parcela
+        isn_parcela: ISN de la parcela
+        numeroconvenio: Número del convenio
+        data_atual: Fecha actual
+
+        date_of_issue: Fecha de emisión
+        management_unit_title: Secretaría/Órgano
+        executing_unit_title: Unidad ejecutora
+        creditor_nome: Acreedor

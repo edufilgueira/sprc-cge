@@ -1,0 +1,70 @@
+es:
+  shared:
+    transparency:
+      expenses:
+
+        multi_gov_transfers:
+          index:
+            title: Transferencias a Instituciones Multigubernamentales
+            description: Consulte aquí las Transferencias a Instituciones Multigubernamentales.
+            source: |
+              <p><strong>Fuente de datos:</strong></p>
+              <p>Secretaría de Hacienda - SEFAZ</p>
+              <p>Sistema de Gestíon Gubernamental por Resultados - S2GPR</p>
+
+            chart:
+              calculated_valor_final:
+                unit: 'Suma de los valores transferidos: R$'
+                title: 'Valores de las Notas de Empeño en el mes seleccionado.'
+
+                razao_social_credor:
+                  title: Suma de los valores transferidos por acreedor
+                management_unit:
+                  title: Suma de los valores transferidos por secretarias/órgãos
+                item_despesa:
+                  title: Suma de los valores transferidos por ítem de gasto
+                efeito:
+                  title: Suma de los valores transferidos por efecto
+
+            charts:
+              tabs:
+                razao_social_credor:
+                  title: Por acreedor
+                management_unit:
+                  title: Por unidad de gestión
+                item_despesa:
+                  title: Por ítem de gasto
+
+            filters:
+              title: Consulta avanzada
+
+            counts:
+              filtered_count:
+                title: Cantidad de transferencias filtradas
+              filtered_sum:
+                valor:
+                  title: Valor empeñado de las transferencias filtradas
+                valor_pago:
+                  title: Valor pagado de las transferencias filtradas
+            table:
+              summary: Lista de transferencias a instituiciones multigubernamentales
+              header:
+                numero: Nota de empeño
+                date_of_issue: Fecha de emisión
+                unidade_gestora: Unidad de gestión
+                management_unit_title: Unidad de gestión
+                item_despesa: Ítem de gasto
+                credor: Acreedor
+                valor: Valor empeñado
+                valor_pago: Valor pagado
+
+            stats:
+              title: Principales números relacionados a las transferencias
+              count: 'Transferencias en <strong>%{date}</strong>'
+              valor: 'Valor empeñado en <strong>%{date}</strong>'
+              valor_pago: 'Valor pagado en <strong>%{date}</strong>'
+
+          show:
+            contract:
+              link: '%{value}'
+              none: EMPEÑO NO VINCULADO AL INSTRUMENTO CONTRACTUAL/CONVENIO

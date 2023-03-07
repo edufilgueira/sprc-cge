@@ -1,0 +1,27 @@
+pt-BR:
+  admin:
+    integrations:
+      supports:
+        organs:
+
+          index:
+            title: Órgãos
+            empty: Nenhum registro encontrado
+
+          table:
+            summary: Lista de órgãos
+            heads:
+              codigo_orgao: Código
+              descricao_entidade: Secretaria
+              codigo_entidade: Código da Secretaria
+              descricao_orgao: Nome
+              sigla: Sigla
+
+              data_inicio: Data início
+              data_termino: Data término
+              orgao_sfp: SFP
+
+
+          filters:
+            search:
+              label: Buscar por sigla, descrição ou código

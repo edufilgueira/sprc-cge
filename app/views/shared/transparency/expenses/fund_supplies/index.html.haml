@@ -1,0 +1,7 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t(".title")
+
+- stats_url = transparency_expenses_fund_supplies_path(show_stats: true)
+- filter_path = 'expenses/fund_supplies'
+
+= render 'shared/transparency/index', transparency_id: :expenses_fund_supplies, stats_type: :year, stats_url: stats_url, base_locale: t('.'), filter_path: filter_path

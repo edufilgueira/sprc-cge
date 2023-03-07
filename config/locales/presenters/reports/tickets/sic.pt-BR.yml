@@ -1,0 +1,31 @@
+pt-BR:
+  presenters:
+    reports:
+      tickets:
+        sic:
+          summary:
+            sic_count: 'Número de protocolos registrados Central 155 + CSAI: %{count}'
+            relevant_to_executive_count: 'Total Geral de Solicitações Pertinentes ao Poder Executivo Estadual: %{count}'
+            call_center_sic_count: 'Número de protocolos registrados pela central 155: %{count}'
+            call_center_forwarded_count: 'Número de protocolos registrados pela central e encaminhados aos CSAI: %{count}'
+            sic_without_attendance_count: 'Número de protocolos registrados pelo CSAI: %{count}'
+            call_center_finalized_count: 'Protocolos finalizados pela central: %{count}'
+            finalized_without_call_center_count: 'Protocolos finalizados pelo CSAI: %{count}'
+            reopened_count: 'Solicitações reabertas: %{count}'
+            average_time_answer: 'Tempo médio para responder: %{count} dias'
+
+          average_time_answer:
+            call_center_and_csai: 'Central + CSAI'
+            call_center: 'Central'
+            csai: 'CSAI'
+            headers:
+              type: Sistema
+              average: Média
+              total: Total
+            average_time: '%{count} dias'
+
+          topic:
+            no_topic: 'Sem Assunto: %{count}'
+
+          most_wanted_topics:
+            no_topic: 'Sem Assunto: %{count}'

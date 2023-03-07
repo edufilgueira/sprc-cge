@@ -1,0 +1,46 @@
+%h2.sr-only
+  = t('.title')
+
+.card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+  .remote-content{'data-remote-content': 'user'}
+
+    #advanced_filter
+
+      .card.card-custom
+
+        .card-header
+
+          .row
+
+            .col-12
+
+              %h3.card-title
+                = t('.filters.title')
+
+        .card-block
+
+          .card-filters.filter-bar{'data-filter-bar': 'user'}
+            = form_for operator_users_path, method: :get do |f|
+              = render 'operator/users/filters', f: f
+
+          %hr{'aria-hidden': 'true'}
+
+          = render 'transparency/exports/form'
+
+          %hr{'aria-hidden': 'true'}
+    
+
+          - if users.present?
+
+            .mt-4
+
+              = render 'table'
+
+              = render 'shared/components/table/index_count', collection: users, filtered_count: filtered_count, total_count: total_count, filtered: filtered?
+
+          - else
+
+            .row
+              %i.col-md-12.text-center
+                = t('.empty')

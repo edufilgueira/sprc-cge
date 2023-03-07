@@ -1,0 +1,7 @@
+en:
+  transparency:
+    expenses:
+      nlds:
+        index:
+          title: Expense Settlement Notes
+          description: 'Here you will be able to consult information of Expense Settlement Notes, looking for period, management unit, creditor name.'

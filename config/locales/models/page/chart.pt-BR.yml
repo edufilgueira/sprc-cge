@@ -1,0 +1,8 @@
+pt-BR:
+  activerecord:
+    attributes:
+      page/chart:
+        title: Título do gráfico
+        unit: Unidade
+        description: Descrição para leitores de tela
+

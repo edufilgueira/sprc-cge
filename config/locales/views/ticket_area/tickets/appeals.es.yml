@@ -1,0 +1,14 @@
+es:
+
+  ticket_area:
+
+    tickets:
+
+      appeals:
+
+        new:
+          title: Nueva solicitud de recurso
+
+        create:
+          done: Solicitud de recurso realizada con éxito  
+          error: Error al solicitar recurso

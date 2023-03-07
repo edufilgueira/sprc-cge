@@ -1,0 +1,36 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-12.col-md-9
+            %h3.card-title
+              = event.title
+
+              %span.badge.badge-orange
+                = event.category
+
+          .col-12.col-md-3
+            .float-right
+
+              - if can?(:edit, event)
+                = link_to t('commands.edit'), edit_admin_event_path(event), class: 'btn text-muted btn-link'
+
+              - if can?(:manage, event)
+                = link_to t('commands.remove'), admin_event_path(event), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link'
+
+      .card-block
+
+        .row
+          .col-12
+            = content_tag :em, l(event.starts_at, format: :shorter), class: 'small'
+
+          .col-12
+            %p= raw event.description

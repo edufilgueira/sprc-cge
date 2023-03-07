@@ -1,0 +1,31 @@
+.row.text-center
+
+  %b.col-lg-12
+
+    = content_with_label(attendance_evaluation, :average)
+
+
+.row.text-center
+
+  .col-12.col-lg-6
+    = content_with_label(attendance_evaluation, :clarity)
+
+  .col-12.col-lg-6
+    = content_with_label(attendance_evaluation, :content)
+
+
+.row.text-center
+
+  .col-12.col-lg-6
+    = content_with_label(attendance_evaluation, :wording)
+
+  .col-12.col-lg-6
+    = content_with_label(attendance_evaluation, :kindness)
+
+
+%hr{'aria-hidden': 'true'}
+
+.row
+
+  .col-lg-12
+    = content_with_label(attendance_evaluation, :comment)

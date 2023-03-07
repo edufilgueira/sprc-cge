@@ -1,0 +1,72 @@
+es:
+  shared:
+    transparency:
+
+      city_undertakings:
+
+        index:
+          title: Inversiones por municipios
+          description: >
+            Consulte aquí las inversiones realizadas en los municipios por el
+            Gobierno del Estado de Ceará
+          value_unit: m<sup>2</sup>
+
+          chart:
+            valor_executado_total:
+              unit: 'R$'
+              title: 'Inversiones por municipios'
+            count:
+              unit: Numero de inversiones
+              title: 'Inversiones por municipios'
+
+          charts:
+            tabs:
+              undertaking:
+                title: Emprendimiento
+              creditor:
+                title: Acreedores
+              organ:
+                title: Secretarías
+              municipio:
+                title: Municipios
+
+          filters:
+            title: Consulta avanzada
+            search_placeholder: >
+              Busque por municipio, proyecto, numero SACC, tipo de gasto o acreedor
+            creditor:
+              select:
+                all: Todos los acreedores 
+
+            undertaking:
+              select:
+                all: Todos los emprendimientos
+
+          counts:
+            city_undertakings_count:
+              title: Inverisones por municipios filtrados
+            city_undertakings_sum:
+              title: Valor de las inversiones por municipios (ejecutado) filtrados
+
+          table:
+            summary: Lista de inversiones por municipios
+            header:
+              municipio: Municipio
+              organ_title: Secretaría
+              undertaking_title: Emprendimiento
+              mapp: Proyecto
+              creditor_title: Acreedor
+              valor_programado8: Valor programado 8
+              valor_executado8: Valor ejecutado 8
+              sic: Numero SACC
+
+          stats:
+            title: Principales numeros relacionados con las inversiones por municipios
+            count: 'Inversiones por municipios publicadas hasta <strong>%{date}</strong>'
+            unit: 'R$'
+            valor_executado_total: 'Valor ejecutado de inversiones por municípios publicados hasta <strong>%{date}</strong>'
+
+        show:
+          valor_executado: Valores ejecutados
+          valor_programado: Valores programados
+

@@ -1,0 +1,9 @@
+@import 'base/variables';
+
+.dropdown {
+  .no-caret {
+    &.dropdown-toggle::after {
+      display:none;
+    }
+  }
+}

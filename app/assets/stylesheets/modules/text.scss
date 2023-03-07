@@ -1,0 +1,46 @@
+@import 'base/variables';
+
+.text-gray {
+  color: $text-gray;
+}
+
+.text-green {
+  color: $app-green;
+}
+
+.fa-text-green {
+  .fa {
+    color: $app-green;
+  }
+}
+
+.text-orange {
+  color: $app-yellow;
+}
+
+.text-dash-underline {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+.font-weight-light {
+  font-weight: 300;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+.ellipsis-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.w-s-pre {
+  white-space: pre;
+}

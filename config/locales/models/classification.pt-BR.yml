@@ -1,0 +1,30 @@
+pt-BR:
+  activerecord:
+    attributes:
+
+      classification:
+        ticket: Manifestação/Solicitação
+        topic: Assunto
+        subtopic: Subassunto
+        department: Unidade
+        sub_department: Subunidade
+        budget_program: Programa orçamentário
+        service_type: Tipo de serviço
+        other_organs: Não compete ao Poder Executivo Estadual
+
+        topic_name: Assunto
+        subtopic_name: Subassunto
+        department_name: Unidade
+        sub_department_name: Subunidade
+        budget_program_name: Programa orçamentário
+        service_type_name: Tipo de serviço
+        other_organs_name: Não compete ao Poder Executivo Estadual
+
+    models:
+      classification:
+        one: Classificação
+
+    errors:
+      models:
+        classification:
+          attributes:

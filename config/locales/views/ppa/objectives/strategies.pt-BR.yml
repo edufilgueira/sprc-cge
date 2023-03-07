@@ -1,0 +1,6 @@
+pt-BR:
+  ppa:
+    objectives:
+      strategies:
+        index:
+          label: Estratégias existentes para o objetivo selecionado

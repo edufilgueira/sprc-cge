@@ -1,0 +1,69 @@
+en:
+  shared:
+    transparency:
+
+      real_states:
+
+        index:
+          title: Real estate
+          description: >
+            Check here for any state property. See each property, which are the largest built areas, and who are responsible for the properties, etc.
+          value_unit: m<sup>2</sup>
+
+          chart:
+            count:
+              unit: 'Quantity'
+              title: 'Quantity of real estate'
+
+          charts:
+            tabs:
+              property_type:
+                title: Real estate types
+              occupation_type:
+                title: Occupation types
+              manager:
+                title: Agencies
+              municipio:
+                title: Cities
+
+          filters:
+            title: Advanced search
+            search_placeholder: >
+              Search by description, address, municipality, neighborhood, zip, complement, lot or block
+            occupation_type:
+              select:
+                all: All types of occupation
+
+            property_type:
+              select:
+                all: All real estate types
+
+          counts:
+            real_states_count:
+              title: Quantity of filtered real estate
+            real_states_sum:
+              title: Construction area value (projection) of filtered real estate
+
+          table:
+            summary: Real estate list
+            header:
+              service_id: Identification code
+              descricao_imovel: Description
+              manager_title: Agency
+              property_type_title: Real estate type
+              occupation_type_title: Occupation type
+              endereco: Address
+              municipio: City
+
+          stats:
+            title: Main numbers related to real estate
+            count: 'Real estate quantity published by <strong>%{date}</strong>'
+            value_unit: m<sup>2</sup>
+            area_projecao_construcao: 'Real estate area published until <strong>%{date}</strong>'
+
+        show:
+          descricao_url: Real estate complete information
+          descricao_url_ddisp: Bidding exemption process
+          descricao_url_inexg: Bidding unenforceability process
+          edital_url: Check bidding notice
+

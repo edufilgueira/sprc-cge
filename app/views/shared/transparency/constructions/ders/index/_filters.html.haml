@@ -1,0 +1,54 @@
+.card-filters.filter-bar{'data-filter-bar': 'ders'}
+
+  = form_for transparency_constructions_ders_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+      .col-12.col-lg-4
+        - options = options_for_select(integration_constructions_der_status_for_select_with_all_option, params[:der_status])
+
+        = label_tag(:der_status, Integration::Constructions::Der.human_attribute_name(:der_status))
+
+        = select_tag(:der_status, options)
+
+      .col-12.col-lg-8
+        - select_options = transparency_select_options_from_model(Integration::Constructions::Der, :trecho)
+
+        - options = options_for_select(select_options, params[:trecho])
+
+        = label_tag(:trecho, Integration::Constructions::Der.human_attribute_name(:trecho))
+
+        = select_tag(:trecho, options, include_blank: t('messages.filters.select.all.male'))
+
+    .row.mt-3
+      .col-12.col-lg-4
+        - select_options = transparency_select_options_from_model(Integration::Constructions::Der, :distrito)
+
+        - options = options_for_select(select_options, params[:distrito])
+
+        = label_tag(:distrito, Integration::Constructions::Der.human_attribute_name(:distrito))
+
+        = select_tag(:distrito, options, include_blank: t('messages.filters.select.all.male'))
+
+      .col-12.col-lg-4
+        = label_tag(:data_fim_contrato, Integration::Constructions::Der.human_attribute_name(:data_fim_contrato))
+
+        = text_field_tag(:data_fim_contrato, nil, data: { input: 'daterangepicker' }, class: 'form-control w-100')
+
+      .col-12.col-lg-4
+        = label_tag(:data_fim_previsto, Integration::Constructions::Der.human_attribute_name(:data_fim_previsto))
+
+        = text_field_tag(:data_fim_previsto, params[:data_fim_previsto], data: { input: 'daterangepicker' }, class: 'form-control w-100')
+
+
+    .row.mt-3
+      .col-12.col-lg-9
+        = label_tag(:search, t('messages.filters.search.label'))
+        = text_field_tag(:search, params[:search], placeholder: t('.search_placeholder'), class: 'form-control w-100 mb-3', 'data-filter-bar-ignore-submit-on-enter': 'true')
+
+      .col-12.col-lg-3
+
+        - # forma simples de align-bottom no botão de busca
+        .mt-4.pt-2
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'

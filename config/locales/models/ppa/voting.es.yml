@@ -1,0 +1,13 @@
+pt-ES:
+  activerecord:
+    models:
+      ppa/voting:
+        one: About Me
+        other: Home
+
+    attributes:
+      ppa/voting:
+        start_in: First Period
+        end_in: Final Period
+        plan: PPA
+        region: Region

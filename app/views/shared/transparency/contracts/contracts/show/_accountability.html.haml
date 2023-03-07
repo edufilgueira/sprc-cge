@@ -1,0 +1,35 @@
+- accountability_status = contract.accountability_status
+
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = Integration::Contracts::Contract.human_attribute_name(:accountability_status)
+
+      .card-block
+
+        - if accountability_status.present?
+
+          %p
+            = accountability_status
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')
+
+        %hr
+
+          %small
+
+            - # Para contratos anteriores a 01/09/2015, há uma legenda diferente.
+            - if contract.data_assinatura < Date.new(2015, 9, 1)
+              = raw(t('.legend.before_2015'))
+            - else
+              = raw(t('.legend.after_2015'))

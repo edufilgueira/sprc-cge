@@ -1,0 +1,71 @@
+- can_create = can?(:create, User)
+
+.card-filters.filter-bar{'data-filter-bar': 'user'}
+
+  - #
+  - # sort params
+  - #
+  = render 'shared/sortered/hidden_filters'
+
+  .row
+
+    - #
+    - # input search
+    - #
+    .col-12.col-md-6.mt-2
+      %label.sr-only{ for: 'search'}
+        = t('.search.label')
+      = text_field_tag(:search, params[:search], placeholder: t('.search.placeholder'), class: 'form-control w-100 mb-3')
+
+    - if can_create
+      - #
+      - # button search
+      - #
+      .col-12.col-md-3.mt-2
+        = f.submit t('commands.search'), class: 'btn btn-primary btn-block'
+
+      - #
+      - # button new
+      - #
+      .col-12.col-md-3.text-right.mt-2
+        = link_to t('.commands.new'), new_operator_user_path, class: 'btn btn-primary btn-block btn-success'
+
+    - else
+
+      - #
+      - # button search
+      - #
+      .col-12.col-md-6.mt-2
+        = f.submit t('commands.search'), class: 'btn btn-primary btn-block'
+
+    - #
+    - # Operator Type
+    - #
+    .col-12.col-md-6.mt-2
+      - label = t('.operator_type')
+      - placeholder = t('messages.filters.select.all.male')
+      - options = options_for_select(user_operator_types_for_select, params[:operator_type])
+      = label_tag :operator_type, label
+      = select_tag :operator_type, options, { include_blank: placeholder }
+
+    - #
+    - # Organ
+    - #
+    .col-12.col-md-6.mt-2
+      - label = t('.department')
+      - placeholder = t('messages.filters.select.all.male')
+      - options = options_for_select(departments_by_organ_for_select(current_user.organ_id), params[:department_id])
+      = label_tag :department, label
+      = select_tag :department_id, options, { include_blank: placeholder }
+
+    .col-12.col-md-4.mt-2
+      = render "shared/components/remote_disable_filter"
+
+  .pt-3
+    - filtered = params[:search].present?
+
+    - if filtered
+      %small
+        .alert.alert-warning
+          = raw t('messages.filters.warning_count', total: number_with_delimiter(total_count), filtered: number_with_delimiter(filtered_count))
+          = link_to t('messages.filters.clear'), '#!', 'data-input': 'clear-filter', class: 'float-right'

@@ -1,0 +1,27 @@
+en:
+  ppa:
+    revision:
+      participant_profiles:
+        new:
+          title: Participant Profile
+          subtitle: Supplement your profile to start the review
+        form:
+          explains:
+            genre: |
+              CIS Man: There is identification between the biological sex that was born and the expression of gender.
+              CIS Woman: There is identification between the biological sex that was born and the expression of gender.
+              Trans Man: There is no identification between the biological sex that was born and the expression of gender.
+              Trans Woman: There is no identification between the biological sex that was born and the expression of gender.
+
+            sexual_orientation: |
+              Heterosexual: Affective and / or sexual attraction between people of the opposite sex or gender.
+              Bisexual: Affective or sexual attraction for both female and / or male.
+              Lesbian: Woman who has affective and / or sexual attraction to another woman.
+              Gay: Man who feels emotional and / or sexual attraction to another man.
+          questions:
+            collegiate_quest: Do you participate in any collegiate of citizen participation?
+            other_ppa_participation_quest: Have you ever participated in a regional PPA meeting?
+            which: Which ?
+
+          commands:
+            save: Save and Start Review

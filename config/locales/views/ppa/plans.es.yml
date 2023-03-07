@@ -1,0 +1,136 @@
+es:
+  ppa:
+    plans:
+
+      headline:
+        title: Participa en el PPA
+        description: >
+          Bienvenido al área de participación ciudadana. Aquí usted puede acompañar
+          talleres, evaluar, monitorear y participar en el Plan Plurianual (PPA).
+
+      show:
+        title: Participa en el PPA (%{plan})
+
+      about_phases:
+        elaborating:
+          description: >
+            Es ejercicio de democracia y ciudadanía participar del PPA de su Estado, pues, por medio
+            de eso, es posible pensar en conjunto un futuro mejor para todos. Por intermedio del PPA,
+            la sociedad civil puede opinar, debatir, evaluar y construir junto con el gobierno mejores
+            políticas públicas.
+        monitoring:
+          description: >
+            Falta el texto que se agregará para Monitoreo, comuníquese con CGE IT.
+        evaluating:
+          description: >
+            <p> Es un ejercicio de democracia y ciudadanía participar en la PPA de su estado.
+             A través del proceso de participación ciudadana, la sociedad puede expresar opiniones, debatir,
+             evaluar y generar ideas para la implementación de políticas públicas efectivas. </p>
+
+            <p> Actualmente está siendo invitado a participar en la evaluación de la PPA 2016-2019,
+             con el fin de registrar sus percepciones sobre la ejecución de acciones gubernamentales en el
+             su región durante el período bajo revisión, contribuyendo a la corrección de qué identificar
+             según sea necesario. ¡Participa y ayuda al gobierno a hacer un mejor futuro para todos!</p>
+        revising:
+          description: >
+            Participar en la revisión del PPA 2020-2023 es usar su voz para contribuir a la planificación
+            de las acciones del Gobierno del Estado en su región y en todo Ceará. El proceso de revisión
+            busca mantener una comunicación directa con la sociedad de Ceará, especialmente en la planificación
+            del desempeño de las agencias estatales para los próximos dos años. ¡Ser parte del proceso es
+            actuar directamente para resolver los problemas y pensar en un futuro mejor para todos!
+
+      workshops:
+        title: Encuentros de elaboración del PPA
+        description: >-
+          Los Encuentros Regionales son momentos de debate, evaluación y sugerencias acerca de la planificación estadual promovidos junto a la población de la región. Es cuando el gobierno va hasta usted para oír sus opiniones e ideas que dirijan la oferta del gobierno para el desarrollo de la región.
+        links: Acceso rápido
+        last: Ver el último encuentro (%{name}, %{date})
+        counter: para el inicio del encuentro del PPA (%{start_year} - %{end_year})
+        text_workshop_next: Por favor, espere a que el próximo encuentro regional se programe.
+
+        see_more: ver encuentros
+        coming_soon: 'En breve, información sobre los Talleres de elaboración!'
+        soon: 'En breve'
+
+      strategies_vote:
+        title: Voto de estrategia
+        description: 'En esta etapa del proceso de planificación participativa, puede votar por las estrategias definidas en las reuniones regionales que desea que el gobierno priorice en los próximos cuatro años. A continuación se muestra el calendario de votaciones por región:'
+        see_down_schedule: 'A continuación se muestra el calendario de votaciones por región:'
+        whithout_votings_schedule: Espere a que se establezca el calendario de votación para las regiones.
+
+
+      map:
+        tmp:
+          title: Acompañe el PPA en su región
+          description: >-
+            La planificación participativa se realiza en las regiones del Estado de Ceará.
+            Con el Ceará Transparente, todos los ciudadanos podrán contribuir y participar de ese
+            proceso a través de Internet.
+          coming_soon: 'En breve, las estrategias regionalizadas priorizadas del PPA!'
+          soon: En breve
+
+        title: Seleccione una región
+        city: Ciudad
+        biennium: Bienio
+        hint: >
+          Seleccione un municipio para encontrar la región correspondiente.
+          O haga clic en una región de mapa
+
+        hint_mobile: >
+          Seleccione un municipio para encontrar la región correspondiente.
+
+        see_more: Participa en el PPA en esta región
+
+      bienniums:
+        strategies: Estrategias
+        initiatives: Iniciativas
+        products: Productos
+        proposals: Propuestas
+        biennium: 'Bienio de %{biennium}'
+
+      cards:
+        phases:
+          elaborating:
+            strategies_vote:
+              title: Voting Strategies
+              description: |
+                En esta etapa del proceso de planificación participativa, es posible votar las estrategias definidas
+                reuniones regionales que desea que el gobierno dé prioridad durante los próximos cuatro años. Él sigue
+                debajo del calendario de votaciones por región:
+              see_down_schedule: 'A continuación se muestra el calendario de votaciones por región:'
+              whithout_votings_schedule: Espere la definición del calendario de votaciones para las regiones.
+
+          monitoring:
+
+          evaluating:
+            schedule_activies:
+              title: Cronograma de actividades
+              description:
+                items:
+                  evaluation: |
+                    Evaluación del PPA por la sociedad en un entorno virtual: 1 al 15 de junio.
+                  consolidation: |
+                    Consolidación de la información registrada en el sistema: 16 de junio al 15 de julio.
+                  publication:
+                    Publicación del informe de evaluación final (información del gobierno y la sociedad).
+
+          revising:
+            schedule_activies:
+              title: Etapas de la participación ciudadana en la revisión
+              description: |
+                La participación en el proceso de revisión se desarrolla en dos etapas: (i) la revisión de
+                situaciones problemáticas y estrategias regionales; y (ii) la priorización de estrategias
+                regionales.
+                <p>En la primera etapa, podrá participar revisando las situaciones problemáticas y
+                estrategias de acción que se identificaron como más importantes para su región durante la
+                elaboración del PPA, en 2019. En la segunda etapa, podrá seleccionar cuáles Se sugieren
+                estrategias regionales para cada región (nueva o existente) que considere una prioridad para
+                los próximos dos años.</p>
+              see_down_schedule: |
+                <b>A continuación se muestra el calendario de revisión:</b>
+              stages:
+                review_regional_guidelines:  Revisión de las Pautas Regionales
+                proposal_consolidation: Consolidación de Propuestas
+                prioritization_regional_strategies: Priorización de Estrategias Regionales
+                disclosure_final_result: Divulgación del Resultado Final
+                process_evaluation: Evaluación de Procesos

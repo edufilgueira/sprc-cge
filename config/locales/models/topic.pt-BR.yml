@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    attributes:
+
+      topic:
+        name: Nome
+        organ: Órgão
+        organ_name: Nome do órgão
+
+    errors:
+      models:
+        topic:
+          attributes:
+
+  topic:
+    no_characteristic: MANIFESTAÇÃO SEM CARACTERÍSTICA

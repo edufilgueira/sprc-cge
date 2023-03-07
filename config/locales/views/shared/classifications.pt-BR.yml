@@ -1,0 +1,15 @@
+pt-BR:
+  shared:
+    classifications:
+      form:
+        save: Salvar classificação
+
+      classification:
+        new:
+          sou: Classificar manifestação
+          sic: Classificar solicitação
+        edit: Editar classificação
+
+      classification_fields:
+        not_classified: Sem classificação
+        other_organs: Não compete ao Poder Executivo Estadual

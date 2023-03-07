@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    models:
+      integration/revenues/configuration:
+        one: Revenues configuration
+
+    attributes:
+      integration/revenues/configuration:
+        wsdl: WSDL
+        headers_soap_action: SOAPAction
+        user: User
+        password: Password
+        operation: SOAP method name
+        response_path: Response path
+        month: Reference month

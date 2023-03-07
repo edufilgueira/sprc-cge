@@ -1,0 +1,8 @@
+es:
+
+  search_contents:
+    index:
+      title: Búsqueda 
+      count_title: 'Exhibiendo %{count} resultados de búsqueda para "%{term}"'
+      what_do_you_need: '¿Lo que necesitas?'
+      more: Vea más 

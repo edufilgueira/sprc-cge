@@ -1,0 +1,41 @@
+- # same from shared/notifications/_index_content
+- authenticated_user = current_user || current_ticket
+
+- max_number_of_notifications = 5
+- last_notifications = authenticated_user.mailbox.notifications.order(created_at: :desc).limit(max_number_of_notifications)
+
+%section{ 'aria-labelledby': 'notification_sections' }
+  .card-deck
+    .card.my-4
+      .card-header.bg-transparent.border-0
+        %h4.font-weight-bold
+          = t('.title')
+      .card-block
+        %table.table.table-striped.table-sm.table-responsive-sm
+          %thead
+            %tr.small
+              %th.border-0
+              %th.border-0
+                = t('.subject')
+              %th.border-0
+                = t('.created_at')
+          %tbody
+            - if last_notifications.empty?
+              %tr
+                %td.text-center{ colspan: 3 }
+                  = t('shared.notifications.index.empty')
+            - else
+              - last_notifications.each do |notification|
+                %tr
+                  %td.text-center.v-align-middle
+                    %i.fa{ class: read_or_unread_icon(notification, authenticated_user) }
+                  %td
+                    = link_to notification.subject.truncate(80), url_for([namespace, :notification, id: notification.id])
+                  %td
+                    = I18n.l(notification.created_at, format: :date_time)
+
+        = link_to url_for([namespace, :notifications]), class: 'pull-right small' do
+          %i{ 'aria-hidden': 'true' }
+          = t('shared.notifications.index.dropdown.more')
+
+    = render 'pending_research'

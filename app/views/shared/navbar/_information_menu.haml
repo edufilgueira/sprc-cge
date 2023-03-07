@@ -1,0 +1,11 @@
+%ul.nav
+  %li.nav-item
+    = link_to t('.information.title'), transparency_sic_path, class: 'nav-link'
+  %li.nav-item
+    = link_to t('.new.title'), new_user_session_path(ticket_type: :sic), class: 'nav-link'
+  %li.nav-item
+    = link_to t('.watch.title'), new_ticket_session_path(ticket_type: :sic), class: 'nav-link'
+  %li.nav-item
+    = link_to t('.public.title'), transparency_public_tickets_path(ticket_type: :sic), class: 'nav-link'
+  %li.nav-item
+    = link_to t('.what_is.title'), '/portal-da-transparencia/paginas/acesso-a-informacao', class: 'nav-link'

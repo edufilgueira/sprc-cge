@@ -1,0 +1,122 @@
+en:
+  activerecord:
+
+    attributes:
+      ticket_report:
+        title: Report title
+        filename: Name of file
+        status: Status
+        status_str: Status
+        filters: Filters considered
+        report_type: Report type
+        user: Created by
+        created_at: Created by
+        total: Total considered
+
+  ticket_report:
+    statuses:
+      preparing: Preparing
+      generating: Generating
+      error: Error
+      success: Success
+
+
+    spreadsheet:
+      worksheets:
+        summary:
+          title: Title
+          header:
+            title: Location
+            total: Total
+          infos:
+            title: Information
+            ticket_report_title: 'Name of report: %{value}'
+            created_at: 'Creaded by: %{value}'
+            created_by: 'Created by: %{value}'
+            email: 'E-mail: %{value}'
+            organ: 'Organ: %{value}'
+            operator_type: 'Operator type: %{value}'
+            tickets_count: 'New records: %{value}'
+            invalidated_count: 'Total of invalidated counts: %{value}'
+            invalidated_and_other_organs: 'Total of invalidated counts and other organs: %{value}'
+            reopened_at: "Reopened manifestations: %{value}"
+            appealed_at: "Appeal for information request: %{value}"
+          filters:
+            title: Filters
+            none: No filters selected
+
+        answer_classification:
+          header:
+            title: Classification
+            total: Total
+          title: Perception after the preliminary examination procedure
+          nil: (Sem valor)
+
+        person_type:
+          header:
+            title: Profile
+            total: Total
+          title: Type of applicant
+          nil: (Sem valor)
+
+        used_input:
+          header:
+            title: Device used
+            total: Total
+          title: Input device used
+          nil: (Sem valor)
+
+        answer_type:
+          header:
+            title: Type
+            total: Total
+          title: Preference of response
+          nil: (Sem valor)
+
+        city:
+          header:
+            city: City
+            title: City
+            total: Total
+          title: Location
+          nil: (Sem valor)
+
+        state:
+          header:
+            state: State
+            title: State
+            total: Total
+          title: State
+          nil: (Sem valor)
+
+        neighborhood:
+          header:
+            neighborhood: Neighborhood
+            title: Neighborhood
+            total: Total
+          title: Neighborhood
+          nil: (Sem valor)
+
+        sou_type:
+          header:
+            sou_type: Type of manifestation
+            total: Total
+          title: Type of manifestation
+
+        internal_status:
+          header:
+            title: Status
+            total: Total
+          title: Status
+          nil: (Sem valor)
+
+        status:
+          title: Status
+          nil: (Sem valor)
+
+        items:
+          nil: (Sem valor)
+
+    filters:
+      ticket_type: Type
+      organ: Organ

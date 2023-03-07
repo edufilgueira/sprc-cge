@@ -1,0 +1,44 @@
+.flex-none {
+  flex: none;
+}
+
+.v-align-middle {
+  vertical-align: middle !important;
+}
+
+.platform-home-card {
+  padding: 10px;
+
+  border-radius: 4px;
+  border: 1px solid;
+
+  .platform-home-card-title {
+    font-size: 15px;
+  }
+
+  .platform-home-card-count {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.ticket-status {
+  &[data-status=active] {
+    background-color: #FFE6CD;
+    color: #974B02;
+    border-color: #EABF95;
+  }
+
+  &[data-status=inactive] {
+    background-color: #CDFFE6;
+    color: #07655E;
+    border-color: #80D6D0;
+  }
+
+}
+
+.pending_research {
+  background-color: #FFA599;
+  color: #720700;
+  border-color: #720700;
+}

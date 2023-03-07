@@ -1,0 +1,85 @@
+en:
+  shared:
+    transparency:
+      revenues:
+        accounts:
+
+          index:
+            title: Revenue from the Executive Power
+            description: Check here the revenues from the Executive Power.
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Secretary of Finance - SEFAZ</p>
+              <p>Governmental Management System by Results - S2GPR</p>
+
+            chart:
+              valor_arrecadado:
+                unit: 'Collected amounts sum: R$'
+                title: 'Collected amounts in the filtered period'
+
+                secretary:
+                  title: Sum of amounts collected per secretariats
+                consolidado:
+                  title: Sum of amounts collected per revenue type
+                categoria_economica:
+                  title: Sum of amounts collected per economic category
+                origem:
+                  title: Sum of amounts collected per origin
+                subfonte:
+                  title: Sum of amounts collected per sub source
+
+            charts:
+              tabs:
+                secretary:
+                  title: Per secretariat
+                consolidado:
+                  title: Per revenue type
+                categoria_economica:
+                  title: Per economic category
+                origem:
+                  title: Per source
+                subfonte:
+                  title: Per sub source
+
+            counts:
+              valor_previsto_inicial:
+                title: 'Filtered recipes initial estimated value'
+              valor_previsto_atualizado:
+                title: 'Filtered recipes updated estimated value'
+              valor_arrecadado:
+                title: 'Filtered revenues collected value'
+
+            filters:
+              title: Advanced search
+
+              counts:
+                accounts_sum:
+                  valor_previsto_inicial:
+                    title: Filtered recipes initial estimated value
+
+                  valor_previsto_atualizado:
+                    title: Filtered recipes updated estimated value
+
+                  valor_arrecadado:
+                    title: Filtered revenues collected value
+
+              search:
+                hint: |
+                  You can search by the name of secretariats, agencies, revenue type, etc. Examples: 'ipva', 'icms', 'fine', 'sec faze', among others.
+
+
+            table:
+              summary: Executive Power revenues list
+              header:
+                title: Descripition
+                valor_arrecadado: Collected value (R$)
+                valor_previsto_inicial: Initial estimated value (R$)
+                valor_previsto_atualizado: Updated estimated value (R$)
+
+              total: Total
+
+            stats:
+              title: Main revenue-related figures
+              valor_arrecadado: 'Collected value between <strong>%{date}</strong>'
+              valor_previsto_inicial: 'Initial estimated value on <strong>%{date}</strong>'
+              valor_previsto_atualizado: 'Estimated value updated between <strong>%{date}</strong>'

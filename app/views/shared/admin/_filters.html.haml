@@ -1,0 +1,48 @@
+-#
+-# Barra de busca via AJAX.
+-# A estrutura (DOM) é feita para funcionar com o modules/remote-content-with-filter-bar.js.
+-# IMPORTANT: é diferente do uso do components/remote-content-with-filter-bar.js!
+-#
+-# NOTE: Veja um exemplo de reuso em `shared/notifications/_filters.html.haml`.
+-#
+-# locals:
+-#   - [String] filter_id
+-#   - [*URL]   filter_path
+-#   - [Hash]   commands  - e.g. { new: { permission: true|false, title: 'Btn Label', path: new_resource_path }}
+-#   - [String] search_placeholder - Opcional. Placeholder do input de busca textual.
+-#
+
+- commands = local_assigns[:commands] || {}
+- hint = local_assigns[:hint] || ''
+- search_placeholder = local_assigns[:search_placeholder] || t('messages.filters.search.label')
+
+.card-filters.filter-bar{'data-filter-bar': filter_id}
+
+  = form_for filter_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+      - if commands.key?(:new)
+        .col-12.col-lg-6
+          = text_field_tag(:search, params[:search], class: 'form-control w-100', 'data-filter-bar-ignore-submit-on-enter': 'true', placeholder: search_placeholder, hint: 'Dica')
+          %small.form-text.text-muted.mb-3
+            = hint
+
+        .col-12.col-lg-3
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'
+        .col-12.col-lg-3
+          .mt-2.mt-lg-0
+            - if commands[:new][:permission]
+              = link_to commands[:new][:title], commands[:new][:path], class: 'btn btn-success btn-block'
+
+      - else
+        .col-12.col-lg-9
+          = text_field_tag(:search, params[:search], class: 'form-control w-100 mb-3', 'data-filter-bar-ignore-submit-on-enter': 'true', placeholder: search_placeholder)
+
+        .col-12.col-lg-3
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'
+
+
+    - # Adiciona outros filtros, além da barra de busca, passados pelo bloco
+    = yield

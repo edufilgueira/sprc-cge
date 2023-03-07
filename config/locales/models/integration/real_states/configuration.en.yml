@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    models:
+      integration/real_states/configuration:
+        one: Finished bidding configuration
+
+    attributes:
+      integration/real_states/configuration:
+        headers_soap_action: SOAPAction
+        password: Password
+        user: User
+        wsdl: WSDL
+        operation: SOAP method name
+        response_path: Response path
+    
+        detail_operation: SOAP method name (detail)
+        detail_response_path: Response path (detail)
+

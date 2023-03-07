@@ -1,0 +1,28 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/supports/creditor:
+        bairro: Bairro
+        cep: CEP
+        codigo: Código
+        codigo_contribuinte: Código do contribuinte
+        codigo_distrito: Código do distrito
+        codigo_municipio: Código do município
+        codigo_nit: Código NIT
+        codigo_pis_pasep: PIS/PASESP
+        complemento: Complemento
+        cpf_cnpj: CPF/CNPJ
+        data_atual: Data atual
+        data_cadastro: Data do cadastro
+        email: E-mail
+        logradouro: Logradouro
+        nome: Nome
+        nome_municipio: Nome do município
+        numero: Número
+        status: Situação
+        telefone_contato: Telefone de contato
+        uf: UF
+
+  integration/supports/creditor:
+    select:
+      all: Todos os contratados

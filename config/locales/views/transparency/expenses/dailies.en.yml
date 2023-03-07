@@ -1,0 +1,7 @@
+en:
+  transparency:
+    expenses:
+      dailies:
+        index:
+          title: Expense with daily
+          description: 'Check here the expenses with dailies, which are values received by state servants to pay expenses in work travels. Here it is possible find information filtering by agency, period or beneficiary.'

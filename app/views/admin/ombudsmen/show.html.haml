@@ -1,0 +1,37 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-8
+            %h3.card-title
+              = ombudsman.title
+
+          .col-4
+            .float-right
+              - if can?(:edit, ombudsman)
+                = link_to t('commands.edit'), edit_admin_ombudsman_path(ombudsman), class: 'btn text-muted btn-link'
+
+              - if can?(:manage, ombudsman)
+                = link_to t('commands.remove'), admin_ombudsman_path(ombudsman), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link hover-link float-left d-inline-block'
+
+      .card-block
+
+        = content_with_label(ombudsman, :contact_name)
+
+        = content_with_label(ombudsman, :phone)
+
+        = content_with_label(ombudsman, :email)
+
+        = content_with_label(ombudsman, :address)
+
+        = content_with_label(ombudsman, :kind)

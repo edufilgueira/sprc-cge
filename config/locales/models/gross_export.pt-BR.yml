@@ -1,0 +1,87 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        gross_export:
+          attributes:
+            base:
+              big_range: Intervalo limite é de 1 ano
+    attributes:
+      gross_export:
+        title: Título da exportação
+
+  gross_export:
+    statuses:
+      preparing: Preparando
+      generating: Gerando
+      error: Erro
+      success: Finalizado
+
+    spreadsheet:
+      worksheets:
+        summary:
+          title: Sumário
+          header:
+            title: Localização
+            total: Total
+          infos:
+            title: Informações
+            ticket_report_title: 'Nome do relatório: %{value}'
+            created_at: 'Criado em: %{value}'
+            created_by: 'Criado por: %{value}'
+            email: 'E-mail: %{value}'
+            organ: 'Órgão: %{value}'
+            operator_type: 'Tipo de operador: %{value}'
+            tickets_count: 'Novos registros: %{value}'
+            tickets_invalidated_count: 'Total de invalidados: %{value}'
+            tickets_other_organs_count: 'Total de invalidados e de outros poderes: %{value}'
+            reopened_at: "Manifestações reabertas: %{value}"
+            appeals_at: "Recursos de solicitação de informação: %{value}"
+          filters:
+            title: Filtros
+            none: Nenhum filtro selecionado.
+
+        sic:
+          title: Solicitação de Informação
+
+        sou:
+          title: Ouvidoria
+
+
+        total:
+          title: Total
+          header:
+            year: Ano
+            ticket_type: Tipo
+            sou_type: Tipo de manifestação
+            organ: Órgão
+            departments: Áreas internas
+            protocol: Protocolo
+            ticket_parent: Manifestação/Solicitação Pai
+            status: Situação
+            internal_status: Situação interna
+            subject: Assunto
+            origem_input: Meio de entrada
+            month: Mês
+            confirmed_at: Data de registro
+            answered_at: Data da finalização
+            final_answer_at: Data da resposta final
+            answer_time_in_days: Tempo de resposta
+            has_appeal: Prorrogado
+            neighborhood: Bairro
+            city: Município
+            state: Estado
+            country: País
+            answer_type: Preferência de resposta
+            deadline: Prazo
+            description: Texto da solicitação
+            answers: Respostas
+            evaluation: Avaliação do atendimento (nota do usuário)
+            attendance_evaluation: Avaliação interna do atendimento
+            average_attendance_evaluation_organ: Média da avaliação interna do atendimento do órgão
+            has_extension: Prorrogação de prazo
+            answer_classification: Classificação da informação
+            user_name: Nome
+            user_phone: Telefone 1
+            user_cell_phone: Telefone 2
+            user_email: E-mail

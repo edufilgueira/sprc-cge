@@ -1,0 +1,119 @@
+en:
+
+  transparency:
+    sou:
+      home:
+
+        index:
+          title: Digital Ombudsmen
+          transparency_title: Digital Ombudsmen
+          transparency_description: >
+            Welcome to the Digital Ombudsman area on the Ceará Transparente Portal
+
+        general:
+          title: Make your manifestation
+          description: >
+            The government listens to you. Record requests, complaints, suggestions or compliments. It is also possible to report something
+            wrong without having to identify yourself.
+          new_ticket: Log a new manifestation
+
+          follow_ticket: 
+            title: Follow Manifestations
+            description: >
+             You will be able to follow the service of your manifestation by protocol number or accessing your profile in Ceará Transparente.
+
+          
+        how:
+          more: Read more
+          what_is:
+            title: What is the Ombudsman?
+            description: >
+              The Ombudsman is the main channel of communication between citizens and the government. It is the citizen's right to speak up, participate and inspect the government, with the aim of improving the quality of public services and identifying irregularities.
+
+          how_to:
+            title: How can I use it?
+            description: >
+              The Ceará Transparente portal was designed was designed with the improvement of communication in mind, with a focus on helping you, citizen, to communicate with the different governmental institutions. The system allows you to log new suggestions, praise, claims and complaints.
+
+        publications:
+          title: Ombudsman's Manual and General Publications
+          description: >
+            Ombudsman Manual of the Parent Company and General State Ombudsman, Performance Evaluation of Ombudsman's Offices and Professional Work.
+
+          articles: Articles
+          academic: Academic Journals
+
+          diagnosis:
+            title: 'Click here'
+
+        sou_intro:
+          title: 'Ombudsman Management Reports'
+          description: 'Access the Ombudsman Management Reports and learn about the analysis of citizens statements and information about measures taken by the government.'
+
+          links: 'Links'
+
+          report:
+            title: 'Ombudsman Management Reports (CGE consolidated)'
+          legislation:
+            title: "Legislation on Ombudsman's Office"
+          sectoral:
+            title: 'Sectoral Ombudsman Management Reports'
+
+        stats:
+          title: Ombudsman manifestations Statistics
+          description: >
+            See statistics and data on the types of Ombudsman manifestations made by citizens since March 2018.
+
+          month: Showing data from %{month}
+          stats_1:
+            title: Total valid statements
+
+          stats_2:
+            title: Total of valid entries
+            unit: '%{value} Days'
+
+          stats_3:
+            title: '% of responses answered within the deadline'
+            unit: '%{value}%'
+
+          summary:
+            stats_1: Praise
+            stats_2: Complaint
+            stats_3: Claim
+            stats_4: Suggestion
+            stats_5: Query
+
+          see_more: Access ombudsman statistical panels
+
+        stats_evaluations:
+          title: 'Digital Ombudsman Satisfaction Survey'
+          description: >
+            Monthly statistical panels such as the consolidated data from the satisfaction survey and the service assessments carried out by citizens in Ceará Transparente.
+          month: Showing data from the period of %{month}
+
+          total_answered_tickets:
+            title: 'Total manifestations answered'
+
+          total_user_evaluations:
+            title: 'Querie answered by the users of Ceará Transparente'
+
+          see_more: Access statistic panels from the Ombudsman Satisfaction Surveys
+
+        events:
+          title: Next events
+          description: >
+            Follow the program of courses and training related to citizenship for the employees of the agencies and entities state.
+
+          empty: No event registered.
+
+        sous:
+          title: Ombudsmen Network
+          description: >
+            The State of Ceará has an organized network of Ombudsmen. This provides for standardization of processes and helps to put in place better public policies.
+
+          link_1: Ombudsmen Network with the State Executive Power
+          link_2: Cearense Network of Public Ombudsmen and Similar
+          link_3: Ombudsmen Reinforcement Program
+          see_more:
+            title: See Ombudsmen Network
+            link: '/portal-da-transparencia/paginas/redes-de-ouvidorias'

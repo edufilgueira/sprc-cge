@@ -1,0 +1,20 @@
+%tr{ class: ticket_highlight_row(ticket) }
+
+  = render 'operator/tickets/table/cells/alert_waiting', ticket: ticket
+
+  = render 'operator/tickets/table/cells/confirmed_at', ticket: ticket
+
+  = render 'operator/tickets/table/cells/deadline', ticket: ticket
+
+  - unless operator_internal?(current_user)
+    = render 'operator/tickets/table/cells/user_info', ticket: ticket
+
+  = render 'operator/tickets/table/cells/protocol', ticket: ticket
+
+  = render 'operator/tickets/table/cells/sou_type', ticket: ticket
+
+  = render 'operator/tickets/table/cells/internal_statuses', ticket: ticket
+
+  = render 'operator/tickets/table/cells/acronyms', ticket: ticket
+
+  = render 'operator/tickets/table/cells/description', ticket: ticket

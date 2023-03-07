@@ -1,0 +1,29 @@
+pt-BR:
+  operator:
+    global_tickets:
+      index:
+        title: Consulta SIC/OUVIDORIA
+
+        heads:
+          parent_protocol: Protocolo
+          created_at: Criado em
+          ticket_type: Tipo
+          internal_status: Situação
+          used_input: Meio de entrada
+          acronym_list: Órgão(s)
+
+      filters:
+
+        parent_protocol:
+          label: Busca por protocolo
+
+        created_at:
+          label: Criado em
+          start: Início
+          end: Fim
+
+        select:
+          ticket_type: Tipo
+          internal_status: Situação
+          used_input: Meio de entrada
+          organ: Órgão

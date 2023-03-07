@@ -1,0 +1,27 @@
+/ XXX Arrumar render da partial
+.content{'data-content': 'public_comment_logs'}
+  - #
+  - # Comentários do cidadão
+  - #
+  .card.card-custom
+
+    .card-header
+
+      %h3.card-title
+        = t('.comments.user.title')
+
+    .card-block
+
+      - ticket_for_user_comments = ticket.parent || ticket
+      - public_comments = ticket_for_user_comments.public_comments
+
+      - if public_comments.present?
+        - public_comments.each do |public_comment|
+          = render 'shared/ticket_logs/comment/user', comment: public_comment
+
+      - else
+        %em
+          = t('.comments.user.empty')
+
+      - if !readonly? && can?(:create_public_comment, ticket)
+        = render 'shared/comments/form', ticket: ticket, new_comment: new_comment, comment_form_url: comment_form_url, scope: :external

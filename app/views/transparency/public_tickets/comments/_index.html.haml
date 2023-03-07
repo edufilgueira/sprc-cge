@@ -1,0 +1,23 @@
+- if citizen_comments.blank?
+
+  .text-muted.text-center
+    = t('.no_results_found')
+
+- else
+
+  - citizen_comments.each do |citizen_comment|
+    = render 'transparency/public_tickets/comments/comment', citizen_comment: citizen_comment
+
+
+  %hr{'aria-hidden': true}
+
+  .row.mt-4.text-right
+    .col-12
+      .muted.small.m-1
+
+        = raw t('messages.filters.count', count: citizen_comments.count, total: number_with_delimiter(citizen_comments.count))
+
+  .row.mt-4.text-center
+    .col-12
+      = paginate citizen_comments, remote: true
+

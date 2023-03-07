@@ -1,0 +1,30 @@
+es:
+  ceara_app:
+    tickets:
+
+      new:
+        sic:
+          identified:
+            title: Solicitud identificada 
+          anonymous:
+            title: Solicitud anónima
+        sou:
+          identified:
+            title: Manifstación identificada
+          anonymous:
+            title: Manifstación anónima
+
+      create:
+
+        sic:
+          identified:
+            title: Solicitud identificada
+          anonymous:
+            title: Solicitud anônima
+          error: Error al guardar solicitud
+        sou:
+          identified:
+            title: Manifstación identificada
+          anonymous:
+            title: Manifstación anónima
+          error: Error al guardar manifestación

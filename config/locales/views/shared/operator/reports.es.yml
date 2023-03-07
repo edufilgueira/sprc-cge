@@ -1,0 +1,38 @@
+es:
+
+  shared:
+
+    operator:
+
+      reports:
+
+        report_file_info:
+          title: Informaciones del archivo
+          file:
+            size: Tamaño
+            total: Total
+            created_at: Creado en
+
+        report_filters:
+          title: Filtros considerados
+          filters:
+            none: Ningún filtro definido.
+            ticket_type: Tipo
+            sou_type: Tipo manifestación
+            city: Ciudad
+            state: Estado
+            used_input: Medio de entrada
+            other_organs: Poder Ejecutivo Estadual
+            expired: Sólo vencidos
+            organ: Órgano responsable
+            confirmed_at: Período
+            budget_program: Programa Presupuestario
+            topic: Sujeto
+            subtopic: Subassunto
+            deadline: Plazo
+            priority: Sólo urgentes
+            finalized: Visualizar finalizados
+            internal_status: Situación
+            search: Palabra clave
+            denunciation: Sólo denuncias
+            answer_type: Tipo de Respuesta

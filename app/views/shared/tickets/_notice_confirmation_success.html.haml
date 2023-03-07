@@ -1,0 +1,52 @@
+- if flash[:from_confirmation].present?
+
+  .alert.alert-success.alert-dismissible.fade.show{ role: 'alert' }
+
+    %button{ type: 'button', class:'close', 'data-dismiss':'alert', 'aria-hidden': 'true' }
+
+      %span{ 'aria-hidden': 'true' }
+        = raw('&times;')
+
+    .mx-4.px-4
+
+      .row.text-center.justify-content-center
+        .h1
+          %i.fa.fa-check{ 'aria-hidden': 'true' }
+          %p
+            = t('.title')
+
+      .row.text-center.justify-content-center
+        .col-lg-12
+          %p.text-muted
+            = t(".#{ticket.ticket_type}.description")
+
+      - if ticket.password.present?
+
+        .row.text-center.justify-content-center
+
+          .col-lg-12
+            = t(".password_description")
+
+        - # o password é limpo no reload, por isso só exibimos a msg de sucesso se
+        - # ele também estiver presente. Talvez valha a pena gravar
+        - # um raw_password nesses casos? ou teríamos problemas de
+        - # segurança?
+
+
+        .row.text-center.justify-content-center.mb-3
+          .col-12.col-lg-3
+            = content_with_label(ticket, :parent_protocol)
+
+          .col-12.col-lg-3
+            = content_with_label(ticket, :password, acronym_value: true)
+
+
+      .row.justify-content-center
+
+        .col-lg-12
+          %p.text-muted.small.mb-0
+            = t(".#{ticket.ticket_type}.deadline_description")
+        
+        .col-lg-12
+          %p.text-muted.small.mb-0
+            = raw t(".#{ticket.ticket_type}.important_description")

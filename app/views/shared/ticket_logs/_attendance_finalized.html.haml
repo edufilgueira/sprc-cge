@@ -1,0 +1,21 @@
+.row
+
+  .col-12.col-md-1.no-print
+    .float-left
+
+      .rounded-circle.p-1{ class: 'alert-info'}
+
+        %i.fa.fa-phone.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      %h4.h6.mb-0
+        = t(".title")
+
+      %small
+        %em
+          = l(ticket_log.created_at, format: :shorter)
+
+%hr{'aria-hidden': 'true'}

@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    models:
+      integration/results/configuration:
+        one: Configuração de consultoria de resultados
+
+    attributes:
+      integration/results/configuration:
+        headers_soap_action: SOAPAction
+        password: Senha
+        user: Usuário
+        wsdl: WSDL
+        strategic_indicator_operation: Ind. Estratégicos - Nome do método SOAP
+        strategic_indicator_response_path: Ind. Estratégicos - Caminho da resposta
+        thematic_indicator_operation: Ind. Temáticos - Nome do método SOAP
+        thematic_indicator_response_path: Ind. Temáticos - Caminho da resposta
+

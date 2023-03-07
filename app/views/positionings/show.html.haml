@@ -1,0 +1,25 @@
+- content_for :stylesheet, stylesheet_link_tag('views/shared/tickets/ticket_logs')
+- content_for :title, t('.title', ticket_title: ticket.title)
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col
+            %h2.card-title
+              = t(".title", ticket_title: ticket.title)
+
+      .card-block.card-header
+        = content_with_label(ticket_department_email, :email)
+        = content_with_label(ticket_department_email, :active)
+
+      .card-block.card-header
+        %h3.card-subtitle.mb-4
+          = t('.answers.title')
+
+        = render 'answers', ticket: ticket

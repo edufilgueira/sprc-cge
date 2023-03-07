@@ -1,0 +1,106 @@
+- title = real_state.title.truncate(200)
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, title
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = title
+
+        .card-commands
+          = render 'shared/tickets/components/btn_print'
+
+
+      .card-block
+
+        .row
+
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :service_id, { raw_value: true })
+
+          .col-12.col-sm-9
+            = dash_content_with_label(real_state, :descricao_imovel)
+
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+
+          .col-12.col-sm-6
+            = dash_content_with_label(real_state, :manager_title)
+
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :occupation_type_title)
+
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :property_type_title)
+
+
+        .row
+          .col-12.col-sm-9
+            = dash_content_with_label(real_state, :endereco)
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :bairro)
+
+        .row
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :complemento)
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :numero_imovel)
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :municipio)
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :estado)
+
+        .row
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :cep)
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :utm_zona)
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :lote)
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :quadra)
+
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :area_projecao_construcao, { raw_value: true })
+
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :area_medida_in_loco, { raw_value: true })
+
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :area_registrada, { raw_value: true })
+
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :taxa_ocupacao, { raw_value: true })
+
+        .row
+
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :frente, { raw_value: true })
+
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :fundo, { raw_value: true })
+
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :lateral_direita, { raw_value: true })
+
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :lateral_esquerda, { raw_value: true })
+
+        .row
+          .col-12.col-sm-3
+            = dash_content_with_label(real_state, :fracao_ideal, { raw_value: true })
+
+

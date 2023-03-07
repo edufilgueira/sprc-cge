@@ -1,0 +1,67 @@
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h3
+	= t('.title')
+%hr{'aria-hidden': 'true'}
+
+
+.row
+	
+	- ['.description','.rule_a','.rule_b','.rule_c'].each do |field|
+		.col-12
+			%label= t(field)
+	
+
+.row
+	.col-12
+		.card.card-custom
+			.card-header
+				%h3.card-title
+					= t('.filters.title')
+			.card-block{'data-toggle': 'remote-content-with-filter-bar'}
+				.remote-content{'data-remote-content': transparency_id}
+					#advanced_filter
+						= render gas_voucher_filter_path, transparency_id: transparency_id
+
+					%hr{'aria-hidden': 'true'}
+					.remote-content-result{                             |
+						'data-remote-content-result': transparency_id,    | 
+						'data-toggle': 'treeview' }
+
+						.p-2.text-center.text-muted
+							.fa.fa-spin.fa-refresh.mx-1
+							= t('.waiting')
+
+.row
+	.col-12
+		.card.card-custom
+			.card-header
+				%h3.card-title
+					= t('.files.title')
+			.card-block
+				.row
+					.col-12
+						= render 'shared/transparency/download_links', 
+							paths: gas_voucher_file_paths
+
+						%hr{'aria-hidden': 'true'}
+				.row
+					.col-12
+						%iframe.embed-responsive.embed-responsive-4by3{ |
+							:src => t('.iframe_tableau_url'),             |
+						  style:"min-height:800px",                     |
+						  frameborder: 0 }
+
+- #
+- # Formulário Pesquisa de satisfação
+- #
+- if namespace == :transparency
+	.row
+		.col-12.mt-4
+			= render("shared/transparency/survey_answers/form", 
+				transparency_id: transparency_id, 
+				action: action_name, 
+				controller: controller_path, 
+				url: request.original_url)

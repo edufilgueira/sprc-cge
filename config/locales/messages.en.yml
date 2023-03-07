@@ -1,0 +1,95 @@
+#
+# Arquivo de localização para mensagens em geral e compartilhadas.
+#
+
+en:
+  messages:
+
+    chart:
+      limited: '*The chart is limited to the 10 largest values. Download the complete worksheet to access all the data.'
+    comments:
+      anonymous_user: anonymous user
+
+    content:
+      undefined: Undefined
+      'no': 'No'
+      'yes': 'Yes'
+
+    form:
+      select: Select an option
+      none: None
+
+    filters:
+      clear: Clear filter
+
+      count:
+        # aqui %{count} é o total_count, e temos:
+        # - %{total} para o count com delimitadores (,.)
+        zero:  'No record.'
+        one:   'Total of <strong>1</strong> record.'
+        other: 'Total of <strong>%{total}</strong> record.'
+      total_count:
+        # aqui %{count} é o total_count, e temos:
+        # - %{total} para o count com delimitadores (,.)
+        # - %{filtered} para o count filtrado com delimitadores (.,)
+        zero: ''
+        one:  'Displaying <strong>%{filtered}</strong> of <strong>%{total}</strong> record.'
+        other:  'Displaying <strong>%{filtered}</strong> of <strong>%{total}</strong> record.'
+
+      search:
+        label: Search
+        placeholder: Search...
+
+      search_sacc:
+        label: Search by SACC
+        placeholder: Search by SACC...
+
+      select:
+        all:
+          female: All
+          male: All
+        organ: Filter by organ
+        status: Filter by status
+        date: Filter by date
+        month: Filter by month
+        month_start: Filter by initial month
+        month_end: Filter by final month
+        year: Filter by year
+        account_configuration: Filter by income type
+        role: Filter by role
+        object_type: Filter by object type
+        ticket_type: Filter by ticket
+        responsible: Filter by responsible
+        none: None
+        tooltip:
+          year: Allows the selection of contracts/agreements in force in a given month.
+
+      no_results_found: No results found.
+      warning_count: "Results are filtered. Displaying <strong>%{filtered}</strong> of <strong>%{total}</strong> records."
+      warning: Results are filtered
+
+    global_search:
+      no_results: No records found.
+      timeout: Please refine your search.
+      sections:
+        search_content: General
+        page: Pages
+        server_salary: Servants
+        ned: Expenditures for commitment
+        contract: Contracts
+        convenant: Agreements
+        public_ticket: Public requests
+        executive_ombudsman: Ombudsmen network
+
+    download: Download
+    loading: Loading...
+
+  recaptcha:
+    errors:
+      verification_failed: 'You must check the box above to continue.'
+      recaptcha_unreachable: 'Recaptcha unreachable'
+
+  toggle_disabled:
+    error:
+      disable: There was an error, could not disable!
+      enable: There was an error, could not enable!

@@ -1,0 +1,63 @@
+pt-BR:
+
+  operator:
+
+    reports:
+
+      gross_exports:
+
+        index:
+          title: Exportações
+          empty: Nenhuma exportação encontrada
+          filters:
+            search:
+              label: Buscar por nome do documento
+          commands:
+            new: Nova exportação
+
+        new:
+          title: Nova exportação
+
+        show:
+          title: Exportação
+
+        form:
+          title: Exportação
+          load_creator_info: Exibir dados do manifestante
+          load_description: Exibir descrição
+          load_answers: Exibir resposta
+          filters:
+            title: Filtros
+
+        export_info:
+          title: Filtros considerados
+          filters:
+            none: Nenhum filtro definido.
+            ticket_type: Categoria da demanda
+            sou_type: Tipo da manifestação
+            city: Município
+            state: Estado
+            used_input: Meio de entrada
+            other_organs: Outros poderes
+            expired: Somente vencidos
+            organ: Órgão responsável
+            confirmed_at: Período
+            budget_program: Programa orçamentário
+            topic: Assunto
+            subtopic: Subassunto
+            deadline: Prazo
+            priority: Somente urgentes
+            finalized: Exibir finalizados
+            internal_status: Situação
+            search: Palavra-chave
+            denunciation: Somente denúncias
+
+
+        create:
+          title: Nova exportação
+          done: Exportação iniciada com sucesso
+          error: Falha ao exportar dados
+
+        destroy:
+          done: Exportação removida com sucesso
+          error: Falha ao remover exportação

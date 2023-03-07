@@ -1,0 +1,16 @@
+%h4.h6
+  = t('.title')
+
+.card
+  .row.text-center
+    - themes_hash = data_hash['themes']
+    - sorted_themes_hash = stats_evaluations_sorted_themes_data(themes_hash)
+
+    - if sorted_themes_hash.present?
+      - sorted_themes_hash.each do |theme|
+        .col-md-3.col-6.mb-3.mt-3
+
+          %span.h3.text-muted
+            = number_with_precision(theme[1]['average'], precision: 2) || '-'
+          %span.small.d-block.text-muted
+            = theme[0]

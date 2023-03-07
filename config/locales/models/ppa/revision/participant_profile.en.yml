@@ -1,0 +1,95 @@
+en:
+  activerecord:
+    attributes:
+      ppa/revision/participant_profile:
+        age: Age
+        genre: Genre
+        other_genre: Other
+        sexual_orientation: Sexual Orientation
+        other_sexual_orientation: Other
+        deficiency: Deficiency
+        other_deficiency: Other
+        breed: Breed
+        ethnic_group: Ethnic Group
+        educational_level: Educational Level
+        family_income: Family Incomes
+        representative: Representative
+        representative_description: Representative Description
+        collegiate: Citizen participation collegiate
+
+  ppa:
+    revision:
+      participant_profiles:
+        form:
+          other_ppa_participantion_quest: Have you ever participated in a regional PPA meeting?
+      participant_profile/ages:
+        smaller_18: Smaller than 18 years
+        between_18_29: Between 18 and 29 years
+        between_30_45: Between 30 and 45 years
+        between_46_60: Between 46 and 60 years
+        above_60: Above 60 years
+
+      participant_profile/genres:
+        men_cis: Men CIS
+        woman_cis: Woman CIS
+        men_trans: Men Trans
+        woman_trans: Woman Trans
+        other_genre: Other
+
+      participant_profile/sexual_orientations:
+        heterosexual: Heterosexual
+        bisexual: Bisexual
+        lesbian: Lesbian
+        gay: Gay
+        other_sexual_orientation: Other
+
+      participant_profile/deficiencies:
+        physical_disability: Physical Disability
+        deafness: Deafness
+        low_vision: Low Vision
+        blindness: Blindness
+        deafblindness: Deafblindness
+        autism_spectrum_disorder: Autism Spectrum Disorder
+        giftedness: Giftedness
+        rare_syndromes: Rare Syndromes
+        intellectual_disability: Intellectual Disability
+        multiple_disability: Multiple Disability
+        other_deficiency: Other
+
+      participant_profile/breeds:
+        white: White
+        black: Black
+        parda: Parda
+        yellow: Yellow
+        indigene: Indigene
+
+      participant_profile/ethnic_groups:
+        indigenous: Indigenous
+        quilombolas: Quilombolas
+        gypsies: Gypsies
+        people_of_religious_communities_of_african_origin: People of religious communities of african origin
+        other_ethnic_group: Other
+
+      participant_profile/educational_levels:
+        incomplete_elementary_school: Incomplete Elementary School
+        complete_elementary_school: Complete Elementary School
+        incomplete_high_school: Incomplete High School
+        complete_high_school: Complete High School
+        incomplete_higher_education: Incomplete Higher Education
+        complete_higher_education: Complete Higher Education
+        specialization: Specialization
+        masters_degree: Masters Degree
+        doctorate_degree: Doctorate Degree
+        post_doctoral: Post Doctoral
+
+      participant_profile/family_incomes:
+        less_than_1100: Less than R$ 1.100,00
+        between_1100_2200: Between R$ 1.100,00 and R$ 2.200,00
+        between_2201_4400: Between R$ 2.201,00 and R$ 4.400,00
+        between_4401_6600: Between R$ 4.401,00 and R$ 6.600,00
+        above_6600: Above R$ 6.600,00
+
+      participant_profile/representatives:
+        civil_society: Civil Society
+        government_or_government_entities: Government / Government Entities
+        productive_or_business_or_development_segment: Productive / Business / Development Segment

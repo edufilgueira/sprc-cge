@@ -1,0 +1,16 @@
+- content_for :title, ticket.in_progress? ? t('.in_progress.title') : t('.confirmed.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.row
+
+  .col-12
+
+    %h2.mt-4.button-title
+      = ticket.title
+
+      - if can?(:create, Ticket)
+        = link_to t(".#{ticket_type}.commands.new"), url_to_new_platform_ticket, class: 'btn btn-tertiary pull-right mt-3 mt-md-0'
+
+    %hr{'aria-hidden': 'true'}
+
+= render 'shared/tickets/confirmed', namespace: :platform, ticket: ticket, new_comment: new_comment

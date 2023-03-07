@@ -1,0 +1,4 @@
+- if can?(:email_reply, ticket)
+  = link_to edit_operator_ticket_email_replies_path(ticket_id: ticket, previous_url: request.original_fullpath), class: 'btn btn-link hover-link d-inline-block' do
+    %i.fa.fa-reply{ 'aria-hidden': 'true' }
+    = t('.title')

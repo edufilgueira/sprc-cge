@@ -1,0 +1,30 @@
+.container
+  = simple_form_for [:operator, :reports, solvability_report] do |f|
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = t('.title')
+
+      .card-block
+
+        .row
+          .col-12.col-lg-6
+            = f.input :title, autofocus: true
+
+        %hr{'aria-hidden': 'true'}
+
+        %h3
+          = t('.filters.title')
+
+        .row
+          = render 'filters', report: solvability_report
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+          .col-12
+            = link_to t('commands.cancel'), operator_reports_solvability_reports_path, class: 'btn btn-warning pull-left'
+            = f.submit t('commands.save'), class: 'btn btn-primary float-right'

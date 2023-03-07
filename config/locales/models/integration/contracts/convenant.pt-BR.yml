@@ -1,0 +1,36 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/contracts/convenant:
+        creditor_id: Convenente
+        creditor_title: Convenente
+        descricao_nome_credor: Convenente
+        cod_financiador: Convenente
+        cod_concedente: Código concedente
+        infringement_status: Situação do instrumento
+        accountability_status: Situação da prestação de contas
+        num_contrato: Número do convênio
+        valor_contrato: Valor inicial total
+        valor_original_concedente: Valor inicial do repasse do concedente
+        valor_atualizado_concedente: Valor atualizado do repasse do concedente
+        valor_aditivo: Valor aditivo
+        valor_ajuste: Valor ajuste
+        valor_empenhado: Valor empenhado
+        valor_pago: Valor pago
+        valor_can_rstpg: Valor cancelamento de restos a pagar
+        valor_original_contrapartida: Valor inicial da contrapartida do convenente/beneficiário
+        valor_atualizado_contrapartida: Valor atualizado da contrapartida do convenente/beneficiário
+        valor_atualizado_total: Valor atualizado total
+        calculated_valor_aditivo: Valor aditivo
+        calculated_valor_ajuste: Valor ajuste
+        calculated_valor_empenhado: Valor empenhado
+        calculated_valor_pago: Valor pago
+
+        grantor_title: Concedente
+
+
+  integration/contracts/convenant:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Convênios %{month}-%{year}'

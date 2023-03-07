@@ -1,0 +1,9 @@
+pt-BR:
+  ppa:
+    workshops_helper:
+      same_duration: "%{date} das %{start_at} às %{end_at}"
+      different_duration: "%{start_at} até %{end_at}"
+      today_is_workshop_day: Hoje é dia de encontro regional
+      days: dias
+      day: dia
+

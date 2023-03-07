@@ -1,0 +1,16 @@
+pt-BR:
+
+  transparency:
+
+    pages:
+      index:
+        title: Páginas
+
+        table:
+          summary: Lista paginada com todos as páginas
+          caption: Tabela contendo todos as páginas
+          header:
+            title: Título
+            content: Conteúdo
+            commands: ''
+            status: ''

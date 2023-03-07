@@ -1,0 +1,11 @@
+.col-md-6.col-lg-4.col-sm-12.pb-3
+
+  = link_to operator_tickets_path(ticket_type: user_type, internal_status: internal_status, organ_association: params[:organ_association], without_denunciation: !current_user.sectoral_denunciation?) do
+
+    .operator-home-card{'data-internal-status': internal_status}
+
+      %h3.operator-home-card-title
+        = t(".#{internal_status}.title")
+
+      %p.operator-home-card-count
+        = send("tickets_by_internal_status_count", user_type, internal_status, params[:organ_association])

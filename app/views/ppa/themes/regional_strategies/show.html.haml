@@ -1,0 +1,75 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.font-weight-bold
+  = axis.name
+
+%h3
+  = t('.title', theme: theme.name, biennium: current_biennium.to_s, region: current_region.name.titleize_with_accents)
+
+%hr.border-2
+
+.row
+  .col-md-12
+    .card.rounded
+      .card-block.m-4
+
+        %h3.font-weight-bold.mb-2
+          = t('.objective')
+
+        %p.mb-0
+          = regional_strategy.objective_name
+
+        %h3.mt-4.mb-2.font-weight-bold
+          = t('.strategy')
+
+        %p
+          = regional_strategy.strategy_name
+
+        %p.font-weight-bold.mt-4.mb-2
+          = t('.initiatives')
+
+        - if regional_strategy.initiatives.exists?
+          %ul.pl-0.mb-4
+            -# OPTIMIZE: Usando #sort_by (no Ruby) ao invés de #order (no SQL) pois:
+            -# - recorte de dados não possui LIMIT ou OFFSET. Vamos iterar sobre todos os resultados
+            -# - order(:name) vai causar "conflito" pois a coluna "name" existe em vários Models da
+            -#   associação (ex: Strategy)
+            - regional_strategy.initiatives.sort_by(&:name).each do |regional_initiative|
+
+              %li.mb-2.list-unstyled
+                = link_to regional_initiative.name,
+                  ppa_scoped_path(:theme_regional_strategy_regional_initiative, theme, regional_strategy, regional_initiative)
+        - else
+          .row
+            .col-md-12.text-center
+              .alert.alert-warning
+                = t '.empty_initiatives'
+
+
+
+        %hr.border-2.mt-4
+
+          = render 'interactions'
+
+        %hr.border-2.mt-4
+
+        %h6.font-weight-bold.mt-4
+          = t('.comments_count', count: regional_strategy.comments.count)
+
+        .mt-4
+          - regional_strategy.comments.latest(10).each do |comment|
+
+            = render 'shared/ppa/comments/comment', comment: comment
+
+          - if current_user
+
+            - comment   = regional_strategy.comments.new
+            - obj_array = [:ppa, theme, regional_strategy, comment]
+            - url       = ppa_scoped_path(:theme_regional_strategy_comments, theme, regional_strategy, comment)
+
+            = render 'shared/ppa/comments/form', obj_array: obj_array, url: url
+
+          - else
+
+            .text-center
+              = render 'shared/ppa/login_alert'

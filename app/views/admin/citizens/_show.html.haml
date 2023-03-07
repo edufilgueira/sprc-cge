@@ -1,0 +1,71 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-12
+            %h3.card-title
+              = user.name
+      .card-block
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(user, :person_type_str)
+
+          .col-12.col-lg-4
+            - if user.provider == 'facebook'
+              = content_with_label(user, :provider)
+
+          .col-12.col-lg-4
+            - if user.operator?
+              = content_with_label(user, :operator_type_str)
+
+        %hr{ 'aria-hidden': 'true' }
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(user, :name)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :social_name)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :gender_str)
+
+        %hr{ 'aria-hidden': 'true' }
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(user, :email)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :document_type_str)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :document)
+
+
+        %hr{ 'aria-hidden': 'true' }
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(user, :created_at)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :updated_at)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :disabled_at)
+
+
+        %hr{ 'aria-hidden': 'true' }
+
+        = render 'shared/users/show_notification_roles'
+

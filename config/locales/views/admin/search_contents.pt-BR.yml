@@ -1,0 +1,52 @@
+pt-BR:
+
+  admin:
+
+    search_contents:
+      create:
+        title: Novo resultado de busca
+        done: "O resultado de busca '%{title}' foi criada."
+        error: Falha ao criar o resultado de busca
+      destroy:
+        done: "O resultado de busca '%{title}' foi removida."
+      form:
+        commands:
+          cancel: < Voltar a lista de resultado de buscas
+          create: Criar resultado de busca
+
+        link:
+          hint: >
+            Atenção para o formato do link. Exemplo:
+            </br>
+            Correto: '/portal-da-transparencia/obras/rodoviarias'
+            </br>
+            Incorreto: 'portal-da-transparencia/obras/rodoviarias'
+
+      index:
+        title: Resultados de busca
+
+        commands:
+          new: Novo resultado de busca
+
+        table:
+          summary: Lista paginada com todos os resultado de buscas
+          caption: Tabela contendo todos os resultado de buscas
+
+          header:
+            title: Título
+            content: Conteúdo buscável
+            link: Link
+            translations: Traduções
+            commands: ''
+            status: ''
+
+      new:
+        title: Novo resultado de busca
+      edit:
+        title: Edição
+      update:
+        title: Edição de resultado de busca
+        done: "O resultado de busca '%{title}' foi atualizada."
+        error: Falha ao atualizar o resultado de busca
+      show:
+        title: Exibição do resultado de busca

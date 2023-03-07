@@ -1,0 +1,15 @@
+.col-lg-6
+  %h4.h6
+    = report.status_str
+    %i.fa.fa-circle-o-notch.fa-spin.fa-fw{'aria-hidden': 'true'}
+
+.col-lg-6
+  %p.text-right
+    - if report.generating?
+      = "#{report.progress}% [ #{report.processed} / #{report.total_to_process} ]"
+
+.col-12
+  - progress = report.preparing? ? nil : report.progress
+
+  %progress.progress.progress-success{value: progress, max: 100}
+    = progress

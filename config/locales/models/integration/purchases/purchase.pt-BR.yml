@@ -1,0 +1,58 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/purchases/purchase:
+        numero_publicacao: Número da publicação
+        numero_viproc: Número VIPROC
+        num_termo_participacao: Número do termo de participação
+        cnpj: CNPJ
+        nome_resp_compra: Nome do responsável pela licitação finalizada (Unidade)
+        uf_resp_compra: UF do responsável pela licitação finalizada
+        macro_regiao_org: Macrorregião
+        micro_regiao_org: Microrregião
+        municipio_resp_compra: Município responsável pela licitação finalizada
+        cpf_cnpj_fornecedor: CPF/CNPJ do fornecedor
+        nome_fornecedor: Nome do fornecedor
+        tipo_fornecedor: Tipo do fornecedor
+        uf_fornecedor: Unidade da Federação do fornecedor
+        macro_regiao_fornecedor: Macrorregião do fornecedor
+        micro_regiao_fornecedor: Microrregião do fornecedor
+        municipio_fornecedor: Município do fornecedor
+        tipo_material_servico: Tipo de material/serviço
+        nome_grupo: Nome do grupo
+        codigo_item: Código do item
+        descricao_item: Descrição do item
+        unidade_fornecimento: Unidade de fornecimento
+        marca: Marca
+        natureza_aquisicao: Natureza da aquisição
+        tipo_aquisicao: Tipo de aquisição
+        sistematica_aquisicao: Sistemática de aquisição
+        forma_aquisicao: Forma de aquisição
+        tratamento_diferenciado: Tratamento diferenciado
+        data_publicacao: Data da publicação
+        quantidade_estimada: Quantidade estimada
+        valor_unitario: Valor unitário
+        data_finalizada: Data finalizada
+        valor_total_melhor_lance: Valor total
+        valor_estimado: Valor estimado
+        valor_total_estimado: Valor total estimado
+        aquisicao_contrato: Aquisição de contrato
+        prazo_entrega: Prazo de entrega
+        prazo_pagamento: Prazo de pagamento
+        exige_amostras: Exige amostras
+        data_carga: Data da carga
+        ano: Ano
+        mes: Mês
+        ano_mes: Ano/Mês
+        codigo_classe_material: Código da classe do material
+        nome_classe_material: Nome da classe do material
+        registro_preco: Registro do preço
+        unid_compra_regiao_planej: Unidade de compra e região de planejamento
+        fornecedor_regiao_planejamento: Fornecedor e região de planejamento
+        unidade_gestora: Unidade gestora
+        grupo_lote: Grupo/lote
+        descricao_item_referencia: Descrição do item referência
+        id_item_aquisicao: Código do item de aquisição
+        cod_item_referencia: Código do item referência
+        manager_id: Unidade
+        valor_total_calculated: Valor total estimado

@@ -1,0 +1,10 @@
+.row
+  .col-12
+    = content_with_label(organ, :name)
+
+.row
+  .col-12
+    - if (organ.persisted?)
+      = link_to t('.edit'), edit_operator_ticket_organ_path(ticket, ticket.organ), class: 'btn btn-primary w-100'
+    - else
+      = link_to t('.new'), new_operator_ticket_organ_path(ticket), class: 'btn btn-primary w-100'

@@ -1,0 +1,192 @@
+- last_month = Date.today.last_month
+- param_month_year = params[:month_year] || "#{last_month.month}/#{last_month.year}"
+- stats_evaluation = stats_evaluations.last
+- type = stats_evaluation&.evaluation_type || params['evaluation_type'] || 'sou'
+
+%ul.nav.nav-pills.flex-column.flex-sm-row
+  - year_param = params['year']
+  - month_param = params['month']
+
+  %li.nav-item
+    = link_to transparency_tickets_stats_evaluations_path(evaluation_type: 'sou', month_year: param_month_year), class: "flex-sm-fill text-sm-center nav-link #{type == 'sou' ? 'active': ''}" do
+      = t('.tabs.sou.title')
+
+  %li.nav-item
+    = link_to transparency_tickets_stats_evaluations_path(evaluation_type: 'sic', month_year: param_month_year), class: "flex-sm-fill text-sm-center nav-link #{type == 'sic' ? 'active': ''}" do
+      = t('.tabs.sic.title')
+
+  %li.nav-item
+    = link_to transparency_tickets_stats_evaluations_path(evaluation_type: 'call_center', month_year: param_month_year), class: "flex-sm-fill text-sm-center nav-link #{type == 'call_center' ? 'active': ''}" do
+      = t('.tabs.call_center.title')
+
+  %li.nav-item
+    = link_to transparency_tickets_stats_evaluations_path(evaluation_type: 'transparency', month_year: param_month_year), class: "flex-sm-fill text-sm-center nav-link #{type == 'transparency' ? 'active': ''}" do
+      = t('.tabs.transparency.title')
+
+.card.card-custom
+
+  .card-header
+    .row
+      .col-md-10.col-12
+        %h3.h6.card-title
+          = t(".#{type}.title")
+
+      .col-md-2.col-12
+        = text_field_tag(:month_year, param_month_year, placeholder: params[:month_year], 'data-filter-bar-bypass-clear': '', class: 'form-control month-datetimepicker p-1 mt-1 text-center', onchange: 'submit();')
+
+        = hidden_field_tag(:evaluation_type, type)
+
+  .card-block
+    - if stats_evaluations.present?
+      - data_hash = stats_evaluation.data
+      - data_summary_hash = data_hash['summary']
+
+      .card-commands
+
+        - if type == 'transparency'
+          = render 'transparency', data_summary_hash: data_summary_hash
+
+        - else
+
+
+          - #
+          - # Número de manifestações e pesquisas
+          - #
+          %h4.h6
+            = t(".#{type}.summary.title")
+
+          .row.text-center.pt-2
+            .col-md-6.col-12
+              .row.no-gutters
+                .col-md-2.col-12
+                  %i.fa.fa-bank.fa-3x.text-success{'aria-hidden': 'true'}
+                .col-md-3.col-12.pt-2
+                  %label.h2.text-muted.text-success
+                    = data_summary_hash['total_answered_tickets']
+                .col-md-7.col-12.text-md-left
+                  %label.small.mt-2
+                    = t(".#{type}.summary.total_answered_tickets.title")
+
+            .col-md-6.col-12
+              .row.no-gutters
+                .col-md-2.col-12
+                  %i.fa.fa-reply.fa-3x.text-primary{'aria-hidden': 'true'}
+                .col-md-2.col-12.pt-2
+                  %label.h2.text-muted.text-primary
+                    = data_summary_hash['total_user_evaluations']
+                .col-md-8.col-12.text-md-left
+                  %label.small.mt-2
+                    = t(".#{type}.summary.total_user_evaluations.title")
+
+          - #
+          - # Índice de satisfação
+          - #
+          %h4.h6.pt-3.mt-3
+            = t(".#{type}.summary.evaluations.questions_01.title")
+
+          .row.mb-2
+            .col-md-6.col-12
+              .card.mb-1
+                .row.m-3
+                  .col-4.text-right
+                    %label.text-muted.h2
+                      = number_with_precision(data_summary_hash['average_question_01_a'], precision: 2) || '-'
+                  .col-8
+                    %label.small.text-left
+                      = t(".#{type}.summary.average_question_01_a.title")
+
+
+            .col-md-6.col-12
+              .card.mb-1
+                .row.m-3
+                  .col-4.text-right
+                    %label.text-muted.h2
+                      = number_with_precision(data_summary_hash['average_question_01_b'], precision: 2) || '-'
+                  .col-8
+                    %label.small.text-left
+                      = t(".#{type}.summary.average_question_01_b.title")
+
+          .row
+            .col-md-6.col-12
+              .card.mb-1
+                .row.m-3
+                  .col-4.text-right
+                    %label.text-muted.h2
+                      = number_with_precision(data_summary_hash['average_question_01_c'], precision: 2) || '-'
+                  .col-8
+                    %label.small.text-left
+                      = t(".#{type}.summary.average_question_01_c.title")
+
+
+            .col-md-6.col-12
+              .card.mb-1
+                .row.m-3
+                  .col-4.text-right
+                    %label.text-muted.h2
+                      = number_with_precision(data_summary_hash['average_question_01_d'], precision: 2) || '-'
+                  .col-8
+                    %label.small.text-left
+                      = t(".#{type}.summary.average_question_01_d.title")
+
+          - #
+          - # Qualidade do serviço de ouvidoria
+          - #
+          %h4.h6.pt-3.mt-3
+            = t(".#{type}.summary.evaluations.questions_02_03.title")
+
+          .row.text-center
+            .col-md-6.col-12
+              .card.mb-1
+                .row.m-3
+                  .col-8.text-right
+                    %label.small
+                      = t(".#{type}.summary.average_question_02.title")
+
+                  .col-4
+                    %label.text-muted.h2
+                      = number_with_precision(data_summary_hash['average_question_02'], precision: 2) || '-'
+
+            .col-md-6.col-12
+              .card.mb-1
+                .row.m-3
+                  .col-4
+                    %label.text-muted.h2
+                      = number_with_precision(data_summary_hash['average_question_03'], precision: 2) || '-'
+                  .col-8.text-left
+                    %label.small
+                      = t(".#{type}.summary.average_question_03.title")
+
+
+
+          - #
+          - # Órgãos mais bem avaliados
+          - #
+          .pt-3.mt-3
+          = render 'organs', data_hash: data_hash, type: type
+
+
+
+          - #
+          - # Média de avaliação por tema
+          - #
+          .pt-3.mt-3
+          = render 'themes', data_hash: data_hash
+
+    - else
+      .text-center.p-3
+        %em
+          = t('.empty')
+
+
+    - if stats_evaluation.present?
+      .row.mt-3
+        .col-12.text-center.text-muted
+          %small
+            %em
+              = l(stats_evaluation.updated_at, format: :shorter)
+
+    - if current_user&.operator? || current_user&.admin?
+      .row
+        .col-12.text-center
+          = link_to transparency_tickets_stats_evaluations_path(month_year: param_month_year, evaluation_type: type), method: :post, class: 'btn btn-primary' do
+            = 'Atualizar agora'

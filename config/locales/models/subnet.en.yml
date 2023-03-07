@@ -1,0 +1,16 @@
+en:
+  activerecord:
+
+    models:
+      subnet:
+        one: 'Sub-network'
+        other: 'Sub-networks'
+
+    attributes:
+      subnet:
+        acronym: Acronym
+        name: Name
+        organ_id: Body
+        organ: Body
+        organ_name: Body
+        ignore_sectoral_validation: Manifestations are not approved by sectoral validation

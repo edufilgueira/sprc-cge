@@ -1,0 +1,29 @@
+%section.my-4{ 'aria-labelledby': 'events' }
+  %h2.font-weight-bold
+    = link_to t('.title'), transparency_events_path, class: 'text-gray-dark'
+
+  %p
+    = t('.description')
+
+  - if upcoming_events.present?
+    .card-deck
+      - upcoming_events.each do |event|
+        .card.mt-3.mt-md-0.event-card
+          .card-block
+            .row
+              .col-md-4.text-center
+                .counter.text-green
+                  = event.starts_at.day
+                .small
+                  = l(event.starts_at, format: :only_month)
+
+              .col-md-8.mt-2.text-md-left.text-justify
+                = event.title
+          .card-footer.bg-faded
+            .btn.btn-orange.btn-uppercase
+              = event.category
+
+            = link_to 'ver evento', transparency_event_path(event), class: 'btn btn-link pull-right btn-uppercase text-green'
+  - else
+    %p.alert.alert-info.d-block.small
+      = t('.empty')

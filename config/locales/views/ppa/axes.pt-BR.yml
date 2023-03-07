@@ -1,0 +1,11 @@
+pt-BR:
+  ppa:
+    axes:
+      index:
+        themes: 'Temas:'
+        query: Busca
+        theme_id: Tema
+        all: Todos
+        filtered_results: 'Exibindo resultados filtrados pelo termo: "%{term}".'
+        clear: Limpar filtros
+        title: "Biênio %{biennium} do PPA na região %{region}"

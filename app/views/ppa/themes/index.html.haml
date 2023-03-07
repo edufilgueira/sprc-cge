@@ -1,0 +1,56 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+
+%h2.font-weight-bold
+
+	= t('.title', start_year: plan.start_year.to_s, end_year: plan.end_year.to_s, region: region.name)
+
+%hr.border-2
+
+.row
+	.col-md-12
+		.p-4.mb-4.card.rounded.border-shadow.text-justify
+			= t('.info')
+
+.row
+	.col-md-12
+		.p-4.mb-4.card.rounded.border-shadow
+			.row
+				.col-12
+					= form_for '', method: :get, html: { class: 'workshops-search-form' } do |f|
+						.row
+							.col-8
+								= label_tag t('.query')
+								= text_field_tag 'search[term]', params.dig(:search, :term), class: 'form-control'
+							.col-4
+								.align-button-bottom
+									= f.submit t('commands.search'), class: 'btn btn-primary btn-block btn-search'
+				.col-12.mt-4
+					= link_to t('.all_proposals'), propostas_ppa_plan_themes_path(plan.id, region.code), class: 'btn btn-secondary btn-block'
+
+					
+
+- if params.dig(:search, :term)
+	.row
+		.col-md-12
+			.alert.alert-warning
+				= t('.filtered_results', term: params[:search][:term])
+				= link_to t('.clear'), ppa_plan_scoped_path
+
+.row
+	- plan.axes.each do |axis|
+		.col-6.col-md-6.col-xs-12.mb-4
+			.card.border-top-0.border-left-0.border-right-0.border-bottom.border-4.border-orange.h-100.border-shadow
+				.card-body.m-4
+					%h6.cart-title.ellipsis-overflow.rounded-top.font-weight-bold
+						= axis.name
+					%p.font-weight-bold.mt-4.mb-2
+						= t('.themes')
+					%ul.list-unstyled
+						- axis.themes.each do |theme|
+							%li
+								- if has_user_proposal?(theme.id)
+									= link_to theme.name.titleize_with_accents, ppa_plan_region_theme_proposal_path(plan.id, region.code, theme.id, user_proposal(theme.id))
+									%i.fa.fa{ class: "fa-check text-primary", title: t('.has_proposal') }
+								- else
+									= link_to theme.name.titleize_with_accents, new_ppa_plan_region_theme_proposal_path(plan.id, region.code, theme.id)

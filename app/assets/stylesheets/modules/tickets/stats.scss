@@ -1,0 +1,32 @@
+.topic-chart {
+  height: 8px;
+}
+
+.topic-chart .topic-chart-item {
+  height: 100%;
+}
+
+
+.topic-chart .topic-chart-item:nth-child(1) {
+  background-color: green;
+}
+
+.topic-chart .topic-chart-item:nth-child(2) {
+  background-color: orange;
+}
+
+.topic-chart .topic-chart-item:nth-child(3) {
+  background-color: purple;
+}
+
+.topic-chart .topic-chart-item:nth-child(4) {
+  background-color: crimson;
+}
+
+.topic-chart .topic-chart-item:nth-child(5) {
+  background-color: darkblue;
+}
+
+.topic-chart .topic-chart-item:nth-child(6) {
+  background-color: gray;
+}

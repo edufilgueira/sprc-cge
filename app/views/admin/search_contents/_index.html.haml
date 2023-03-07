@@ -1,0 +1,36 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:title, :content, :link, :translations, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: search_contents, sort_columns: sort_columns, table_locale: table_locale do |search_content|
+
+    - show_path = can?(:show, search_content) ? admin_search_content_path(search_content) : '#!'
+
+    %tr
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(search_content.title)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(search_content.content)
+
+      %td
+        = link_to show_path do
+          = search_content.link
+
+      %td
+        = render 'shared/admin/available_locales', resource: search_content
+
+      %td
+        .float-right
+          - if can?(:edit, search_content)
+            = link_to t('commands.edit'), edit_admin_search_content_path(search_content), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:destroy, search_content)
+            = link_to t('commands.remove'), admin_search_content_path(search_content), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link hover-link float-left d-inline-block'

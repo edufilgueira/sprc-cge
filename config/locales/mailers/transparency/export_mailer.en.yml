@@ -1,0 +1,17 @@
+en:
+  transparency:
+    export_mailer:
+
+      spreadsheet_success:
+        subject: 'Transparency data export worksheet'
+        title: 'Worksheet successfully generated!'
+        description: >
+          The "%{title}" worksheet you requested in Ceará Transparente has been processed and is now available for download.
+          The download link will expire at %{expiration}.
+
+        link: 'To download click <a href="%{url}">here</a>.'
+
+      spreadsheet_error:
+        subject: 'Transparency data export worksheet'
+        title: 'Sorry, the spreadsheet was not generated!'
+        description: "There was a problem processing the '%{title}' worksheet. We are working to resolve. At this time feel free to request again."

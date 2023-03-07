@@ -1,0 +1,19 @@
+pt-BR:
+  operator:
+    tickets:
+      change_answer_certificates:
+
+        edit:
+          title: Alterar certidão negativa
+
+        form:
+          current_certificate: Certidão negativa atual
+          label: Nova certidão negativa
+          commands:
+            save: Alterar
+
+        update:
+          title: Alterar certidão negativa
+          done: Certidão negativa alterada com sucesso.
+          error: Erro ao trocar certidão negativa.
+

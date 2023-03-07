@@ -1,0 +1,28 @@
+- if attendance_report.processing?
+  = render 'shared/operator/reports/report_progress', report: attendance_report
+
+- else
+
+  - if attendance_report.file.present?
+
+    %h4.h6
+      = t('.title')
+
+    %hr{'aria-hidden': 'true'}
+
+    .row
+
+      %dt.col-12.col-lg-5.text-right
+        = t('.size')
+      %dd.col-12.col-lg-7
+        = number_to_human_size(attendance_report.file.size)
+
+      %dt.col-12.col-lg-5.text-right
+        = t('.total')
+      %dd.col-12.col-lg-7
+        = attendance_report.total_to_process
+
+      %dt.col-12.col-lg-5.text-right
+        = t('.created_at')
+      %dd.col-12.col-lg-7
+        = l(attendance_report.created_at, format: :short)

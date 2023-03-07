@@ -1,0 +1,219 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :title, convenant.title
+
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = t('.resource_title', sacc: convenant.title)
+
+        .card-commands
+          = render 'shared/components/btn_link_to_print'
+
+
+      .card-block
+        .row
+
+          = render 'shared/transparency/contracts/convenants/show/confidential' if convenant.confidential
+            
+          .col-12.col-sm-3
+            = dash_content_with_label(convenant, :num_spu)
+
+          .col-12.col-sm-3
+            = dash_content_with_label(convenant, :num_contrato)
+
+          .col-12.col-sm-3
+            - document_url = integration_contracts_document_url(convenant.descricao_url)
+
+            - if document_url.present?
+              .content-with-label
+                %p.content-label
+                  = t('.descricao_url')
+
+                %p.content-value
+                  = link_to document_url do
+                    %i.fa.fa-file-pdf-o.fa-2x{'aria-hidden': 'true'}
+
+          .col-12.col-sm-3
+            - # Se tivermos a url pro plano de trabalho, usamos ela.
+            - # Pode ser do SACC ou Eparcerias
+            - document_url = integration_contracts_work_plan(convenant.descricao_url_pltrb, convenant.isn_sic, convenant.cod_plano_trabalho)
+           
+            / - # Não existe mais PT. no CT
+            / - if document_url.blank?
+            /   - # Last pois podem ter substituições de planos de trabalhos e os antigos
+            /   - # não são limpos
+            /   - work_plan_attachment = convenant.work_plan_attachments.last
+
+            /   - if work_plan_attachment.present?
+            /     - document_url = transparency_eparcerias_work_plan_download_path(work_plan_attachment)
+
+            - if document_url.present?
+              .content-with-label
+                %p.content-label
+                  = t('.descricao_url_pltrb')
+
+                %p.content-value
+                  = link_to document_url, target: "_blank" do
+                    %i.fa.fa-file-pdf-o.fa-2x{'aria-hidden': 'true'}
+        .row
+          .col-12.col-sm-3
+            = dash_content_with_label(convenant, :descricao_situacao)
+
+        .row
+          .col-12.col-sm-3
+            = dash_content_with_label(convenant, :descricao_nome_credor)
+
+          .col-12.col-sm-3
+            = dash_content_with_label(convenant, :cpf_cnpj_financiador)
+
+          .col-12.col-sm-3
+            = dash_content_with_label(convenant, :infringement_status_str)
+
+        .row
+
+          .col-12
+            = dash_content_with_label(convenant, :tipo_objeto)
+
+          .col-12
+            = dash_content_with_label(convenant, :descricao_objeto)
+
+          .col-12
+            = dash_content_with_label(convenant, :descricao_justificativa)
+
+        %hr{'aria-hidden': 'true'}
+
+        - manager = convenant.manager.present? ? :manager_title : :cod_gestora
+        - grantor = convenant.grantor.present? ? :grantor_title : :cod_concedente
+
+
+        .row
+
+          .col-12.col-lg-4
+            = dash_content_with_label(convenant, grantor)
+
+          .col-12.col-lg-4
+            = dash_content_with_label(convenant, manager)
+
+          .col-12.col-lg-4
+
+            .content-with-label
+
+              %p.content-label
+                = convenant.class.human_attribute_name(:cod_secretaria)
+
+              %p.content-value
+                = convenant.manager_title || convenant.cod_secretaria
+
+        %hr{'aria-hidden': 'true'}
+        
+        .row                     
+          - date_attributes_convenants.each do |attribute_name|
+            - if attribute_name == :data_publicacao_portal     
+              %i.fa.fa-question-circle{'data-toggle': 'tooltip', title: t('.tooltips.data_publicacao_portal')}
+            - unless hide_field?(convenant, attribute_name)              
+              .col-12.col-lg-4                  
+                = dash_content_with_label(convenant, attribute_name, format: :date)    
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+          .col-12.col-lg-4
+            .content-with-label
+              %p.content-label
+                = Integration::Contracts::Convenant.human_attribute_name(:valor_contrato)
+                %i.fa.fa-question-circle{'data-toggle': 'tooltip', title: t('.tooltips.valor_contrato')}
+
+              %p.content-value
+                = resource_value(convenant, :valor_contrato)
+
+          .col-12.col-lg-4
+            = dash_content_with_label(convenant, :valor_can_rstpg)
+
+        .row
+          .col-12.col-lg-4
+            .content-with-label
+              %p.content-label
+                = Integration::Contracts::Convenant.human_attribute_name(:valor_original_concedente)
+                %i.fa.fa-question-circle{'data-toggle': 'tooltip', title: t('.tooltips.valor_original_concedente')}
+
+              %p.content-value
+                = resource_value(convenant, :valor_original_concedente)
+
+          .col-12.col-sm-4
+            .content-with-label
+              %p.content-label
+                = Integration::Contracts::Convenant.human_attribute_name(:valor_original_contrapartida)
+                %i.fa.fa-question-circle{'data-toggle': 'tooltip', title: t('.tooltips.valor_original_contrapartida')}
+
+              %p.content-value
+                = resource_value(convenant, :valor_original_contrapartida)
+
+
+        .row
+          .col-12.col-lg-4
+            .content-with-label
+              %p.content-label
+                = Integration::Contracts::Convenant.human_attribute_name(:valor_atualizado_concedente)
+                %i.fa.fa-question-circle{'data-toggle': 'tooltip', title: t('.tooltips.valor_atualizado_concedente')}
+
+              %p.content-value
+                = resource_value(convenant, :valor_atualizado_concedente)
+
+          .col-12.col-lg-4
+            .content-with-label
+              %p.content-label
+                = Integration::Contracts::Convenant.human_attribute_name(:valor_atualizado_contrapartida)
+                %i.fa.fa-question-circle{'data-toggle': 'tooltip', title: t('.tooltips.valor_atualizado_contrapartida')}
+
+              %p.content-value
+                = resource_value(convenant, :valor_atualizado_contrapartida)
+
+          .col-12.col-lg-4
+            .content-with-label
+              %p.content-label
+                = Integration::Contracts::Convenant.human_attribute_name(:valor_atualizado_total)
+                %i.fa.fa-question-circle{'data-toggle': 'tooltip', title: t('.tooltips.valor_atualizado_total')}
+
+              %p.content-value
+                = resource_value(convenant, :valor_atualizado_total)
+
+        .row
+          .col-12.col-lg-4
+            = dash_content_with_label(convenant, :calculated_valor_empenhado)
+
+          .col-12.col-lg-4
+            = dash_content_with_label(convenant, :calculated_valor_pago)
+
+    = render 'shared/transparency/contracts/contracts/show/additives', contract: convenant, additives: additives
+
+    = render 'shared/transparency/contracts/contracts/show/adjustments', contract: convenant, adjustments: adjustments
+
+
+    - #
+    - # Lista carregada por ajax
+    - #
+    = render 'shared/transparency/contracts/financials', contract: convenant
+
+    = render 'shared/transparency/contracts/contracts/show/infringements', contract: convenant, infringements: infringements
+
+
+    - #
+    - # Lista carregada por ajax
+    - #
+    = render 'shared/transparency/contracts/transfer_bank_orders', contract: convenant
+
+    - # XXX: foi informado que não existe 'anexos' e talvez devamos remover tod
+    = # render 'shared/transparency/contracts/contracts/show/work_plan_attachments', contract: convenant, contract: convenant
+
+    - if integration_contracts_accountability_visible?(convenant)
+      = render 'shared/transparency/contracts/contracts/show/accountability', contract: convenant
+
+    = render 'shared/transparency/followers/new', resource: convenant

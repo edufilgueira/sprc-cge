@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    attributes:
+      attachment:
+        file: Anexo
+        title: Título
+        imported_at: Data de geração
+        document: Arquivo
+
+    models:
+      attachment:
+        one: 'Anexo'
+        other: 'Anexos'
+    errors:
+      models:
+        attachment:
+          attributes:
+            document:
+              attachment_letter: você precisa anexar a carta da resposta ao cidadão

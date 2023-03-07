@@ -1,0 +1,8 @@
+es:
+  shared:
+    ppa:
+      login_alert:
+        login: Acceder al Perfil
+        create: Crear perfil 
+        authentication_needed_html: 'Para interaccionar %{login_link} o %{registration_link}!'
+

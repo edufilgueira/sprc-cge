@@ -1,0 +1,49 @@
+en:
+  activerecord:
+    models:
+      integration/expenses/npd:
+        one: Expense Settlement Note (NPD)
+        other: Expense Settlement Notes (NPDs)
+
+    attributes:
+      integration/expenses/npd:
+        exercicio: Period
+        unidade_gestora: Management unit
+        unidade_executora: Executing unit
+        numero: Number
+        natureza: Nature
+        efeito: Effect
+
+        numero_npd_ordinaria: ordinary NPD number
+        codigo_localidade_npd_ordinaria: Ordinary NPD locality code
+        codigo_retencao: Retention Code
+        justificativa: Justification
+        numero_processo_administrativo_despesa: Administrative expenditure process number
+        data_emissao: Issue date
+        date_of_issue: Issue date
+        credor: Creditor
+        documento_credor: Creditor document
+        valor: Value
+        numero_nld_ordinaria: Ordinary NLD number
+        codigo_natureza_receita: Revenue Nature Code
+        servico_bancario: Banking service
+        banco_origem: Bank of origin
+        agencia_origem: Agency of origin
+        digito_agencia_origem: Origin agency digit
+        conta_origem: Account of origin
+        digito_conta_origem: Origin account digit
+        banco_pagamento: Payment Bank
+        codigo_localidade: Location code
+        banco_beneficiario: Beneficiary bank
+        agencia_beneficiario: Beneficiary bank agency
+        digito_agencia_beneficiario: Beneficiary bank agency digit
+        conta_beneficiario: "Beneficiary's account"
+        digito_conta_beneficiario: "Beneficiary's account digit"
+        status_movimento_bancario: Status of the bank transaction
+        data_retorno_remessa_bancaria: Bank remittance return date
+        processo_judicial: Judicial process
+        data_atual: Current date
+
+        management_unit_title: Secretariat/Agency
+        executing_unit_title: Executing unit
+        creditor_nome: Creditor

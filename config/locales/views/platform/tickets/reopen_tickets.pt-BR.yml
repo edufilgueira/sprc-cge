@@ -1,0 +1,21 @@
+pt-BR:
+
+  platform:
+
+    tickets:
+
+      reopen_tickets:
+
+        new:
+          sou:
+            title: Reabrir manifestação
+          sic:
+            title: Reabrir solicitação
+
+        create:
+          sou:
+            done: Reabertura de manifestação realizada com sucesso. O prazo foi reiniciado.
+            error: Erro ao reabrir manifestação
+          sic:
+            done: Reabertura da solicitação realizada com sucesso. O prazo foi reiniciado.
+            error: Erro ao reabrir solicitação

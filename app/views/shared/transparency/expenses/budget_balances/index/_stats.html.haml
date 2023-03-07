@@ -1,0 +1,79 @@
+= render 'shared/transparency/index/stats', stats: stats, paths: { xlsx: xlsx_download_path, csv: csv_download_path } do
+
+  .row
+    .col-12
+      - total_data = stats.data[:total]
+      - stats_year = stats.year
+      - stats_month_start = stats.month_start
+      - stats_month_end = stats.month_end
+      - month_range_str = date_month_range_str(stats_month_start, stats_month_end, stats_year)
+
+      .row
+        .col-12.col-lg-4
+          .content-with-label
+            - label = raw(t('shared.transparency.expenses.budget_balances.index.stats.valor_orcamento_inicial.title', date: stats_year))
+            - value = number_to_currency(total_data[:calculated_valor_orcamento_inicial])
+
+            %label.content-label{'aria-label': label, title: label}
+              = label
+
+            .content-value{'aria-label': value, title: value}
+              .h3.text-muted
+                = value
+
+        .col-12.col-lg-4
+          .content-with-label
+            - label = raw(t('shared.transparency.expenses.budget_balances.index.stats.valor_orcamento_atualizado.title', date: month_range_str))
+            - value = number_to_currency(total_data[:calculated_valor_orcamento_atualizado])
+
+            %label.content-label{'aria-label': label, title: label}
+              = label
+
+            .content-value{'aria-label': value, title: value}
+              .h3.text-muted
+                = value
+
+      .row
+        .col-12.col-lg-4
+          .content-with-label
+            - label = raw(t('shared.transparency.expenses.budget_balances.index.stats.valor_empenhado.title', date: month_range_str))
+            - value = number_to_currency(total_data[:calculated_valor_empenhado])
+
+            %label.content-label{'aria-label': label, title: label}
+              = label
+
+            .content-value{'aria-label': value, title: value}
+              .h3.text-muted
+                = value
+
+
+        .col-12.col-lg-4
+          .content-with-label
+            - label = raw(t('shared.transparency.expenses.budget_balances.index.stats.valor_liquidado.title', date: month_range_str))
+            - value = number_to_currency(total_data[:calculated_valor_liquidado])
+
+            %label.content-label{'aria-label': label, title: label}
+              = label
+
+            .content-value{'aria-label': value, title: value}
+              .h3.text-muted
+                = value
+
+        .col-12.col-lg-4
+          .content-with-label
+            - label = raw(t('shared.transparency.expenses.budget_balances.index.stats.valor_pago.title', date: month_range_str))
+            - value = number_to_currency(total_data[:calculated_valor_pago])
+
+            %label.content-label{'aria-label': label, title: label}
+              = label
+
+            .content-value{'aria-label': value, title: value}
+              .h3.text-muted
+                = value
+
+      .row
+        .col-12
+          - charts_tabs = [:secretary, :administrative_region, :function, :sub_function, :government_program]
+          - charts_path = 'expenses/budget_balances'
+
+          = render 'shared/transparency/index/charts', stats: stats, charts_path: charts_path, charts_tabs: charts_tabs, base_locale: t('shared.transparency.expenses.budget_balances.index.charts')

@@ -1,0 +1,38 @@
+pt-BR:
+  ppa:
+    admin:
+      breadcrumbs:
+        home:
+          index:
+            title: Home
+        plans:
+          index:
+            title: Planos Plurianuais
+          new:
+            title: Adicionar
+          create:
+            title: Adicionar
+        administrators:
+          index:
+            title: Administradores
+        workshops:
+          index:
+            title: Encontros Regionais de elaboração
+          new:
+            title: Adicionar
+          create:
+            title: Adicionar
+        votings:
+          index:
+            title: Votações
+          new:
+            title: Adicionar
+          create:
+            title: Adicionar    
+        proposal_themes:
+          index:
+            title: Proposição Temática
+          new:
+            title: Adicionar
+          create:
+            title: Adicionar

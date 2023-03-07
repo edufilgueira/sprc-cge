@@ -1,0 +1,36 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:title, :content, :slug, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: pages, sort_columns: sort_columns, table_locale: table_locale do |page|
+
+    - show_path = can?(:show, page) ? admin_page_path(page) : '#!'
+
+    %tr
+      %td
+        = link_to show_path do
+          = filtered_highlighted(page.title)
+
+      %td
+        = link_to show_path do
+          = strip_tags(page.content)&.truncate(50)
+
+      %td
+        = link_to show_path do
+          = page.slug
+
+      %td
+        .float-right
+          = link_to transparency_page_path(page), target: "_blank", class: 'btn text-muted btn-link hover-link float-left d-inline-block' do
+            %i.fa.fa-external-link
+            = t('commands.show')
+
+          - if can?(:edit, page)
+            = link_to t('commands.edit'), edit_admin_page_path(page), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:destroy, page)
+            = link_to t('commands.remove'), admin_page_path(page), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link hover-link float-left d-inline-block'

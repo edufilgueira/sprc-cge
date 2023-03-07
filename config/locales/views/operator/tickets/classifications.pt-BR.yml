@@ -1,0 +1,46 @@
+pt-BR:
+
+  operator:
+
+    tickets:
+
+      classifications:
+
+        new:
+          title:
+            sou: Classificar manifestação
+            sic: Classificar solicitação
+          description:
+            title:
+              sou: Descrição da manifestação
+              sic: Descrição da solicitação
+          attachments:
+            title: Anexos
+
+        create:
+          done: Classificação realizada com sucesso.
+          fail: Falha ao classificar.
+
+        edit:
+          title:
+            sou: Classificar manifestação
+            sic: Classificar solicitação
+          description:
+            title:
+              sou: Descrição da manifestação
+              sic: Descrição da solicitação
+          attachments:
+            title: Anexos
+
+        update:
+          done: Classificação atualizada com sucesso.
+          fail: Falha ao reclassificar.
+
+        form:
+          department_info:
+            sic: 'Atenção: ao selecionar Unidade e Subunidade você não está encaminhando a solicitação. Está apenas classificando.'
+            sou: 'Atenção: ao selecionar Unidade e Subunidade você não está encaminhando a manifestação. Está apenas classificando.'
+          save: Salvar alterações
+
+        remote_classification:
+          organ: Órgão

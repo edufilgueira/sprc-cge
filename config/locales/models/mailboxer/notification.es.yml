@@ -1,0 +1,10 @@
+es:
+  activerecord:
+    attributes:
+
+      mailboxer/notification:
+
+        subject: Sujeto
+        body: Contenido
+        created_at: Creado en
+        read: Situación

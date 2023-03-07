@@ -1,0 +1,19 @@
+en:
+  activerecord:
+    models:
+      integration/city_undertakings/configuration:
+        one: Configuration of Investments by city
+
+    attributes:
+      integration/city_undertakings/configuration:
+        headers_soap_action: SOAPAction
+        password: Password
+        user: User
+        wsdl: WSDL
+        undertaking_operation: SOAP method name (enterprise)
+        undertaking_response_path: Answer path (enterprise)
+        city_undertaking_operation: SOAP method name (municipalities_business)
+        city_undertaking_response_path: Answer path (cities_enterprise)
+        city_organ_operation: SOAP method name (cities_secretariats)
+        city_organ_response_path: Answer path (cities_secretariats)
+

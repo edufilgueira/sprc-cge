@@ -1,0 +1,24 @@
+es:
+  activerecord:
+    models:
+      ppa/workshop:
+        one: Taller de elaboración 
+        other: Talleres de elaboración 
+
+    attributes:
+      ppa/workshop:
+        plan: Plan
+        name: Nombre
+        start_at: Fecha inicio
+        end_at: Fecha término
+        region: Región
+        city: Ciudad
+        address: Dirección
+        participants_count: Número de Participantes
+
+    errors:
+      models:
+        ppa/workshop:
+          attributes:
+            end_at:
+              invalid_range: Es necesario que la fecha de fín sea posterior a la de inicio. 

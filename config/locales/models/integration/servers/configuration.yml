@@ -1,0 +1,33 @@
+pt-BR:
+  activerecord:
+    attributes:
+
+      integration/servers/configuration:
+        arqfun_ftp_address: Endereço FTP
+        arqfun_ftp_passive: Modo passivo
+        arqfun_ftp_dir: Diretório
+        arqfun_ftp_user: Usuário
+        arqfun_ftp_password: Senha
+        arqfin_ftp_address: Endereço FTP
+        arqfin_ftp_passive: Modo passivo
+        arqfin_ftp_dir: Diretório
+        arqfin_ftp_user: Usuário
+        arqfin_ftp_password: Senha
+        rubricas_ftp_address: Endereço FTP
+        rubricas_ftp_passive: Modo passivo
+        rubricas_ftp_dir: Diretório
+        rubricas_ftp_user: Usuário
+        rubricas_ftp_password: Senha
+        status: Status
+        log: Log
+        last_importation: Última importação
+        month: Mês de referência
+
+    models:
+      integration/servers/configuration:
+        one: Importador de informações de servidores
+
+    errors:
+      models:
+        integration/servers/configuration:
+          attributes:

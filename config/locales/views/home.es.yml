@@ -1,0 +1,195 @@
+es:
+  home:
+    index:
+      home: Página inicial
+      title: Contraloría y Oidoría General del Estado
+      cge_title: Contraloría y Oidoría <br>General del Estado
+      breadcrumb_title: Inicio
+      search:
+        title: ¿De qué información necesitas?
+
+      sign_in_description: >
+        ¡Identifíquese y aproveche el Ceará Transparente en su máximo potencial!
+
+      sign_up:
+        title: Cree su perfil
+
+      login:
+        title: Inicio de Sesión
+
+      description: >
+        <p>
+          El Ceará Transparente es un espacio de diálogo entre usted y el Gobierno.
+          Aquí, usted tiene acceso a informaciones sobre presupuesto y gastos públicos. Usted todavía puede registrar y acompañar manifestaciones en los canales de Oidoría del Gobierno.
+        </p>
+      sections:
+        title: Portales de acceso
+
+    transparency_portal:
+      title: Transparencia
+      text: >
+        Consulte las informaciones y datos abiertos de las Páginas de Transparencia.
+      action: Acceder a las Páginas de Transparencia
+      ppa_action: Acceso al PPA
+      main_links: Acceso rápido
+
+      coronavirus:
+        title: Coronavírus
+        btn: Informaciones
+        expenses:
+          title: Gastos
+          url: '/portal-da-transparencia/paginas/coronavirus-despesas'
+          url_siec:  ''
+        law:
+          title: Legislación
+          url: '/portal-da-transparencia/paginas/coronavirus-legislacao'
+
+      links:
+        what_is:
+          title: '¿Qué son las Páginas de Transparencia?'
+          link: '#!'
+
+        how_to:
+          title: '¿Cómo usar las Páginas de Transparência?'
+          link: '#!'
+
+      featured_queries:
+        title: Consultas destacadas
+
+        open_data_data_sets:
+          title: Datos abiertos
+          icon: fa-open_data_data_sets
+        server_salaries:
+          title:  Funcionarios públicos
+          icon: fa-users
+        revenues_accounts:
+          title: Ingresos
+          icon: fa-line-chart
+        real_states:
+          title: Bienes raíces
+          icon: fa-home
+        expenses_budget_balances:
+          title:  Gastos
+          icon: fa-money
+        ongoing_purchases:
+          title: Licitaciones en curso
+          icon: fa-file-text-o
+        purchases:
+          title: Licitaciones finalizadas
+          icon: fa-file-text-o
+        contracts_contracts:
+          title: Contratos
+          icon: fa-file-text-o
+        contracts_convenants:
+          title: Convenios
+          icon: fa-handshake-o
+        expenses_neds:
+          title: Gastos por compromiso
+          icon: fa-money
+        public_debt:
+          title: Deuda Pública
+          icon: fa-dollar
+
+    card:
+      main_links: Acceso rápido
+
+      tickets:
+        title: Oidoría
+        text: >
+          Registre una denuncia, queja, sugerencia, elogio o solicitud de servicio.
+        icon: fa-comment-o
+        action: Registrar nueva manifestación
+        sub_action: Acompañar Manifestación
+
+      information_access:
+        title: Acceso a la Información
+        text: 'Solicite una información que usted no encontró en %{link}'
+        action: Solicitar información
+        sub_action: Acompañar solicitación
+        icon: fa-info-circle
+        transparency_portal:
+          title: 'Páginas de Transparencia'
+
+      ppa:
+        title: Participación Ciudadana (PPA)
+        text: >
+          Acompañe las metas, objetivos y planificaciones del Estado,
+          así como participe de las manifestaciones públicas de Oidoría.
+        icon: fa-user-o
+        action: Acceder a Participación Ciudadana
+        sub_action: Proponer nueva directriz
+
+      support:
+        title: Canales de atención al ciudadano
+        text: >
+          El acceso a la rede de Oidoría y Acceso a información del Estado del Ceará también
+          puede ser realizada por el Ceará Transparente.
+        icon: fa-flag-o
+        sub_action: Ver canales de atención
+
+    cards:
+      tickets:
+        links:
+          what_is:
+            title: ¿Qué es la Oidoría?
+
+          access:
+            title: 'Acceder a la página de Oidoría'
+
+          public_tickets:
+            title: 'Manifestaciones públicas'
+
+      information_access:
+        links:
+          what_is:
+            title: '¿Qué es el Acceso a la Información?'
+
+          access:
+            title: 'Acceder a la página de Acceso a la Información'
+
+          law:
+            title: 'Ley de Acceso à la Información'
+
+          public_requests:
+            title: 'Solicitacitudes públicas'
+
+          transparency:
+            title: 'Transparencia'
+
+      ppa:
+        links:
+          what_is:
+            title: '¿Qué es la Participación Ciudadana (PPA)?'
+
+          access:
+            title: 'Acompañar la planificación'
+
+          how_to:
+            title: '¿Como usar la Participación Ciudadana?'
+
+      support:
+        links:
+          network:
+            title: 'Red de Oidorías'
+
+          social:
+            title: 'Redes Sociales'
+
+          a155:
+            title: 'Central 155'
+
+          email:
+            title: 'E-mail'
+
+
+    privacy_policy:
+      title: Política de Privacidad
+      description: >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus feugiat ullamcorper. Integer eleifend sapien eu justo porttitor mollis. Pellentesque pharetra justo lectus, at vestibulum erat laoreet sed. Curabitur tincidunt ut risus sit amet pretium. Vestibulum feugiat eros eu nulla congue, at luctus justo condimentum. Integer orci ex, sodales id purus vel, laoreet ornare lacus. Proin sit amet dapibus justo, in scelerisque sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis ullamcorper venenatis arcu. Praesent pharetra odio nulla, nec faucibus velit convallis nec. Nam ligula purus, tincidunt at auctor vel, luctus bibendum felis. Curabitur sollicitudin, lorem at iaculis lacinia, augue nisi fermentum mauris, eu rutrum turpis orci id dui. Nulla blandit dolor ultrices lorem volutpat, ac sagittis arcu venenatis. Fusce placerat enim eros. Integer ultricies vehicula justo, at molestie leo porttitor ut. Cras fermentum ac ex at placerat.
+        Donec neque dui, elementum vel venenatis sed, mollis nec massa. Nullam posuere venenatis quam. Nullam tortor justo, convallis id lorem id, dignissim varius tellus. Curabitur rhoncus dolor non mi accumsan euismod. Donec lacus enim, vehicula vitae lacinia ut, lacinia a metus. Aenean in justo nunc. Fusce lacus diam, efficitur vel laoreet vitae, suscipit in nulla. Nulla tincidunt sit amet metus id mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam dictum dui mauris, ac cursus est pulvinar sed. Sed et leo vehicula, varius sem vel, imperdiet magna. Nunc volutpat metus ac aliquet dignissim. Phasellus non massa vitae sapien feugiat molestie.
+
+    terms_of_use:
+      title: Término de Uso
+      description: >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis luctus feugiat ullamcorper. Integer eleifend sapien eu justo porttitor mollis. Pellentesque pharetra justo lectus, at vestibulum erat laoreet sed. Curabitur tincidunt ut risus sit amet pretium. Vestibulum feugiat eros eu nulla congue, at luctus justo condimentum. Integer orci ex, sodales id purus vel, laoreet ornare lacus. Proin sit amet dapibus justo, in scelerisque sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis ullamcorper venenatis arcu. Praesent pharetra odio nulla, nec faucibus velit convallis nec. Nam ligula purus, tincidunt at auctor vel, luctus bibendum felis. Curabitur sollicitudin, lorem at iaculis lacinia, augue nisi fermentum mauris, eu rutrum turpis orci id dui. Nulla blandit dolor ultrices lorem volutpat, ac sagittis arcu venenatis. Fusce placerat enim eros. Integer ultricies vehicula justo, at molestie leo porttitor ut. Cras fermentum ac ex at placerat.
+        Donec neque dui, elementum vel venenatis sed, mollis nec massa. Nullam posuere venenatis quam. Nullam tortor justo, convallis id lorem id, dignissim varius tellus. Curabitur rhoncus dolor non mi accumsan euismod. Donec lacus enim, vehicula vitae lacinia ut, lacinia a metus. Aenean in justo nunc. Fusce lacus diam, efficitur vel laoreet vitae, suscipit in nulla. Nulla tincidunt sit amet metus id mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam dictum dui mauris, ac cursus est pulvinar sed. Sed et leo vehicula, varius sem vel, imperdiet magna. Nunc volutpat metus ac aliquet dignissim. Phasellus non massa vitae sapien feugiat molestie.

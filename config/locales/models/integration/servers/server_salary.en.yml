@@ -1,0 +1,43 @@
+en:
+
+  activerecord:
+
+    attributes:
+
+      integration/servers/server_salary:
+
+        server_name: Servant
+        discount_others: Other discounts
+        discount_total: Total discounts
+        discount_under_roof: Discount due to the constitutional limit
+        status: Functional status
+        income_dailies: Dailies
+        income_final: Net salary
+        income_total: Gross salary
+
+        date: Month
+        integration_supports_organ_id: 'Agency/Entity'
+        organ_name: 'Agency/Entity'
+        organ_sigla: 'Agency/Entity'
+        organ_title: 'Agency/Entity'
+        registration: Enrollment
+        role_name: 'Role / Function / Employment'
+        integration_supports_server_role_id: 'Role / Function / Employment'
+
+  integration/servers/server_salary:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Servants %{month}-%{year}'
+
+    statuses:
+      all: All status
+      civil_active: Active Civil
+      militar_active: Active Military
+      civil_away_with_onus: Civil Away With Burden
+      militar_away_with_onus: Military Away With Burden
+      civil_away_without_onus: Civil Away Without Burden
+      militar_away_without_onus: Military Away Without Burden
+      pensioner: Pensioner
+      food_pension: Food pension
+      injunction: Injunction

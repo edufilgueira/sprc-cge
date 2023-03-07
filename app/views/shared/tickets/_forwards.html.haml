@@ -1,0 +1,35 @@
+- #
+- # Encaminhamento
+- #
+- if operator?(current_user)
+  .card.card-custom
+
+    .card-header
+
+      %h3.card-title
+        = t('.referrals.title')
+
+    .card-block
+
+      .content
+        - if all_ticket_departments.present?
+          = render partial: 'shared/tickets/ticket_department', collection: all_ticket_departments, locals: { ticket: ticket }
+        - else
+          %em
+            = t('.referrals.empty')
+
+        .row.mt-3.no-print
+          - if can?(:share_internal_area, ticket)
+
+            - if ticket_department_by_user_department
+              .col
+                = link_to t('.transfer_departments.edit'), operator_ticket_transfer_department(ticket), class: 'btn btn-primary w-100'
+
+            .col
+              = link_to ticket_department_text_button, new_operator_ticket_referral_path(ticket), class: 'btn btn-primary w-100'
+
+          - elsif ticket.child? && ! ticket.classified?
+            .col
+              %em
+                = t('.referrals.unclassified')
+

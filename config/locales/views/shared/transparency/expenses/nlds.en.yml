@@ -1,0 +1,73 @@
+en:
+  shared:
+    transparency:
+      expenses:
+
+        nlds:
+          index:
+            title: Statements of Expense Settlement
+            description: Verify here the Statements of Expense Settlement.
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Secretary of Finance - SEFAZ</p>
+              <p>Governmental Management System by Results - S2GPR</p>
+
+            chart:
+              valor:
+                unit: 'Sum of amounts: BRL'
+                title: 'Sums of the Statements of Expense Settlement in the selected month.'
+
+                creditor:
+                  title: Sum of the amounts by creditor
+                management_unit:
+                  title: Sum of the amounts by management unit
+                natureza:
+                  title: Sum of the amounts by nature
+                efeito:
+                  title: Sum of the amounts by effect
+            charts:
+              tabs:
+                creditor:
+                  title: By creditor
+                management_unit:
+                  title: By management unit
+                natureza:
+                  title: By nature
+                efeito:
+                  title: By effect
+
+            filters:
+              title: Advanced search
+
+            counts:
+              nlds_count:
+                title: Quantity of filtered Statements
+              nlds_sum:
+                title: Amount on the filtered Statements
+
+            table:
+              summary: List of Statements of Expense Settlement
+              header:
+                numero: Number
+                date_of_issue: Date of issue
+                unidade_gestora: Management unit
+                management_unit_title: Management unit
+                credor: Creditor
+                valor: Value
+                valor_retido: Amount withheld
+
+            stats:
+              title: Main numbers related to the Statements
+              count: 'Statements on <strong>%{date}</strong>'
+              valor: 'Figures on <strong>%{date}</strong>'
+
+          show:
+            ned:
+              link: "%{value}"
+            nld_item_payment_plannings:
+              title: Planning items
+              empty: No items found
+
+            nld_item_payment_retentions:
+              title: Retention items
+              empty: No items found

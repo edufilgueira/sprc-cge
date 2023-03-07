@@ -1,0 +1,82 @@
+.nested-fields.card.bg-faded.mb-3{ data: { content: :tickets } }
+  .card-block
+    - if f.object.persisted?
+
+      .row
+        .col-10
+          %p
+            = link_to t('.link.protocol', acronym: f.object.organ_acronym, protocol: f.object.parent_protocol), operator_ticket_path(f.object)
+            = f.input :organ_id, as: :hidden, input_html: { value: f.object.organ_id }
+
+        .col-2.text-right
+          - if can?(:delete_share, f.object)
+            = link_to operator_ticket_sharing_path(f.object.id, f.object.parent.id), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn btn-sm fa-lg text-danger mt-2' do
+              %i.fa.fa-trash{title: t('commands.remove')}
+    - else
+      .organ-container{'data-content': 'organ'}
+
+        .row
+          .col-12
+            - organ_select_text = t('shared.tickets.form.fields.organ.select')
+            / -# rede_ouvir_select_text = t('shared.tickets.form.fields.rede_ouvir.select')
+
+            - data = { input: :organ, 'dependent-select': :subnets, 'child-container': '[data-dependent-select-child=subnets]', 'param-name': :organ_id, url: api_v1_subnets_path, parent: '[data-content=tickets]' }
+
+            / -# if tickets_elegible_share_with_rede_ouvir?(ticket, current_user)
+            /   =# f.input :rede_ouvir, input_html: { 'data-input': 'rede_ouvir' }
+
+        .row
+          .col-10.col-sm-11
+
+            - #
+            - # operator/tickets/sharings/form controla a exibição de orgão do executivo ou da rede ouvir
+            - #
+
+            - unless current_user.sectoral_rede_ouvir?
+              = f.association :organ, prompt: organ_select_text, collection: organs_to_share_for_select_with_subnet_info(ticket), input_html: { data: data, 'aria-label': organ_select_text }, wrapper_html: { data: { content: 'executive_organ'} }, label: false
+
+            / -# if tickets_elegible_share_with_rede_ouvir?(ticket, current_user)
+            /   =# f.association :organ, prompt: rede_ouvir_select_text, collection: organs_rede_ouvir_for_select, input_html: { data: data, 'aria-label': rede_ouvir_select_text }, wrapper_html: { data: { content: 'rede_ouvir'} }, label: false
+
+
+          .col-2.col-sm-1.text-right
+            = link_to_remove_association '', f, { class: 'fa fa-trash fa-lg text-danger mt-2', 'aria-label': t('.remove') }
+
+        .row{'data-content': 'subnet'}
+          .col-lg-8
+            - subnet_select_text = t('shared.tickets.form.fields.subnet.select')
+            - data = { 'input': 'subnet', 'dependent-select-child': 'subnets', 'dependent-select-blank': subnet_select_text }
+            - organ = f.object.organ
+
+            = f.association :subnet, { collection: subnets_by_organ_for_select(organ), prompt: subnet_select_text, label: false, input_html: { data: data, 'aria-label': subnet_select_text } }
+          .col-lg-4
+            = f.input :unknown_subnet, wrapper_html: { class: 'bg-faded rounded my-1 px-2 pt-2 pb-1' }, input_html: { class: 'mr-2', 'data-input': 'unknown_subnet' }, label_html: { class: 'd-block' }
+
+    .sou-type-content{'data-content': 'sou-type-container'}
+      - if ticket.sou?
+        .row
+          .col-12
+            = render 'shared/tickets/sou_types_toggle', ticket: ticket, field_name: "ticket[tickets_attributes][#{f.index}][sou_type]", f: f, anonym: false
+
+        .denunciation-content{'data-content': 'denunciation_ticket_type_content'}
+          = render 'shared/tickets/denunciation_ticket_type_content', f: f, ticket: ticket, attendance_155: false
+        
+        - if can?(:protect_attachment_on_share_with_organ, ticket)
+          .row
+            .col-12
+              %label
+                = t('.attachments')
+          .row
+            %p
+              = render 'shared/attachments/permissions', ticket: ticket, f: f
+
+      .general-content{'data-content': 'general_ticket_type_content'}
+        .row
+          .col-12
+            - ticket_object = f.object.sou_type.nil? ? ticket : f.object
+            = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: :mini }, value: ticket_object.description }, hint: t('.description.hint'), label: t(".description.label.#{ticket.ticket_type}"), required: true
+
+        - if f.object.new_record?
+          .row
+            .col-12
+              = f.input :justification, as: :text, input_html: { rows: 5 }, required: true

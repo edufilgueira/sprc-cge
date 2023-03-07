@@ -1,0 +1,42 @@
+pt-BR:
+  ppa:
+    revision:
+      evaluations:
+        new:
+          title: Avaliação do processo de revisão do PPA
+          description: Participe da avaliação e nos ajude a melhorar o processo de participação cidadã no Estado do Ceará!
+          question1: Como você ficou sabendo da plataforma de revisão do PPA?
+          question2: Como avalia o processo de divulgação de revisão do PPA?
+          question3: O quão acessível foi a plataforma de revisão para você?
+          question4: Quão fácil você considerou a navegação no site?
+          question5: Como avalia a forma como foi realizada a revisão?
+          question6: Como avalia sua participação no processo de revisão do PPA?
+          question7: O quão importante é para você a sua participação no processo de revisão?
+          question8: O processo de revisão do PPA atendeu suas expectativas?
+          question9: Qual seu nível de satisfação sobre o processo virtual de revisão?
+          question10: Você gostaria de participar também dos próximos eventos do PPA?
+          observation: Sugestões, reclamações ou ideias para a melhoria dos evendos participativos do PPA
+          very_satisfied: Satisfeito
+          neutral: Neutro
+          very_dissatisfied: Insatisfeito
+
+          radio: Rádio
+          facebook: Facebook
+          email: Email
+          whatsapp: Whatsapp
+          friends: Amigos
+          instagram: Instagram
+          site: Site
+          other: Outro
+          'yes': Sim
+          'no': Não
+          dont_know: Talvez
+
+        show:
+          title: Avaliação concluída com sucesso!
+          description: Sua avaliação da etapa de revisão está concluída.
+          description_redirect: Você será redirecionado para a página inicial do Ceará Transparente.
+
+        create:
+          done: Avaliação realizada com sucesso!
+

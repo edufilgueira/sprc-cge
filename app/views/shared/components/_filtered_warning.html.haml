@@ -1,0 +1,5 @@
+- if filtered
+  .my-4
+    .alert.alert-warning
+      = t('messages.filters.warning')
+      = link_to t('messages.filters.clear'), '#!', 'data-input': 'clear-filter', class: 'float-right'

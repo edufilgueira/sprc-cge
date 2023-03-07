@@ -1,0 +1,32 @@
+.table-responsive
+  %table.table.table-hover.table-sm.table-sorted{summary: t('.summary')}
+
+    %thead
+
+      %tr
+        - headers = [:code, :title, :status, :amount, :percentage, :created_at, :action]
+
+        - # coluna vazia para exibir alertas
+        %th
+        - headers.each_with_index do |head, index|
+          - sort_column_name = sort_columns[index]
+          %th{ class: "#{sortered_table_active_class(sort_column_name)}" }
+
+            - if sort_column_name
+              = sortered_table_header(sort_column_name, t(".heads.#{head}"))
+            - else
+              = t(".heads.#{head}")
+
+    %tbody
+      - list_samplings.each do |sample|
+        %tr
+          %td
+          %td= link_to sample.code, operator_generated_list_path(sample)
+          %td= link_to sample.title, operator_generated_list_path(sample) 
+          %td= link_to t(".status.#{sample.status}"), operator_generated_list_path(sample) 
+          %td= link_to details_sample_count(sample), operator_generated_list_path(sample)
+          %td= link_to number_to_percentage(percentage_evaluated(sample), precision: 2), operator_generated_list_path(sample)
+          %td= link_to l(sample.created_at.to_date), operator_generated_list_path(sample)
+          %td= remove_sample_open(sample)
+
+  = render 'shared/components/table/index_count', collection: list_samplings, filtered_count: filtered_samples_count, total_count: total_samples_count, filtered: samples_filter_params?(params)

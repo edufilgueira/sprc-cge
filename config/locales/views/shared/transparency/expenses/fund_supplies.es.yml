@@ -1,0 +1,76 @@
+es:
+  shared:
+    transparency:
+      expenses:
+
+        fund_supplies:
+          index:
+            title: Suministro de Fondos
+            description: 'Consulte aquí los gastos con suministro de fondos, que son valores recibidos por funcionarios del Estado para atender a los casos de gastos de emergencia.'
+            source: |
+              <p><strong>Fuente de datos:</strong></p>
+              <p>Secretaría de Hacienda - SEFAZ</p>
+              <p>Sistema de Gestíon Gubernamental por Resultados - S2GPR</p>
+
+            chart:
+              calculated_valor_final:
+                unit: 'Valores empeñados: R$'
+                title: 'Valores de las Notas de Empeño en el año seleccionado.'
+
+                razao_social_credor:
+                  title: Valores empeñados por acreedor
+                management_unit:
+                  title: Valores empeñados por secretarias/órgãos
+                item_despesa:
+                  title: Valores empeñados por ítem de gasto
+                efeito:
+                  title: Valores empeñados por efecto
+
+            charts:
+              tabs:
+                razao_social_credor:
+                  title: Por acreedor
+                management_unit:
+                  title: Por unidad de gestión
+                item_despesa:
+                  title: Por ítem de gasto
+
+            filters:
+              title: Consulta avanzada
+              search:
+                hint: |
+                  Usted puede buscar por parte del nombre de Secretarías, Órganos etc. Ejemplos: 'sec educa', 'seplag', entre outros
+                  'sec faze', entre otros.
+
+            counts:
+              filtered_count:
+                title: Cantidad de suministros de fondos filtrados
+              filtered_sum:
+                valor:
+                  title: Valor empeñado de las suministros de fondos filtrados
+                valor_pago:
+                  title: Valor pagado de las suministros de fondos filtrados
+
+            table:
+              summary: Lista de Suministros de Fondos
+              header:
+                numero: Nota de empeño
+                date_of_issue: Fecha de emisión
+                unidade_gestora: Unidad de gestión
+                management_unit_title: Unidad de gestión
+
+                item_despesa: Ítem de gasto
+                credor: Acreedor
+                valor: Valor empeñado
+                valor_pago: Valor pagado
+
+            stats:
+              title: Principales números relacionados a los Suministros de Fondos
+              count: 'Cantidad en <strong>%{date}</strong>'
+              valor: 'Valor empeñado en <strong>%{date}</strong>'
+              valor_pago: 'Valor pagado en <strong>%{date}</strong>'
+
+          show:
+            contract:
+              link: '%{value}'
+              none: EMPEÑO NO VINCULADO AL INSTRUMENTO CONTRACTUAL/CONVENIO

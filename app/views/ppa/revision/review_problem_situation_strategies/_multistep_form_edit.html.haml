@@ -1,0 +1,28 @@
+#card-multisteps-flow.card{style: 'display:none;'}
+  = render partial: 'ppa/revision/review_problem_situation_strategies/multistep_flow'
+
+  .row
+    .col-lg-12
+      = button_to_resume(t('.btn_go_to_resume'), review_problem_situation_strategy_id)
+  -# form do segundo nível da hierarquia: Region Theme
+
+  = simple_form_for resource, url: multifor_url_edit, html: { method: :post, id: 'msform' } do |ff|
+
+    
+    - if is_edit_region_theme?
+      = hidden_field_tag "#{tag_form_region_themes}[id]", @region_theme_id
+    - else
+      -# os hiddens são preenchidos via js nos steps de região e tema
+      = hidden_field_tag "#{tag_form_region_themes}[region_id]", '', class: 'hidden_region_id'
+      = hidden_field_tag "#{tag_form_region_themes}[theme_id]", '', class: 'hidden_theme_id'
+
+    %fieldset{id: 'fieldset_region'}
+      = render multistep_path(:region), f: ff
+
+    %fieldset{id: 'fieldset_theme'}
+      = render multistep_path(:theme), f: ff
+
+    %fieldset{id: 'fieldset_revision'}
+      = render partial: multistep_path(:revision), locals: { f: ff, parent_form_alias: tag_form_region_themes }
+
+    

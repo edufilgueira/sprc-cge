@@ -1,0 +1,5 @@
+.content-with-label
+  %p.content-label
+    = Ticket.human_attribute_name(:used_input_url)
+  %p.content-value
+    = link_to ticket.used_input_url, ticket.used_input_url, target: :_blank

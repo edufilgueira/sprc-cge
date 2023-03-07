@@ -1,0 +1,16 @@
+.card-deck.mb-3
+  .card.text-center
+    .card-block.h-100
+      %h4.h6.card-title
+        = t(".#{report_type}.title")
+
+      .col-12.text-center.mb-3
+        %i.fa.fa-lg{'aria-hidden': 'true', class: icon}
+
+      %p.card-text.text-muted
+        = t(".#{report_type}.description")
+
+    .card-block
+      .row
+        .col-12
+          = link_to t(".#{report_type}.button"), url, class: 'btn btn-primary d-block btn-block'

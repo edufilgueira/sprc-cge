@@ -1,0 +1,36 @@
+.card-filters.filter-bar{'data-filter-bar': 'results_thematic_indicators'}
+
+  = form_for transparency_results_thematic_indicators_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+
+      .col-12.col-lg-4
+        - options = options_for_select(supports_axes_for_select_with_all_option, params[:axis_id])
+
+        = label_tag(:axis_id, Integration::Results::ThematicIndicator.human_attribute_name(:axis_title))
+        = select_tag(:axis_id, options)
+
+      .col-12.col-lg-4
+        - options = options_for_select(supports_themes_for_select_with_all_option, params[:theme_id])
+
+        = label_tag(:theme_id, Integration::Results::ThematicIndicator.human_attribute_name(:theme_title))
+        = select_tag(:theme_id, options)
+
+      .col-12.col-lg-4
+        - options = options_for_select(supports_organs_and_secretaries_from_executivo_for_select_with_all_option, params[:organ_id])
+
+        = label_tag(:organ_id, Integration::Results::ThematicIndicator.human_attribute_name(:organ_title))
+        = select_tag(:organ_id, options)
+
+    .row.mt-3
+      .col-12.col-lg-9
+        = label_tag(:search, t('messages.filters.search.label'))
+        = text_field_tag(:search, params[:search], placeholder: t('.search_placeholder') ,class: 'form-control w-100 mb-3', 'data-filter-bar-ignore-submit-on-enter': 'true')
+
+      .col-12.col-lg-3
+
+        - # forma simples de align-bottom no botão de busca
+        .mt-4.pt-2
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'

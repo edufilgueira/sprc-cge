@@ -1,0 +1,35 @@
+pt-BR:
+
+  admin:
+    integrations:
+      servers:
+        configurations:
+
+          import:
+            done: A importação dos dados de servidores está sendo processada em segundo plano
+
+          form:
+            label:
+              arqfun: Arquivo de informação de servidores
+              arqfin: Arquivo de proventos de servidores
+              rubricas: Arquivo de tipos de proventos
+            commands:
+              cancel: Voltar para integrações
+          edit:
+            title: Configuração
+          update:
+            done: "O importador '%{title}' foi atualizado."
+          show:
+            passive:
+              'true': Modo passivo
+              'false': Modo ativo
+            edit: Configurar
+            created_at: Criado
+            title: Configurações da integração
+            label:
+              arqfun: Configuração de acesso ao arquivo de informação de servidores
+              arqfin: Configuração de acesso ao arquivo de proventos de servidores
+              rubricas: Configuração de acesso ao arquivo de tipos de proventos
+            import: Importar agora
+            hide_show: Mostrar/Esconder log
+            empty: Nenhuma importação realizada

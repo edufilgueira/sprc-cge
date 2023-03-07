@@ -1,0 +1,124 @@
+es:
+
+  transparency:
+    sic:
+      home:
+
+        index:
+          title: Acceso a la Información
+          transparency_title: Acceso a la Información
+          transparency_description: >
+            Bienvenidos al área de Acceso a la Información del Portal Ceará Transparente.
+
+        general:
+          title: Solicitar información
+          description: >
+            En este campo es posible llenar su solicitud de acceso a la
+            información, que será analizada y respondida de manera positiva
+            o negativa. En el campo al lado, usted acompaña el progreso de la
+            solicitud a través del número del protocolo y de la contraseña.
+          new_ticket: Solicitar informação
+
+          follow_ticket: Acompañar solicitud
+
+        how:
+          more: 'Lea más'
+          what_is:
+            title: ¿Qué es el acceso a la información?
+            description: >
+              Todos los ciudadanos y ciudadanas tienen el derecho a solicitar
+              el acceso a información que, por alguna razón, no se han
+              facilitado en la Página de Transparencia.
+
+          how_to:
+            title: ¿Cómo usarlo?
+            description: >
+              Para solicitar acceso a una información basta llenar
+              un breve formulario que especifica los datos a los que desea acceder.
+
+        publications:
+          title: Acesso à informação
+          description: >
+            La Contraloría y Oidoría General del Estado (CGE) divulga, con base
+            en la legislación aplicada a la materia, la jurisprudencia firmada
+            en las decisiones del Comité Gestor de Acceso a la Información, los
+            Informes de Gestión de la Transparencia y los Informes Estadísticos
+            conteniendo la cantidad de solicitudes de información recibidos,
+            atendidos, no atendidos y rechazados por todos los órganos y entidades
+            del Poder Ejecutivo Estadual, así como la legislación sobre el tema.
+
+          reports: Informes de Gestión de la Transparencia
+
+          laws: Legislación
+          jurisprudence: Jurisprudncia
+          jurisprudence_link: clicando aqui
+          jurisprudence_description: >
+            Ver los recursos interpuestos por el Comité Gestor de Acceso a la Información
+            %{link}.
+
+          report:
+            title: 'Informes de Gestión de la Transparencia'
+
+          legislation:
+            title: 'Legislación sobre Acceso a la Información'
+
+          report_stats:
+            title: 'Informes Estadísticos de Acceso a la Información'
+
+        stats:
+          title: Estadísticas de solicitudes de Acceso a la Información
+          description: >
+           Aquí, usted puede ver las estadísticas de solicitudes de Acceso a la Información
+           referentes al período vigente. Estos números se actualizan cada mes.
+          month: Mostrando datos del período %{month}
+          stats_1:
+            title: Solicitudes finalizadas
+
+          stats_2:
+            title: Tiempo promedio de respuesta
+            unit: '%{value} días'
+
+          stats_3:
+            title: Solubilidad
+            unit: '%{value}%'
+
+          see_more: Acceder paneles estadísticos de acceso a la información
+
+        stats_evaluations:
+          title: 'Pesquisa de satisfação do serviço de informação'
+          description: >
+            Painéis estatísticos mensais como dos dados consolidados da pesquisa de satisfação do serviço de informação,
+            das avaliações de atendimento realizadas pelos cidadãos do Ceará Transparente.
+          month: Exibindo dados do período de %{month}
+
+          total_answered_tickets:
+            title: 'Solicitações atendidas pelo Governo do Estado do Ceará'
+
+          total_user_evaluations:
+            title: 'Pesquisas respondidas pelos usuários do Ceará Transparente'
+
+          see_more: 'Acessar painéis estatísticos das pesquisas do serviço de informação'
+
+        sensitive_information:
+          title: Relación de información confidencial
+          description: >
+            En atención a lo que determina el art. 29 de la Ley 15.175 de 28 de junio
+            de 2012, el Comité Sectorial de Acceso a la Información de la Auditoría y de
+            la Atención Ciudadana presenta la lista de documentos clasificados con grado
+            de secreto y la lista de informaciones desclasificadas.
+
+
+          sub_title: Información Clasificada y Desclasificada
+          sub_description: >
+            El Comité Gestor de Acceso a la Información presenta la lista de documentos
+            clasificados y desclasificados con grado de sigilo de los órganos y entidades
+            del Poder Ejecutivo Estadual.
+
+
+          link_1: >
+            Información Clasificada y Desclasificada de los Órganos y Entidades del Poder Ejecutivo Estadual
+
+          link_2: >
+            Portaria CGAI n° 01.2016 - Dispone sobre la Uniformización en la
+             Clasificación de la información sigilosa de materia común a todos
+             Órganos y Entidades del Poder Ejecutivo Estadual

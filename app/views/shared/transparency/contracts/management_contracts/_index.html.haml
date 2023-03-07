@@ -1,0 +1,121 @@
+= cache(cache_key) do
+
+  = render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+  .my-4
+
+    %hr{'aria-hidden': 'true'}
+
+    = render 'transparency/exports/form'
+
+    %hr{'aria-hidden': 'true'}
+
+    .fa.fa-spin.fa-refresh.m-1.text-muted.float-right{'data-remote-content-loader': ''}
+
+    .row
+      .col-12.col-lg-6
+        .content-with-label
+          - label = raw(t('.counts.contracts_count.title'))
+          - value = number_with_delimiter(filtered_count)
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+      .col-12.col-lg-6
+        .content-with-label
+          - label = raw(t('.counts.contracts_sum.title'))
+          - value = number_to_currency(filtered_sum)
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+          %i.fa.fa-question-circle{ title: t('.counts.contracts_sum.tolltip')}
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+    %hr{'aria-hidden':'true'}
+
+    - header = [:data_assinatura, :isn_sic, :cod_gestora, :cod_concedente, :creditor, :descricao_objeto, { id: :valor_atualizado_concedente, html_class: 'text-right w-15' }, { id: :calculated_valor_empenhado, html_class: 'text-right w-15' }, { id: :calculated_valor_pago, html_class: 'text-right w-15' }  ]
+
+    - table_locale = t('.table')
+
+    = render 'shared/components/remote_table', header: header, collection: contracts, sort_columns: sort_columns, table_locale: table_locale do |contract|
+
+      - show_path = url_for(action: 'show', controller: 'contracts/management_contracts', id: contract)
+
+      %tr
+
+        %td
+          - date = contract.data_assinatura
+          = link_to show_path, title: l(date, format: :date_time) do
+            = l(date, format: :date)
+
+        %td
+          = link_to show_path do
+            - value = contract.isn_sic.to_s
+
+            - if filtered_params?([:search_sacc])
+              = highlight(value, value)
+            - else
+              = filtered_highlighted(value)
+
+        %td
+          - manager_name = contract.manager_acronym || contract.cod_gestora
+          - manager_title = contract.manager_title || contract.cod_gestora
+
+          = link_to show_path, title: manager_title do
+            - if filtered_params?([:cod_gestora])
+              = highlight(manager_name.truncate(30), manager_name.truncate(30))
+            - else
+              = filtered_highlighted(manager_name.truncate(30))
+
+        %td
+          - grantor_title = contract.grantor_title || contract.cod_concedente
+          - grantor_name = grantor_title
+
+          - if grantor_name.present?
+            = link_to show_path, title: grantor_title do
+              - if filtered_params?([:cod_concedente])
+                = highlight(grantor_name.truncate(30), grantor_name.truncate(30))
+              - else
+                = filtered_highlighted(grantor_name.truncate(30))
+
+        %td
+          - creditor_title = contract.descricao_nome_credor || contract.creditor_title || contract.cpf_cnpj_financiador
+
+          = link_to show_path, title: creditor_title do
+
+            - value = creditor_title.truncate(30)
+
+            - if filtered_params?([:search_datalist])
+              = highlight(value, value)
+            - else
+              = filtered_highlighted(value)
+
+            - if creditor_title != contract.cpf_cnpj_financiador.present?
+              %small
+                = filtered_highlighted(contract.cpf_cnpj_financiador)
+
+        %td
+          - contract_title = contract.descricao_objeto
+
+          = link_to show_path, title: contract_title do
+            = filtered_highlighted(contract_title.truncate(40))
+
+        %td.text-right
+          = link_to show_path do
+            = number_to_currency(contract.valor_atualizado_concedente)
+
+        %td.text-right
+          = link_to show_path do
+            = number_to_currency(contract.calculated_valor_empenhado)
+
+        %td.text-right
+          = link_to show_path do
+            = number_to_currency(contract.calculated_valor_pago)
+

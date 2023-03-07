@@ -1,0 +1,79 @@
+/ #TODO: Os nomes dos campos não foram refatorados ainda evitando impacto no desdobramento
+/ das hierarquias e da tabela com os dados
+
+.card-filters.filter-bar{'data-filter-bar': 'revenues_accounts'}
+
+  = form_for transparency_revenues_accounts_path, method: :get, remote: true do |f|
+    = render 'shared/sortered/hidden_filters'
+
+    .row.mb-3.month-range{data: { container: 'month-range' }}
+      .col-12.col-lg-4
+        = label_tag(:year, Integration::Revenues::Revenue.human_attribute_name(:year))
+
+        = text_field_tag(:year, params[:year],
+                          placeholder: year,
+                          'data-filter-bar-bypass-clear': '',
+                          class: 'form-control w-100 mb-3 year-datetimepicker revenue_account_year',
+                          data: select_year_data_attribute)
+
+      .col-12.col-lg-4
+        = label_tag(:month_start, t('messages.filters.select.month_start'))
+        = select_month(:month_start)
+
+      .col-12.col-lg-4
+        = label_tag(:month_end, t('messages.filters.select.month_end'))
+        = select_month(:month_end)
+
+    .row.mb-3
+      .col-12.col-lg-4
+
+        - field_secretary_name = 'integration_revenues_revenues.integration_supports_secretary_id'
+        = label_tag(field_secretary_name, revenues_humam_attributes(:secretary))
+        = #select_tag_secretaries_or_organs(field_secretary_name, :secretary)
+        = select_tag_secretaries_or_organs(field_secretary_name, :secretary)
+
+      .col-12.col-lg-4
+        - field_unit_name = 'integration_revenues_revenues.unidade'
+        = label_tag(field_unit_name, revenues_humam_attributes(:organ))
+        = #select_tag_unidade(field_unit_name)
+        =select_tag_secretaries_or_organs(field_unit_name, :organ)
+
+      .col-12.col-lg-4
+        - field_consolidado_name = 'integration_supports_revenue_natures.unique_id_consolidado'
+        = label_tag(field_consolidado_name, revenues_humam_attributes(:codigo_consolidado))
+        = select_for_filter(:consolidado, field_consolidado_name)
+
+    .row.mb-3
+      .col-12.col-lg-4
+        - field_economy_category_name = 'integration_supports_revenue_natures.unique_id_categoria_economica'
+        = label_tag(field_economy_category_name, revenues_humam_attributes(:categoria_economica))
+        = select_for_filter(:categoria_economica, field_economy_category_name)
+
+      .col-12.col-lg-4
+        - field_origin_name = 'integration_supports_revenue_natures.unique_id_origem'
+        = label_tag(field_origin_name, revenues_humam_attributes(:codigo_origem))
+        = select_for_filter(:origem, field_origin_name)
+
+      .col-12.col-lg-4
+        - field_subfonte_name = 'integration_supports_revenue_natures.unique_id_subfonte'
+        = label_tag(field_subfonte_name, revenues_humam_attributes(:codigo_subfonte))
+        = select_for_filter(:subfonte, field_subfonte_name)
+
+    .row
+      .col-12.col-lg-4.div_tree_organizer
+        = render 'shared/transparency/tree_organizer', options: tree_organizer_options
+
+      .col-12.col-lg-6
+        = label_tag(:search, t('messages.filters.search.label'))
+        = text_field_tag(:search, params[:search], class: 'form-control w-100', 'data-filter-bar-ignore-submit-on-enter': 'true')
+        %small.form-text.text-muted
+          = t('.search.hint')
+
+      .col-12.col-lg-2
+
+        - # forma simples de align-bottom no botão de busca
+        .mt-4.pt-2
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'
+
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :javascript, javascript_include_tag(multi_dependent_select)

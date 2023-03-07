@@ -1,0 +1,29 @@
+- url_form = ppa_plan_strategies_votes_path(plan.id, region.code, resource)
+
+- if themes.present?
+
+  = simple_form_for resource, url: url_form do |f|
+    .row
+      .col-lg-4.mb-4.step-medium
+        .list-group{ id: "list-theme", role: "tablist" }
+          - filtered_themes = themes.joins(objective_themes: :strategies).distinct
+          - filtered_themes.each_with_index do |theme, index|
+            - active = (index == 0) ? 'active' : ''
+            - theme_class = "list-group-item list-group-item-action #{active}"
+
+            = link_to theme.name, "#list-#{theme.id}", class: theme_class, 'data-toggle': "list", role: 'tab'
+
+      .col-lg-8
+        .row
+          .col-12
+            .tab-content{id: "nav-tabContent"}
+              - themes.each_with_index do |theme, index|
+                - locals = {theme: theme, f: f, index: index}
+
+                = render partial: "#{controller_path}/new/card", locals: locals
+    .row.mt-2
+      .col-lg-9
+        .alert.alert-warning.text-left
+          = t('.conclusion_instruction')
+      .col-lg-3.text-right
+        = f.button :submit, t('.end_voting'), class: 'btn btn-success'

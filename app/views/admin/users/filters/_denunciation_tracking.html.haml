@@ -1,0 +1,13 @@
+%label
+  = t('.label')
+
+.radio
+  - show_denunciation_tracking = params[:denunciation_tracking] == 'true'
+
+  %label
+    = radio_button_tag :denunciation_tracking, 'false', !show_denunciation_tracking, onchange: 'submit();'
+    = t('boolean.false')
+
+  %label
+    = radio_button_tag :denunciation_tracking, 'true', show_denunciation_tracking, onchange: 'submit();'
+    = t('boolean.true')

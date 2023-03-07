@@ -1,0 +1,74 @@
+en:
+  shared:
+    transparency:
+      revenues:
+        transfers:
+
+          index:
+            title: Funds Received in Transfers
+            description: 'Learn more about the transfers, for instance, the origin of the amount received from the Federal Government, resources for Fundeb or international organizations.'
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Secretary of Finance - SEFAZ</p>
+              <p>Governmental Management System by Results - S2GPR</p>
+
+            chart:
+              valor_arrecadado:
+                unit: 'Sum of amounts collected in transfers: R$'
+                title: 'Amounts collected in the month'
+
+                secretary:
+                  title: Sum of amounts collected in transfers by secretariats
+                transfer:
+                  title: Sum of amounts collected by transfer type
+
+            charts:
+              tabs:
+                secretary:
+                  title: Per secretariat
+                transfer:
+                  title: Per transfer type
+
+            counts:
+              valor_previsto_inicial:
+                title: 'Filtered recipes initial estimated value'
+              valor_previsto_atualizado:
+                title: 'Filtered recipes initial updated value'
+              valor_arrecadado:
+                title: 'Filtered recipes collected amount'
+
+            filters:
+              title: Advanced search
+
+              counts:
+                transfers_sum:
+                  valor_previsto_inicial:
+                    title: Filtered recipes initial estimated value
+
+                  valor_previsto_atualizado:
+                    title: Filtered recipes updated estimated value
+
+                  valor_arrecadado:
+                    title: Filtered recipes collected amount
+
+              node_types: View mode
+
+              search:
+                hint: |
+                  You can search by the name of Secretariats, Agencies, etc. Examples: 'sec faze', among others.
+
+            table:
+              summary: Executive Power revenues list
+              header:
+                title: Description
+                valor_arrecadado: Collected value
+                valor_previsto_inicial: Initial estimated value
+                valor_previsto_atualizado: Updated estimated value
+
+              total: Total
+
+            stats:
+              title: Main revenue-related figures
+              valor_arrecadado: 'Collected value on <strong>%{date}</strong>'
+              valor_previsto_inicial: 'Initial estimated amount on <strong>%{date}</strong>'
+              valor_previsto_atualizado: 'Estimated amount updated on <strong>%{date}</strong>'

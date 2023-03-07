@@ -1,0 +1,40 @@
+= javascript_include_tag('ckeditor/init')
+
+- comment_form_url = [namespace, new_comment]
+- answer_form_url = [namespace, new_answer]
+
+.row
+
+  .col-12
+    - if namespace == :operator
+
+      = render 'shared/tickets/confirmed_operator', ticket: ticket, namespace: namespace, new_comment: new_comment, new_answer: new_answer
+
+    - else
+
+      = render 'shared/tickets/notice_confirmation_success'
+
+      - #
+      - # Descrição
+      - #
+      = render 'shared/tickets/show', namespace: namespace, ticket: ticket, new_comment: new_comment, comment_form_url: comment_form_url
+
+      - #
+      - #
+      - # Histórico de respostas
+      - #
+      - #
+      = render 'shared/tickets/ticket_logs', ticket: ticket, answer_form_url: answer_form_url
+
+      - #
+      - #
+      - # Histórico de comentários
+      - #
+      - #
+      = render 'shared/tickets/public_comments', ticket: ticket, comment_form_url: comment_form_url
+
+      - #
+      - # Histórico de atendimentos
+      - #
+
+      = render 'shared/tickets/ticket_logs/history', ticket: ticket, namespace: namespace

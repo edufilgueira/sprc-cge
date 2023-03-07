@@ -1,0 +1,24 @@
+.row
+
+  .col-12.col-md-1.no-print
+    .float-left
+
+      .rounded-circle.p-1.alert-warning
+
+        %i.fa.fa-edit.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      %h4.h6.mb-0
+        - author = ticket_log.responsible.as_author
+        - acronym = ticket_log.data[:acronym]
+
+        = t('.title', name: author, acronym: acronym)
+
+      %small
+        %em
+          = l(ticket_log.created_at, format: :shorter)
+
+%hr{'aria-hidden': 'true'}

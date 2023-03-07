@@ -1,0 +1,46 @@
+= f.input :ticket_id, as: :hidden, input_html: { value: ticket.id }
+
+%div{ data: { content: 'sectoral-fields'} }
+  - unless operator_internal?(current_user)
+
+    = f.input :classification, collection: ticket_answer_classifications_for_select(ticket), input_html: { data: { 'select2-search': 'hidden', input: 'answer_classification' } }
+    
+    - if can?(:can_certificate, ticket)
+      = f.input :certificate, as: :attachment, direct: true, input_html: { 'aria-label': t('simple_form.file.choose') }, wrapper_html: { data: { content: :answer_certificate } }
+
+    = f.input :answer_type, collection: answer_types_for_select(ticket), input_html: { data: { 'select2-search': 'hidden', input: :answer_type } }
+
+
+  = f.input :status, as: :hidden, input_html: { value: answer_status(current_user) }
+
+  = f.input :answer_scope, as: :hidden, input_html: { value: answer_scope(current_user, ticket) }
+
+
+.row
+
+  .col-12
+    -# autocomplete: off - https://jiracaiena.atlassian.net/browse/PCEA-982
+    - milliseconds = (Time.now.to_f * 1000).to_i
+    = f.input :description, as: :ckeditor, required: false, label: answer_description_text(current_user), input_html: { data: { input: 'comment-description' }, ckeditor: { toolbar: :answers }, id: "comment-description-#{milliseconds}", autocomplete: 'off' }
+
+.row
+  .col-12
+    - if current_user.operator?
+      = render 'shared/answer_templates/search', target: 'comment-description'
+
+.row
+  - if ticket.letter? && !operator_internal?(current_user)
+    .col-10
+      %p.content-label
+        = t(".attachment_letter.#{ticket.ticket_type}")
+
+  .col-10
+    = f.simple_fields_for :attachments do |attachment|
+      = render 'shared/comments/attachment_fields', f: attachment
+
+    .links.my-2
+      = link_to_add_association t('.add_attachment'), f, :attachments, partial: 'shared/comments/attachment_fields'
+  .col-2
+    .fa.fa-spin.fa-spinner.mr-3.hidden-xs-up.float-right{'data-content': 'loading'}
+
+= render 'shared/answers/existent_attachments', ticket: ticket

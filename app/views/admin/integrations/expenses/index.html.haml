@@ -1,0 +1,31 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t('.title')
+
+%h2.sr-only
+  = t('.title')
+
+%h3.sr-only{id: 'sections'}
+  = t('.sections.title')
+
+- cards_groups = [ [:budget_balances, :neds], [:city_transfers, :consortium_transfers, :multi_gov_transfers], [:profit_transfers, :non_profit_transfers], [:fund_supplies], [:npfs, :nlds, :npds] ]
+
+- cards_groups.each do |cards|
+
+  %hr
+
+  %section.row.mt-4.text-gray{'aria-labelledby': 'sections'}
+
+    - cards.each do |card|
+
+      %section.col-lg-4.col-md-12.mb-3{'aria-labelledby': card}
+        .card.text-center
+
+          .card-block.py-0
+            %h4.card-title.mt-2{id: card}
+              = t(".cards.#{card}.title")
+
+            %p.card-text.text-muted
+              = t(".cards.#{card}.text")
+
+          .card-block
+            = link_to t(".cards.commands.index"), url_for(action: :index, controller: "admin/integrations/expenses/#{card}"), class: 'btn btn-outline-primary'

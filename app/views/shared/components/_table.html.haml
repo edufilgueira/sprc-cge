@@ -1,0 +1,44 @@
+- if collection.blank?
+
+  .text-muted.text-center
+    = t('messages.filters.no_results_found')
+
+- else
+
+  - if table_locale.is_a?(Hash)
+    - summary = table_locale[:summary]
+    - header_locales = table_locale[:header]
+  - else
+    - summary = ''
+    - header_locales = ''
+
+  - # XXX: um wrapper com .table-responsive é a única forma que funciona.
+  - # ver: https://github.com/twbs/bootstrap/issues/21577
+  .table-responsive
+    %table.table.table-hover.table-striped.table-sm.table-sorted{summary: summary}
+
+      %thead
+        - header.each_with_index do |head_data, index|
+          - sort_column_name = sort_columns[index]
+
+          - head = (head_data.is_a?(Hash) ? head_data[:id] : head_data)
+          - html_class = (head_data.is_a?(Hash) ? head_data[:html_class] : nil)
+
+          %th{ class: "#{sortered_table_active_class(sort_column_name)} #{html_class}" }
+
+            - if table_locale.is_a?(Hash)
+              - header_title = header_locales[head.to_sym]
+            - else
+              - header_title = ''
+
+            - if sort_column_name
+              = sortered_table_header(sort_column_name, header_title)
+            - else
+              = header_title
+
+      %tbody
+
+        - collection.each do |resource|
+          = yield(resource)
+
+  = render 'shared/components/table/index_count', collection: collection, filtered_count: filtered_count, total_count: total_count, filtered: filtered?

@@ -1,0 +1,147 @@
+@import 'base/variables';
+@import 'bootstrap/variables';
+/*
+ * O Bootstrap 4 possui um módulo de utilidades para bordas, mas ao fazer o
+ * update da gem, algumas coisas explodiram. Reproduzindo o módulo de bordas que
+ * pode ser removido quando a gem do Bootstrap puder ser atualizada para a versão
+ * 4.0.0
+ */
+
+.border {
+  border: 1px solid $border-default !important;
+}
+
+.border-top {
+  border-top: 1px solid $border-default !important;
+}
+
+.border-right-sm-none {
+  border-right: auto
+}
+
+.border-right {
+  border-right: 1px solid $border-default !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid $border-default !important;
+}
+
+.border-left {
+  border-left: 1px solid $border-default !important;
+}
+
+.border-0 {
+  border: 0 !important;
+}
+
+.border-top-0 {
+  border-top: 0 !important;
+}
+
+.border-right-0 {
+  border-right: 0 !important;
+}
+
+.border-bottom-0 {
+  border-bottom: 0 !important;
+}
+
+.border-left-0 {
+  border-left: 0 !important;
+}
+
+.border-bottom-only {
+  border: 0;
+  border-bottom: 1px solid $border-default !important;
+}
+
+@for $i from 1 through 5 {
+  .border-#{$i} {
+    border-width: #{$i}px !important;
+  }
+}
+
+.border-primary {
+  border-color: $brand-primary !important;
+}
+
+.border-success {
+  border-color: $brand-success !important;
+}
+
+.border-info {
+  border-color: $brand-info !important;
+}
+
+.border-warning {
+  border-color: $brand-warning !important;
+}
+
+.border-danger {
+  border-color: $brand-danger !important;
+}
+
+.border-light {
+  border-color: #f8f9fa !important;
+}
+
+.border-dark {
+  border-color: #343a40 !important;
+}
+
+.border-white {
+  border-color: #fff !important;
+}
+
+.border-orange {
+  border-color: $app-orange !important;
+}
+
+.border-green {
+  border-color: $app-green !important;
+}
+
+.border-shadow {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(125,125,125,0.5);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(125,125,125,0.5);
+  box-shadow: 0px 0px 10px 0px rgba(125,125,125,0.5);
+}
+
+.rounded {
+  border-radius: 0.25rem !important;
+}
+
+.rounded-top {
+  border-top-left-radius: 0.25rem !important;
+  border-top-right-radius: 0.25rem !important;
+}
+
+.rounded-right {
+  border-top-right-radius: 0.25rem !important;
+  border-bottom-right-radius: 0.25rem !important;
+}
+
+.rounded-bottom {
+  border-bottom-right-radius: 0.25rem !important;
+  border-bottom-left-radius: 0.25rem !important;
+}
+
+.rounded-left {
+  border-top-left-radius: 0.25rem !important;
+  border-bottom-left-radius: 0.25rem !important;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.rounded-0 {
+  border-radius: 0 !important;
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  .border-right-sm-none {
+    border-right: 0 !important;
+  }
+}

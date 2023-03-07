@@ -1,0 +1,8 @@
+es:
+
+  activerecord:
+
+    attributes:
+
+      citizen_comment:
+        description: Comentario

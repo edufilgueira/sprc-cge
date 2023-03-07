@@ -1,0 +1,16 @@
+es:
+  activerecord:
+    attributes:
+      extension:
+        description: Justificativa
+        email: Correo electrónico del responsable
+        email_confirmation: Confirmación del correo electrónico
+        status: Situación
+        status_str: Situación
+        organ_acronym: Órgano solicitante
+
+      extension/status:
+        approved: Aprobado
+        rejected: Devuelto
+        cancelled: Cancelado
+        in_progress: Esperando respuesta

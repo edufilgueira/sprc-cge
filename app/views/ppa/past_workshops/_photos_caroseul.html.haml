@@ -1,0 +1,20 @@
+.carousel.slide{ 'data-ride': 'caroseul', id: "workshopCarousel#{id}" }
+  %ol.carousel-indicators
+    - photos.size.times do |i|
+      %li{ 'data-target': "#workshopCarousel#{id}", 'data-slide-to': i, 'class': "#{'active' if i == 0}" }
+
+  .carousel-inner
+    - photos.each_with_index do |photo, i|
+      .carousel-item{ 'class': "#{'active' if i == 0}" }
+        = attachment_image_tag photo, :attachment, :fill, 400, 300, class: 'd-block w-100'
+
+  %a.carousel-control-prev{ href: "#workshopCarousel#{id}", role: 'button', 'data-slide': 'prev' }
+    %span.carousel-control-prev-icon{ 'aria-hidden': true }
+    %span.sr-only
+      = t(:previous)
+
+
+  %a.carousel-control-next{ href: "#workshopCarousel#{id}", role: 'button', 'data-slide': 'next' }
+    %span.carousel-control-next-icon{ 'aria-hidden': true }
+    %span.sr-only
+      = t(:previous)

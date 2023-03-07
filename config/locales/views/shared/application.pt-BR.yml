@@ -1,0 +1,8 @@
+pt-BR:
+  shared:
+    application:
+      privacy_statement:
+        title: Controle sua Privacidade
+        description: Nosso site usa cookies para melhorar a navegação.
+        privacy: Aviso de Privacidade
+        accept: Aceitar

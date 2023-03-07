@@ -1,0 +1,9 @@
+%p
+  = t('.greetings', name: @resource.name)
+
+-# aligator operator para controlar espaços em branco
+-# - veja https://stackoverflow.com/a/28696071
+%p.preserve-whitespace<
+  = t('.instructions')
+
+= link_to t('.btn.confirm'), confirmation_url(@resource, confirmation_token: @token), class: 'btn btn-primary btn-block'

@@ -1,0 +1,70 @@
+pt-BR:
+  ppa:
+    themes:
+      proposals:
+        index:
+          title:  PPA (%{start_year} - %{end_year}) - Proposição Temática
+          subtitle:  "- %{theme}"
+          regional_strategies: Estratégias Regionais
+          guidelines: Diretrizes
+          proposals: Propostas
+          info_1: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          info_2: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          new: Propor nova diretriz
+          back: Voltar para Temas
+
+          table:
+            header:
+              strategy:    Estratégia
+              user:        Autor
+              created_at:  Data da proposta
+              votes_count: Votos
+        new:
+          title: Propostas Temáticas
+          new: Proposta de assunto para discussão
+          related_objective: 'Para qual objetivo você deseja elaborar uma estratégia?'
+          select_a_theme: 'Escolha um tema acima para exibir os objetivos relacionados'
+          select_theme_and_region: 'Escolha um tema e um objetivo para exibir estratégias relacionadas'
+          back: 'Cancelar'
+        
+        form:
+          info: ''
+
+        edit:
+          title: Propostas Temáticas
+          edit: Editar proposição temática
+          related_objective: 'Para qual objetivo você deseja elaborar uma estratégia?'
+          select_a_theme: 'Escolha um tema acima para exibir os objetivos relacionados'
+          select_theme_and_region: 'Escolha um tema e um objetivo para exibir estratégias relacionadas'
+          back: 'Cancelar'
+          
+        filters:
+          search: Busca
+
+        show:
+          title: Detalhes da proposta
+          strategy: Estratégia
+          justification: Escreva, em poucas palavras, por que você considera importante discutir esse assunto na sua região.
+          vote: Vote nessa estratégia se você acha que ela deve ser priorizada
+          add_vote: Adiconar meu voto
+          comments: Comentários
+          plan: Plano
+          back: Voltar
+          new: Nova Proposta
+          region: Região
+          city: Cidade
+          axis: Eixo
+          theme: Tema
+
+        create:
+          success: 'Proposta criada com sucesso'
+          failure: 'Não foi possível criar a proposta'
+
+
+        update:
+          success: 'Proposta alterada com sucesso'
+          failure: 'Não foi possível alterar a proposta'
+
+        destroy:
+          success: 'Proposta excluída com sucesso'
+          failure: 'Não foi possível excluir a proposta'    

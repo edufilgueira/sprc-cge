@@ -1,0 +1,35 @@
+- items =   %w(elaborating monitoring evaluating revising)
+- item_active = 'revising'
+
+/ items_with_links: esta lista mudar a medida que os modulos vão sendo implementados
+- items_with_links = items.without 'monitoring', 'evaluating', 'elaborating'
+
+- items.each do |item|
+  - content_for "top_4_#{item}".to_sym do
+    .row.mt-3
+      .card-body.p-4.pt-md-2.text-justify
+        %h5= t("#{item}")
+        - if items_with_links.include?(item) && plan_item(item).present?
+          = link_to t(".cards.#{item}.links.link2.title"), ppa_plan_path(plan_item(item), plan_status: item.to_sym, card_name: search_card_name(item)), class: 'btn btn-info pull-left mt-4'
+
+
+%section.card.card-steps.border-0{ 'aria-labelledby': 'top_4_ppa' }
+  .card-header.py-4-5.rounded.hidden-md-down
+    %ul.nav.nav-pills.nav-justified.pointer#firstTab{ role: "tablist" }
+      - items.each_with_index do |item, i|
+        %li.nav-item.tri-nav-item.border-right.border-white.px-4.text-center{ id: "#{item}_tab", data: { toggle: 'tab' }, href: "##{item}", role: "tab", aria: { controls: item, selected: 'true' }, class: ('active' if item == item_active) }
+          %i.fa.fa-2x.w-100.d-block{ class: "fa-#{item}" }
+          %h4.my-2
+            = t(".cards.#{item}.title")
+          %i{ class: t(".cards.#{item}.icon") }
+
+
+  .tab-content#firstTabContent
+    - items.each_with_index do |item, i|
+      - ppa_plan_last = take_last_record(item)
+
+      .tab-pane.tab-pane-top-4.fade{ id: item, role: "tabpanel", aria: { labelledby: "#{item}_tab" }, class: ('show active' if item == item_active) }
+        .card-body.p-4.pt-md-5
+          %strong.text-orange.text-center
+            %h3= t(".cards.#{item}.links.title", start_year: ppa_plan_last.try(:start_year),  end_year: ppa_plan_last.try(:end_year))
+          = content_for("top_4_#{item}".to_sym)

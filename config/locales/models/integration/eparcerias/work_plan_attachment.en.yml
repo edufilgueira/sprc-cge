@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    attributes:
+
+      integration/eparcerias/work_plan_attachment:
+        isn_sic: SIC Agreement
+        convenant: Agreement
+        file_name: File name
+        file_size: File size
+        file_type: File type
+        description: Description
+
+    models:
+      integration/eparcerias/work_plan_attachment:
+        one: Attachment of the work plan
+        other: Work plan attachments

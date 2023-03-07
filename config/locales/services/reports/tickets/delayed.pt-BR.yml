@@ -1,0 +1,27 @@
+pt-BR:
+  services:
+    reports:
+      tickets:
+        delayed:
+          sou:
+            sheet_name: Ouvidoria
+            title: 'Período do Relatório: %{begin} à %{end}'
+
+            headers:
+              protocol: Protocolo
+              organ: Órgão
+              created_at: Data da criação
+              sou_type: Tipo de manifestação
+              departments: Áreas internas
+              delayed_days: Dias em atraso
+
+          sic:
+            sheet_name: Acesso à informação
+            title: 'Período do Relatório: %{begin} à %{end}'
+
+            headers:
+              protocol: Protocolo
+              organ: Órgão
+              created_at: Data da criação
+              departments: Áreas internas
+              delayed_days: Dias em atraso

@@ -1,0 +1,23 @@
+es:
+
+  shared:
+
+    transparency:
+
+      events:
+
+        index:
+          title: Eventos
+
+        filters:
+          starts_at:
+            label: Período
+            start: Principio
+            end: Fin 
+
+        event:
+          commands:
+            show: Ver evento
+
+        show:
+          title: Visualización de evento

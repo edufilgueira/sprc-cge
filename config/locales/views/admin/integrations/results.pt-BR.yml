@@ -1,0 +1,16 @@
+pt-BR:
+  admin:
+    integrations:
+      results:
+        index:
+          title: Consultoria de resultados
+
+          cards:
+            strategic_indicators:
+              title: Indicadores estratégicos
+              index: Visualizar dados
+            thematic_indicators:
+              title: Indicadores temáticos
+              index: Visualizar dados
+
+

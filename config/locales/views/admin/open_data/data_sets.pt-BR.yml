@@ -1,0 +1,76 @@
+pt-BR:
+  admin:
+
+    open_data:
+
+      data_sets:
+        create:
+          title: Novo dado aberto
+          done: "O dado aberto '%{title}' foi criado."
+          error: Falha ao criar o dado aberto
+
+        destroy:
+          done: "O dado aberto '%{title}' foi removido."
+
+        form:
+          data_items:
+            add: Adicionar recurso
+            title: Recursos
+
+          data_set_vcge_categories:
+            add: Adicionar categoria VCGE
+            title: Categorias VCGE
+
+          organ:
+            select: 'Selecione um órgão'
+
+          commands:
+            cancel: < Voltar a lista de dado abertos
+            change_password: Trocar de senha
+            create: Criar dado aberto
+
+        data_item_fields:
+          title: Recurso de dado aberto
+
+          response_path:
+            hint: 'Ex: caminho/do/array'
+
+          parameters:
+            hint: 'Ex: foo=bar&abc=def'
+
+          data_item_type:
+            select: Selecione um tipo do recurso
+
+        data_set_vcge_category_fields:
+          title: Categorias VCGE
+
+          category:
+            select: Selecione uma categoria
+
+        index:
+          commands:
+            new: Novo dado aberto
+          title: Dados abertos
+          table:
+            summary: Lista de conjuntos de dados abertos
+            header:
+              author: Autor
+              title: Título
+              organ: Órgão
+              source_catalog: Catálogo de origem
+              commands: ''
+              status: ''
+
+        import:
+          done: 'Os dados foram adicionados à fila importação.'
+
+        new:
+          title: Novo dado aberto
+        edit:
+          title: Edição
+        update:
+          title: Edição de dado aberto
+          done: "O dado aberto '%{title}' foi atualizado."
+          error: Falha ao atualizar
+        show:
+          title: Exibição do dado aberto

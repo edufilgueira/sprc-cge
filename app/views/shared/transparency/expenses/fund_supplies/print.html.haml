@@ -1,0 +1,167 @@
+.row
+  .col-12
+    %h2.h4
+      = fund_supply.title
+
+  %hr{'aria-hidden': 'true'}
+
+- if fund_supply.especificacao_geral.present?
+  .row
+    .col-12
+      = content_with_label(fund_supply, :especificacao_geral)
+
+.row
+  .col-12
+    = content_with_label(fund_supply, :items_description)
+
+
+.row
+  - # a ned pode ser de um contrato ou de um convênio.
+  - contract = fund_supply.contract || fund_supply.convenant
+  .col-12
+    .content-with-label
+      %p.content-label
+        = ::Integration::Expenses::Ned.human_attribute_name(:contract)
+
+      %p.content-value
+        - if contract.present?
+          = t('shared.transparency.expenses.neds.show.contract.link', value: contract.title)
+
+        - else
+          = t('shared.transparency.expenses.neds.show.contract.none')
+
+
+.row
+  .col-6
+    = content_with_label(fund_supply, :cpf_cnpj_credor)
+
+  .col-6.text-right
+    - if fund_supply.is_a?(Integration::Expenses::Daily) && fund_supply.server_salary.present?
+      - server_salary = fund_supply.server_salary
+      - label = fund_supply.razao_social_credor
+
+      .content-with-label
+        %p.content-label
+          = ::Integration::Expenses::Daily.human_attribute_name(:razao_social_credor)
+
+        %p.content-value
+          = label
+
+    - else
+      = content_with_label(fund_supply, :razao_social_credor)
+
+
+.row
+  .col-6
+    - management_unit = (fund_supply.management_unit.present?) ? :management_unit_title : :unidade_gestora
+    = content_with_label(fund_supply, management_unit)
+
+  .col-6.text-right
+    - executing_unit = (fund_supply.executing_unit.present?) ? :executing_unit_title : :unidade_executora
+    = content_with_label(fund_supply, executing_unit)
+
+
+%hr{'aria-hidden': 'true'}
+
+
+.row
+  .col-6
+    = content_with_label(fund_supply, :calculated_valor_final)
+
+  .col-6.text-right
+    = content_with_label(fund_supply, :calculated_valor_pago_final)
+
+
+.row
+  .col-6
+    = content_with_label(fund_supply, :calculated_valor_pago_exercicio)
+
+  .col-6.text-right
+    = content_with_label(fund_supply, :calculated_valor_pago_apos_exercicio)
+
+
+.row
+  .col-6
+    = content_with_label(fund_supply, :calculated_valor_liquidado_exercicio)
+
+  .col-6.text-right
+    = content_with_label(fund_supply, :calculated_valor_liquidado_apos_exercicio)
+
+
+
+.row.page-break
+  .col-6
+    = content_with_label(fund_supply, :data_emissao)
+
+  .col-6.text-right
+    = content_with_label(fund_supply, :numero_processo_protocolo_original)
+
+.row
+  .col-6
+    = content_with_label(fund_supply, :classificacao_orcamentaria_reduzido)
+
+  .col-6.text-right
+    = content_with_label(fund_supply, :classificacao_orcamentaria_completo)
+
+
+.row
+  .col-6
+    = content_with_label(fund_supply, :natureza)
+
+  .col-6.text-right
+    = content_with_label(fund_supply, :efeito)
+
+
+.row
+  .col-6
+    = content_with_label(fund_supply, :function_title)
+
+  .col-6.text-right
+    = content_with_label(fund_supply, :sub_function_title)
+
+
+.row
+  .col-6
+    = content_with_label(fund_supply, :government_program_title)
+
+  .col-6.text-right
+    = content_with_label(fund_supply, :government_action_title)
+
+
+.row
+  .col-6
+    = content_with_label(fund_supply, :modalidade_licitacao)
+
+  .col-6.text-right
+    = content_with_label(fund_supply, :resource_source_title)
+
+
+.row
+  .col-6
+    = content_with_label(fund_supply, :expense_nature_item_title)
+
+  .col-6.text-right
+    = content_with_label(fund_supply, :projeto)
+
+
+%hr{'aria-hidden': 'true'}
+
+
+
+- #
+- # Itens
+- #
+.row.page-break
+  .col-12
+    = render 'shared/transparency/expenses/fund_supplies/print/ned_items'
+
+
+%hr{'aria-hidden': 'true'}
+
+- #
+- # Npds
+- #
+.row.page-break
+  .col-12
+    = render 'shared/transparency/expenses/fund_supplies/print/npds'
+

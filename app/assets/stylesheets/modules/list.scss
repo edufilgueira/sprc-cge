@@ -1,0 +1,53 @@
+@import 'bootstrap/variables';
+
+.list-group-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-content: flex-end;
+
+  &.list-group-flex-20 {
+    .list-group-item {
+      width: 20%;
+    }
+  }
+
+  &.list-group-flex-25 {
+    .list-group-item {
+      width: 25%;
+    }
+  }
+
+  .list-group-item {
+    border: 0;
+    background-color: transparent;
+
+    i {
+      float: left;
+    }
+
+    a {
+      float: left;
+      max-width: 110px;
+    }
+
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  .list-group-flex {
+    &.list-group-flex-20 {
+      .list-group-item {
+        width: 100%;
+      }
+    }
+
+    .list-group-item {
+      a {
+        max-width: none;
+      }
+    }
+  }
+
+}

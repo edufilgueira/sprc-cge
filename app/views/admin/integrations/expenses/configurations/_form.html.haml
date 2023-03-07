@@ -1,0 +1,141 @@
+= simple_form_for configuration, as: :configuration, url: admin_integrations_expenses_configuration_path(configuration) do |f|
+
+  .row
+    .col-6
+      = f.input :started_at, as: :string, input_html: { value: configuration.started_at, class: 'datetimepicker' }
+    .col-6
+      = f.input :finished_at, as: :string, input_html: { value: configuration.finished_at, class: 'datetimepicker' }
+
+  %hr{'aria-hidden':'true'}
+
+  %h4.h5
+    = Integration::Expenses::Configuration.human_attribute_name(:npf)
+  .row
+    .col-6
+      = f.input :npf_wsdl, autofocus: true
+    .col-6
+      = f.input :npf_headers_soap_action
+
+  .row
+    .col-6
+      = f.input :npf_user
+    .col-6
+      = f.input :npf_password, input_html: { value: configuration.npf_password }
+
+  .row
+    .col-6
+      = f.input :npf_operation
+    .col-6
+      = f.input :npf_response_path
+
+  %hr{'aria-hidden':'true'}
+
+  %h4.h5
+    = Integration::Expenses::Configuration.human_attribute_name(:ned)
+
+  .row
+    .col-6
+      = f.input :ned_wsdl, autofocus: true
+    .col-6
+      = f.input :ned_headers_soap_action
+
+  .row
+    .col-6
+      = f.input :ned_user
+    .col-6
+      = f.input :ned_password, input_html: { value: configuration.ned_password }
+
+  .row
+    .col-6
+      = f.input :ned_operation
+    .col-6
+      = f.input :ned_response_path
+
+  %hr{'aria-hidden':'true'}
+
+  %h4.h5
+    = Integration::Expenses::Configuration.human_attribute_name(:nld)
+
+  .row
+    .col-6
+      = f.input :nld_wsdl, autofocus: true
+    .col-6
+      = f.input :nld_headers_soap_action
+
+  .row
+    .col-6
+      = f.input :nld_user
+    .col-6
+      = f.input :nld_password, input_html: { value: configuration.nld_password }
+
+  .row
+    .col-6
+      = f.input :nld_operation
+    .col-6
+      = f.input :nld_response_path
+
+  %hr{'aria-hidden':'true'}
+
+  %h4.h5
+    = Integration::Expenses::Configuration.human_attribute_name(:npd)
+
+  .row
+    .col-6
+      = f.input :npd_wsdl, autofocus: true
+    .col-6
+      = f.input :npd_headers_soap_action
+
+  .row
+    .col-6
+      = f.input :npd_user
+    .col-6
+      = f.input :npd_password, input_html: { value: configuration.npd_password }
+
+  .row
+    .col-6
+      = f.input :npd_operation
+    .col-6
+      = f.input :npd_response_path
+
+  %hr{'aria-hidden': 'true'}
+
+  %h4.h5
+    = Integration::Expenses::Configuration.human_attribute_name(:budget_balance)
+
+  .row
+    .col-6
+      = f.input :budget_balance_wsdl, autofocus: true
+    .col-6
+      = f.input :budget_balance_headers_soap_action
+
+  .row
+    .col-6
+      = f.input :budget_balance_user
+    .col-6
+      = f.input :budget_balance_password, input_html: { value: configuration.budget_balance_password }
+
+  .row
+    .col-6
+      = f.input :budget_balance_operation
+    .col-6
+      = f.input :budget_balance_response_path
+
+  %hr{'aria-hidden': 'true'}
+
+  .row
+    .col-md-6
+      = f.simple_fields_for :schedule do |s|
+        = s.input :cron_syntax_frequency, hint: true
+
+  .col-12
+    %p
+      %small
+        %em.text-muted
+          = t('.range_description')
+
+  %hr{'aria-hidden': 'true'}
+
+  .row
+    .col-12
+      = link_to t('.commands.cancel'), admin_integrations_root_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary float-right'

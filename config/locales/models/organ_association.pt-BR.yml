@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    attributes:
+
+      organ_association:
+        organ: Órgão
+        organ_association: Órgão Associado
+        _destroy: Excluir
+
+    errors:
+      models:
+        organ_association:
+          attributes:
+
+  organ_association:
+    select:
+      all: Todos os órgãos

@@ -1,0 +1,7 @@
+.nested-fields.my-3.list-group-item.align-items-start
+
+  .col-md-6
+    = f.association :organ_association, collection: organs_for_select
+
+  .col-md-3.mt-4
+    = render 'shared/components/btn_deleted', f: f

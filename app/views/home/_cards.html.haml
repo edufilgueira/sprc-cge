@@ -1,0 +1,79 @@
+= render 'transparency_portal'
+
+- content_for :card_tickets do
+  .row.mt-3
+    .col-md-6
+      %ul.list-unstyled
+        %li.small
+          = link_to t(".tickets.links.access.title"), transparency_sou_path
+
+        - # Escondendo link para chamados públicos
+        - # %li.small
+        - #   = link_to t(".tickets.links.public_tickets.title"), transparency_public_tickets_path(ticket_type: :sou)
+
+    .col-md-6
+      %ul.list-unstyled
+
+        %li.small
+          = link_to t(".tickets.links.what_is.title"), '/portal-da-transparencia/paginas/ouvidoria'
+
+- content_for :card_information_access do
+  .row.mt-3
+    .col-md-6
+      %ul.list-unstyled
+        %li.small
+          = link_to t(".information_access.links.access.title"), transparency_sic_path
+
+        %li.small
+          = link_to t(".information_access.links.law.title"), transparency_sic_path(anchor: 'lei-de-acesso-a-informacao')
+
+    .col-md-6
+      %ul.list-unstyled
+
+        %li.small
+          = link_to t(".information_access.links.what_is.title"), transparency_sic_path(anchor: 'o-que-e')
+
+        %li.small
+          = link_to t(".information_access.links.public_requests.title"), transparency_public_tickets_path(ticket_type: :sic)
+
+- content_for :card_ppa do
+  .row.mt-3
+    .col-md-6
+      %ul.list-unstyled
+        %li.small
+          = link_to t(".ppa.links.access.title"), ppa_root_path
+
+        %li.small
+          = link_to t(".ppa.links.how_to.title"), ppa_root_path
+
+    .col-md-6
+      %ul.list-unstyled
+
+        %li.small
+          = link_to t(".ppa.links.what_is.title"), ppa_root_path
+
+- content_for :card_support do
+  .row.mt-3
+    .col-md-6
+      %ul.list-unstyled
+        %li.small
+          = link_to t(".support.links.network.title"), transparency_contacts_path
+
+        %li.small
+          = link_to t(".support.links.social.title"), transparency_contacts_path
+
+    .col-md-6
+      %ul.list-unstyled
+
+        %li.small
+          = link_to t(".support.links.email.title"), transparency_contacts_path
+
+        %li.small
+          = link_to t(".support.links.a155.title"), transparency_contacts_path
+
+= render 'card', card: 'tickets', action: new_user_session_path(ticket_type: :sou), sub_action: new_ticket_session_path, card_text: {}, icon: 'fa-pencil'
+
+- transparency_portal_link = link_to t('.information_access.links.transparency.title'), transparency_root_path, target: '_blank'
+= render 'card', card: 'information_access', action: new_user_session_path(ticket_type: :sic), sub_action: new_ticket_session_path, card_text: { link: transparency_portal_link }, icon: 'fa-pencil'
+
+= render 'card', card: 'support', action: nil, sub_action: transparency_contacts_path, card_text: {}, icon: ''

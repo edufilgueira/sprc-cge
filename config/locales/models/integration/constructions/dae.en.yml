@@ -1,0 +1,35 @@
+en:
+  activerecord:
+    attributes:
+      integration/constructions/dae:
+        id_obra: 'Construction ID'
+        codigo_obra: 'Construction code'
+        contratada: 'Contractor'
+        data_fim_previsto: 'Estimated end'
+        data_inicio: 'Start date'
+        data_ordem_servico: 'Service Order Date'
+        descricao: 'Description'
+        dias_aditivado: 'Days additive'
+        latitude: 'Latitude'
+        longitude: 'Longitude'
+        municipio: 'City'
+        numero_licitacao: 'Bid Number'
+        numero_ordem_servico: 'Service Order Number'
+        numero_sacc: 'SACC No.'
+        percentual_executado: 'Percent executed'
+        prazo_inicial: 'Initial deadline'
+        secretaria: 'Secretariat/Agency'
+        status: 'Status'
+        tipo_contrato: 'Contract type'
+        valor: 'Value'
+        dae_status: Status
+        dae_status: Status
+
+  integration/constructions/dae:
+    dae_statuses:
+      waiting: 'Waiting Service Order'
+      canceled: 'Canceled'
+      done: 'Done'
+      in_progress: 'In progress'
+      finished: 'Finished'
+      paused: 'Paused'

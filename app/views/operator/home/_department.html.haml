@@ -1,0 +1,13 @@
+.ticket-card.card.mb-4
+  .card-block
+
+    .row
+      .col-12.col-lg-6
+        .content_with_label
+          .content-value
+            = department.title
+
+      .col-12.col-lg-6.text-right
+        - internal_tickets_without_answer(department).each do |ticket|
+          .ticket-link
+            = link_to t("ticket.protocol_title.#{ticket.ticket_type}", protocol: ticket.parent_protocol), operator_ticket_path(ticket)

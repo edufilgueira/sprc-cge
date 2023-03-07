@@ -1,0 +1,44 @@
+pt-BR:
+  shared:
+    transparency:
+
+      footer:
+        new_ticket:
+          sou:
+            title: Manifeste-se na Ouvidoria
+          sic: 
+            title: Solicite Acesso à Informação
+
+      menu_download:
+        xlsx: Baixar arquivo XLSX
+        csv: Baixar arquivo CSV
+
+      download_links:
+        xlsx:
+          title: 'Baixar planilha Excel com os dados'
+          hint: 'Utilize uma versão do Excel 7 em diante para abrir a planilha'
+
+        csv:
+          title: 'Baixar planilha CSV com os dados'
+
+        data_dictionary: 
+          title: Dicionário de Dados 
+
+      search:
+        hint: 'Obs: Esta busca desconsidera os demais filtros'
+
+        creditor_name:
+          contract: Busca pelo nome do contratado
+          convenant: Busca pelo nome do convenente
+          expense: Busca pelo nome do credor
+          daily: Busca pelo nome do beneficiário
+
+      tree_organizer:
+        title: Modo de exibição
+        default: Utilizando exibição padrão.
+        restore_default: Restaurar exibição padrão
+        select: Selecione para adicionar à exibição
+
+      survey_answer:
+        title: Gostou da página? <a href="#new_transparency_survey_answer">Clique aqui</a> e diga o que achou!
+

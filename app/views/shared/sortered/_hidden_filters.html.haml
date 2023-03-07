@@ -1,0 +1,11 @@
+- # o campos marcados como data-remote-content param são carregados e submetidos
+- # automaticamente pelo RemoteContent. É importante para casos como:
+- # - Usuário navega até determinada página;
+- # - Copia o valor da URL que dever ter um &page=x
+- # - Ao usar essa URL, o RemoteContent deve carregar com os mesmo filtros.
+- # Esse mesmo comportamento deve ser garantido ao compartilhar páginas no facebook.
+
+= hidden_field_tag(:sort_column, params[:sort_column], 'data-remote-content-param': '')
+= hidden_field_tag(:sort_direction, params[:sort_direction], 'data-remote-content-param': '')
+= hidden_field_tag(:page, params[:page], 'data-remote-content-param': '')
+= hidden_field_tag(:locale, params[:locale], 'data-remote-content-param': '')

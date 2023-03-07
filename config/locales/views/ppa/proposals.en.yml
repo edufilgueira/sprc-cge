@@ -1,0 +1,46 @@
+en:
+  ppa:
+    proposals:
+      new:
+        title: Create proposal
+        new: New proposal
+        related_objective: 'For which goal do you want to elaborate a strategy?'
+        select_a_theme: 'Choose one of the themes above to see related goals'
+        select_theme_and_region: 'Choose a theme and a goal to see related strategies'
+        back: 'Cancel'
+
+      comments:
+        success: 'Comment successfully registered. Thank you!'
+        failure: 'Comment not registered.'
+
+      votes:
+        success: 'Vote successfully registered. Thank you!'
+        failure: 'Vote not registered.'
+
+      vote:
+        closed:
+          zero: The proposal did not receive any votes.
+          one: The proposal received a single vote.
+          other: The proposal received %{count} votes.
+        voted:
+          one:   "<strong>You already voted.</strong> Your vote is the only one in this proposal."
+          other: "<strong>You already voted.</strong> You and %{count} citizens voted in this proposal."
+        vote: Add my vote
+
+      show:
+        title: Proposal details
+        strategy: Strategy
+        justification: Justification
+        vote: Vote in this strategy if you believe it should be prioritized
+        add_vote: Add my vote
+        comments: Comments
+        plan: Plan
+
+      create:
+        success: 'Proposal successfully registered'
+        failure: 'Proposal creation failed'
+
+
+      # filters
+      ensure_current_plan_open_for_proposals:
+        alert: 'The current Plan is not open to proposals at this time.'

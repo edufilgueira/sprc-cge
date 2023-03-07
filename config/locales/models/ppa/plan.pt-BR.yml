@@ -1,0 +1,31 @@
+pt-BR:
+  activerecord:
+    models:
+      ppa/plan:
+        one: Plano plurianual
+        other: Planos plurianuais
+
+    attributes:
+      ppa/plan:
+        start_year: Ano de início
+        end_year: Ano de término  
+        elaborating: Elaborando
+        monitoring: Monitorando
+        evaluating: Avaliando
+        revising: Revisando
+                   
+    errors:
+      models:
+        ppa/plan:
+          attributes:
+            base:
+              invalid_range: Período inválido, já existe um plano com data final maior do que a data desejada
+            end_year:
+              invalid_duration: Período deve ser de %{duration} anos
+  ppa/plan:
+    status:
+      elaborating: Elaborando
+      monitoring: Monitorando
+      evaluating: Avaliando
+      revising: Revisando
+

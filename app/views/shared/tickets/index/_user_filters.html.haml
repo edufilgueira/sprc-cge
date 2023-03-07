@@ -1,0 +1,37 @@
+- #
+- # status
+- #
+.col-12.col-lg-4.mb-3
+
+  - options = options_for_select(ticket_statuses_for_citizen, params[:status_for_citizen])
+  = label_tag :status_for_citizen, t('.select.status_for_citizen')
+  = select_tag :status_for_citizen, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.female') }
+
+
+- #
+- # deadline
+- #
+.col-12.col-lg-4.mb-3
+
+  - options = options_for_select(ticket_deadlines_for_select, params[:deadline])
+  = label_tag :deadline, t('.select.deadline')
+  = select_tag :deadline, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+
+- #
+- # organ
+- #
+.col-12.col-lg-4.mb-3
+
+  - options = options_for_select(organs_for_select, params[:organ])
+  = label_tag :organ, t('.select.organ')
+  = select_tag :organ, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+- #
+- # topic
+- #
+.col-12.col-lg-4.mb-3
+  - options = options_for_select(topic_by_id_for_select(params[:topic]), params[:topic])
+  - url = topics_api_v1_platform_topics_path(organ: params[:organ])
+  = label_tag :topic, t('.select.topic')
+  = select_tag :topic, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') , data: { input: 'filter_topic', url: url } }

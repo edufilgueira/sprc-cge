@@ -1,0 +1,39 @@
+.navbar {
+  position: relative;
+  display: flex;
+  padding: 0.5rem 1rem;
+  background-color: $app-green;
+}
+
+.navbar-bottom-line {
+  margin-bottom: 12px;
+
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid $app-yellow;
+}
+
+.navbar-toggleable-md {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.navbar-toggleable-md > .container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-toggler {
+  color: white;
+}
+
+.navbar-brand {
+  display: inline-block;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}

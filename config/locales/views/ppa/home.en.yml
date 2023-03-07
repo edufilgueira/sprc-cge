@@ -1,0 +1,120 @@
+en:
+  ppa:
+    home:
+      top_4_ppa:
+        cards:
+          cards:
+          elaborating:
+            title: ELABORATING
+            links:
+              link2:
+                title: Access Voting
+              title: '%{start_year} - %{end_year}'
+            icon: 'fa fa-2x fa-file-text-o'
+
+          monitoring:
+            title: MONITORING
+            links:
+              link2:
+                title: Access Monitoring
+              title: '%{start_year} - %{end_year}'
+            icon: 'fa fa-2x fa-eye'
+
+          evaluating:
+            title: AVALUATING
+            links:              
+              link2:
+                title: Access Evaluation
+              title: '%{start_year} - %{end_year}'
+            icon: 'fa fa-2x fa-check-square-o'
+
+          revising:
+            title: REVISING
+            links:
+              link2:
+                title: Access Review
+              title: '%{start_year} - %{end_year}'
+            icon: 'fa fa-2x fa-pencil-square-o'
+
+      show:
+        title: Take part in MAP
+
+      headline:
+        title: Citizen Participation
+        description: >
+          Welcome to the citizen participation area. Here you can follow workshops, assess, monitor and take part in the Multiannual Plan (MAP).
+
+      general:
+        cards:
+          ppa1:
+            title: Planning
+            icon: fa-file-text-o
+            class: 'ml-auto'
+
+          ppa2:
+            title: Monitoring
+            icon: fa-eye
+            class: ''
+
+          ppa3:
+            title: Assessing
+            icon: fa-check-square-o
+            class: 'mr-auto'
+
+        what_is:
+          title: What is participation?
+          description: >
+            It is a right entitled to all citizens to share the room for decisions regarding the different public policies with the Government.
+
+        why:
+          title: Why should I take part in it?
+          description: >
+            The citizen participation is essential for the joint creation of a better future for everyone. It is where the civil society can offer opinions, debate and built better public policies in collaboration with the Government.
+
+        what_is_ppa:
+          title: What is the Multiannual Plan (MAP)?
+          description: >
+            It is a plan to direct the governmental actions through goals and targets with a main focus on the improvement of results expected by society in each area of the State.
+
+        steps:
+          title: What are the stages of the MAP?
+          description: 'The Multiannual Plan has 4 stages:'
+          step: 'Stage %{i}:'
+          step1: >
+            The PPA is the basis that guides all governmental actions, setting up the expected results and the priority offers of goods and services
+          step2: >
+            After it has been designed, the budgetary laws will determine how much should be spent so that the expected results are met
+          step3: >
+            After it has been concluded, the State of Ceará budgetary implementation can be monitored and assessed as to whether the goals are being achieved, so that they indeed are, in the end
+          step4: >
+            Through monitoring, and afterwards, the assessment, society can exercise their right to citizenship and determine whether the Government is able to fulfill social needs and interests
+
+      workshops:
+        title: MAP Workshops
+        description: >
+          The Regional Workshops are moments for meetings, debates, assessment and suggestions. It is when the government reaches people to hear more about what they think and propose as a means of improvement of the services offered.
+        links: Quick access
+        last: View the latest workshop (%{name}, %{date})
+        counter: for the beginning of the PPA workshops
+        see_more: Check workshops
+        coming_soon: 'Find more information about the MAP Workshops soon!'
+        soon: 'Soon'
+
+      map:
+        title: Choose an area and a MAP biennium
+        city: City
+        biennium: Biennium
+        hint: >
+          Choose a city in order to find the corresponding area. Or click on an area on the map.
+
+        hint_mobile: >
+          Choose a city in order to find the corresponding area.
+
+        see_more: Take part in the MAP in this area
+
+      bienniums:
+        strategies: Strategies
+        initiatives: Initiatives
+        products: Products
+        proposals: Proposals
+        biennium: 'Biennium: %{biennium}'

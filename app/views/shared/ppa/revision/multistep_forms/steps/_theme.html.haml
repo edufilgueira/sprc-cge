@@ -1,0 +1,34 @@
+.form-card
+  - human_attr = model_class.human_attribute_name(:theme)
+  -# options = options_for_select(axes_for_select(plan))
+  = hidden_field_tag :url_api_strategic_result, strategic_result_api_v1_ppa_index_path
+  = hidden_field_tag :url_api_theme_description, theme_description_api_v1_ppa_index_path
+  = hidden_field_tag :url_api_link_report, link_report_api_v1_ppa_index_path
+  = hidden_field_tag :url_api_problem_situations, problem_situations_api_v1_ppa_index_path
+  = hidden_field_tag :url_api_regional_strategy, regional_strategies_api_v1_ppa_index_path
+  = hidden_field_tag :url_themes_list, ppa_revision_themes_list_path
+  = hidden_field_tag :theme_id_url, theme_param
+  = hidden_field_tag :axis_id_url, axis_param
+  = hidden_field_tag :url_api_has_theme_report, has_theme_report_api_v1_ppa_index_path
+
+
+  .col-lg-12
+    %h3#theme_title= t('.title')
+    %p= t('.description')
+
+    .row
+      .col-6
+        %h4= t('.axes')
+        #list-tab.list-group{:role => "tablist", list: 'axes'}
+          - for axis in axes_for_select(plan.id)
+            %a.list-axes{theme_step_axis_listtab_attr(axis[1]), axis_id: axis[1]}
+              = axis[0]
+
+      .col-6
+        %h4= t('.themes')
+        #nav-tabContent.tab-content
+          - for axis in axes_for_select(plan.id)
+            .list-axis#list-axis{ theme_step_theme_listtab_attr(axis[1])}
+
+%input.previous.action-button-previous{multisteps_previous_btn}
+%input.next.action-button.next-step2{multisteps_next_btn}

@@ -1,0 +1,44 @@
+pt-BR:
+  ppa:
+    breadcrumbs:
+      region_with_biennium: "%{biennium} - %{region}"
+
+      home:
+        show:
+          title: Participação Cidadã (PPA)
+
+      workshops:
+        index:
+          title: Encontros Regionais de elaboração
+
+      past_workshops:
+        index:
+          title: Encontros Regionais de elaboração
+
+      proposal_themes:
+        index:
+          title: Proposição Temática   
+          themes: Temas
+
+      proposals:
+        index:
+          title: Propostas
+        new:
+          title: Nova proposta
+        show:
+          title: Detalhes proposta
+
+      votings:
+        index:
+          title: Votações
+        new:
+          title: Nova Votação
+        show:
+          title: Detalhes votação
+
+      plans:
+        title: "Participe do PPA %{ppa_name}"
+
+      revision:
+        informations:
+          title: Revisão de estratégias regionais

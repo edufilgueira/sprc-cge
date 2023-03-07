@@ -1,0 +1,38 @@
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-12.col-md-9
+            %h3.card-title
+              = survey_answer_export.title
+
+              %span.badge.badge-orange
+                = survey_answer_export.created_at
+
+          .col-12.col-md-3
+            .float-right
+
+              - if survey_answer_export.success?
+                = link_to t('commands.download'), download_admin_survey_answer_export_url(survey_answer_export, format: survey_answer_export.worksheet_format.to_sym), class: 'btn text-success btn-link'
+
+              - if can?(:manage, survey_answer_export) && (survey_answer_export.success? || survey_answer_export.error?)
+                = link_to t('commands.remove'), admin_survey_answer_export_path(survey_answer_export), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link'
+
+      .card-block
+
+        .row
+          .col-12
+            = dash_content_with_label(survey_answer_export, :start_at, format: :date)
+
+        .row
+          .col-12
+            = dash_content_with_label(survey_answer_export, :ends_at, format: :date)
+
+        .row
+          .col-12
+            = content_with_label(survey_answer_export, :user_title)

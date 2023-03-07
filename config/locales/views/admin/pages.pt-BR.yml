@@ -1,0 +1,104 @@
+pt-BR:
+
+  admin:
+
+    pages:
+      create:
+        title: Nova página
+        done: "A página '%{title}' foi criada."
+        error: Falha ao criar a página
+      destroy:
+        done: "A página '%{title}' foi removida."
+      form:
+        commands:
+          cancel: < Voltar a lista de páginas
+          create: Criar página
+        attachments:
+          title: Anexos
+        select:
+          parent_menu: Selecione a página
+          label: Selecione uma página para hierarquia de menu
+          hint: Caso não selecionar nenhuma, a página irá aparecer no menu principal
+        add_attachment: Adicionar anexo
+        add_chart: Adicionar gráfico
+        charts:
+          title: Gráficos
+        insert_collapse: Como inserir um componente "collapse"
+      attachment_fields:
+        file:
+          hint: 'A soma dos anexos inseridos no sistema não pode ultrapassar o limite de 50MB.'
+      index:
+        title: Páginas
+
+        commands:
+          new: Nova página
+
+        table:
+          summary: Lista paginada com todos as páginas
+          caption: Tabela contendo todos as páginas
+          header:
+            title: Título
+            content: Conteúdo
+            commands: ''
+            status: ''
+
+      new:
+        title: Nova página
+      edit:
+        title: Edição
+      update:
+        title: Edição de página
+        done: "A página '%{title}' foi atualizada."
+        error: Falha ao atualizar a página
+      show:
+        title: Exibição da página
+        attachments:
+          title: Anexos
+          none: Nenhum arquivo
+
+      page_chart_fields:
+        series_data:
+          title: Séries
+        add_series_datum: Adicionar série
+        remove_chart: Remover gráfico
+
+      page_series_item_fields:
+        remove_series_item: Remover item
+
+      page_series_datum_fields:
+        series_items:
+          title: Itens
+        add_series_item: Adicionar item
+        remove_series_datum: Remover série
+
+      collapse_template:
+        instructions: |
+          1. Copie o conteúdo HTML abaixo
+          2. No editor de texto, clique em "Código-Fonte"
+          3. Cole o conteúdo copiado no editor de texto
+          4. Substitua pelo título desejado onde está escrito "[COLOQUE O TÍTULO AQUI]"
+          5. Substitua pelo conteúdo desejado onde está escrito "[COLOQUE O CONTEÚDO AQUI]"
+        template: >
+          <div class="row">
+            <div class="col-12">
+              <div class="card card-collapse">
+                <div class="card-header collapse-icons" id="headingOne">
+                  <h3 class="card-title">
+                    <a class="btn btn-primary btn-link" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse_1" href="#collapse_1">
+                      [COLOQUE O TÍTULO AQUI]
+                      <i class="fa fa-caret-down card-collapse-icon-down"></i>
+                      <i class="fa fa-caret-up card-collapse-icon-up"></i>
+                    </a>
+                  </h3>
+                </div>
+                <div aria-labelledby="collapse_1" class="card-block collapse" id="collapse_1">
+                  <div class="card-body">
+                    <p>
+                    [COLOQUE O CONTEÚDO AQUI]
+                    </p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+

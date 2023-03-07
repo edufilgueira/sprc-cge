@@ -1,0 +1,75 @@
+es:
+
+  sessions:
+    form:
+      title: Acesse seu perfil
+      confirmation_instructions: Reenviar instruções de confirmação de perfil
+      forgot: ¿Olvidaste tu contraseña?
+
+      login:
+        title: Acceder al Perfil
+        action: Inicio de Sesión
+        facebook: Inicio de Sesión con Facebook
+
+      register:
+        action: ¿Todavía no tiene perfil?
+
+      identified_login:
+        sou:
+          title: Manifestación sin perfil
+          description: Envie una Manifestación sin posuir un perfil, pero informando sus datos personales.
+          action: Realizar manifestación sin perfil
+        sic:
+          title: Solicitud sin perfil
+          description: Envie una Solicitud sin posuir un perfil, pero informando sus datos personales.
+          action: Realizar solicitud sin perfil
+        denunciation:
+          title: Informe sin perfil
+          description: Envía un Informe sin necesidad de tener un perfil, pero informando tus datos personales.
+          action: Informe sin perfil
+
+      protocol_login:
+        sou:
+          title: Manifestación anónima
+          action: Realizar manifestación anónima
+          description: >
+            Si no tiene registro, puede enviar una solicitud anónima.
+            Ningún dato personal será solicitado.
+        sic:
+          title: Manifestación anónima
+          action: Realizar manifestación anónima
+          description: >
+            Si no tiene registro, puede enviar una solicitud anónima.
+            Ningún dato personal será solicitado.
+        denunciation:
+          title: Informes anónima
+          action: Hacer denuncia anónima
+          description: >
+            Póngase en contacto con nosotros de forma anónima. Puede enviar un informe anónimo.
+            No es necesario registrarse ni proporcionar datos personales.
+    new:
+      title: Acceder al Perfil
+
+      ticket_types:
+        sic:
+          title: Nueva solicitud de Acceso a la Información
+          description: 'Para solicitar acceso a informaciones, usted precisa acceder a la plataforma con su perfil.'
+
+        sou:
+          title: Nueva manifestación de Oidoría
+          description: 'Para abrir una manifestación en la Oidoría Digital, usted puede acceder su perfil o continuar de forma anónima.'
+
+        denunciation:
+          title: Nuevo informe del Defensor del Pueblo
+          description: 'Para presentar una denuncia, puede acceder a su perfil, identificarse sin necesidad de un perfil o continuar de forma anónima.'
+
+    create:
+      title: Acceder al Perfil
+      ticket_types:
+        sou:
+          title: Nueva manifestación de Oidoría
+          description: 'Para abrir una manifestación en la Oidoría Digital, usted puede acceder su perfil o continuar de forma anónima.'
+
+        denunciation:
+          title: Nuevo informe del Defensor del Pueblo
+          description: 'Para presentar una denuncia, puede acceder a su perfil, identificarse sin necesidad de un perfil o continuar de forma anónima.'

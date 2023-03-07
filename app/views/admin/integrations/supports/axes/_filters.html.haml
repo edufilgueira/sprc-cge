@@ -1,0 +1,22 @@
+.card-filters
+
+  - #
+  - # sort params
+  - #
+  = render 'shared/sortered/hidden_filters'
+
+  .row
+    .col-6
+      = text_field_tag(:search, params[:search], placeholder: t('.search.label'), class: 'form-control w-100 mb-3', title: t('.search.label'))
+
+    .col-6
+      = f.submit t('commands.search'), class: 'btn btn-primary btn-block'
+
+
+  - filtered = (params[:search].present?)
+
+  - if filtered
+    .my-4
+      .alert.alert-warning
+        = raw t('messages.filters.warning_count', total: number_with_delimiter(total_count), filtered: number_with_delimiter(filtered_count))
+        = link_to t('messages.filters.clear'), '#!', 'data-input': 'clear-filter', class: 'float-right'

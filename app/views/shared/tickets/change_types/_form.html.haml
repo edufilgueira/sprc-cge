@@ -1,0 +1,29 @@
+= javascript_include_tag('ckeditor/init')
+
+= simple_form_for ticket, url: send("#{namespace}_ticket_change_types_path", ticket), method: :post do |f|
+
+  .card.card-custom
+
+    .card-header
+
+      %h2.card-title
+
+        = t(".#{ticket_original_type}.title")
+
+    .card-block
+
+      .content
+
+        - if ticket_original_type == 'sic'
+          .row
+            .col-12
+
+              = render 'shared/tickets/sou_types_toggle_without_popover', ticket: ticket, field_name: "ticket[sou_type]", f: f, anonym: false
+
+              .content{'data-content': 'denunciation_ticket_type_content'}
+                = render 'shared/tickets/denunciation_ticket_type_content', f: f, attendance_155: false
+
+  .row.mt-4
+    .col-12
+      = link_to t('.cancel'), send("#{namespace}_ticket_path", ticket), class: 'btn btn-warning float-left'
+      = f.submit t('.submit'), class: 'btn btn-primary float-right px-5'

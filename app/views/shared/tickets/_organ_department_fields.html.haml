@@ -1,0 +1,41 @@
+%div{ 'data-content': 'organ' }
+  .row
+    .col-lg-7
+      - organ_select_text = t('shared.tickets.form.fields.organ.select')
+      / -# rede_ouvir_select_text = t('shared.tickets.form.fields.rede_ouvir.select')
+      - data = { 'input': 'organ', 'dependent-select': 'subnets', 'child-container': '[data-dependent-select-child=subnets]', 'param-name': 'organ_id', 'url': api_v1_subnets_path(subnet: true) }
+
+      - unless current_user&.sectoral_rede_ouvir?
+        = f.association :organ, prompt: organ_select_text, collection: organs_for_select_with_subnet_info, input_html: { data: data, 'aria-label': organ_select_text }
+
+      / -# else
+      /   =# f.association :organ, prompt: rede_ouvir_select_text, collection: organs_rede_ouvir_for_select, input_html: { data: data, 'aria-label': rede_ouvir_select_text }
+
+    .col-lg-5.pt-4
+      = f.input :unknown_organ, wrapper_html: { class: 'bg-faded rounded my-1 px-2 pt-2 pb-1' }, input_html: { class: 'mr-2', 'data-input': 'unknown_organ' }, label_html: { class: 'd-block' }
+
+  -if user_enabled_to_view_topic(current_user)
+    .row{'data-content': 'topic'}
+      .col-lg-7
+        -# autoload em ticket-classification-helper.js
+        = f.association :citizen_topic, { input_html: { 'data-placeholder': t('messages.form.select'), 'data-input': 'topic', 'data-url': topics_api_v1_operator_classifications_path, 'data-param-name': 'organ', 'data-text': f.object.name }}
+      .col-lg-5.pt-4
+        .bg-faded.rounded.my-1.px-2.pt-2.pb-1
+          = check_box_tag 'unknown_topic', '1', @unknown_topic, class: 'mr-2', 'data-input': 'unknown_topic'
+          = label_tag 'unknown_topic', t('shared.tickets.form.fields.topic.unknown')
+
+
+  .row{'data-content': 'subnet'}
+    .col-lg-8
+      - subnet_select_text = t('shared.tickets.form.fields.subnet.select')
+      - data = { 'input': 'subnet', 'dependent-select-child': 'subnets', 'dependent-select-blank': subnet_select_text }
+      - organ = f.object.organ
+
+      - subnet_selected = params[:ticket].try(:[], :subnet_id)
+      = f.association :subnet, prompt: subnet_select_text, collection: subnets_by_organ_for_select(organ), selected: subnet_selected, input_html: { data: data, 'aria-label': subnet_select_text }
+
+    .col-lg-4.pt-4
+      = f.input :unknown_subnet, wrapper_html: { class: 'bg-faded rounded my-1 px-2 pt-2 pb-1' }, input_html: { class: 'mr-2', 'data-input': 'unknown_subnet2' }, label_html: { class: 'd-block' }
+      = label_tag(:lbl_organ_selected, '', {class: 'bg-faded rounded my-1 px-2 pt-2 pb-1',  id: 'lbl_organ_selected'})
+
+

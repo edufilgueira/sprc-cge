@@ -1,0 +1,31 @@
+es:
+  activerecord:
+    attributes:
+      integration/revenues/account:
+        conta_corrente: Conta corrente
+
+  integration/revenues/account:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Receitas %{year}'
+
+          header:
+            year: Año
+            month: Mes
+            unidade: Órgano
+            poder: Poder
+            administracao: Administración
+            conta_contabil: Cuenta contable
+            titulo: Título
+            natureza_da_conta: Naturaleza de la cuenta
+            conta_corrente: Cuenta Corriente
+            natureza_credito: Naturaleza del credito
+            valor_credito: Valor del credito
+            natureza_debito: Naturaleza del débito
+            valor_debito: Valor del débito
+            valor_inicial: Valor inicial
+            natureza_inicial: Naturaleza inicial
+            codigo_natureza_receita: Código de la naturaleza del ingreso
+            natureza_receita: Naturaleza del ingreso
+

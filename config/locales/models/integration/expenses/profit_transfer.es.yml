@@ -1,0 +1,31 @@
+es:
+  activerecord:
+    models:
+      integration/expenses/profit_transfer: 'Transferencias a Entidades con Fines de Lucro'
+
+  integration/expenses/profit_transfer:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Transferencias a Entidades con Fines de Lucro  %{year}'
+
+          header:
+            exercicio: Ejercicio
+            date_of_issue: Fecha de emisión
+            management_unit_title: Secretaría/Órgano
+            budget_unit_title: Unidad presupuestaria
+            executing_unit_title: Unidad ejecutora
+            creditor_nome: Acreedor
+            function_title: Función
+            sub_function_title: Subfunción
+            government_program_title: Programa de gobierno
+            government_action_title: Acción de gobierno
+            administrative_region_title: Región administrativa
+            expense_nature_title: Naturaleza del gasto
+            resource_source_title: Fuente de recursos
+            expense_type_title: Tipo del gasto
+            calculated_valor_final: Valor final
+            calculated_valor_pago_final: Valor pagado final
+            calculated_valor_suplementado: Valor añadido
+            calculated_valor_anulado: Valor anulado
+            calculated_valor_pago_anulado: Valor pagado anulado

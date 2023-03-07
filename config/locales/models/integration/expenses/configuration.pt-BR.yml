@@ -1,0 +1,58 @@
+pt-BR:
+  activerecord:
+    models:
+      integration/expenses/configuration:
+        one: Configuração de Despesas
+
+    attributes:
+      integration/expenses/configuration:
+
+        npf: NPF - Nota de Programação Financeira
+        npf_wsdl: WSDL
+        npf_headers_soap_action: SOAPAction
+        npf_operation: Nome do método SOAP
+        npf_response_path: Caminho da resposta
+        npf_user: Usuário
+        npf_password: Senha
+
+        ned: NED - Nota de Empenho de Despesas
+        ned_wsdl: WSDL
+        ned_headers_soap_action: SOAPAction
+        ned_operation: método
+        ned_response_path: Caminho da resposta
+        ned_user: Usuário
+        ned_password: Senha
+
+        nld: NLD - Nota de Liquidação de Despesas
+        nld_wsdl: WSDL
+        nld_headers_soap_action: SOAPAction
+        nld_operation: método
+        nld_response_path: Caminho da resposta
+        nld_user: Usuário
+        nld_password: Senha
+
+        npd: NPD - Nota de Pagamento de Despesas
+        npd_wsdl: WSDL
+        npd_headers_soap_action: SOAPAction
+        npd_operation: método
+        npd_response_path: Caminho da resposta
+        npd_user: Usuário
+        npd_password: Senha
+
+        budget_balance: Saldo Orçamentário
+        budget_balance_wsdl: WSDL
+        budget_balance_headers_soap_action: SOAPAction
+        budget_balance_operation: método
+        budget_balance_response_path: Caminho da resposta
+        budget_balance_user: Usuário
+        budget_balance_password: Senha
+
+        started_at: Início
+        finished_at: Fim
+
+    errors:
+      models:
+        integration/expenses/configuration:
+          attributes:
+            finished_at:
+              youngest: A data de finalização deve ser posterior a data de início

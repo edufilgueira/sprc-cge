@@ -1,0 +1,5 @@
+en:
+  activerecord:
+    attributes:
+      attendance_response:
+        description: Description of the event

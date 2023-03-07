@@ -1,0 +1,62 @@
+es:
+  shared:
+    answers:
+
+      form:
+        description:
+          internal: Insertar posicionamiento
+          default: Insertar respuesta
+        save:
+          internal: Enviar posicionamiento
+          default: Enviar respuesta
+
+      form_fields:
+        add_attachment: Adicionar adjunto
+        attachment_letter:
+          sic: Solicitud de información con respuesta por carta. Oligatório adjunto de la carta
+          sou: Manifestación con respuesto por carta. Oligatório adjunto de la carta
+
+      existent_attachments:
+        add: Adjuntar archivos existentes
+
+      answer:
+        title:
+          sectoral:
+            sic: '%{type} enviada por el comité sectorial SIC %{organ}'
+            sou: '%{type} enviada por la Oidoría %{organ}'
+          department:
+            sic: 'Posicionamiento elaborado por el área interna %{department}'
+            sou: 'Posicionamiento elaborado por el área interna %{department}'
+          subnet:
+            sic: '%{type} enviado por el comité sectorial SIC %{subnet}'
+            sou: '%{type} enviada por la Oidoría %{subnet}'
+          subnet_department:
+            sic: 'Posicionamiento elaborado por el área internaa %{department}'
+            sou: 'Posicionamiento eelaborado por el área interna %{department}'
+          cge:
+            sic: '%{type} enviada por la CGE'
+            sou: '%{type} enviada por la CGE'
+          call_center:
+            sic: '%{type} enviada por la Oidoría 155'
+            sou: '%{type} enviada por la Oidoría 155'
+        justification: Consideraciones
+        answer_evaluated_by: 'Por %{name}'
+
+      evaluations:
+        evaluation_form:
+          save: Enviar encuesta
+          saving: Enviando...
+
+      answer_awaiting:
+        attachments: Adjuntos
+        classification:
+          title: "%{ticket_title} - Classificación"
+        answer: Contenido de la respuesta
+        original_answer: Contenido original de la respuesta o posicionamiento
+        justification: Consideraciones
+        approve: Aprobar
+        reject: Devolver
+
+
+      positioning_fields:
+        positioning: Enviar posicionamiento como un área interna

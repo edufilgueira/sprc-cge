@@ -1,0 +1,16 @@
+en:
+  transparency:
+    open_data:
+      data_sets:
+        index:
+          title: Open Data
+          table:
+            summary: Open datasets list
+            header:
+              author: Author
+              title: Title
+              organ: Agency
+              source_catalog: Source catalog
+
+        show:
+          title: Open data show

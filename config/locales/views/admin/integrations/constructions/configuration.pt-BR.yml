@@ -1,0 +1,31 @@
+pt-BR:
+
+  admin:
+    integrations:
+      constructions:
+        configurations:
+
+          import:
+            done: A importação dos dados de obras está sendo processada em segundo plano
+          form:
+            label:
+              der: Informações de obras rodoviárias (DER)
+              dae: Informações de obras edificações (DAE)
+            hint:
+              response: 'Padrão: caminho/do/array'
+            commands:
+              cancel: Voltar para integrações
+          edit:
+            title: Configuração
+          update:
+            done: 'Configuração salva com sucesso.'
+          show:
+            edit: Configurar
+            created_at: Criado
+            title: Configuração de obras
+            import: Importar agora
+            hide_show: Mostrar/Esconder log
+            empty: Nenhuma importação realizada
+            label:
+              der: Informações de obras rodoviárias (DER)
+              dae: Informações de obras edificações (DAE)

@@ -1,0 +1,21 @@
+- title = t('.title')
+- content_for :title, title
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+= javascript_include_tag('ckeditor/init')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = title
+
+      .card-block
+
+        .content
+
+          = render 'form', ticket: ticket, extension: extension

@@ -1,0 +1,100 @@
+@import 'base/variables';
+
+.operator-home-card {
+  padding: 10px;
+
+  border-radius: 4px;
+  border: 1px solid;
+
+  .operator-home-card-title {
+    font-size: 15px;
+  }
+
+  .operator-home-card-count {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  &.denunciation {
+    &[data-status=cosco_sectoral_attendance] {
+      background-color: $status-yellow-light;
+      color: $status-gray-text;
+      border-color: $status-gray-text;
+    }
+
+    &[data-status=cge_validation] {
+      background-color: $status-green-light;
+      color: $status-green-text;
+      border-color: $status-green-text;
+    }
+
+    &[data-status=waiting_referral] {
+      background-color: $status-blue-light;
+      color: $status-blue-text;
+      border-color: $status-blue-text;
+    }
+
+    &[data-status=awaiting_invalidation] {
+      background-color: $status-orange;
+      color: $status-gray-text;
+      border-color: $status-gray-text;
+    }
+  }
+
+  &[data-internal-status=partial_answer] {
+    background-color: $status-green-light;
+    color: $status-green-text;
+    border-color: $status-green-text;
+  }
+
+  &[data-internal-status=partial_answer_expired] {
+    background-color: $status-red-light;
+    color: $status-midred-text;
+    border-color: $status-midred-text;
+  }
+
+  &[data-internal-status=waiting_referral], &[data-internal-status=rede_ouvir_cge] {
+    background-color: $status-yellow-light;
+    color: $status-gray-text;
+    border-color: $status-gray-text;
+  }
+
+  &[data-internal-status=appeal], &[data-internal-status=reopened] {
+    background-color: $status-orange-light;
+    color: $status-gray-text;
+    border-color: $status-gray-text;
+  }
+
+  &[data-internal-status=awaiting_invalidation] {
+    background-color: $status-orange;
+    color: $status-gray-text;
+    border-color: $status-gray-text;
+  }
+
+}
+
+.ticket-deadline-status {
+  &[data-deadline-status=not_expired] {
+    background-color: $status-midblue-light;
+    color: $status-midblue-text;
+    border-color: $status-blue-text;
+  }
+
+  &[data-deadline-status=expired_can_extend] {
+    background-color: $status-midred-light;
+    color: $status-midred-text;
+    border-color: $status-red-light;
+  }
+
+  &[data-deadline-status=expired] {
+    background-color: $status-red-light;
+    color: $status-midred-text;
+    border-color: $status-midred-text;
+  }
+}
+
+.warning {
+  background-color: #FFEFBF;
+  color: #636057;
+  border-color: #636057;
+}

@@ -1,0 +1,12 @@
+en:
+
+  shared:
+
+    tickets:
+
+      reopen_tickets:
+
+        form:
+          justification: Justification
+          hint: Explain the reason for requesting 
+          save: Send

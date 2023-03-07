@@ -1,0 +1,28 @@
+es:
+  activerecord:
+    attributes:
+
+      organ:
+        acronym: Sigla
+        code: Código
+        description: Descripción
+        ignore_cge_validation: Manifestaciones SOU no pasan por la validación de la CGE
+        name: Nombre
+        subnet: Posue subred de oidoría
+
+    errors:
+      models:
+        organ:
+          attributes:
+
+  organ:
+    select:
+      all: Todos los órganos
+
+    secretary:
+      select:
+        all: Todas las secretarías
+
+    secretary_and_organ:
+      select:
+        all: Todas

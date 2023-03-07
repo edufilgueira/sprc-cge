@@ -1,0 +1,30 @@
+en:
+  activerecord:
+    attributes:
+      integration/revenues/account:
+        conta_corrente: Checking account
+
+  integration/revenues/account:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Income %{year}'
+
+          header:
+            year: Year
+            month: Month
+            unidade: Agency
+            poder: Power
+            administracao: Administration
+            conta_contabil: Accounting account
+            titulo: Title
+            natureza_da_conta: Account nature
+            conta_corrente: Checking account
+            natureza_credito: Credit nature
+            valor_credito: Credit value
+            natureza_debito: Debit nature
+            valor_debito: Debit value
+            valor_inicial: Initial value
+            natureza_inicial: Initial nature
+            codigo_natureza_receita: Income nature code
+            natureza_receita: Income nature

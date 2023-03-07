@@ -1,0 +1,139 @@
+@import 'base/variables';
+@import 'bootstrap/variables';
+
+.btn-group-justified {
+  display: flex;
+  width: 100%;
+
+  .btn, .btn-group {
+    flex: 1;
+
+    .btn {
+      width: 100%;
+    }
+    .dropdown-menu {
+      left: auto;
+    }
+
+    &.btn-secondary {
+      cursor: pointer;
+
+      &.active {
+        color: #fff;
+        background-color: $brand-primary;
+
+      }
+
+    }
+
+  }
+}
+
+.btn-wide {
+  padding: 0.7rem;
+}
+
+.btn-white {
+  background-color: white;
+  color: $app-green;
+}
+
+.btn-tertiary {
+  color: white;
+  background-color: $app-green;
+}
+
+.btn-orange {
+  color: white;
+  background-color: $app-yellow;
+}
+
+// finde better name
+.btn-uppercase {
+  font-size: 0.75em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn-facebook {
+  color: #fff;
+  background-color: #3b5998;
+  border-color: rgba(0,0,0,0.2);
+}
+
+.btn-social {
+  position: relative;
+  padding-left: 44px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:hover {
+    color: #eee;
+  }
+
+  :first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    padding: 7px;
+    font-size: 1.6em;
+    text-align: center;
+    border-right: 1px solid rgba(0,0,0,0.2);
+  }
+}
+
+.btn-pointer {
+  cursor: pointer;
+}
+
+.white-space-normal {
+  white-space: normal;
+}
+
+// from bs4
+.btn-outline-light {
+  color: #f8f9fa;
+  background-color: transparent;
+  background-image: none;
+  border-color: #f8f9fa;
+}
+
+.btn-outline-light:hover {
+  color: #212529;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+.btn-outline-light:not(:disabled):not(.disabled).active,
+.btn-outline-light:not(:disabled):not(.disabled):active,
+.show > .btn-outline-light.dropdown-toggle {
+  color: #212529;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+
+a {
+  &.btn-tertiary {
+    &:hover,
+    &:focus {
+      color: #fff;
+      opacity: 0.8;
+    }
+  }
+}
+
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  .button-title {
+    text-align: center;
+
+    a {
+      float: none;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.title')
+
+      .card-block
+
+        - if measurements.present?
+          .table-responsive
+            %table.table.table-hover.table-striped.table-sm.bg-faded
+
+              %thead
+
+                %tr
+
+                  - heads = [:numero_medicao, :ano_mes_date, :status, :status_medicao, :valor_medido]
+
+                  - heads.each do |head|
+                    %th
+                      = measurements.first.class.human_attribute_name(head)
+
+              %tbody
+
+                - measurements.order(:numero_medicao).each do |measurement|
+
+                  %tr
+                    %td
+                      = measurement.numero_medicao
+
+                    %td
+                      = l(measurement.ano_mes_date, format: :month_year)
+
+                    %td
+                      = measurement.status
+
+                    %td
+                      = measurement.status_medicao
+
+
+                    %td
+                      = measurement.valor_medido
+
+
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')

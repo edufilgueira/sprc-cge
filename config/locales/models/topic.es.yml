@@ -1,0 +1,13 @@
+es:
+  activerecord:
+    attributes:
+
+      topic:
+        name: Nombre
+        organ: Órgano
+        organ_name: Nombre del órgano
+
+    errors:
+      models:
+        topic:
+          attributes:

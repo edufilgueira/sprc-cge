@@ -1,0 +1,15 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.content-detail
+
+  .card.card-custom
+
+    .card-header
+
+      %h2.card-title
+        = t(".title")
+
+    .card-block
+
+      = render 'form', url: ppa_admin_votings_path(ppa_voting) , method_req: :post

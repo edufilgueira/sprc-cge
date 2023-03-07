@@ -1,0 +1,11 @@
+%tr
+  %td
+    - name = creditor.nome
+    = link_to name.truncate(80), admin_integrations_supports_creditor_path(creditor), title: name
+
+  %td
+    = link_to creditor.codigo, admin_integrations_supports_creditor_path(creditor)
+
+  %td
+    = link_to creditor.status, admin_integrations_supports_creditor_path(creditor)
+

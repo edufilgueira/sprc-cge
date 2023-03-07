@@ -1,0 +1,37 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:title, :organ, :author, :source_catalog, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: data_sets, sort_columns: sort_columns, table_locale: table_locale do |data_set|
+
+    - show_path = can?(:show, data_set) ? admin_open_data_data_set_path(data_set) : '#!'
+
+    %tr
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(data_set.title)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(data_set.organ.sigla)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(data_set.author)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(data_set.source_catalog)
+
+      %td
+        .float-right
+          - if can?(:edit, data_set)
+            = link_to t('commands.edit'), edit_admin_open_data_data_set_path(data_set, from: :index), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:destroy, data_set)
+            = link_to t('commands.remove'), admin_open_data_data_set_path(data_set), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link hover-link float-left d-inline-block'

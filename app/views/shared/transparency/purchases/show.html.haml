@@ -1,0 +1,111 @@
+- title = purchase.title.truncate(200)
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, title
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = title
+
+        .card-commands
+          = render 'shared/tickets/components/btn_print'
+
+
+      .card-block
+
+        .row
+          .col-12
+            = content_with_label(purchase, :nome_resp_compra)
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+
+          .col-12.col-sm-3
+            = content_with_label(purchase, :numero_publicacao)
+
+          .col-12.col-sm-3
+            = content_with_label(purchase, :numero_viproc)
+
+          .col-12.col-sm-6
+            = content_with_label(purchase, :num_termo_participacao)
+
+        .row
+
+          .col-12.col-sm-3
+            = content_with_label(purchase, :natureza_aquisicao)
+
+          .col-12.col-sm-9
+            = content_with_label(purchase, :nome_classe_material)
+
+        .row
+          .col-12
+            = content_with_label(purchase, :nome_grupo)
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+
+          .col-12.col-sm-3
+            = content_with_label(purchase, :codigo_item)
+
+          .col-9
+            = content_with_label(purchase, :descricao_item)
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+
+          .col-12.col-sm-6
+            = content_with_label(purchase, :nome_fornecedor)
+
+          .col-12.col-sm-3
+            = content_with_label(purchase, :cpf_cnpj_fornecedor)
+
+          .col-12.col-sm-3
+            = content_with_label(purchase, :tipo_fornecedor)
+
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(purchase, :data_publicacao)
+
+          .col-12.col-lg-4
+            = content_with_label(purchase, :data_finalizada)
+
+          .col-12.col-lg-4
+            = content_with_label(purchase, :data_carga)
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+
+          .col-12.col-lg-6
+            .content-with-label
+              %p.content-label
+                = purchase.class.human_attribute_name(:quantidade_estimada)
+              %p.content-value
+                = purchase.quantidade_estimada
+                - if purchase.unidade_fornecimento
+                  %small
+                    = "(#{purchase.unidade_fornecimento})"
+
+          .col-12.col-lg-6
+            = content_with_label(purchase, :valor_estimado)
+
+        .row
+
+          .col-12.col-lg-6
+            = content_with_label(purchase, :valor_unitario)
+
+          .col-12.col-lg-6
+            = content_with_label(purchase, :valor_total_calculated)

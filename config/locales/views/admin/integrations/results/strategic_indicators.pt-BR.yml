@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    integrations:
+      results:
+        strategic_indicators:
+          index:
+            title: Indicadores estratégicos

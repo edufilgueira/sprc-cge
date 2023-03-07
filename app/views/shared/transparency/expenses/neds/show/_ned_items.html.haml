@@ -1,0 +1,47 @@
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.title')
+
+      .card-block
+
+        - if ned_items.present?
+          %table.table.table-hover.table-sm.table-bordered.bg-faded{summary: t('.summary')}
+
+            %thead
+
+              %tr
+
+                - heads = [:sequencial, :especificacao, :unidade, :quantidade, :valor_unitario]
+
+                - heads.each do |head|
+                  %th
+                    = t(".table.heads.#{head}")
+
+            %tbody
+              - ned_items.each do |ned_item|
+                %tr
+                  %td
+                    = ned_item.sequencial
+                  %td
+                    = ned_item.especificacao
+                  %td
+                    = ned_item.unidade
+                  %td
+                    = ned_item.quantidade
+                  %td
+                    = number_to_currency(ned_item.valor_unitario)
+
+
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')

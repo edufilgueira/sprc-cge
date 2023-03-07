@@ -1,0 +1,33 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:day, :month, :title, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: holidays, sort_columns: sort_columns, table_locale: table_locale do |holiday|
+
+    - show_path = can?(:show, holiday) ? admin_holiday_path(holiday) : '#!'
+
+    %tr
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(holiday.day)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(holiday.month)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(holiday.title)
+
+      %td
+        .float-right
+          - if can?(:edit, holiday)
+            = link_to t('commands.edit'), edit_admin_holiday_path(holiday), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:destroy, holiday)
+            = link_to t('commands.remove'), admin_holiday_path(holiday), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link hover-link float-left d-inline-block'

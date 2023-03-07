@@ -1,0 +1,45 @@
+= cache(cache_key) do
+  .card-filters.filter-bar{'data-filter-bar': 'server_salaries'}
+
+    = form_for transparency_server_salaries_path, method: :get, remote: true do |f|
+
+      = render 'shared/sortered/hidden_filters'
+
+      .row
+        .col-12.col-lg-3
+          = label_tag(:month_year, t('messages.filters.select.month'))
+          = text_field_tag(:month_year, params[:month_year] || month_year, placeholder: params[:month_year], 'data-filter-bar-bypass-clear': '', class: 'form-control w-100 mb-3 month-datetimepicker')
+
+        .col-12.col-lg-3
+          - options = options_for_select(supports_organs_and_secretaries_for_select_with_all_option(true, :codigo_folha_pagamento), params[:cod_orgao])
+          - data = { 'dependent-select': 'server_roles', 'child-container': '[data-dependent-select-child=server_roles]', 'param-name': 'codigo_folha_pagamento', 'url': api_v1_integration_supports_server_roles_path }
+
+          = label_tag(:cod_orgao, Integration::Servers::ServerSalary.human_attribute_name(:organ_name))
+          = select_tag(:cod_orgao, options, data: data)
+
+        .col-12.col-lg-3
+          - options = options_for_select(integration_server_roles_for_select_with_all_option, params[:integration_supports_server_role_id])
+          - data = { 'dependent-select-child': 'server_roles', 'dependent-select-blank': I18n.t('shared.servers.filters.roles') }
+
+          = label_tag(:integration_supports_server_role_id, Integration::Servers::ServerSalary.human_attribute_name(:integration_supports_server_role_id))
+          = select_tag(:integration_supports_server_role_id, options, data: data)
+
+        .col-12.col-lg-3
+          - options = options_for_select(transparency_server_salaries_statuses_options_for_select_with_all_option, params[:functional_status])
+
+          = label_tag(:functional_status, Integration::Servers::Registration.human_attribute_name(:functional_status))
+          = select_tag(:functional_status, options)
+
+      .row.mt-3
+        .col-12.col-lg-9
+          = label_tag(:search, t('messages.filters.search.label'))
+          = text_field_tag(:search, params[:search], class: 'form-control w-100', 'data-filter-bar-ignore-submit-on-enter': 'true')
+          %small.form-text.text-muted
+            = t('.search.hint')
+
+
+        .col-12.col-lg-3
+
+          - # forma simples de align-bottom no botão de busca
+          .mt-4.pt-2
+            = f.submit t('commands.search'), class: 'btn btn-primary btn-block'

@@ -1,0 +1,5 @@
+es:
+  ppa:
+    workshops_helper:
+      same_duration: "%{date} de las %{start_at} hasta las %{end_at}"
+      different_duration: "%{start_at} hasta %{end_at}"

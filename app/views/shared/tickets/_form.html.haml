@@ -1,0 +1,130 @@
+= content_for :stylesheet, stylesheet_link_tag('views/shared/tickets/form')
+= content_for :javascript, javascript_include_tag('views/shared/tickets/form')
+
+= javascript_include_tag('ckeditor/init')
+
+= hidden_field_tag :ticket_type, ticket.ticket_type
+
+= hidden_field_tag :ticket_public, I18n.t('commands.alert_public_ticket')
+
+.row
+
+  .col-12
+
+
+    - # Informações de transparência
+
+    - if ticket.sic?
+
+      .card.card-custom
+
+        .card-block.pt-2.pb-2
+          %i.fa.fa-lg.fa-exclamation-circle.mr-2{'aria-hidden': 'true'}
+          = raw t('.sic_info', url: transparency_root_path)
+
+    - # Informações do cidadão
+
+    = render 'shared/tickets/person_info', f: f, namespace: namespace
+
+    - # Descrição da manifestação
+
+    - unless ticket.persisted? && current_user.sectoral?
+      .card.card-custom
+
+        .card-header
+
+          %h3.card-title
+            = t("shared.tickets.form.cards.#{ticket.ticket_type}.description.title")
+
+        .card-block
+
+          - # - Tipo de manifestação de Ouvidoria
+
+          - if ticket.sou?
+
+            .row
+              .col-12
+                = render 'shared/tickets/sou_types_toggle', ticket: ticket, field_name: "ticket[sou_type]", f: f, anonym: anonymous_param
+
+          .content{'data-content': 'general_ticket_type_content'}
+            = render 'shared/tickets/general_ticket_type_content', f: f
+
+
+          .content{'data-content': 'denunciation_ticket_type_content'}
+            = render 'shared/tickets/denunciation_ticket_type_content', f: f, attendance_155: false
+
+
+    - # Classificação do ticket
+    - if operator?(current_user)
+      = render 'shared/tickets/ticket_classification_fields', ticket: ticket, classification: classification, f: f
+
+
+    - # Anexos
+    .card.card-custom
+      .card-header
+
+        %h3.card-title
+          = t('shared.tickets.form.cards.attachments.title')
+
+      .card-block
+        .row
+          .col
+            = f.simple_fields_for :attachments do |attachment|
+              = render 'shared/tickets/attachment_fields', f: attachment
+
+            .links.mt-4
+              = link_to_add_association t('shared.tickets.form.add_attachment'), f, :attachments, partial: 'shared/tickets/attachment_fields'
+
+    - #
+    - # Resposta imediata do operador
+    - # Habilitado para operadores cge, setoriais de orgãos e unidades(subrede)
+    - #
+    - if can? :immediate_answer, Ticket
+      .card.card-custom{ data: { content: 'answer-completed', 'user-operator-type': current_user.operator_type, 'user-organ': current_user.organ_id, 'user-department': current_user.department_id, 'user-subnet': current_user.subnet_id } }
+        .card-header
+          %h3.card-title
+            = t('.cards.answer.title')
+
+        .card-block
+          = f.simple_fields_for :answers do |answer|
+            = render 'shared/tickets/answer_fields', f: answer, ticket: ticket
+
+
+    - # Informações de contato
+    - unless anonymous_param
+      %div{"data-content": :identified}
+        = render 'shared/tickets/contact_info', f: f, namespace: namespace
+
+
+    - # Informações do local da ocorrência
+    - if ticket_type == 'sou'
+      %div
+        = render 'shared/tickets/target_address', f: f, namespace: namespace
+
+
+    - # Privacidade & Termos
+    - unless operator?(current_user) || admin?(current_user)
+      .card.card-custom
+        .card-header
+          %h3.card-title
+            = t('shared.tickets.form.privacy_terms.title')
+
+        .card-block
+          .row
+            .col-12
+              .text-left
+                = check_box_tag 'checkbox-privacy-policy'
+                %label{ for: 'checkbox-privacy-policy' }
+                  = raw t("shared.tickets.form.privacy_terms.description", terms_url: transparency_page_path('termos-de-uso'))
+          .row.mt-4
+            .col-12
+              = recaptcha_tags hl: I18n.locale
+              .text-danger
+                %small
+                  = ticket.errors[:recaptcha].to_sentence
+
+    .row.my-4
+      .col-12.col-lg-6
+      .col-12.col-lg-6
+        - text = t("shared.tickets.form.commands.#{ticket_type}.create")
+        = f.submit text, class: 'btn btn-primary w-100', data: { submit: 'send_ticket'}

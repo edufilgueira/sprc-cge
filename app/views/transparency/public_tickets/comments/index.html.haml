@@ -1,0 +1,28 @@
+- content_for :title, t(".title")
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+
+.card.card-custom
+
+  .card-header
+
+    %h2.card-title
+      = t(".title")
+
+
+  .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+    .remote-content{'data-remote-content': controller_name}
+
+      = render "form"
+
+      - # o index é carregado como remote-content e está na partial ./_index
+
+      %hr{'aria-hidden': 'true'}
+
+      .remote-content-result.mb-4{ 'data-remote-content-result': controller_name }
+
+        .p-2.text-center.text-muted
+          .fa.fa-spin.fa-refresh.mx-1
+          = t('messages.loading')

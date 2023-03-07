@@ -1,0 +1,753 @@
+en:
+  shared:
+    notifications:
+
+      index:
+        title: List of notifications
+        empty: No notifications
+        breadcrumb_title: List of notifications
+        dropdown:
+          more: See all notifications
+
+      index_content:
+        table:
+          summary: List of notifications
+          header:
+            subject: Subject
+            created_at: Sent on
+
+      filters:
+        search:
+          placeholder: Search by topic or content
+        unread:
+          label: Show unread only
+
+      show:
+        mark_as_unread: Mark as unread
+
+      messages:
+
+        new_ticket:
+          ticket_area:
+            subject:
+              sic: "[%{protocol}] New Information request"
+              sou: "[%{protocol}] New Ombudsman manifestation"
+            body:
+              sic:
+                identified: 'You have opened a new Information request. Your protocol number is <a href="%{url}">%{protocol}</a>. Your password is %{password}'
+              sou:
+                identified: 'You have made a new Ombudsman manifestation. Your protocol number is <a href="%{url}">%{protocol}</a>. Your password is %{password}'
+                anonymous: 'You have made a new anonymous Ombudsman manifestation. Your protocol number is <a href="%{url}">%{protocol}</a>. Your password is %{password}'
+          platform:
+            subject:
+              sic: "[%{protocol}] New Information request"
+              sou: "[%{protocol}] New Ombudsman manifestation"
+            body:
+              sic:
+                identified: 'You have opened a new Information request. Your protocol number is <a href="%{url}">%{protocol}</a>. Your password is %{password}'
+              sou:
+                identified: 'You have made a new Ombudsman manifestation. Your protocol number is <a href="%{url}">%{protocol}</a>. Your password is %{password}'
+          operator:
+            subject:
+              sic: "[%{protocol}] New Information request"
+              sou: "[%{protocol}] New Ombudsman manifestation"
+            body:
+              sic:
+                identified: '%{name} has opened a new Information request. The protocol number is <a href="%{url}">%{protocol}</a>.'
+              sou:
+                identified: '%{name} has made a new Ombudsman manifestation. The protocol number is <a href="%{url}">%{protocol}</a>.'
+                anonymous: 'A new anonymous Ombudsman manifestation has been made. The protocol number is <a href="%{url}">%{protocol}</a>.'
+
+        answer:
+          ticket_area:
+            cge_approved:
+              subject:
+                sic: "[%{protocol}] Your request has been answered"
+                sou: "[%{protocol}] Your manifestation has been answered"
+              body:
+                sic: '%{user_name} has responded to your Information request <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} has responded to your Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+          platform:
+            cge_approved:
+              subject:
+                sic: "[%{protocol}] Your request has been answered"
+                sou: "[%{protocol}] Your manifestation has been answered"
+              body:
+                sic: '%{user_name} has responded to your Information request <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} has responded to your Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+          operator:
+            awaiting:
+              subject:
+                sic: "[%{protocol}] Information request answered"
+                sou: "[%{protocol}] Ombudsman manifestation answered"
+              body:
+                sic: '%{user_name} has responded to the Information request <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} has responded to the Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+            sectoral_rejected:
+              subject:
+                sic: "[%{protocol}] Position returned"
+                sou: "[%{protocol}] Position returned"
+              body:
+                sic: '%{user_name} has returned their position on the Information request <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} has returned their position on the Information request <a href="%{url}">%{protocol}</a>.'
+            sectoral_approved:
+              subject:
+                sic: "[%{protocol}] Position approved"
+                sou: "[%{protocol}] Position approved"
+              body:
+                sic: '%{user_name} has approved your position on the Information request <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} has approved your position on the Information request <a href="%{url}">%{protocol}</a>.'
+            subnet_rejected:
+              subject:
+                sic: "[%{protocol}] Position returned"
+                sou: "[%{protocol}] Position returned"
+              body:
+                sic: '%{user_name} has returned their position on your Information request <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} has returned their position on your Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+            subnet_approved:
+              subject:
+                sic: "[%{protocol}] Position approved"
+                sou: "[%{protocol}] Position approved"
+              body:
+                sic: '%{user_name} has approved your position on the Information request <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} has approved your position on the Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+            cge_rejected:
+              subject:
+                sic: "[%{protocol}] Response returned"
+                sou: "[%{protocol}] Response returned"
+              body:
+                sic: 'O %{user_name} has rejected a response to your Information request <a href="%{url}">%{protocol}</a>.'
+                sou: 'O %{user_name} has rejected a response to your Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+            cge_approved:
+              subject:
+                sic: "[%{protocol}] The request has been answered"
+                sou: "[%{protocol}] The manifestation has been answered"
+              body:
+                sic: '%{user_name} has responded to the Information request <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} has responded to the Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+
+        deadline:
+          late:
+            subject: "[%{protocol}] Service is late"
+            body: 'The service <a href="%{url}">%{protocol}</a> is %{deadline} days(s) late.'
+          in_time:
+            subject: "[%{protocol}] Remaining time for the service"
+            body: 'The time left for the service <a href="%{url}">%{protocol}</a> is %{deadline} day(s).'
+
+        transfer:
+          ticket_area:
+            subject:
+              sic: "[%{protocol}] Request sent"
+              sou: "[%{protocol}] Manifestation sent"
+            body:
+              sic: >
+                    <p>
+                    Your request has been sent to %{organ_name}
+                    </p>
+                    <p>
+                    Request <a href="%{url}">%{protocol}</a>
+                    </p>
+              sou: >
+                    <p>
+                    Your manifestation has been sent to %{organ_name}
+                    </p>
+                    <p>
+                    Manifestation <a href="%{url}">%{protocol}</a>
+                    </p>
+
+          platform:
+            subject:
+              sic: "[%{protocol}] Request sent"
+              sou: "[%{protocol}] Manifestation sent"
+            body:
+              sic: >
+                  <p>
+                  Your request has been sent to %{organ_name}.
+                  </p>
+                  <p>
+                  Request <a href="%{url}">%{protocol}</a>
+                  </p>
+              sou: >
+                  <p>
+                  Your manifestation has been sent to %{organ_name}.
+                  </p>
+                  <p>
+                  Manifestation <a href="%{url}">%{protocol}</a>
+                  </p>
+
+          operator:
+            subject:
+              sic: "[%{protocol}] Request sent"
+              sou: "[%{protocol}] Manifestation sent"
+            body:
+              sic: >
+                  <p>
+                  %{user_name} has sent you an Information request.
+                  </p>
+                  <p>
+                  Request <a href="%{url}">%{protocol}</a>
+                  </p>
+              sou: >
+                  <p>
+                  %{user_name} has sent you an Ombudsman manifestation.
+                  </p>
+                  <p>
+                  Manifestation <a href="%{url}">%{protocol}</a>
+                  </p>
+
+        share:
+          ticket_area:
+            subject:
+              sic: "[%{protocol}] Request forwarded"
+              sou: "[%{protocol}] Manifestation forwarded"
+            body:
+              sic: >
+                    <p>
+                    Your request has been forwarded to %{organ_name}
+                    </p>
+                    <p>
+                    Request <a href="%{url}">%{protocol}</a>
+                    </p>
+              sou: >
+                    <p>
+                    Your manifestation has been forwarded to %{organ_name}
+                    </p>
+                    <p>
+                    Manifestation <a href="%{url}">%{protocol}</a>
+                    </p>
+
+          platform:
+            subject:
+              sic: "[%{protocol}] Request forwarded"
+              sou: "[%{protocol}] Manifestation forwarded"
+            body:
+              sic: >
+                  <p>
+                  Your request has been forwarded to %{organ_name}.
+                  </p>
+                  <p>
+                  Request <a href="%{url}">%{protocol}</a>
+                  </p>
+              sou: >
+                  <p>
+                  Your manifestation has been forwarded to %{organ_name}.
+                  </p>
+                  <p>
+                  Manifestation <a href="%{url}">%{protocol}</a>
+                  </p>
+
+          operator:
+            subject:
+              sic: "[%{protocol}] Request forwarded"
+              sou: "[%{protocol}] Manifestation forwarded"
+            body:
+              sic: >
+                  <p>
+                  %{user_name} has forwarded an Information request to you.
+                  </p>
+                  <p>
+                  Request <a href="%{url}">%{protocol}</a>
+                  </p>
+              sou: >
+                  <p>
+                  %{user_name} has forwarded an Ombudsman manifestation to you.
+                  </p>
+                  <p>
+                  Manifestation <a href="%{url}">%{protocol}</a>
+                  </p>
+
+        referral:
+          ticket_area:
+            subject:
+              sic: "[%{protocol}] Request forwarded"
+              sou: "[%{protocol}] Manifestation forwarded"
+            body:
+              sic: >
+                    <p>
+                    Your request has been forwarded to %{department_name}
+                    </p>
+                    <p>
+                    Request <a href="%{url}">%{protocol}</a>
+                    </p>
+              sou: >
+                    <p>
+                    Your manifestation has been forwarded to %{department_name}
+                    </p>
+                    <p>
+                    Manifestation <a href="%{url}">%{protocol}</a>
+                    </p>
+
+          platform:
+            subject:
+              sic: "[%{protocol}] Request forwarded"
+              sou: "[%{protocol}] Manifestation forwarded"
+            body:
+              sic: >
+                  <p>
+                  Your request has been forwarded to %{department_name}.
+                  </p>
+                  <p>
+                  Request <a href="%{url}">%{protocol}</a>
+                  </p>
+              sou: >
+                  <p>
+                  Your manifestation has been forwarded to %{department_name}.
+                  </p>
+                  <p>
+                  Manifestation <a href="%{url}">%{protocol}</a>
+                  </p>
+
+          operator:
+            subject:
+              sic: "[%{protocol}] Request forwarded"
+              sou: "[%{protocol}] Manifestation forwarded"
+            body:
+              sic: >
+                  <p>
+                  %{user_name} has forwarded an Information request to you.
+                  </p>
+                  <p>
+                  Request <a href="%{url}">%{protocol}</a>
+                  </p>
+              sou: >
+                  <p>
+                  %{user_name} has forwarded an Ombudsman manifestation to you.
+                  </p>
+                  <p>
+                  Manifestation <a href="%{url}">%{protocol}</a>
+                  </p>
+
+            department:
+              subject:
+                sic: "[%{protocol}] Request forwarded"
+                sou: "[%{protocol}] Manifestation forwarded"
+              body:
+                sic: >
+                    <p>
+                    %{user_name} has forwarded an Information request to you. Click on the link below to offer a position.
+                    </p>
+                    <p>
+                    <a href="%{url}">Request %{protocol}</a>
+                    </p>
+                sou: >
+                    <p>
+                    %{user_name} has forwarded an Ombudsman manifestation to you. Click on the link below to offer a position.
+                    </p>
+                    <p>
+                    <a href="%{url}">Manifestation %{protocol}</a>
+                    </p>
+
+        invalidate:
+          ticket_area:
+            subject:
+              sic: "[%{protocol}] Request invalidated"
+              sou: "[%{protocol}] Manifestation invalidated"
+            body:
+              sic: '%{user_name} has invalidated your request <a href="%{url}">%{protocol}</a>.'
+              sou: '%{user_name} has invalidated your manifestation <a href="%{url}">%{protocol}</a>.'
+
+          platform:
+            subject:
+              sic: "[%{protocol}] Request invalidated"
+              sou: "[%{protocol}] Manifestation invalidated"
+            body:
+              sic: '%{user_name} has invalidated your request <a href="%{url}">%{protocol}</a>.'
+              sou: '%{user_name} has invalidated your manifestation <a href="%{url}">%{protocol}</a>.'
+
+          operator:
+            subject:
+              sic: "[%{protocol}] Request invalidated"
+              sou: "[%{protocol}] Manifestation invalidated"
+            body:
+              sic: '%{user_name} has invalidated the request <a href="%{url}">%{protocol}</a>.'
+              sou: '%{user_name} has invalidated the manifestation <a href="%{url}">%{protocol}</a>.'
+
+        appeal:
+          operator:
+            subject: "[%{protocol}] Request for recourse"
+            body: 'The citizen has asked for recourse on the Information request <a href="%{url}">%{protocol}</a>.'
+
+        reopen:
+          operator:
+            subject: "[%{protocol}] Manifestation reopened"
+            body: 'The citizen has reopened the Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+
+        extension:
+          in_progress:
+            ticket_area:
+              subject:
+                sic: "[%{protocol}] Request for extension"
+                sou: "[%{protocol}] Request for extension"
+              body:
+                sic: '%{user_name} has requested extension of the deadline for the Information request <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} has requested extension of the deadline for the Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+            platform:
+              subject:
+                sic: "[%{protocol}] Request for extension"
+                sou: "[%{protocol}] Request for extension"
+              body:
+                sic: '%{user_name} has requested extension of the deadline for the Information request <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} has requested extension of the deadline for the Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+            operator:
+              subject:
+                sic: "[%{protocol}] Request for extension"
+                sou: "[%{protocol}] Request for extension"
+              body:
+                sic: '%{user_name} has requested extension of the deadline for the Information request <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} has requested extension of the deadline for the Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+
+              chief:
+                subject:
+                  sic: "[%{protocol}] Request for extension"
+                  sou: "[%{protocol}] Request for extension"
+                body:
+                  sic: '%{user_name} has requested extension of the deadline for the Information request %{protocol}. <p><a href="%{url}">%{url}</a></p>'
+                  sou: '%{user_name} has requested extension of the deadline for the Ombudsman manifestation %{protocol}. <p><a href="%{url}">%{url}</a></p>'
+
+          approved:
+            ticket_area:
+              subject:
+                sic: "[%{protocol}] The deadline for your request has been extended"
+                sou: "[%{protocol}] The deadline for your manifestation has been extended"
+              body:
+                sic: 'Your Information request <a href="%{url}">%{protocol}</a> has been extended by the person in charge'
+                sou: 'Your Ombudsman manifestation <a href="%{url}">%{protocol}</a> has been extended by the person in charge'
+            platform:
+              subject:
+                sic: "[%{protocol}] The deadline for your request has been extended"
+                sou: "[%{protocol}] The deadline for your manifestation has been extended"
+              body:
+                sic: 'Your Information request <a href="%{url}">%{protocol}</a> has been extended by the person in charge'
+                sou: 'Your Ombudsman manifestation <a href="%{url}">%{protocol}</a> has been extended by the person in charge'
+            operator:
+              subject:
+                sic: "[%{protocol}] The deadline for your request has been extended"
+                sou: "[%{protocol}] The deadline for your manifestation has been extended"
+              body:
+                sic: 'The person in charge has approved the extension of the deadline for your Information request <a href="%{url}">%{protocol}</a>.'
+                sou: 'The person in charge has approved the extension of the deadline for your Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+
+          rejected:
+            ticket_area:
+              subject:
+                sic: "[%{protocol}] Extension rejected"
+                sou: "[%{protocol}] Extension rejected"
+              body:
+                sic: 'The extension of the deadline for your Information request <a href="%{url}">%{protocol}</a> has been rejected by the person in charge'
+                sou: 'The extension of the deadline for your Ombudsman manifestation <a href="%{url}">%{protocol}</a> has been rejected by the person in charge'
+            platform:
+              subject:
+                sic: "[%{protocol}] Extension rejected"
+                sou: "[%{protocol}] Extension rejected"
+              body:
+                sic: 'The extension of the deadline for your Information request  <a href="%{url}">%{protocol}</a> has been rejected by the person in charge'
+                sou: 'The extension of the deadline for your Ombudsman manifestation <a href="%{url}">%{protocol}</a> has been rejected by the person in charge'
+            operator:
+              subject:
+                sic: "[%{protocol}] Extension rejected"
+                sou: "[%{protocol}] Extension rejected"
+              body:
+                sic: 'The person in charge has rejected the extension of the deadline for your Information request <a href="%{url}">%{protocol}</a>.'
+                sou: 'The person in charge has rejected the extension of the deadline for your Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+
+        internal_comment:
+          subject: "[%{protocol}] You have a new internal comment"
+          body:
+            sic: '%{user_name} has posted a new comment on the Information request <a href="%{url}">%{protocol}</a>.'
+            sou: '%{user_name} has posted a new comment on the Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+
+        user_comment:
+          ticket_area:
+            subject:
+              sic: "[%{protocol}] You have a new comment on your Information request"
+              sou: "[%{protocol}] You have a new comment on your Ombudsman manifestation"
+            body:
+              sic: '%{user_name} has posted a new comment on the Information request <a href="%{url}">%{protocol}</a>.'
+              sou: '%{user_name} has posted a new comment on the Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+
+          platform:
+            subject:
+              sic: "[%{protocol}] New comment on the Information request"
+              sou: "[%{protocol}] New comment on the Ombudsman manifestation"
+            body:
+              sic: '%{user_name} has posted a new comment on the Information request <a href="%{url}">%{protocol}</a>.'
+              sou: '%{user_name} has posted a new comment on the Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+
+          operator:
+            subject:
+              sic: "[%{protocol}] New comment on the Information request"
+              sou: "[%{protocol}] New comment on the Ombudsman manifestation"
+            body:
+              sic: '%{user_name} has posted a new comment on the Information request <a href="%{url}">%{protocol}</a>.'
+              sou: '%{user_name} has posted a new comment on the Ombudsman manifestation <a href="%{url}">%{protocol}</a>.'
+
+        attendance_allocation:
+          ticket_area:
+            subject:
+              sic: '[%{protocol}] Your Information request has been allocated to attendant 155'
+              sou: '[%{protocol}] Your Ombudsman manifestation has been allocated to attendant 155'
+            body:
+              sic: 'The Information request <a href="%{url}">%{protocol}</a> has been allocated to attendant 155'
+              sou: 'The Ombudsman manifestation <a href="%{url}">%{protocol}</a> has been allocated to attendant 155'
+
+          platform:
+            subject:
+              sic: '[%{protocol}] Your Information request has been allocated to attendant 155'
+              sou: '[%{protocol}] Your Ombudsman manifestation has been allocated to attendant 155'
+            body:
+              sic: 'The Information request <a href="%{url}">%{protocol}</a> has been allocated to attendant 155'
+              sou: 'The Ombudsman manifestation <a href="%{url}">%{protocol}</a> has been allocated to attendant 155'
+
+          operator:
+            subject:
+              sic: '[%{protocol}] The Information request has been allocated to you'
+              sou: '[%{protocol}] The Ombudsman manifestation has been allocated to you'
+            body:
+              sic: 'The Information request <a href="%{url}">%{protocol}</a> has been allocated to you'
+              sou: 'The Ombudsman manifestation <a href="%{url}">%{protocol}</a> has been allocated to you'
+
+        partial_answer:
+          subject: Partially concluded manifestations
+          body: >
+            <p>
+            This is a reminder about your manifestations which are partially answered.
+            </p>
+            <p>
+            <a href="%{url}">Access your list of manifestations</a> and resume service as soon as possible.
+            </p>
+
+      public_ticket:
+
+        url_unfollow: '<a href="%{url}">Click here to turn off updates notifications</a>'
+
+        comment:
+          sic:
+            subject: 'The Information Request [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  New comment on the Information request %{protocol}.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Information request %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'The Ombudsman Manifestation [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  New comment on the Ombudsman manifestation %{protocol}.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Ombudsman manifestation %{protocol}</a>.
+                  </p>
+
+        share:
+          sic:
+            subject: 'The Information request [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Information Request [%{protocol}] has been shared with a State body.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Information request %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'The Ombudsman Manifestation [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Ombudsman Manifestation [%{protocol}] has been shared with a State body.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Ombudsman Manifestation %{protocol}</a>.
+                  </p>
+
+        transfer:
+          sic:
+            subject: 'The Information Request [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Information Request [%{protocol}] has been transferred to another State body.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Information request %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'The Ombudsman Manifestation [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Ombudsman Manifestation [%{protocol}] has been transferred to another State body.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Ombudsman Manifestation %{protocol}</a>.
+                  </p>
+
+        invalidate:
+          sic:
+            subject: 'The Information Request [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Information Request [%{protocol}] has been invalidated.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Information request %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'The Ombudsman Manifestation [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Ombudsman Manifestation [%{protocol}] has been invalidated.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Ombudsman Manifestation %{protocol}</a>.
+                  </p>
+
+        forward:
+          sic:
+            subject: 'The Information Request [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Information Request [%{protocol}] has been shared with a State body.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Information request %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'The Ombudsman Manifestation [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Ombudsman Manifestation [%{protocol}] has been shared with a State body.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Ombudsman Manifestation %{protocol}</a>.
+                  </p>
+
+        reopen:
+          sic:
+            subject: 'The Information Request [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Information Request [%{protocol}] has been reopened.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Information request %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'The Ombudsman Manifestation [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Ombudsman Manifestation [%{protocol}] has been reopened.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Ombudsman Manifestation %{protocol}</a>.
+                  </p>
+
+        extension:
+          sic:
+            subject: 'The Information Request [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The deadline for the Information Request [%{protocol}] has been extended.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Information request %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'The Ombudsman Manifestation [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The deadline for Ombudsman Manifestation [%{protocol}] has been extended.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Ombudsman Manifestation %{protocol}</a>.
+                  </p>
+
+        occurrence:
+          sic:
+            subject: 'The Information Request [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  New comment on the Information request %{protocol}.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Information request %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'The Ombudsman Manifestation [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  New comment on the Ombudsman manifestation %{protocol}.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Ombudsman Manifestation %{protocol}</a>.
+                  </p>
+
+        appeal:
+          sic:
+            subject: 'The Information Request [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  A recourse has been asked for the Information Request %{protocol}.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Information request %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'The Ombudsman Manifestation [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  A recourse has been asked for the Ombudsman Manifestation %{protocol}.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Ombudsman Manifestation %{protocol}</a>.
+                  </p>
+
+        change_sou_type:
+          sou:
+            subject: 'The Ombudsman Manifestation [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Ombudsman Manifestation %{protocol} has had its type changed.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Ombudsman Manifestation %{protocol}</a>.
+                  </p>
+
+        change_ticket_type:
+          sic:
+            subject: 'The Information Request [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Information Request %{protocol} has had its type changed.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Information request %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'The Ombudsman Manifestation [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Ombudsman Manifestation %{protocol} has had its type changed.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Information request %{protocol}</a>.
+                  </p>
+
+        answer:
+          sic:
+            subject: 'The Information Request [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Information Request %{protocol} has been answered.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Information request %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'The Ombudsman Manifestation [%{protocol}] has been updated'
+            body: >
+                  <p>
+                  The Ombudsman Manifestation %{protocol} has been answered.
+                  </p>
+                  <p>
+                  For further information, access the <a href="%{url}">Ombudsman manifestation %{protocol}</a>.
+                  </p>
+

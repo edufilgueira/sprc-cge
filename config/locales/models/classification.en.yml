@@ -1,0 +1,30 @@
+en:
+  activerecord:
+    attributes:
+
+      classification:
+        ticket: Manifestation/Request
+        topic: Topic
+        subtopic: Subtopic
+        department: Department
+        sub_department: Sub-department
+        budget_program: Budgetary program
+        service_type: Type of service
+        other_organs: It is not the responsibility of the State Executive Power
+
+        topic_name: Topic
+        subtopic_name: Subtopic
+        department_name: Department
+        sub_department_name: Sub-department
+        budget_program_name: Budgetary program
+        service_type_name: Type of service
+        other_organs_name: It is not the responsibility of the State Executive Power
+
+    models:
+      classification:
+        one: Classification
+
+    errors:
+      models:
+        classification:
+          attributes:

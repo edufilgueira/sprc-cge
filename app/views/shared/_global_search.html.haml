@@ -1,0 +1,24 @@
+
+
+.search-box.nav-search-container{ 'data-search-box': global_search_options[:search_box_id], 'data-search-value': '' }
+
+  - if global_search_options[:search_box_title].present?
+
+    = label_tag(:search, global_search_options[:search_box_title], class: 'font-weight-light')
+
+  .input-group
+    %input{ type: 'search', class: 'form-control w-100', placeholder: global_search_options[:search_box_placeholder] }
+
+    .search-box-search{ 'data-search-box-search': '' }
+      %i.fa.fa-search.fa-1-5x
+
+    .search-box-cancel{ 'data-search-box-cancel': '' }
+      %i.fa.fa-times.fa-1-5x
+
+  .search-box-sections{ 'data-search-box-sections': '' }
+
+    - search_groups = GlobalSearcher::SEARCHS_GROUPS.keys
+
+    - search_groups.each do |search_group|
+
+      .search-box-section{data: { 'search-box-section': search_group, title: t("messages.global_search.sections.#{search_group}"), url: global_searches_path(search_group: search_group) } }

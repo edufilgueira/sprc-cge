@@ -1,0 +1,9 @@
+.row
+  .col-12
+
+    .mb-3
+      %em
+        = t('.alert')
+
+    = link_to operator_ticket_denunciation_classification_path(ticket_id: ticket, denunciation_against_operator: true, acronym: ExecutiveOrgan::OMBUDSMAN_COORDINATION), method: :patch, 'data-confirm': t('.confirm_alert'), class: 'btn btn-primary w-100' do
+      = t('.title')

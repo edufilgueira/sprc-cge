@@ -1,0 +1,7 @@
+pt-BR:
+  transparency:
+    expenses:
+      multi_gov_transfers:
+        index:
+          title: Transferências a Instituições Multigovernamentais
+          description: Saiba quanto o governo do Estado do Ceará transfere em dinheiro para organizações mantidas por mais de um governo (multigovernamentais).

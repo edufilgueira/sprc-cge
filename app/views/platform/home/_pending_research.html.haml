@@ -1,0 +1,18 @@
+.card.card-custom.my-4
+	.card-header
+		%h2.card-title
+			- ticket_type = :sou
+
+			= link_to t(".#{ticket_type}.title"), platform_tickets_path(ticket_type: ticket_type, status_for_citizen: :inactive, pending_research: true ),  class: 'text-primary'
+	.card-block
+		.row
+			.col-12.pb-3
+				= link_to platform_tickets_path(ticket_type: ticket_type, status_for_citizen: :inactive, pending_research: true ) do
+
+					.platform-home-card.pending_research
+
+						%h3.platform-home-card-title
+							= t(".#{ticket_type}.subtitle")
+
+						%p.platform-home-card-count
+							= pending_research_count(ticket_type)

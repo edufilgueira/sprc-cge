@@ -1,0 +1,28 @@
+.card-mobile-app {
+
+  .commands {
+    position: absolute;
+    right: 0;
+  }
+
+  .mobile-app-content {
+
+    .mobile-app-icon {
+      height: auto;
+      margin: auto;
+      text-align: center;
+    }
+
+    .mobile-app-description {
+      border-left: 1px solid #aaaaaa;
+    }
+
+    .download {
+      margin: auto;
+
+      img {
+        padding: 5px 10px;
+      }
+    }
+  }
+}

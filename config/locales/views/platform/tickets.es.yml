@@ -1,0 +1,108 @@
+es:
+
+  platform:
+
+    tickets:
+
+      create:
+        sou:
+          title: Nueva Manifestación de Oidoría
+          done: "La manifestación se creó con el protocolo '%{title}'"
+          error: No fue posible realizar la manifestación
+
+        sic:
+          title: Nueva Solicitud de Acceso a la Información
+          done: "La solicitud se creó con el protocolo '%{title}'"
+          error: No fue posible solicitar la información
+
+
+      destroy:
+        sou:
+          title: Nueva Manifestación de Oidoría
+          done: "La manifestación '%{title}' ha sido removida."
+
+        sic:
+          title: Nueva Solicitud de Acceso a la Información
+          done: "La solicitud '%{title}' fue removida."
+
+      index:
+        filters: Filtros de búsqueda
+        headers:
+          organ:
+            title: Órgano
+          sou_type:
+            title: Tipo
+
+        sou:
+          breadcrumb_title: Oidoría Digital
+          title: Manifestaciones de Oidoría Digital
+          description: El plazo de atención de la manifestación de Oidoría es de hasta 15 días y puede ser prorrogado por otros 15 días conforme establece el Decreto nº. 30.474/2011.
+          commands:
+            new: Nueva manifestación
+
+        sic:
+          breadcrumb_title: Acceso a la Información
+          title: Solicitudes de Acceso a la Información
+          description: La atención de las Solicitudes de Información es de hasta 20 días y puede ser prorrogado por otros 10 días conforme establece la Ley nº. 15.175/2012.
+          commands:
+            new: Nueva Solicitud
+
+      table:
+        summary: Lista paginada con todas las manifestaciones
+        caption: Tabla que contiene todas las manifestaciones de Oidorías
+        heads:
+          parent_protocol: Protocolo
+          sou_type: Tipo
+          organs: Órgano(s)
+          internal_status: Situación
+          description: Descripción
+          deadline: Plazo
+          created_at: Creado en
+          updated_at: Última actualización
+
+      ticket:
+        messages:
+          deadline:
+            undefined: '-'
+
+      new:
+        sou:
+          title: Nueva Manifestación de Oidoría
+
+        sic:
+          title: Nueva Solicitud de Acceso a la Información
+
+      show:
+        confirmed:
+          title: Exibición detallada de la manifestación
+        in_progress:
+          title: Confirmar apertura de la manifestación
+          sou:
+            title: Confirmar apertura de manifestación
+          sic:
+            title: Confirmar apertura de solicitud
+        sou:
+          commands:
+            new: Nueva mMnifestación
+        sic:
+          commands:
+            new: Nueva Solicitud
+
+      edit:
+        sou:
+          title: Edición de Manifestación de Oidoría
+
+        sic:
+          title: Edición de Solicitud de Acceso a la Información
+
+      update:
+
+        sou:
+          title: Edición de Manifestación de Oidoría
+          done: "La manifestación ha sido actualizada"
+          error: No fue posible editar la manifestación
+
+        sic:
+          title: Edición de Solicitud de Acceso a la Información
+          done: "La solicitud ha sido actualizada"
+          error: Nofue posible editar la solicitud

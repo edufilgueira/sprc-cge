@@ -1,0 +1,21 @@
+= simple_form_for [:ppa_admin,  ppa_proposal_theme], url: url do |f|
+
+  .row
+    .col-lg-12.mb-4
+      = f.error :base, class: 'alert alert-danger'
+    .col-lg-6
+      
+      = f.association :plan
+    .col-lg-6    
+      = f.association :region
+    .col-lg-6
+      = f.input :start_in, as: :string, input_html: { class: 'datetimepicker' }
+    .col-lg-6
+      = f.input :end_in, as: :string, input_html: { class: 'datetimepicker' }     
+    .col-lg-6      
+
+  .row.mt-3
+    .col-lg-12
+      = link_to t('commands.cancel'), ppa_admin_proposal_themes_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary pull-right'
+

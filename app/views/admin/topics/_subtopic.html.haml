@@ -1,0 +1,10 @@
+.row.mt-3
+
+  .col-12.col-lg-5
+    = subtopic.title
+
+  .col-12.col-lg-2
+    = 'Substituir por'
+
+  .col-12.col-lg-5
+    = select_tag "target[subtopics][#{subtopic.id}]", '', { class: 'form-control', include_blank: true }

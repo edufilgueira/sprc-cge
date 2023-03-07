@@ -1,0 +1,11 @@
+pt-BR:
+
+  activerecord:
+
+    attributes:
+
+      event:
+        title: Título
+        starts_at: Data do evento
+        category: Categoria
+        description: Descrição

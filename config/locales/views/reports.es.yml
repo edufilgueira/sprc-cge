@@ -1,0 +1,25 @@
+es:
+
+  report:
+
+    filters:
+      title: Filtros
+      ticket_type: Tipo
+      sou_type: Tipo manifestación
+      city: Ciudad
+      state: Estado
+      used_input: Medio de entrada
+      other_organs: Poder Ejecutivo Estadual
+      search: Palabra-clave
+      internal_status: Situación
+      organ: Órgano responsable
+      budget_program: Programa presupuestario
+      topic: Sujeto
+      subtopic: Subassunto
+      deadline: Plazo
+      confirmed_at: Periodo
+      expired: Solamente expirados
+      priority: Solamente urgentes
+      finalized: Exhibir finalizados
+      denunciation: Solamente denuncias
+      range: 'De %{start} a %{end}'

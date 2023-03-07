@@ -1,0 +1,79 @@
+.row
+
+  .col-12
+
+    .card
+      .card-block
+
+        = simple_form_for(resource, url: user_registration_path, html: { class: 'block' }) do |f|
+
+          = hidden_field_tag :ticket_type, params[:ticket_type] if params[:ticket_type].present?
+
+          .row
+            .col-12
+              %label
+                = User.human_attribute_name(:person_type)
+
+              .btn-group.btn-group-justified{ 'data-toggle': 'radio-buttons', role: 'group', 'aria-label': User.human_attribute_name(:person_type), 'data-input': 'person_type' }
+                - User.person_types.keys.each do |type|
+                  - option_label = I18n.t("user.person_types.#{type}")
+                  - checked = (type.to_s == user.person_type.to_s)
+                  - active_class = (checked ? 'active' : '')
+                  %label.btn.btn-outline-primary{ class: active_class, for: option_label }
+                    = radio_button_tag 'user[person_type]', type, checked, autofocus: checked, id: option_label, 'data-input': type
+                    = option_label
+
+          .row{ data: { content: 'legal_person' } }
+            .col-12
+              = f.input :name, label: t('.person_types.legal.name'), wrapper_html: { data: { content: 'legal_name' } }
+
+
+          .row{ data: { content: 'individual_person' } }
+            .col-12.col-lg-6
+              = f.input :name, wrapper_html: { data: { content: 'individual_name' } }, input_html: { id: 'individual_name' }
+
+            .col-12.col-lg-6
+              = f.input :social_name, wrapper_html: { data: { content: 'individual_social_name' } }
+
+
+          .row
+            .col-md-4.col-12
+              = f.input :document_type, { collection: user_document_types_for_select, selected: user.document_type, input_html: { 'data-input': 'document_type', 'data-select2-search': 'hidden' } }
+              %label{ data: { input: 'document_cnpj'}}
+                = t('.person_types.legal.cnpj')
+
+            .col-md-4.col-12
+              = f.input :document, input_html: { 'data-input': 'document' }, required: true
+
+            .col-md-4.col-12
+              = f.input :birthday, as: :string, input_html: { class: 'datetimepicker' }
+
+
+          .row
+            .col-md-6.col-12
+              = f.input :server, as: :radio_buttons
+
+          .row
+            - state = params[:state] || states_default_selected_for_user(user)
+
+            .col-md-6.col-12
+              = render 'shared/components/select_states', field_name: :state, cities_container: :user_city_id, required: true, selected: state
+            .col-md-6.col-12
+              = f.association :city, collection: cities_by_state_for_select(state), include_blank: t('.fields.city.select'), required: true
+
+          .row.mt-3
+            .col-md-6.col-12
+              = f.input :email, input_html: { type: :text }
+
+            .col-md-6.col-12
+              = f.input :email_confirmation, input_html: { type: :text, 'data-input': 'email_confirmation' }
+
+
+          .row
+            .col-md-6.col-12
+              = f.input :password
+
+            .col-md-6.col-12
+              = f.input :password_confirmation
+
+          = f.submit t('.register'), class: 'btn btn-primary btn-block mt-3'

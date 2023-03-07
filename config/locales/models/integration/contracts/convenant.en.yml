@@ -1,0 +1,29 @@
+en:
+  activerecord:
+    attributes:
+      integration/contracts/convenant:
+        creditor_id: Convenant
+        creditor_title: Convenant
+        descricao_nome_credor: Convenant
+        cod_financiador: Convenant
+        cod_concedente: Grantor code
+        infringement_status: Document status
+        accountability_status: Accountability status
+        num_contrato: Agreement number
+        valor_contrato: Total initial value
+        valor_original_concedente: "Initial value of the grantor's transfer"
+        valor_atualizado_concedente: "Current amount of the grantor's transfer"
+        valor_aditivo: Additive value
+        valor_ajuste: Adjustment value
+        valor_empenhado: Committed value
+        valor_pago: Paid value
+        valor_can_rstpg: Value of cancellation of remainders to be paid
+        valor_original_contrapartida: Beneficiary/convenant counterpart initial value
+        valor_atualizado_contrapartida: Beneficiary/convenant counterpart updated value
+        valor_atualizado_total: Updated total value
+        calculated_valor_aditivo: Additive value
+        calculated_valor_ajuste: Adjustment value
+        calculated_valor_empenhado: Committed value
+        calculated_valor_pago: Paid value
+
+        grantor_title: Grantor

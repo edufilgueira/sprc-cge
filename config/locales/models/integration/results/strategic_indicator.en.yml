@@ -1,0 +1,21 @@
+en:
+  activerecord:
+    attributes:
+      integration/results/strategic_indicator:
+        eixo: Axis
+        resultado: Result
+        indicador: Indicator
+        unidade: Unit
+        sigla_orgao: Agency Acronym
+        orgao: Agency/Secretariat
+        valores_realizados: Achieved values
+        valores_atuais: Current values
+        organ_title: Agency/Secretariat
+        axis_title: Axis
+
+  integration/results/strategic_indicator:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Strategic indicators %{month}-%{year}'
+          short_title: 'Strategic ind. %{month}-%{year}'

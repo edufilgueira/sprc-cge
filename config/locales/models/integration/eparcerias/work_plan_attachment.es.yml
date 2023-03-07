@@ -1,0 +1,16 @@
+es:
+  activerecord:
+    attributes:
+
+      integration/eparcerias/work_plan_attachment:
+        isn_sic: SIC Convenio
+        convenant: Convenio
+        file_name: Nombre del archivo
+        file_size: Tamaño del archivo
+        file_type: Tipo del archivo
+        description: Descripión
+
+    models:
+      integration/eparcerias/work_plan_attachment:
+        one: Adjunto del plan de trabajo
+        other: Adjuntos del plan de trabajo

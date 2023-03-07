@@ -1,0 +1,12 @@
+es:
+  activerecord:
+    attributes:
+
+      ticket_subscription:
+
+    errors:
+      models:
+        ticket_subscription:
+          attributes:
+            email:
+              taken: Correo electrónico está en camino

@@ -1,0 +1,76 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/contracts/contract:
+        isn_sic: Nº SACC
+        num_contrato: Nº Contrato
+        descricao_objeto: Objeto
+        tipo_objeto: Tipo objeto
+        num_spu: "Nº do Processo - SPU"
+        cpf_cnpj_financiador: CPF/CNPJ
+        descricao_justificativa: Justificativa
+        decricao_modalidade: Modalidade de licitação
+        data_assinatura: Data de assinatura
+        data_termino: Data de término após aditivo
+        data_termino_original: Data de término original
+        data_rescisao: Data de rescisão
+        data_vigencia: Data de vigência
+        accountability_status: Situação da prestação de contas
+        cod_concedente: Código contratante
+        cod_financiador: Código do contratado
+        cod_gestora: Secretaria/Órgão
+        cod_orgao: Código órgão
+        cod_secretaria: Secretaria
+        descricao_tipo: Descrição tipo
+        descricao_url: Descrição url
+        data_processamento: Data processamento
+        flg_tipo: Flag tipo
+        isn_parte_destino: ISN parte destino
+        isn_modalidade: ISN modalidade
+        isn_entidade: ISN entidade
+        num_spu_licitacao: Número spu licitação
+        data_publicacao_portal: Data de publicação na Plataforma Ceará Transparente
+        data_publicacao_doe: Data publicação no DOE
+        descricao_url_pltrb: Descrição url pltrb
+        descricao_url_ddisp: Descrição url ddisp
+        descricao_url_inexg: Descrição url inexg
+        cod_plano_trabalho: Código plano de trabalho
+        num_certidao: Número certidão
+        descriaco_edital: Descrição edital
+        num_contrato: Número contrato
+
+        valor_contrato: Valor original
+        valor_original_concedente: Valor inicial do repasse do concedente
+        valor_atualizado_concedente: Valor atualizado
+        valor_aditivo: Valor aditivo
+        valor_ajuste: Valor ajuste
+        valor_empenhado: Valor empenhado
+        valor_pago: Valor pago
+        calculated_valor_aditivo: Valor aditivo
+        calculated_valor_ajuste: Valor ajuste
+        calculated_valor_empenhado: Valor empenhado
+        calculated_valor_pago: Valor pago
+        valor_can_rstpg: Valor cancelamento de restos a pagar
+        valor_original_contrapartida: Valor inicial da contrapartida do convenente/beneficiário
+        valor_atualizado_contrapartida: Valor atualizado da contrapartida do convenente/beneficiário
+        valor_atualizado_total: Valor atualizado total
+
+        descricao_situacao: Situação Física
+        descricao_situacao_str: Situação Física
+
+        infringement_status: Situação do convenente
+        infringement_status_str: Situação do instrumento
+
+        manager_title: Unidade
+        grantor_title: Contratante
+        creditor_title: Contratado
+        descricao_nome_credor: Contratado
+
+  integration/contracts/contract:
+    infringement_statuses:
+      adimplente: Adimplente
+      inadimplente: Inadimplente
+
+    statuses:
+      concluido: Concluído
+      vigente: Vigente

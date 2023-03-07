@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    attributes:
+
+      page:
+        title: Title
+        content: Content
+        menu_title: Menu title
+        status: Active?
+        status_str: Active Page?
+        parent_menu_title: Belongs to menu
+        show_survey: Show satisfaction survey?
+        slug: Nickname (used to create page links)
+      page/status:
+        active: Yes
+        inactive: No
+

@@ -1,0 +1,106 @@
+en:
+  shared:
+    transparency:
+      expenses:
+
+        neds:
+          index:
+            title: Expenses by Statement of Agreement
+            description: 'Verify here the expenses by Statement of Agreement, where it is possible to verify the expense in a more thorough and detailed way by expenditure.'
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Secretary of Finance - SEFAZ</p>
+              <p>Governmental Management System by Results - S2GPR</p>
+
+            chart:
+              calculated_valor_final:
+                unit: 'Sum of spent amounts: BRL'
+                title: 'Amounts of the Statements of Agreement in the selected month.'
+
+                razao_social_credor:
+                  title: Sums of the amounts spent by creditor
+                management_unit:
+                  title: Sums of the amounts spent by management units
+                expense_element:
+                  title: Sums of the amounts spent by element
+
+              calculated_valor_pago_final:
+                unit: 'Sum of paid amounts: BRL'
+                title: 'Amounts of the Statements of Agreement in the selected month.'
+
+                razao_social_credor:
+                  title: Sums of the amounts spent by creditor
+                management_unit:
+                  title: Sums of the amounts spent by management units
+                expense_element:
+                  title: Sums of the amounts spent by element
+
+            charts:
+              tabs:
+                razao_social_credor:
+                  title: By creditor
+                management_unit:
+                  title: By management units
+                expense_element:
+                  title: By expense element
+
+            filters:
+              title: Advanced search
+              search:
+                hint: >
+                  You can search by part of the Secretary name, Creditors, etc.
+                  Examples: 'housing', 'security', 'technology', 'health secretary', among others.
+              date_of_issue:
+                information: |
+                  This information refers to the date of issuance of the Note of Commitment.
+
+
+            counts:
+              filtered_count:
+                title: Quantity of filtered statements
+              filtered_sum:
+                calculated_valor_final:
+                  title: Amount spent on the filtered statements
+                calculated_valor_pago_final:
+                  title: Amount paid on the filtered statements
+
+            table:
+              summary: Lists of Statements of Agreement
+              header:
+                numero: Number
+                date_of_issue: Date of issue
+                unidade_gestora: Management unit
+                management_unit_title: Management unit
+                credor: Creditor
+                calculated_valor_final: Amount spent
+                calculated_valor_pago_final: Amount paid
+
+            stats:
+              title: Main numbers related to Statements of Agreement
+              count: 'Statements on <strong>%{date}</strong>'
+              calculated_valor_final: 'Amount spent on <strong>%{date}</strong>'
+              calculated_valor_pago_final: 'Amount paid on <strong>%{date}</strong>'
+
+          show:
+            contract:
+              link: '%{value}'
+              none: EXPENDITURE NOT LINKED TO THE CONTRACT INSTRUMENT OR COVENANT
+
+            ned_items:
+              empty: No data
+              title: Items
+              summary: List of items
+              table:
+                heads:
+                  sequencial: Sequential
+                  especificacao: Specification
+                  unidade: Unit
+                  quantidade: Quantity
+                  valor_unitario: Unit value
+
+            npds:
+              title: Execução dos pagamentos
+              empty: Nenhum pagamento encontrado.
+              table:
+                summary: Execução dos pagamentos
+                export_file_name: 'pagamentos-%{id}'

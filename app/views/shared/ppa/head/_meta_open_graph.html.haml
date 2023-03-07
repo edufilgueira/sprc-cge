@@ -1,0 +1,15 @@
+-# Open Graph meta, ver mais em http://ogp.me/
+-# locals:
+-#   - {String} title
+-#   - {String} description
+-#
+
+-# fixed properties
+%meta{ property: "og:url",         content: request.original_url }/
+%meta{ property: "og:type",        content: 'website' }/
+%meta{ property: "og:site_name",   content: t("app.title") }/
+
+-# customizable properties
+%meta{ property: "og:image",       content: asset_url('logos/og-logo-ceara.png') }/
+%meta{ property: "og:title",       content: local_assigns.fetch(:title, t("ppa.og.title")) }/
+%meta{ property: "og:description", content: local_assigns.fetch(:description, t("ppa.og.description")) }/

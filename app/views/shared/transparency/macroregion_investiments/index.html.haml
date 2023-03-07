@@ -1,0 +1,8 @@
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t('.title')
+
+- stats_url = transparency_macroregion_investiments_path(show_stats: true)
+
+.transparency{id: :macroregion_investiments}
+	= render 'shared/transparency/index', filter_path: 'macroregion_investiments', transparency_id: :macroregion_investiments, stats_type: :year, stats_url: stats_url, base_locale: t('.')

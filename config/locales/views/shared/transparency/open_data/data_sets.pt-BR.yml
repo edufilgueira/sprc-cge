@@ -1,0 +1,21 @@
+pt-BR:
+  shared:
+
+    transparency:
+
+      open_data:
+
+        data_sets:
+
+          index:
+            title: Dados abertos
+            table:
+              summary: Lista de conjuntos de dados abertos
+              header:
+                author: Autor
+                title: Título
+                organ: Órgão
+                source_catalog: Catálogo de origem
+
+          show:
+            title: Exibição do dado aberto

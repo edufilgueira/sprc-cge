@@ -1,0 +1,50 @@
+- mobile_tags = mobile_app.mobile_tags.map(&:title)
+%li.card.card-mobile-app.mb-4{ data: { content: 'mobile_app', tags: mobile_tags }}
+
+
+  - if current_user.present?
+
+    .commands
+
+      - if can?(:manage, mobile_app)
+        = link_to admin_mobile_app_path(mobile_app), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn btn-sm btn-danger btn-link pull-right' do
+          %i.fa.fa-trash{'aria-hidden': 'true'}
+          .small.list-inline-item
+            = t('commands.remove')
+
+      - if can?(:edit, mobile_app)
+        = link_to edit_admin_mobile_app_path(mobile_app), class: 'btn btn-sm btn-link pull-right' do
+          %i.fa.fa-edit{'aria-hidden': 'true'}
+          .small.list-inline-item
+            = t('commands.edit')
+
+  .card-block
+
+    .row.mobile-app-content
+
+      .col-lg-2.mobile-app-icon
+        = attachment_image_tag(mobile_app, :icon, :fit, 115, 115)
+
+      .col-lg-8.mobile-app-description
+
+        %h3.h6.font-weight-bold.list-inline-item
+          = highlight(mobile_app.name, params[:search])
+
+        .small.list-inline-item{ class: mobile_app.official ? 'text-success' : 'text-primary' }
+          = t(".official.#{mobile_app.official}")
+
+        .small
+          = highlight(mobile_app.description, params[:search])
+
+      .col-lg-2.download
+
+        - if mobile_app.link_google_play.present?
+
+          = link_to mobile_app.link_google_play do
+            = image_tag(asset_path('mobile_apps/google_play.png'), width: '100%')
+
+
+        - if mobile_app.link_apple_store.present?
+
+          = link_to mobile_app.link_apple_store do
+            = image_tag(asset_path('mobile_apps/apple_store.png'), width: '100%')

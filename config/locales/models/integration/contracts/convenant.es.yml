@@ -1,0 +1,28 @@
+es:
+  activerecord:
+    attributes:
+      integration/contracts/convenant:
+        creditor_id: Contratante
+        creditor_title: Contratante
+        descricao_nome_credor: Contratante
+        cod_financiador: Contratante
+        cod_concedente: Código concedente
+        infringement_status: Situación del instrumento
+        num_contrato: Número do convenio
+        valor_contrato: Valor inicial total
+        valor_original_concedente: Valor inicial del paso del cedente
+        valor_atualizado_concedente: Valor actualizado del paso del cedente
+        valor_aditivo: Valor aditivo
+        valor_ajuste: Valor ajuste
+        valor_empenhado: Valor empeñado
+        valor_pago: Valor pago
+        valor_can_rstpg: Valor cancelamiento de restos a pagar
+        valor_original_contrapartida: Valor inicial de la contrapartida del contratante/beneficiario
+        valor_atualizado_contrapartida: Valor atualizado da contrapartida do contratante/beneficiario
+        valor_atualizado_total: Valor actualizado total
+        calculated_valor_aditivo: Valor aditivo
+        calculated_valor_ajuste: Valor ajuste
+        calculated_valor_empenhado: Valor empeñado
+        calculated_valor_pago: Valor pago
+
+        grantor_title: Cedente

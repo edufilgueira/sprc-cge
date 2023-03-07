@@ -1,0 +1,14 @@
+.row
+  .col-12
+    - if evaluation_exports.blank?
+
+      .text-muted.text-center
+        = t('messages.filters.no_results_found')
+
+    - else
+
+      = render evaluation_exports
+
+    .mt-4.clearfix
+      .float-right
+        = paginate evaluation_exports

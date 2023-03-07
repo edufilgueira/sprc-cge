@@ -1,0 +1,5 @@
+- parent = ticket.parent || ticket
+- if can?(:edit_note, parent)
+  = link_to notes_link_to(namespace, ticket), class: 'btn btn-link btn-print hover-link d-inline-block' do
+    %i.fa.fa-edit{ 'aria-hidden': 'true' }
+    = t('.title')

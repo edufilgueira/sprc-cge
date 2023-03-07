@@ -1,0 +1,10 @@
+%h1.text-muted
+  = t(".template.title.#{@ticket.ticket_type}", protocol: @ticket.protocol)
+
+%p
+  = t(".template.explanation.#{@ticket.ticket_type}")
+
+%p
+  = raw(t(".template.confirmation_link", url: @url))
+
+%br/

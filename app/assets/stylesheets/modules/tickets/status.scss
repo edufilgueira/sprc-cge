@@ -1,0 +1,130 @@
+@import 'base/variables';
+
+.highlight-background-red {
+  background-color: $status-red-light;
+}
+
+.highlight-background-yellow {
+  background-color: $status-yellow-light;
+}
+
+.ticket-stats {
+  padding: 10px;
+
+  border-radius: 4px;
+  border: 1px solid;
+
+  .ticket-stats-title {
+    font-size: 15px;
+  }
+
+  .ticket-stats-count {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+}
+
+// controle das cores dos status de tickets
+
+.ticket-status {
+  &[data-status=in_progress] {
+    background-color: #eeeeee;
+    color: #666666;
+
+    border-color: #dddddd;
+  }
+
+  &[data-status=confirmed] {
+    background-color: #D9EDF7;
+    color: #31708f;
+
+    border-color: #bcdff1;
+  }
+
+  &[data-status=replied] {
+    background-color: #dff0d8;
+    color: #3c763d;
+
+    border-color: #d0e9c6
+  }
+
+  // internal status:
+
+  &[data-status=waiting_confirmation] {
+    background-color: #D9EDF7;
+    color: #31708f;
+
+    border-color: #bcdff1;
+  }
+
+  &[data-status=waiting_referral] {
+    background-color: #F19F9E;
+    color: #8F0402;
+
+    border-color: #8F0402;
+  }
+
+  &[data-status=sectoral_attendance] {
+    background-color: #FFE6CD;
+    color: #974B02;
+
+    border-color: #EABF95;
+  }
+
+  &[data-status=internal_attendance] {
+    background-color: #FFFFCB;
+    color: #646702;
+
+    border-color: #DCDF77;
+  }
+
+  &[data-status=sectoral_validation] {
+    background-color: #DFDFFF;
+    color: #460099;
+
+    border-color: #AC87D7
+  }
+
+  &[data-status=cge_validation] {
+    background-color: #CBE5FE;
+    color: #0D478A;
+
+    border-color: #80ACDE;
+  }
+
+  &[data-status=appeal] {
+    background-color: #CBE5FE;
+    color: #0D478A;
+
+    border-color: #80ACDE;
+  }
+
+  &[data-status=partial_answer] {
+    background-color: #FFCCCC;
+    color: #8F0402;
+
+    border-color: #F19F9E;
+  }
+
+  &[data-status=final_answer] {
+    background-color: #CDFFE6;
+    color: #07655E;
+
+    border-color: #80D6D0
+  }
+
+  &[data-status=invalidated] {
+    background-color: #eeeeee;
+    color: #666666;
+
+    border-color: #dddddd;
+  }
+
+  &[data-status=completed] {
+    background-color: #E7FFCD;
+    color: #366305;
+
+    border-color: #AED484
+  }
+}

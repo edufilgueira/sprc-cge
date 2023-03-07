@@ -1,0 +1,41 @@
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.title')
+
+      .card-block
+
+        - if ned_planning_items.present?
+          %table.table.table-hover.table-sm.table-bordered.bg-faded{summary: t('.summary')}
+
+            %thead
+
+              %tr
+
+                - heads = [:isn_item_parcela, :valor]
+
+                - heads.each do |head|
+                  %th
+                    = t(".table.heads.#{head}")
+
+            %tbody
+              - ned_planning_items.each do |ned_planning_item|
+                %tr
+                  %td
+                    = ned_planning_item.isn_item_parcela
+                  %td
+                    = number_to_currency(ned_planning_item.valor)
+
+
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')

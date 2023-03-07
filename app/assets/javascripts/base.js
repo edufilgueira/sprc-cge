@@ -1,0 +1,9 @@
+//= require jquery
+//= require jquery_ujs
+//= require jquery.remotipart
+//= require tether
+//= require bootstrap
+//= require moment
+//= require moment/custom-pt-br
+//= require bootstrap-datetimepicker
+//= require switchery

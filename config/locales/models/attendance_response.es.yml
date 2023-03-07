@@ -1,0 +1,5 @@
+es:
+  activerecord:
+    attributes:
+      attendance_response:
+        description: Descrição da ocorrência

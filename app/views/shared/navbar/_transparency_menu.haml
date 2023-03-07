@@ -1,0 +1,13 @@
+%ul.nav
+  %li.nav-item
+    = link_to t('.transparency.title'), transparency_root_path, class: 'nav-link'
+  %li.nav-item
+    = link_to t('.what_is.title'), transparency_root_path(anchor: 'o-que-e'), class: 'nav-link'
+  %li.nav-item
+    = link_to t('.map.title'), transparency_root_path(anchor: 'mapas-iterativos'), class: 'nav-link'
+  %li.nav-item
+    = link_to t('.news.title'), transparency_root_path(anchor: 'noticias'), class: 'nav-link'
+  %li.nav-item
+    = link_to t('.apps.title'), transparency_society_mobile_apps_path, class: 'nav-link'
+  %li.nav-item
+    = link_to t('.whats_new.title'), transparency_page_path('novidades-no-portal'), class: 'nav-link'

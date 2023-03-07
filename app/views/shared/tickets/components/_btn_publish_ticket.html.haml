@@ -1,0 +1,4 @@
+- if can?(:publish_ticket, ticket)
+  = link_to send("#{namespace}_ticket_publish_tickets_path", ticket_id: ticket, public_ticket: !ticket.public_ticket?), method: :post, class: 'btn btn-link btn-print hover-link d-inline-block' do
+    %i.fa{ class: ticket.public_ticket? ? 'fa-eye-slash' : 'fa-eye' }
+    = t(".#{ticket.ticket_type}.#{ticket.public_ticket}")

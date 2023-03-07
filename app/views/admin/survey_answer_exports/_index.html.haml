@@ -1,0 +1,45 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:created_at, :name, :start_at, :ends_at, :worksheet_format, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: survey_answer_exports, sort_columns: sort_columns, table_locale: table_locale do |survey_answer_export|
+
+    - show_path = can?(:show, survey_answer_export) ? admin_survey_answer_export_path(survey_answer_export) : '#!'
+
+    %tr
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(survey_answer_export.created_at)
+
+      %td
+        = link_to show_path, title: survey_answer_export.title do
+          = filtered_highlighted(survey_answer_export.title.truncate(50))
+
+      %td
+        = link_to show_path do
+          = l(survey_answer_export.start_at, format: :date)
+
+      %td
+        = link_to show_path do
+          = l(survey_answer_export.ends_at, format: :date)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(survey_answer_export.worksheet_format)
+
+
+
+      %td
+        .float-right
+
+          - if survey_answer_export.success?
+            = link_to t('commands.download'), download_admin_survey_answer_export_url(survey_answer_export, format: survey_answer_export.worksheet_format.to_sym), class: 'btn text-success btn-link'
+
+          - if can?(:manage, survey_answer_export) && (survey_answer_export.success? || survey_answer_export.error?)
+            = link_to t('commands.remove'), admin_survey_answer_export_path(survey_answer_export), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link'
+

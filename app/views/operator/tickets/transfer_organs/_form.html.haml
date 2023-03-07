@@ -1,0 +1,51 @@
+- ticket_params = params[:ticket] || {}
+= content_for :javascript, javascript_include_tag('views/operator/tickets/transfer_organs/form')
+
+= simple_form_for ticket, :url => operator_ticket_transfer_organs_path(ticket), html: {method: :post } do |f|
+  .row
+    .col-12
+      .content-with-label.form-group
+        %p.content-label
+          = t('.organ.from')
+        = resource_value(ticket.reload, :organ_acronym)
+
+
+  .row{'data-content': 'organ'}
+
+    .col-12
+      / -# checked = ticket_params[:rede_ouvir] == '1' || (ticket_params[:rede_ouvir].blank? && ticket.rede_ouvir?)
+
+      / -# if tickets_elegible_share_with_rede_ouvir?(ticket, current_user)
+      /   =# f.input :rede_ouvir, checked: checked, input_html: {checked: checked, 'data-input': 'rede_ouvir' }
+
+    .col-12
+      - data = { 'input': 'organ', 'dependent-select': 'subnets', 'child-container': '[data-dependent-select-child=subnets]', 'param-name': 'organ_id', 'url': api_v1_subnets_path }
+      - rede_ouvir_select_text = t('shared.tickets.form.fields.rede_ouvir.select')
+
+      - unless current_user.sectoral_rede_ouvir?
+        = f.association :organ, { collection: organs_to_share_for_select_with_subnet_info(ticket), include_blank: t('messages.form.select'), selected: ticket_params[:organ_id], autofocus: true, label: t('.organ.to'), input_html: { data: data }, wrapper_html: { data: { content: 'executive_organ'} }, required: true }
+
+      / -# if tickets_elegible_share_with_rede_ouvir?(ticket, current_user)
+      /   =# f.association :organ, prompt: rede_ouvir_select_text, collection: organs_rede_ouvir_for_select, selected: ticket_params[:organ_id], input_html: { data: data, 'aria-label': rede_ouvir_select_text }, wrapper_html: { data: { content: 'rede_ouvir'} }, label: t('.organ.to'), required: true
+
+  .row{'data-content': 'subnet'}
+    .col-md-7.col-lg-8
+      - subnet_select_text = t('.subnet.to')
+      - data = { 'input': 'subnet', 'dependent-select-child': 'subnets', 'dependent-select-blank': subnet_select_text }
+      - organ = f.object.organ
+
+      = f.association :subnet, { collection: subnets_by_organ_for_select(organ), label: subnet_select_text, selected: ticket_params[:subnet_id], input_html: { data: data, 'aria-label': subnet_select_text } }
+    .col-md-3.pt-4.col-lg-4
+      - checked = ticket_params[:unknown_subnet] == '1'
+      = f.input :unknown_subnet, wrapper_html: { class: 'bg-faded rounded my-1 px-2 pt-2 pb-1' }, input_html: { class: 'mr-2', 'data-input': 'unknown_subnet', checked: checked }, label_html: { class: 'd-block' }
+
+
+  .row
+    .col-12
+      = f.input :justification, as: :text, input_html: { rows: 5 }, label: t('.justification.label'),required: true
+
+
+  .row
+    .col-12
+      = link_to t('commands.cancel'), operator_ticket_path(ticket), class: 'btn btn-warning pull-left'
+      = f.submit t('.save'), class: 'btn btn-primary float-right'

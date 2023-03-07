@@ -1,0 +1,10 @@
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t(".title")
+
+- stats_url = transparency_server_salaries_path(show_stats: true)
+- filter_path = 'server_salaries'
+- base_locale = t('.')
+- base_locale[:additional] = { title: t('.additional.title'), link: t('.additional.link'), url: t('.additional.url') }
+
+= render 'shared/transparency/index', transparency_id: :server_salaries, stats_type: :month, stats_url: stats_url, base_locale: base_locale, filter_path: filter_path

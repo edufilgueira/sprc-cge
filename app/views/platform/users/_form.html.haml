@@ -1,0 +1,92 @@
+= simple_form_for [:platform, user] do |f|
+
+  .row
+
+    - if user.individual?
+      .col-12.col-lg-6
+        = f.input :name, wrapper_html: { data: { content: 'individual_name' } }
+
+      .col-12.col-lg-6
+        = f.input :social_name, wrapper_html: { data: { content: 'individual_social_name' } }
+
+      - if user.legal?
+        .col-lg-12
+          = f.input :name, label: t('.person_types.legal.name'), wrapper_html: { data: { content: 'legal_name' } }
+
+
+  .row
+
+    .col-lg-6
+      = f.input :email
+      - if user.unconfirmed_email.present?
+        .alert.alert-warning.unconfirmed-email.py-1.px-2
+          %i.fa.fa-warning
+          %i
+            = raw t('.fields.unconfirmed_email.tooltip', email: user.unconfirmed_email)
+
+    .col-lg-6
+      = f.input :email_confirmation, input_html: { 'data-input': 'email_confirmation' }
+
+
+  .row
+
+    .col-12.col-lg-6
+      = f.input :document_type, { collection: user_document_types_for_select, selected: user.document_type, include_blank: true }
+
+    .col-12.col-lg-6
+      = f.input :document, required: true
+
+
+
+  .row
+    .col-lg-6
+      = f.input :gender, { collection: user_gender_for_select, selected: user.gender || :not_informed_gender, wrapper_html: { data: { content: 'individual_gender' } } }
+
+    .col-lg-6
+      = f.input :birthday, as: :string, input_html: { class: 'datetimepicker' }
+
+
+  .row
+    .col-lg-6
+      = f.input :server, as: :radio_buttons
+
+
+  .row
+    .col-lg-6
+      - education_level_select_text = t('.fields.education_level.select')
+      = f.input :education_level, include_blank: education_level_select_text, collection: user_education_level_for_select, selected: user.education_level, input_html: { 'data-select2-search': 'hidden' }
+
+  .row
+    - state = params[:state] || states_default_selected_for_user(user)
+
+    .col-lg-6
+      = render 'shared/components/select_states', field_name: :state, cities_container: :user_city_id, required: true, selected: state
+    .col-lg-6
+      = f.association :city, collection: cities_by_state_for_select(state),include_blank: t('.fields.city.select')
+
+
+  .row
+
+    .col-lg-6
+      = check_box_tag :change_password, {}, user.errors[:password].present? || user.errors[:password_confirmation].present?, 'data-input': 'change_password'
+      = label_tag :change_password, t('.commands.change_password')
+
+
+  .row
+
+    .col-lg-6
+      = f.input :password
+
+    .col-lg-6
+      = f.input :password_confirmation
+
+
+  .row
+    = render 'shared/users/notification_roles_form', f: f, user: user
+
+  %hr{'aria-hidden': 'true'}
+
+  .row.mt-3
+    .col-12
+      = link_to t('commands.cancel'), admin_users_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary pull-right'

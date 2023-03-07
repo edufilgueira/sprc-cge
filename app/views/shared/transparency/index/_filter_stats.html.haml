@@ -1,0 +1,54 @@
+- if base_locale[:stats].present?
+  .row
+    .col-12
+      .card.card-custom
+
+        .card-header
+
+          %h3.card-title
+            = base_locale[:stats][:title]
+
+        .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+          .remote-content{'data-remote-content': transparency_stats_id}
+
+            .card-filters.filter-bar{'data-filter-bar': transparency_stats_id}
+
+              = form_for stats_url, url: stats_url, method: :get, remote: true do |f|
+
+                .row.month-range{data: { container: 'month-range' }}
+
+                  - if transparency_stats_type == :year || transparency_stats_type == :month_range
+                    .col-12.col-lg-2
+                      = label_tag(:stats_year, t('messages.filters.select.year'))
+                      = text_field_tag(:stats_year, params[:stats_year], placeholder: stats_year, 'data-filter-bar-bypass-clear': '', class: 'form-control w-100 year-datetimepicker')
+
+                  - elsif transparency_stats_type == :month
+                    .col-12.col-lg-2
+                      = label_tag(:stats_month_year, t('messages.filters.select.month'))
+                      %i.fa.fa-question-circle{ title: t('messages.filters.select.tooltip.year')}
+                      = text_field_tag(:stats_month_year, params[:stats_month_year], placeholder: stats_month_year, 'data-filter-bar-bypass-clear': '', class: 'form-control w-100 month-datetimepicker')
+
+                  - if transparency_stats_type == :month_range
+                    .col-12.col-lg-3
+                      = label_tag(:stats_month_start, t('messages.filters.select.month_start'))
+                      = select_tag(:stats_month_start, options_for_select(date_months_for_select, params[:stats_month_start]), data: {'filter-bar-bypass-clear': '', 'stats-month': 'start'}, class: 'form-control w-100')
+
+                    .col-12.col-lg-3
+                      = label_tag(:stats_month_end, t('messages.filters.select.month_end'))
+                      = select_tag(:stats_month_end, options_for_select(date_months_for_select, params[:stats_month_end] || last_stat_month), data: {'filter-bar-bypass-clear': '', 'stats-month': 'end'}, class: 'form-control w-100')
+
+
+                  .col-12.col-lg-10{'data-remote-content-partial': 'stats_files'}
+
+                    - # os links de downloads de arquivos vêm junto com os dados
+                    - # no remote content mas endereçados para essas partial
+                    - # específica. Eles precisam ser recarregados de acordo
+                    - # com a seleção do filtro de estatísticas.
+                    - # caso não estatísticas os links de downloads são exibidos mais abaixo (após filtros)
+
+
+            .transparency-stats{ 'data-remote-content-result': transparency_stats_id }
+
+              - # as estatísticas ficam em transparency/revenues/accounts/index/stats e
+              - # são carregadas automaticamente pelo remote content

@@ -1,0 +1,57 @@
+pt-BR:
+  operator:
+    tickets:
+      referrals:
+        new:
+          title: Encaminhar para área interna
+        form:
+          title: Encaminhar para área interna
+          deadline: Prazos e providências
+          description:
+            sou: Descrição da manifestação
+            sic: Descrição da solicitação
+          attachments: Anexos
+          form: Áreas internas envolvidas
+          add: Adicionar nova área interna
+          cancel: Sair sem salvar
+          submit: Salvar alterações
+        create:
+          fail: Falha ao encaminhar para área(s) interna(s)
+          done: Encaminhamento(s) efetuados com sucesso
+
+        destroy:
+          done: Encaminhamento removido com sucesso
+          fail: Falha ao remover encaminhamento
+
+        ticket_department:
+          ticket_department_emails:
+            title: E-mails adicionais
+            commands:
+              add: Adicionar email
+          ticket_department_sub_departments:
+            title: Sub-unidades
+            commands:
+              add: Adicionar Sub-unidade
+
+        ticket_department_fields:
+          remove: Remover área interna
+          department:
+            select: Selecione uma área interna
+          sub_department:
+            select: Selecione uma área interna
+          description:
+            hint:
+              sic: Certifique-se de que a descrição do pedido não contém trechos que prejudiquem o sigilo das informações pessoais do cidadão.
+              sou: Para garantia do sigilo, certifique-se de que na descrição da manifestação não contém informações pessoais ou elementos que venham a identificar o(a) manifestante.
+
+          ticket_department_emails:
+            title: E-mails adicionais
+            commands:
+              add: Adicionar e-mail
+          ticket_department_sub_departments:
+            commands:
+              add: Adicionar Sub-unidade
+
+        ticket_department_sub_department_fields:
+          sub_department:
+            select: Selecione uma sub-unidade

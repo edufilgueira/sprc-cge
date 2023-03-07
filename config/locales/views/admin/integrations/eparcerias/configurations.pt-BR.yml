@@ -1,0 +1,32 @@
+pt-BR:
+
+  admin:
+    integrations:
+      eparcerias:
+        configurations:
+          import:
+            done: >
+              A importação dos dados está sendo processada
+              em segundo plano
+
+          form:
+            label: Informações do Eparcerias
+            hint:
+              response: 'Padrão: caminho/do/array'
+            commands:
+              cancel: Voltar para integrações
+
+          edit:
+            title: Configuração
+
+          update:
+            done: Configuração salva com sucesso.
+
+          show:
+            edit: Configurar
+            created_at: Criado
+            title: Configuração do Eparcerias
+            import: Importar agora
+            hide_show: Mostrar/Esconder log
+            empty: Nenhuma importação realizada
+            label: Informações do Eparcerias

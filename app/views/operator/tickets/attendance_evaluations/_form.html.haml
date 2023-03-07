@@ -1,0 +1,47 @@
+- #
+- # Usado para carregar eventos necessários para selecionar a nota da avaliação
+- # no retorno da parial
+- #
+- # XXX Verificar como podemos initicializar o component bootstrap ao carregar
+- # XXX a partial ou após o 'remote-form:after'
+- # XXX e remover 'attendance_avaluation#_toggleBtnGroup'
+- #
+
+- status = params[:status]
+
+- if request.xhr?
+  = javascript_include_tag('views/shared/tickets/attendance_evaluation')
+
+= simple_form_for [:operator, ticket, attendance_evaluation], remote: true do |f|
+
+  = f.hidden_field :ticket_internally_evaluated, value: internally_evaluated?(ticket)
+  = hidden_field_tag("status", status)
+  
+  - if ticket.sic?
+    .row.mb-3
+      .col-12.col-lg-12
+        %h4.card-subtitle.mb-3
+          = t('.average_title')
+
+      .col-12.col-lg-12
+        %h4
+          = ticket.organ_average_attendance_evaluation(ticket.ticket_type)
+
+  - weight_per_ticket_type(ticket.ticket_type).each do |field_name, weight|
+    .row.form-group
+      = render 'operator/tickets/attendance_evaluations/evaluation_field.html.haml', f: f, weight: weight, field_name: field_name
+
+  = f.label :average
+
+  %p.content-value{ 'data-content': 'average' }
+    = attendance_evaluation.average || '-'
+
+  = f.input :comment, input_html: { rows: 10 }
+
+  
+  .row{ 'data-content': 'submit' }
+    .col-12.col-lg-6
+      = f.submit t('.submit'), class: 'btn btn-primary w-100', disabled: 'disabled'
+
+  .col-2
+    .fa.fa-spin.fa-spinner.mr-3.hidden-xs-up.float-right{'data-content': 'attendance_evaluation-loader'}

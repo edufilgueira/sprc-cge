@@ -1,0 +1,124 @@
+.content{'data-content': 'ticket_logs'}
+
+  - #
+  - # Resposta(s)
+  - #
+  .card.card-custom
+
+    - namespace = current_user.present? ? current_user.namespace : 'ticket_area'
+
+    .card-header
+
+      .row
+
+        .col-12.col-lg-8
+
+          %h3.card-title
+            = current_user&.internal? ? t('.answer.title_internal') : t('.answer.title')
+
+        .col-12.col-lg-4.text-right.mt-2
+          - unless readonly? || params[:print] == 'true'
+            = render 'shared/tickets/components/btn_appeal', namespace: namespace
+
+    .card-block
+
+      - #
+      - # Descrição do ticket
+      - #
+      .row
+        .col-12
+          = render 'shared/tickets/description', ticket: ticket
+
+      - if can?(:view_user_info, ticket)
+        - if ticket.anonymous?
+          .content-with-label
+            %p.content-label
+              = t('ticket.anonymous.title')
+
+        - else
+          = content_with_label(ticket, :name)
+
+        = content_with_label(ticket, :answer_type_str)
+
+      = content_with_label(ticket, :created_at)
+
+
+      - #
+      - # Observações do encaminhamento
+      - #
+      - if current_user&.internal?
+        - ticket_department = ticket.ticket_department_by_user(current_user)
+        - unless ticket_department.nil?
+          = content_with_label(ticket_department, :considerations)
+
+      %hr{'aria-hidden': 'true'}
+
+      - #
+      - # Respostas
+      - #
+      - ticket_logs = operator?(current_user) ? ticket.final_answers_to_operators : ticket.final_answers_to_users
+
+      - unless operator?(current_user) || ticket_logs.blank?
+        .row.mb-4
+          .col-12.text-center
+            %h4
+              = t('.replies_received', answers_count: ticket_logs.size, children_count: ticket_children_can_answer_count(ticket))
+
+
+      - if operator_internal?(current_user)
+        - ticket_department = ticket.ticket_department_by_user(current_user)
+        - unless ticket_department.nil?
+          = render 'shared/answers/already_positioned', ticket_department: ticket_department
+
+
+      - ticket_logs.each do |ticket_log|
+        = render 'shared/tickets/ticket_logs/answer', answer: ticket_log.answer, namespace: namespace
+
+
+      - #
+      - # Respostas aguardando aprovação
+      - #
+      - if !readonly? && operator?(current_user)
+
+        - answers_awaiting = ticket.final_answers_awaiting
+
+        - if answers_awaiting.blank? && ticket_logs.blank?
+
+          - #
+          - # Sem repostas
+          - #
+          %em
+            = current_user&.internal? ? t('.answer.empty_internal') : t('.answer.empty')
+          %hr{ 'aria-hidden': 'true' }/
+
+        - #
+        - # Aguardando aprovação
+        - #
+        - answers_awaiting.each do |ticket_log|
+
+          - answer_form = ticket_log.answer
+          - answer_form = answer_form == try(:answer) ? answer : answer_form
+          = render 'shared/answers/answer_awaiting', answer: ticket_log.answer, answer_form: answer_form, namespace: :operator
+
+        - #
+        - # Aguardando classificação
+        - #
+        - unless ticket.parent? || ticket.classified?
+          %em
+            = t('.answer.not_classified')
+          %hr/
+
+      - elsif ticket_logs.blank?
+        - #
+        - # Sem repostas
+        - #
+        %em
+          = t('.answer.empty')
+
+
+      - if !readonly? && can?(:answer, ticket)
+
+        - #
+        - # Form para responder
+        - #
+        = render 'shared/answers/form', ticket: ticket, new_answer: new_answer, answer_form_url: answer_form_url

@@ -1,0 +1,32 @@
+- if comment_form_url.present?
+  .no-print
+    = simple_form_for new_comment, url: comment_form_url, remote: true, data: { 'content': 'comments-form' }, html: { id: "public_comment_form" } do |f|
+      = f.input :commentable_id, as: :hidden, input_html: { value: ticket.id }
+      = f.input :commentable_type, as: :hidden, input_html: { value: 'Ticket' }
+      = f.input :scope, as: :hidden, input_html: { value: scope }
+
+      .row
+
+        .col-12
+          -# autocomplete: off - https://jiracaiena.atlassian.net/browse/PCEA-982
+          - milliseconds = (Time.now.to_f * 1000).to_i
+          = f.input :description, as: :ckeditor, required: false, label: t(".description.#{scope}"), input_html: { ckeditor: { toolbar: :mini }, id: "public-comment-description-#{milliseconds}", autocomplete: 'off' }
+
+      .row
+        .col-10
+          = f.simple_fields_for :attachments do |attachment|
+            = render 'shared/comments/attachment_fields', f: attachment
+
+          .links.my-2.mb-4
+            = link_to_add_association t('.commands.add_attachment'), f, :attachments, partial: 'shared/comments/attachment_fields'
+
+        .col-2
+          .fa.fa-spin.fa-spinner.mr-3.hidden-xs-up.float-right{'data-content': 'loading'}
+
+      = render 'shared/answers/existent_attachments', ticket: ticket
+
+      .row
+
+        .col-12.offset-6.col-md-6
+
+          = f.submit t(".commands.save.#{scope}"), class: 'btn btn-primary w-100'

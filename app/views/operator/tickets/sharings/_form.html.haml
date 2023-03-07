@@ -1,0 +1,44 @@
+= content_for :javascript, javascript_include_tag('views/operator/tickets/sharings/form')
+= content_for :javascript, javascript_include_tag('views/operator/tickets/protected_attachments')
+= content_for :stylesheet, stylesheet_link_tag('views/shared/tickets/form')
+= javascript_include_tag('ckeditor/init')
+
+= simple_form_for  ticket_parent, url: operator_ticket_sharings_path(ticket), method: :post do |f|
+  .card.card-custom
+
+    .card-header
+
+      %h2.card-title
+        = title
+
+    .card-block
+
+      .content
+
+        = render 'shared/tickets/short_details', ticket: ticket
+
+        %hr{'aria-hidden': 'true'}
+
+        %h3.card-subtitle.mb-2
+          = t(".#{ticket.ticket_type}.title")
+
+
+        .nested-container
+          #tickets{data: { content: :organs } }
+
+            = f.simple_fields_for :tickets do |ticket_child|
+
+              - if ticket_child.object.persisted? && !operator_cge?(current_user)
+                = render 'sharing', sharing: ticket_child.object
+              - else
+                = render 'ticket_fields', f: ticket_child
+
+            .links.mt-4
+              = link_to_add_association t(".#{ticket.ticket_type}.add"), f, :tickets, class: 'btn btn-success'
+
+
+  .row.mt-4
+    .col-12
+      = link_to t('.action_button.cancel'), operator_ticket_path(ticket), class: 'btn btn-warning pull-left'
+
+      = f.submit t('.action_button.save'), class: 'btn btn-primary pull-right px-5'

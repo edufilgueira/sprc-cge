@@ -1,0 +1,29 @@
+pt-BR:
+  transparency:
+    shared:
+      ticket_list:
+        sou:
+          title: Manifestações públicas
+          description: >
+            Consulte as manifestações públicas mais recentes criadas pelos
+            cidadãos do Estado do Ceará. Além de consultar o histórico de
+            cada manifestação, você pode contribuir com aquelas que estiverem
+            abertas. É importante lembrar que as manifestações públicas
+            podem ser sugestões, elogios, solicitações, reclamações e
+            denúncias relativas aos serviços públicos – e que é tarefa das
+            redes de Ouvidoria atendê-las e se posicionarem a respeito.
+          see_more_description: >
+            Veja todas as manifestações públicas
+            registradas no portal Ceará Transparente
+          see_more: Ver todas as manifestações públicas
+          empty: Sem solicitações
+
+        sic:
+          title: Solicitações de Acesso às Informações públicas
+          description: >
+            Acompanhe abaixo todas as solicitações de acesso à informação que estão em atendimento e veja qual o órgão envolvido na resposta.
+          see_more_description: >
+            Veja todas as solicitações de acesso públicas
+            registradas no portal Ceará Transparente
+          see_more: Ver todas as Solicitações públicas
+          empty: Sem solicitações

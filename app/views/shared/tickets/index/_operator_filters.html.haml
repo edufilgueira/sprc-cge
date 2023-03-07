@@ -1,0 +1,244 @@
+- unless controller_name_sou_evaluation_samples?
+  .col-12.mb-3{ class: operator_internal?(current_user) ? 'col-lg-6' : 'col-lg-4'}
+    - options = options_for_select(ticket_internal_status_for_select(ticket_type, current_user), params[:internal_status])
+    = label_tag :internal_status, t('.select.internal_status')
+    = select_tag :internal_status, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.female') }
+
+  - #
+  - # finalized
+  - #
+
+  .col-12.col-lg-4.mb-3
+    %label
+      = t('.finalized')
+
+    .radio
+      - show_finalized = params[:finalized] == '1'
+
+      %label
+        = radio_button_tag :finalized, 1, show_finalized, onchange: 'submit();'
+        = t('boolean.true')
+
+      %label
+        = radio_button_tag :finalized, 0, !show_finalized, onchange: 'submit();'
+        = t('boolean.false')
+
+- if current_user.sou_sectoral? || current_user.chief?
+  .col-12.col-lg-4.mb-3
+    - options = options_for_select(subnets_by_organ_for_select(current_user.organ_id), params[:subnet])
+    = label_tag :subnet, t('.select.subnet')
+    = select_tag :subnet, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+- unless operator_internal?(current_user) || controller_name.to_sym == :sou_evaluation_samples
+  - #
+  - # department
+  - #
+  .col-12.col-lg-4.mb-3
+    - organ = current_user.organ_id || params[:organ]
+    - subnet = current_user.subnet || params[:subnet]
+
+    - url = departments_api_v1_operator_classifications_path(organ: organ, subnet: subnet)
+    - options = options_for_select(department_by_id_for_select(params[:department]), params[:department])
+    = label_tag :department, t('.select.department')
+    = select_tag :department, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') , data: { input: 'filter_department', url: url } }
+
+- #
+- # sub_department
+- #
+- unless controller_name_sou_evaluation_samples?
+  .col-12.col-lg-4.mb-3
+    - department = current_user.department_id || params[:department]
+    - url = sub_departments_api_v1_operator_classifications_path(department: department, organ: organ)
+
+    - options = options_for_select(sub_department_by_id_for_select(params[:sub_department]), params[:sub_department])
+    = label_tag :sub_department, t('.select.sub_department')
+    = select_tag :sub_department, options ,{ onchange: 'submit();', include_blank: t('messages.filters.select.all.male'), data: { input: 'filter_sub_department', url: url } }
+
+- if can?(:view_organ_association, User)
+  - #
+  - # Association organ
+  - #
+  .col-12.col-lg-4.mb-3
+    %label{ for: 'organ'}
+      = t('.select.organ')
+
+    - organ = params[:organ_association].nil? ? current_user.organ.id : params[:organ_association]
+    - options = options_for_select(organ_and_organ_associations_for_select, organ)
+    = select_tag :organ_association, options, { onchange: 'submit();', include_blank: t('messages.filters.select.organ_association'), data: { input: 'filter_organ' } }
+
+- unless operator_sectoral_or_internal?(current_user) || operator_chief?(current_user)
+
+  - #
+  - # organ
+  - #
+  .col-12.col-lg-4.mb-3
+
+    - options = options_for_select(organs_for_select, params[:organ])
+    = label_tag :organ, t('.select.organ')
+    = select_tag :organ, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male'), data: { input: 'filter_organ' } }
+
+  - if controller_name.to_sym != :sou_evaluation_samples
+    - #
+    - # budget_program
+    - #
+    .col-12.col-lg-4.mb-3
+
+      - options = options_for_select(budget_programs_for_select(params[:organ]), params[:budget_program])
+      = label_tag :budget_program, t('.select.budget_program')
+      = select_tag :budget_program, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+- #
+- # topic
+- #
+.col-12.col-lg-4.mb-3
+  - options = options_for_select(topic_by_id_for_select(params[:topic]), params[:topic])
+  - url = topics_api_v1_operator_classifications_path(organ: params[:organ])
+  = label_tag :topic, t('.select.topic')
+  = select_tag :topic, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') , data: { input: 'filter_topic', url: url } }
+
+- if params[:topic].present?
+
+  - #
+  - # subtopic
+  - #
+  .col-12.col-lg-4.mb-3
+
+    - options = options_for_select(subtopics_by_topic_for_select(params[:topic]), params[:subtopic])
+    = label_tag :subtopic, t('.select.subtopic')
+    = select_tag :subtopic, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+- #
+- # service_type
+- #
+- unless controller_name_sou_evaluation_samples?
+  .col-12.col-lg-4.mb-3
+    - organ = current_user.organ
+    - subnet = current_user.subnet
+    - options = options_for_select(service_type_by_id_for_select(params[:service_type]), params[:service_type])
+    - url = service_types_api_v1_operator_classifications_path(organ: organ, subnet: subnet)
+
+    = label_tag :service_type, t('.select.service_type')
+    = select_tag :service_type, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') , data: { input: 'filter_service_type', url: url } }
+
+- if ticket_type == 'sou'
+
+  - #
+  - # tipo de manifestação
+  - #
+  .col-12.col-lg-4.mb-3
+    - options = options_for_select(sou_types_for_select(current_user), params[:sou_type])
+    = label_tag :sou_type, t('.select.sou_type')
+    = select_tag :sou_type, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+  - #
+  - # deadline
+  - #
+- unless controller_name_sou_evaluation_samples?
+  .col-12.col-lg-4.mb-3
+    - options = options_for_select(ticket_deadlines_for_select, params[:deadline])
+    = label_tag :deadline, t('.select.deadline')
+    = select_tag :deadline, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+- #
+- # ticket_department deadline
+- #
+- if operator_sectoral?(current_user)
+  .col-12.col-lg-4.mb-3
+    - options = options_for_select(ticket_deadlines_for_select, params[:ticket_departments_deadline])
+    = label_tag :ticket_departments_deadline, t('.select.ticket_departments_deadline')
+    = select_tag :ticket_departments_deadline, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+- #
+- # answer_type
+- #
+.col-12.col-lg-4.mb-3
+  - options = options_for_select(ticket_answer_types_for_select, params[:answer_type])
+  = label_tag :answer_type, t('.select.answer_type')
+  = select_tag :answer_type, options, { onchange: 'submit();', include_blank: t('messages.filters.select.all.male') }
+
+- #
+- # priority
+- #
+- unless controller_name_sou_evaluation_samples?
+  .col-12.col-md-4
+    .checkbox
+      %label.small
+        = check_box_tag :priority, '1', params[:priority].present?, onchange: 'submit();'
+        = t('.priority')
+
+- #
+- # Denúncias
+- #
+- if operator_denunciation?(current_user) && ticket_type == 'sou' && !controller_name_sou_evaluation_samples?
+
+  - #
+  - # Sem denúncias
+  - #
+  .col-12.col-md-4
+    .checkbox
+      %label.small
+        = hidden_field_tag :without_denunciation, 'false'
+        = check_box_tag :without_denunciation, 'true', params[:without_denunciation] == 'true' , onchange: 'submit();'
+        = t('.without_denunciation')
+
+  - #
+  - # Apenas denúncias
+  - #
+  .col-12.col-md-4
+    .checkbox
+      %label.small
+        = hidden_field_tag :denunciation, '0'
+        = check_box_tag :denunciation, '1', params[:denunciation] == '1' , onchange: 'submit();'
+        = t('.denunciation')
+
+- #
+- # extension_in_progress
+- #
+- if operator_chief?(current_user)
+
+  .col-12.col-md-4
+    .checkbox
+      %label.small
+        = check_box_tag :extension_status, :in_progress, checked_extension_in_progress?(params[:extension_status], params[:solicitation]), onchange: 'submit();'
+        = t('.extension_in_progress')
+
+- #
+- # rede_ouvir
+- #
+/ - if operator_cge?(current_user) && !controller_name_sou_evaluation_samples?
+/   .col-12.col-md-4
+/     .checkbox
+/       %label.small
+/         = check_box_tag :rede_ouvir, '1', params[:rede_ouvir].present?, onchange: 'submit();'
+/         = t('.rede_ouvir')
+
+- #
+- # rede_ouvir_cge
+- #
+/ - if operator_cge?(current_user) && !controller_name_sou_evaluation_samples?
+/   .col-12.col-md-4
+/     .checkbox
+/       %label.small
+/         = check_box_tag :rede_ouvir_cge, '1', params[:rede_ouvir_cge].present?, onchange: 'submit();'
+/         = t('.rede_ouvir_cge')
+
+- #
+- # other_organs
+- #
+
+- if operator_coordination_or_cge?(current_user) && !controller_name_sou_evaluation_samples?
+  .col-12.col-md-4
+    .checkbox
+      %label.small
+        = check_box_tag :other_organs, '1', params[:other_organs].present?, onchange: 'submit();'
+        = t('.other_organs')
+
+- #
+- # percentage
+- #
+- if operator_coordination_or_cge_or_denunciation?(current_user) && controller_name_sou_evaluation_samples?
+  .col-12.col-md-4
+    %label
+      = t('.percentage.title')
+
+    = text_field_tag(:percentage, params[:percentage], placeholder: t('.percentage.label'), class: 'form-control w-100 mb-3', title: t('.percentage.label'))

@@ -1,0 +1,7 @@
+en:
+  transparency:
+    expenses:
+      multi_gov_transfers:
+        index:
+          title: Transfers to Multigovernmental Institutions
+          description: Here you can found information of Transfers to Multigovernmental Institutions.

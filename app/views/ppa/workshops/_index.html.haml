@@ -1,0 +1,46 @@
+.mt-4
+  -workshops.each do |workshop|
+
+    .row
+      .col-md-8.col-xs-12
+        %h3.mt-2.mb-4
+          = workshop_title workshop
+
+        %p.mb-0
+          %strong
+            = t '.address_title'
+
+          = workshop.address
+
+        %p
+          %strong
+            = t '.date_title'
+            
+          = workshop_duration(workshop)
+        %p
+          %strong
+            = t '.link_title'
+            
+          %a{href: workshop.link}
+            = workshop.link
+
+
+      .col-md-4.col-xs-12
+        - if workshop.documents.any?
+
+          %p.mt-4.font-weight-bold
+            = t('.documents')
+
+            %ul.list-unstyled
+              - workshop.documents.each do |document|
+
+                %li
+                  = link_to document.attachment_url, target: :_blank do
+                    %i{ class: 'fa fa-file-text-o' }
+                    = document.attachment_filename
+
+    %hr{ 'aria-hidden' => true }
+
+  .row
+    .col-md-12.text-center
+      = paginate workshops, remote: true

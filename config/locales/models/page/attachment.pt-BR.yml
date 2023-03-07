@@ -1,0 +1,15 @@
+pt-BR:
+
+  activerecord:
+
+    attributes:
+
+      page/attachment:
+        title: Título
+        imported_at: Data de geração
+        document: Arquivo
+
+    models:
+      page/attachment:
+        one: 'Anexo'
+        other: 'Anexos'

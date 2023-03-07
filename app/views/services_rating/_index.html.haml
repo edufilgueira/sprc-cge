@@ -1,0 +1,15 @@
+
+= simple_form_for [services_rating], url: services_rating_index_path,  data: { form: 'services_rating' } do |f|
+	.row
+
+		.col-lg-12.form-group
+			= f.input :description, label: false, input_html: { required: true }
+			= hidden_field_tag :from, 'index'
+
+
+		.col-lg-2
+		.col-lg-4
+			= recaptcha_tags
+		.col-lg-4.form-group
+			= f.submit t('commands.send'), class: 'btn btn-primary btn-block', from: 'index', data: { submit: 'services_rating' }
+		.col-lg-2

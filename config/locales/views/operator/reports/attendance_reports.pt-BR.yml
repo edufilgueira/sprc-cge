@@ -1,0 +1,43 @@
+pt-BR:
+
+  operator:
+
+    reports:
+
+      attendance_reports:
+
+        index:
+          title: Relatórios de atendimentos
+          empty: Nenhum relatório encontrado
+          search:
+            label: Busque pelo título
+          commands:
+            new: Novo relatório
+
+        file_info:
+          title: Informações do arquivo
+          size: Tamanho
+          total: Total
+          created_at: Criado em
+
+        file_filters:
+          title: Filtros considerados
+          range: Período
+
+        new:
+          title: Novo relatório de atendimento
+
+        show:
+          title: Relatório de atendimento
+
+        form:
+          title: Relatórios de atendimentos
+
+        create:
+          title: Novo relatório de atendimento
+          done: Relatório iniciado com sucesso
+          error: Falha ao criar relatório
+
+        destroy:
+          done: Relatório removido com sucesso
+          error: Falha ao remover relatório

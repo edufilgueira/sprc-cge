@@ -1,0 +1,36 @@
+.container
+  = simple_form_for [:admin, executive_organ] do |f|
+
+    .row
+      .col-12
+        = f.input :name, autofocus: true
+    .row
+      .col-sm-4
+        = f.input :acronym
+      .col-sm-4
+        = f.input :code
+      .col-sm-4
+        = f.input :subnet, input_html: { class: 'mr-2' }
+
+    .row
+      .col-sm-12
+        = f.input :ignore_cge_validation
+
+    .row
+      .col
+        = f.input :description
+
+    %hr{'aria-hidden': 'true'}
+
+    #organ_associations
+      = f.simple_fields_for :organ_associations do |organ|
+        = render 'organ_association_fields', f: organ
+      .links
+        = link_to_add_association t('.organ_association.add'), f, :organ_associations, class: "mt-md-2 btn btn-success icon-plus"
+
+    %hr{'aria-hidden': 'true'}
+
+    .row
+      .col-12
+        = link_to t('.commands.cancel'), admin_executive_organs_path, class: 'btn btn-warning pull-left'
+        = f.submit t('commands.save'), class: 'btn btn-primary float-right'

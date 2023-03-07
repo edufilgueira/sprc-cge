@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    attributes:
+      integration/revenues/revenue:
+        unidade: Unit
+        organ_title: Unit
+        organ: Agency
+        secretary: Secretariat
+        poder: Power
+        administracao: Administration
+        conta_contabil: Accounting account
+        valor_debito: Debit value
+        valor_credito: Credit value
+        month: Month
+        year: Year
+        account_configuration_title: Revenue type

@@ -1,0 +1,43 @@
+
+- if operator?(current_user)
+
+  .card.card-custom
+
+    .card-header
+
+      %h3.card-title
+        = t('.title')
+
+    .card-block
+
+      .content
+        - if ticket.denunciation? && ticket.denunciation_type.nil?
+          %em
+            = t(".denunciation.requirement")
+        - else
+          - if can? :classify_denunciation, ticket
+
+            - #
+            - # Classificação de denúncia
+            - # habitado para operador cge de denúncia e ticket do tipo denúncia
+            - #
+            = render 'shared/tickets/denunciation_classification'
+
+            %br
+
+            = render 'shared/tickets/denunciation_couvi'
+
+            %hr{'aria-hidden': 'true'}
+
+          - #
+          - # Classificação comum
+          - #
+          - if can? :classify_without_organ, ticket
+            = render 'shared/classifications/classification', ticket: ticket, classification: classification
+
+          - elsif operator_coordination?(current_user) || operator_cge?(current_user)
+            = render 'operator/tickets/classifications/remote_classification', ticket: ticket
+
+          - else
+            %em
+              = t(".parent.#{ticket.ticket_type}")

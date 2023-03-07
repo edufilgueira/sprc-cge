@@ -1,0 +1,68 @@
+- content_for :title, title
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+= content_for :javascript, javascript_include_tag('views/shared/tickets/index')
+
+.row.mb-4
+
+  .col-lg-9.col-12
+
+    %h2.mt-4
+      = title
+  .col-lg-3.col-12
+    .mt-4
+      - if can?(:create_ticket, Ticket.new) && !controller_name_sou_evaluation_samples?
+        - new_ticket_path = send("new_#{namespace}_ticket_path", { ticket_type: ticket_type })
+
+        = link_to t(".#{ticket_type}.commands.new"), new_ticket_path, class: 'btn w-100 btn-tertiary'
+
+.card.card-custom
+
+  .card-header
+
+    %h3.card-title.font-weight-bold.border-bottom.pb-3
+      = filter_label
+
+    - unless controller_name_sou_evaluation_samples?
+      .card-commands
+        = link_to new_operator_reports_ticket_report_path(request.query_parameters), class: 'btn btn-link text-muted d-inline-block' do
+          %i.fa.fa-bar-chart{ 'aria-hidden': 'true' }
+          = t('.report')
+
+        = link_to new_operator_reports_gross_export_path(request.query_parameters), class: 'btn btn-link text-muted d-inline-block' do
+          %i.fa.fa-table{ 'aria-hidden': 'true' }
+          = t('.export')
+  .card-block
+    = form_for operator_tickets_path, method: :get do |f|
+      - # 'data-filter': 'permanent' é importante para que o 'Limpar filtros' não
+      - # apague o valor desse campo e vá para a área errada de chamados.
+      = hidden_field_tag(:ticket_type, ticket_type, 'data-filter': 'permanent')
+      = render 'shared/tickets/index/filters', namespace: namespace, f: f
+
+    - if controller_name_sou_evaluation_samples?
+      = form_for operator_sou_evaluation_samples_path, method: :post do |f|
+        = hidden_field_tag(:sample_ids, sample_ids)
+        = hidden_field_tag(:filtered_params, trait_params(exclude_non_filterable(params)))
+
+        - #
+        - # collapse link
+        - #
+        .row{ id: 'solicit_sample' }
+          .col-12.text-right
+            %a.btn.btn-link{ 'data-toggle': 'collapse', href: '#genarate_collapse', role: 'button', 'aria-expanded': 'false', 'aria-controls': 'export_collapse' }
+              = t('.sample.link')
+        .collapse{ 'id': 'genarate_collapse', 'data-link': 'collapse'}
+          .col-12.col-md-12
+            %label
+              = t('.sample.label.title')
+
+            = text_field_tag(:title, params[:title], required: true, class: 'form-control required w-100 mb-3', title: t('.sample.label.title'))
+
+            = f.submit t('.generate'), class: 'btn btn-orange btn-block label-margin'
+
+    - if tickets.present?
+      .mt-3
+        = render 'table', tickets: tickets
+    - else
+      .row
+        %i.col-md-12.text-center
+          = t('shared.tickets.index.empty') unless controller_name_sou_evaluation_samples?

@@ -1,0 +1,20 @@
+pt-BR:
+  shared:
+    comments:
+      attachment_fields:
+        file:
+          hint: 'A soma dos anexos inseridos no sistema não pode ultrapassar o limite de 50MB.'
+
+      form:
+        description:
+          internal: Inserir novo comentário interno
+          external: Inserir novo comentário
+        commands:
+          add_attachment: Adicionar anexo
+          save:
+            internal: Inserir comentário interno
+            external:  Enviar comentário
+
+      comment:
+        title: '%{author} fez um novo comentário'
+        anonymous_title: 'Cidadão fez um novo comentário'

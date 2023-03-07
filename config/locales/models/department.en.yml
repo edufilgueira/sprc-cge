@@ -1,0 +1,17 @@
+en:
+  activerecord:
+
+    models:
+      department:
+        one: 'Department'
+        other: 'Departments'
+
+    attributes:
+      department:
+        acronym: Acronym
+        name: Name
+        organ_id: Organ
+        organ: Organ
+        organ_name: Organ
+        subnet: Sub-network
+        subnet_name: Sub-network

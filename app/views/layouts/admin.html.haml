@@ -1,0 +1,39 @@
+!!! 5
+%html{lang: 'pt-BR'}
+
+  %head
+
+    = render 'shared/admin/head'
+
+  %body{ data: { controller: controller_path } }
+
+    = render 'shared/a11y/content_link'
+
+    = render 'shared/ribbon'
+
+    = render 'shared/admin/navbar'
+
+    .container
+
+      = render 'shared/admin/notice'
+
+      = render 'shared/admin/alert'
+
+      = render 'shared/admin/toolbar'
+
+      = render 'shared/a11y/content_anchor'
+
+      = yield
+
+    = render 'shared/application/privacy_statement'
+
+    = render 'shared/a11y/footer_links'
+
+    = render 'shared/admin/footer'
+
+    = javascript_include_tag(:admin)
+    = render 'shared/javascripts'
+    = noscript_include_tag
+    = yield(:javascript)
+
+    = render 'shared/google_analytics'

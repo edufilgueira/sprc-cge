@@ -1,0 +1,9 @@
+.card-commands
+
+  = link_to send("#{path_name}", format: :csv, params: request.query_parameters), class: 'btn btn-link text-muted d-inline-block' do
+    %i.fa.fa-download{ 'aria-hidden': 'true' }
+    = t('.csv')
+
+  = link_to send("#{path_name}", format: :xlsx, params: request.query_parameters), class: 'btn btn-link text-muted d-inline-block' do
+    %i.fa.fa-download{ 'aria-hidden': 'true' }
+    = t('.xlsx')

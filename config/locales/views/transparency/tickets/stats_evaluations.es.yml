@@ -1,0 +1,228 @@
+es:
+  transparency:
+    tickets:
+      stats_evaluations:
+
+        index:
+          title: 'Datos estadísticos'
+          description: >
+            Paneles estadísticos mensuales como de los datos consolidados de la encuesta de satisfacción de oidoría,
+            acceso a la información y central 155 de las evaluaciones de atención realizadas por los ciudadanos de Ceará Transparente.
+
+          average_alert: El promedio de evaluación va de 1 a 5.
+
+          tabs:
+            sou:
+              title: 'Oidoría Digital'
+
+            sic:
+              title: 'Acceso a la información'
+
+            call_center:
+              title: 'Central 155'
+
+            transparency:
+              title: 'Transparencia'
+
+          empty: 'No hay estadísticas para este período'
+
+          sou:
+            title: 'Investigación de satisfacción de la Oidoría Digital'
+
+            summary:
+              title: 'Número de manifestaciones e investigaciones'
+
+              total_answered_tickets:
+                title: 'manifestaciones respondidas por el Gobierno del Estado de Ceará'
+
+              total_user_evaluations:
+                title: 'encuestas respondidas por los usuarios de Ceará Transparente'
+
+
+              evaluations:
+                questions_01:
+                  title: 'Índice de satisfacción'
+
+                questions_02_03:
+                  title: 'Calidad del servicio de oidoría'
+
+              average_question_01_a:
+                title: 'En general para el servicio de oidoría para esta atención'
+
+              average_question_01_b:
+                title: 'Con el tiempo de retorno de la respuesta'
+
+              average_question_01_c:
+                title: 'Con la comprensión del operador con su pedido'
+
+              average_question_01_d:
+                title: 'Recibió todas las informaciones necesarias'
+
+
+              average_question_02:
+                title: 'Antes, creía que el servicio de oidoría era'
+
+              average_question_03:
+                title: 'Ahora evalúa el servicio de oidoría realizado'
+
+          sic:
+            title: 'Investigación de satisfacción del servicio de información'
+
+            summary:
+              title: 'Número de solicitudes y búsquedas'
+
+              total_answered_tickets:
+                title: 'solicitudes atendidas por el Gobierno del Estado de Ceará'
+
+              total_user_evaluations:
+                title: 'encuestas respondidas por los usuarios de Ceará Transparente'
+
+
+              evaluations:
+                questions_01:
+                  title: 'Índice de satisfacción'
+
+                questions_02_03:
+                  title: 'Calidade del servicio de información'
+
+              average_question_01_a:
+                title: 'En general para el servicio de información para esta atención'
+
+              average_question_01_b:
+                title: 'Con el tiempo de retorno de la respuesta'
+
+              average_question_01_c:
+                title: 'Con la comprensión del operador con su pedido'
+
+              average_question_01_d:
+                title: 'Recibió toda la información necesaria'
+
+
+              average_question_02:
+                title: 'Antes, creía que el servicio de oidoría era'
+
+              average_question_03:
+                title: 'Ahora evalúa el servicio de oidoría realizado'
+
+          call_center:
+            title: 'Investigación de satisfacción de la Central 155'
+
+            summary:
+              title: 'Número de llamados y encuestas'
+
+              total_answered_tickets:
+                title: 'llamados respondidos por el Gobierno del Estado de Ceará'
+
+              total_user_evaluations:
+                title: 'encuestas respondidas por los usuarios del Ceará Transparente'
+
+
+              evaluations:
+                questions_01:
+                  title: 'Índice de satisfacción'
+
+                questions_02_03:
+                  title: 'Calidade del servicio de la Central 155'
+
+              average_question_01_a:
+                title: 'En general para el servicio de la Central 155 para esta atención'
+
+              average_question_01_b:
+                title: 'Con el tiempo de retorno de la respuesta'
+
+              average_question_01_c:
+                title: 'Con la compreensión del atendente con su pedido'
+
+              average_question_01_d:
+                title: 'Recibió todas las informaciones necesárias'
+
+
+              average_question_02:
+                title: 'Antes, creía que el servicio de oidoría era'
+
+              average_question_03:
+                title: 'Ahora evalúa el servicio de oidoría realizado'
+
+          transparency:
+            title: 'Investigación de satisfacción de transparencia'
+
+
+        organs:
+          more:
+            title: 'Mostrar/Ocultar todos los órganos'
+
+          title: 'Órganos más bien evaluados'
+
+          sou:
+            header:
+              position:
+                title: 'Posición'
+
+              organ_name:
+                title: 'Órganos'
+
+              total_tickets:
+                title: 'Manifestaciones abiertas'
+
+              total_answered_tickets:
+                title: 'Manifestaciones respondidas'
+
+              total_user_evaluations:
+                title: 'Encuestas repondidas'
+
+              average_evaluations:
+                title: 'Evaluación'
+
+          sic:
+            header:
+              position:
+                title: 'Posición'
+
+              organ_name:
+                title: 'Órgano'
+
+              total_tickets:
+                title: 'Solicitudes abiertas'
+
+              total_answered_tickets:
+                title: 'Solicitudes respondidas'
+
+              total_user_evaluations:
+                title: 'Encuestas repondidas'
+
+              average_evaluations:
+                title: 'Evaluación'
+
+          call_center:
+            header:
+              position:
+                title: 'Posición'
+
+              organ_name:
+                title: 'Órgano'
+
+              total_tickets:
+                title: 'Llamados abiertos'
+
+              total_answered_tickets:
+                title: 'Llamados respondidos'
+
+              total_user_evaluations:
+                title: 'Encuestas repondidas'
+
+              average_evaluations:
+                title: 'Evaluación'
+
+        themes:
+          title: 'Media de evaluación por tema'
+
+        transparency:
+          summary:
+            total:
+              title: 'Total de páginas evaluadas'
+
+            average:
+              title: 'Media de las páginas evaluadas'
+
+        create:
+          done: 'La actualización de las estadísticas se están generando en segundo plano, espere unos segundos!'

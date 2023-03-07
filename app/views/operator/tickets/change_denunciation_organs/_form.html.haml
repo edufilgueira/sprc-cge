@@ -1,0 +1,24 @@
+= simple_form_for ticket, url: operator_ticket_change_denunciation_organs_path(ticket), method: :post do |f|
+
+  .row.justify-content-center
+
+    .col-xl-10.col-12
+      .card.card-custom
+
+        .card-header
+
+          %h3.card-title
+            = t(".title")
+
+        .card-block
+
+          .row
+            .col-12
+              - denunciation_organ_select_text = t('shared.tickets.form.fields.denunciation_organ_select')
+              = f.association :denunciation_organ, prompt: denunciation_organ_select_text, collection: organs_for_select, selected: ticket.denunciation_organ_id, input_html: { 'data-input': 'denunciation_organ', 'aria-label': denunciation_organ_select_text }
+
+
+      .row.mt-4
+        .col-12
+          .float-right
+            = f.submit t("shared.tickets.form.commands.sou.create"), class: 'btn btn-primary'

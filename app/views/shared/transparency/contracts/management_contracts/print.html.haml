@@ -1,0 +1,66 @@
+.row
+  .col-12
+
+    %h2.h4
+      = link_to t('shared.transparency.contracts.management_contracts.show.resource_title', sacc: contract.title), transparency_contracts_contract_path(contract)
+
+    .row
+      .col-12
+        = content_with_label(contract, :descricao_objeto)
+
+
+    - manager = contract.manager.present? ? :manager_title : :cod_gestora
+    - grantor = contract.grantor.present? ? :grantor_title : :cod_concedente
+
+    .row
+      .col-12
+        - creditor = (contract.creditor.present? ? :creditor_title : :cod_financiador)
+        = content_with_label(contract, creditor)
+
+    .row
+      .col-6
+        .content-with-label
+
+          %p.content-label
+            = t('shared.transparency.contracts.management_contracts.show.cod_secretaria')
+
+          %p.content-value
+            = contract.manager_title || contract.cod_secretaria
+
+      .col-6.text-right
+        = content_with_label(contract, manager)
+
+
+    .row
+      .col-6
+        = dash_content_with_label(contract, :data_publicacao_doe, format: :date)
+
+      .col-6.text-right
+        = content_with_label(contract, :data_assinatura, format: :date)
+
+    .row
+      .col-6
+        = content_with_label(contract, :data_termino, format: :date)
+
+      .col-6.text-right
+        = content_with_label(contract, :descricao_situacao)
+
+    .row
+      .col-6
+        = content_with_label(contract, :valor_contrato)
+
+      .col-6.text-right
+        = content_with_label(contract, :valor_atualizado_concedente)
+
+.row.page-break
+  .col-12
+    = render 'shared/transparency/contracts/contracts/print/additives', contract: contract
+
+.row.page-break
+  .col-12
+    = render 'shared/transparency/contracts/contracts/print/adjustments', contract: contract
+
+    - #
+    - # Lista carregada por ajax; não deve ser exibida na tela de impressão pos pode haver milhares
+    - #
+    / = render 'shared/transparency/contracts/financials', contract: contract

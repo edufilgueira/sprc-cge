@@ -1,0 +1,14 @@
+- filename = attachment.document_filename
+- url = document_url(attachment)
+
+- if can? :view, attachment
+	%figure.d-inline-block.text-center.m-2
+		= link_to document_image_tag(attachment, image_size), url, download: filename, target: :_blank
+
+
+		%figcaption.small
+			= link_to truncate(filename), url, download: filename, target: :_blank
+
+			- if can?(:destroy, attachment)
+				= link_to t('commands.remove'), url_for([namespace, attachment, ticket_id: ticket, only_path: true]), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'd-block text-danger'
+

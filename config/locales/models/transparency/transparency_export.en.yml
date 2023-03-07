@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    attributes:
+
+      transparency/export:
+        name: 'Name'
+        email: 'E-mail'
+
+  transparency_export:
+    title: 'Generate CSV spreadsheet with filtered data'
+

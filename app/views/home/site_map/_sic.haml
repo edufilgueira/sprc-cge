@@ -1,0 +1,22 @@
+%hr
+.row.mb-3
+  .col-12
+    %h3
+      = t('.title')
+
+.row
+  .col-lg-6.col-sm-12
+    %ul.list-unstyled
+      - site_map_sic_default.each do |t|
+        %li.mb-2
+          = link_to t[:title], t[:link]
+
+
+    %ul.list-unstyled
+      %li.mb-2
+        %h5
+          = t('.sensitive_information.title')
+
+      - site_map_sic_sensitive_information.each do |t|
+        %li.mb-2
+          = link_to t[:title], t[:link]

@@ -1,0 +1,8 @@
+pt-BR:
+  transparency:
+    expenses:
+      neds:
+        index:
+          title: Notas de Empenho de Despesa
+          description: Consulte as dívidas reconhecidas oficialmente pelo Governo e a quem o governo deve pagar (notas de empenho).
+

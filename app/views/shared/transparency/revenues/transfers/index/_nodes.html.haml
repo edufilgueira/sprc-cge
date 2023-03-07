@@ -1,0 +1,41 @@
+- nodes.each do |node|
+
+  - node_type = next_node_type
+  - node_id = node[:id]
+
+  - node_path = current_node_path.present? ? "#{current_node_path}/#{node_type}/#{node_id}" : "#{node_type}/#{node_id}"
+
+  - node_level = next_node_level
+
+  - node_children_url = url_for(action: 'index', controller: 'revenues/transfers', params: params.permit!.to_h.merge({node_path: node_path}))
+
+  - node_opened = 'false'
+
+  - has_children = ( node_type != node_types.last )
+  - node_children_url = (has_children ? node_children_url : '')
+  - node_opened = (has_children ? node_opened : 'leaf')
+
+  %tr{ data: { 'node': node_path, 'node-children-url': node_children_url, 'node-level': node_level, 'node-opened': node_opened } }
+
+    %td.col-6
+      .treeview-icons
+        .fa.fa-spin.fa-refresh.mx-1.loading
+        .fa.fa-chevron-right.closed
+        .fa.fa-chevron-down.opened
+
+      .treeview-node
+        - title = node[:title].upcase
+
+        - if node_type == :organ && filtered_params?(['integration_revenues_revenues.unidade'])
+          = highlight(title, title)
+        - elsif filtered_params?(["integration_supports_revenue_natures.unique_id_#{node_type}"])
+          = highlight(title, title)
+        - else
+          = filtered_highlighted(title)
+
+    %td.col-2.text-right
+      = number_to_currency(node[:valor_previsto_inicial])
+    %td.col-2.text-right
+      = number_to_currency(node[:valor_previsto_atualizado])
+    %td.col-2.text-right
+      = number_to_currency(node[:valor_arrecadado])

@@ -1,0 +1,24 @@
+.row.justify-content-center
+  .col-12
+    .card.card-custom.my-4
+
+      .card-header
+        %h2.card-title
+
+          = link_to t('.denunciation.title'), operator_tickets_path(ticket_type: :sou, denunciation: 1)
+
+      .row
+        - tickets_denunciation_cards_counts.each do |card|
+          .col-sm-4
+            .card-block
+
+              = link_to card.last[:params] do
+
+                - card_name = card.first
+
+                .operator-home-card.denunciation{data: { status: card_name } }
+                  %h3.operator-home-card-title.text-center
+                    = raw(t(".denunciation.card.#{card_name}.title"))
+
+                  %p.operator-home-card-count.text-center
+                    = card.last[:count]

@@ -1,0 +1,20 @@
+- # TODO: refactor and move stats to some Transparency Stats Presenter
+- items = [['revenues/accounts', :subfonte], ['contracts/contracts', :creditor], ['contracts/convenants', :creditor], ['server_salaries', :organ, [:unique_count]]]
+
+%ul.nav.nav-tabs.flex-column-sm#secondTab{ role: "tablist" }
+  - items.each_with_index do |item, i|
+    %li.nav-item
+      %a.nav-link{ id: "chartbar-item#{i+1}-tab", data: { toggle: "tab" }, href: "#chartbar-item#{i+1}", role: "tab", aria: { controls: "chartbar-item#{i+1}", selected: "true" }, class: ('active' if i.zero?) }
+        = t(".chartnav.item#{i+1}.title")
+
+%section.tab-content#secondTabContent{ 'aria-labelledby': 'graphic_sections' }
+  - items.each_with_index do |item, i|
+    .tab-pane.fade.mt-2.mb-5{ id: "chartbar-item#{i+1}", role: "tabpanel", aria: { labelledby: "chartbar-item#{i+1}-tab" }, class: ('active show' if i.zero?) }
+      - chart_tab = item[1]
+      - stats = "Stats::#{item[0].split('/').map(&:camelize).join('::').classify}".constantize.last_stat
+
+      - if stats.present? && stats.data[chart_tab].present?
+        = render "shared/transparency/#{item[0]}/index/chart", stats: stats, chart_name: chart_tab, series_data: stats.data[chart_tab], chart_types: item[2]
+      - else
+        .text-center.text-muted
+          = t('.empty_graphic')

@@ -1,0 +1,20 @@
+-# Padroniza a barra de busca de notificações, usando o mecanismo de `shared/_filters.html.haml`
+-# Assim, repassamos os argumentos da partial (`local_assigns`), aumentando com algumas especificidades.
+- filter_options = local_assigns
+
+-# reusando partial shared/_filters.html.haml
+= render 'shared/filters', filter_options.merge(search_placeholder: t('shared.notifications.filters.search.placeholder')) do
+  .row
+    .col-12.col-lg-4.text-left
+      = label_tag :show_only_unread, class: '' do
+
+        -# simulando f.check_box, para sempre enviar o parâmetro. Note que precisamos de id: nil
+        -# para que o click no label ative o checkbox (atributo `for` "bate" no atributo `id` da checkbox)
+
+        = hidden_field_tag :show_only_unread, 'false', id: nil
+
+        = check_box_tag :show_only_unread, 'true', params[:show_only_unread] == 'true'
+        = t('shared.notifications.filters.unread.label')
+
+  - # Adiciona outros filtros, além da barra de busca, passados pelo bloco
+  = yield

@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    attributes:
+
+      schedule:
+        cron_syntax_frequency: Frequência (Sintaxe crontab)
+
+    errors:
+      models:
+        schedule:
+          attributes:

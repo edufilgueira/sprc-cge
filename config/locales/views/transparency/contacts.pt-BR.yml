@@ -1,0 +1,158 @@
+pt-BR:
+  transparency:
+    contacts:
+      index:
+        title: Canais de atendimento
+        title2: Links úteis
+        access_link: Acessar site
+
+        card1:
+          title: Rede de ouvidorias
+          description: >
+            O modelo de gestão de ouvidorias em rede garante a
+            uniformidade de processos, procedimentos e disponibilização das
+            informações e contribui com a implementação das políticas públicas e
+            a avaliação dos serviços prestados.
+          see_more: Ver rede de ouvidorias
+
+        card2:
+          title: Redes sociais
+          description: >
+            Você pode utilizar todos os canais abaixo para dialogar e interagir
+            com o Estado do Ceará, seus órgãos e entidades.
+
+        card3:
+          title: E-mail e telefone
+          description: >
+            Você pode utilizar todos os canais abaixo para dialogar e interagir
+            com o Estado do Ceará, seus órgãos e entidades.
+          link1:
+            title: ouvidoria.geral@cge.ce.gov.br
+            link: mailto:ouvidoria.geral@cge.ce.gov.br
+          link2:
+            title: Central de Atendimento 155
+            link: '#!'
+
+        channel1:
+          title: Governo do Estado do Ceará
+
+          description: >
+            Encontre várias informações relacionadas ao Governo do estado,
+            dentre elas: notícias, agenda do governador, secretariado, serviços, etc.
+
+          link: http://www.ceara.gov.br/
+
+
+        channel2:
+          title: Controladoria e Ouvidoria Geral do Estado do Ceará
+
+          description: >
+            Visite o site do órgão de controle interno do Poder Executivo do
+            Estado do Ceará e encontre várias informações, tais como: relatórios
+            de auditoria, de controle interno, de gestão da transparência, de
+            ouvidoria, etc.
+
+          link: http://www.cge.ce.gov.br/
+
+        channel3:
+          title: Secretaria de Segurança Pública e Defesa Social (SSPDS)
+
+          description: >
+            O site da SSPDS disponibiliza diversas informações, dentre elas:
+            notícias, estatísticas, delegacia eletrônica, etc.
+
+          link: http://www.sspds.ce.gov.br/
+
+        channel4:
+          title: Secretaria de Saúde  (SESA)
+
+          description: >
+            A SESA disponibiliza em seu site institucional informações de
+            interesse coletivo, tais como: indicadores, calendário de vacinação,
+            dados básicos, etc.
+
+          link: http://www.saude.ce.gov.br
+
+        channel5:
+          title: Secretaria da Fazenda  (SEFAZ)
+
+          description: >
+            Encontre no site da SEFAZ informações referentes às finanças públicas,
+            à legislação tributária, etc.
+
+          link: http://www.sefaz.ce.gov.br
+
+        channel6:
+          title: Secretaria da Educação  (SEDUC)
+
+          description: >
+            Encontre no site da Secretaria da Educação informações referentes
+            aos projetos e programas da secretaria, à documentação escolar, etc.
+
+          link: http://www.seduc.ce.gov.br
+
+        channel7:
+          title: Departamento de Trânsito – Detran CE
+
+          description: >
+            Encontre no site do DETRAN informações sobre os serviços realizados
+            pelo órgão (Central de Serviços), além de dados estatísticos,
+            notícias, etc.
+
+          link: http://portal.detran.ce.gov.br/
+
+        channel8:
+          title: Companhia de água e Esgoto (CAGECE)
+
+          description: >
+            Encontre no site da CAGECE informações da estrutura tarifária da
+            companhia, dos endereços das lojas de atendimento, da tabela de
+            multas, etc.
+
+          link: https://www.cagece.com.br/
+
+        channel9:
+          title: Diário Oficial do Estado  - DOE
+
+          description: >
+            Encontre os diários oficiais do Estado do Ceará.
+
+          link: http://pesquisa.doe.seplag.ce.gov.br/doepesquisa/sead.do?page=ultimasEdicoes&cmd=11&action=Ultimas
+
+        channel10:
+          title: Páginas de Transparência do Ministério Público do Estado do Ceara
+
+          description: >
+            Acesse Páginas de Transparência do MP e acompanhe dados institucionais,
+            tais como: orçamento anual, execução orçamentária e financeira,
+            licitação, instrumentos contratuais e congêneres, gestão de pessoas e
+            relatórios de gestão fiscal da Lei de Responsabilidade Fiscal, etc.
+
+          link: http://www.mpce.mp.br/portal-da-transparencia/
+
+        channel11:
+          title: Páginas de Transparência do Tribunal de Justiça Estado do Ceara
+
+          description: >
+            Visite a área de transparência do Tribunal de Justiça e acompanhe
+            várias informações, dentre elas: Gestão orçamentária e financeira,
+            estrutura de remuneração e pessoal, etc.
+
+          link: https://www.tjce.jus.br/transparencia/
+
+        channel12:
+          title: Acompanhamentos de Processos - Viproc
+
+          description: >
+            Realize o Acompanhamento de processos!
+
+          link: http://www.seplag.ce.gov.br/menu-servicos/acompanhamento-de-processos-viproc/
+
+        channel13:
+          title: Páginas de Transparência da Assembléia Legislativa
+
+          description: >
+            Acompanhe várias informações da Assembléia, dentre elas: execução
+            orçamentária, licitação, folha, etc.
+
+          link: https://www.al.ce.gov.br/index.php/transparencia/portal-da-transparencia

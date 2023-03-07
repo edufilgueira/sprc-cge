@@ -1,0 +1,44 @@
+%h3.card-subtitle.mb-3
+  = t('.title')
+
+- summary = stats_ticket.data[:summary_csai]
+
+- if summary.blank?
+  .row.col-md-12.text-center
+    %em= t('.no_content')
+
+- else
+
+  .row.text-center.mb-3
+
+    - [:other_organs, :completed, :partially_completed, :pending].each do |item|
+      - data = summary[item]
+
+      .col-md-4.col-lg-4.col-sm-12.pb-4
+        .content-with-label
+          %label.content-label
+            = t(".#{item}.#{ticket_type}.title")
+        .content-value
+          %big= "#{data[:count]} (#{number_to_percentage(data[:percentage], precision: 2)})"
+
+
+
+    .col-md-4.col-lg-4.col-sm-12.pb-4
+      .content-with-label
+        %label.content-label
+          = t(".average_time_answer.#{ticket_type}.title")
+      .content-value
+        %big= t(".average_time_answer.#{ticket_type}.label", average: number_with_delimiter(summary[:average_time_answer]))
+
+    .col-md-4.col-lg-4.col-sm-12.pb-4
+      .content-with-label
+        %label.content-label
+          = t(".resolubility.#{ticket_type}.title")
+      .content-value
+        %big= "#{number_to_percentage(summary[:resolubility], precision: 2)}"
+
+
+  - series_data_keys = stats_summary_serie_keys(summary, ticket_type)
+  - series_data_values = stats_summary_serie_values(summary)
+  - series_data_percentages = stats_summary_serie_percentages(summary)
+  .chart{ data: { title: t('.chart.title'), unit: t('.chart.unit'), type: :pie, series_name: [t('.chart.series_name')], series_data_keys: [series_data_keys], series_data_values: [series_data_values], series_data_percentages: [series_data_percentages], 'show-percentage': true}}

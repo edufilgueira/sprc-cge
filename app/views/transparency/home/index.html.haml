@@ -1,0 +1,20 @@
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = t('.title')
+
+= render 'top_queries_sections'
+
+= render 'top_4_sections'
+
+= render 'how_sections'
+
+= render 'graphic_sections'
+
+= render 'card_sections'
+
+= render 'map_sections'
+
+= render 'news_sections'

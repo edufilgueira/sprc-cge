@@ -1,0 +1,11 @@
+es:
+  activerecord:
+    attributes:
+
+      ombudsman:
+        title: 'Título'
+        contact_name: 'Oidor(a):'
+        phone: 'Teléfono:'
+        email: 'Correo electrónico:'
+        address: 'Dirección:'
+        operating_hours: 'Horario de funcionamiento:'

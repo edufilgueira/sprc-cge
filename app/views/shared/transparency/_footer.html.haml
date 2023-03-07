@@ -1,0 +1,36 @@
+%footer
+
+  .footer-top-line
+
+  .container
+
+    .footer-content.text-center
+
+      .row.justify-content-center
+        .col-sm-2
+        .col-sm-4
+          = link_to new_user_session_path(ticket_type: :sou) do
+            .new-ticket
+              %i.fa.fa-comment.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+              %span.font-weight-bold
+                = t('.new_ticket.sou.title')
+
+        .col-sm-4
+          = link_to new_user_session_path(ticket_type: :sic) do
+            .new-ticket
+              %i.fa.fa-info-circle.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+              %span.font-weight-bold
+                = t('.new_ticket.sic.title')
+        .col-sm-2
+
+
+      .row.justify-content-center
+        .col-12
+          .text-center
+            = t('app.copyright', year: Date.today.year)
+          .pull-right
+            = render 'shared/locales'
+      .row.justify-content-center
+        .col-12
+          .fb-like.mt-2{ data: { href: request.original_url, layout: "button_count", action: "like", size: "small", show_faces:"true", share: "true" } }
+

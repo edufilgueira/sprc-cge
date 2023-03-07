@@ -1,0 +1,44 @@
+pt-BR:
+
+  admin:
+
+    themes:
+      create:
+        title: Novo tema
+        done: "O tema '%{title}' foi criado."
+        error: Falha ao criar o tema
+      destroy:
+        done: "O tema '%{title}' foi removido."
+      form:
+        commands:
+          cancel: < Voltar a lista de temas
+          create: Criar tema
+      index:
+        title: Temas
+
+        commands:
+          new: Novo tema
+
+        table:
+          summary: Lista paginada com todos os temas
+          caption: Tabela contendo todos os temas
+
+          header:
+            name: Nome
+            code: Código
+            commands: ''
+            status: ''
+
+      new:
+        title: Novo tema
+      edit:
+        title: Edição
+      update:
+        title: Edição de tema
+        done: "O tema '%{title}' foi atualizado."
+        error: Falha ao atualizar o tema
+      show:
+        title: Exibição do tema
+      toggle_disabled:
+        disabled: Tema desabilitado!
+        enabled: Tema habilitado!

@@ -1,0 +1,34 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.row.justify-content-center{ data: { main_container: '' } }
+
+  .col-12
+    %h2=t(".#{stats_ticket.ticket_type}.title", date: stats_ticket.formated_date)
+
+  .col-12
+
+    .card.card-custom
+      - ticket_type = stats_ticket.ticket_type
+
+      .card-block.card-header
+        = render 'shared/reports/stats_tickets/summary', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+      - if stats_ticket.sic? && stats_ticket.organ_id.present?
+        .card-block.card-header
+          = render 'shared/reports/stats_tickets/summary_csai', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+      .card-block.card-header
+        = render 'shared/reports/stats_tickets/show/organs', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+      .card-block.card-header
+        = render 'shared/reports/stats_tickets/show/topics', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+      .card-block.card-header
+        = render 'shared/reports/stats_tickets/show/departments', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+      .card-block.card-header
+        = render 'shared/reports/stats_tickets/show/used_inputs', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+      - if stats_ticket.sou?
+        .card-block.card-header
+          = render 'shared/reports/stats_tickets/show/sou_types', stats_ticket: stats_ticket, ticket_type: ticket_type

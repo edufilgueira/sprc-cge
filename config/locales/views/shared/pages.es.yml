@@ -1,0 +1,12 @@
+es:
+  shared:
+    pages:
+
+      attachments:
+        title: Archivos Adjuntos
+        options:
+          blank: Todos
+        filters:
+          year: Buscar por el año de la publicación
+          title: Buscar por el tema
+

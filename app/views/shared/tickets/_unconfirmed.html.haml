@@ -1,0 +1,42 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+
+    .mt-4
+      .row
+
+        .col-md-4.col-12.pb-4.pb-md-0
+
+          - if can?(:edit, ticket)
+
+            = link_to t('.edit.action'), send("edit_#{namespace}_ticket_path", ticket), class: 'btn btn-outline-primary btn-block'
+
+        .col-md-8.col-12
+
+          - if can?(:update, ticket)
+
+            = link_to t('.confirm.action'), send("#{namespace}_ticket_path", ticket: { status: :confirmed }, confirmation: true), method: :put, class: 'btn btn-primary btn-block'
+
+
+    - comment_form_url = [namespace, comment]
+    = render 'shared/tickets/show', namespace: namespace, ticket: ticket, comment: comment, comment_form_url: comment_form_url
+
+
+    .mt-4
+      .row
+
+        .col-md-4.col-12.pb-4.pb-md-0
+
+          - if can?(:edit, ticket)
+
+            = link_to t('.edit.action'), send("edit_#{namespace}_ticket_path", ticket), class: 'btn btn-outline-primary btn-block'
+
+        .col-md-8.col-12
+
+          - if can?(:update, ticket)
+
+            = link_to t('.confirm.action'), send("#{namespace}_ticket_path", ticket: { status: :confirmed }, confirmation: true), method: :put, class: 'btn btn-primary btn-block'

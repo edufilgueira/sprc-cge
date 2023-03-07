@@ -1,0 +1,84 @@
+en:
+  platform:
+    home:
+      index:
+        title: Home
+
+      notification_sections:
+        title: Notification Center
+        subject: Description
+        created_at: Date
+
+      tickets_dashboard_sections:
+
+        new:
+          sou: Log new manifestation
+          sic: Log new request
+          ppa: Propose new guideline
+
+        sou:
+          title: Ombudsman Manifestations
+          statuses: &statuses
+            active: In progress
+            inactive: Done
+
+        sic:
+          title: Information requests
+          statuses:
+            <<: *statuses
+
+        ppa:
+          title: Proposals
+          statuses:
+            active: My proposals
+            inactive: Proposals I voted for
+
+      tickets_resume_sections:
+        sou:
+          super_title: Ombudsman
+          title: My public manifestations
+          see_more: See all public manifestations
+          empty: No manifestations
+
+        sic:
+          super_title: Access to information
+          title: My public requests
+          see_more: See all public requests
+          empty: No requests
+        activity: Activity
+
+      service_channels:
+        title: Service channels
+        description: >
+          Talk, be part of the government and assert your right as a citizen.
+          Access the channels below!
+
+        social:
+          title: Social Media
+
+          instagram: Instagram
+          twitter: Twitter
+          facebook: Facebook
+
+        other_channels:
+          title: Other services
+
+          central: Central 155
+          email: E-mail
+          networking: >
+            Presential
+            <div class="small">
+              (Telephone Numbers and Addresses)
+            </div>
+          networking_sic: >
+            List of responsible people for Access to Information
+            <div class="small">
+              (Telephone Numbers and Addresses)
+            </div>
+          ceara_app_google: Google Play
+          ceara_app_appstore: App Store
+
+      pending_research:
+        sou:
+          title: 'Satisfaction Survey'
+          subtitle: 'Pending'

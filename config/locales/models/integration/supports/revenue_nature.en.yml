@@ -1,0 +1,25 @@
+en:
+  activerecord:
+    attributes:
+      integration/supports/revenue_nature:
+        secretary: Scretariat
+        organ: Agency
+        codigo_consolidado: Revenue type
+        codigo_categoria_economica: Economic category
+        codigo_origem: Source
+        codigo_subfonte: Subsource
+        codigo_rubrica: Rubric
+        codigo_aliena: Line
+        codigo_subaliena: Subline
+
+        consolidado: Revenue type
+        categoria_economica: Economic category
+        origem: Source
+        subfonte: Subsource
+        rubrica: Rubric
+        aliena: Line
+        subaliena: Subline
+
+        transfer_required: Mandatory Transfers
+        transfer_voluntary: Voluntary Transfers
+        transfer: Transfer type

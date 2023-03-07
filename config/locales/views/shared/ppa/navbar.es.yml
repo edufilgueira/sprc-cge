@@ -1,0 +1,6 @@
+es:
+  shared:
+    ppa:
+      navbar:
+        search:
+          placeholder: Busque aquí...

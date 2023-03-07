@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    attributes:
+      page/chart:
+        title: Graphic title
+        unit: Unit
+        description: Screen reader description
+

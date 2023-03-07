@@ -1,0 +1,19 @@
+pt-BR:
+  platform:
+    tickets:
+      publish_tickets:
+        create:
+          sic:
+            done:
+              'true': Solicitação publicada com sucesso
+              'false': Solicitação despublicada com sucesso
+            error:
+              'true': Erro ao publicar solicitação
+              'false': Erro ao despublicar solicitação
+          sou:
+            done:
+              'true': Manifestação publicada com sucesso
+              'false': Manifestação despublicada com sucesso
+            error:
+              'true': Erro ao publicar manifestação
+              'false': Erro ao despublicar manifestação

@@ -1,0 +1,34 @@
+- content_for :javascript, javascript_include_tag('views/shared/organ_subnet/form')
+
+.container
+  = simple_form_for [:admin, department] do |f|
+
+    .row
+      .col-sm-12
+        = f.input :name, autofocus: true
+
+    .row
+      .col-sm-4
+        = f.input :acronym
+
+      = render 'shared/components/organ_subnet_fields', f: f
+
+    %hr{'aria-hidden': 'true'}
+
+    .nested-container
+
+      %h3.card-title
+        = SubDepartment.model_name.human(count: 2)
+
+      #sub_departments
+        = f.simple_fields_for :sub_departments do |sub_department|
+          = render 'sub_department_fields', f: sub_department
+        .links
+          = link_to_add_association t('.sub_departments.add'), f, :sub_departments, class: "mt-md-2 btn btn-success icon-plus"
+
+    %hr{'aria-hidden': 'true'}
+
+    .row
+      .col-12
+        = link_to t('.commands.cancel'), admin_departments_path, class: 'btn btn-warning pull-left'
+        = f.submit t('commands.save'), class: 'btn btn-primary float-right'

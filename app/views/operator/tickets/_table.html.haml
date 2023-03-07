@@ -1,0 +1,24 @@
+.table-responsive
+  %table.table.table-hover.table-sm.table-sorted{summary: t('.summary')}
+
+    %thead
+
+      %tr
+        - headers = ticket_table_columns_for_operator(params[:ticket_type], current_user)
+
+        - # coluna vazia para exibir alertas
+        %th
+
+        - headers.each_with_index do |head, index|
+          - sort_column_name = sort_columns[index]
+
+          %th{ class: "#{sortered_table_active_class(sort_column_name)}" }
+            - if sort_column_name
+              = sortered_table_header(sort_column_name, t(".heads.#{head}"))
+            - else
+              = t(".heads.#{head}")
+
+    %tbody
+      = render "operator/tickets/table/#{current_user.operator_type}", tickets: tickets
+
+  = render 'shared/components/table/index_count', collection: tickets, filtered_count: filtered_count, total_count: total_count, filtered: ticket_filter_params?(params)

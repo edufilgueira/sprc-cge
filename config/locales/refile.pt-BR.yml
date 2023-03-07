@@ -1,0 +1,11 @@
+# https://github.com/refile/refile/blob/47778bdfceb81dc34f348a050232e7ab70a85e44/config/locales/en.yml
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        too_large: "tamanho do arquivo excede o limite permitido"
+        download_failed: "não pôde ser baixado"
+        invalid_content_type: "Não é permitido o envio de arquivos %{content}. Os permitidos são: %{permitted}."
+        invalid_extension: "Não é permitido o envio de arquivos %{extension}. Os permitidos são: %{permitted}."
+  refile:
+    empty_param: "vazio"

@@ -1,0 +1,17 @@
+@import 'base/variables';
+
+.table {
+
+  thead {
+    th {
+      background-color: $table-green-light;
+      color: $table-green-text;
+    }
+  }
+
+  tbody {
+    tr {
+      background-color: $table-gray-light;
+    }
+  }
+}

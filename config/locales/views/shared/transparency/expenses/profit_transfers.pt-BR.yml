@@ -1,0 +1,72 @@
+pt-BR:
+  shared:
+    transparency:
+      expenses:
+
+        profit_transfers:
+          index:
+            title: Transferências a Entidades com Fins Lucrativos
+            description: Consulte aqui as Transferências a Entidades com Fins Lucrativos.
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Secretaria da Fazenda - SEFAZ</p>
+              <p>Sistema de Gestão Governamental por Resultados - S2GPR</p>
+
+            chart:
+              calculated_valor_final:
+                unit: 'Soma dos valores transferidos: R$'
+                title: 'Valores das Notas de Empenho no ano selecionado.'
+
+                razao_social_credor:
+                  title: Soma dos valores transferidos por credor
+                management_unit:
+                  title: Soma dos valores transferidos por secretarias/órgãos
+                item_despesa:
+                  title: Soma dos valores transferidos por item de despesa
+                efeito:
+                  title: Soma dos valores transferidos por efeito
+
+            charts:
+              tabs:
+                razao_social_credor:
+                  title: Por credor
+                management_unit:
+                  title: Por secretaria/órgão
+                item_despesa:
+                  title: Por item de despesa
+
+            filters:
+              title: Consulta avançada
+
+            counts:
+              filtered_count:
+                title: Quantidade de transferências filtradas
+              filtered_sum:
+                valor:
+                  title: Valor empenhado das transferências filtradas
+                valor_pago:
+                  title: Valor pago das transferências filtradas
+
+
+            table:
+              summary: Lista de transferências a entidades com fins lucrativos
+              header:
+                numero: Nota de empenho
+                date_of_issue: Data de emissão
+                unidade_gestora: Unidade gestora
+                management_unit_title: Secretaria/Órgão
+                item_despesa: Item de despesa
+                credor: Credor
+                valor: Valor empenhado
+                valor_pago: Valor pago
+
+            stats:
+              title: Principais números relacionados às transferências
+              count: 'Transferências em <strong>%{date}</strong>'
+              valor: 'Valor empenhado em <strong>%{date}</strong>'
+              valor_pago: 'Valor pago das transferências em <strong>%{date}</strong>'
+
+          show:
+            contract:
+              link: '%{value}'
+              none: EMPENHO NÃO VINCULADO AO INSTRUMENTO CONTRATUAL/CONVÊNIO

@@ -1,0 +1,7 @@
+es:
+  transparency:
+    expenses:
+      fund_supplies:
+        index:
+          title: Suministro de Fondos
+          description: Aquí usted podrá consultar informaciones de Suministro de Fondos. 

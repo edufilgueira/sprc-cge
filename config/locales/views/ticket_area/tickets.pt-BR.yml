@@ -1,0 +1,37 @@
+pt-BR:
+
+  ticket_area:
+
+    tickets:
+
+      edit:
+        title: Edição
+
+
+      update:
+        sou:
+          title: Edição de Manifestação de Ouvidoria
+          done: "A manifestação foi atualizada"
+          error: Não foi possível editar a manifestação
+
+        sic:
+          title: Edição de Solicitação de Acesso à Informação
+          done: "A solicitação foi atualizada"
+          error: Não foi possível editar a solicitação
+
+      show:
+
+        sic:
+          identified:
+            commands:
+              new: Nova solicitação identificada
+          anonymous:
+            commands:
+              new: Nova solicitação anônima
+        sou:
+          identified:
+            commands:
+              new: Nova manifestação identificada
+          anonymous:
+            commands:
+              new: Nova manifestação anônima

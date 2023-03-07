@@ -1,0 +1,18 @@
+- content_for :javascript, javascript_include_tag('views/operator/tickets/classifications/remote_classification')
+
+- executive_organs = organs_from_parent_classification(ticket)
+
+- if executive_organs.present?
+  #remote-child-classification{ 'data-url': '', 'data-remote-content': 'organs_classification' }
+    .remote-content
+      - label = t('.organ')
+      = label_tag :organs_classification, label
+      - organs_classification = options_for_select(executive_organs, params[:organs_classification])
+      = select_tag :organs_classification, organs_classification, {'data-input': 'organs_classification'}
+
+      .row
+        .col-12.text-center{'data-loading': 'spinner'}
+          %i.fa.fa-spinner.fa-spin.fa-2x.p-3{'aria-hidden': 'true'}
+
+      .remote-content-result.mt-4{ 'data-remote-content-result': 'organs_classification', 'data-content': 'classification'}
+

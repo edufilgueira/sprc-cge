@@ -1,0 +1,13 @@
+.col-md-6.col-lg-4.col-sm-12.pb-3
+  = link_to operator_tickets_path(ticket_type: user_type, extension_status: :in_progress, solicitation: 2) do
+
+    .operator-home-card.warning
+
+      %h3.operator-home-card-title
+        = t(".second_extension_in_progress.title")
+
+      %p.operator-home-card-count
+        = tickets_extension_in_progress_count(user_type, 2, nil, organ_association)
+
+- [:partial_answer, :waiting_referral, :cge_validation, :awaiting_invalidation].each do |internal_status|
+  = render 'operator/home/cards/internal_status', user_type: user_type, internal_status: internal_status

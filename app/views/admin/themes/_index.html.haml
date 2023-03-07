@@ -1,0 +1,34 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:status, :code, :name, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: themes, sort_columns: sort_columns, table_locale: table_locale do |theme|
+
+    - show_path = can?(:show, theme) ? admin_theme_path(theme) : '#!'
+
+    %tr
+      %td
+        - icon_class = theme.disabled? ? 'times' : 'check'
+        = link_to show_path, title: t("commands.disabled._#{theme.disabled?}") do
+          %i{class: "fa fa-#{icon_class}"}
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(theme.code)
+
+      %td
+        - theme_name = theme.name
+        = link_to show_path, title: theme_name do
+          = filtered_highlighted(theme_name.truncate(80))
+
+      %td
+        .float-right
+          - if can?(:edit, theme)
+            = link_to t('commands.edit'), edit_admin_theme_path(theme), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:manage, theme)
+            = render 'shared/buttons/btn_toggle_disabled', resource: theme, namespace: :admin

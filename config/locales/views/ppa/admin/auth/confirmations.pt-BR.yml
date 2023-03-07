@@ -1,0 +1,19 @@
+pt-BR:
+  ppa:
+    admin:
+      auth:
+        confirmations:
+          show:
+            title: Confirmação de perfil - PPA
+            instructions: >-
+              Para confirmar seu perfil, por favor, defina sua senha de acesso.
+            back: Voltar
+            submit: Confirmar
+
+          new:
+            title: Reenvio de instruções para confirmação de perfil - PPA
+            instructions: >-
+              Informe o endereço de e-mail utilizado em seu perfil e nós te
+              enviaremos um e-mail com instruções para a confirmação.
+            back: Voltar
+            submit: Reenviar instruções

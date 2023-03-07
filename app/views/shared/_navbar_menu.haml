@@ -1,0 +1,39 @@
+%ul.navbar-nav#mainNavbar{ class: local_assigns[:classes] }
+
+  %li.nav-item{ data: { toggle: "dropdown" }, href: "#transparency", role: "button", aria: { expanded: "false", controls: "transparency" } }
+    = link_to t('.transparency.title'), '#', class: 'nav-link'
+
+  %li.hidden-sm-up
+    = render 'shared/navbar/transparency_menu'
+
+  %li.nav-item{ data: { toggle: "dropdown" }, href: "#tickets", role: "button", aria: { expanded: "false", controls: "tickets" } }
+    = link_to t('.tickets.title'), '#', class: 'nav-link'
+
+  %li.hidden-sm-up
+    = render 'shared/navbar/tickets_menu'
+
+  %li.nav-item{ data: { toggle: "dropdown" }, href: "#information", role: "button", aria: { expanded: "false", controls: "information" } }
+    = link_to t('.information.title'), '#', class: 'nav-link'
+
+  %li.hidden-sm-up
+    = render 'shared/navbar/information_menu'
+
+  %li.nav-item
+    = link_to t('.ppa.title'), ppa_root_path, class: 'nav-link'
+
+  %li.nav-item{ data: { toggle: "dropdown" }, href: "#services", role: "button", aria: { expanded: "false", controls: "services" } }
+    = link_to t('.services.title'), '#', class: 'nav-link'
+
+  %li.hidden-sm-up
+    = render 'shared/navbar/services_menu'
+
+  %li.nav-item
+    = link_to t('.open_data.title'), transparency_open_data_data_sets_path, class: 'nav-link'
+
+  - if controller_path == 'home' && action_name == 'index'
+    %li.nav-item
+      = link_to t('.about.title'), '/portal-da-transparencia/paginas/sobre-o-portal', class: 'nav-link'
+
+    %li.nav-item
+      = link_to t('.lgpd.title'), '/portal-da-transparencia/paginas/aviso-de-privacidade', class: 'nav-link'
+

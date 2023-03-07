@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    integrations:
+      expenses:
+        city_transfers:
+          index:
+            title: Transferências a Municípios

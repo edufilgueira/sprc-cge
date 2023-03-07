@@ -1,0 +1,136 @@
+pt-BR:
+  home:
+    site_map:
+      index:
+        title: Mapa do site
+
+      transparency:
+        title: Transparência
+
+        default:
+          access: Acessar transparência
+          what_is: O que é transparência
+          map: Mapas iterativos
+          news: Notícias
+          society_mobile_apps: Iniciativas da sociedade
+          whats_new: Novidades
+
+        news_sections:
+          title: Notícias e artigos
+          cge: Notícias da Controladoria e Ouvidoria Geral do Estado do Ceará
+          gov: Notícias do Governo do Estado do Ceará
+
+        revenues:
+          title: Receitas do Estado
+          accounts: Receitas do Poder Executivo
+          registered: Receitas Lançadas
+          transfers: Recursos Recebidos em Transferências
+          expenses: Receitas vs Despesas
+
+        expenses:
+          title: Despesas do Estado
+          budget_balances: Depesas do Poder Executivo
+          neds: Despesas por Notas de Empenho
+          dailies: Despesa com diárias
+          fund_supplies: Suprimento de Fundos
+          server_salaries: Informações de Servidores
+          corporate_card: Cartão Corporativo
+          city_undertakings: Investimentos por Município
+          macroregion_investiments: Investimentos por Macroregião
+          contracts: Contratos
+          management_contracts: Contratos de Gestão
+          convenants: Convênios
+          purchases_finalized: Licitações finalizadas
+          purchases: Licitações em andamento
+          constructions_daes: Obras de Edificações
+          constructions_ders: Obras Rodoviárias
+          non_profit_transfers: Transferências a Entidades sem Fins Lucrativos
+          profit_transfers: Transferências a Entidades com Fins Lucrativos
+          multi_gov_transfers: Transferências a Instituições Multigovernamentais
+          consortium_transfers: Transferências a Consórcios Públicos
+          city_transfers: Transferências a Municípios
+          required_city_transfers: Transferências Obrigatórias aos Municípios
+
+        management:
+          title: Gestão Estadual
+          revenue_liquid: Receita Corrente Líquida
+          report_fiscal_management: Relatórios de Gestão Fiscal
+          report_summary_budget_execution: Relatório Resumido da Execução Orçamentária
+          budget_laws: Leis orçamentárias
+          report_internal_control: Relatório de Controle Interno
+          report_external_control: Relatório de Controle Externo
+          general_balance_state: Balanço Geral do Estado
+          real_estate: Bens Imóveis
+          official_state_newspaper: Diário oficial do Estado
+          social_control_tool: Ferramentas de Controle Social
+          management_result: Gestão por resultado
+          fiscal_indicators: Indicadores Fiscais
+          investment_opportunity: Oportunidades de investimentos
+          government_policy: Políticas de Governo
+          radar: Radar
+          socioeconomic_information: Informações Socioeconômicas
+          result_indicators: Indicadores de Resultados
+          preventive_internal_control: Controle Interno Preventivo
+          governance_models: Modelos de Governança
+          organizational_structure: Estrutura Organizacional
+          address_phone: Endereços e telefones
+          participative_management: Gestão Participativa
+          cogerf: COGERF
+          pib: PIB
+
+        maps:
+          title: Mapas Interativos
+          constructions_daes: Obras de Edificações
+          constructions_ders: Obras Rodoviárias
+          hydrological_portal: Portal Hidrológico do Ceará
+          srh: Atlas SRH
+
+
+      sou:
+        title: Ouvidoria
+
+        default:
+          access: Acessar ouvidoria
+          what_is: O que é ouvidoria
+          new: Nova manifestação
+          login: Acompanhar manifestação
+          how_use: Como usar?
+          service_channels: Canais de atendimento
+          executive_ombudsmen: Rede de Ouvidorias do Poder Executivo Estadual
+          organs_ce: Rede Cearense de Ouvidorias Públicas e Afins (Rede Ouvir CE)
+          organs_strengthening_program: Rede Nacional de Ouvidorias
+          statistics: Estatísticas de manifestações de ouvidoria
+          report_management: Relatórios de Gestão
+          legislation: Legislação
+          articles: Artigos e Publicações Acadêmicas
+          next_events: Próximos eventos
+
+
+      sic:
+        title: Acesso à Informação
+
+        default:
+          access: Acessar Acesso à Informação
+          new: Nova solicitação
+          login: Acompanhar solicitação
+          public_sic: Solicitações públicas
+          what_is: O que é acesso á informação
+          how_use: Como usar?
+          report_management: Relatórios de Gestão
+          legislation: Legislação
+          report_statistics: Relatórios Estatísticos de Acesso à Informação
+          statistics: Estatísticas de solicitações de acesso à informação
+
+        sensitive_information:
+          title: Relação de informações sigilosas
+          information_classification: Informações Classificadas e Desclassificadas
+          cgai: Portaria CGAI n° 01.2016
+
+
+      services:
+        title: Serviços
+
+        default:
+          service_letter: Carta de serviços
+          mobile_apps: Aplicativos oficiais
+          electronic_services: Serviços eletrônicos

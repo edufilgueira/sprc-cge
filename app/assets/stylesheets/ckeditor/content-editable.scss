@@ -1,0 +1,13 @@
+@import 'base/variables';
+
+.cke_editable {
+  font-size: 1rem;
+  color: $input-black-text;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+body.cke_editable {
+  margin: 20px;
+  font-family: sans-serif;
+}

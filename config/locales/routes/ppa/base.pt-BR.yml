@@ -1,0 +1,30 @@
+pt-BR:
+  routes:
+    ppa:
+      workshops: 'encontros-regionais-de-elaboracao'
+      past_workshops: 'encontros-regionais-realizados'
+      axes: 'eixos'
+      regional_strategies: 'estrategias-regionais'
+      regional_initiatives: 'iniciativas-regionais'
+      themes: 'temas'
+      proposals: 'propostas'
+      objectives: 'objetivos'
+      strategies: 'estrategias'
+      thematic_proposition: 'proposicao_tematica'
+      plans: 'planos'
+      regions: regioes
+      strategies_votes: votacao-das-estrategias
+      revision:
+        title: revisando
+        participant_profile: perfil-do-participante
+        information: informacoes
+        review_problem_situation_strategies: situacao-problema-estategias-regionais
+        conclusion: conclusao
+        themes_list: lista-de-temas
+        region_themes: regiao-tema
+        evaluation: avaliacao
+
+      prioritization:
+        title: priorizacao
+        operations: operacoes
+        conclusion: conclusao

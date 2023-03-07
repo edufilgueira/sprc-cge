@@ -1,0 +1,13 @@
+- content_for :javascript, javascript_include_tag(javascript)
+
+.card
+  .card-title
+    %h2.text-green.text-center.my-4.font-weight-bold
+      = t('.title', plan: plan.name)
+  .card-block
+    %h2.card-subtitle.mb-3.text-center= t('.subtitle')
+    %h5.card-subtitle.mb-3.text-center= t('.description')
+  .card-block
+    .alert.alert-info
+      %label= t('.redirect')
+

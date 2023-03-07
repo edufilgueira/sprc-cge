@@ -1,0 +1,38 @@
+es:
+  transparency:
+    exports:
+
+      form:
+        link:
+          title: 'Generar hoja de cálculo con los datos filtrados'
+
+        title: 'Generar hoja de cálculo con los datos filtrados'
+
+        info: >
+          El correo electrónico es necesario porque es por él que vamos a enviar un enlace para que usted descargue la hoja de cálculo.
+          El enlace estará disponible durante dos días.
+
+        name:
+          label: Título de la hoja
+
+          hint: >
+            Título de la hoja de cálculos com los datos filtrados (Máximo: 32 caracteres).
+            Ex: 'Hoja de cálculo del mes de enero'
+
+        email:
+          label: E-mail para recibir la hoja de cálculo
+          hint: >
+            Es necesario indicar la dirección de correo electrónico a la que se enviará la hoja de trabajo después de construirse.
+
+        worksheet_format:
+          label: Formato
+          hint: Formato (extensión) de la hoja.
+
+        export: Generar hoja de cálculo.
+
+      create:
+        done: >
+          Se está construyendo la hoja de cálculo solicitada. En unos minutos usted recibirá la hoja de trabajo en el correo electrónico informado.
+          No se olvide de descargar tan pronto como sea posible, ya que el enlace no estará disponible dentro de %{expiration} días.
+
+        error: 'Erro al iniciar la exportación.  Compruebe los campos marcados abajo.'

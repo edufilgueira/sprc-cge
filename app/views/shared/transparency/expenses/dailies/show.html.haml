@@ -1,0 +1,117 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, daily.title
+
+- ned = daily.nld.ned
+
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = daily.title
+
+        .card-commands
+          = render 'shared/buttons/btn_print'
+
+      .card-block
+
+        - if ned.especificacao_geral.present?
+          .row
+            .col-12
+              = content_with_label(ned, :especificacao_geral)
+
+        .row
+          .col-12
+            = content_with_label(ned, :items_description)
+
+        .row
+
+          - # a ned pode ser de um contrato ou de um convênio.
+
+          - contract = ned.contract || ned.convenant
+
+          - if contract.present?
+
+            .col-12
+              .content-with-label
+                %p.content-label
+                  = ::Integration::Expenses::Ned.human_attribute_name(:contract)
+
+                %p.content-value
+                  - label = t('.contract.none')
+
+                  - if contract.present?
+                    - label = t('.contract.link', value: contract.title)
+
+                    - if contract.convenio?
+                      - path = (namespace == :admin ? admin_integrations_contracts_convenant_path(contract) : transparency_contracts_convenant_path(contract))
+                    - else
+                      - path = (namespace == :admin ? admin_integrations_contracts_contract_path(contract) : transparency_contracts_contract_path(contract))
+
+                    = link_to label, path
+                  - else
+                    = label
+
+        .row
+
+          .col-12.col-lg-6
+            = content_with_label(daily, :data_emissao)
+
+          .col-12.col-lg-6
+
+            - if daily.server_salary.present?
+              - server_salary = daily.server_salary
+              - label = daily.creditor_nome
+
+              .content-with-label
+                %p.content-label
+                  = ::Integration::Expenses::Daily.human_attribute_name(:creditor_nome)
+
+                %p.content-value
+                  - path = (namespace == :admin ? admin_integrations_server_salary_path(server_salary) : transparency_server_salary_path(server_salary))
+
+                  = link_to label, path
+
+            - else
+
+              = content_with_label(daily, :creditor_nome)
+
+        .row
+
+          .col-12.col-lg-6
+            - management_unit = (daily.management_unit.present?) ? :management_unit_title : :unidade_gestora
+            = content_with_label(daily, management_unit)
+
+          .col-12.col-lg-6
+            - executing_unit = (daily.executing_unit.present?) ? :executing_unit_title : :unidade_executora
+            = content_with_label(daily, executing_unit)
+
+        .row
+          .col-12.col-lg-6
+            = content_with_label(daily, :data_emissao)
+
+          .col-12.col-lg-6
+            = content_with_label(daily, :calculated_valor_final)
+
+        .row
+          .col-12.col-lg-6
+            = content_with_label(daily, :numero)
+
+          .col-12.col-lg-6
+
+            .content-with-label
+              %p.content-label
+                = ::Integration::Expenses::Ned.human_attribute_name(:numero)
+
+              %p.content-value
+                - label = resource_value(ned, :numero)
+                - path = (namespace == :admin ? admin_integrations_expenses_ned_path(ned) : transparency_expenses_ned_path(ned))
+
+                = link_to label, path

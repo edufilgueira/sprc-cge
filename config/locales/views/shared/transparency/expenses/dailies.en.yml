@@ -1,0 +1,60 @@
+en:
+  shared:
+    transparency:
+      expenses:
+
+        dailies:
+          index:
+            title: Expenses on daily rates
+            description: 'Check here the expenses on daily rates, which are amounts granted to State servants in order to pay for business trips while on duty. Here it is also possible to filter the search by body, period or recipient.'
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Secretary of Finance - SEFAZ</p>
+              <p>Governmental Management System by Results - S2GPR</p>
+
+            chart:
+              valor:
+                unit: 'Amount spent on daily rates: BRL'
+                title: 'Amount spent on daily rates in the selected month.'
+
+                creditor:
+                  title: Amount spent on daily rates by creditor
+                management_unit:
+                  title: Amount spent on daily rates by management units
+
+            charts:
+              tabs:
+                creditor:
+                  title: By creditor
+                management_unit:
+                  title: By management unit
+
+            filters:
+              title: Advanced search
+
+            counts:
+              filtered_count:
+                title: Number of filtered daily rates processes
+              filtered_sum:
+                valor:
+                  title: Amount spent on the filtered daily rates processes
+
+            table:
+              summary: List of daily rates to cities
+              header:
+                numero: Statement of Agreement
+                date_of_issue: Date of issue
+                unidade_gestora: Management Unit
+                management_unit_title: Management Unit
+                credor: Creditor
+                valor: Amount spent
+
+            stats:
+              title: Main numbers related to daily rates
+              count: 'Process number of daily rates in <strong>%{date}</strong>'
+              valor: 'Amount spent on <strong>%{date}</strong>'
+
+          show:
+            contract:
+              link: '%{value}'
+              none: EXPENDITURE NOT LINKED TO THE CONTRACT INSTRUMENT OR COVENANT

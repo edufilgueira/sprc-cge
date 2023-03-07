@@ -1,0 +1,30 @@
+pt-BR:
+  activerecord:
+    attributes:
+      open_data/data_item:
+        title: 'Título'
+        description: 'Descrição'
+        data_item_type: 'Tipo do recurso'
+        data_item_type_str: 'Tipo do recurso'
+        document_public_filename: 'Nome público para o arquivo de download'
+        document_format: 'Formato do arquivo de download'
+        status: 'Status'
+        headers_soap_action: 'SOAPAction'
+        response_path: 'Caminho da resposta'
+        wsdl: WSDL
+        parameters: 'Parâmetros do WebService'
+        operation: 'Método do WebService'
+        processed_at: 'Processado em'
+        document: 'Arquivo'
+        last_error: Erro
+
+  open_data/data_item:
+    data_item_types:
+      file: Arquivo
+      webservice: WebService
+
+    statuses:
+      status_queued: Na fila de importação
+      status_in_progress: Importação em progresso
+      status_success: Importado com sucesso
+      status_fail: Falha de importação

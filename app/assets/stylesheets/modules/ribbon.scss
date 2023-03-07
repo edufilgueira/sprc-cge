@@ -1,0 +1,29 @@
+.ribbon {
+     background-color: #a00;
+     /* top left corner */
+     position: absolute;
+     margin-left: -40px;
+     margin-top: 40px;
+     /* 45 deg ccw rotation */
+     -webkit-transform: rotate(-45deg);
+     -moz-transform: rotate(-45deg);
+     -ms-transform: rotate(-45deg);
+     -o-transform: rotate(-45deg);
+     transform: rotate(-45deg);
+     /* shadow */
+     -webkit-box-shadow: 0 0 10px #888;
+     -moz-box-shadow: 0 0 10px #888;
+     text-align: center;
+     z-index: 100;
+ }
+ .ribbon span {
+     border: 1px solid #faa;
+     color: #fff;
+     display: block;
+     font: bold 81.25% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+     margin: 1px 0;
+     padding: 5px 0px 5px 0px;
+     text-decoration: none;
+     text-shadow: 0 0 5px #444;
+     width: 200px
+ }

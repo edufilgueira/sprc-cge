@@ -1,0 +1,34 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.card.card-custom
+
+  .card-header
+
+    .row
+      .col-4
+        %h3.card-title
+          = t(".#{ppa_revision_schedule.stage}")
+
+      .col-8
+        .float-right
+          = link_to t('commands.edit'), edit_ppa_admin_revision_schedule_path(ppa_revision_schedule), class: 'btn text-muted btn-link'
+
+  .card-block
+
+    .row
+      .col-12.col-lg-6
+        = content_with_label(ppa_revision_schedule, :start_in)
+
+      .col-12.col-lg-6
+        = content_with_label(ppa_revision_schedule, :end_in)
+
+      .col-12.col-lg-6
+        = content_with_label(ppa_revision_schedule, :plan_name, label: PPA::Revision::Schedule.human_attribute_name(:plan))
+
+      .col-12.col-lg-6
+        = content_with_label(ppa_revision_schedule, :stage_str)
+
+.row.mt-2
+  .col-12.text-right
+    = link_to t('helpers.button.back'), ppa_admin_revision_schedules_path, class: 'btn btn-link'

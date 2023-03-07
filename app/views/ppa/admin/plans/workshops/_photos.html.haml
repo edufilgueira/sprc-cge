@@ -1,0 +1,12 @@
+%h3.card-subtitle.text-muted.mb-2
+  = t('.title')
+
+- if photos.empty?
+  %p.alert.alert-info
+    = t('.empty')
+
+- else
+  - photos.each do |photo|
+    = attachment_image_tag photo, :attachment, :fill, 100, 100, class: 'img-thumbnail'
+
+

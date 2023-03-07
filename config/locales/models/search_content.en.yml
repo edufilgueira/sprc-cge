@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    attributes:
+
+      search_content:
+        title: Title
+        description: Description
+        content: Searchable content
+        link: Link

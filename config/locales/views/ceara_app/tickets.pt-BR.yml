@@ -1,0 +1,28 @@
+pt-BR:
+  ceara_app:
+    tickets:
+      new:
+        sic:
+          identified:
+            title: Solicitação identificada
+          anonymous:
+            title: Solicitação anônima
+        sou:
+          identified:
+            title: Manifestação identificada
+          anonymous:
+            title: Manifestação anônima
+
+      create:
+        sic:
+          identified:
+            title: Solicitação identificada
+          anonymous:
+            title: Solicitação anônima
+          error: Falha ao salvar solicitação
+        sou:
+          identified:
+            title: Manifestação identificada
+          anonymous:
+            title: Manifestação anônima
+          error: Falha ao salvar manifestação

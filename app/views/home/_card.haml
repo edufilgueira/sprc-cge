@@ -1,0 +1,31 @@
+%section.col-md-6.col-xs-12.mb-5{'aria-labelledby': card }
+  .card.home-card.h-100
+    .card-block
+      %h4.card-title{id: card }
+        %i.fa{ class: t(".#{card}.icon") }
+        = t(".#{card}.title")
+
+      %p.card-text
+        = (t(".#{card}.text") % card_text).html_safe
+
+      %strong
+        = t(".main_links")
+
+      = content_for("card_#{card}".to_sym)
+
+
+    .card-footer.bg-faded
+      .row
+        - if action
+          .col-md-6
+            = link_to action, class: 'btn btn-wide btn-tertiary btn-uppercase d-block' do
+              %span.sr-only
+                = t('a11y.link.new_window.text')
+              %span
+                - if icon
+                  %i.fa{ class: icon }
+                = t(".#{card}.action")
+
+        - if sub_action
+          .col-md-6.mt-2.mt-md-0
+            = link_to t(".#{card}.sub_action"), sub_action, class: 'btn btn-wide btn-secondary btn-uppercase d-block'

@@ -1,0 +1,69 @@
+= cache(cache_key) do
+
+  = render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+  .my-4
+
+    %hr{'aria-hidden': 'true'}
+
+    = render 'transparency/exports/form'
+
+    %hr{'aria-hidden': 'true'}
+
+    .fa.fa-spin.fa-refresh.m-1.text-muted.float-right{'data-remote-content-loader': ''}
+
+    - header = thematic_indicators_table_header
+
+    - table_locale = t('.table')
+
+    .mb-3
+      .col-12.text-right
+        .text-muted.d-inline
+          = t('.subtitle.title')
+        .badge.badge-success
+          = t('.subtitle.done')
+        .badge.badge-info
+          = t('.subtitle.todo')
+
+    = render 'shared/components/remote_table', header: header, collection: thematic_indicators, sort_columns: sort_columns, table_locale: table_locale do |thematic_indicator|
+
+      - show_path = url_for(action: 'show', controller: 'thematic_indicators', id: thematic_indicator)
+
+      %tr
+
+        %td
+          = link_to show_path do
+            = filtered_highlighted(thematic_indicator.axis_title)
+
+        %td
+          = link_to show_path do
+            = filtered_highlighted(thematic_indicator.theme_title)
+
+        %td
+          = link_to show_path, title: thematic_indicator.organ_title do
+            = filtered_highlighted(thematic_indicator.organ_sigla)
+
+        %td
+          = link_to show_path do
+            = filtered_highlighted(thematic_indicator.indicador)
+
+        %td
+          = link_to show_path do
+            = filtered_highlighted(thematic_indicator.unidade)
+
+        - thematic_indicators_years.each do |year|
+          %td
+            - result = thematic_indicator.valores_realizados_by_year(year)
+            - if result.blank?
+              = '-'
+            - else
+              - status = result[:status]
+              = link_to show_path, title: t("shared.transparency.results.thematic_indicators.index.table.status.#{status}") do
+                - value = result[:value]
+                - if value.present?
+                  .badge{class: status == :done ? 'badge-success' : 'badge-info'}
+                    = filtered_highlighted(value)
+                - else
+                  = '-'
+
+

@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      integration/supports/organ/configuration:
+        one: Configuração de órgãos
+
+    attributes:
+      integration/supports/organ/configuration:
+        wsdl: WSDL
+        headers_soap_action: SOAPAction
+        user: Usuário
+        password: Senha
+        operation: Nome do método SOAP
+        response_path: Caminho da resposta

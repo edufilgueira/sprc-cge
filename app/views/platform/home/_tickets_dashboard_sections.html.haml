@@ -1,0 +1,25 @@
+%section.justify-content-center{ 'aria-labelledby': 'tickets_dashboard_sections' }
+  .card-deck
+    - # TODO: fake array - update when "ppa ready"
+    - ticket_types.each do |ticket_type|
+
+      .card.card-custom.my-4
+        .card-header
+          %h2.card-title
+            = link_to t(".#{ticket_type}.title"), platform_tickets_path(ticket_type: ticket_type),  class: 'text-primary'
+
+        .card-block
+          - Ticket::STATUSES_FOR_CITIZEN.each do |status|
+            .row
+              .col-12.pb-3
+                = link_to platform_tickets_path(ticket_type: ticket_type, status_for_citizen: status) do
+
+                  .platform-home-card.ticket-status{'data-status': status}
+
+                    %h3.platform-home-card-title
+                      = t(".#{ticket_type}.statuses.#{status}")
+
+                    %p.platform-home-card-count
+                      = status_count(ticket_type)[status.to_sym] unless ticket_type == 'ppa'
+        .card-footer.border-3.border-bottom-only.border-orange.bg-faded
+          = link_to t(".new.#{ticket_type}"), new_platform_ticket_path(ticket_type: ticket_type), class: 'btn btn-tertiary btn-uppercase'

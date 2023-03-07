@@ -1,0 +1,34 @@
+%div{ 'data-content': 'organs' }
+  = render 'shared/tickets/organ_department_fields', f: f
+
+- #
+- # operador 155 possui o campo de descrição em um card separado em atendimentos
+- #
+- unless controller_path == "operator/attendances"
+  .row
+    .col-12
+
+      - user_scope = current_user&.operator? ? 'operator' : 'citizen'
+      - hint = t("shared.tickets.form.fields.description.hint.#{user_scope}.#{ticket.ticket_type}")
+      - hint = "#{hint}<br/>#{t('shared.tickets.form.fields.description.anonymous_hint')}" if ticket.sou?
+
+      = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: :mini }, id: "ticket-description#{Time.now.to_i}" }, data: { maxlen: 3 }, hint: raw(hint)
+
+- if operator?(current_user)
+  .row
+    .col-12
+      %em
+        = f.input :priority, input_html: { class: 'mr-2 text-muted' }, label_html: { class: 'd-block' }
+
+
+    - if can? :immediate_answer, Ticket
+      .col-12
+        %em
+          = f.input :immediate_answer, as: :boolean, input_html: { data: { input: :immediate_answer }, class: 'mr-2 text-muted' }, label_html: { class: 'd-block' }, wrapper_html: { data: { content: :immediate_answer } }
+
+
+- elsif ticket.eligible_to_publish?
+  .row
+    .col-12
+      %em
+        = f.input :public_ticket, input_html: { class: 'mr-2 text-muted' }, label_html: { class: 'd-block' }

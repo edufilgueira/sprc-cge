@@ -1,0 +1,110 @@
+@import 'base/variables';
+
+.fa {
+  &.fa-1-5x {
+    font-size: 1.5em;
+  }
+}
+
+.fa-1-5x {
+  &.fa-border {
+    min-width: 48px;
+    line-height: 38px;
+  }
+}
+
+.fa-border {
+  min-width: 32px;
+  text-align: center;
+
+  &.fa-border-tertiary {
+    border-color: $app-green;
+  }
+}
+
+/*
+ Criando icones padrão para cada área da transparência, reutilizando os icones
+ do font awesome
+*/
+
+.fa-maps {
+  &:before {
+    content: "\f278"; // .fa-map-o
+  }
+}
+
+.fa-management {
+  &:before {
+    content: "\f114"; // .fa-folder-o
+  }
+}
+
+
+.fa-purchases,
+.fa-contracts_contracts,
+.fa-contracts {
+  &:before {
+    content: "\f0f6"; // .fa-file-text-o
+  }
+}
+
+.fa-convenants,
+.fa-contracts_convenants {
+  &:before {
+    content: "\f2b5"; // .fa-handshake-o
+  }
+}
+
+.fa-constructions_ders,
+.fa-ders {
+  &:before {
+    content: "\f018"; // .fa-road
+  }
+}
+
+.fa-constructions_daes,
+.fa-daes {
+  &:before {
+    content: "\f0f8"; // .fa-hospital-o
+  }
+}
+
+.fa-expenses,
+.fa-expenses_budget_balances,
+.fa-budget_balances,
+.fa-expenses_npds,
+.fa-expenses_neds,
+.fa-npds {
+  &:before {
+    content: "\f0d6"; // .fa-money
+  }
+}
+
+.fa-open_data_data_sets,
+.fa-open-data,
+.fa-open_data {
+  &:before {
+    content: "\f0ce"; // .fa-table
+  }
+}
+
+.fa-server_salaries,
+.fa-servers {
+  &:before {
+    content: "\f0c0"; // .fa-group
+  }
+}
+
+.fa-revenues_accounts,
+.fa-revenues {
+  &:before {
+    content: "\f201"; // .fa-line-chart
+  }
+}
+
+.fa-real-states,
+.fa-real_states {
+  &:before {
+    content: "\f015"; // .fa-home
+  }
+}

@@ -1,0 +1,62 @@
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.title')
+
+      .card-block
+
+        - if adjustments.present?
+          .table-responsive
+            %table.table.table-hover.table-striped.table-sm.bg-faded{summary: t('.summary')}
+
+              %thead
+
+                %tr
+
+                  - heads = [:descricao_tipo_ajuste, :descricao_observacao, {id: :data_termino, class: 'text-right'}, {id: :valor_ajuste_destino, class: 'text-right'}, {id: :descricao_url, class: 'text-right'}]
+
+                  - heads.each do |head|
+                    - if head.is_a?(Hash)
+                      %th{class: head[:class]}
+                        = t(".table.heads.#{head[:id]}")
+                    - else
+                      %th
+                        = t(".table.heads.#{head}")
+
+                  %tbody
+
+                    - adjustments.each do |adjustment|
+
+                      %tr
+                        %td
+                          = adjustment.descricao_tipo_ajuste
+
+                        - desc_observation = adjustment.descricao_observacao
+                        %td{ title: desc_observation }
+                          = desc_observation
+
+                        %td.w-12.text-right
+                          = resource_value(adjustment, :data_termino, format: :date) if adjustment.data_termino.year > 1900
+
+                        %td.w-15.text-right
+                          = resource_value(adjustment, :total_adjustment)
+
+                        %td.w-10.text-right
+                          - adjustment_url = integration_contracts_adjustment_url(adjustment.descricao_url)
+
+                          - if adjustment_url.present?
+                            = link_to adjustment_url do
+                              %i.fa.fa-file-pdf-o.fa-2x{'aria-hidden': 'true'}
+
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')

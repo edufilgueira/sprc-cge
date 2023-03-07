@@ -1,0 +1,7 @@
+es:
+  transparency:
+    expenses:
+      non_profit_transfers:
+        index:
+          title: Transferencias a Entidades sin Fines Lucrativos
+          description: Aqui você poderá consultar informações de Transferências a Entidades sin Ánimo de Lucro. 

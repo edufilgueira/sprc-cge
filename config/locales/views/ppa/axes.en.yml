@@ -1,0 +1,11 @@
+en:
+  ppa:
+    axes:
+      index:
+        themes: 'Themes:'
+        query: Search
+        theme_id: Theme
+        all: All
+        filtered_results: 'Showing results filtered by "%{term}".'
+        clear: Clean filters
+        title: "MAP biennium %{biennium} of %{region} region"

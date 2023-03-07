@@ -1,0 +1,7 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.row
+
+  .col-12
+    = render 'form', ticket: ticket

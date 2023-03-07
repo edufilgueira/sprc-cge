@@ -1,0 +1,105 @@
+es:
+  shared:
+
+    footer:
+      sections:
+        noticias:
+          title: Noticias
+
+          ultimas_noticias:
+            title: Ultimas noticias
+
+
+          mais_acessadas:
+            title: Más accesadas
+
+
+          todas:
+            title: Todas las noticias
+
+
+        servicos:
+          title: Servicios
+
+          temas:
+            title: Por temas
+
+
+          meus_servicos:
+            title: Mis servicios
+
+
+          aplicativos:
+            title: Aplicaciones oficiales
+
+
+        estrutura:
+          title: Estructura
+
+          governador:
+            title: Gobernador
+
+
+          vice_governadoria:
+            title: Vice gobernación
+
+
+          secretariado:
+            title: Secretaría
+
+
+          servidores:
+            title: Funcionarios públicos
+
+
+          orgaos:
+            title: Órganos y entidades
+
+
+          historia:
+            title: Historia de Ceará
+            url: '/portal-da-transparencia/paginas/o-estado-do-ceara'
+
+        negocios:
+          title: Negocios
+
+          turismo:
+            title: Turismo
+
+
+          industria:
+            title: Industria
+
+
+          comercio:
+            title: Comercio
+
+
+      ppa_admin: Administración PPA
+
+      site_map: Mapa do site
+
+      contacts:
+
+        como_comunicar:
+          title: 'Cómo comunicarse con nosotros'
+
+          fale_conosco:
+            title: 'Contáctenos Oidoría'
+
+
+          noticias_email:
+            title: 'Noticias por correio electrónico'
+
+
+          noticias_whatsapp:
+            title: 'Noticias por WhatsApp'
+
+
+          espaco_imprensa:
+            title: 'Espacio de prensa'
+
+        nossos_canais:
+          title: 'Nuestras Mídias'
+
+      if-design: "Proyecto premiado en el IF Design Awards 2018 en la disciplina Diseño de Servicio/UX en la categoría Gobiernos e Instituciones. Haga clic en el sello para acceder a la página del proyecto en la galería del IF."

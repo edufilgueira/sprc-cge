@@ -1,0 +1,8 @@
+en:
+  warnings:
+    show_warning_sefaz_migration:
+      title: ANNOUNCEMENT
+      message: "<p>Dear user of Ceará Transparente, </p>
+                <p>We inform you that the State of Ceará is working intensively with its teams at the beginning of the year for the fastest possible conclusion of the implementation of the new Computerized Income and Expense Record System, which is why, temporarily, these data may be out of date.</p>
+                <p>We apologize for the inconvenience caused and reinforce the commitment to transparency as a foundation for the exercise of social control, to the extent that we count on your understanding.</p>
+                <p>Sincerely,<br>Team of Ceará Transparente</p>"

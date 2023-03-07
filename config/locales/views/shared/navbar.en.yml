@@ -1,0 +1,274 @@
+en:
+  shared:
+
+    navbar:
+      toggle_navigation: Show navigation menu
+
+      transparency_menu:
+        transparency:
+          title: Access Transparency
+        data:
+          title: Consult data
+        what_is:
+          title: What is Transparency?
+        map:
+          title: Interactive Maps
+        news:
+          title: News
+        apps:
+          title: Society Initiatives
+        whats_new:
+          title: "What's new"
+
+      tickets_menu:
+        tickets:
+          title: Access the Ombudsman
+        new:
+          title: Log a new Manifestation
+        watch:
+          title: Follow a Manifestation
+        public:
+          title: Public Manifestations
+        what_is:
+          title: What Ombudsman is
+
+      information_menu:
+        information:
+          title: Access to Information Access
+        new:
+          title: New request
+        watch:
+          title: Follow a request
+        public:
+          title: Public requests
+        what_is:
+          title: What Access to Information is
+
+      ppa_menu:
+        ppa:
+          title: Access the MAP (Multiannual Plan)
+        new:
+          title: Propose new guidelines
+        watch:
+          title: Follow the planning
+
+      services_menu:
+        services:
+          title: Services
+        envelope:
+          title: Services Menu
+        official:
+          title: Official applications
+        public:
+          title: Eletronic Services
+        rating:
+          title: Services Rating
+
+
+    navbar_menu: &navbar_menu
+      home:
+        title: Home
+
+      open_data:
+        title: Open Data
+
+      tickets:
+        title: Ombudsman
+
+      transparency:
+        title: Transparency
+
+      information:
+        title: Information Access
+
+      ppa:
+        title: Citizen Participation
+
+      services:
+        title: Services
+
+      about:
+        title: About the Portal
+      
+      lgpd:
+        title: LGPD
+
+      site_map:
+        title: Map Site
+
+      search:
+        title: Search the platform
+
+      logout:
+        title: Log out
+
+    navbar_head:
+      search:
+        placeholder: What information do you need?
+
+    admin:
+      navbar:
+        users:
+          title: Administrative users
+        citizens:
+          title: Registered Citizens
+        unregistred_citizens:
+          title: Unregistered citizens
+        organs:
+          title: Agencies
+        departments:
+          title: Units
+        topics:
+          title: Subjects
+        open_data:
+          title: Open data
+        pages:
+          title: Pages
+        events:
+          title: Events
+        mobile_apps:
+          title: Applications
+        mobile_tags:
+          title: Applications categories
+        service_types:
+          title: Services types
+        integrations:
+          title: Integrations
+        themes:
+          title: Themes
+        budget_programs:
+          title: Budgetary Programs
+        admin:
+          title: Administrative
+        ticket:
+          title: SIC/Ombudsman
+        transparency:
+          title: Transparency
+        home:
+          title: Access Portal
+        holidays:
+          title: Holidays
+        search_contents:
+          title: Search Results
+        subnets:
+          title: Subnetworks
+
+    application:
+      top_bar: &top_bar
+        portal_governo:
+          title: Government Portal
+          link: 'http://www.ceara.gov.br/'
+
+        gabinete_governador:
+          title: "Governor's Office"
+          link: 'http://www.gabgov.ce.gov.br/'
+
+        cge:
+          title: CGE
+          link: 'http://www.cge.ce.gov.br/'
+
+        seplag:
+          title: Seplag
+          link: 'http://www.seplag.ce.gov.br/'
+
+        acesso_cidadao:
+          title: Citizen access
+          link: 'http://web3.seplag.ce.gov.br/Csonline/ConsultaCesec/pg_cs_servico.aspx'
+
+        login:
+          title: Log in
+
+        faq:
+          title: FAQ
+          link: '/portal-da-transparencia/paginas/duvidas-frequentes'
+
+        sign_up:
+          title: Create a Profile
+
+        alto_contraste:
+          title: High Contrast
+
+        acessibilidade:
+          title: Accessibility
+          link: '/portal-da-transparencia/paginas/acessibilidade'
+
+      navbar: &shared_navbar
+        cge_title: >
+          Controladoria e Ouvidoria<br>
+          Geral do Estado
+
+        search:
+          placeholder: What information do you need?
+
+        home:
+          title: Home
+
+        transparency_portal:
+          title: Transparency Pages
+
+        global_tickets:
+          title: Inquiry SIC/OMBUDSMAN
+
+        tickets:
+          title: Digital Ombudsman
+
+        information_access:
+          title: Information Access
+
+        reports:
+          title: Statistics and reports
+
+        open_data:
+          title: Open Data
+
+        logout:
+          title: Sign out
+
+      home_navbar: &shared_inner_navbar
+        login:
+          title: Log in
+
+        register:
+          title: Create a Profile
+
+        protocol_login:
+          title: Follow Manifestation
+
+      inner_navbar:
+        <<: *shared_inner_navbar
+
+    operator:
+      navbar:
+        <<: *shared_navbar
+        attendances:
+          title: Calls
+        call_center_tickets:
+          title: Answer calls
+        dashboard:
+          title: Dashboards
+        users:
+          title: Users
+        topics:
+          title: Subject
+        departments:
+          title: Units
+        answer_templates:
+          title: Answer database
+
+    navbar_mobile:
+      <<: *navbar_menu
+      <<: *top_bar
+
+    platform:
+      navbar:
+        <<: *shared_navbar
+
+    ticket_area:
+      navbar:
+        <<: *shared_navbar
+
+    transparency:
+      navbar:
+        <<: *shared_navbar
+
+

@@ -1,0 +1,20 @@
+pt-BR:
+  services:
+    reports:
+      tickets:
+        solvability:
+          title: 'Relatório de Resolubilidade - %{begin} à %{end}'
+
+          sic:
+            sheet_name: Acesso à informação
+
+          sou:
+            sheet_name: Ouvidoria
+
+          headers:
+            organ: Órgão
+            replied_on_time: Respondidas no prazo
+            replied_out_of_time: Respondidas fora do prazo
+            open_on_time: Em atendimento no prazo
+            open_out_of_time: Em atendimento fora do prazo
+            solvability: Índice de resolubilidade

@@ -1,0 +1,24 @@
+en:
+  activerecord:
+    models:
+      transparency/survey_answer: 'Satisfaction survey'
+
+    attributes:
+      transparency/survey_answer:
+        email: Email
+        message: Message
+
+      transparency/survey_answer/answer:
+        very_dissatisfied: Very unsatisfied
+        somewhat_dissatisfied: Unsatisfied
+        neutral: Neutral
+        somewhat_satisfied: Satisfied
+        very_satisfied: Very satisfied
+
+  transparency/survey_answer:
+    answers:
+      very_dissatisfied: Very unsatisfied
+      somewhat_dissatisfied: Unsatisfied
+      neutral: Neutral
+      somewhat_satisfied: Satisfied
+      very_satisfied: Very satisfied

@@ -1,0 +1,14 @@
+%section.mt-4{ 'aria-labelledby': 'how' }
+  .row
+    .col-md-12
+      %h2
+        %i.fa.fa-info-circle.mr-2.text-green
+        %strong
+          = t('.what_is.title')
+
+      %p
+        = raw(t('.what_is.description'))
+
+      %p
+        = link_to t('.more'), '/portal-da-transparencia/paginas/ouvidoria'
+

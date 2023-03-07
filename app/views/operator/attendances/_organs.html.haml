@@ -1,0 +1,38 @@
+.card.card-custom
+
+  .card-header
+
+    %h4.card-title
+      = t('.title')
+
+  .card-block
+
+    - has_organs_empty_error = attendance.errors.details[:attendance_organ_subnets].any? { |j| j[:error] == :blank }
+    - if has_organs_empty_error
+      .alert.alert-danger
+        = attendance.errors[:attendance_organ_subnets][0]
+
+    .row{ data: { content: :classification} }
+      .col-12
+        = f.simple_fields_for :ticket do |ssf_ticket|
+          = ssf_ticket.simple_fields_for :classification do |ssf_classification|
+            = ssf_classification.input :other_organs
+
+    .row{ data: { content: :unknown_organ} }
+      .col-12
+        = f.input :unknown_organ, input_html: { 'data-input': 'unknown_organ' }, wrapper_html: { class: 'mb-0' }, label_html: { class: 'mb-0' }
+
+        %hr{ 'aria-hidden': 'true' }
+
+    .row
+      .col-12{ 'data-content': 'organs' }
+
+        = f.simple_fields_for :attendance_organ_subnets do |ssf|
+          - if ssf.object.persisted?
+            = render 'attendance_organ_subnet', f: ssf
+          - else
+            = render 'attendance_organ_subnet_fields', f: ssf
+
+
+        .links
+          = link_to_add_association t('.commands.add'), f, :attendance_organ_subnets

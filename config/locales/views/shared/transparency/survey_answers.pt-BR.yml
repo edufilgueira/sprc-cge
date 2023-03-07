@@ -1,0 +1,10 @@
+pt-BR:
+  shared:
+    transparency:
+      survey_answers:
+        form:
+          title: 'Qual o seu nível de satisfação com essa página?'
+          results: 'Ver resultados'
+
+        create:
+          title: 'Obrigado! Sua mensagem foi recebida com sucesso!'

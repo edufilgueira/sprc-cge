@@ -1,0 +1,74 @@
+pt-BR:
+  shared:
+    transparency:
+      expenses:
+
+        nlds:
+          index:
+            title: Notas de Liquidação de Despesa
+            description: Consulte aqui as Notas de Liquidação de Despesa.
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Secretaria da Fazenda - SEFAZ</p>
+              <p>Sistema de Gestão Governamental por Resultados - S2GPR</p>
+
+            chart:
+              valor:
+                unit: 'Soma dos valores: R$'
+                title: 'Valores das Notas de Liquidação de Despesa no ano selecionado.'
+
+                creditor:
+                  title: Soma dos valores por credor
+                management_unit:
+                  title: Soma dos valores por secretarias/órgãos
+                natureza:
+                  title: Soma dos valores por natureza
+                efeito:
+                  title: Soma dos valores por efeito
+
+            charts:
+              tabs:
+                creditor:
+                  title: Por credor
+                management_unit:
+                  title: Por secretaria/órgão
+                natureza:
+                  title: Por natureza
+                efeito:
+                  title: Por efeito
+
+            filters:
+              title: Consulta avançada
+
+            counts:
+              nlds_count:
+                title: Quantidade de notas filtradas
+              nlds_sum:
+                title: Valor das notas filtradas
+
+            table:
+              summary: Lista de Notas de Liquidação de Despesa
+              header:
+                numero: Número
+                date_of_issue: Data de emissão
+                unidade_gestora: Unidade gestora
+                management_unit_title: Secretaria/Órgão
+                credor: Credor
+                valor: Valor
+                valor_retido: Valor retido
+
+            stats:
+              title: Principais números relacionados às notas
+              count: 'Notas em <strong>%{date}</strong>'
+              valor: 'Valor em <strong>%{date}</strong>'
+
+          show:
+            ned:
+              link: "%{value}"
+            nld_item_payment_plannings:
+              title: Itens de planejamento
+              empty: Nenhum item encontrado
+
+            nld_item_payment_retentions:
+              title: Itens de retenção
+              empty: Nenhum item encontrado

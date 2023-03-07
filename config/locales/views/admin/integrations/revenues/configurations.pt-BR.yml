@@ -1,0 +1,29 @@
+pt-BR:
+
+  admin:
+    integrations:
+      revenues:
+        configurations:
+
+          import:
+            done: A importação dos dados de receitas está sendo processada em segundo plano
+          form:
+            accounts: Contas
+            add_account_configuration: Adicionar conta
+            commands:
+              cancel: Voltar para integrações
+          edit:
+            title: Configuração
+          update:
+            done: "Configuração salva com sucesso."
+          show:
+            accounts: Contas
+            edit: Configurar
+            created_at: Criado
+            title: Configuração de Receitas
+            import: Importar agora
+            hide_show: Mostrar/Esconder log
+            empty: Nenhuma importação realizada
+
+          account_configuration_fields:
+            remove: 'Remover Conta'

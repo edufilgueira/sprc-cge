@@ -1,0 +1,42 @@
+.row
+  .col-12
+    %h3.h5.text-center
+      = t('shared.transparency.expenses.neds.show.ned_items.title')
+
+.row
+  .col-12
+    - if fund_supply.ned_items.present?
+      %table.table.table-sm.table-striped.table-print{summary: t('shared.transparency.expenses.neds.show.ned_items.summary')}
+
+        %thead
+          %tr
+            - heads = [:sequencial, :especificacao, :unidade, :quantidade, {id: :valor_unitario, class: 'text-right'}]
+
+            - heads.each do |head|
+              - if head.is_a?(Hash)
+                %th{class: head[:class]}
+                  = t("shared.transparency.expenses.neds.show.ned_items.table.heads.#{head[:id]}")
+              - else
+                %th
+                  = t("shared.transparency.expenses.neds.show.ned_items.table.heads.#{head}")
+
+
+        %tbody
+          - fund_supply.ned_items.each do |ned_item|
+            %tr
+              %td
+                = ned_item.sequencial
+              %td
+                = ned_item.especificacao
+              %td
+                = ned_item.unidade
+              %td
+                = ned_item.quantidade
+              %td.text-right
+                = number_to_currency(ned_item.valor_unitario)
+
+    - else
+
+      .row
+        %i.col-md-12.text-center
+          = t('shared.transparency.expenses.neds.show.ned_items.empty')

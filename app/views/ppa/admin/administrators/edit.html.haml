@@ -1,0 +1,15 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.content-detail
+
+  .card.card-custom
+
+    .card-header
+
+      %h2.card-title
+        = t(".title")
+
+    .card-block
+
+      = render 'form', ppa_administrator: ppa_administrator, url: ppa_admin_administrator_path(ppa_administrator)

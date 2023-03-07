@@ -1,0 +1,40 @@
+es:
+
+  extensions:
+
+    edit:
+      title: "%{ticket_title} - Solicitud de extensión de plazo"
+      already_evaluate: La extensión de plazo ha sido aprobada/reprobada.
+      justification: Justificación
+      deadline:
+        title: Plazos y providencias 
+        remaining: Cuenta regresiva para respuesta 
+        created_at: Fecha de registro 
+        last_day: Plazo final de respuesta 
+        status: Situación actual 
+      sou:
+        description:
+          title: Descripción de la manifestación 
+
+      sic:
+        description:
+          title: Descripción de la solicitud  
+
+    form:
+      justification: Consideraciones 
+      commands:
+        approve: Aprobar
+        reject: Reprobar 
+
+    approve:
+      done: Prorrogación de plazo aprobada 
+
+    reject:
+      done: Prorrogación de plazo devuelta 
+      error: No fue posible evaluar esta prorrogación 
+
+    show:
+      title: "%{ticket_title} - Solicitud de prorrogación de plazo"
+      rejected:
+        justification:
+          label: Razón de la reprobación 

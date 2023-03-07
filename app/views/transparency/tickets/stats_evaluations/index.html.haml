@@ -1,0 +1,29 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.row
+  .col-12
+
+    %h2.card-title
+      = t('.title')
+
+    %hr{'aria-hidden': 'true'}
+
+    %p.text-muted
+      = t('.description')
+
+
+    .alert.alert-warning.alert-dismissible.fade.show{ role: 'alert' }
+
+      %h3.h4.text-center
+        %i.fa.fa-exclamation-circle
+        = t('.average_alert')
+
+
+    = form_for transparency_tickets_stats_evaluations_path, method: :get do |f|
+      = render 'index'
+
+    - #
+    - # Pesquisa de satisfação
+    - #
+    .pt-3.mt-3
+    = render "shared/transparency/survey_answers/form", transparency_id: 'stats_evaluations', action: action_name, controller: controller_path, url: request.original_url

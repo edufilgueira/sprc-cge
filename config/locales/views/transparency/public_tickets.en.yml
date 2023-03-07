@@ -1,0 +1,64 @@
+en:
+
+  transparency:
+
+    public_tickets:
+
+      index:
+        sic:
+          title: Public requests
+          description: Requests made public by citizens
+        sou:
+          title: Public manifestations
+          description: Manifestations made public by citizens
+
+
+        table:
+          summary: Paginated list with all public Manifestations/Requests
+          header:
+            parent_protocol: Protocols
+            sou_type: Type
+            organs: Agencie(s)
+            internal_status: Status
+            description: Description
+            deadline: Deadline
+            created_at: Create at
+            updated_at: Last update
+
+
+      filters:
+        select:
+          sou_type: Manifestation type
+          organ: Agencie
+          topic: Subject
+          theme: Theme
+
+      show:
+        sic:
+          title: Public request
+          description:
+            title: Request description
+        sou:
+          title: Public manifestation
+          description:
+            title: Manifestation description
+
+        title:
+          follows: Follow
+
+        attachments:
+          title: Attachments
+
+      comments:
+        title: Comments
+
+      likes:
+        delete_form:
+          title: Like
+        new_form:
+          title: Like
+
+      answers:
+        title: Answer(s)
+        empty: No answers
+        replies_received: "%{answers_count} of %{children_count} answer(s)"

@@ -1,0 +1,4 @@
+= content_for :logged_top_bar do
+  .toolbar-menu-container.ml-auto.pr-2.small.hidden-md-down
+    - # classes attribute used for "old" operator header
+    = render 'shared/toolbar_menu', namespace: :platform, classes: ''

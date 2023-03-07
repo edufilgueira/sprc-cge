@@ -1,0 +1,41 @@
+- # TODO: move
+- stats = Stats::Ticket.current(:sic)
+- data = stats.data
+
+- if data.present?
+  - summary = data[:summary]
+
+  %section.mt-4{ 'aria-labelledby': 'stats' }
+    .card
+      .card-block
+        %h4.card-title
+          = t('.title')
+
+        .card-text
+          = t('.description')
+
+        %hr{'aria-hidden': 'true'}
+
+        .card-text
+          %strong.small.font-weight-bold.font-italic
+            = t('.month', month: stats.formated_date)
+
+        .row.mt-2
+          .col-md-3.text-center.border-right.border-green.border-right-sm-none
+            .counter.font-weight-light.text-green
+              = summary[:completed].fetch(:count, 0)
+            = t('.stats_1.title')
+
+          .col-md-3.text-center.border-right.border-green.border-right-sm-none
+            .counter.font-weight-light.text-green
+              = t('.stats_2.unit', value: summary.fetch(:average_time_answer, 0))
+            = t('.stats_2.title')
+
+          .col-md-3.text-center
+            .counter.font-weight-light.text-green
+              = t('.stats_3.unit', value: summary.fetch(:resolubility, 0))
+            = t('.stats_3.title')
+
+      .card-footer.bg-tertiary.p-4.text-center
+        = link_to t('.see_more'), transparency_tickets_stats_tickets_path, class: 'btn btn-outline-light btn-uppercase white-space-normal'
+

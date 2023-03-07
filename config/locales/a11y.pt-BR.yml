@@ -1,0 +1,26 @@
+pt-BR:
+  a11y:
+    link:
+      new_window:
+        text: Link para abrir em nova janela.
+
+      go:
+        content: Ir para o conteúdo
+      back:
+        menu: Voltar para o menu inicial
+        content: Voltar para o início do conteúdo
+
+    anchor:
+      content: Início do conteúdo
+      menu: Início do menu inicial
+
+    noscript: O comportamento dinâmico desta página não possui um conteúdo alternativo para navegadores que não suportam scripts
+
+    hidden: O Texto está escondido!
+
+    toolbar:
+      description: Início do menu desta página
+    breadcrumbs:
+      description: Início do controle de navegação
+
+

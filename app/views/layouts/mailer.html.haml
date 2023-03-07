@@ -1,0 +1,48 @@
+!!!
+%html{lang: 'pt-BR'}
+  %head
+    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type' }/
+
+    -# critical styles
+    :css
+      .preserve-whitespace {
+        white-space: pre-wrap;
+      }
+
+    -# "premailer-rails" gem will transform it to inline styles
+    = stylesheet_link_tag :mailer, media: :all
+
+    -# allow custom, per-template, styles, which will be transformed to inline too by premailer
+    = content_for :css if content_for? :css
+
+  %body
+    .container
+
+      -# navbar
+      .navbar.navbar-toggleable-md.navbar-inverse
+        .row
+          -# TODO: revisar configuração de default_url_options para mailers no sidekiq,
+          -# pois os asset_url não estão concatenando o host
+          .col-xs-6
+            %h1.navbar-brand{title: t('app.title') }
+              %a{ href: root_url, style: 'text-decoration: none;' }
+                %img{ alt: t('app.title'), src: File.join(root_url, image_path('logos/logo-ceara-header.png')), style: 'height: 60px;' }
+
+          .col-xs-6
+            %h1.navbar-brand{title: t('app.title') }
+              %a{ href: root_url, style: 'text-decoration: none;' }
+                %img{ alt: t('app.title'), src: File.join(root_url, image_path('logos/logo-cge-header1.png')), style: 'height: 60px;' }
+
+      .navbar-bottom-line
+
+
+      .container
+        = yield
+
+      -# footer
+      .footer
+        .footer-content
+          .row
+            .col-12{ style: 'text-align: center' }
+              %span
+                = t('app.copyright', year: Date.today.year)

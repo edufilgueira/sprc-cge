@@ -1,0 +1,36 @@
+%h2.sr-only
+  = t('.title')
+
+- content_for(:toolbar) do
+  .pull-left
+    = render 'shared/admin/available_locales', resource: search_content
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-8
+            %h3.card-title
+              = search_content.title
+
+          .col-4
+            .float-right
+
+              - if can?(:manage, search_content)
+                = link_to t('commands.remove'), admin_search_content_path(search_content), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link'
+
+              - if can?(:edit, search_content)
+                = link_to t('commands.edit'), edit_admin_search_content_path(search_content), class: 'btn text-muted btn-link'
+
+      .card-block
+
+        = content_with_label(search_content, :description)
+
+        = content_with_label(search_content, :content)
+
+        = content_with_label(search_content, :link)

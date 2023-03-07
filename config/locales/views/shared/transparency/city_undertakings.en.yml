@@ -1,0 +1,71 @@
+en:
+  shared:
+    transparency:
+
+      city_undertakings:
+
+        index:
+          title: Investments by city
+          description: >
+            See here the investments made in the municipalities by the Government of the State of Ceará
+          value_unit: m<sup>2</sup>
+
+          chart:
+            valor_executado_total:
+              unit: 'R$'
+              title: 'Investments by city'
+            count:
+              unit: Amount of investments
+              title: 'Investments by city'
+
+          charts:
+            tabs:
+              undertaking:
+                title: Enterprises
+              creditor:
+                title: Creditors
+              organ:
+                title: Secretariats
+              municipio:
+                title: Cities
+
+          filters:
+            title: Advanced search
+            search_placeholder: >
+              Search by city, project, SACC number, type of expense or creditor
+            creditor:
+              select:
+                all: All creditors
+
+            undertaking:
+              select:
+                all: All enterprises
+
+          counts:
+            city_undertakings_count:
+              title: Investments by filtered cities
+            city_undertakings_sum:
+              title: Executed investments value by filtered city
+
+          table:
+            summary: Investments list by city
+            header:
+              municipio: City
+              organ_title: Secretariat
+              undertaking_title: Enterprise
+              mapp: Project
+              creditor_title: Creditor
+              valor_programado8: Planned value
+              valor_executado8: Executed value
+              sic: SACC number
+
+          stats:
+            title: Main figures related to investments by city
+            count: 'Investments by city published until <strong>%{date}</strong>'
+            unit: 'R$'
+            valor_executado_total: 'Investment value made by city published until <strong>%{date}</strong>'
+
+        show:
+          valor_executado: Executed values
+          valor_programado: Planned values
+

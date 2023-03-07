@@ -1,0 +1,35 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:title, :email, :kind, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: ombudsmen, sort_columns: sort_columns, table_locale: table_locale do |ombudsman|
+
+    - show_path = can?(:show, ombudsman) ? admin_ombudsman_path(ombudsman) : '#!'
+
+    %tr
+
+      %td
+        - title = ombudsman.title
+        = link_to show_path, title: title do
+          = filtered_highlighted(title.truncate(60))
+
+      %td
+        - email = ombudsman.email
+        = link_to show_path, title: email do
+          = filtered_highlighted(email.truncate(40))
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(ombudsman.kind_str)
+
+      %td
+        .float-right
+          - if can?(:edit, ombudsman)
+            = link_to t('commands.edit'), edit_admin_ombudsman_path(ombudsman), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:manage, ombudsman)
+            = link_to t('commands.remove'), admin_ombudsman_path(ombudsman), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link hover-link float-left d-inline-block'

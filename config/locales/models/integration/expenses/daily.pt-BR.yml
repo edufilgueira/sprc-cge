@@ -1,0 +1,28 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/expenses/daily:
+        numero: Número da nota de pagamento
+        model_name: Despesas com diárias
+        unidade_gestora: Secretaria/Órgão
+        creditor_nome: Beneficiário
+        date_of_issue_filter: Período
+        calculated_valor_final: Valor Pago
+
+  integration/expenses/daily:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Despesas com diárias %{year}'
+
+          header:
+            exercicio: Exercício
+            numero: Número
+            date_of_issue: Data de emissão
+            management_unit_title: Secretaria/Órgão
+            executing_unit_title: Unidade executora
+            creditor_nome: Beneficiário
+            valor: Valor
+            valor_final: Valor Pago
+            valor_pago: Valor Pago
+            calculated_valor_final: Valor Pago

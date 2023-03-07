@@ -1,0 +1,13 @@
+es:
+  activerecord:
+    attributes:
+      integration/supports/organ:
+        codigo_entidade: Código de la entidad
+        codigo_folha_pagamento: Código de la nómina
+        codigo_orgao: Código del órgano 
+        descricao_administracao: Descripción administrativa
+        descricao_entidade: Descripción de la entidad 
+        descricao_orgao: Descripción del órgano
+        title: Órgano
+        poder: Poder
+        sigla: Abreviatura del órgano

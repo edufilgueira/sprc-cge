@@ -1,0 +1,35 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+
+- can_create = false
+- new_path = nil
+- controller_name = controller.controller_name
+- filter_path = search_contents_path
+
+%h2.sr-only
+  = t('.title')
+
+%h3.card-title
+  = t('.title')
+
+
+%div{'data-toggle': 'remote-content-with-filter-bar'}
+
+  .remote-content{'data-remote-content': controller_name}
+
+    - filter_new_command = { title: t('.commands.new'), path: new_path, permission: can_create }
+    - filter_commands = { 'new': filter_new_command }
+    - filter_options = { filter_id: :contracts, filter_path: filter_path, commands: filter_commands }
+
+    = render "shared/filters", filter_options
+
+    - # o index é carregado como remote-content e está na partial ./_index
+
+    %hr{'aria-hidden': 'true'}
+
+    .remote-content-result{ 'data-remote-content-result': controller_name }
+
+      .p-2.text-center.text-muted
+        .fa.fa-spin.fa-refresh.mx-1
+        = t('messages.loading')

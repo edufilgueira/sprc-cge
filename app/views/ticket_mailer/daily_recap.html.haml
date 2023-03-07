@@ -1,0 +1,15 @@
+%h1
+  = t('.title')
+  = l(Date.today, format: :weekday)
+
+- @summary.each do |ticket_type, data|
+  %h2
+    = t("ticket.ticket_types.#{ticket_type}")
+
+  - data.each do |key, value|
+    %p
+      = link_to operator_tickets_url(ticket_type: ticket_type, deadline: key) do
+        %strong
+          = t(".#{key}")
+        = value
+  %br/

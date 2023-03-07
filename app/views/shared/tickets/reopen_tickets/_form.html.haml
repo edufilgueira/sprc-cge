@@ -1,0 +1,20 @@
+= javascript_include_tag('ckeditor/init')
+
+.no-print
+  = simple_form_for ticket_log, url: url_for([namespace, ticket, :reopen_tickets, only_path: true]), html: { method: :post } do |f|
+
+    = render 'shared/tickets/short_details', ticket: ticket
+
+    %hr{'aria-hidden': 'true'}
+
+    .row
+      .col-12
+        = f.input :description, as: :ckeditor, label: t('.justification'), wrapper_html: { class: 'mb-0' }, input_html: { ckeditor: { toolbar: :mini, startupFocus: true } }
+
+        %small.text-muted.mb-3
+          %em
+            = t('.hint')
+
+    .row.mt-4
+      .col-12
+        = f.submit t('.save'), class: 'btn btn-primary'

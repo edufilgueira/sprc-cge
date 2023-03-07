@@ -1,0 +1,92 @@
+.row
+
+  .col-12
+
+    - #
+    - # Descrição
+    - #
+    %h2.sr-only
+      = t('.title')
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-6
+            %h3.card-title
+              = ticket.title
+
+          .col-6
+
+            .float-right
+
+              .card-commands
+                = render 'transparency/public_tickets/likes/form'
+                = link_to subscriptions_create_edit_path(ticket, current_user), class: "btn btn-link hover-link #{ticket_subscription.persisted? &&  ticket_subscription.confirmed_email? ? '' : 'text-muted'}" do
+                  %i.fa.fa-star{ 'aria-hidden': 'true' }
+                  = t(".title.follows")
+                = render 'shared/tickets/components/btn_print'
+
+
+      - # Descrição da manifestação
+
+      .card-block.card-header
+        %h4.card-subtitle
+          = t(".#{ticket.ticket_type}.description.title")
+
+        - if ticket.sou?
+          .row
+            .col-6.col-lg-6
+              = content_with_label(ticket, :sou_type_str)
+
+
+        .content-with-label
+          %p.content-label
+            = Ticket.human_attribute_name(:description)
+          .content-value
+            = content_sanitizer(ticket.description)
+
+
+        = content_with_label(ticket, :internal_status_str)
+
+      - # Anexos
+
+      .card-block.card-header
+
+        %h4.card-subtitle
+          = t('.attachments.title')
+
+        .attachments.mt-4
+          = render 'shared/attachments/index', ticket: ticket
+
+
+    - #
+    - # Classificação
+    - #
+    - if ticket.classification.present?
+      = render 'shared/tickets/classification', ticket: ticket, classification: ticket.classification
+
+    - #
+    - # Resposta(s)
+    - #
+    = render 'answers'
+
+    - #
+    - # Comentários públicos
+    - #
+    = render 'shared/tickets/public_comments', ticket: ticket, comment_form_url: nil
+
+    - #
+    - # Histórico de atendimentos
+    - #
+    = render 'shared/tickets/ticket_logs/history', ticket: ticket
+
+    - #
+    - # Comentários públicos
+    - #
+    = render 'comments', ticket: ticket
+
+
+
+

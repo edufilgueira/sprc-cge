@@ -1,0 +1,8 @@
+en:
+
+  activerecord:
+
+    attributes:
+
+      citizen_comment:
+        description: Comment

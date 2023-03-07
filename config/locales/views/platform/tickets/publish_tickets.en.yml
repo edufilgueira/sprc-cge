@@ -1,0 +1,19 @@
+en:
+  platform:
+    tickets:
+      publish_tickets:
+        create:
+          sic:
+            done:
+              'true': Request successfully published
+              'false': Request successfully unpublished
+            error:
+              'true': Failed to publish request
+              'false': Failed to unpublish request
+          sou:
+            done:
+              'true': Solicitation successfully published
+              'false': Solicitation successfully unpublished 
+            error:
+              'true': Failed to publish solicitation
+              'false': Failed to unpublish solicitation 

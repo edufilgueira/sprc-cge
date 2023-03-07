@@ -1,0 +1,10 @@
+pt-BR:
+
+  services:
+
+    sectoral_daily_recap:
+      evaluations:
+        empty: Sem dados
+      answers:
+        empty: Sem dados
+

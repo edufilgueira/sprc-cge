@@ -1,0 +1,14 @@
+- if classification.present?
+
+  = render 'shared/classifications/classification_fields', classification: classification
+
+  - if can?(:classify, ticket)
+    .row.no-print
+
+      .col-12
+
+        - if (classification.persisted?)
+          = link_to t('.edit'), edit_operator_ticket_classification_path(ticket, classification), class: 'btn btn-primary w-100'
+
+        - else
+          = link_to t(".new.#{ticket.ticket_type}"), new_operator_ticket_classification_path(ticket), class: 'btn btn-primary w-100'

@@ -1,0 +1,10 @@
+%tr
+  %td
+    = link_to admin_integrations_supports_axis_path(axis) do
+      = highlight(axis.codigo_eixo, params[:search])
+
+  %td
+    - axis_description = axis.descricao_eixo
+    = link_to admin_integrations_supports_axis_path(axis), title: axis_description do
+      = highlight(axis_description, params[:search])
+

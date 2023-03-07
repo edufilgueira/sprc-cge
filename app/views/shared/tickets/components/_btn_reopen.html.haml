@@ -1,0 +1,8 @@
+- answer_ticket = answer.ticket
+- is_current_version = answer_ticket.reopened == answer.version
+- is_final_answer_approved = answer.final? && !answer.positioning? && !answer.rejected_answer?
+- if can?(:reopen, answer_ticket) && is_current_version && is_final_answer_approved
+
+  %small.no-print
+    - url = url_for([:new, namespace, :ticket, :reopen_ticket, ticket_id: answer_ticket.id, only_path: true])
+    = link_to t(".#{ticket.ticket_type}.reopen"), url, class: 'btn btn-sm btn-success pull-right', 'data-confirm': t(".#{ticket.ticket_type}.confirm")

@@ -1,0 +1,68 @@
+.card-filters.filter-bar{'data-filter-bar': 'city_undertakings'}
+
+  = form_for transparency_city_undertakings_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row.mt-3
+      .col-12.col-lg-4
+        - options = options_for_select(supports_secretaries_for_select_with_all_option, params[:organ_id])
+
+        = label_tag(:organ_id, Integration::CityUndertakings::CityUndertaking.human_attribute_name(:organ_id))
+        = select_tag(:organ_id, options)
+
+      .col-12.col-lg-8
+        - options = options_from_collection_for_select(Integration::Supports::Undertaking.order(:descricao), :id, :descricao, params[:undertaking_id])
+
+        = label_tag(:undertaking_id, Integration::CityUndertakings::CityUndertaking.human_attribute_name(:undertaking_id))
+        = select_tag(:undertaking_id, options, include_blank: t('.undertaking.select.all'))
+
+        - # TODO: criar API para filtro de Credor (2k)
+        - # exemplo implementado: shared/transparency/server_salaries/index/_filters.html.haml
+        - #options = options_from_collection_for_select(Integration::Supports::Creditor.order(:nome), :id, :nome, params[:creditor_id])
+
+        = #label_tag(:creditor_id, Integration::CityUndertakings::CityUndertaking.human_attribute_name(:creditor_id))
+        = #select_tag(:creditor_id, options, include_blank: t('.creditor.select.all'))
+
+    .row.mt-3
+      .col-12.col-lg-4
+        - select_options = transparency_select_options_from_model(Integration::CityUndertakings::CityUndertaking, :municipio)
+        - options = options_for_select(select_options, params[:municipio])
+
+        = label_tag(:municipio, Integration::CityUndertakings::CityUndertaking.human_attribute_name(:municipio))
+        = select_tag(:municipio, options, include_blank: t('messages.filters.select.all.male'))
+
+      .col-12.col-lg-4
+        - select_options = transparency_select_options_from_model(Integration::CityUndertakings::CityUndertaking, :mapp)
+        - options = options_for_select(select_options, params[:mapp])
+
+        = label_tag(:mapp, Integration::CityUndertakings::CityUndertaking.human_attribute_name(:mapp))
+        = select_tag(:mapp, options, include_blank: t('messages.filters.select.all.male'))
+
+      .col-12.col-lg-4
+
+        - options = options_for_select(integration_city_undertakings_expenses_for_select_with_all_option, params[:expense])
+
+        = label_tag(:expense, Integration::CityUndertakings::CityUndertaking.human_attribute_name(:expense))
+
+        = select_tag(:expense, options)
+
+
+    .row.mt-3
+
+      .col-12.col-lg-6
+        = label_tag(:search, t('messages.filters.search.label'))
+        = text_field_tag(:search, params[:search], placeholder: t('.search_placeholder') ,class: 'form-control w-100 mb-3', 'data-filter-bar-ignore-submit-on-enter': 'true')
+
+      .col-12.col-lg-6{ data: { content: 'creditor' } }
+
+        - url = search_api_v1_transparency_creditors_path
+        = label_tag(:creditor, t('shared.transparency.search.creditor_name.expense'))
+        %i.fa.fa-spinner.fa-spin.fa-fw{ 'aria-hidden': 'true', 'data-content': 'loading' }
+        = search_field_tag :search_datalist, params[:search_datalist], class: 'form-control loader', data: { input: 'creditor', url: url, 'param-name': 'nome', 'visible-properties': 'nome' }
+        %small.form-text.text-muted
+          = t('shared.transparency.search.hint')
+
+    .row.mt-3
+      .col-12
+        = f.submit t('commands.search'), class: 'btn btn-primary btn-block w-25 pull-right'

@@ -1,0 +1,146 @@
+en:
+  ppa:
+    plans:
+
+      headline:
+        title: Citizen Participation
+        description: >
+          Welcome to the area of ​​citizen participation. Here you can follow
+          workshops, evaluate, monitor and participate in the Pluriannual Plan (PPA).
+
+      show:
+        title: Join the PPA %{plan}
+      about_phases:
+        elaborating:
+          description: >
+            It is an exercise in democracy and citizenship to participate in the PPA of your State, because, 
+            through this, it is possible to think together a better future for all. Through the PPA, civil 
+            society can give its opinion, debate, evaluate and build better public policies together with 
+            the government.
+        evaluating:
+          description: >
+            It is an exercise in democracy and citizenship to participate in your state's PPA.
+            Through the process of citizen participation, society can express opinions, debate,
+            evaluate and build ideas for the implementation of effective public policies. You are 
+            currently being invited to participate in the 2016-2019 PPA evaluation, in order to 
+            record their perceptions about the execution of government actions in the region 
+            during the period under review, contributing to the correction of what to identify as 
+            necessary. Participate and help the government to make a better future for everyone!
+
+        monitoring:
+          description: >
+            Missing text to be added for Monitoring, please contact CGE IT.
+        evaluating:
+          description: >
+            It is an exercise in democracy and citizenship to participate in your state's PPA.
+            Through the process of citizen participation, society can express opinions, debate,
+            evaluate and build ideas for the implementation of effective public policies.
+            You are currently being invited to participate in the 2016-2019 PPA evaluation,
+            in order to record their perceptions about the execution of government actions in the
+            region during the period under review, contributing to the correction of what to identify
+            as necessary. Participate and help the government to make a better future for everyone!
+        revising:
+          description: >
+            To participate in the review of the PPA 2020-2023 is to use your voice to contribute to 
+            the planning of State Government actions in your region and throughout Ceará. The review 
+            process seeks to maintain direct communication with the society of Ceará, especially in 
+            planning the performance of state agencies for the next two years. To be part of the 
+            process is to act directly to solve the problems and think about a better future for 
+            everyone!
+
+      workshops:
+        title: PPA drafting meetings
+        description: >-
+          The Regional Meetings are moments of debate, evaluation and suggestions about the state planning promoted to the population of the region. It is when the government goes to you to hear your opinions and ideas that direct the government's offer for the region's development.
+        links: Quick access
+        last: See the last meeting (%{name}, %{date})
+        counter: for the beginning of the PPA meeting (%{start_year} - %{end_year})
+        text_workshop_next: Please wait for the next regional meeting to be scheduled.
+        see_more: see meetings
+        coming_soon: Soon, information about the Workshops elaborated!
+        soon: 'Coming soon'
+
+      strategies_vote:
+        title: Strategy Vote
+        description: 'At this stage of the participatory planning process, you can vote for the strategies defined at the regional meetings you want the government to prioritize over the next four years. Below is the voting schedule by region:'
+        see_down_schedule: 'Below is the voting schedule by region:'
+        whithout_votings_schedule: Wait for the voting schedule to be set for the regions.
+
+      map:
+        tmp:
+          title: Track the PPA in your region
+          description: >-
+            Participatory planning is carried out in the regions of the State of Ceará.
+            With Ceará Transparente, all citizens can contribute and participate in this
+            process through the Internet.
+          coming_soon: 'In short, the prioritized regionalized strategies of the PPA!'
+          soon: 'Coming soon'
+
+        title: Choose a region
+        city: City
+        biennium: Biennium
+        hint: >
+          Select a county to find the corresponding region.
+          Or click on a map region
+
+        hint_mobile: >
+          Select a county to find the corresponding region.
+
+        see_more: Join the PPA in this region
+
+      bienniums:
+        strategies: Strategies
+        initiatives: Initiatives
+        products: Products
+        proposals: Proposals
+        biennium: 'Biennium the %{biennium}'
+
+      cards:
+        phases:
+          elaborating:
+            strategies_vote:
+              title: Voting Strategies
+              description: |
+                At this stage of the participatory planning process, it is possible to vote on the strategies defined
+                regional meetings that you want the government to prioritize over the next four years. He follows below 
+                the voting schedule by region:
+              see_down_schedule: 'Below is the voting schedule by region:'
+              whithout_votings_schedule: Wait for the definition of the voting schedule for the regions.
+
+          monitoring:
+
+          evaluating:
+            schedule_activies:
+              title: Schedule of activities
+              description:
+                items:
+                  evaluation: |
+                    Evaluation of the PPA by society in a virtual environment: 1st to 15th of June.
+                  consolidation: |
+                    Consolidation of information registered in the system: 16 June to 15 July.
+                  publication: 
+                    Publication of the final evaluation report (information from the government and society).
+
+          revising:
+            schedule_activies:
+              title: Stages of Citizen Participation in the PPA Review %{start_year} - %{end_year}
+              description: |
+                Participation in the review process takes place in two stages: (i) the review of 
+                problem situations and regional strategies; and (ii) the prioritization of regional 
+                strategies. 
+                <p> In the first stage, you will be able to participate by reviewing the problem 
+                situations and action strategies that were identified as most important for your region 
+                during the preparation of the PPA in 2019. In the second stage, you will be able to 
+                select which regional strategies are suggested for each region (new or existing) you 
+                consider as priorities for the next two years.</p>
+              see_down_schedule: |
+                <b>Below is the review schedule:</b>
+              stages:
+                review_regional_guidelines:  Review of Regional Guidelines
+                proposal_consolidation: Consolidation of Proposals
+                prioritization_regional_strategies: Prioritization of Regional Strategies
+                disclosure_final_result: Disclosure of the Final Result
+                process_evaluation: Process Evaluation
+
+
+

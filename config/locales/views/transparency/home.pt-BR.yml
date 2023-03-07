@@ -1,0 +1,359 @@
+pt-BR:
+
+  transparency:
+
+    home:
+
+      index:
+        title: Páginas de Transparência
+
+        sections:
+          title: Seções
+
+      how_sections:
+        what_is:
+          title: O que é Transparência?
+          description: >
+            No contexto da gestão pública, a Lei da Transparência determina que
+            sejam disponíveis, em tempo real, informações detalhadas sobre os
+            dados públicos.
+
+        how_to:
+          title: Como usar?
+          description: >
+            O Ceará Transparente foi feito pensando em facilitar a busca de
+            informações e dados públicos para você, cidadão. Os gráficos permitem
+            uma visualização dos repasses e despesas feitas pela gestão pública.
+
+      graphic_sections:
+        chartnav:
+          item1:
+            title: Receitas e Despesas
+          item2:
+            title: Contratos
+          item3:
+            title: Convênios
+          item4:
+            title: Servidores
+        empty_graphic: Gráfico não disponível
+
+
+      top_queries_sections:
+        cards: &cards
+          title: Consultas em Destaque
+
+          address:
+            title: End. e Telefones
+            link: '/portal-da-transparencia/paginas/enderecos-e-telefones'
+            icon: 'fa-address-book-o'
+
+          licitation:
+            title: Licitações em Andamento
+            link: '/portal-da-transparencia/paginas/licitacoes'
+            icon: 'fa-file-text-o'
+
+          access:
+            title: Carta de Serviços
+            link: 'https://cartadeservicos.ce.gov.br/'
+            icon: 'fa-user-o'
+
+          contracts_contracts:
+            title: Contratos
+            text: Visualizar informações dos contratos
+
+          contracts_convenants:
+            title: Convênios
+            text: Visualizar informações dos convênios
+
+          ders: &ders
+            title: Obras DER
+            text: Visualizar informações de obras - rodoviárias
+
+          maps:
+            title: Mapas Interativos
+            text: Consulte todas as obras em andamento e finalizadas no Estado do Ceará.
+            links:
+              title: Mapas Interativos
+              link1:
+                title: Obras de Edificações
+              link2:
+                title: Obras Rodoviárias
+              link3:
+                title: Portal Hidrológico do Ceará
+              link4:
+                title: Atlas SRH
+
+          constructions_ders:
+            <<: *ders
+
+          daes: &daes
+            title: Obras DAE
+            text: Visualizar informações de obras - edificações
+
+          constructions_daes:
+            <<: *daes
+
+          mobile_apps:
+            title: Aplicativos
+            text: Aplicativos diversos
+
+          npfs:
+            title: NPF
+            text: Visualizar informações de notas de programação financeira
+
+          expenses_budget_balances: &expenses_budget_balances
+            title: Despesas do Executivo
+            text: Visualizar informações de despesas
+
+          expenses_expenses_budget_balances:
+            <<: *expenses_budget_balances
+
+          expenses_neds:
+            title: Despesas por Empenho
+
+          expenses:
+            title: Despesas do Executivo
+            text: Consulte todos os custos e despesas do Governo do Estado do Ceará.
+            links:
+              title: Despesas do Estado
+              link1:
+                title: Depesas do Poder Executivo
+                link: '/portal-da-transparencia/despesas/despesas-do-poder-executivo'
+              link2:
+                title: Despesas por Notas de Empenho
+                link: '/portal-da-transparencia/despesas/notas-de-empenho'
+              link3:
+                title: Depesas Extraorçamentárias
+              link4:
+                title: Despesa com Diárias
+                link: '/portal-da-transparencia/despesas/despesas-com-diarias'
+              link5:
+                title: Suprimento de Fundos
+                link: '/portal-da-transparencia/despesas/suprimentos-de-fundos'
+              link6:
+                title: Transferências Obrigatórias aos Municípios
+                link: '/portal-da-transparencia/paginas/cotransferencias-obrigatorias-aos-municipios'
+              link7:
+                title: Valores Transferidos pelo poder Executivo
+              link8:
+                title: Cartão Corporativo
+                link: '/portal-da-transparencia/paginas/cartao-corporativo'
+              link9:
+                title: Informações de Servidores
+              link10:
+                title: Contratos
+              link11:
+                title: Contratos de Gestão
+              link12:
+                title: Convênios
+              link13:
+                title: Licitações em Andamento
+                link: '/portal-da-transparencia/paginas/licitacoes'
+              link14:
+                title: Licitações Finalizadas
+              link15:
+                title: Investimentos por Municipio
+              link16:
+                title: Investimentos por Macroregião
+              link17:
+                title: Obras de Edificações
+              link18:
+                title: Obras Rodoviárias
+              link22:
+                title: Relatório Resumido da Execução Orçamentária
+                link: '/portal-da-transparencia/paginas/relatorio-resumido-da-execucao-orcamentaria'
+              link23:
+                title: Transferências a Entidades sem Fins Lucrativos
+                link: '/portal-da-transparencia/despesas/transferencias-a-entidades-sem-fins-lucrativos'
+              link24:
+                title: Transferências a Instituições Multigovernamentais
+                link: '/portal-da-transparencia/despesas/transferencias-a-instituicoes-multigovernamentais'
+              link25:
+                title: Transferências a Consórcios Públicos
+                link: '/portal-da-transparencia/despesas/transferencias-a-consorcios-publicos'
+              link26:
+                title: Transferências a Municípios
+                link: '/portal-da-transparencia/despesas/transferencias-a-municipios'
+              link28:
+                title: Dívida Pública
+                link: '/portal-da-transparencia/paginas/divida-publica'
+              link29:
+                title: Transferências a Entidades com Fins Lucrativos
+                link: '/portal-da-transparencia/despesas/transferencias-a-entidades-com-fins-lucrativos'
+          nlds:
+            title: NLD
+            text: Visualizar informações de notas de liquidação de despesa
+
+          npds: &npds
+            title: NPD
+            text: Visualizar informações de notas de pagamento de despesa
+
+          expenses_npds:
+            <<: *npds
+
+          management:
+            title: Gestão Estadual
+            text: Relatórios, balanços, legislações e mais no Governo do Estado do Ceará.
+            links:
+              title: Gestão Estadual
+              link1:
+                title: Receita Corrente Líquida
+                link: '/portal-da-transparencia/paginas/receita-corrente-liquida'
+              link2:
+                title: Relatórios de Gestão Fiscal
+                link: '/portal-da-transparencia/paginas/fiscal-management-report'
+              link3:
+                title: Leis orçamentárias
+                link: '/portal-da-transparencia/paginas/leis-orcamentarias'
+              link4:
+                title: Relatório de Controle Interno
+                link: '/portal-da-transparencia/paginas/relatorio-controle-interno'
+              link5:
+                title: Relatório de Controle Externo
+                link: '/portal-da-transparencia/paginas/relatorio-controle-externo'
+              link6:
+                title: Balanço Geral do Estado
+                link: '/portal-da-transparencia/paginas/balanco-geral-do-estado'
+              link7:
+                title: Bens Imóveis
+              link9:
+                title: Oportunidades de investimentos
+                link: '/portal-da-transparencia/paginas/o-estado-do-ceara'
+              link10:
+                title: Políticas de Governo
+                link: '/portal-da-transparencia/paginas/prioridades-e-politicas-de-governo'
+              link13:
+                title: Modelos de Governança
+                link: '/portal-da-transparencia/paginas/modelo-de-governanca'
+              link15:
+                title: Estrutura Organizacional
+                link: '/portal-da-transparencia/paginas/estrutura-organizacional'
+              link16:
+                title: Endereços e telefones
+                link: '/portal-da-transparencia/paginas/enderecos-e-telefones'
+              link17:
+                title: Diário oficial do Estado
+                link: 'http://pesquisa.doe.seplag.ce.gov.br/doepesquisa/sead.do?page=ultimasEdicoes&cmd=11&action=Ultimas'
+              link18:
+                title: Investimentos por Município
+              link19:
+                title: Indicadores de Resultados
+                link: '/portal-da-transparencia/paginas/resultados'
+              link20:
+                title: Investimento por Macrorregião
+              link22:
+                title: 'Informações Socioeconômicas'
+                link: '/portal-da-transparencia/paginas/informacoes-socioeconomicas'
+              link23:
+                title: 'COGERF'
+                link: '/portal-da-transparencia/paginas/comite-de-gestao-por-resultados-e-gestao-fiscal-cogerf'
+              link24:
+                title: 'Controle Interno Preventivo'
+                link: '/portal-da-transparencia/paginas/controle-interno-preventivo'
+              link25:
+                title: Ferramentas de Controle Social
+                link: '/portal-da-transparencia/paginas/ferramentas-de-controle-social'
+              link27:
+                title: Gestão Participativa
+                link: '/portal-da-transparencia/paginas/participative-management'
+              link28:
+                title: Gestão por Resultado
+                link: '/portal-da-transparencia/paginas/gestao-por-resultados'
+              link35:
+                title: Indicadores Fiscais
+                link: '/portal-da-transparencia/paginas/indicadores-fiscais'
+              link36:
+                title: Radar
+                link: '/portal-da-transparencia/paginas/radar'
+              link37:
+                title: MAPP
+                link: '/portal-da-transparencia/paginas/mapp-monitoramento-de-acoes-e-projetos-prioritarios'
+              link38:
+                title: Produto Interno Bruto (PIB)
+                link: '/portal-da-transparencia/paginas/pib'
+              link39:
+                title: Plano de Ação para o SIAFIC
+                link: '/portal-da-transparencia/paginas/plano-acao-siafic'
+
+
+          open_data: &open_data
+            title: Dados Abertos
+            text: Consulte os diversos dados abertos disponíveis para download
+
+          open_data_data_sets:
+            <<: *open_data
+
+          servers: &servers
+            title: Servidores
+            text: Visualizar informações dos servidores públicos
+
+          server_salaries:
+            <<: *servers
+
+          public_debt:
+            title: Dívida Pública
+            text: Visualiza pagamentos efetuados dos contratos vigentes
+
+          revenues: &revenues
+            title: Receitas do Executivo
+            text: Consulte todos as receitas do Governo do Estado do Ceará.
+            links:
+              title: Receitas do Estado
+              link2:
+                title: Receitas do Poder Executivo
+              link3:
+                title: Recursos Recebidos em Transferências
+              link4:
+                title: Receitas Lançadas
+              link5:
+                title: PIB
+                link: '/portal-da-transparencia/paginas/pib  '
+              link6:
+                title: PIB Trimestral
+                link: '/portal-da-transparencia/paginas/pib-trimestral '
+              link7:
+                title: Receita Corrente Liquida
+                link: '/portal-da-transparencia/paginas/receita-corrente-liquida '
+              link8:
+                title: Receitas vs Despesas
+                link: '/portal-da-transparencia/paginas/receitas-x-despesas'
+
+          revenues_accounts:
+            <<: *revenues
+
+          real_states:
+            title: Bens Imóveis
+            text: Gestão de importação das informações de bens imóveis
+
+      top_4_sections:
+        cards:
+          <<: *cards
+
+      card_sections:
+        empty: Informações não consolidadas.
+        revenues:
+          title: Maiores fontes de receita em %{year}
+        expenses:
+          title: Maiores fontes de despesa em %{year}
+
+      map_sections:
+        title: Obras do Estado do Ceará
+        map_title: Mapa de obras
+        last_daes:
+          title: ÚLTIMAS OBRAS
+          description: (Fim previsto - descrição)
+          not_informed: Não informado
+        watch: Acompanhe as obras de edificações acessando o mapa de obras.
+        see_more: Ver mapa de obras
+
+      news_sections:
+        title: Notícias e artigos
+        description: >
+          Nesse espaço você pode se informar sobre as novidades referentes aos
+          canais de transparência e se atualizar a respeito das redes de
+          Ouvidoria do Ceará. Leia, participe e fique em dia com os seus direitos!
+        title_1: Notícias da Controladoria e Ouvidoria Geral do Estado do Ceará
+        description_1: Veja as últimas notícias da Controladoria e Ouvidoria Geral do Estado do Ceará.
+        title_2: Notícias do Governo do Estado do Ceará
+        description_2: Veja as últimas notícias do Governo do Estado do Ceará.
+        read_more: Ver notícias

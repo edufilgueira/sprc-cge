@@ -1,0 +1,136 @@
+- logo_suffix = acessibility? ? '-invert' : ''
+%footer
+
+  .container
+
+    .footer-content
+
+      .row
+        .col-12.col-lg-2
+
+          .footer-logo
+            = content_tag(:img, '', src: image_path("logos/logo-ceara-footer1#{logo_suffix}.png"), alt: t('app.title'))
+
+        .col-12.col-lg-6
+
+          .row
+
+            .col-12
+
+            .footer-section
+
+              %h6
+                = t('.sections.noticias.title')
+
+              - links = [:ultimas_noticias, :mais_acessadas, :todas]
+              - links.each do |link|
+                %p
+                  = link_to t(".sections.noticias.#{link}.title"), t(".sections.noticias.#{link}.url"), target: '_blank'
+
+            .footer-section
+
+              %h6
+                = t('.sections.servicos.title')
+
+              - links = [:temas, :meus_servicos]
+              - links.each do |link|
+                %p
+                  = link_to t(".sections.servicos.#{link}.title"), t(".sections.servicos.#{link}.url"), target: '_blank'
+
+              %p
+                = link_to t(".sections.servicos.aplicativos.title"), transparency_mobile_apps_path
+
+
+            .footer-section
+
+              %h6
+                = t('.sections.estrutura.title')
+
+              - links = [:governador, :vice_governadoria, :secretariado, :servidores, :orgaos, :historia]
+
+              - links.each do |link|
+                %p
+                  = link_to t(".sections.estrutura.#{link}.title"), t(".sections.estrutura.#{link}.url"), target: '_blank'
+
+            .footer-section
+
+              %h6
+                = t('.sections.negocios.title')
+
+              - links = [:turismo, :industria, :comercio]
+
+              - links.each do |link|
+                %p
+                  = link_to t(".sections.negocios.#{link}.title"), t(".sections.negocios.#{link}.url"), target: '_blank'
+
+
+        .col-10.col-lg-4.p-0
+
+          .footer-contact
+
+            %h6
+              = t('.contacts.como_comunicar.title')
+
+            .row
+              .col-6
+                = link_to t('.contacts.como_comunicar.fale_conosco.title'), transparency_contacts_path
+
+              .col-6
+                = link_to t('.contacts.como_comunicar.noticias_email.title'), t('.contacts.como_comunicar.noticias_email.url')
+
+            .row.mt-2
+              .col-6
+                = link_to t('.contacts.como_comunicar.noticias_whatsapp.title'), t('.contacts.como_comunicar.noticias_whatsapp.url')
+
+              .col-6
+                = link_to t('.contacts.como_comunicar.espaco_imprensa.title'), t('.contacts.como_comunicar.espaco_imprensa.url')
+
+            %hr.my-2
+
+            .row
+
+              .col-12.col-md-5.mt-2
+                %h6.mb-0
+                  = t('.contacts.nossos_canais.title')
+
+              .col-12.col-md-7
+                %ul.nav.social-networks
+                  %li.nav-item.mr-1
+                    = link_to 'https://www.facebook.com/cgeceara', target: '_blank' do
+                      %i.fa.fa-facebook.fa-border.fa-2x
+
+                  %li.nav-item.mr-1
+                    = link_to 'https://www.instagram.com/cgeceara', target: '_blank' do
+                      %i.fa.fa-instagram.fa-border.fa-2x
+
+                  %li.nav-item.mr-1
+                    = link_to 'https://twitter.com/cgeceara', target: '_blank' do
+                      %i.fa.fa-twitter.fa-border.fa-2x
+
+                  %li.nav-item
+                    = link_to 'https://www.youtube.com/user/governodoceara', target: '_blank' do
+                      %i.fa.fa-youtube.fa-border.fa-2x
+
+
+          .footer-if-design.pt-3.pl-2
+
+            %dl.row
+
+              %dt.col-12.col-md-8
+                %i.small.text-muted= t('.if-design')
+
+              %dd.col-12.col-md-4.pl-0
+                - if_design_url = "https://ifworlddesignguide.com/design-excellence?filter=%7B%22filters%22%3A%5B%7B%22type%22%3A%22disciplines%22%2C%22ids%22%3A%5B11%5D%7D%5D%7D#/pages/page/entry/229597-design-for-citizenship/"
+                = link_to if_design_url, target: '_blank' do
+                  = image_tag 'if-design.png', alt: t('.if-design'), class: 'img-fluid'
+
+
+      %hr
+
+      .row.text-center
+        .col-12
+          = t('app.copyright', year: Date.today.year)
+          .pull-left
+            = link_to t('.ppa_admin'), ppa_admin_root_path
+          .pull-right
+            = link_to t('.site_map'), site_map_path

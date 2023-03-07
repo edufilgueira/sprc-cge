@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    attributes:
+      ticket_department:
+        description: 'Este será o conteúdo visível pela área interna selecionada:'
+        note: 'Observação:'
+        deadline_ends_at: 'Prazo para a resposta da área interna:'
+        justification: 'Informe o motivo:'
+        forward_justification: 'Motivo:'
+        considerations: 'Considerações:'
+
+    models:
+      ticket_department:
+        one: Unidade
+        other: Unidades
+
+  ticket_department:
+    deadline:
+      undefined: Sem prazo

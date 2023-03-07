@@ -1,0 +1,152 @@
+pt-BR:
+  ppa:
+    home:
+      top_4_ppa:
+        cards:
+          elaborating:
+            title: ELABORANDO
+            links:
+              link2:
+                title: Acessar Votação
+              title: '%{start_year} - %{end_year}'
+            icon: 'fa fa-2x fa-file-text-o'
+
+          monitoring:
+            title: MONITORANDO
+            links:
+              link2:
+                title: Acessar Monitoramento
+              title: '%{start_year} - %{end_year}'
+            icon: 'fa fa-2x fa-eye'
+
+          evaluating:
+            title: AVALIANDO
+            links:
+              title: '%{start_year} - %{end_year}'
+              link2:
+                title: Acessar Avaliação
+            icon: 'fa fa-2x fa-check-square-o'
+
+          revising:
+            title: REVISANDO
+            links:
+              link2:
+                title: Acessar Revisão
+              title: '%{start_year} - %{end_year}'
+            icon: 'fa fa-2x fa-pencil-square-o'
+
+      show:
+        title: Participe do PPA
+
+      headline:
+        title: Participação Cidadã
+        description: >
+          Bem vindo à área de participação cidadã. Aqui você pode acompanhar
+          encontros regionais, avaliar, monitorar e participar do Plano Plurianual (PPA).
+
+      about_elaboration_phase:
+        title: O que é Elaboração?
+        description: >
+          É exercício de democracia e cidadania participar do PPA de seu Estado, pois,  por meio disso, é possível pensar em conjunto um futuro melhor para todos. Por intermédio do PPA, a sociedade civil pode opinar, debater, avaliar e construir junto com o governo melhores políticas públicas.
+      general:
+        cards:
+          ppa1:
+            title: Elaborando
+            icon: fa-file-text-o
+            class: 'ml-auto'
+
+          ppa2:
+            title: Monitorando
+            icon: fa-eye
+            class: ''
+
+          ppa3:
+            title: Avaliando
+            icon: fa-check-square-o
+            class: 'mr-auto'
+
+
+        what_is:
+          title: O que é participação?
+          description: >
+            É um direito de todos os cidadãos de compartilhar com o Governo o
+            espaço de decisão dos rumos das mais diversas políticas públicas.
+
+        why:
+          title: E por que participar?
+          description: >
+            A participação cidadã é importante para criação conjunta de um futuro
+            melhor para todos. É onde a sociedade civil pode opinar, debater e
+            construir junto com o Governo melhores políticas públicas.
+
+        what_is_ppa:
+          title: O que é Plano Plurianual (PPA)?
+          description: >
+            O Plano Plurianual, ou mais conhecido apenas como PPA, é uma lei estadual que serve para direcionar a atuação do Governo por meio de diretrizes, objetivos e metas de médio prazo. Essa lei é elaborada sempre no primeiro ano de cada governo e tem a duração de quatro anos com o intuito de garantir a continuidade dos projetos, mesmo se houver troca de governo, além de servir como uma diretiva ao governante no seu ano inicial.
+
+        etapa:
+          title: Quais são as etapas do PPA?
+          description: >
+            O PPA estabelece as linhas gerais de atuação e gastos prioritários para os próximos quatro anos. Suas fases são: Elaboração, Monitoramento, Revisão e Avaliação, e todas elas são construídas com o apoio da sociedade, através dos Encontros Regionais. Após a elaboração do PPA, as leis orçamentárias (LDO e LOA) definirão as prioridades e o valor a serem gastos em cada ano para alcançar os resultados esperados.
+        estagios:
+          title: Quais são os estágios da etapa de elaboração?
+          description: >
+            Neste ano, a etapa de elaboração contará com três estágios, o primeiro é online onde você seleciona os principais temas a serem tratados e discutidos durante o encontro na sua região. O segundo são os Encontros Regionais, onde serão idealizadas estratégias norteadoras para as políticas públicas em sua região. Por último, haverá uma etapa online, assim como a primeira, de priorização das estratégias a serem realizadas em sua região, onde você poderá dizer o que é mais importante de se realizar primeiro.
+        encontro:
+          title: O que é um encontro regional?
+          description: >
+            O Encontro Regional é um momento em que o Governo do Ceará encontra, escuta, debate, avalia e propõe sugestões conjuntamente com a população dependendo de qual etapa do PPA que se encontra. São nos Encontros que as suas opiniões, avaliações e ideias de melhoria nos serviços ofertados são escutadas pelo Governo. Se você tem alguma ideia do que fazer para contribuir para o futuro do nosso Ceará, os Encontros Regionais do PPA são os momentos ideais para exercer a sua cidadania.
+        encontro2:
+          title: O que eu farei no encontro regional de elaboração?
+          description: >
+            Os Encontros Regionais contam com uma apresentação do panorama da região, muita discussão para que o governo possa agir da melhor forma em sua região. Serão então realizadas atividades onde todos poderão dizer a sua visão do que deve ser realizado. Lembre-se, informando-se antes das Oficinas, você tem mais chances de melhorar a sua participação e de se tornar um parceiro do Governo do Ceará!
+        encontro3:
+          title: Para onde vão as minhas contribuições nos encontros regionais?
+          description: >
+            As contribuições feitas por você nos Encontros Regionais serão organizadas pela Secretaria do Planejamento e Gestão por região em um relatório final e utilizada nas etapas de elaboração do PPA 2020-2023 como norteadoras das políticas. Logo, participar das Oficinas é um meio de fazer com que as suas demandas não caiam no esquecimento do Governo e o lugar para fazer com que as suas opiniões e sugestões sejam o pontapé inicial para o Ceará melhorar!
+
+
+
+
+      workshops:
+        title: Oficinas de elaboração do PPA
+        description: >-
+          As Oficinas Regionais são momentos de encontro, debate, avaliação e
+          sugestões. É quando o governo vai até você para ouvir suas opiniões
+          e ideias de melhoria nos serviços ofertados.
+        links: Acesso rápido
+        last: Ver a última oficina (%{name}, %{date})
+        counter: para o início do Encontro Regional do PPA (%{start_year} - %{end_year})
+        text_workshop_next: Por favor, aguarde a próxima oficina ser agendada.
+        see_more: ver oficinas
+        coming_soon: 'Em breve, informações sobre as Oficinas de elaboração!'
+        soon: 'Em breve'
+
+      map:
+        tmp:
+          title: Acompanhe o PPA na sua região
+          description: >-
+            O planejamento participativo é realizado nas regiões do Estado do Ceará.
+            Com o Ceará Transparente, todos os cidadãos poderão contribuir e participar desse
+            processo por meio da Internet.
+          coming_soon: 'Em breve, as estratégias regionalizadas priorizadas do PPA!'
+          soon: Em breve
+
+        title: Escolha uma região e um biênio do PPA
+        city: Cidade
+        biennium: Biênio
+        hint: >
+          Selecione um município para encontrar a região correspondente.
+          Ou clique em uma região do mapa
+
+        hint_mobile: >
+          Selecione um município para encontrar a região correspondente.
+
+        see_more: Participe do PPA nessa região
+
+      bienniums:
+        strategies: Estratégias
+        initiatives: Iniciativas
+        products: Produtos
+        proposals: Propostas
+        biennium: 'Biênio de %{biennium}'

@@ -1,0 +1,7 @@
+- ticket = ticket.parent || ticket
+
+- if ticket.attachments.blank?
+  = t('.attachments.none')
+- else
+  - ticket.attachments.each do |attachment|
+    = render 'shared/attachments/attachment', attachment: attachment, image_size: :small

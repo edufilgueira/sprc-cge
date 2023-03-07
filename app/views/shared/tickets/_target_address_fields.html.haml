@@ -1,0 +1,34 @@
+.contact-fields{data: {content: 'address-fields'}}
+  .row
+    .col-12.col-md-3
+      = f.input :target_address_zipcode, input_html: { data: { input: 'target_address_zipcode', mask: 'zipcode' } }
+
+    - target_state = params[:target_state] || states_default_selected_for_ticket(ticket, current_user)
+
+    - target_city = nil
+    - unless operator?(current_user)
+      - target_city = params[:target_city_id] || ticket.target_city_id || current_user&.city_id
+
+    - target_city = current_user&.call_center? ? (ticket.target_city_id || '') : target_city
+
+    .col-12.col-md-3
+      - cities_container = current_user&.call_center? ? 'attendance_ticket_attributes_target_city_id' : 'ticket_target_city_id'
+      = render 'shared/components/select_states', field_name: :target_state, required: false, selected: target_state, cities_container: cities_container
+
+    .col-12.col-md-6
+      - cities = cities_by_state_for_select(target_state)
+      = f.association :target_city, collection: cities, required: false, selected: target_city, include_blank: t('messages.form.select'), input_html: { 'data-input': 'city' }
+
+  .row
+    .col-12.col-md-8
+      = f.input :target_address_street, input_html: { data: { input: 'target_address_street' } }
+
+    .col-12.col-md-4
+      = f.input :target_address_number
+
+  .row
+    .col-12.col-md-4
+      = f.input :target_address_neighborhood, input_html: { data: { input: 'target_address_neighborhood' } }
+
+    .col-12.col-md-8
+      = f.input :target_address_complement

@@ -1,0 +1,41 @@
+.row.mt-4
+
+  .col
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = t('.title')
+
+      .card-block
+
+        - if ned_disbursement_forecasts.present?
+          %table.table.table-hover.table-sm.table-bordered.bg-faded{summary: t('.summary')}
+
+            %thead
+
+              %tr
+
+                - heads = [:data, :valor]
+
+                - heads.each do |head|
+                  %th
+                    = t(".table.heads.#{head}")
+
+            %tbody
+              - ned_disbursement_forecasts.each do |ned_disbursement_forecast|
+                %tr
+                  %td
+                    = ned_disbursement_forecast.data
+                  %td
+                    = number_to_currency(ned_disbursement_forecast.valor)
+
+
+        - else
+
+          .row
+
+            %i.col-md-12.text-center
+              = t('.empty')

@@ -1,0 +1,25 @@
+- auto_update_url = (attendance_report.processing? ? operator_reports_attendance_report_path(attendance_report) : '')
+
+%li.ticket-card.card.mb-4{'data-auto-update-url': auto_update_url}
+  .card-header
+
+    = link_to operator_reports_attendance_report_path(attendance_report) do
+      %h3.card-title= filtered_highlighted(attendance_report.title)
+
+    .card-commands
+      - if attendance_report.file.present?
+        = link_to operator_reports_attendance_report_path(attendance_report, format: :xlsx), class: 'btn text-muted btn-link hover-link float-left d-inline-block' do
+          %i.fa.fa-download{'aria-hidden': 'true'}
+          = t('commands.download')
+
+      = link_to t('commands.remove'), operator_reports_attendance_report_path(attendance_report), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link hover-link float-left d-inline-block'
+
+  .card-block
+    .row
+
+      .col-lg-6
+        = render 'file_info', attendance_report: attendance_report
+
+      .col-lg-6
+        = render 'file_filters', attendance_report: attendance_report
+

@@ -1,0 +1,8 @@
+pt-BR:
+  warnings:
+    show_warning_sefaz_migration:
+      title: COMUNICADO
+      message: "<p>Prezado cidadã(o) usuário(a) do Ceará Transparente, </p>
+                <p>Informamos que o Estado do Ceará está trabalhando com suas equipes de forma intensa neste início de ano para a conclusão mais célere possível da implementação do novo Sistema Informatizado de Registro de Receitas e Despesas, motivo pelo qual, temporariamente, estes dados podem apresentar-se desatualizados.</p>
+                <p>Pedimos desculpas pelos transtornos causados e reforçamos o compromisso com a transparência como alicerce para o exercício do controle social, na medida em que contamos com a sua compreensão.</p>
+                <p>Atenciosamente,<br>Equipe do Ceará Transparente</p>"

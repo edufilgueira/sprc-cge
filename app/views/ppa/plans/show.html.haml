@@ -1,0 +1,61 @@
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+- css_btn_card = 'btn btn-wide btn-tertiary btn-uppercase d-block btn-start-revising'
+
+%h2.text-green.text-center.my-4.font-weight-bold
+  = t('.title', plan: plan.name)
+
+= render 'about_phases'
+
+.card-deck.mt-5
+  .row
+    .col-lg-12
+      -# ppa/plans/cards/phases/revising/schedule_activies
+      = render cards_for_phases_path
+
+.row.mt-5
+  .col-lg-6.col-md-12.mb-5
+    .card.home-card
+      .card-block
+        %h4.card-title
+          = t('.card-revision.title')
+        .row
+          .col-12.text-justify
+            = t('.card-revision.description', plan_name: plan.name)
+
+        .row.mt-2
+          .col-12.collapse{id: 'collapse-card-revision'}
+            - 4.times do |n|
+              %p.text-justify
+                = t(".card-revision.step#{n}")
+      .card-footer.bg-faded
+        .row
+          .col-12
+            - if can? :revision_problem_situation, plan
+              = link_to t('.card-revision.submit'), url_submit_revising_revision_review, class: css_btn_card
+            - else
+              .btn-start-revising
+                = t('.out_of_time')
+
+  .col-lg-6.col-md-12.mb-5
+    .card.home-card
+      .card-block
+        %h4.card-title= t('.card-priority.title')
+        .row
+          .col-12.text-justify
+            = t('.card-priority.description')
+            = link_to t('.card-priority.description_link'), '#collapse-card-priority', "data-toggle": 'collapse', "atial-controls": 'collapse-card-priority'
+
+        .row.mt-2
+          .col-12.collapse{id: 'collapse-card-priority'}
+            - 2.times do |n|
+              %p.text-justify= t(".card-priority.step#{n}")
+      .card-footer.bg-faded
+        .row
+          .col-12
+            - if can? :prioritize_regional_strategy, plan
+              = link_to t('.card-priority.submit'), url_submit_revising_revision_prioritization, { class: css_btn_card}
+            - else
+              = t('.out_of_time')

@@ -1,0 +1,26 @@
+%h4.h6
+  = t('.title')
+
+%hr{'aria-hidden': 'true'}
+
+.col-12
+  - filters = report.filters
+  - filter_keys = (filters && filters.keys) || []
+  - filter_values = (filters && filters.values) || []
+  - has_filters = filter_values.reject(&:blank?).any?
+
+  - if has_filters
+    %dl.row
+      - filter_keys.each do |filter_key|
+        - filter_value = filters[filter_key]
+
+        - next if filter_value.blank?
+
+        %dt.col-12.col-lg-5.text-right
+          = t(".filters.#{filter_key}")
+        %dd.col-12.col-lg-7
+          = report_filter_value(filter_key, filter_value)
+
+  - else
+    .text-center.text-muted
+      = t('.filters.none')

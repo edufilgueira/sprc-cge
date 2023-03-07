@@ -1,0 +1,70 @@
+pt-BR:
+  shared:
+    transparency:
+
+      real_states:
+
+        index:
+          title: Bens imóveis
+          description: >
+            Veja aqui os imóveis que o Estado do Ceará é dono, quais são os maiores e que é responsável por cada um deles.
+
+          value_unit: m<sup>2</sup>
+
+          chart:
+            count:
+              unit: 'Quantidade'
+              title: 'Quantidade de Bens imóveis'
+
+          charts:
+            tabs:
+              property_type:
+                title: Tipos de propriedade
+              occupation_type:
+                title: Tipos de ocupação
+              manager:
+                title: Órgãos
+              municipio:
+                title: Municípios
+
+          filters:
+            title: Consulta avançada
+            search_placeholder: >
+              Busque por descrição, endereço, municipio, bairro, cep, complemento, lote ou quadra
+            occupation_type:
+              select:
+                all: Todos os tipos de ocupação
+
+            property_type:
+              select:
+                all: Todos os tipos de propriedade
+
+          counts:
+            real_states_count:
+              title: Quantidade de bens imóveis filtrados
+            real_states_sum:
+              title: Valor da área da construção (projeção) dos bens imóveis filtrados
+
+          table:
+            summary: Lista de bens imóveis
+            header:
+              service_id: Código de identificação
+              descricao_imovel: Descrição
+              manager_title: Órgão
+              property_type_title: Tipo da propriedade
+              occupation_type_title: Tipo da ocupação
+              endereco: Endereço
+              municipio: Município
+
+          stats:
+            title: Principais números relacionados a bens imóveis
+            count: 'Quantidade de bens imóveis publicados até <strong>%{date}</strong>'
+            value_unit: m<sup>2</sup>
+            area_projecao_construcao: 'Área de bens imóveis publicados até <strong>%{date}</strong>'
+
+        show:
+          descricao_url: Íntegra do bem imóvel
+          descricao_url_ddisp: Processo de dispensa de licitação
+          descricao_url_inexg: Processo de inexibilidade de licitação
+          edital_url: Ver edital
+

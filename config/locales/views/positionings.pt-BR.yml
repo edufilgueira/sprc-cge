@@ -1,0 +1,41 @@
+pt-BR:
+
+  positionings:
+
+    edit:
+      title: "%{ticket_title} - Posicionamento"
+      already_positioned: Posiciomento já informado.
+      deadline:
+        title: Prazos e providências
+        remaining: Contagem regressiva para posicionamento
+        created_at: Data de registro
+        last_day: Prazo final de posicionamento
+        status: Situação atual
+      sou:
+        description:
+          title: Descrição da manifestação
+      sic:
+        description:
+          title: Descrição da solicitação
+      answers:
+        title: Posicionamento(s)
+      attachments:
+        title: Anexos
+
+    form:
+      description: Inserir posicionamento
+      commands:
+        add_attachment: Adicionar anexo
+        add: Enviar posicionamento
+
+    update:
+      done: Posicionamento feito com sucesso
+      error: Não foi possível realizar posicionamento
+
+    show:
+      title: "%{ticket_title} - Posicionamento"
+      answers:
+        title: Posicionamento(s)
+
+    answers:
+        empty: Nenhum posicionamento enviado

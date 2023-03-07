@@ -1,0 +1,14 @@
+@import 'base/variables';
+
+a {
+  color: $app-green;
+
+  &:focus,
+  &:hover {
+    color: $app-green-darken-10;
+
+    .fa {
+      text-decoration: none;
+    }
+  }
+}

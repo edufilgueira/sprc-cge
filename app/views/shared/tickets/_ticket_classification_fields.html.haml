@@ -1,0 +1,19 @@
+%div{'data-content': 'general_ticket_type_content'}
+
+  .card.card-custom{'data-content': 'classification'}
+
+    .card-header
+
+      %h3.card-title
+        = t('.title')
+
+    .card-block
+
+      .content
+
+        = f.simple_fields_for :classification do |sff_classification|
+          = render 'shared/tickets/classification_fields', f: sff_classification
+
+        - if can?(:unknown_classification, Ticket)
+          .row{ data: { content: :unknown_classification } }
+            .col-12= f.input :unknown_classification, input_html: { class: 'mr-2', 'data-input': :unknown_classification }, wrapper_html: { class: 'mb-0' }

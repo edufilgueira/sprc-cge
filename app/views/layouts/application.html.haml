@@ -1,0 +1,62 @@
+!!! 5
+%html{lang: 'pt-BR'}
+
+  %head
+
+    = render 'shared/application/head'
+
+  %body{ data: { controller: controller_path } }
+
+    = render 'shared/a11y/content_link'
+
+    = render 'shared/ribbon'
+
+    = render 'shared/navbar_mobile'
+
+    - # a home tem uma estrura de layout muito específica e seus elementos
+    - # estão na própria home/index
+
+    - if controller_path == 'home' && action_name == 'index'
+
+      - # temos que consumir os flash apesar de não exibir pro usuário na home
+      - # pois senão ocorre o seguinte problema:
+      - # 1) logar com algum usuário e deslogar;
+      - # 2) ao deslogar, será redirecionado pra home;
+      - # 3) se na home clicar para uma página que exibe o flash, como 'Nova manifestação'
+      - #    será exibido o 'Você deslogou ....'
+
+      - notice
+      - alert
+
+      = yield
+
+    - else
+
+      = render 'shared/application/navbar'
+
+      .container
+
+        = render 'shared/application/toolbar'
+
+        = render 'shared/application/notice'
+
+        = render 'shared/application/alert'
+
+        = render 'shared/a11y/content_anchor'
+
+        = yield
+
+    = render 'shared/application/privacy_statement'
+    
+    = render 'shared/a11y/footer_links'
+
+    = render 'shared/application/footer'
+
+    = javascript_include_tag(:application)
+    = render 'shared/javascripts'
+
+    = noscript_include_tag
+
+    = yield(:javascript)
+
+    = render 'shared/google_analytics'

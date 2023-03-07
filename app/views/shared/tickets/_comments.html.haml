@@ -1,0 +1,5 @@
+.comments
+
+  = render partial: 'shared/ticket_logs/comment/internal', collection: ticket.sorted_comments(:internal), as: :comment
+
+  = render 'shared/comments/form', ticket: ticket, new_comment: new_comment, comment_form_url: comment_form_url, scope: :internal

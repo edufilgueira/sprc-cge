@@ -1,0 +1,156 @@
+pt-BR:
+  operator:
+    attendances:
+      index:
+        title: Atendimentos
+        empty: Nenhum atendimento encontrado
+
+      table:
+        summary: Lista de atendimentos
+        heads:
+          protocol: Protocolo
+          service_type: Tipo de serviço
+          ticket_type: Tipo
+          name: Identificação
+          description: Descrição
+          deadline: Prazo restante
+          created_at: Criado em
+          actions: ''
+
+      show:
+        title: Atendimento (%{protocol})
+        confirmation:
+          title: Confirme os dados preenchidos
+        occurrences:
+          title: Histórico de atendimento
+        organs:
+          title: Órgãos responsáveis
+          empty: Nenhum órgão selecionado
+        ombudsman:
+          title: Rede Ouvir
+
+      occurrences:
+        submit: Adicionar nova ocorrência
+
+      confirmed:
+        from_confirmation:
+          title: 'Pronto!'
+          sic:
+            description: A solicitação foi registrada com sucesso.
+          sou:
+            description: A manifestação foi registrada com sucesso.
+
+      unconfirmed:
+        confirm:
+          action: Confirmar abertura
+        edit:
+          action: Voltar para edição
+
+      edit:
+        title: Novo antendimento protocolo %{protocol}
+        clone:
+          done: Attendimento clonado com sucesso
+
+      update:
+        error: Falha ao salvar atendimento. Verifique os erros anotados.
+        done: Atendimento salvo com sucesso.
+
+      form:
+        attendance_title: Protocolo %{protocol}
+
+      ticket_info_fields:
+        title: Informações
+
+      ticket_classification_fields:
+        title: Classificação
+
+      user_fields:
+        person_types:
+          legal:
+            cnpj: CNPJ
+            name: Razão social
+        anonymous: Pessoa anônima
+
+        email: E-mail (Opcional)
+
+      ticket:
+        deadline:
+          title: Prazos e providências
+          remaining: Contagem regressiva para resposta
+          created_at: Data de registro
+          last_day: Prazo final de resposta
+          status: Situação atual
+        infos:
+          title: Informações do cidadão
+        ticket:
+          title: Informações
+        classification:
+          title: Classificação
+        contact:
+          title: Informações de contato
+        target_address:
+          title: Local da ocorrência
+        anonymous:
+          sic:
+            title: Solicitação anônima
+
+          sou:
+            title: Manifestação anônima
+
+        other_organs: Não compete ao Poder Executivo Estadual
+        denunciation_description: Descrição da denúncia
+
+
+      filters:
+        search:
+          label: Buscar por protocolo, descrição, nome, e-mail ou documento
+        parent_protocol:
+          label: Protocolo
+        commands:
+          new: Novo atendimento
+        select:
+          internal_status: Filtrar por situação
+          organ: Filtrar por órgão
+          responsible: Filtrar por responsável
+          service_type: Filtrar por tipo de atendimento
+          ticket_type: Filtrar por tipo
+          sou_type: Filtrar por tipo de manifestação
+          created_by_id: Filtrar por atendente
+          answer_type: Filtrar por preferência de resposta
+          deadline: Filtrar por prazo
+        created_at:
+          label: Período
+          start: Início
+          end: Fim
+
+      occurrence:
+        title: '%{date} por %{title}'
+
+      answer:
+        title:
+          sectoral:
+            sic: '%{type} do comitê setorial SIC %{organ}'
+            sou: '%{type} da Ouvidoria %{organ}'
+          department:
+            sic: '%{type} enviada pela área interna'
+            sou: '%{type} enviada pela área interna'
+          cge:
+            sic: '%{type} enviada pela CGE'
+            sou: '%{type} enviada pela CGE'
+          call_center:
+            sic: '%{type} enviada pela Ouvidoria 155'
+            sou: '%{type} enviada pela Ouvidoria 155'
+
+      organs:
+        title: Órgãos responsáveis
+        commands:
+          add: Adicionar órgão
+
+      components:
+        btn_clone:
+          label: clonar
+          title: Clonar atendimento
+          confirm: Deseja realmente clonar esse atendimento?
+
+      clone:
+        done: Attendimento clonado com sucesso

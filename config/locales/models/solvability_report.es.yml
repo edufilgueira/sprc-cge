@@ -1,0 +1,21 @@
+es:
+  activerecord:
+
+    attributes:
+      solvability_report:
+        title: Título del informe
+        filename: Nombre del adjunto
+        status: Situación
+        status_str: Situación
+        filters: Filtros considerados
+        report_type: Tipo de informe
+        user: Creado por
+        created_at: Creado en
+        total: Total considerados
+
+  solvability_report:
+    statuses:
+      preparing: Preparando
+      generating: Generando
+      error: Error
+      success: Finalizado

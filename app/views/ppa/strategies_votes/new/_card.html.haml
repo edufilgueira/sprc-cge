@@ -1,0 +1,21 @@
+- strategies = theme.strategies.where(ppa_objective_themes: { region_id: region.id })
+- active = (index == 0) ? 'show active' : ''
+- hash = { class: "tab-pane fade #{active}", id: "list-#{theme.id}", role: 'tabpanel'}
+
+%div{hash}
+  .card.card-steps-list
+    .card-block
+      .card-title.mb-4
+        %h6.text-green= theme.axis.name
+        %h6= "#{t('.theme')}: #{theme.name}"
+      .row
+        - if strategies.present?
+          - for strategy in strategies
+            .col-12.text-justify
+              = f.simple_fields_for :strategies_vote_items do |i|
+                = i.radio_button theme.id, strategy.id
+                = strategy.name.strip
+        - else
+          .col-12.text-justify
+            .alert.alert-success.text-left
+              = t('.strategy_not_found')

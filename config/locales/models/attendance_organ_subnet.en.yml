@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    attributes:
+      attendance_organ_subnet:
+        organ: Body in charge
+        organ_full_title: Body in charge
+        subnet: Sub-network in charge
+        subnet_full_acronym: Sub-network in charge
+        unknown_subnet: I don't know the sub network

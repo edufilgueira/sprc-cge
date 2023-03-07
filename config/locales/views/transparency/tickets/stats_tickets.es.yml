@@ -1,0 +1,10 @@
+es:
+  transparency:
+    tickets:
+      stats_tickets:
+
+        index:
+          title: Paineles estadísticos
+
+        show:
+          title: Estadísticas generales

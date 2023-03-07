@@ -1,0 +1,20 @@
+en:
+  activerecord:
+    models:
+      ppa/proposal_theme:
+        one: Thematic Proposition
+        other: Thematic Proposition
+
+    attributes:
+      ppa/proposal_theme:
+        plan: Plan        
+        start_at: Start date
+        end_at: End date
+        region: Region
+
+    errors:
+      models:
+        ppa/proposal_theme:
+          attributes:
+            end_at:
+              invalid_range: End date needs to be greater than start date 

@@ -1,0 +1,34 @@
+= render 'shared/classifications/other_organs'
+
+= cache('operator-ticket-new-classification', expires_in: 30.minutes) do
+  .row{ data: { content: :classification_default } }
+    .col-6
+      - url = topics_api_v1_operator_classifications_path
+      = f.association :topic, { collection: topics_for_select(ticket.organ), include_blank: t('messages.form.select'), input_html: { 'data-placeholder': t('messages.form.select'), 'data-input': 'topic', 'data-url': url, 'data-param-name': 'organ', 'data-text': f.object.topic_name }, required: true }
+
+    .col-6
+      - url = subtopics_api_v1_operator_classifications_path
+      = f.association :subtopic, { collection: subtopics_by_topic_for_select(f.object.topic), include_blank: t('messages.form.select'), input_html: { 'data-placeholder': t('messages.form.select'), 'data-input': 'subtopic', 'data-url': url, 'data-param-name': 'topic'} }
+
+  .row{ data: { content: :classification_default } }
+    .col-6
+      - url = departments_api_v1_operator_classifications_path
+      - departments = departments_by_ticket_for_select(ticket)
+      = f.association :department, { include_blank: t('messages.form.select'), input_html: { 'data-input': 'classification_department', 'data-param-name': 'organ', 'data-url': url }, required: true }
+
+    .col-6
+      - url = sub_departments_api_v1_operator_classifications_path
+      = f.association :sub_department, { include_blank: t('messages.form.select'), input_html: { 'data-placeholder': t('messages.form.select'), 'data-input': 'classification_sub_department', 'data-url': url, 'data-param-name': 'classification_department' }}
+
+  .row{ data: { content: :classification_default } }
+    .col-6
+      - url = budget_programs_api_v1_operator_classifications_path
+      = f.association :budget_program, { collection: budget_programs_for_select(f.object.ticket.organ, f.object.ticket.subnet), include_blank: t('messages.form.select'), input_html: { 'data-input': 'budget_program', 'data-url': url, 'data-param-name': 'organ' }, required: true }
+
+    .col-6
+      - url = service_types_api_v1_operator_classifications_path
+      = f.association :service_type, { collection: service_types_for_select(ticket.organ), include_blank: t('messages.form.select'), input_html: { 'data-input': 'classification_service_type', 'data-url': url, 'data-param-name': 'organ' } }
+
+  .row{ data: { content: :classification_other_organs_input } }
+    .col-12
+      = f.input :other_organs, input_html: { class: 'mr-2', 'data-input': 'other_organs' }, wrapper_html: { class: 'mb-0' }

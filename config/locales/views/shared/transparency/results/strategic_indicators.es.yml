@@ -1,0 +1,26 @@
+es:
+  shared:
+    transparency:
+      results:
+        strategic_indicators:
+          index:
+            title: Indicadores estrategicos
+            description: Aquí usted podrá consultar informaciones de indicadores estrategicos buscando por eje, órgano y indicadores 
+
+            filters:
+              title: Consulta
+              search_placeholder: 'Busque por indicador, resultado, eje y órgano'
+
+            table:
+              summary: Lista de indicadores estratégicos
+              header:
+                descricao_eixo: Eje
+                sigla: Órgano
+                indicator: Indicador
+                unidade: Unidad
+
+            source: 'Fuente de Datos: Secretaría de Planificación y Gestión; Monitoreamento de Acciones y Proyectos Prioritarios (Mapp GPR) - WebMapp'
+
+          show:
+            valores_realizados:
+              year: Año

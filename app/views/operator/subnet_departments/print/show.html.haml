@@ -1,0 +1,31 @@
+%h2= department.acronym
+
+.justify-content-center
+
+  .row
+    .col-6
+      = content_with_label(department, :name)
+
+    .col-6.text-right
+      - if department.organ.present?
+        = content_with_label(department, :organ_name)
+
+      - if department.subnet.present?
+        = content_with_label(department, :subnet_name)
+
+
+  - sub_departments = department.sub_departments.sorted
+  - if sub_departments.present?
+    %hr{'aria-hidden': 'true'}
+
+    %h3= SubDepartment.model_name.human(count: 2)
+
+    .row.mt-3
+      .col-12
+        - sub_departments.each do |sub_department|
+          %p
+            - if sub_department.disabled?
+              %del=sub_department.title
+              %small= t('.sub_departments.disabled_at', disabled_at: l(sub_department.disabled_at, format: :shorter))
+            - else
+              = sub_department.title

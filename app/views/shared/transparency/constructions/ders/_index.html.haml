@@ -1,0 +1,87 @@
+= cache(cache_key) do
+
+  = render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+  .my-4
+
+    %hr{'aria-hidden': 'true'}
+
+    = render 'transparency/exports/form'
+
+    %hr{'aria-hidden': 'true'}
+
+    .fa.fa-spin.fa-refresh.m-1.text-muted.float-right{'data-remote-content-loader': ''}
+
+    .row
+      .col-12.col-lg-6
+        .content-with-label
+          - label = raw(t('.counts.ders_count.title'))
+          - value = number_with_delimiter(filtered_count)
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+      .col-12.col-lg-6
+        .content-with-label
+          - label = raw(t('.counts.ders_sum.title'))
+          - value = number_to_currency(filtered_sum)
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+    %hr{'aria-hidden': 'true'}
+
+    - if controller_path == 'transparency/constructions/ders'
+      - if coordinates.present?
+        #map{ 'data-google-map': 'map', 'data-places': coordinates.to_json }
+      - else
+        .text-center.text-muted
+          = t('.blank_coordinates')
+
+      %hr{'aria-hidden': 'true'}
+
+    .text-left.mb-3
+      - integration_constructions_der_status_for_select_with_all_option.to_h.each do |s|
+        %span.badge{ class: "#{integrations_constructions_der_status_color(s.second)}"}
+          = s.first
+
+    - header = [:status, :trecho, :construtora, :extensao, :valor_aprovado, :numero_contrato_sic]
+
+    - table_locale = t('.table')
+
+    = render 'shared/components/remote_table', header: header, collection: ders, sort_columns: sort_columns, table_locale: table_locale do |der|
+
+      - show_path = url_for(action: 'show', controller: 'ders', id: der)
+
+      %tr
+        %td
+          = link_to show_path do
+            %span.badge{ class: "#{integrations_constructions_der_status_color(der.der_status)}"}
+              = der.status
+        %td
+          = link_to show_path, title: der.trecho do
+            = filtered_highlighted(der.trecho&.truncate(40))
+        %td
+          = link_to show_path, title: der.construtora do
+            = filtered_highlighted(der.construtora&.truncate(20))
+        %td
+          = link_to show_path do
+            = filtered_highlighted(der.extensao)
+            = t('shared.transparency.constructions.ders.index.table.row.extensao_unit')
+
+        %td
+          = link_to show_path do
+            = number_to_currency(der.valor_aprovado)
+
+        %td
+          = link_to show_path do
+            = der.numero_contrato_sic
+

@@ -1,0 +1,17 @@
+%table.table.table-striped.table-sm{summary: t('.summary')}
+
+  %tbody
+
+    %tr.font-weight-bold
+      %td
+        = t('shared.transparency.server_salaries.show.total_proceeds.total')
+
+      %td.text-right
+        = number_to_currency(server_salary.income_final)
+
+    %tr
+      %td
+        = t('shared.transparency.server_salaries.show.total_proceeds.income_dailies')
+
+      %td.text-right
+        = number_to_currency(server_salary.income_dailies)

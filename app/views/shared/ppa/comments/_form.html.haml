@@ -1,0 +1,19 @@
+= javascript_include_tag('ckeditor/init')
+
+.row
+
+  .col-12.col-md-1.no-print
+
+    .float-left
+
+      .bg-faded.rounded-circle.p-1
+
+        %i.fa.fa-comment.fa-1x.text-primary.m-2{ 'aria-hidden': 'true' }
+
+  .col-10.col-md-10
+
+    = simple_form_for obj_array, url: url do |form|
+
+      = form.input :content, as: :ckeditor, label: t('.comment_label'), input_html: { ckeditor: { toolbar: :mini } }
+
+      = form.submit t('.submit'), class: 'btn btn-primary'

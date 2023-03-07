@@ -1,0 +1,65 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, strategic_indicator.title
+
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = strategic_indicator.title
+
+        .card-commands
+          = render 'shared/tickets/components/btn_print'
+
+      .card-block
+
+        .row
+          .col-12
+            = content_with_label(strategic_indicator, :orgao)
+          .col-12
+            = content_with_label(strategic_indicator, :axis_title)
+
+        .row
+          .col-12
+            = content_with_label(strategic_indicator, :indicador)
+          .col-12
+            = content_with_label(strategic_indicator, :resultado)
+
+        .row
+          - years = strategic_indicators_valores_realizados_years(strategic_indicator)
+          - if years.present?
+            .col-6
+              .content-with-label
+                %p.content-label
+                  = Integration::Results::StrategicIndicator.human_attribute_name(:valores_realizados)
+                  - years.each do |year|
+                    .content-value
+                      %span.badge.badge-success
+                        = t(".valores_realizados.year.#{year}")
+                      - value = strategic_indicator.valores_realizados_by_year(year)
+                      = value.present? ? "#{value} (#{strategic_indicator.unidade})" : '-'
+
+          - years = strategic_indicators_valores_atuais_years(strategic_indicator)
+          - if years.present?
+            .col-6
+              .content-with-label
+                %p.content-label
+                  = Integration::Results::StrategicIndicator.human_attribute_name(:valores_atuais)
+                  - years.each do |year|
+                    .content-value
+                      %span.badge.badge-info
+                        = t(".valores_atuais.year.#{year}")
+                      - value = strategic_indicator.valores_atuais_by_year(year)
+                      = value.present? ? "#{value} (#{strategic_indicator.unidade})" : '-'
+
+
+
+
+

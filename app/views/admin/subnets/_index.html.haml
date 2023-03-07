@@ -1,0 +1,38 @@
+= render 'shared/components/filtered_warning', filtered: filtered?
+.my-4
+
+  - header = [:status, :organ_acronym, :acronym, :name, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: subnets, sort_columns: sort_columns, table_locale: table_locale do |subnet|
+
+    - show_path = can?(:show, subnet) ? admin_subnet_path(subnet) : '#!'
+
+    %tr
+
+      %td
+        - icon_class = subnet.disabled? ? 'times' : 'check'
+        = link_to show_path, title: t("commands.disabled._#{subnet.disabled?}") do
+          %i{class: "fa fa-#{icon_class}"}
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(subnet.organ_acronym)
+
+      %td
+        = link_to show_path do
+          = filtered_highlighted(subnet.acronym)
+
+      %td
+        - subnet_name = subnet.name
+        = link_to show_path, title: subnet_name do
+          = filtered_highlighted(subnet_name.truncate(60))
+
+      %td
+        .float-right
+          - if can?(:edit, subnet)
+            = link_to t('commands.edit'), edit_admin_subnet_path(subnet), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:manage, subnet)
+            = render 'shared/buttons/btn_toggle_disabled', resource: subnet, namespace: :admin

@@ -1,0 +1,20 @@
+.nested-fields.card.card-custom
+  .card-block
+    .row
+      .col-sm-4
+        = f.input :title
+      .col-sm-4
+        = f.input :unit
+      .col-sm-4.pt-2
+        = link_to_remove_association t('.remove_chart'), f, class: 'd-block mt-4'
+
+    %h4.card-title.h5
+      = t('.series_data.title')
+
+    .row
+      .col
+        = f.simple_fields_for :page_series_data do |series_datum|
+          = render 'page_series_datum_fields', f: series_datum
+
+        .links.mt-4
+          = link_to_add_association t('.add_series_datum'), f, :page_series_data

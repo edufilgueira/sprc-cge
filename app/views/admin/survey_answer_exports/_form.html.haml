@@ -1,0 +1,23 @@
+= simple_form_for [:admin, survey_answer_export] do |f|
+
+  .row
+    .col-6
+      = f.input :name, autofocus: true
+
+    .col-6
+      = f.input :worksheet_format, as: :select, collection: survey_answer_export_worksheet_formats
+
+  .row
+    .col-6
+      = f.input :start_at, as: :string, input_html: { class: 'datetimepicker' }
+
+    .col-6
+      = f.input :ends_at, as: :string, input_html: { class: 'datetimepicker' }
+
+  %hr{'aria-hidden': 'true'}
+
+  .row.mt-3
+    .col-lg-12
+      = link_to t('commands.cancel'), admin_survey_answer_exports_path, class: 'btn btn-warning pull-left'
+
+      = f.submit t('commands.save'), class: 'btn btn-primary pull-right'

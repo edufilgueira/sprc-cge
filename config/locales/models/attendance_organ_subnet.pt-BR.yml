@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    attributes:
+      attendance_organ_subnet:
+        organ: Órgão responsável
+        organ_full_title: Órgão responsável
+        subnet: Sub-rede responsável
+        subnet_full_acronym: Sub-rede responsável
+        unknown_subnet: Não sei a sub-rede

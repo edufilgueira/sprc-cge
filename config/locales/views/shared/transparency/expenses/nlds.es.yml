@@ -1,0 +1,74 @@
+es:
+  shared:
+    transparency:
+      expenses:
+
+        nlds:
+          index:
+            title: Notas de Liquidación de Gastos
+            description: Consulte aquí las Notas de Liquidación de Gastos.
+            source: |
+              <p><strong>Fuente de datos:</strong></p>
+              <p>Secretaría de Hacienda - SEFAZ</p>
+              <p>Sistema de Gestíon Gubernamental por Resultados - S2GPR</p>
+
+            chart:
+              valor:
+                unit: 'Suma de los valores: R$'
+                title: 'Valores de las Notas de Liquidación de Gasto en el mes seleccionado.'
+
+                creditor:
+                  title: Suma de los valores por acreedor
+                management_unit:
+                  title: Suma de los valores por secretarias/órgãos
+                natureza:
+                  title: Suma de los valores por naturaleza
+                efeito:
+                  title: Suma de los valores por efecto
+
+            charts:
+              tabs:
+                creditor:
+                  title: Por acreedor
+                management_unit:
+                  title: Por unidad de gestión
+                natureza:
+                  title: Por naturaleza
+                efeito:
+                  title: Por efecto
+
+            filters:
+              title: Consulta avanzada
+
+            counts:
+              nlds_count:
+                title: Cantidad de notas filtradas
+              nlds_sum:
+                title: Valor de las notas filtradas
+
+            table:
+              summary: Lista de Notas de Liquidación de Gasto
+              header:
+                numero: Número
+                date_of_issue: Fecha de emisión
+                unidade_gestora: Unidad de gestión
+                management_unit_title: Unidad de gestión
+                credor: Acreedor
+                valor: Valor
+                valor_retido: Valor retenido
+
+            stats:
+              title: Principales números relacionados a las notas
+              count: 'Notas en <strong>%{date}</strong>'
+              valor: 'Valor en <strong>%{date}</strong>'
+
+          show:
+            ned:
+              link: "%{value}"
+            nld_item_payment_plannings:
+              title: Ítemes de planeamiento
+              empty: Ningún ítem encontrado
+
+            nld_item_payment_retentions:
+              title: Ítemes de retención
+              empty: Ningún ítem encontrado

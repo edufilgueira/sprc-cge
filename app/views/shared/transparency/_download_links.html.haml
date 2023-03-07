@@ -1,0 +1,28 @@
+- xlsx_download_path = paths[:xlsx]
+- csv_download_path = paths[:csv]
+
+.row
+  .col-12.col-lg-4
+    - if xlsx_download_path.present?
+      = link_to xlsx_download_path, class: 'btn d-inline-block pl-0 mr-lg-4 pb-0' do
+        %small
+          %i.fa.fa-download{'aria-hidden': 'true'}
+          = t('.xlsx.title')
+      %small.form-text.text-muted.mt-0
+        %i
+          = t('.xlsx.hint')
+
+  .col-12.col-lg-4
+    - if csv_download_path.present?
+      = link_to csv_download_path, class: 'btn d-inline-block pl-0' do
+        %small
+          %i.fa.fa-download{'aria-hidden': 'true'}
+          = t('.csv.title')
+
+  .col-12.col-lg-4
+    - #TODO 
+    - # verificar se o arquivo existe
+    = link_to data_dictionary_download_path, class: 'btn d-inline-block pl-0' do
+      %small
+        %i.fa.fa-download{'aria-hidden': 'true'}
+        = t('.data_dictionary.title')

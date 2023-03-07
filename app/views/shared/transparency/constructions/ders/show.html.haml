@@ -1,0 +1,123 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, der.title
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = der.servicos
+
+        .card-commands
+          = render 'shared/tickets/components/btn_print'
+
+
+      .card-block
+
+        .row
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :status)
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :programa)
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :distrito)
+
+        .row
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :rodovia)
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :trecho)
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :extensao, { raw_value: true })
+
+        .row
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :valor_aprovado)
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :construtora)
+
+          .col-12.col-sm-4
+            .content-with-label
+              %p.content-label
+                = der.class.human_attribute_name(:numero_contrato_sic)
+
+              %p.content-value
+                - contract = Integration::Contracts::Contract.find_by(isn_sic: der.numero_contrato_sic)
+
+                - if contract.present?
+                  = link_to der.numero_contrato_sic, transparency_contracts_contract_path(contract)
+                - else
+                  = der.numero_contrato_sic
+
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :numero_ordem_servico)
+
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :data_inicio_obra)
+
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :prazo_inicial)
+
+        .row
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :dias_adicionado)
+
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :dias_suspenso)
+
+          .col-12.col-sm-4
+            .content-with-label
+              %p.content-label
+                = der.class.human_attribute_name(:prazo_total)
+
+              %p.content-value
+                = der.prazo_inicial.to_i + der.dias_adicionado.to_i + der.dias_suspenso.to_i
+
+        .row
+          .col-12.col-sm-4
+            .content-with-label
+              %p.content-label
+                = der.class.human_attribute_name(:percentual_executado)
+
+              %p.content-value
+                = number_to_percentage(der.percentual_executado, precision: 2)
+
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :data_fim_previsto)
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :latitude)
+
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :longitude)
+
+        %hr{'aria-hidden': 'true'}
+
+        %h5.mt-5
+          = t('.schedule')
+
+        .row
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :supervisora)
+
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :conclusao)
+
+          .col-12.col-sm-4
+            = dash_content_with_label(der, :numero_contrato_der)
+
+
+= render 'shared/transparency/constructions/ders/measurements', measurements: der.measurements
+
+= render 'shared/transparency/followers/new', resource: der

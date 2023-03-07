@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      integration/supports/theme/configuration:
+        one: Configuração de temas
+
+    attributes:
+      integration/supports/theme/configuration:
+        wsdl: WSDL
+        headers_soap_action: SOAPAction
+        user: Usuário
+        password: Senha
+        operation: Nome do método SOAP
+        response_path: Caminho da resposta
+

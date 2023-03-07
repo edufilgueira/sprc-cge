@@ -1,0 +1,42 @@
+pt-BR:
+
+  operator:
+
+    reports:
+
+      home:
+
+        index:
+          title: Relatórios e estatísticas
+          breadcrumb_title: Relatórios e estatísticas
+
+        card:
+          dashboards:
+            title: Painéis estatísticos
+            description: Principais estatísticas por períodos de Manifestações de Ouvidoria e Acesso à Informação.
+            button: Acessar
+
+          ticket_reports:
+            title: Planilhas estatísticas
+            description: Dados estatísticos em planilhas com filtros de Manifestações de Ouvidoria e Acesso à Informação.
+            button: Acessar
+
+          gross_exports:
+            title: Relatórios de dados brutos
+            description: Dados dos conteúdos de manifestações/solicitações com filtros.
+            button: Acessar
+
+          attendance_report:
+            title: Relatórios de atendimentos
+            description: Dados de atendimentos por período.
+            button: Acessar
+
+          evaluation_export:
+            title: Relatórios de pesquisas de satisfação dados brutos
+            description: Dados de pesquisas de satisfação por período.
+            button: Acessar
+
+          solvability_reports:
+            title: Planilhas de resolubilidade
+            description: Planilhas que trazem informações de resolubilidades dos órgãos.
+            button: Acessar

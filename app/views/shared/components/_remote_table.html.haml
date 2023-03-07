@@ -1,0 +1,103 @@
+-#
+-# locals:
+-#   [Array|Hash] header       - e.g. [:code, :name, :commands]
+-#                               avançado: definindo classes CSS apenas para a coluna :code:
+-#                               - [{ id: :code, html_class: 'special' }, :name, :commands]
+-#   [Array] collection   - e.g. Ticket.all
+-#   [Hash]  table_locale - e.g. { summary: 'Translated summary text', header: 'Translated header text' }
+-#   [Array|Hash] sort_columns - e.g. Array - [:code, :name]  # commands não é coluna pra ser ordenável
+-#                                 - in the same order as `header` param
+-#                               e.g. Hash  - para ser flexível quanto à ordem do `header`.
+-#                                 - ex: ignorando uma primeira coluna destinada a ícones (use nil):
+-#                                   - { icon: nil, name: :name, code: :code }
+-#                                   - a chave é o id/val de `header`. se for nil, é ignorado.
+-#                                   - o valor é usado no param `sort_column`
+-#
+-#   [Hash] table_html          - atributos html passado para <table>
+-#
+-#   [Hash] view_options:
+-#
+-#    { pagination: true|false, count: true|false }
+-#
+-#     pagination: exibe/não exibe paginação. default: true
+-#     index_count: exibe/não exibe contador de registros filtrados. default: true
+-#
+-#    Em casos em que não é renderizada uma tabela paginada, como em receitas,
+-#    não exibimos paginação nem contagem de registros.
+-#
+-#   [Boolean] check_all      - se marcado como 'true', primeira coluna da tabela é um checkbox
+-#                                 - ex: <th><input type='checkbox' name='check-all' class='check-all'/></th>
+-#
+-#   [Boolean] has_footer [false]
+-#
+-#    Indica que a tabela tem um footer e o block é invocado com o parâmetro
+-#    nil.
+-#
+
+- check_all = false if local_assigns[:check_all].nil?
+- table_html = local_assigns[:table_html] || {}
+
+- has_footer = local_assigns[:has_footer] || false
+
+- if collection.blank?
+
+  .text-muted.text-center
+    = t('messages.filters.no_results_found')
+
+- else
+
+  - if table_locale.is_a?(Hash)
+    - summary = table_locale[:summary]
+    - header_locales = table_locale[:header]
+  - else
+    - summary = ''
+    - header_locales = ''
+
+  - # XXX: um wrapper com .table-responsive é a única forma que funciona.
+  - # ver: https://github.com/twbs/bootstrap/issues/21577
+  .table-responsive
+    %table.table.table-hover.table-striped.table-sm.table-sorted{ { summary: summary }, table_html }
+
+      %thead
+        - if check_all
+          %th
+            = check_box_tag :check_all, '', false, { 'data-input': 'check-all' }
+
+        - header.each_with_index do |head_data, index|            
+          - # o SORT_COLUMNS como index obriga que a sequencia do header
+          - # seja a mesma do sort_columns, senão marca a coluna errada na
+          - # tabela.
+          - # a solução é usar SORT_COLUMN como hash (head => sort_column_name)
+
+          - head = (head_data.is_a?(Hash) ? head_data[:id] : head_data)
+          - html_class = (head_data.is_a?(Hash) ? head_data[:html_class] : nil)
+
+          - if sort_columns.is_a?(Array)
+            - sort_column_name = sort_columns[index]
+          - else
+            - sort_column_name = sort_columns[head]
+
+          %th{ class: "#{sortered_table_active_class(sort_column_name)} #{html_class}" }
+
+            - if table_locale.is_a?(Hash)              
+              - header_locales[head.to_sym] = header_locales[head.to_sym].html_safe unless header_locales[head.to_sym].nil?
+              - header_title = header_locales[head.to_sym] || head.to_s           
+            - else
+              - header_title = ''
+
+            - if sort_column_name
+              = sortered_remote_table_header(sort_column_name, header_title)
+            - else
+              = header_title
+
+        %tbody
+
+          - collection.each do |resource|
+            = yield(resource)
+
+        - if has_footer
+
+          %tfoot
+            = yield(nil)
+
+  = render 'shared/components/remote_table/index_count', collection: collection, filtered_count: filtered_count, total_count: total_count, view_options: local_assigns[:view_options], filtered: filtered?

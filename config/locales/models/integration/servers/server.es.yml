@@ -1,0 +1,19 @@
+es:
+
+  activerecord:
+
+    attributes:
+
+      integration/servers/server:
+        dsc_cpf: 'CPF'
+        dth_nascimento: 'Fecha de nacimiento'
+
+        dsc_funcionario: Nombre del funcionario público
+        organs: Órgano/Entidad
+        job_roles: Cargo/Función/Empleo
+        credit_salary: Salario bruto
+        total_salary: Salário neto
+
+
+
+

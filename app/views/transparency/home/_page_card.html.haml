@@ -1,0 +1,16 @@
+%section.col-lg-4.col-md-12.mb-5{'aria-labelledby': "page-#{page_card.id}"}
+  .card.text-center
+    = link_to transparency_page_path(page_card) do
+      .card-img-top.mt-2
+        %i.fa.fa-link{'aria-hidden': 'true'}
+
+      .card-block.py-0
+        %p.card-text.text-muted{id: "page-#{page_card.id}"}
+          = page_card.title
+
+    .card-block
+      .list-group
+        - page_card.pages.each do |page|
+          = link_to transparency_page_path(page), class: "list-group-item" do
+            %p{id: "page-#{page.id}"}
+              = page.menu_title

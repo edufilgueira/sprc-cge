@@ -1,0 +1,19 @@
+en:
+  activerecord:
+    attributes:
+      attachment:
+        file: Attachment
+        title: Title
+        imported_at: Date of creation
+        document: File
+
+    models:
+      attachment:
+        one: 'Attachment'
+        other: 'Attachments'
+    errors:
+      models:
+        attachment:
+          attributes:
+            document:
+              attachment_letter: you need to attach the letter of response to the citizen

@@ -1,0 +1,14 @@
+es:
+
+  activerecord:
+
+    attributes:
+
+      mobile_app:
+        name: Nombre
+        mobile_tags: Categorías
+        description: Descripción
+        link_apple_store: Enlace para descargar la aplicación en la Apple Store
+        link_google_play: Enlace para descargar la aplicación en el Google Play
+        official: Applicación oficial
+        icon: Ícono

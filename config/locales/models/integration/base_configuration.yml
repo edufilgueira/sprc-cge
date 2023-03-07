@@ -1,0 +1,8 @@
+pt-BR:
+
+  integration/base_configuration:
+    statuses:
+      status_queued: Na fila de importação
+      status_in_progress: Importação em progresso
+      status_success: Importado com sucesso
+      status_fail: Falha de importação

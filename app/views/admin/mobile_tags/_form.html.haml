@@ -1,0 +1,12 @@
+= simple_form_for [:admin, mobile_tag] do |f|
+
+  .row
+    .col-12.col-lg-6
+      = f.input :name, autofocus: true
+
+  %hr{'aria-hidden': 'true'}
+
+  .row
+    .col-12
+      = link_to t('commands.cancel'), admin_mobile_tags_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary pull-right'

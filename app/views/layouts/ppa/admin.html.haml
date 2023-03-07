@@ -1,0 +1,31 @@
+!!! 5
+%html{lang: 'pt-BR'}
+
+  %head
+    = render 'shared/ppa/admin/head'
+
+  %body{ data: { controller: controller_path } }
+    -# TODO layout
+    -# = render 'shared/a11y/content_link'
+    -# = render 'shared/ribbon'
+    = render 'shared/ppa/admin/navbar'
+
+    .container
+      -# TODO layout
+      = render 'shared/ppa/admin/toolbar'
+      = render 'shared/ppa/admin/notice'
+      = render 'shared/ppa/admin/alert'
+      -# = render 'shared/a11y/content_anchor'
+
+      = yield
+
+    -# TODO layout
+    -# = render 'shared/a11y/footer_links'
+    -# = render 'shared/ppa/admin/footer'
+
+    = javascript_include_tag('ppa/admin')
+    = render 'shared/javascripts'
+    = noscript_include_tag
+    = content_for(:javascript) if content_for?(:javascript)
+
+    = render 'shared/google_analytics'

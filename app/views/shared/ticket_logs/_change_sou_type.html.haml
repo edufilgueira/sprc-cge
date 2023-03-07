@@ -1,0 +1,41 @@
+.row
+
+  .col-12.col-md-1.no-print
+    .float-left
+
+      .bg-faded.rounded-circle.p-1
+
+        %i.fa.fa-exchange.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      %h4.h6.mb-0
+        - from = t("ticket.sou_types.#{ticket_log.data[:from]}")
+        - to = t("ticket.sou_types.#{ticket_log.data[:to]}")
+
+        = t(".title", from: from, to: to)
+
+      %p
+        %small
+          %em
+            = l(ticket_log.created_at, format: :shorter)
+      %p
+        - if namespace == :admin || namespace == :operator
+          %small
+            %em
+              = t(".responsible", name: ticket_log.responsible.title)
+
+      - #
+      - # Justificatica
+      - #
+      - justification = ticket_log&.description
+      - if justification.present?
+        %p
+          %small
+            %em
+              = t('.justification', justification: justification)
+
+
+%hr{'aria-hidden': 'true'}

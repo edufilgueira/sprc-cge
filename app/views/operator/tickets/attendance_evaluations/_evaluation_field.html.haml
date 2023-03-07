@@ -1,0 +1,20 @@
+- attendance_evaluation = f.object
+- has_error = attendance_evaluation.errors[field_name].any?
+
+.col-12{ class: has_error ? 'has-danger' : ''}
+
+  = f.label field_name, class: 'form-control-label'
+
+  = hidden_field_tag(:ticket_type, ticket_type)
+  
+  .btn-group.btn-group-justified{ 'data-toggle': 'radio-buttons', 'data-content': "attendance_evaluation-#{field_name}", 'data-weight': weight, role: 'group', 'aria-label': AttendanceEvaluation.human_attribute_name(field_name) }
+    - (0..10).each do |grade|
+
+      - checked = attendance_evaluation.send(field_name) == grade
+
+      %label.btn.btn-secondary{class: checked ? 'active' : '', 'aria-pressed': checked}
+
+        = radio_button_tag("attendance_evaluation[#{field_name}]", grade, checked, 'data-input': grade)
+        = grade
+
+  = f.error field_name

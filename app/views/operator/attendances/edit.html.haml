@@ -1,0 +1,11 @@
+- content_for :title, t('.title', protocol: attendance.protocol)
+
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+
+= javascript_include_tag('ckeditor/init')
+
+.row
+  .col-12
+    = render 'form'

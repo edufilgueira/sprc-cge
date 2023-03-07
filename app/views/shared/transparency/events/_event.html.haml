@@ -1,0 +1,17 @@
+.col-12.col-md-4.mb-3
+  .card
+    .card-block
+      .row
+        .col-md-4.text-center
+          .counter.text-green
+            = event.starts_at.day
+          .small
+            = t('date.month_names')[event.starts_at.month]
+
+        .col-md-8.mt-2.text-md-left.text-center
+          = filtered_highlighted(event.title)
+    .card-footer.bg-faded
+      .btn.btn-orange.btn-uppercase
+        = filtered_highlighted(event.category)
+
+      = link_to t('.commands.show'), transparency_event_path(event), class: 'btn btn-link pull-right btn-uppercase text-green'

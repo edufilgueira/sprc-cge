@@ -1,0 +1,6 @@
+= form_tag operator_home_redirect_to_ticket_by_protocol_path, method: :get do
+  .search-protocol
+    .input-group
+      = number_field_tag(:protocol, '', placeholder: t('.search'), class: 'form-control', title: t('.search'), autoComplete:"off", autofocus: true)
+      %button.btn.btn-search-protocol
+        %i.fa.fa-search

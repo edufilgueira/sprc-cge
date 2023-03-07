@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/supports/axis:
+        codigo_eixo: Código do eixo
+        descricao_eixo: Descrição do eixo
+        title: Eixo
+
+  axis:
+    select:
+      all: Todos os eixos

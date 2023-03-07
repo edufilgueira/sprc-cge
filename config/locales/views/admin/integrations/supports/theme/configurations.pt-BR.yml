@@ -1,0 +1,25 @@
+pt-BR:
+
+  admin:
+    integrations:
+      supports:
+        theme:
+          configurations:
+
+            import:
+              done: A importação dos dados de temas está sendo processada em segundo plano
+            form:
+              commands:
+                cancel: Voltar para integrações
+            edit:
+              title: Configuração
+            update:
+              done: "Configuração salva com sucesso."
+            show:
+              edit: Configurar
+              created_at: Criado
+              title: Configuração de temas
+              import: Importar agora
+              hide_show: Mostrar/Esconder log
+              empty: Nenhuma importação realizada
+

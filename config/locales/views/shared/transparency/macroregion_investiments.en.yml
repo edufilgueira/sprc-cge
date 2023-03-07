@@ -1,0 +1,56 @@
+en:
+  shared:
+    transparency:
+
+      macroregion_investiments:
+
+        index:
+          title: Investments by macro-region
+          description: >
+            Check here the investments of the State by macro-regions. See the largest investments by region, power and year.
+
+          chart:
+            valor_lei:
+              unit: 'Total value in R$'
+              title: 'Total value'
+
+          charts:
+            tabs:
+              ano_exercicio:
+                title: Year
+              descricao_regiao:
+                title: Macro-region
+              descricao_poder:
+                title: Power
+
+
+          filters:
+            title: Advanced search
+
+          counts:
+            macroregion_investiments_sum:
+              title: Updated budget value of filtered investments
+
+          table:
+            summary: Investments list
+            header:
+              descricao_poder: Power
+              descricao_regiao: Macro-region
+              valor_lei: Initial budget
+              valor_lei_creditos: Updated budget
+              valor_empenhado: Committed value 
+              valor_pago: Amount paid
+              perc_pago_calculated: '% paid'
+
+          stats:
+            title: Main numbers related to investments
+            count: 'Investments amount in <strong>%{date}</strong>'
+            valor_lei: 'Investments amount by macro-region in <strong>%{date}</strong>'
+
+          source: 'Data source: Secretariat of Planning and Management; Monitoring of Priority Actions and Projects (Mapp GPR) - WebMapp'
+
+        show:
+          descricao_url: Complete information of investiment
+          descricao_url_ddisp: Bidding exemption process
+          descricao_url_inexg: Bidding unenforceability process
+          edital_url: Check bidding notice

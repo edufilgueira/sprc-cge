@@ -1,0 +1,19 @@
+es:
+  activerecord:
+    attributes:
+      attachment:
+        file: Adjunto
+        title: Título
+        imported_at: Fecha de generación
+        document: Adjunto
+
+    models:
+      attachment:
+        one: 'Adjunto'
+        other: 'Adjuntos'
+    errors:
+      models:
+        attachment:
+          attributes:
+            document:
+              attachment_letter: Usted necesita adjuntar la carta de respuesta al ciudadano

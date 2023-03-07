@@ -1,0 +1,60 @@
+- # TODO: move code from view
+%section.row{ 'aria-labelledby': 'card_sections' }
+  .col-md-6.col-12
+    %h4.font-weight-bold
+      %i.fa.fa-money.text-green
+      - stats = Stats::Revenues::Account.last_stat
+      - series_data = stats&.data&.fetch(:secretary, {})
+
+      = t('.revenues.title', year: stats&.year || Date.current.year)
+
+      %hr.my-4
+    - if series_data.present?
+      - filtered_data = series_data.reject{ |key, value| value[:valor_arrecadado].zero? }
+      - sorted_data = filtered_data.sort_by{ |k,data| data[:valor_arrecadado] }.reverse!
+      - limited_data = sorted_data.first(4).to_h
+
+      - limited_data.each_slice(2) do |row|
+        .row
+          - row.each do |item|
+            .col-md-6.col-12
+              .card.border-bottom-only.border-4.border-green
+                .card-block
+                  .card-title
+                    = item[0]
+
+                  .value.text-green.lead.font-weight-bold
+                    = number_to_currency(item[1][:valor_arrecadado])
+    - else
+      .alert.alert-info
+        = t('.empty')
+
+  .col-md-6.col-12
+    %h4.font-weight-bold.mt-4.mt-md-0
+      %i.fa.fa-money.text-danger
+      - stats = Stats::Expenses::BudgetBalance.last_stat
+      - series_data = stats&.data&.fetch(:secretary, {})
+
+      = t('.expenses.title', year: stats&.year || Date.current.year)
+
+      %hr.my-4
+    - if series_data.present?
+      - filtered_data = series_data.reject{ |key, value| value[:calculated_valor_orcamento_atualizado].zero? }
+      - sorted_data = filtered_data.sort_by{ |k,data| data[:calculated_valor_orcamento_atualizado] }.reverse!
+      - limited_data = sorted_data.first(4).to_h
+
+      - limited_data.each_slice(2) do |row|
+        .row
+          - row.each do |item|
+            .col-md-6.col-12
+              .card.border-bottom-only.border-4.border-danger
+                .card-block
+                  .card-title
+                    = item[0]
+
+                  .value.text-danger.lead.font-weight-bold
+                    = number_to_currency(item[1][:calculated_valor_orcamento_atualizado])
+    - else
+      .alert.alert-info
+        = t('.empty')
+

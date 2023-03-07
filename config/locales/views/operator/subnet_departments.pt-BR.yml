@@ -1,0 +1,47 @@
+pt-BR:
+
+  operator:
+
+    subnet_departments:
+
+      index:
+        title: "%{organ_acronym} - Unidades"
+        empty: Nenhuma unidade encontrada
+
+        search:
+          label: Buscar por subrede ou nome da unidade
+
+        table:
+          summary: Lista paginada de unidades
+          header:
+            subnet_acronym: Subrede
+            name: Nome
+
+        commands:
+          print: Imprimir lista completa
+
+
+      print:
+        index:
+          title: "%{organ_acronym} - Unidades"
+          empty: Nenhuma unidade encontrada
+
+          table:
+            header:
+              subnet_acronym: Subrede
+              name: Nome
+
+
+
+        show:
+          sub_departments:
+            disabled_at: "Desabilitado em %{disabled_at}"
+
+
+      show:
+        title: Exibição da unidade
+        sub_departments:
+          disabled_at: "Desabilitado em %{disabled_at}"
+
+        commands:
+          print: Imprimir

@@ -1,0 +1,34 @@
+%p.font-weight-bold.text-center.mb-4
+
+  = t('.interaction_opinion')
+
+.row
+  - if current_user
+
+    .col-md-6.text-right.mb-4
+
+      = render 'interaction_button', type: :like do
+        %i.fa.fa-thumbs-up.fa-inverse.pr-4{ 'aria-hidden': 'true' }
+        %span.pr-4
+          = t('.liked')
+
+    .col-md-6.text-left.mb-4
+
+      = render 'interaction_button', type: :dislike do
+        %i.fa.fa-thumbs-down.fa-inverse.pr-2{ 'aria-hidden': 'true' }
+        = t('.disliked')
+
+  - else
+
+    .col-md-12.text-center
+      = render 'shared/ppa/login_alert'
+
+.row.mt-4.text-center
+  .col-md-4.col-sm-6
+    = render 'interaction_stat', icon: 'thumbs-o-up', method: :likes
+
+  .col-md-4.col-sm-6
+    = render 'interaction_stat', icon: 'thumbs-o-down', method: :dislikes
+
+  .col-md-4.col-sm-6
+    = render 'interaction_stat', icon: 'comment-o', method: :comments

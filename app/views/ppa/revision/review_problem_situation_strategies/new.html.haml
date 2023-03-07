@@ -1,0 +1,17 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+
+%h2.font-weight-bold
+  = t('.title')
+
+%hr.border-2
+%label.text-justify{ style: 'font-size: 14px' }
+  = t('.description').html_safe
+
+= simple_form_for resource, html: { method: :post, id: 'msform' } do |f|
+
+  -# MultiStep Form
+  = render "multistep_form_new", f: f
+
+

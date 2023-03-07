@@ -1,0 +1,65 @@
+.card.card-custom
+
+  .card-header
+
+    %h2.card-title
+      - show_path = url_for(action: 'show', controller: 'stats_tickets', id: stats_ticket.id)
+      = link_to t(".card.#{ticket_type}.stats.title", date: stats_ticket.formated_date), show_path
+
+
+  - if stats_ticket.created?
+
+    .card-block.card-header
+      = render 'shared/reports/stats_tickets/summary', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+
+    - if ticket_type == :sic && stats_ticket.organ_id.present?
+      .card-block.card-header
+        = render 'shared/reports/stats_tickets/summary_csai', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+    .card-block.card-header
+      = render 'shared/reports/stats_tickets/index/organs', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+    .card-block.card-header
+      = render 'shared/reports/stats_tickets/index/topics', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+    .card-block.card-header
+      = render 'shared/reports/stats_tickets/index/departments', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+    .card-block.card-header
+      = render 'shared/reports/stats_tickets/index/used_inputs', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+    - if ticket_type == :sou
+      .card-block.card-header
+        = render 'shared/reports/stats_tickets/index/sou_types', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+    .card-block.card-header
+      = render 'shared/reports/stats_tickets/index/total_tickets_year_chart', stats_ticket: stats_ticket, ticket_type: ticket_type
+
+
+  .card-block
+    .row
+      .col-12.col-lg-6.card-commands
+
+        - if current_user && can?(:create, stats_ticket)
+          = simple_form_for :stats_ticket, url: api_v1_operator_stats_tickets_path, remote: true, method: :post, data: { form: ticket_type } do |f|
+            = f.hidden_field :ticket_type, value: ticket_type
+            = f.hidden_field :month_start, value: filters[:month_start]
+            = f.hidden_field :month_end, value: filters[:month_end]
+            = f.hidden_field :year, value: filters[:year]
+            - if filters[:organ].present? || filter_sectoral_organ_sectoral?
+              = f.hidden_field :organ_id, value: filters[:organ] || current_user&.organ_id
+              - if current_user.subnet_operator?
+                = f.hidden_field :subnet_id, value: current_user.subnet_id
+            = f.submit t('.button.import'), class: 'btn btn-primary', data: { disable_with: t('.button.importing') }
+
+        - url = url_for([:status, :api, :v1, namespace, stats_ticket, only_path: true] )
+        %div{ class: ('collapse' if stats_ticket.created?), data: { type: ticket_type, status: stats_ticket.status || '', path: url } }
+          %i.fa.fa-spinner.fa-spin
+          = t('.button.importing')
+
+      - if stats_ticket.created?
+
+        .col-12.col-lg-6.text-right.text-muted
+          %small
+            %em= t('.last_update', value: last_update(stats_ticket))

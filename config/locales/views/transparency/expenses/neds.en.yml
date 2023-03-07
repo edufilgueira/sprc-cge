@@ -1,0 +1,7 @@
+en:
+  transparency:
+    expenses:
+      neds:
+        index:
+          title: Expense Commitment Notes
+          description: Here you can see information on expenditure commitment notes by searching by period, management unit, creditor name or expense specification.

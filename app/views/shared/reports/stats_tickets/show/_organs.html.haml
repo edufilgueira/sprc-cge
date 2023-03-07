@@ -1,0 +1,26 @@
+%h2.card-subtitle.mb-3.h4
+  = link_to t('.title'), '#!', data: { toggle: :collapse, target: "#organs" }, aria: { expanded: :true, controls: :organs }
+
+#organs.row.collapse.show
+  - organs = stats_ticket.data[:organs]
+  - if organs.blank?
+    .mb-3.col-12
+      %em= t('.organs.empty')
+
+  - else
+
+    - organs.each do |key, organ|
+      .col-12
+
+        - has_topics = organ[:topics_count] > 0
+
+        .card-block.card-header
+
+          %h3.h4{ data: ({ charts: '' } if has_topics) }
+            = "#{Organ.find(key).acronym} - #{organ[:count]} (#{organ[:percentage]}%)"
+
+          - if has_topics
+            = render 'shared/reports/stats_tickets/show/organ_topics', organ: organ
+
+          - else
+            %em= t('.topics.empty')

@@ -1,0 +1,28 @@
+pt-BR:
+
+  about:
+
+    sou:
+
+      index:
+        title: Sobre a Ouvidoria
+
+        intro:
+          title: O que é Ouvidoria?
+          description: Lorem ipsum dolor sit amet
+
+        fields:
+          title: Sua atuação
+          description: Lorem ipsum dolor sit amet
+
+        importance:
+          title: Sua importância
+          description: Lorem ipsum dolor sit amet
+
+        channels:
+          title: Canais de atuação
+          description: Lorem ipsum dolor sit amet
+
+        deadlines:
+          title: Prazos para resposta
+          description: Lorem ipsum dolor sit amet

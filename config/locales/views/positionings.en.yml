@@ -1,0 +1,41 @@
+en:
+
+  positionings:
+
+    edit:
+      title: "%{ticket_title} - Answer"
+      already_positioned: Already answered.
+      deadline:
+        title: Deadlines and arrangements
+        remaining: Countdown to Reply
+        created_at: Created at
+        last_day: Answer deadline
+        status: Status
+      sou:
+        description:
+          title: Manifestation description
+      sic:
+        description:
+          title: Request description
+      answers:
+        title: Answer(s)
+      attachments:
+        title: Attachments
+
+    form:
+      description: Insert an answer
+      commands:
+        add_attachment: Add attachment
+        add: Save answer
+
+    update:
+      done: Answer successfully saved
+      error: Unable to register answer
+
+    show:
+      title: "%{ticket_title} - Answer"
+      answers:
+        title: Answer(s)
+
+    answers:
+        empty: No answer yet

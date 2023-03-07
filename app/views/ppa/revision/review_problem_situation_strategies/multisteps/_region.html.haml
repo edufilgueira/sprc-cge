@@ -1,0 +1,20 @@
+.form-card
+  - human_attr = model_class.human_attribute_name(:city)
+  - placeholder = t('messages.form.select')
+
+  .col-lg-12
+    %h3= t('.title')
+    %p= t('.description')
+
+    = f.input :region_code,
+
+      collection: regions, as: :grouped_select,
+      group_method: :ordered_cities,
+      group_label_method: :name,
+      value_method: :ppa_region_id,
+      input_html: { data: { region_select: '' } },
+      label: human_attr, prompt: placeholder,
+      selected: region_param
+
+    = hidden_field_tag :api_ppa_cities_for_region_url, cities_for_region_api_v1_ppa_index_path
+%input.next.action-button.next-step1{multisteps_next_btn}

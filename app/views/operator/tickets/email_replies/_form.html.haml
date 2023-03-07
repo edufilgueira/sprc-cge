@@ -1,0 +1,14 @@
+= simple_form_for ticket, url: operator_ticket_email_replies_path(ticket), method: :patch do |f|
+
+  .row
+    .col-lg-12
+      - ticket_param = params[:ticket]
+      - email = ticket_param.present? ? ticket_param[:email] : ticket.email
+      = f.input :email, autofocus: true, input_html: { value: email }, hint: t('.email.hint')
+
+  .row.mt-3
+    .col-12
+      - cancel_url = params[:previous_url] || operator_ticket_path(ticket)
+      = link_to t('commands.cancel'), cancel_url, class: 'btn btn-warning pull-left'
+
+      = f.submit t('.commands.save'), class: 'btn btn-primary float-right'

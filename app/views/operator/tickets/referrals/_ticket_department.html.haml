@@ -1,0 +1,63 @@
+- ticket_department = f.object
+.nested-fields{ data: { content: :department } }
+  .card.bg-faded.mb-3
+    .card-block
+      .row
+
+        .col-10.col-sm-11
+
+          = ticket_department.title
+
+          = f.input :department_id, as: :hidden, wrapper: false, input_html: { data: { input: :department } }
+
+
+          %hr{ 'aria-hidden': 'true' }
+
+          .row
+            .col-10
+              %h4.h6
+                %strong
+                  = t('.ticket_department_sub_departments.title')
+
+          .row.mt-2{'data-container': 'sub-departments'}
+            .col
+              = f.simple_fields_for :ticket_department_sub_departments do |ticket_department_sub_department|
+
+                - if ticket_department_sub_department.object.persisted?
+                  .ml-3
+                    %small
+                      = ticket_department_sub_department.object.sub_department_name
+
+                - else
+                  = render 'ticket_department_sub_department_fields', f: ticket_department_sub_department
+
+              .links
+                = link_to_add_association t('.ticket_department_sub_departments.commands.add'), f, :ticket_department_sub_departments
+
+
+          %hr{ 'aria-hidden': 'true' }
+
+          .row
+            .col-10
+              %h4.h6
+                %strong
+                  = t('.ticket_department_emails.title')
+
+          .row
+            .col
+              = f.simple_fields_for :ticket_department_emails do |ticket_department_email|
+
+                - if ticket_department_email.object.persisted?
+                  .ml-3
+                    %small
+                      = ticket_department_email.object.title
+                - else
+                  = render 'ticket_department_email_fields', f: ticket_department_email
+
+              .links
+                = link_to_add_association t('.ticket_department_emails.commands.add'), f, :ticket_department_emails
+
+
+        .col-2.col-sm-1.text-right
+          = link_to operator_ticket_referral_path(ticket_department.ticket, ticket_department.id),method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn btn-sm fa-lg text-danger' do
+            %i.fa.fa-trash{title: t('commands.remove')}

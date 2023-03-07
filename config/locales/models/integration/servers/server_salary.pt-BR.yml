@@ -1,0 +1,52 @@
+pt-BR:
+
+  activerecord:
+
+    attributes:
+
+      integration/servers/server_salary:
+
+        server_name: Servidor
+        discount_others: Outros descontos
+        discount_total: Total descontos
+        discount_under_roof: Abatimento em função do 'teto' constitucional
+        status: Situação funcional
+        functional_status_str: Situação funcional
+        income_dailies: Diárias
+        income_final: Salário líquido
+        income_total: Salário bruto
+
+        date: Mês
+        integration_supports_organ_id: 'Órgão/Entidade'
+        organ_name: 'Órgão/Entidade'
+        organ_sigla: 'Órgão/Entidade'
+        organ_title: 'Órgão/Entidade'
+        registration: Matrícula
+        role_name: 'Cargo/Função/Emprego'
+        integration_supports_server_role_id: 'Cargo/Função/Emprego'
+
+
+  integration/servers/server_salary:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Servidores %{month}-%{year}'
+  
+    functional_statuses:
+      all: Todas as situações
+      functional_status_active: Ativo
+      functional_status_retired: Aposentado
+      functional_status_pensioner: Pensionista
+      functional_status_intern: Estagiário/Bolsista
+
+    statuses:
+      all: Todas as situações
+      civil_active: Civil Ativo
+      militar_active: Militar Ativo
+      civil_away_with_onus: Civil Afastado com Ônus
+      militar_away_with_onus: Militar Afastado com Ônus
+      civil_away_without_onus: Civil Afastado sem Ônus
+      militar_away_without_onus: Militar Afastado sem Ônus
+      pensioner: Pensionista
+      food_pension: Pensão Alimentar
+      injunction: Liminar

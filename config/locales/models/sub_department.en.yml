@@ -1,0 +1,14 @@
+en:
+  activerecord:
+
+    models:
+      sub_department:
+        one: 'Sub-department'
+        other: 'Sub-departments'
+
+    attributes:
+      sub_department:
+        acronym: Acronym
+        name: Name
+        _disable: Disabled
+        disabled_at: Disabled on

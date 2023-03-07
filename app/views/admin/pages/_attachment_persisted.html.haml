@@ -1,0 +1,9 @@
+- filename = attachment.document_filename
+- url = document_url(attachment)
+
+%figure.d-inline-block.text-center.m-2
+  = link_to document_image_tag(attachment, image_size), url, download: filename
+
+
+  %figcaption.small
+    = link_to truncate(filename), url, download: filename

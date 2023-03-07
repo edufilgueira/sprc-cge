@@ -1,0 +1,4 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+- if can?(:edit, ticket)
+  = render 'form', ticket: ticket

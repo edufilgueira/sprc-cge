@@ -1,0 +1,20 @@
+en:
+  shared:
+    comments:
+      attachment_fields:
+        file:
+          hint: 'The sum of the attachments inserted in the system cannot exceed the limit of 50MB.'
+
+      form:
+        description:
+          internal: Insert new internal comment
+          external: Insert new comment
+        commands:
+          add_attachment: Add attachment
+          save:
+            internal: Insert new internal comment
+            external:  Save comment
+
+      comment:
+        title: '%{author} commented'
+        anonymous_title: 'Citizen commented'

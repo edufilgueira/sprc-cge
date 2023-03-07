@@ -1,0 +1,99 @@
+pt-BR:
+  ppa:
+    revision:
+      review_problem_situation_strategies:
+        themes_list:
+          all_themes_rated: Todos os temas desse eixo já foram avaliados
+        update:
+          done: Configuração salva com sucesso.
+          error: Não foi possível atualizar
+        new:
+          title: Revisão das Estratégias Regionais
+          description: >-
+            O PPA organiza as políticas públicas estaduais em sete Eixos
+            governamentais, também conhecidos como os “7 Cearás”, que representam
+            as linhas gerais de ação do Governo do Estado. Esses são o Ceará Acolhedor,
+            o Ceará da Gestão Democrática para Resultados, o Ceará de Oportunidades,
+            o Ceará do Conhecimento, o Ceará Pacífico, o Ceará Saudável e o Ceará Sustentável.<br><br>
+            Em conjunto, os 7 Cearás buscam promover o desenvolvimento da sociedade cearense,
+            por meio da união dos esforços de vários órgãos estaduais em busca de um mesmo objetivo.
+            Você verá que a revisão está organizada em torno dos sete Eixos e dos seus vários Temas,
+            os quais representam as áreas em que atuam as estratégias estaduais.<br><br>
+            Neste processo, você poderá escolher os Temas (Políticas Públicas) dos
+            Eixos do PPA para fazer a sua contribuição. Também poderá participar
+            da revisão das situações-problemas e estratégias regionais de até duas
+            regiões, de modo que contemple a região em que você vive, e outra com
+            a qual também tenha afinidade.<br><br>
+            Para começar, basta seguir os passos indicados abaixo. Contamos com sua contribuição!
+        create:
+          done: Configuração salva com sucesso.
+        show:
+          title: 'Resumo'
+          new_region: 'Revisar nova região'
+          new_theme: 'Revisar novo tema para região %{region_name}'
+          finish: 'Encerrar Revisão'
+          revised_themes: 'Temas revisados'
+          no_revised_themes: 'Nenhum tema revisado'
+        conclusion:
+          description: O governo do Estado agradece sua participação!
+        multistep_form:
+          title: Siga os passos para participar da revisão
+          region: Região
+          theme: Tema
+          revision: Revisão
+          resume: Resumo
+          conclusion: Conclusão
+        multisteps:
+          region:
+            title: Região
+            description: Selecione o município da região em que você deseja participar.
+          theme:
+            title: "Tema - Região: "
+            axes: Eixos
+            themes: Temas
+            description: Selecione os Temas (Políticas Públicas) que são de maior interesse para você.
+          revision:
+            back_to_resume: 'Voltar para resumo'
+            top:
+              title: Revisão das situações-problemas e estratégias regionais
+              description: >
+                Siga os seguintes passos para a realização dessa atividade:<br><br>
+                Passo 1 - Indique se as situações-problemas registradas nesse Tema continuam existindo em sua região (caso não se sinta à vontade para opinar sobre alguma existente na lista, é possível deixar em branco);<br>
+                Passo 2 - Caso você não encontre alguma situação-problema que considere particularmente importante, você pode acrescentar novas;<br>
+                Passo 3 – Indique se as estratégias estipuladas para a sua região nesse Tema continuam sendo importantes no período atual (caso não se sinta à vontade para opinar sobre alguma existente na lista, é possível deixar em branco);<br>
+                Passo 4 - Se alguma das estratégias já existente não contribui para a solução da nova situação-problema que você cadastrou, proponha uma nova estratégia para solucionar essa questão.<br><br>
+                Você também pode visualizar as entregas (bens e serviços) alinhadas às estratégias regionais estabelecidas pela região neste Tema e realizadas em 2020 clicando no link do relatório disponível logo abaixo.<br>
+              report_download: 'Relatório com as iniciativas e entregas do PPA alinhadas às Estratégias Regionais'
+              region: Região
+              axis: Eixo
+              theme: Tema
+              strategic_result: Resultado Estrategico
+              theme_description: Descrição do Tema
+            problem_situation:
+              title: Situação-Problema
+              description: (Registrada no processo de elaboração do PPA %{ppa_plan})
+              table:
+                title: Descrição
+                persist: Ainda persiste na região?
+              no_problem_situations: "Para este tema, não tiveram situações-problemas apontadas durante a elaboração do PPA"
+            regional_strategy:
+              title: Estratégia Regional
+              description: (Estabelecida para o PPA %{ppa_plan})
+              table:
+                title: Estratégias Regionais
+                persist: Você confirma a permanência dessa estratégia?
+              no_regional_strategies: "Para este tema, não tiveram estratégias apontadas durante a elaboração do PPA"
+            new_regional_strategy:
+              quest: Você deseja propor uma nova Estratégia Regional para tratar determinada situação-problema específica?
+            new_problem_situation:
+              quest: Você deseja registrar uma nova situação-problema existente em sua região?
+              all: Todas
+
+        multistep_form_edit:
+          btn_go_to_resume: Cancelar e ir para resumo
+
+        multistep_form_new:
+          button_to_abort: Cancelar revisão
+
+          revision:
+            back_to_resume: Voltar para resumo

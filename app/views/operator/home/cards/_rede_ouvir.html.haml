@@ -1,0 +1,11 @@
+/ .col-md-6.col-lg-4.col-sm-12.pb-3
+
+/   = link_to operator_tickets_path(ticket_type: user_type, rede_ouvir_cge: :true) do
+
+/     .operator-home-card{'data-internal-status': 'rede_ouvir_cge'}
+
+/       %h3.operator-home-card-title
+/         = t('.rede_ouvir_cge.title')
+
+/       %p.operator-home-card-count
+/         = send("tickets_rede_ouvir_cge_count", user_type)

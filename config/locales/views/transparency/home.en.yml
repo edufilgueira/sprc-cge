@@ -1,0 +1,386 @@
+en:
+
+  transparency:
+
+    home:
+
+      index:
+        title: Transparency Page
+
+        sections:
+          title: Sections
+
+      how_sections:
+        what_is:
+          title: What is Transparency?
+          description: >
+            In the context of public management, the Transparency Law determines that detailed information on public data is made available in real time.
+
+        how_to:
+          title: How can I use it?
+          description: >
+            The Ceará Transparente was designed with the improvement of information and public data search in mind, with a focus on helping you, citizen. The graphs allow an overview of transfers and expenses by the public management.
+
+      graphic_sections:
+        chartnav:
+          item1:
+            title: Revenues and Expenditures
+          item2:
+            title: Contracts
+          item3:
+            title: Agreements
+          item4:
+            title: Servants
+        empty_graphic: Chart not available
+
+
+      top_queries_sections:
+        cards: &cards
+          title: Highlighted searches
+
+          address:
+            title: Addresses and phones
+            link: '/portal-da-transparencia/paginas/enderecos-e-telefones'
+            icon: 'fa-address-book-o'
+
+          licitation:
+            title: Biddings
+            link: '/portal-da-transparencia/paginas/licitacoes'
+            icon: 'fa-file-text-o'
+
+          access:
+            title: Service letter
+            link: 'https://cartadeservicos.ce.gov.br/'
+            icon: 'fa-user-o'
+
+          contracts_contracts:
+            title: Contracts
+            text: See contracts information
+
+          contracts_convenants:
+            title: Agreements
+            text: See agreements information
+
+          ders: &ders
+            title: Roadwork
+            text: See information about Roadwork
+
+          maps:
+            title: Civil Work Map
+            text: Follow all civil work in the State of Ceará by accessing the Civil Work Map.
+            links:
+              title: Civil work map
+              link1:
+                title: Buildings
+              link2:
+                title: Roads
+              link3:
+                title: Ceará Hydrological Portal
+              link4:
+                title: SRH Atlas
+
+          constructions_ders:
+            <<: *ders
+
+          daes: &daes
+            title: DAE (Department of Water and Sewer) Civil Work
+            text: See information about Civil Work - Edifications
+
+          constructions_daes:
+            <<: *daes
+
+          mobile_apps:
+            title: Applications
+            text: Other applications
+
+          npfs:
+            title: NPF (Financial Scheduling Notes)
+            text: See information about NPF (Financial Scheduling Notes)
+
+          expenses_budget_balances: &expenses_budget_balances
+            title: Expenditures
+            text: See information about expenditures
+
+          expenses_expenses_budget_balances:
+            <<: *expenses_budget_balances
+
+          expenses_neds:
+            title: Expenditures for commitment
+
+          expenses:
+            title: Expenditures
+            text: Check all costs and expenses in the State of Ceará Government.
+            links:
+              title: State Expenditures
+              link1:
+                title: Executive Power Expenditures
+                link: '/portal-da-transparencia/despesas/despesas-do-poder-executivo'
+              link2:
+                title: Expenditures by Statements of Agreement
+                link: '/portal-da-transparencia/despesas/notas-de-empenho'
+              link3:
+                title: Extrabudgetary Expenditures
+              link4:
+                title: Expenses on hotel accommodations
+                link: '/portal-da-transparencia/despesas/despesas-com-diarias'
+              link5:
+                title: Funds Supply
+                link: '/portal-da-transparencia/despesas/suprimentos-de-fundos'
+              link6:
+                title: Compulsory Transfer of Resources to Cities
+                link: '/portal-da-transparencia/paginas/cotransferencias-obrigatorias-aos-municipios'
+              link7:
+                title: Transfers made by the Executive Power
+              link8:
+                title: Corporate Card
+                link: '/portal-da-transparencia/paginas/cartao-corporativo'
+              link9:
+                title: Information on Servants
+              link10:
+                title: Contracts
+              link11:
+                title: Management Contracts
+              link12:
+                title: Agreements
+              link13:
+                title: Biddings
+                link: '/portal-da-transparencia/paginas/licitacoes'
+              link14:
+                title: Purchases
+              link15:
+                title: Investment by City
+              link16:
+                title: Investment by Macro-Region
+              link17:
+                title: Edification Buildings
+              link18:
+                title: Road Work
+              link19:
+                title: Staff Expenditures
+                link: '/portal-da-transparencia/paginas/despesas-com-pessoal'
+              link20:
+                title: Consolidated Net Debt
+                link: '/portal-da-transparencia/paginas/divida-consolidada-liquida'
+              link21:
+                title: Education Expenditures
+                link: '/portal-da-transparencia/paginas/educacao'
+              link22:
+                title: Summary Report on Budgetary Execution
+                link: '/portal-da-transparencia/paginas/relatorio-resumido-da-execucao-orcamentaria'
+              link23:
+                title: Health
+                link: '/portal-da-transparencia/paginas/saude'
+              link24:
+                title: Transfers to Multigovernmental Institutions
+                link: '/portal-da-transparencia/despesas/transferencias-a-instituicoes-multigovernamentais'
+              link25:
+                title: Transfers to Public Consortia
+                link: '/portal-da-transparencia/despesas/transferencias-a-consorcios-publicos'
+              link26:
+                title: Transfers to Municipalities
+                link: '/portal-da-transparencia/despesas/transferencias-a-municipios'
+              link28:
+                title: Public Debt
+                link: '/portal-da-transparencia/paginas/divida-publica'
+              link29:
+                title: Transfers to For-profit Entities
+                link: '/portal-da-transparencia/despesas/transferencias-a-entidades-com-fins-lucrativos'
+          nlds:
+            title: NLD (Settlement of Expenses Notes)
+            text: See information on settlement of expenses notes
+
+          npds: &npds
+            title: NPD (Expense Payment Notes)
+            text: See information on expense payment notes
+
+          expenses_npds:
+            <<: *npds
+
+          management:
+            title: State Management
+            text: Reports, balances, biddings, legislations and more in the State Government of Ceará.
+            links:
+              title: State Management
+              link1:
+                title: Current net Revenue
+                link: '/portal-da-transparencia/paginas/receita-corrente-liquida'
+              link2:
+                title: Tax Reports
+                link: '/portal-da-transparencia/paginas/fiscal-management-report'
+              link3:
+                title: Budgetary Laws
+                link: '/portal-da-transparencia/paginas/ldo-lei-de-diretrizes-orcamentarias'
+              link4:
+                title: Internal Control Report
+                link: '/portal-da-transparencia/paginas/relatorio-controle-interno'
+              link5:
+                title: External Control Report
+                link: '/portal-da-transparencia/paginas/relatorio-controle-externo'
+              link6:
+                title: State General Balance
+                link: '/portal-da-transparencia/paginas/balanco-geral-do-estado'
+              link7:
+                title: Real Estate
+              link9:
+                title: Opportunities for Investment
+                link: '/portal-da-transparencia/paginas/o-estado-do-ceara'
+              link10:
+                title: Government Policies
+                link: '/portal-da-transparencia/paginas/prioridades-e-politicas-de-governo'
+              link12:
+                title: Government Priorities
+                link: '/portal-da-transparencia/paginas/prioridades-e-politicas-de-governo'
+              link13:
+                title: Governance Models
+                link: '/portal-da-transparencia/paginas/modelo-de-governanca'
+              link14:
+                title: Indicators by theme
+              link15:
+                title: Organizational Structure
+                link: '/portal-da-transparencia/paginas/estrutura-organizacional'
+              link16:
+                title: Addresses and Phone Numbers
+                link: '/portal-da-transparencia/paginas/enderecos-e-telefones'
+              link17:
+                title: State Official Gazette
+                link: 'http://pesquisa.doe.seplag.ce.gov.br/doepesquisa/sead.do?page=ultimasEdicoes&cmd=11&action=Ultimas'
+              link18:
+                title: Investment by City
+              link19:
+                title: Results
+                link: '/portal-da-transparencia/paginas/resultados'
+              link20:
+                title: Investment by Macro-Region
+              link21:
+                title: Strategic Indicators
+              link22:
+                title: Other Indicators
+                link: '/portal-da-transparencia/paginas/indicadores-complementares'
+              link23:
+                title: 'COGERF'
+                link: '/portal-da-transparencia/paginas/comite-de-gestao-por-resultados-e-gestao-fiscal-cogerf'
+              link24:
+                title: Internal Preventive Control
+                link: '/portal-da-transparencia/paginas/controle-interno-preventivo'
+              link25:
+                title: Social Control Tools
+                link: '/portal-da-transparencia/paginas/ferramentas-de-controle-social'
+              link26:
+                title: Guarantees and Counter-guarantees
+                link: '/portal-da-transparencia/paginas/garantia-e-contragarantias'
+              link27:
+                title: Participative management
+                link: '/portal-da-transparencia/paginas/participative-management'
+              link28:
+                title: Public Management by Results
+                link: '/portal-da-transparencia/paginas/gestao-por-resultados'
+              link29:
+                title: ABL – Annual Budgetary Law
+                link: '/portal-da-transparencia/paginas/lei-orcamentaria-anual'
+              link30:
+                title: Credit operations
+                link: '/portal-da-transparencia/paginas/operacao-de-credito'
+              link31:
+                title: MAP – Multiannual Plan
+                link: '/portal-da-transparencia/paginas/ppa-plano-plurianual'
+              link32:
+                title: Fiscal management report
+                link: '/portal-da-transparencia/paginas/fiscal-management-report'
+              link33:
+                title: Nominal Result
+                link: '/portal-da-transparencia/paginas/resultado-nominal'
+              link34:
+                title: Primary Result
+                link: '/portal-da-transparencia/paginas/resultado-primario'
+              link37:
+                title: MAPP
+                link: '/portal-da-transparencia/paginas/mapp-monitoramento-de-acoes-e-projetos-prioritarios'
+              link38:
+                title: Gross Domestic Product
+                link: '/portal-da-transparencia/paginas/pib'
+              link39:
+                title: Action Plan for SIAFIC
+                link: '/portal-da-transparencia/paginas/plano-acao-siafic'
+
+          purchases:
+            title: Completed biddings
+            text: See information on government purchases
+
+          open_data: &open_data
+            title: Open Data
+            text: See the various open data available for download
+
+          open_data_data_sets:
+            <<: *open_data
+
+          servers: &servers
+            title: Public Servants
+            text: See information about public servants
+
+          server_salaries:
+            <<: *servers
+
+          revenues: &revenues
+            title: Revenues
+            text: Check all revenues in the State of Ceará Government
+            links:
+              title: Executive Power Revenues
+              link1:
+                title: All revenues
+                link: '#!'
+              link2:
+                title: Executive Power Revenues
+              link3:
+                title: Resources via Transfers
+              link4:
+                title: Posted revenues
+              link5:
+                title: GDP
+                link: '/portal-da-transparencia/paginas/pib  '
+              link6:
+                title: Quarterly GDP
+                link: '/portal-da-transparencia/paginas/pib-trimestral '
+              link7:
+                title: Current net revenue
+                link: '/portal-da-transparencia/paginas/receita-corrente-liquida '
+              link8:
+                title: Revenues / Expenditures
+                link: '/portal-da-transparencia/paginas/receitas-x-despesas'
+
+          revenues_accounts:
+            <<: *revenues
+
+          real_states:
+            title: Real Estate
+            text: Management of real estate information import
+
+      top_4_sections:
+        cards:
+          <<: *cards
+
+      card_sections:
+        empty: Unconsolidated information.
+        revenues:
+          title: Largest source of revenues in %{year}
+        expenses:
+          title: Largest source of expenditures in %{year}
+
+      map_sections:
+        title: Civil Work of State of Ceará
+        map_title: Civil Work Map
+        last_daes:
+          title: Recent works
+          description: (Planned conclusion - description)
+          not_informed: Uninformed
+        watch: Track the building works by accessing the Civil Work Map.
+        see_more: See map
+
+      news_sections:
+        title: News and Articles
+        description: >
+          On this section, you can learn more about the news regarding the Transparency channels and have up-to-date information about the Ceará’s Ombudsmen Network. Read, take part and be always up to date about your rights!
+        title_1: The State of Ceará’s General Controllership and Ombudsmen News
+        description_1: Read more about the latest news of the State of Ceará’s General Controllership and Ombudsmen.
+        title_2: News of the State Government of Ceará
+        description_2: Read more about the latest news of the State Government of Ceará.
+        read_more: See news

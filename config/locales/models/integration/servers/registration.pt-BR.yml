@@ -1,0 +1,27 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/servers/registration:
+        dsc_matricula: 'Matrícula'
+        dsc_cargo: 'Cargo/Função/Emprego'
+        cod_situacao_funcional: 'Código situação funcional'
+        status_situacao_funcional: 'Status da situação funcional'
+        dsc_cpf: 'CPF'
+        dth_nascimento: 'Data de nascimento'
+        vlr_carga_horaria: 'Carga horária'
+        num_folha: 'Número da folha'
+        vdth_admissao: 'Data de admissão'
+        cod_afastamento: 'Código de afastamento'
+        dth_afastamento: 'Data de afastamento'
+        organ_acronym: 'Órgão/Entidade'
+        organ_title: 'Órgão/Entidade'
+        organ_id: 'Órgão/Entidade'
+        functional_status: 'Situação funcional'
+
+  integration/servers/registration:
+    functional_statuses:
+      all: Todas as situações
+      functional_status_active: Ativo
+      functional_status_retired: Aposentado
+      functional_status_pensioner: Pensionista
+      functional_status_intern: Estagiário/Bolsista

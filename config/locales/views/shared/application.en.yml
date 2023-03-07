@@ -1,0 +1,8 @@
+en:
+  shared:
+    application:
+      privacy_statement:
+        title: Control your Privacy
+        description: Our website uses cookies to improve navigation.
+        privacy: Privacy Notice
+        accept: Accept

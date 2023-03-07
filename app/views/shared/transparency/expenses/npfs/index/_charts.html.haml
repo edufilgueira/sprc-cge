@@ -1,0 +1,24 @@
+- charts_tabs = [:management_unit, :creditor, :natureza, :efeito]
+
+.mt-4
+  %hr
+
+  %nav.nav.nav-pills.flex-column.flex-sm-row{id: 'charts-tabs', role: 'tablist', 'aria-orientation': 'horizontal'}
+
+    - charts_tabs.each_with_index do |chart_tab, index|
+
+      - html_class = (index == 0 ? 'active' : '')
+
+      %a.nav-link{id: "charts-tabs-#{chart_tab}-tab", 'data-toggle': 'pill', href: "#charts-tabs-#{chart_tab}", role: 'tab', class: html_class}
+        - title = t(".tabs.#{chart_tab}.title")
+        = title
+
+  .tab-content{id: 'charts-tabsContent'}
+
+    - charts_tabs.each_with_index do |chart_tab, index|
+
+      - html_class = (index == 0 ? 'active show' : '')
+
+      .tab-pane.fade{id: "charts-tabs-#{chart_tab}", "aria-labelledby": "#charts-tabs-#{chart_tab}-tab", role: 'tabpanel', class: html_class}
+
+        = render 'shared/transparency/expenses/npfs/index/chart', chart_name: chart_tab, series_data: stats.data[chart_tab]

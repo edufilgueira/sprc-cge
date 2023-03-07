@@ -1,0 +1,40 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-8
+            %h3.card-title
+              = executive_organ.title
+
+          .col-4
+            .float-right
+              - if can?(:edit, executive_organ)
+                = link_to t('commands.edit'), edit_admin_executive_organ_path(executive_organ), class: 'btn text-muted btn-link'
+
+              - if can?(:manage, executive_organ)
+                = render 'shared/buttons/btn_toggle_disabled', resource: executive_organ, namespace: :admin
+
+      .card-block
+
+        = content_with_label(executive_organ, :acronym)
+
+        = content_with_label(executive_organ, :name)
+
+        = content_with_label(executive_organ, :description)
+
+        = content_with_label(executive_organ, :code)
+
+        = content_with_label(executive_organ, :subnet)
+
+        = content_with_label(executive_organ, :ignore_cge_validation)
+

@@ -1,0 +1,20 @@
+es:
+  shared:
+    comments:
+      attachment_fields:
+        file:
+          hint: 'La suma de los archivos adjuntos insertados en el sistema no puede exceder el límite de 50 MB.'
+
+      form:
+        description:
+          internal: Insertar nuevo comentario interno
+          external: Insertar nuevo comentario
+        commands:
+          add_attachment: Adicionar archivo adjunto
+          save:
+            internal: Insertar comentario interno
+            external: Enviar comentario
+
+      comment:
+        title: '%{author} hizo un nuevo comentario'
+        anonymous_title: 'Ciudadano hizo un nuevo comentario'

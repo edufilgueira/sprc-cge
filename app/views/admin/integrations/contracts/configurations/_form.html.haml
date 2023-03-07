@@ -1,0 +1,96 @@
+= simple_form_for configuration, as: :configuration, url: admin_integrations_contracts_configuration_path(configuration) do |f|
+
+  .row
+    .col-6
+      = f.input :start_at, as: :string, input_html: { value: configuration.start_at, class: 'datetimepicker' }
+    .col-6
+      = f.input :end_at, as: :string, input_html: { value: configuration.end_at, class: 'datetimepicker' }
+
+  .row
+    .col-6
+      = f.input :wsdl, autofocus: true
+    .col-6
+      = f.input :headers_soap_action
+
+  .row
+    .col-6
+      = f.input :user
+    .col-6
+      = f.input :password, input_html: { value: configuration.password }
+
+
+  %hr{'aria-hidden':'true'}
+  %p
+    = t('.label.contract')
+  .row
+    .col-6
+      = f.input :contract_operation
+    .col-6
+      = f.input :contract_response_path, hint: t('.hint.response')
+  .row
+    .col-6
+      = f.input :contract_parameters, hint: t('.hint.parameters')
+
+  %hr{'aria-hidden':'true'}
+  %p
+    = t('.label.additive')
+  .row
+    .col-6
+      = f.input :additive_operation
+    .col-6
+      = f.input :additive_response_path, hint: t('.hint.response')
+  .row
+    .col-6
+      = f.input :additive_parameters, hint: t('.hint.parameters')
+
+  %hr{'aria-hidden':'true'}
+  %p
+    = t('.label.adjustment')
+  .row
+    .col-6
+      = f.input :adjustment_operation
+    .col-6
+      = f.input :adjustment_response_path, hint: t('.hint.response')
+  .row
+    .col-6
+      = f.input :adjustment_parameters, hint: t('.hint.parameters')
+
+  %hr{'aria-hidden':'true'}
+  %p
+    = t('.label.financial')
+  .row
+    .col-6
+      = f.input :financial_operation
+    .col-6
+      = f.input :financial_response_path, hint: t('.hint.response')
+  .row
+    .col-6
+      = f.input :financial_parameters, hint: t('.hint.parameters')
+
+  %hr{'aria-hidden':'true'}
+  %p
+    = t('.label.infringement')
+  .row
+    .col-6
+      = f.input :infringement_operation
+    .col-6
+      = f.input :infringement_response_path, hint: t('.hint.response')
+  .row
+    .col-6
+      = f.input :infringement_parameters, hint: t('.hint.parameters')
+
+
+
+  %hr{'aria-hidden':'true'}
+
+  .row
+    .col-md-6
+      = f.simple_fields_for :schedule do |s|
+        = s.input :cron_syntax_frequency, hint: true
+
+  %hr{'aria-hidden': 'true'}
+
+  .row
+    .col-12
+      = link_to t('.commands.cancel'), admin_integrations_root_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary float-right'

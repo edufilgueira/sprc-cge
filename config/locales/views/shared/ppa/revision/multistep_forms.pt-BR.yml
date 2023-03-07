@@ -1,0 +1,15 @@
+pt-BR:
+  shared:
+    ppa:
+      revision:
+        multistep_forms:
+          steps:
+            region:
+              title: Região
+              description: Selecione o município da região em que você deseja participar.
+            theme:
+              title: Tema
+              description: Selecione os Temas (Políticas Públicas) que são de maior interesse para você.
+              axes: Eixos
+              themes: Temas
+              

@@ -1,0 +1,29 @@
+.container
+  = simple_form_for [:operator, topic] do |f|
+
+    .row
+      .col-md-6.col-sm-12
+        = f.input :name, autofocus: true
+      .col-md-6.col-sm-12
+        - organ_select_text = t('.select.all')
+        = f.association :organ, include_blank: organ_select_text, collection: organs_for_select, input_html: { 'aria-label': organ_select_text }
+
+    %hr{'aria-hidden': 'true'}
+
+    .nested-container
+
+      %h3.card-title
+        = Subtopic.model_name.human(count: 2)
+
+      #subtopics
+        = f.simple_fields_for :subtopics do |subtopic|
+          = render 'subtopic_fields', f: subtopic
+        .links
+          = link_to_add_association t('.subtopics.add'), f, :subtopics, class: "mt-md-2 btn btn-success icon-plus"
+
+    %hr{'aria-hidden': 'true'}
+
+    .row
+      .col-12
+        = link_to t('.commands.cancel'), operator_topics_path, class: 'btn btn-warning pull-left'
+        = f.submit t('commands.save'), class: 'btn btn-primary float-right'

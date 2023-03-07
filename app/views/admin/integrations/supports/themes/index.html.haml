@@ -1,0 +1,26 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+= form_for admin_integrations_supports_themes_path, method: :get do |f|
+
+  .card.card-custom
+
+    .card-header
+
+      %h2.card-title
+        = t('.title')
+
+    .card-block
+      = render 'filters', f: f
+
+
+    .card-block
+
+      - if themes.present?
+        = render 'table', themes: themes
+
+      - else
+
+        .row
+
+          %i.col-md-12.text-center
+            = t('.empty')

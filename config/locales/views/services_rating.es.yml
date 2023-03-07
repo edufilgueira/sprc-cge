@@ -1,0 +1,11 @@
+es:
+  services_rating:
+    index:
+      title: Evaluaciones de servicio público
+      rating: 
+        title: Sugerencias
+        description: ¡Queremos escuchar de ti! ¿Qué servicio público brindado por el Gobierno de Ceará le gustaría ser evaluado?
+
+    create:
+      done: Gracias)! Tu sugerencia fue recibida con éxito.
+      error: Complete el campo Evaluaciones de servicio público.

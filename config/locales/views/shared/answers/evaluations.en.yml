@@ -1,0 +1,122 @@
+en:
+  shared:
+    answers:
+      evaluations:
+
+        intro:
+          title: 'Rate the service by answering the customer satisfaction survey'
+          button: 'Answer survey'
+
+        questions:
+          title: 'Satisfaction survey'
+
+          sou:
+            question_01:
+              title: 'QUESTION N. 1'
+              description: 'On a scale of 1-5, show how satisfied you were:'
+            question_01_a:
+              description: '<strong>a.</strong> In general, what is your level of satisfaction with the Ombudsman service (consider the attention, commitment and respect of the ombudsman and his team)'
+              very_bad: 'COMPLETELY DISSATISFIED'
+              very_well: 'EXTREMELY SATISFIED'
+            question_01_b:
+              description: '<strong>b.</strong> How satisfied are you with the response time'
+              very_bad: 'COMPLETELY DISSATISFIED'
+              very_well: 'EXTREMELY SATISFIED'
+            question_01_c:
+              description: '<strong>c.</strong> How satisfied are you with the service channel you used to register your manifestation? (consider communication, ease of use, speed and functionality). <br><strong>You used the channel: [used_input]</strong>'
+              very_bad: 'COMPLETELY DISSATISFIED'
+              very_well: 'EXTREMELY SATISFIED'
+            question_01_d:
+              description: '<strong>d.</strong> How satisfied are you with the quality of the response presented? (consider whether the answer meets the questions presented and whether the ombudsman justifies a possible impossibility of service)'
+              very_bad: 'COMPLETELY DISSATISFIED'
+              very_well: 'EXTREMELY SATISFIED'
+            question_02:
+              title: 'QUESTION N. 2'
+              description: 'Before taking the survey, you thought that the quality of the Ombudsman Service was:'
+              very_bad: 'VERY LOW'
+              very_well: 'VERY HIGH'
+            question_03:
+              title: 'QUESTION N. 3'
+              description: 'I now realize that the Ombudsman service is:'
+              very_bad: 'WORSE THAN I THOUGHT'
+              very_well: 'MUCH BETTER THAN I THOUGHT'
+            question_04:
+              title: 'QUESTION N. 4'
+              description: 'What did you like or what do you think we can improve in our service?'
+              placeholder: 'Include a report describing your assessment of our service'
+            question_05:
+              title: 'QUESTION N. 5'
+              description: 'Do you consider that the demand has been resolved?'
+              'yes': 'Yes'
+              'no': 'No'
+              partially: Partially
+
+          sic:
+            question_01:
+              title: 'QUESTION N. 1'
+              description: 'On a scale of 1-5, show how satisfied you were:'
+            question_01_a:
+              description: '<strong>a.</strong> In general, what is your level of satisfaction with the Information service (consider the attention, commitment and respect of the ombudsman and his team)'
+              very_bad: 'COMPLETELY DISSATISFIED'
+              very_well: 'EXTREMELY SATISFIED'
+            question_01_b:
+              description: '<strong>b.</strong> How satisfied are you with the response time'
+              very_bad: 'COMPLETELY DISSATISFIED'
+              very_well: 'EXTREMELY SATISFIED'
+            question_01_c:
+              description: '<strong>c.</strong> How satisfied are you with the service channel you used to register your manifestation? (consider communication, ease of use, speed and functionality). <br><strong>You used the channel: [used_input]</strong>'
+              very_bad: 'COMPLETELY DISSATISFIED'
+              very_well: 'EXTREMELY SATISFIED'
+            question_01_d:
+              description: '<strong>d.</strong> How satisfied are you with the quality of the response presented? (consider whether the answer meets the questions presented and whether the ombudsman justifies a possible impossibility of service)'
+              very_bad: 'COMPLETELY DISSATISFIED'
+              very_well: 'EXTREMELY SATISFIED'
+            question_02:
+              title: 'QUESTION N. 2'
+              description: 'Before taking the survey, you thought that the quality of this Information Service was:'
+              very_bad: 'VERY LOW'
+              very_well: 'VERY HIGH'
+            question_03:
+              title: 'QUESTION N. 3'
+              description: 'Now you attest that the service performed by the Citizen Information Service is:'
+              very_bad: 'WORSE THAN I THOUGHT'
+              very_well: 'MUCH BETTER THAN I THOUGHT'
+            question_04:
+              title: 'QUESTION N. 4'
+              description: 'What did not you like or do you think we could improve in our service?'
+              placeholder: 'Include a report describing your assessment of our service'
+
+          call_center:
+            question_01:
+              title: 'QUESTION N. 1'
+              description: 'On a scale of 1-5, show how satisfied you were:'
+            question_01_a:
+              description: '<strong>a.</strong> In general, how satisfied you were with the Call Center 155 Service'
+              very_bad: 'COMPLETELY DISSATISFIED'
+              very_well: 'EXTREMELY SATISFIED'
+            question_01_b:
+              description: '<strong>b.</strong> Wish response timing'
+              very_bad: 'COMPLETELY DISSATISFIED'
+              very_well: 'EXTREMELY SATISFIED'
+            question_01_c:
+              description: '<strong>c.</strong> With the tool being used for the register of your manifestation'
+              very_bad: 'COMPLETELY DISSATISFIED'
+              very_well: 'EXTREMELY SATISFIED'
+            question_01_d:
+              description: '<strong>d.</strong> With the quality of the response given'
+              very_bad: 'COMPLETELY DISSATISFIED'
+              very_well: 'EXTREMELY SATISFIED'
+            question_02:
+              title: 'QUESTION N. 2'
+              description: 'Before taking the survey, you thought that the quality of our Call Center 155 service was:'
+              very_bad: 'COMPLETELY DISSATISFIED'
+              very_well: 'EXTREMELY SATISFIED'
+            question_03:
+              title: 'QUESTION N. 3'
+              description: 'Now you attest that the Call Center 155 service is:'
+              very_bad: 'MUCH WORSE THAN I EXPECTED'
+              very_well: 'MUCH BETTER THAN I EXPECTED'
+            question_04:
+              title: 'QUESTION N. 4'
+              description: 'What did not you like or did you think we could improve on our service?'
+              placeholder: 'Include a report describing your assessment of our service'

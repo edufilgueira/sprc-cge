@@ -1,0 +1,51 @@
+.card-filters.filter-bar{'data-filter-bar': 'real_states'}
+
+  = form_for transparency_real_states_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row.mt-3
+      .col-12.col-lg-4
+        - options = options_for_select(supports_organs_for_select_with_all_option, params[:manager_id])
+
+        = label_tag(:manager_id, Integration::RealStates::RealState.human_attribute_name(:manager_id))
+        = select_tag(:manager_id, options)
+
+      .col-12.col-lg-4
+        - options = options_from_collection_for_select(Integration::Supports::RealStates::PropertyType.order(:title), :id, :title, params[:property_type_id])
+
+        = label_tag(:property_type_id, Integration::RealStates::RealState.human_attribute_name(:property_type_id))
+        = select_tag(:property_type_id, options, include_blank: t('.property_type.select.all'))
+
+      .col-12.col-lg-4
+        - options = options_from_collection_for_select(Integration::Supports::RealStates::OccupationType.order(:title), :id, :title, params[:occupation_type_id])
+
+        = label_tag(:occupation_type_id, Integration::RealStates::RealState.human_attribute_name(:occupation_type_id))
+        = select_tag(:occupation_type_id, options, include_blank: t('.occupation_type.select.all'))
+
+    .row.mt-3
+      .col-12.col-lg-4
+        - select_options = transparency_select_options_from_model(Integration::RealStates::RealState, :municipio)
+        - options = options_for_select(select_options, params[:municipio])
+
+        = label_tag(:municipio, Integration::RealStates::RealState.human_attribute_name(:municipio))
+        = select_tag(:municipio, options, include_blank: t('messages.filters.select.all.male'))
+
+      .col-12.col-lg-4
+        - select_options = transparency_select_options_from_model(Integration::RealStates::RealState, :bairro)
+        - options = options_for_select(select_options, params[:bairro])
+
+        = label_tag(:bairro, Integration::RealStates::RealState.human_attribute_name(:bairro))
+        = select_tag(:bairro, options, include_blank: t('messages.filters.select.all.male'))
+
+
+    .row.mt-3
+      .col-12.col-lg-9
+        = label_tag(:search, t('messages.filters.search.label'))
+        = text_field_tag(:search, params[:search], placeholder: t('.search_placeholder') ,class: 'form-control w-100 mb-3', 'data-filter-bar-ignore-submit-on-enter': 'true')
+
+      .col-12.col-lg-3
+
+        - # forma simples de align-bottom no botão de busca
+        .mt-4.pt-2
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'

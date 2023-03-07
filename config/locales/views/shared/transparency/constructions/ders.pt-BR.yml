@@ -1,0 +1,70 @@
+pt-BR:
+  shared:
+    transparency:
+
+      constructions:
+
+        ders:
+
+          index:
+            title: Obras rodoviárias
+            description: >
+              Consulte aqui todas as obras de construção e melhorias em estradas estaduais.
+            last_update: 'Última Atualização SOP:'
+
+            source: |
+              <p><strong>Fonte de dados:</strong></p>
+              <p>Superintendência de Obras Públicas - SOP</p>
+
+            filters:
+              title: Consulta avançada
+              search_placeholder: >
+                Busque por construtora, supervisora, distrito, programa,
+                servicos, número SOP ou número SACC
+
+            chart:
+              valor_aprovado:
+                unit: 'Total atualizado R$'
+                title: 'Maiores valores atualizados'
+
+            charts:
+              tabs:
+                servicos:
+                  title: 'Serviços'
+                distrito:
+                  title: 'Distritos'
+                programa:
+                  title: 'Programas'
+                construtora:
+                  title: 'Construtoras'
+
+            stats:
+              title: Principais números relacionados às Obras Rodoviárias
+              count: 'Quantidade de obras ativas em <strong>%{date}</strong>'
+              download:
+                xlsx: 'Baixar planilha Excel com todos os dados'
+                csv: 'Baixar planilha CSV com todos os dados'
+
+            counts:
+              ders_count:
+                title: Quantidade de obras filtradas
+              ders_sum:
+                title: Valor das obras filtradas
+
+            table:
+              header:
+                status: Situação
+                trecho: Trecho
+                construtora: Construtora
+                extensao: Extensão
+                valor_aprovado: Valor atualizado
+                numero_contrato_sic: Número SACC
+              row:
+                extensao_unit: km
+
+          show:
+            schedule: Cronograma Supervisora
+
+          measurements:
+            title: Planilha de Medições
+            empty: Nenhuma medição realizada.

@@ -1,0 +1,55 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.card.card-custom
+
+  .card-header
+
+    %h2.card-title
+      = t('.title')
+
+  .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+    .remote-content{'data-remote-content': controller_name}
+
+      .row
+        .col-4.offset-8.mb-2
+
+          = link_to t('.new'), new_ppa_admin_plan_path, class: 'btn btn-success btn-block'
+
+      .remote-content-result{ 'data-remote-content-result': controller_name }
+
+        - if ppa_plans.empty?
+
+          .text-muted.text-center
+            = t('messages.filters.no_results_found')
+
+        - else
+          .table-responsive
+            %table.table.table-hover.table-striped.table-sm.table-sorted
+
+              %thead
+                %tr
+                  %th= PPA::Plan.human_attribute_name(:start_year)
+                  %th= PPA::Plan.human_attribute_name(:end_year)
+                  %th= PPA::Plan.human_attribute_name(:status)
+
+                - ppa_plans.each do |plan|
+                  - show_path = ppa_admin_plan_path(plan)
+                  %tr
+
+                    %td
+                      = link_to plan.start_year, show_path
+
+                    %td
+                      = link_to plan.end_year, show_path
+
+                    %td
+                      = link_to PPA::Plan.human_attribute_name(plan.status), show_path 
+
+                    %td
+                      .float-right
+                        = link_to t('commands.edit'), edit_ppa_admin_plan_path(plan), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+                        / = link_to t('commands.remove'), ppa_admin_plan_path(plan), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link hover-link float-left d-inline-block'
+
+          = paginate ppa_plans

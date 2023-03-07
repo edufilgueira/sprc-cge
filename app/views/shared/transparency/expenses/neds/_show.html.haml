@@ -1,0 +1,209 @@
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h3.card-title
+          = ned.title
+
+        .card-commands
+          = render 'shared/components/btn_link_to_print'
+
+      .card-block
+
+        - if ned.especificacao_geral.present?
+          .row
+            .col-12
+              = content_with_label(ned, :especificacao_geral)
+
+        .row
+          .col-12
+            = content_with_label(ned, :items_description)
+
+        .row
+
+          - # a ned pode ser de um contrato ou de um convênio.
+
+          - contract = ned.contract || ned.convenant
+
+          .col-12
+            .content-with-label
+              %p.content-label
+                = ::Integration::Expenses::Ned.human_attribute_name(:contract)
+
+              %p.content-value
+                - label = t('.contract.none')
+
+                - if contract.present?
+                  - label = t('.contract.link', value: contract.title)
+
+                  - if contract.convenio?
+                    - path = (namespace == :admin ? admin_integrations_contracts_convenant_path(contract) : transparency_contracts_convenant_path(contract))
+                  - else
+                    - path = (namespace == :admin ? admin_integrations_contracts_contract_path(contract) : transparency_contracts_contract_path(contract))
+
+                  = link_to label, path
+                - else
+                  = label
+
+        .row
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :cpf_cnpj_credor)
+
+          .col-12.col-lg-6
+
+            - if ned.is_a?(Integration::Expenses::Daily) && ned.server_salary.present?
+              - server_salary = ned.server_salary
+              - label = ned.razao_social_credor
+
+              .content-with-label
+                %p.content-label
+                  = ::Integration::Expenses::Daily.human_attribute_name(:razao_social_credor)
+
+                %p.content-value
+                  - path = (namespace == :admin ? admin_integrations_server_salary_path(server_salary) : transparency_server_salary_path(server_salary))
+
+                  = link_to label, path
+
+            - else
+
+              = content_with_label(ned, :razao_social_credor)
+
+        .row
+
+          .col-12.col-lg-6
+            - management_unit = (ned.management_unit.present?) ? :management_unit_title : :unidade_gestora
+            = content_with_label(ned, management_unit)
+
+          .col-12.col-lg-6
+            - executing_unit = (ned.executing_unit.present?) ? :executing_unit_title : :unidade_executora
+            = content_with_label(ned, executing_unit)
+
+        %hr{'aria-hidden': true}
+
+
+        .row
+          .col-12.col-lg-6
+            = content_with_label(ned, :data_emissao)
+
+        .row
+          .col-12.col-lg-6
+            = content_with_label(ned, :calculated_valor_final)
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :calculated_valor_pago_final)
+
+        .row
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :calculated_valor_pago_exercicio)
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :calculated_valor_pago_apos_exercicio)
+
+        .row
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :calculated_valor_liquidado_exercicio)
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :calculated_valor_liquidado_apos_exercicio)
+
+        %hr{'aria-hidden': true}
+
+        .row
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :numero_processo_protocolo_original)
+
+        .row
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :classificacao_orcamentaria_reduzido)
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :classificacao_orcamentaria_completo)
+
+
+        - if namespace == :admin
+          %hr{'aria-hidden': true}
+
+          .row
+            .col-4
+              = content_with_label(ned, :classificacao_unidade_orcamentaria)
+            .col-4
+              = content_with_label(ned, :classificacao_funcao)
+            .col-4
+              = content_with_label(ned, :classificacao_subfuncao)
+
+          .row
+            .col-4
+              = content_with_label(ned, :classificacao_programa_governo)
+            .col-4
+              = content_with_label(ned, :classificacao_acao_governamental)
+            .col-4
+              = content_with_label(ned, :classificacao_regiao_administrativa)
+
+          .row
+            .col-4
+              = content_with_label(ned, :classificacao_natureza_despesa)
+            .col-4
+              = content_with_label(ned, :classificacao_fonte_recursos)
+            .col-4
+              = content_with_label(ned, :classificacao_subfonte)
+
+          .row
+            .col-4
+              = content_with_label(ned, :classificacao_tipo_despesa)
+
+
+        %hr{'aria-hidden': true}
+
+
+        .row
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :natureza)
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :efeito)
+
+
+        .row
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :function_title)
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :sub_function_title)
+
+        .row
+          .col-12.col-lg-6
+            = content_with_label(ned, :government_program_title)
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :government_action_title)
+
+        .row
+          .col-12.col-lg-6
+            = content_with_label(ned, :modalidade_licitacao)
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :resource_source_title)
+
+        .row
+          .col-12.col-lg-6
+            = content_with_label(ned, :expense_nature_item_title)
+
+          .col-12.col-lg-6
+            = content_with_label(ned, :projeto)
+
+    = render 'shared/transparency/expenses/neds/show/ned_items', ned: ned, ned_items: ned.ned_items
+
+    %hr{'aria-hidden': true}
+
+    = render 'shared/transparency/expenses/neds/show/npds', ned: ned, npds: ned.npds.ordinarias

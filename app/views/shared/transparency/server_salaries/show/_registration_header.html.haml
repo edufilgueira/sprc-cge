@@ -1,0 +1,54 @@
+- server = server_salary.server
+- registration = server_salary.registration
+
+- # Conteúdo visível apenas aos administradores.
+
+- if admin?(current_user)
+  .row
+    .col-12.col-md-4
+      = dash_content_with_label(registration, :dsc_matricula)
+
+    .col-12.col-md-4
+      = dash_content_with_label(server, :dsc_cpf)
+
+    .col-12.col-md-4
+      = dash_content_with_label(server, :dth_nascimento)
+
+  .row
+    .col-12.col-md-4
+      = dash_content_with_label(registration, :num_folha)
+    .col-12.col-md-4
+      = dash_content_with_label(registration, :cod_afastamento)
+
+
+- # Conteúdo visível a todos os usuários
+
+.row
+  .col-12.col-md-8
+    = dash_content_with_label(server_salary, :organ_title)
+  .col-12.col-md-4
+    = dash_content_with_label(server_salary, :role_name)
+
+
+.row
+  .col-12.col-md-4
+    = dash_content_with_label(registration, :vdth_admissao)
+
+  - # XXX: escondendo a informação pois há problema na origem dos dados
+  - # .col-12.col-md-4
+  - # = dash_content_with_label(registration, :dth_afastamento)
+
+  .col-12.col-md-4
+
+    .content-with-label
+      %p.content-label
+        = Integration::Servers::Registration.human_attribute_name(:functional_status)
+      %p.content-value
+        = server_salary.functional_status_str || registration.functional_status_str
+
+  .col-12.col-md-4
+    .content-with-label
+      %p.content-label
+        = Integration::Servers::Registration.human_attribute_name(:vlr_carga_horaria)
+      %p.content-value
+        = registration.vlr_carga_horaria

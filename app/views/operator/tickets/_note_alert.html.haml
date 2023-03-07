@@ -1,0 +1,13 @@
+- if ticket.note.present?
+  .no-print
+
+    .row.justify-content-center.mt-4
+      .col-xl-10.col-12
+
+        .alert.alert-warning.alert-dismissible.fade.show{ role: 'alert' }
+
+          %h3.h4.text-center
+            %i.fa.fa-exclamation-circle
+            = Ticket.human_attribute_name(:note)
+
+          = raw ticket.note

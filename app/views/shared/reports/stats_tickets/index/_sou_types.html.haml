@@ -1,0 +1,17 @@
+%h4.card-subtitle.mb-3
+  = t('.title')
+
+- sou_types = stats_ticket.data[:sou_types]
+
+- if sou_types.blank?
+
+  .row.col-md-12.text-center
+    %em= t('.no_content')
+
+- else
+
+  - series_data_keys = stats_sou_type_serie_keys
+  - series_data_values = stats_sou_type_serie_values(sou_types)
+  - series_data_percentages = stats_sou_type_serie_percentages(sou_types)
+
+  .chart{ data: { "chart_sou_types_#{ticket_type}": '', title: t(".#{ticket_type}.name"), unit: t(".#{ticket_type}.unit"), series_name: [t('.series_name')] , series_data_keys: [series_data_keys], series_data_values: [series_data_values], series_data_percentages: [series_data_percentages], 'show-percentage': true } }

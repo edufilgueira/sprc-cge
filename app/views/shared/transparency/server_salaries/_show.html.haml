@@ -1,0 +1,49 @@
+= cache_unless(admin?(current_user), cache_key) do
+  .mt-4
+    %hr
+
+    %nav.nav.nav-pills{id: 'server-salaries', role: 'tablist', 'aria-orientation': 'horizontal'}
+
+      - all_server_salaries.each_with_index do |another_server_salary, index|
+
+        - html_class = (another_server_salary == server_salary ? 'active' : '')
+
+        %a.nav-link{id: "server-salaries-#{another_server_salary.id}-tab", 'data-toggle': 'pill', href: "#server-salaries-#{another_server_salary.id}", role: 'tab', class: html_class}
+
+          = another_server_salary.registration.organ_and_role
+
+    .tab-content{id: 'server-salariesContent'}
+
+      - all_server_salaries.each_with_index do |another_server_salary, index|
+
+        - html_class = (another_server_salary == server_salary ? 'active show' : '')
+
+        .tab-pane.fade{id: "server-salaries-#{another_server_salary.id}", "aria-labelledby": "#server-salaries-#{another_server_salary.id}-tab", role: 'tabpanel', class: html_class}
+
+          .card.card-custom
+            .card-block
+              = render 'shared/transparency/server_salaries/show/registration_header', server_salary: another_server_salary
+
+          .my-4
+            .row
+              .col-12
+
+                .card.card-custom
+                  .card-header
+                    %h4.card-title
+                      = t('shared.transparency.server_salaries.show.credit_proceeds.title')
+                  .card-block
+                    = render 'shared/transparency/server_salaries/show/credit_proceeds', server_salary: another_server_salary
+
+
+                .card.card-custom
+                  .card-header
+                    %h4.card-title
+                      = t('shared.transparency.server_salaries.show.debit_proceeds.title')
+                  .card-block
+                    = render 'shared/transparency/server_salaries/show/debit_proceeds', server_salary: another_server_salary
+
+
+                .card.card-custom
+                  .card-block
+                    = render 'shared/transparency/server_salaries/show/total_proceeds', server_salary: another_server_salary

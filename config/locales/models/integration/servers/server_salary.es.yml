@@ -1,0 +1,43 @@
+es:
+
+  activerecord:
+
+    attributes:
+
+      integration/servers/server_salary:
+
+        server_name: Funcionario Público 
+        discount_others: Otros descuentos 
+        discount_total: Total descuento
+        discount_under_roof: Abatimiento en función del 'techo' consititucional 
+        status: Situación funcional
+        income_dailies: Diárias
+        income_final: Salario neto
+        income_total: Salario bruto
+
+        date: Mes
+        integration_supports_organ_id: 'Órgano/Entidad'
+        organ_name: 'Órgano/Entidad'
+        organ_sigla: 'Órgano/Entidad'
+        organ_title: 'Órgano/Entidad'
+        registration: Matricula
+        role_name: 'Cargo/Función/Empleo'
+        integration_supports_server_role_id: 'Cargo/Función/Empleo'
+
+  integration/servers/server_salary:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Funcionario público %{month}-%{year}'
+
+    statuses:
+      all: Todas las situaciones
+      civil_active: Civil Activo
+      militar_active: Militar Activo
+      civil_away_with_onus: Civil Alejado con Cargo
+      militar_away_with_onus: Militar Alejado con Cargo
+      civil_away_without_onus: Civil Alejado sin Cargo 
+      militar_away_without_onus: Militar Alejado sin Cargo
+      pensioner: Pensionista
+      food_pension: Pensión Alimenticia
+      injunction: Mandato

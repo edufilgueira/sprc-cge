@@ -1,0 +1,13 @@
+.nested-fields
+
+  .row
+
+    .col-11
+      .form-group
+        - select_text = t('.sub_department.select')
+        - options = [f.object.sub_department_name, f.object.sub_department_id]
+        = f.association :sub_department, prompt: select_text, collection: [options], input_html: { 'data-input': 'sub_department', 'aria-label': select_text, 'data-url': api_v1_sub_departments_path, 'data-selected-id': options[1], 'data-selected-text': options[0] }, label: false, selected: options[1]
+
+
+    .col-1.text-center
+      = link_to_remove_association '', f, { class: 'fa fa-close text-danger mt-2', 'aria-label': t('.remove') }

@@ -1,0 +1,10 @@
+es:
+  activerecord:
+    attributes:
+
+      transparency/export:
+        name: 'Nombre'
+        email: 'E-mail'
+
+  transparency_export:
+    title: 'Generar hoja de cálculo CSV con los datos filtrados'

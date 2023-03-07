@@ -1,0 +1,53 @@
+/ - content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.font-weight-bold
+	= t('.title')
+
+%hr.border-2
+
+.row
+	.col-md-12
+		.mb-4.card.rounded.border-shadow
+
+			.m-4
+				.row.row.border-bottom
+					.col-lg-4
+						%p.font-weight-bold.mb-2.mt-4
+							= t '.plan'
+						%p.lead.pl-4
+							= proposal.plan.name
+
+					.col-lg-4
+						%p.font-weight-bold.mb-2.mt-4
+							= t '.region'
+						%p.lead.pl-4
+							= proposal.region.name  
+
+					.col-lg-12
+						%p.font-weight-bold.mb-2.mt-4
+							= t '.axis'
+						%p.lead.pl-4
+							= proposal.theme.axis.name
+
+					.col-lg-6
+						%p.font-weight-bold.mb-2.mt-4
+							= t '.theme'
+						%p.lead.pl-4
+							= proposal.theme.name        
+
+					.col-lg-12
+						%p.font-weight-bold.mb-2.mt-4
+							= t '.justification'
+
+						.pb-2.pl-4
+							-# é HTML
+							= simple_format proposal.justification
+
+				.row.p-4
+					.col-2
+						= link_to t('.back'), ppa_plan_themes_path(plan.id, region.code), class: 'btn btn-secondary btn-block'
+					.col-2
+						= link_to t('commands.edit'), edit_ppa_plan_region_theme_proposal_path(plan.id, region.code, theme.id, proposal), class: 'btn btn-tertiary btn-block'
+					.col-6
+					.col-2
+						= link_to t('commands.remove'), ppa_plan_region_theme_proposal_path(plan.id, region.code, theme.id, proposal), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn btn-outline-danger pt-2 ml-2'

@@ -1,0 +1,40 @@
+!!! 5
+%html{lang: 'pt-BR'}
+
+  %head
+
+    = render 'shared/operator/head'
+
+  %body{ data: { controller: controller_path } }
+
+    = render 'shared/a11y/content_link'
+
+    = render 'shared/ribbon'
+
+    = render 'shared/operator/navbar'
+
+    .container
+
+      = render 'shared/operator/notice'
+
+      = render 'shared/operator/alert'
+
+      = render 'shared/operator/toolbar'
+
+      = render 'shared/a11y/content_anchor'
+
+      = yield
+
+    = render 'shared/application/privacy_statement'
+
+    = render 'shared/a11y/footer_links'
+
+    = render 'shared/operator/footer'
+    = render 'shared/operator/fast_search'
+
+    = javascript_include_tag(:operator)
+    = render 'shared/javascripts'
+    = yield(:javascript)
+    = noscript_include_tag
+
+    = render 'shared/google_analytics'

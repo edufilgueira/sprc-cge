@@ -1,0 +1,6 @@
+en:
+  activerecord:
+    attributes:
+      ticket_department_email:
+        email: E-mail address
+        active: Active

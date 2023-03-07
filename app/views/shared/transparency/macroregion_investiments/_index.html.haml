@@ -1,0 +1,58 @@
+= cache(cache_key) do
+
+  = render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+  .my-4
+
+    %hr{'aria-hidden': 'true'}
+
+    = render 'transparency/exports/form'
+
+    %hr{'aria-hidden': 'true'}
+
+    .fa.fa-spin.fa-refresh.m-1.text-muted.float-right{'data-remote-content-loader': ''}
+
+    .row
+
+      .col-12.col-lg-6
+        .content-with-label
+          - label = raw(t('.counts.macroregion_investiments_sum.title'))
+          - value = number_to_currency(filtered_sum)
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+    %hr{'aria-hidden': 'true'}
+
+    - header = [:descricao_poder, :descricao_regiao, :valor_lei, :valor_lei_creditos, :valor_empenhado, :valor_pago, :perc_pago_calculated]
+
+    - table_locale = t('.table')
+
+    = render 'shared/components/remote_table', header: header, collection: macroregion_investiments, sort_columns: sort_columns, table_locale: table_locale, table_html: { class: 'treeview small' } do |investment|
+
+
+      %tr
+        %td
+          = investment.descricao_poder
+
+        %td
+          = investment.descricao_regiao
+
+        %td
+          = number_to_currency(investment.valor_lei)
+
+        %td
+          = number_to_currency(investment.valor_lei_creditos)
+
+        %td
+          = number_to_currency(investment.valor_empenhado)
+
+        %td
+          = number_to_currency(investment.valor_pago)
+
+        %td
+          = number_to_percentage(investment.perc_pago_calculated, precision: 2)

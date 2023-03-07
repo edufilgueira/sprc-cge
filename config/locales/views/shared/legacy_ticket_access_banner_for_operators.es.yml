@@ -1,0 +1,6 @@
+es:
+  shared:
+    legacy_ticket_access_banner_for_operators:
+      content: >-
+        Para las manifestaciones creadas antes del %{date}, por favor
+        <a href="%{url}" target="_blank">acceda aquí</a>

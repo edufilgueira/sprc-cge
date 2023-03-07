@@ -1,0 +1,256 @@
+@import 'bootstrap/variables';
+@import 'base/variables';
+
+.login-mobile {
+  .btn-white {
+    position: relative;
+  }
+
+  .fa-btn-icon {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    height: 32px;
+
+    background-color: #248645;
+    border-radius: 6px;
+    color: white;
+    line-height: 22px;
+  }
+}
+
+body[data-controller=home] {
+
+  .home-background {
+    background: #005339; /* Old browsers */
+    background: -moz-linear-gradient(left, #005339 0%, #008645 52%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #005339 0%,#008645 52%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #005339 0%,#008645 52%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005339', endColorstr='#008645',GradientType=1 ); /* IE6-9 */
+
+    // background-image: url(image-path('background.png'));
+
+    height: 225px;
+  }
+
+  .home-header {
+    margin-top: -225px;
+
+    .search-bar {
+      margin-top: 40px;
+
+      label {
+        display: block;
+        font-size: 1.4em;
+        font-weight: 200;
+        color: white;
+      }
+    }
+
+    .home-banner-image {
+      float: left;
+    }
+
+    .home-banner {
+      padding-top: 30px;
+
+      img {
+        margin-right: 20px;
+
+        &.right-border {
+          padding-right: 20px;
+
+          border-right: 1px solid white;
+        }
+      }
+
+      .home-banner-title {
+        margin-top: -34px;
+        white-space: pre-wrap;
+        text-align: left;
+
+        h2 {
+          font-size: 22px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .home-banner-title {
+          width: 70%;
+          margin-top: -33px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .home-banner-title {
+          width: 50%;
+          margin-top: -49px;
+
+          h2 {
+            font-size: 1.4em;
+          }
+        }
+      }
+
+      @media (max-width: 576px) {
+        .home-banner-title {
+          margin-top: -49px;
+
+          h2 {
+            font-size: 1.0em;
+            margin-top: 10px;
+            width: 75%;
+          }
+        }
+      }
+    }
+  }
+
+  .home-title {
+    font-weight: 200;
+  }
+
+  .nav-search-container {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    width: 100%;
+
+    label {
+      line-height: normal;
+      font-size: 1.25em;
+      color: white;
+    }
+
+    .form-control,
+    .btn-home-search {
+      border: 0;
+      border-radius: 0;
+      box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  footer {
+    .footer-top-line {
+      display: block;
+    }
+  }
+
+  .btn-home-search {
+    background-color: $app-yellow;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten($app-orange, 10%);
+      border-color: lighten($app-orange, 10%);
+    }
+  }
+}
+
+.card {
+  &.home-card {
+    color: black;
+    text-align: left;
+    border-bottom: 3px solid $app-yellow;
+    min-height: 310px;
+
+    .card-title {
+      font-weight: bold;
+
+      > .fa {
+        color: $app-green;
+      }
+    }
+
+    .btn {
+      white-space: normal;
+    }
+  }
+
+  &.denunciation-card {
+    color: black;
+    text-align: left;
+    border-bottom: 3px solid $app-yellow;
+    min-height: 145px;
+    margin-bottom: 13px;
+
+    .card-title {
+      font-weight: bold;
+
+      > .fa {
+        color: $app-green;
+      }
+    }
+
+    .btn {
+      white-space: normal;
+    }
+  }
+
+  &.corona-card {
+    color: black;
+    text-align: left;
+    border-bottom: 3px solid $app-yellow;
+    min-height: 299px;
+
+    .card-title {
+      font-weight: bold;
+
+      > .fa {
+        color: $app-green;
+      }
+    }
+
+    .btn {
+      white-space: normal;
+    }
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, "lg")) {
+  body[data-controller=home] {
+    .home-background {
+      height: 420px;
+    }
+
+    .home-login {
+      margin-top: 144px;
+    }
+
+    .card {
+      &.home-card {
+        min-height: auto;
+      }
+    }
+
+    .home-header {
+      max-height: unset;
+      padding-bottom: 20px;
+      margin-top: -420px;
+
+      .home-banner-image {
+        float: none;
+      }
+
+      .home-banner {
+        text-align: center;
+        padding-top: 70px;
+
+        img {
+          margin: 0;
+
+          &.right-border {
+            padding-right: 0;
+
+            border-right: 0;
+          }
+        }
+      }
+    }
+
+    .nav-search-container {
+      right: 0px;
+    }
+
+  }
+}

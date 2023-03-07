@@ -1,0 +1,128 @@
+@import 'base/variables';
+@import 'bootstrap/variables';
+
+.cursor-help {
+  cursor: help;
+}
+
+.card {
+  margin-bottom: 20px;
+
+  .card-title {
+    min-height: 50px;
+  }
+
+  .card-img-featured {
+    min-height: 314px
+  }
+}
+
+hr[aria-hidden] {
+  display: none;
+}
+
+.nav-item {
+  cursor: pointer;
+
+  &.active {
+    .fa {
+      font-size: 3rem;
+    }
+
+    p {
+      display: none;
+    }
+
+    h4 {
+      font-size: 2rem;
+    }
+  }
+}
+
+.tri-nav-item {
+  position: relative;
+
+  &.active {
+    &:after {
+      content: '';
+      position: absolute;
+      left: calc(50% - 20px);
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-top: 20px solid $app-green;
+    }
+  }
+
+  &.px-4,
+  &.pb-4 {
+    &.active {
+      &:after {
+        bottom: -48px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  .card {
+    .card-img-featured {
+      min-height: auto;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    i {
+      float: left;
+      min-height: 50px;
+      padding-right: 10px;
+    }
+
+    .graphic-title {
+      text-align: center;
+    }
+  }
+
+  .tab-content {
+    > .tab-pane-top-4 {
+      display: block;
+      opacity: 1;
+
+      .card-body {
+        border-top: solid 10px #eeeeee;
+      }
+    }
+  }
+
+  .flex-column-sm {
+    flex-direction: column !important;
+  }
+
+  .nav-tabs {
+    .nav-item {
+      .active {
+        background-color: $app-green;
+        border: 0;
+        border-radius: 4px;
+        color: white;
+      }
+    }
+  }
+}
+
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  .list-group-item {
+    a {
+      max-width: none;
+    }
+  }
+}
+

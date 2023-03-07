@@ -1,0 +1,101 @@
+#
+# Arquivo de localização para mensagens em geral e compartilhadas.
+#
+
+pt-BR:
+  messages:
+
+    chart:
+      limited: '*O gráfico está limitado aos 10 maiores valores. Baixe a planilha completa para ter acesso a todos os dados.'
+
+    comments:
+      anonymous_user: cidadão anônimo
+
+    content:
+      undefined: Indefinido
+      'no': Não
+      'yes': Sim
+
+    form:
+      select: Selecione uma opção
+      none: Nenhum
+
+    filters:
+      clear: Limpar filtro
+
+      count:
+        # aqui %{count} é o total_count, e temos:
+        # - %{total} para o count com delimitadores (,.)
+        zero:  'Nenhum registro.'
+        one:   'Total de <strong>1</strong> registro.'
+        other: 'Total de <strong>%{total}</strong> registros.'
+      total_count:
+        # aqui %{count} é o total_count, e temos:
+        # - %{total} para o count com delimitadores (,.)
+        # - %{filtered} para o count filtrado com delimitadores (.,)
+        zero: ''
+        one:  'Exibindo <strong>%{filtered}</strong> de <strong>%{total}</strong> registros.'
+        other:  'Exibindo <strong>%{filtered}</strong> de <strong>%{total}</strong> registros.'
+
+      search:
+        label: Busca
+        placeholder: Busca...
+
+      search_sacc:
+        label: Busca pelo SACC
+        placeholder: Busca pelo SACC...
+
+      select:
+        all:
+          female: Todas
+          male: Todos
+        organ: Filtrar por órgão
+        organ_association: Selecione um órgão
+        subnet: Filtrar por subrede
+        status: Filtrar por Situação
+        date: Filtrar por data
+        month: Filtrar por mês
+        month_start: Filtrar por mês inicial
+        month_end: Filtrar por mês final
+        year: Filtrar por ano
+        account_configuration: Filtrar por tipo de receita
+        role: Filtrar por Cargo
+        object_type: Filtrar por Tipo de objeto
+        ticket_type: Filtrar por tipo
+        responsible: Filtrar por responsável
+        none: Nenhum
+        tooltip:
+          year: Permite a seleção dos contratos/convênios vigentes em um determinado mês.
+          
+      no_results_found: Nenhum registro encontrado.
+      warning_count: "Os resultados estão filtrados. Exibindo <strong>%{filtered}</strong> de <strong>%{total}</strong> registros."
+      warning: Os resultados estão filtrados.
+
+    global_search:
+      no_results: Nenhum registro encontrado.
+      timeout: 'Por favor, refine a busca.'
+      sections:
+        search_content: Informações gerais
+        page: Páginas
+        server_salary: Servidores
+        ned: Notas de empenho
+        contract: Contratos
+        convenant: Convênios
+        public_ticket: Solicitações públicas
+        executive_ombudsman: Rede de ouvidorias
+
+    download: Baixar
+    loading: Carregando...
+
+    toggle_disabled:
+      error:
+        enable: Ocorreu um erro, não foi possivel desabilitar!
+        disable: Ocorreu um erro, não foi possivel habilitar!
+
+    others: Outros
+
+  recaptcha:
+    errors:
+      verification_failed: 'É necessário assinalar a caixa acima para continuar.'
+      recaptcha_unreachable: 'Erro ao iniciar o captcha'
+

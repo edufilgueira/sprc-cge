@@ -1,0 +1,80 @@
+pt-BR:
+
+  operator:
+
+    users:
+
+      index:
+        title: Usuários
+        empty: Nenhum usuário encontrado
+        filters:
+          title: Filtros
+
+      new:
+        title: Novo usuário
+
+      create:
+        title: Novo usuário
+        done: "O usuário '%{title}' foi criado."
+        error: Falha ao criar o usuário
+
+      edit:
+        title: Editar usuário
+
+      update:
+        title: Editar usuário
+        done: "O usuário '%{title}' foi atualizado."
+        error: Falha ao atualizar o usuário
+
+      show:
+        title: Exibição do usuário
+        fields:
+          unconfirmed_email:
+            tooltip: "Aguardando confirmação do e-mail <b>%{email}</b>"
+
+      destroy:
+        done: "O usuário '%{title}' foi removido."
+        error: Error ao remover usuário
+
+      filters:
+        search:
+          label: Buscar por nome, nome social ou e-mail
+          placeholder: Buscar por nome, nome social ou e-mail
+        operator_type: Tipo de operador
+        department:  Unidade
+        commands:
+          new: Novo usuário
+
+      table:
+        heads:
+          name: Nome
+          social_name: Nome social
+          email: E-mail
+          operator_type: Tipo de operador
+          department: Unidade
+          status: ''
+          actions: ''
+
+      form:
+        commands:
+          change_password: Trocar de senha
+        fields:
+          department:
+            select: Selecione a Unidade
+          sub_department:
+            select: Selecione a Sub-unidade
+          education_level:
+            select: Selecione a formação
+          operator_type:
+            select: Selecione o tipo de operador
+          city:
+            select: Selecione o município
+          organ:
+            select: Selecione o órgão
+          unconfirmed_email:
+            tooltip: "Aguardando confirmação do e-mail <b>%{email}</b>"
+
+      toggle_disabled:
+        disabled: Usuário desabilitado!
+        enabled: Usuário habilitado!
+

@@ -1,0 +1,36 @@
+en:
+  ppa:
+    strategies_votes:
+      index:
+        title: Join the PPA (%{plan})
+        description: >
+          It is exercise of democracy and citizenship to participate in the PPA of your state,
+          for it is thus possible to think together for a better future for all.
+          Through the PPA, civil society can give its opinion, debate,
+          evaluate and build together with the government better public policies.
+
+      new:
+        title: PPA (%{plan})
+        subtitle: Strategy Vote
+        region_schedule_dont_exist: Region %{region} has no deadline for voting.
+        description: You will be appointed to the government as the priorities for the development of your region. To your theme, you may have been choosing a strategy that, in your opinion, should be prioritized for the next four years.
+        region: Region
+        instruction: Choose which of the government strategies you would like to prioritize.
+        instruction2: Click "End Voting" only after choosing on all your interest themes.
+        card:
+          theme: Theme
+          strategy_not_found: At the regional meeting, no strategies were indicated for this topic.
+        steps:
+          end_voting: End Voting
+          theme: Theme
+          instruction: Select themes and choose which of the government strategies you would like to prioritize.
+          conclusion_instruction: Once you click "End Voting", you will not be able to modify your votes.
+        verify_user_has_vote: You cannot vote more than once. You have already taken the strategic vote.
+      create:
+        without_vote: You must choose at least one strategy.
+      show:
+        title: PPA (%{plan})
+        subtitle: Strategy Vote Completed!
+        description: Thank you for your participation.
+        redirect: You will be redirected to the portal homepage.
+

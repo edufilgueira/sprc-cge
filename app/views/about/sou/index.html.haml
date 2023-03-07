@@ -1,0 +1,70 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+
+.row
+
+  .col-lg-3
+
+    %nav{ class: "navbar navbar-light bg-transparent", 'aria-orientation': "vertical", 'data-content': 'about-menu' }
+      %nav{ class: "nav nav-pills flex-column" }
+        = link_to t('.intro.title'), '#intro', class: 'nav-link'
+        = link_to t('.fields.title'), '#fields', class: 'nav-link'
+        = link_to t('.importance.title'), '#importance', class: 'nav-link'
+        = link_to t('.channels.title'), '#channels', class: 'nav-link'
+        = link_to t('.deadlines.title'), '#deadlines', class: 'nav-link'
+
+
+  .col-lg-9
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title{ id: 'intro' }
+          = t('.intro.title')
+
+      .card-block
+        %p
+          = t('.intro.description')
+
+
+      .card-header
+
+        %h2.card-title{ id: 'fields' }
+          = t('.fields.title')
+
+      .card-block
+
+        %p
+          = t('.fields.description')
+
+
+      .card-header
+
+        %h2.card-title{ id: 'importance' }
+          = t('.importance.title')
+
+      .card-block
+        %p
+          = t('.importance.description')
+
+
+      .card-header
+
+        %h2.card-title{ id: 'channels' }
+          = t('.channels.title')
+
+      .card-block
+        %p
+          = t('.channels.description')
+
+
+      .card-header
+
+        %h2.card-title{ id: 'deadlines' }
+          = t('.deadlines.title')
+
+      .card-block
+        %p
+          = t('.deadlines.description')

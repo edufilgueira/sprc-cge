@@ -1,0 +1,66 @@
+- remote ||= false
+= simple_form_for [:operator, ticket, classification], remote: remote  do |f|
+
+  = render 'shared/classifications/other_organs'
+
+  -if ticket.citizen_topic.present?
+    .row
+      .col-12
+        .alert.alert-warning
+          = content_with_label(ticket.citizen_topic, :name, { label: t('shared.tickets.show.citizen_topic.label') })
+
+
+  .row{ data: { content: :classification_default } }
+    .col-6
+      - url = topics_api_v1_operator_classifications_path(organ: ticket.organ)
+      = f.association :topic, { collection: topics_for_select(ticket.organ), include_blank: t('messages.form.select'), input_html: { 'data-input': 'topic','data-url': url }, required: true }
+
+    .col-6
+      - url = subtopics_api_v1_operator_classifications_path
+      = f.association :subtopic, { collection: subtopics_by_topic_for_select(f.object.topic), include_blank: t('messages.form.select'), input_html: { 'data-placeholder': t('messages.form.select'), 'data-input': 'subtopic', 'data-url': url, 'data-param-name': 'topic' } }
+
+  %hr{ 'aria-hidden': 'true'}
+
+  .row{ data: { content: :classification_default } }
+    .col-12.text-center.mt-2
+      %em.strong
+        %i.fa.fa-exclamation-triangle
+        = t(".department_info.#{ticket.ticket_type}")
+
+  %hr{ 'aria-hidden': 'true', data: { content: :classification_default } }
+
+  - organ = ticket.organ
+  - subnet = ticket.subnet
+  .row{ data: { content: :classification_default } }
+    .col-6
+      - url = departments_api_v1_operator_classifications_path(organ: organ, subnet: subnet)
+      - departments = departments_by_ticket_for_select(ticket)
+      = f.association :department, { collection: departments, include_blank: t('messages.form.select'), input_html: { 'data-input': 'classification_department','data-url': url }, required: true }
+
+    .col-6
+      - url = sub_departments_api_v1_operator_classifications_path(f.object.department)
+      = f.association :sub_department, { include_blank: t('messages.form.select'), input_html: { 'data-placeholder': t('messages.form.select'), 'data-input': 'classification_sub_department', 'data-url': url, 'data-param-name': 'classification_department' } }
+
+
+  .row{ data: { content: :classification_default } }
+    .col-6
+      - budget_programs = budget_programs_for_select(organ, subnet)
+      = f.association :budget_program, { collection: budget_programs, include_blank: t('messages.form.select'), input_html: { 'data-input': 'budget_program' }, required: true }
+
+    .col-6
+      - url = service_types_api_v1_operator_classifications_path(organ: ticket.organ, subnet: ticket.subnet)
+      - service_types = service_types_for_select(ticket.organ, ticket.subnet)
+      = f.association :service_type, { collection: service_types, include_blank: t('messages.form.select'), input_html: { 'data-input': 'service_type', 'data-url': url } }
+
+  .row
+    .col-6
+      = f.input :other_organs, input_html: { class: 'mr-2', 'data-input': 'other_organs' }
+
+  .row
+    .col-12
+      - if remote && classification.persisted?
+        = link_to t('commands.cancel'), '#tabs-classification', class: 'btn btn-warning pull-left', data: { url: operator_ticket_classification_path(ticket, ticket.classification) , input: 'cancel_classification'}
+      - unless remote
+        = link_to t('commands.cancel'), operator_ticket_path(ticket), class: 'btn btn-warning pull-left'
+
+      = f.submit t('.save'), class: 'btn btn-primary float-right'

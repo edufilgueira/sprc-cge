@@ -1,0 +1,77 @@
+pt-BR:
+
+  operator:
+
+    topics:
+      create:
+        title: Novo assunto
+        done: "O assunto '%{title}' foi criado."
+        error: Falha ao criar o assunto
+
+      form:
+        select:
+          all: Todos os órgãos
+        subtopics:
+          add: Adicionar
+        commands:
+          cancel: < Voltar a lista de assuntos
+          create: Criar assunto
+
+      index:
+        search:
+          hint: 'Busca por Nome do Assunto/Subassunto e Órgão'
+
+        commands:
+          new: Novo assunto
+        title: Assuntos
+        table:
+          summary: Lista paginada com todos os assuntos
+          header:
+            name: Assunto
+            organ_name: Órgão
+            commands: ''
+            status: ''
+
+      filters:
+        select:
+          organ: Órgão
+
+      topic:
+        commands:
+          remove: Remover...
+
+      new:
+        title: Novo assunto
+
+      edit:
+        title: Edição
+
+      update:
+        title: Edição do assunto
+        done: "O assunto '%{title}' foi atualizado."
+        error: Falha ao atualizar o assunto
+
+      show:
+        title: Exibição do assunto
+        subtopics:
+          disabled_at: "Desabilitado em %{disabled_at}"
+        commands:
+          remove: Remover...
+
+      delete:
+        title: Remover assunto
+        description: Para remover um assunto, você deve indicar um novo assunto e sub-assuntos para substituição em atendimentos que utilizam o que será removido.
+        form:
+          replace_by: Substituir por
+          commands:
+            cancel: Cancelar
+            save: Remover
+          target:
+            label: Selecione para qual assunto deve ser reclassificado
+        subtopic:
+          replace_by: Substituir por
+
+      destroy:
+        title: Remover assunto
+        done: "O assunto '%{title}' foi removido."
+        error: Não foi possível remover o assunto.

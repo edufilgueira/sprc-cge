@@ -1,0 +1,49 @@
+
+.card.card-custom
+
+  .card-header
+
+    %h3.card-title
+
+      = t(".#{ticket.ticket_type}.title")
+
+  .card-block
+
+    .content
+      - parent_with_organ = ticket.parent? && ticket.organ.present?
+
+      - if parent_with_organ
+        .row
+          %p.col-6
+            = t('operator.tickets.sharings.sharing.organ.info', protocol: ticket.parent_protocol, acronym: ticket.organ_full_acronym, status: ticket.internal_status_str)
+
+
+      - envolved_tickets = ticket_children
+      - if envolved_tickets.present?
+        - namespace = operator?(current_user) ? 'operator' : 'shared'
+        = render partial: "#{namespace}/tickets/sharings/sharing", collection: envolved_tickets
+
+      - elsif !parent_with_organ
+
+        .mb-3
+
+          %em
+            = t(".#{ticket.ticket_type}.empty")
+
+        - if operator_denunciation?(current_user) && ticket.denunciation? && ticket.denunciation_against_operator.blank?
+          .mb-3
+            %em
+              = t('.denunciation.empty')
+
+      - unless readonly?
+
+        .row.no-print
+
+          - if can? :transfer_organ, ticket
+            .col
+              = link_to t(".transfers.#{ticket.ticket_type}.new"), new_operator_ticket_transfer_organ_path(ticket), class: 'btn btn-primary w-100'
+
+          - if can? :share, ticket
+            - sharing_type = ticket.child? ? :share : :new
+            .col
+              = link_to t(".#{ticket.ticket_type}.#{sharing_type}"), new_operator_ticket_sharing_path(ticket), class: 'btn btn-primary w-100'

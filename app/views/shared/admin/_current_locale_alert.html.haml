@@ -1,0 +1,7 @@
+.alert.alert-warning{role: 'alert'}
+  .small
+    %i.fa.fa-info-circle
+    = raw t('.alert', lang: t("app.locales.#{I18n.locale}"))
+
+    .pull-right
+      = render 'shared/locales'

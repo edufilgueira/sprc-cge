@@ -1,0 +1,24 @@
+- content_for :title, t(".title")
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.row
+
+  .col-12
+    = render 'alert'
+
+.row
+
+  .col-12
+    = render 'shared/tickets/appeals/answers', ticket: ticket
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = t('.title')
+
+      .card-block
+
+        .content
+          = render 'shared/tickets/appeals/form', namespace: :platform

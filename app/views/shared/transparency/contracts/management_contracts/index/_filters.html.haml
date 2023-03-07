@@ -1,0 +1,72 @@
+.card-filters.filter-bar{'data-filter-bar': 'contracts/management_contracts'}
+
+  = form_for transparency_contracts_management_contracts_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row
+      .col-12.col-lg-6
+        - options = options_for_select(supports_organs_and_secretaries_from_executivo_for_select_with_all_option_codigo_orgao_as_id, params[:cod_gestora])
+
+        = label_tag(:cod_gestora, Integration::Contracts::Contract.human_attribute_name(:cod_gestora))
+        = select_tag(:cod_gestora, options)
+
+      .col-12.col-lg-6
+        - options = options_for_select(integration_contracts_object_type_for_select_with_all_option, params[:tipo_objeto])
+
+        = label_tag(:tipo_objeto, Integration::Contracts::Contract.human_attribute_name(:tipo_objeto))
+
+        = select_tag(:tipo_objeto, options)
+
+    .row.mt-3
+
+      .col-12.col-lg-6
+        - options = options_for_select(integration_contracts_status_for_select_with_all_option, params[:status])
+
+        = label_tag(:descricao_situacao, Integration::Contracts::Convenant.human_attribute_name(:descricao_situacao))
+        %i.fa.fa-question-circle{ title: t('shared.transparency.contracts.contracts.index.filters.situation_description.information')}
+
+        = select_tag(:descricao_situacao, options)
+
+      .col-12.col-lg-6
+        = label_tag(:data_assinatura, Integration::Contracts::Contract.human_attribute_name(:data_assinatura))
+        %i.fa.fa-question-circle{ title: t('shared.transparency.contracts.contracts.index.filters.signature_date_description.information')}
+
+        = text_field_tag(:data_assinatura, nil, data: { input: 'daterangepicker' }, class: 'form-control w-100')
+
+    .row.mt-3
+    
+      .col-12.col-lg-6
+        = label_tag(:data_vigencia, Integration::Contracts::Contract.human_attribute_name(:data_vigencia))
+        %i.fa.fa-question-circle{ title: t('shared.transparency.contracts.contracts.index.filters.effective_date_description.information')}
+
+        = text_field_tag(:data_vigencia, nil, data: { input: 'daterangepicker' }, class: 'form-control w-100')
+
+
+
+    .row.mt-3
+
+      .col-12.col-lg-6
+        = label_tag(:search_sacc, t('messages.filters.search_sacc.label'))
+        = text_field_tag(:search_sacc, params[:search_sacc], class: 'form-control w-100', 'data-filter-bar-ignore-submit-on-enter': 'true')
+        %small.form-text.text-muted
+          = t('shared.transparency.search.hint')
+
+      .col-12.col-lg-6{ data: { content: 'creditor' } }
+        - url = search_api_v1_transparency_creditors_path(group: :management_contracts)
+        = label_tag(:creditor, t('shared.transparency.search.creditor_name.contract'))
+        %i.fa.fa-spinner.fa-spin.fa-fw{ 'aria-hidden': 'true', 'data-content': 'loading' }
+        = search_field_tag :search_datalist, params[:search_datalist], class: 'form-control loader', data: { input: 'creditor', url: url, 'param-name': 'nome', 'visible-properties': 'nome' }
+        %small.form-text.text-muted
+          = t('shared.transparency.search.hint')
+
+
+    .row.mt-3
+      .col-12.col-lg-9
+        = label_tag(:search, t('messages.filters.search.label'))
+        = text_field_tag(:search, params[:search], class: 'form-control', 'data-filter-bar-ignore-submit-on-enter': 'true')
+        %small.form-text.text-muted
+          = t('.search.hint')
+      .col-12.col-lg-3
+        .mt-4.pt-2
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'

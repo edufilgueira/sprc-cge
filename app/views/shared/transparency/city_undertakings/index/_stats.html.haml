@@ -1,0 +1,26 @@
+= render 'shared/transparency/index/stats', stats: stats, paths: { xlsx: xlsx_download_path, csv: csv_download_path } do
+
+  .row
+    .col-12
+      - total_data = stats.data[:total]
+      - stats_month_year = Date.new(stats.year, stats.month)
+      - last_stats_date = l(stats_month_year, format: :month_year_long)
+
+      .row
+        .col-12.col-lg-6
+          .content-with-label
+            - label = raw(t('shared.transparency.city_undertakings.index.stats.count', date: last_stats_date))
+            - value = number_with_delimiter(total_data[:count])
+
+            %label.content-label{'aria-label': label, title: label}
+              = label
+
+            .content-value{'aria-label': value, title: value}
+              .h3.text-muted
+                = value
+
+        .col-12
+          - charts_tabs = [:undertaking, :creditor, :organ, :municipio]
+          - charts_path = 'city_undertakings'
+
+          = render 'shared/transparency/index/charts', stats: stats, charts_path: charts_path, charts_tabs: charts_tabs, base_locale: t('shared.transparency.city_undertakings.index.charts')

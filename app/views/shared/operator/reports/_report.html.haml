@@ -1,0 +1,17 @@
+%li.ticket-card.card.mb-4
+  .card-header
+
+    = link_to send(url, report) do
+      %h3.card-title
+        = highlight(report.title, params[:search])
+
+    .card-commands
+      - if report.file.present?
+        = link_to send(url, report, format: :xlsx), class: 'btn text-muted btn-link hover-link float-left d-inline-block' do
+          %i.fa.fa-download{'aria-hidden': 'true'}
+          = t('commands.download')
+
+      = link_to t('commands.remove'), send(url, report), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link hover-link float-left d-inline-block'
+
+  .card-block
+    = render 'shared/operator/reports/report_info', report: report

@@ -1,0 +1,4 @@
+en:
+  activerecord:
+    attributes:
+      ticket_log:

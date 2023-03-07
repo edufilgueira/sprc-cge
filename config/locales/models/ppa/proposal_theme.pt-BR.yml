@@ -1,0 +1,20 @@
+pt-BR:
+  activerecord:
+    models:
+      ppa/proposal_theme:
+        one: Proposição Temática
+        other: Proposições Temáticaa
+
+    attributes:
+      ppa/proposal_theme:
+        start_in: Período Inicial
+        end_in: Período Final
+        plan: PPA
+        region: Região
+
+    errors:
+      models:
+        ppa/proposal_theme:
+          attributes:
+            end_in:
+              invalid_range: Data de fim tem que ser maior que a de início

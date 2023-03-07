@@ -1,0 +1,26 @@
+- if search_contents.blank?
+
+  .h4.text-muted.text-center
+
+    - if params[:search].blank?
+      = t('.what_do_you_need')
+    - else
+      = t('messages.filters.no_results_found')
+- else
+  - search_contents.each do |search_content|
+
+    %section.col-md-8.mb-5{ 'aria-labelledby': "search_content-#{search_content.id}" }
+
+      %div
+        %h4.search-title{ id: "search_content-#{search_content.id}" }
+          = link_to search_content.title, search_content.link
+
+        %p
+          = raw(search_content.description)
+
+        %strong
+          = link_to t('.more'), search_content.link
+
+      %hr
+
+  = paginate search_contents, remote: true

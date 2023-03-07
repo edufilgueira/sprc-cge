@@ -1,0 +1,133 @@
+en:
+  shared:
+    reports:
+        stats_tickets:
+
+          index:
+            title: Statistical panel
+
+            title_others_topics: Other topics
+
+            tabs:
+              sic:
+                title: Information access
+              sou:
+                title: Digital Ombudsman
+
+
+          show:
+            card:
+              organs:
+                total: 'Total'
+                topic_total: '%{value} - %{name}'
+                ticket_empty: No organ requested
+
+              period_organ: 'most organs requested (%{date})'
+
+
+            title: General Statistics
+
+            last_update: 'Last updated in: %{value}'
+
+            popover:
+              title: Topic
+              sou:
+                body: '%{total_tickets} manifestation classified as: %{title}'
+              sic:
+                body: '%{total_tickets} request classified as: %{title}'
+
+            button:
+              import: Update datas
+              importing: Updating datas...
+
+            last_update: 'Last updated in: %{value}'
+
+
+          stats_ticket:
+            card:
+              sou:
+                chart_year_title: 'Total of manifestations registered:'
+                chart_year_column_title: Manifestations
+                stats:
+                  title: Statistical Panel - Digital Ombudsman
+
+              sic:
+                chart_year_title: 'Total of requests registered:'
+                chart_year_column_title: Requests
+                stats:
+                  title: Statistical Panel - Access to Information
+            popover:
+              title: Topic
+              sou:
+                body: '%{total_tickets} manifestation classified as: %{title}'
+              sic:
+                body: '%{total_tickets} request classified as: %{title}'
+
+            button:
+              import: Update datas
+              importing: Updating datas...
+
+            last_update: 'Last updated in: %{value}'
+
+
+          default_stats:
+            period: 'General Statistics (%{date})'
+            period_organ: 'Most organs requested (%{date})'
+            total_invalid_title: Total invalid entries
+            total_valid_title: Total valid entries
+            total_reopened_title: Manifestation reopened
+            total_appealed_title: Information of appeal requested
+
+            average_respond:
+              title: Average of response timing
+              days: '%{value} days'
+
+            resolutivity:
+              title: Resolutivity
+              percentage: '%{value}%'
+
+            average_satisfaction:
+              title: Overall Satisfaction Index (0-5)
+              average: '%{value}'
+
+
+          organ_stats:
+
+            period_organ: 'Most organs requested (%{date})'
+            no_content: 'No content'
+
+            chart_organs:
+              series_name: Organ
+              sou:
+                name: Total of manifestations by organ
+                unit: Manifestation
+              sic:
+                name: Total of requests by organ
+                unit: Requests
+
+            popover:
+              title: Topic
+              sou:
+                body: '%{total_tickets} manifestation classified as: %{title}'
+              sic:
+                body: '%{total_tickets} request classified as: %{title}'
+
+
+          total_tickets_year_chart:
+            sou:
+              chart_year_title: 'Total of manifestation registered:'
+              chart_year_column_title: manifestation
+
+            sic:
+              chart_year_title: 'Total of requests registered:'
+              chart_year_column_title: Requests
+
+
+          organ_topics_chart:
+            name: 'Total of topics'
+            unit: Quantity
+            title_others: Unclassified
+            series_name: Topic
+
+          error:
+            message: An error has occurred while loading the panel.

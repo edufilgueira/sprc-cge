@@ -1,0 +1,43 @@
+pt-BR:
+  transparency:
+    notification:
+      integration:
+        contracts:
+          management_contract_follow:
+
+            subject: 'O contrato de gestão que você segue foi atualizado'
+
+            body:
+              title: >
+                <p>Olá! O Ceará Transparente tem novidades. O contrato de gestão que você segue foi atualizado. Veja o que foi atualizado abaixo:</p>
+
+              description: >
+                <hr>
+                <strong>Objeto</strong>
+                <p>%{description}</p>
+                <hr>
+                <strong>Alterações</strong>
+
+              attribute_changed: >
+                <p> - %{name_changed}: de %{attr_origin} para %{attr_changed}</p>
+
+              links: >
+                <hr>
+                <p>Acesse este <a href="%{management_contract_url}">contrato de gestão</a> e veja mais detalhes. E para deixar de seguir este contrato de gestão clique <a href="%{unsubscribe_url}">aqui</a>.</p>
+
+              associations_changed:
+                financials:
+                  one: >
+                    <p> - 1 nota de empenho/pagamento adicionada</p>
+                  other: >
+                    <p> - %{count} notas de empenho/pagamento adicionadas</p>
+                additives:
+                  one: >
+                    <p> - 1 aditivo adicionado</p>
+                  other: >
+                    <p> - %{count} aditivos adicionados</p>
+                adjustments:
+                  one: >
+                    <p> - 1 ajuste adicionado</p>
+                  other: >
+                    <p> - %{count} ajustes adicionados</p>

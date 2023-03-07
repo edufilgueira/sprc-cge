@@ -1,0 +1,16 @@
+en:
+
+  transparency:
+    sou:
+      shared:
+        ombudsmen:
+          index:
+            map_view: See on map
+
+            executive:
+              title: Executive Branch Ombudsmen Network
+              empty: No network found.
+
+            sesa:
+              title: Health Secretariat Ombudsmen Network
+              empty: No network found.

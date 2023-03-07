@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    integrations:
+      expenses:
+        npfs:
+          index:
+            title: Notas de Programação Financeira

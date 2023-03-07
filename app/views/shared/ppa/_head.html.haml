@@ -1,0 +1,35 @@
+%meta{ charset: 'UTF-8' }/
+%meta{ content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type' }/
+
+- if ENV['STAGE'] != 'production'
+  %meta{content: 'noindex, nofollow', name: 'robots'}/
+
+-# OpenGraph meta tags
+- if content_for?(:custom_meta_open_graph)
+  = content_for(:custom_meta_open_graph)
+- else # default open graph
+  = render 'shared/ppa/head/meta_open_graph'
+
+-# Facebook meta tags
+%meta{ name: 'app_id', content: ENV["FACEBOOK_APP_ID"] }/
+
+-# custom extra <meta> tags
+= content_for(:meta) if content_for?(:meta)
+- layout_head_data[:meta].each do |name, content|
+  %meta{ name: name, content: content }/
+
+%title= content_for?(:title) ? content_for(:title) : t('ppa.title')
+- description_content = content_for?(:description) ? content_for(:description) : t('ppa.description')
+%meta{ name: 'description', content: description_content }
+= csrf_meta_tags
+
+%link{ href: asset_path('favicon.ico'), rel: 'shortcut icon' }/
+
+= javascript_include_tag('https://use.fontawesome.com/0e2d62fd8a.js')
+
+= render 'shared/stylesheets'
+= stylesheet_link_tag(:ppa, media: :all)
+= render 'shared/accessibility'
+
+-# custom extra stylesheets
+= content_for(:stylesheet) if content_for?(:stylesheet)

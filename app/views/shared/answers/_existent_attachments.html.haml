@@ -1,0 +1,21 @@
+- if operator?(current_user)
+
+  - existent_attachments = ticket_existent_answer_attachments(ticket, current_user)
+
+  - if existent_attachments.present?
+
+    .row
+      .col-12.collapse-icons.mb-4
+        - milliseconds = (Time.now.to_f * 1000).to_i
+        - attachments_id = "existent-attachments-#{milliseconds}"
+        = link_to "##{attachments_id}", 'data-toggle': "collapse", 'role': "button", 'aria-expanded': false, 'aria-controls': attachments_id do
+          = t('.add')
+          .fa.fa-caret-down.card-collapse-icon-down
+          .fa.fa-caret-up.card-collapse-icon-up
+
+        .collapse{ id: attachments_id }
+
+          - existent_attachments.each do |attachment|
+            .small
+              = check_box_tag 'clone_attachments[]', attachment.id
+              = link_to attachment.document_filename, document_url(attachment), target: :_blank

@@ -1,0 +1,8 @@
+- url        = ppa_scoped_path("theme_regional_strategy_#{type}s".to_sym, theme, regional_strategy)
+-# indica se o usuário já interagiu dessa forma com o recurso
+- interacted = regional_strategy.public_send("#{type}s").exists?(user: current_user)
+- klass      = type == :like ? 'tertiary' : 'danger'
+
+= form_tag url do
+  %button.btn.btn-lg{ disabled: interacted, class: "btn-#{klass}" }
+    = yield

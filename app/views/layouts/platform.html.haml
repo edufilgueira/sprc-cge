@@ -1,0 +1,43 @@
+!!! 5
+%html{lang: 'pt-BR'}
+
+  %head
+
+    = render 'shared/platform/head'
+
+  %body{ data: { controller: controller_path } }
+
+    = render 'shared/a11y/content_link'
+
+    = render 'shared/ribbon'
+
+    = render 'shared/navbar_mobile'
+
+    = render 'shared/platform/logged_top_bar'
+
+    = render 'shared/application/navbar'
+
+    .container
+
+      = render 'shared/platform/notice'
+
+      = render 'shared/platform/alert'
+
+      = render 'shared/platform/toolbar'
+
+      = render 'shared/a11y/content_anchor'
+
+      = yield
+
+    = render 'shared/application/privacy_statement'
+
+    = render 'shared/a11y/footer_links'
+
+    = render 'shared/platform/footer'
+
+    = javascript_include_tag(:platform)
+    = render 'shared/javascripts'
+    = yield(:javascript)
+    = noscript_include_tag
+
+    = render 'shared/google_analytics'

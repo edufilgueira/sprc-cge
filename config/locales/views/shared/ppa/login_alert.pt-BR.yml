@@ -1,0 +1,8 @@
+pt-BR:
+  shared:
+    ppa:
+      login_alert:
+        login: faça login
+        create: crie sua conta
+        authentication_needed_html: 'Para interagir %{login_link} ou %{registration_link}!'
+

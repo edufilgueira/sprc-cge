@@ -1,0 +1,21 @@
+pt-BR:
+  admin:
+    integrations:
+      supports:
+        creditors:
+
+          index:
+            title: Credores
+            empty: Nenhum registro encontrado
+
+          table:
+            summary: Lista de credores
+            heads:
+              nome: Nome
+              codigo: Código
+              status: Situação
+
+          filters:
+            search:
+              label: Buscar por código, nome, documento, e-mail ou telefone
+

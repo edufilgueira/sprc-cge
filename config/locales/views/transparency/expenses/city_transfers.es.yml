@@ -1,0 +1,7 @@
+es:
+  transparency:
+    expenses:
+      city_transfers:
+        index:
+          title: Transferencias a Municipios
+          description: Aquí usted podrá consultar informaciones de Transferencias a Municipios.

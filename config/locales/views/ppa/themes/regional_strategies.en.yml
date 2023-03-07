@@ -1,0 +1,48 @@
+en:
+  ppa:
+    themes:
+      regional_strategies:
+        index:
+          title: "%{theme} - Biennium %{biennium} in the %{region} region"
+          regional_strategies: Regional strategies
+          guidelines: Guidelines 
+          proposals: Proposals 
+          info_1: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          info_2: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          prioritized_strategy: Most prioritized guidelines 
+
+          table:
+            header:
+              objectives: Strategic objectives
+              strategies: Regional strategies
+              priority: Priority
+              initiatives_count: Iniciatives
+              badge: ''
+              products_count: Products 
+              interactions_count: Interactions 
+
+        filters:
+          search: Search 
+
+        show:
+          title: "%{theme} - Biennium %{biennium} in the %{region} region"
+          objective: Strategic objectives
+          strategy: Regional strategy
+          initiatives: Initiatives related to this regional strategy
+          comments_count: '%{count} comment(s)'
+
+          empty_initiatives: No initiatives associated with the strategy in question
+
+
+        interactions:
+          interaction_opinion: What is your opinion about this strategy? 
+
+        interaction_stat:
+          likes: likes 
+          dislikes: dislikes 
+          comments: comments 
+          proposals: proposals 
+
+        interaction_button:
+          liked: I liked it. 
+          disliked: I did not like it.

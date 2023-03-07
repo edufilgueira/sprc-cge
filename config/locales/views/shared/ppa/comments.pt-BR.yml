@@ -1,0 +1,9 @@
+pt-BR:
+  shared:
+    ppa:
+      comments:
+        comment:
+          title: '%{author} comentou:'
+        form:
+          comment_label: 'Enviar meu comentário:'
+          submit: 'Enviar comentário'

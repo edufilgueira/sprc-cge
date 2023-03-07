@@ -1,0 +1,847 @@
+pt-BR:
+  shared:
+    notifications:
+
+      index:
+        title: Lista de notificações
+        empty: Sem notificações
+        breadcrumb_title: Lista de notificações
+        dropdown:
+          more: Ver todas as notificações
+
+      index_content:
+        table:
+          summary: Lista de notificações
+          header:
+            icon: ''
+            subject: Assunto
+            created_at: Enviada em
+
+      filters:
+        search:
+          placeholder: Buscar por assunto ou conteúdo
+        unread:
+          label: Mostrar apenas as não lidas
+
+      show:
+        mark_as_unread: Marcar com não lida
+
+      messages:
+
+        new_ticket:
+          ticket_area:
+            subject:
+              sic: "[%{protocol}] Nova solicitação de Informação"
+              sou: "[%{protocol}] Nova manifestação de Ouvidoria"
+            body:
+              sic:
+                identified: 'Você realizou uma nova solicitação de Informação. Seu número de protocolo é o <a href="%{url}">%{protocol}</a>. Sua senha é %{password}'
+              sou:
+                identified: 'Você realizou uma nova manifestação de Ouvidoria. Seu número de protocolo é o <a href="%{url}">%{protocol}</a>. Sua senha é %{password}'
+                anonymous: 'Você realizou uma nova manifestação anônima de Ouvidoria. Seu número de protocolo é o <a href="%{url}">%{protocol}</a>. Sua senha é %{password}'
+          platform:
+            subject:
+              sic: "[%{protocol}] Nova solicitação de Informação"
+              sou: "[%{protocol}] Nova manifestação de Ouvidoria"
+            body:
+              sic:
+                identified: 'Você realizou uma nova solicitação de Informação. Seu número de protocolo é o <a href="%{url}">%{protocol}</a>. Sua senha é %{password}'
+              sou:
+                identified: 'Você realizou uma nova manifestação de Ouvidoria. Seu número de protocolo é o <a href="%{url}">%{protocol}</a>. Sua senha é %{password}'
+          operator:
+            subject:
+              sic: "[%{protocol}] Nova solicitação de Informação"
+              sou: "[%{protocol}] Nova manifestação de Ouvidoria"
+            body:
+              sic:
+                identified: '%{name} abriu um nova solicitação de Informação. O número de protocolo é o <a href="%{url}">%{protocol}</a>.'
+              sou:
+                identified: '%{name} abriu uma nova manifestação de Ouvidoria. O número de protocolo é o <a href="%{url}">%{protocol}</a>.'
+                anonymous: 'Uma nova manifestação anônima de Ouvidoria foi aberta. O número de protocolo é o <a href="%{url}">%{protocol}</a>.'
+
+        satisfaction_survey:
+          subject:
+            sic: Participe da pesquisa de satisfação e ajude a melhorar o serviço de atendimento sic do Governo do Estado.
+            sou: Participe da pesquisa de satisfação e ajude a melhorar o serviço de atendimento de ouvidoria do Governo do Estado.
+
+          body:
+            sic: É rápido e fácil de responder e dessa forma você avalia como foi o atendimento do SIC na sua manifestação.
+            sou: É rápido e fácil de responder e dessa forma você avalia como foi o atendimento da Ouvidoria na sua manifestação.
+          body_complement:
+            ticket_identification: "Identificação da Manifestação:"
+            organ: "Orgão: %{organ}"
+            protocol: "Protocolo: %{protocol}"
+            password: "Senha: %{password}"
+            protocol_link: <a href="%{url}">Clique aqui para responder a pesquisa, utilizando o protocolo e senha da manifestação.</a>
+            user_link: <a href="%{url}">Clique aqui para responder a pesquisa, utilizando seu usuário e senha.</a>
+        answer:
+          ticket_area:
+            cge_approved:
+              subject:
+                sic: "[%{protocol}] Sua solicitação foi respondida"
+                sou: "[%{protocol}] Sua manifestação foi respondida"
+              body:
+                sic: '%{user_name} enviou uma resposta à sua solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: '%{answer_description} <p><a href="%{url}">Clique aqui</a> para mais detalhes.</p>'
+          platform:
+            cge_approved:
+              subject:
+                sic: "[%{protocol}] Sua solicitação foi respondida"
+                sou: "[%{protocol}] Sua manifestação foi respondida"
+              body:
+                sic: '%{user_name} enviou uma resposta à sua solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: '%{answer_description} <p><a href="%{url}">Clique aqui</a> para mais detalhes.</p>'
+          operator:
+            awaiting:
+              subject:
+                sic: "[%{protocol}] Solicitação de informação respondida"
+                sou: "[%{protocol}] Manifestação de Ouvidoria respondida"
+              body:
+                sic: '%{user_name} respondeu a solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} respondeu a manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+            sectoral_rejected:
+              subject:
+                sic: "[%{protocol}] Posicionamento devolvido"
+                sou: "[%{protocol}] Posicionamento devolvido"
+              body:
+                sic: '%{user_name} devolveu seu posicionamento da solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} devolveu seu posicionamento da manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+            sectoral_approved:
+              subject:
+                sic: "[%{protocol}] Posicionamento aprovado"
+                sou: "[%{protocol}] Posicionamento aprovado"
+              body:
+                sic: '%{user_name} aprovou seu posicionamento da solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} aprovou seu posicionamento da manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+            subnet_rejected:
+              subject:
+                sic: "[%{protocol}] Posicionamento devolvido"
+                sou: "[%{protocol}] Posicionamento devolvido"
+              body:
+                sic: '%{user_name} devolveu seu posicionamento da solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} devolveu seu posicionamento da manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+            subnet_approved:
+              subject:
+                sic: "[%{protocol}] Posicionamento aprovado"
+                sou: "[%{protocol}] Posicionamento aprovado"
+              body:
+                sic: '%{user_name} aprovou seu posicionamento da solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} aprovou seu posicionamento da manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+            cge_rejected:
+              subject:
+                sic: "[%{protocol}] Resposta devolvida"
+                sou: "[%{protocol}] Resposta devolvida"
+              body:
+                sic: 'O %{user_name} reprovou sua resposta da solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: 'O %{user_name} reprovou sua resposta da manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+            cge_approved:
+              subject:
+                sic: "[%{protocol}] A solicitação foi respondida"
+                sou: "[%{protocol}] A manifestação foi respondida"
+              body:
+                sic: '%{user_name} respondeu à solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} respondeu à manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+
+        deadline:
+          late:
+            subject: "[%{protocol}] Atendimento em atraso"
+            body: 'O atendimento <a href="%{url}">%{protocol}</a> está %{deadline} dia(s) atrasado.'
+          in_time:
+            subject: "[%{protocol}] Tempo restante para o atendimento"
+            body: 'O tempo restante para o atendimento <a href="%{url}">%{protocol}</a> é de %{deadline} dia(s).'
+
+        transfer:
+          ticket_area:
+            subject:
+              sic: "[%{protocol}] Solicitação transferida"
+              sou: "[%{protocol}] Manifestação transferida"
+            body:
+              sic: >
+                    <p>
+                    Sua solicitação foi transferida para %{organ_name}
+                    </p>
+                    <p>
+                    Solicitação <a href="%{url}">%{protocol}</a>
+                    </p>
+              sou: >
+                    <p>
+                    Sua manifestação foi transferida para %{organ_name}
+                    </p>
+                    <p>
+                    Manifestação <a href="%{url}">%{protocol}</a>
+                    </p>
+
+          platform:
+            subject:
+              sic: "[%{protocol}] Solicitação transferida"
+              sou: "[%{protocol}] Manifestação transferida"
+            body:
+              sic: >
+                  <p>
+                  Sua solicitação foi transferida para %{organ_name}.
+                  </p>
+                  <p>
+                  Solicitação <a href="%{url}">%{protocol}</a>
+                  </p>
+              sou: >
+                  <p>
+                  Sua manifestação foi transferida para %{organ_name}.
+                  </p>
+                  <p>
+                  Manifestação <a href="%{url}">%{protocol}</a>
+                  </p>
+
+          operator:
+            subject:
+              sic: "[%{protocol}] Solicitação transferida"
+              sou: "[%{protocol}] Manifestação transferida"
+            body:
+              sic: >
+                  <p>
+                  %{user_name} transferiu uma solicitação de Informação para você.
+                  </p>
+                  <p>
+                  Solicitação <a href="%{url}">%{protocol}</a>
+                  </p>
+              sou: >
+                  <p>
+                  %{user_name} transferiu uma manifestação de Ouvidoria para você.
+                  </p>
+                  <p>
+                  Manifestação <a href="%{url}">%{protocol}</a>
+                  </p>
+
+        share:
+          ticket_area:
+            subject:
+              sic: "[%{protocol}] Solicitação encaminhada"
+              sou: "[%{protocol}] Manifestação encaminhada"
+            body:
+              sic: >
+                    <p>
+                    Sua solicitação foi encaminhada para %{organ_name}
+                    </p>
+                    <p>
+                    Solicitação <a href="%{url}">%{protocol}</a>
+                    </p>
+              sou: >
+                    <p>
+                    Sua manifestação foi encaminhada para %{organ_name}
+                    </p>
+                    <p>
+                    Manifestação <a href="%{url}">%{protocol}</a>
+                    </p>
+
+          platform:
+            subject:
+              sic: "[%{protocol}] Solicitação encaminhada"
+              sou: "[%{protocol}] Manifestação encaminhada"
+            body:
+              sic: >
+                  <p>
+                  Sua solicitação foi encaminhada para %{organ_name}.
+                  </p>
+                  <p>
+                  Solicitação <a href="%{url}">%{protocol}</a>
+                  </p>
+              sou: >
+                  <p>
+                  Sua manifestação foi encaminhada para %{organ_name}.
+                  </p>
+                  <p>
+                  Manifestação <a href="%{url}">%{protocol}</a>
+                  </p>
+
+          operator:
+            subject:
+              sic: "[%{protocol}] Solicitação encaminhada"
+              sou: "[%{protocol}] Manifestação encaminhada"
+            body:
+              sic: >
+                  <p>
+                  %{user_name} encaminhou uma solicitação de Informação para você.
+                  </p>
+                  <p>
+                  Solicitação <a href="%{url}">%{protocol}</a>
+                  </p>
+              sou: >
+                  <p>
+                  %{user_name} encaminhou uma manifestação de Ouvidoria para você.
+                  </p>
+                  <p>
+                  Manifestação <a href="%{url}">%{protocol}</a>
+                  </p>
+
+        referral:
+          ticket_area:
+            subject:
+              sic: "[%{protocol}] Solicitação encaminhada"
+              sou: "[%{protocol}] Manifestação encaminhada"
+            body:
+              sic: >
+                    <p>
+                    Sua solicitação foi encaminhada para %{department_name}
+                    </p>
+                    <p>
+                    Solicitação <a href="%{url}">%{protocol}</a>
+                    </p>
+              sou: >
+                    <p>
+                    Sua manifestação foi encaminhada para %{department_name}
+                    </p>
+                    <p>
+                    Manifestação <a href="%{url}">%{protocol}</a>
+                    </p>
+
+          platform:
+            subject:
+              sic: "[%{protocol}] Solicitação encaminhada"
+              sou: "[%{protocol}] Manifestação encaminhada"
+            body:
+              sic: >
+                  <p>
+                  Sua solicitação foi encaminhada para %{department_name}.
+                  </p>
+                  <p>
+                  Solicitação <a href="%{url}">%{protocol}</a>
+                  </p>
+              sou: >
+                  <p>
+                  Sua manifestação foi encaminhada para %{department_name}.
+                  </p>
+                  <p>
+                  Manifestação <a href="%{url}">%{protocol}</a>
+                  </p>
+
+          operator:
+            subject:
+              sic: "[%{protocol}] Solicitação encaminhada"
+              sou: "[%{protocol}] Manifestação encaminhada"
+            body:
+              sic: >
+                  <p>
+                  %{user_name} encaminhou uma solicitação de Informação para você.
+                  </p>
+                  <p>
+                  Solicitação <a href="%{url}">%{protocol}</a>
+                  </p>
+                  Considerações:
+                  <pre>%{considerations}</pre>
+              sou: >
+                  <p>
+                  %{user_name} encaminhou uma manifestação de Ouvidoria para você.
+                  </p>
+                  <p>
+                  Manifestação <a href="%{url}">%{protocol}</a>
+                  </p>
+                  Considerações:
+                  <pre>%{considerations}</pre>
+            considerations:
+              empty: Sem considerações
+
+            department:
+              subject:
+                sic: "[%{protocol}] Solicitação encaminhada"
+                sou: "[%{protocol}] Manifestação encaminhada"
+              body:
+                sic: >
+                    <p>
+                    %{user_name} encaminhou uma solicitação de Informação para você. Clique no link abaixo para dar um posicionamento.
+                    </p>
+                    <p>
+                    <a href="%{url}">Solicitação %{protocol}</a>
+                    </p>
+                    Considerações:
+                    <pre>%{considerations}</pre>
+                sou: >
+                    <p>
+                    %{user_name} encaminhou uma manifestação de Ouvidoria para você. Clique no link abaixo para dar um posicionamento.
+                    </p>
+                    <p>
+                    <a href="%{url}">Manifestação %{protocol}</a>
+                    </p>
+                    Considerações:
+                    <pre>%{considerations}</pre>
+
+          delete:
+            subject:
+              sic: "A Solicitação [%{protocol}] foi removida do atendimento interno"
+              sou: "A Manifestação [%{protocol}] foi removida do atendimento interno"
+            body:
+              sic: >
+                  <p>
+                  %{user_name} removeu a solicitação de Informação %{protocol} do atendimento interno.
+                  </p>
+              sou: >
+                  <p>
+                  %{user_name} removeu a manifestação de Ouvidoria %{protocol} do atendimento interno.
+                  </p>
+
+          additional_user_rejected:
+            operator:
+              department:
+                subject:
+                  sic: "[%{protocol}] Posicionamento devolvido"
+                  sou: "[%{protocol}] Posicionamento devolvido"
+                body:
+                  sic: >
+                    %{user_name} devolveu seu posicionamento da solicitação de Informação <a href="%{url}">%{protocol}</a>.
+                    <br>
+                    <em>Considerações: %{justification}</em>
+                  sou: >
+                    %{user_name} devolveu seu posicionamento da manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.
+                    <br>
+                    <em>Considerações: %{justification}</em>
+
+        ticket_department:
+          poke:
+            subject: "[%{protocol}] Lembrete de prazo"
+            body: "Olá! Essa é uma notificação gerada pelo Ceará Transparente para lembrá-lo da demanda %{protocol}. Restam %{deadline} dias para você fornecer um posicionamento. Para acessar a demanda, <a href=\"%{url}\">clique aqui</a>."
+
+        invalidate:
+          ticket_area:
+            subject:
+              sic: "[%{protocol}] Solicitação invalidada"
+              sou: "[%{protocol}] Manifestação invalidada"
+            body:
+              sic: '%{user_name} invalidou sua solicitação <a href="%{url}">%{protocol}</a>.'
+              sou: '%{user_name} invalidou sua manifestação <a href="%{url}">%{protocol}</a>.'
+
+          platform:
+            subject:
+              sic: "[%{protocol}] Solicitação invalidada"
+              sou: "[%{protocol}] Manifestação invalidada"
+            body:
+              sic: '%{user_name} invalidou sua solicitação <a href="%{url}">%{protocol}</a>.'
+              sou: '%{user_name} invalidou sua manifestação <a href="%{url}">%{protocol}</a>.'
+
+          operator:
+            subject:
+              sic: "[%{protocol}] Solicitação invalidada"
+              sou: "[%{protocol}] Manifestação invalidada"
+            body:
+              sic: '%{user_name} invalidou a solicitação <a href="%{url}">%{protocol}</a>.'
+              sou: '%{user_name} invalidou a manifestação <a href="%{url}">%{protocol}</a>.'
+
+        appeal:
+          operator:
+            subject: "[%{protocol}] Solicitação de recurso"
+            body: 'O cidadão abriu recurso para a solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+
+        reopen:
+          operator:
+            subject:
+              sou: "[%{protocol}] Manifestação reaberta"
+              sic: "[%{protocol}] Solicitação reaberta"
+            body:
+              sou: 'O cidadão reabriu a manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>. O prazo foi reiniciado.'
+              sic: 'O cidadão reabriu a solicitação de Informação <a href="%{url}">%{protocol}</a>. O prazo foi reiniciado.'
+
+        extension:
+          in_progress:
+            ticket_area:
+              subject:
+                sic: "[%{protocol}] Solicitação de prorrogação"
+                sou: "[%{protocol}] Solicitação de prorrogação"
+              body:
+                sic: '%{user_name} solicitou prorrogação de prazo da solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} solicitou prorrogação de prazo da manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+            platform:
+              subject:
+                sic: "[%{protocol}] Solicitação de prorrogação"
+                sou: "[%{protocol}] Solicitação de prorrogação"
+              body:
+                sic: '%{user_name} solicitou prorrogação de prazo da solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} solicitou prorrogação de prazo da manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+            operator:
+              subject:
+                sic: "[%{protocol}] Solicitação de prorrogação"
+                sou: "[%{protocol}] Solicitação de prorrogação"
+              body:
+                sic: '%{user_name} solicitou prorrogação de prazo da solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: '%{user_name} solicitou prorrogação de prazo da manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+
+              chief:
+                subject:
+                  sic: "[%{protocol}] Solicitação de prorrogação"
+                  sou: "[%{protocol}] Solicitação de prorrogação"
+                body:
+                  sic: '%{user_name} solicitou prorrogação de prazo da solicitação de Informação %{protocol}. Clique no link abaixo para aprovar/reprovar a solicitação:<p><a href="%{url}">%{url}</a></p>'
+                  sou: '%{user_name} solicitou prorrogação de prazo da manifestação de Ouvidoria %{protocol}. Clique no link abaixo para aprovar/reprovar a solicitação:<p><a href="%{url}">%{url}</a></p>'
+
+          approved:
+            ticket_area:
+              subject:
+                sic: "[%{protocol}] O prazo da sua solicitação foi prorrogado"
+                sou: "[%{protocol}] O prazo da sua manifestação foi prorrogado"
+              body:
+                sic: 'Sua solicitação de Informação <a href="%{url}">%{protocol}</a> foi prorrogada pelo responsável'
+                sou: 'Sua manifestação de Ouvidoria <a href="%{url}">%{protocol}</a> foi prorrogada pelo responsável'
+            platform:
+              subject:
+                sic: "[%{protocol}] O prazo da sua solicitação foi prorrogado"
+                sou: "[%{protocol}] O prazo da sua manifestação foi prorrogado"
+              body:
+                sic: 'Sua solicitação de Informação <a href="%{url}">%{protocol}</a> foi prorrogada pelo responsável'
+                sou: 'Sua manifestação de Ouvidoria <a href="%{url}">%{protocol}</a> foi prorrogada pelo responsável'
+            operator:
+              subject:
+                sic: "[%{protocol}] O prazo da solicitação foi prorrogado"
+                sou: "[%{protocol}] O prazo da manifestação foi prorrogado"
+              body:
+                sic: 'O responsável aprovou a prorrogação da solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: 'O responsável aprovou a prorrogação da manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+
+          rejected:
+            ticket_area:
+              subject:
+                sic: "[%{protocol}] Prorrogação não aceita"
+                sou: "[%{protocol}] Prorrogação não aceita"
+              body:
+                sic: 'A prorrogação de prazo da solicitação de Informação <a href="%{url}">%{protocol}</a> não foi aceita pelo responsável'
+                sou: 'A prorrogação de prazo da manifestação de Ouvidoria <a href="%{url}">%{protocol}</a> não foi aceita pelo responsável'
+            platform:
+              subject:
+                sic: "[%{protocol}] Prorrogação não aceita"
+                sou: "[%{protocol}] Prorrogação não aceita"
+              body:
+                sic: 'A prorrogação de prazo da solicitação de Informação <a href="%{url}">%{protocol}</a> não foi aceita pelo responsável'
+                sou: 'A prorrogação de prazo da manifestação de Ouvidoria <a href="%{url}">%{protocol}</a> não foi aceita pelo responsável'
+            operator:
+              subject:
+                sic: "[%{protocol}] Prorrogação não aceita"
+                sou: "[%{protocol}] Prorrogação não aceita"
+              body:
+                sic: 'O responsável rejeitou a prorrogação da solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+                sou: 'O responsável rejeitou a prorrogação da manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+
+        internal_comment:
+          subject: "[%{protocol}] Você recebeu um novo comentário do interno"
+          body:
+            sic: '%{user_name} fez um novo comentário na solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+            sou: '%{user_name} fez um novo comentário na manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+
+        user_comment:
+          ticket_area:
+            subject:
+              sic: "[%{protocol}] Você recebeu um novo comentário em sua solicitação de Informação"
+              sou: "[%{protocol}] Você recebeu um novo comentário em sua manifestação de Ouvidoria"
+            body:
+              sic: '%{user_name} fez um novo comentário na solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+              sou: '%{user_name} fez um novo comentário na manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+
+          platform:
+            subject:
+              sic: "[%{protocol}] Novo comentário na solicitação de Informação"
+              sou: "[%{protocol}] Novo comentário na manifestação de Ouvidoria"
+            body:
+              sic: '%{user_name} fez um novo comentário na solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+              sou: '%{user_name} fez um novo comentário na manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+
+          operator:
+            subject:
+              sic: "[%{protocol}] Novo comentário na solicitação de Informação"
+              sou: "[%{protocol}] Novo comentário na manifestação de Ouvidoria"
+            body:
+              sic: '%{user_name} fez um novo comentário na solicitação de Informação <a href="%{url}">%{protocol}</a>.'
+              sou: '%{user_name} fez um novo comentário na manifestação de Ouvidoria <a href="%{url}">%{protocol}</a>.'
+
+        attendance_allocation:
+          ticket_area:
+            subject:
+              sic: '[%{protocol}] Sua solicitação de Informação foi alocada para o atendente 155'
+              sou: '[%{protocol}] Sua manifestação de Ouvidoria foi alocada para o atendente 155'
+            body:
+              sic: 'A solicitação de Informação <a href="%{url}">%{protocol}</a> foi alocada para o atendente 155'
+              sou: 'A manifestação de Ouvidoria <a href="%{url}">%{protocol}</a> foi alocada para o atendente 155'
+
+          platform:
+            subject:
+              sic: '[%{protocol}] Sua solicitação de Informação foi alocada para o atendente 155'
+              sou: '[%{protocol}] Sua manifestação de Ouvidoria foi alocada para o atendente 155'
+            body:
+              sic: 'A solicitação de Informação <a href="%{url}">%{protocol}</a> foi alocada para o atendente 155'
+              sou: 'A manifestação de Ouvidoria <a href="%{url}">%{protocol}</a> foi alocada para o atendente 155'
+
+          operator:
+            subject:
+              sic: '[%{protocol}] A solicitação de Informação foi alocada para você'
+              sou: '[%{protocol}] A manifestação de Ouvidoria foi alocada para você'
+            body:
+              sic: 'A solicitação de Informação <a href="%{url}">%{protocol}</a> foi alocada para você'
+              sou: 'A manifestação de Ouvidoria <a href="%{url}">%{protocol}</a> foi alocada para você'
+
+        partial_answer:
+          subject: Manifestações finalizadas parcialmente
+          body: >
+            <p>
+            Esse é um lembrete sobre suas manifestações que encontram-se com resposta parcial.
+            </p>
+            <p>
+            <a href="%{url}">Acesse sua lista de manifestações</a> e retorne o andamento assim que possível.
+            </p>
+
+        extension_ticket_department:
+          subject: '[%{protocol}] O prazo foi alterado'
+          body:
+            sic: >
+              O prazo da <a href="%{url}">solicitação de informação</a> foi alterado para %{deadline_ends_at}.
+
+            sou: >
+              O prazo da <a href="%{url}">manifestação de ouvidoria</a> foi alterado para %{deadline_ends_at}.
+
+        change_ticket_type:
+          sou:
+            subject: 'A Solicitação de Informação [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Solicitação de Informação %{protocol} agora é uma Manifestação de Ouvidoria.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">Manifestação de Ouvidoria %{protocol}</a>.
+                  </p>
+          sic:
+            subject: 'A Manifestação de Ouvidoria [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Manifestação de Ouvidoria %{protocol} agora é uma Solicitação de Informação.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">Solicitação de informação %{protocol}</a>.
+                  </p>
+
+      public_ticket:
+
+        url_unfollow: '<a href="%{url}">Clique aqui para parar de receber as atualizações</a>'
+
+        comment:
+          sic:
+            subject: 'A Solicitação de Informação [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  Novo comentário na solicitação de Informação %{protocol}.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">solicitação de Informação %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'A Manifestação de Ouvidoria [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  Novo comentário na manifestação de Ouvidoria %{protocol}.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">manifestação de Ouvidoria %{protocol}</a>.
+                  </p>
+
+        share:
+          sic:
+            subject: 'A Solicitação de Informação [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Solicitação de Informação [%{protocol}] foi compartilhada com um órgão.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">solicitação de Informação %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'A Manifestação de Ouvidoria [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Manifestação de Ouvidoria [%{protocol}] foi compartilhada com um órgão.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">Manifestação de Ouvidoria %{protocol}</a>.
+                  </p>
+
+        transfer:
+          sic:
+            subject: 'A Solicitação de Informação [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Solicitação de Informação [%{protocol}] foi transferida para outro órgão.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">solicitação de Informação %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'A Manifestação de Ouvidoria [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Manifestação de Ouvidoria [%{protocol}] foi transferida para outro órgão.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">Manifestação de Ouvidoria %{protocol}</a>.
+                  </p>
+
+        invalidate:
+          sic:
+            subject: 'A Solicitação de Informação [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Solicitação de Informação [%{protocol}] foi invalidada.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">solicitação de Informação %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'A Manifestação de Ouvidoria [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Manifestação de Ouvidoria [%{protocol}] foi invalidada.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">Manifestação de Ouvidoria %{protocol}</a>.
+                  </p>
+
+        forward:
+          sic:
+            subject: 'A Solicitação de Informação [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Solicitação de Informação [%{protocol}] foi compartilhada com um órgão.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">solicitação de Informação %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'A Manifestação de Ouvidoria [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Manifestação de Ouvidoria [%{protocol}] foi compartilhada com um órgão.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">Manifestação de Ouvidoria %{protocol}</a>.
+                  </p>
+
+        reopen:
+          sic:
+            subject: 'A Solicitação de Informação [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Solicitação de Informação [%{protocol}] foi reaberta. O prazo foi reiniciado.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">solicitação de Informação %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'A Manifestação de Ouvidoria [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Manifestação de Ouvidoria [%{protocol}] foi reaberta. O prazo foi reiniciado.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">Manifestação de Ouvidoria %{protocol}</a>.
+                  </p>
+
+        extension:
+          sic:
+            subject: 'A Solicitação de Informação [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Solicitação de Informação [%{protocol}] teve seu prazo estendido.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">solicitação de Informação %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'A Manifestação de Ouvidoria [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Manifestação de Ouvidoria [%{protocol}] teve seu prazo estendido.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">Manifestação de Ouvidoria %{protocol}</a>.
+                  </p>
+
+        occurrence:
+          sic:
+            subject: 'A Solicitação de Informação [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  Novo comentário na solicitação de Informação %{protocol}.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">solicitação de Informação %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'A Manifestação de Ouvidoria [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  Novo comentário na manifestação de Ouvidoria %{protocol}.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">manifestação de Ouvidoria %{protocol}</a>.
+                  </p>
+
+        appeal:
+          sic:
+            subject: 'A Solicitação de Informação [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  Foi aberto um recurso para a Solicitação de Informação %{protocol}.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">solicitação de Informação %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'A Manifestação de Ouvidoria [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  Foi aberto um recurso para a Manifestação de Ouvidoria %{protocol}.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">manifestação de Ouvidoria %{protocol}</a>.
+                  </p>
+
+        change_sou_type:
+          sou:
+            subject: 'A Manifestação de Ouvidoria [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Manifestação de Ouvidoria %{protocol} teve seu tipo modificado.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">manifestação de Ouvidoria %{protocol}</a>.
+                  </p>
+
+        change_ticket_type:
+          sic:
+            subject: 'A Solicitação de Informação [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Solicitação de Informação %{protocol} teve seu tipo modificado.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">solicitação de Informação %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'A Manifestação de Ouvidoria [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Manifestação de Ouvidoria %{protocol} teve seu tipo modificado.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">manifestação de Ouvidoria %{protocol}</a>.
+                  </p>
+
+        answer:
+          sic:
+            subject: 'A Solicitação de Informação [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Solicitação de Informação %{protocol} foi respondida.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">solicitação de Informação %{protocol}</a>.
+                  </p>
+          sou:
+            subject: 'A Manifestação de Ouvidoria [%{protocol}] foi atualizada'
+            body: >
+                  <p>
+                  A Manifestação de Ouvidoria %{protocol} foi respondida.
+                  </p>
+                  <p>
+                  Para mais informações, acesse a <a href="%{url}">manifestação de Ouvidoria %{protocol}</a>.
+                  </p>
+

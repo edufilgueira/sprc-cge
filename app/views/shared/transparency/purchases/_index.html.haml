@@ -1,0 +1,87 @@
+= cache(cache_key) do
+
+  = render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+  .my-4
+
+    %hr{'aria-hidden': 'true'}
+
+    = render 'transparency/exports/form'
+
+    %hr{'aria-hidden': 'true'}
+
+    .fa.fa-spin.fa-refresh.m-1.text-muted.float-right{'data-remote-content-loader': ''}
+
+    .row
+      .col-12.col-lg-6
+        .content-with-label
+          - label = raw(t('.counts.purchases_count.title'))
+          - value = number_with_delimiter(filtered_count)
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+      .col-12.col-lg-6
+        .content-with-label
+          - label = raw(t('.counts.purchases_sum.title'))
+          - value = number_to_currency(filtered_sum)
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+    %hr{'aria-hidden':'true'}
+
+    - header = [:numero_publicacao, :nome_fornecedor, :nome_resp_compra, :descricao_item, :valor_unitario, :quantidade_estimada, :valor_total_calculated]
+
+    - table_locale = t('.table')
+
+    = render 'shared/components/remote_table', header: header, collection: purchases, sort_columns: sort_columns, table_locale: table_locale do |purchase|
+
+      - show_path = url_for(action: 'show', controller: 'purchases', id: purchase)
+
+
+      %tr
+
+        %td
+          = link_to show_path do
+            = filtered_highlighted(purchase.numero_publicacao)
+
+        %td
+          - title = purchase.nome_fornecedor
+          = link_to show_path, title: title do
+            = filtered_highlighted(title.truncate(30))
+
+        %td
+          - title = purchase.nome_resp_compra
+          = link_to show_path, title: title do
+
+            - if filtered_params?([:manager_id])
+              = highlight(title.truncate(30), title.truncate(30))
+            - else
+              = filtered_highlighted(title.truncate(30))
+
+        %td
+          - title = purchase.descricao_item
+          = link_to show_path, title: title do
+            = filtered_highlighted(title.truncate(30))
+
+        %td
+          = link_to show_path do
+            = number_to_currency(purchase.valor_unitario)
+
+
+        %td
+          = link_to show_path, title: purchase.unidade_fornecimento do
+            = purchase.quantidade_estimada
+
+        %td.text-right
+          = link_to show_path do
+            = number_to_currency(purchase.valor_total_calculated)

@@ -1,0 +1,26 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = t('.title')
+
+.row
+  .col-12
+    - if can?(:create, ticket_report)
+      = link_to t('.commands.new'), new_operator_reports_ticket_report_path, class: 'btn btn-primary pull-right'
+
+%hr{'aria-hidden':'true'}
+
+.row
+  .col-12
+    - if ticket_reports.present?
+      %ul.tickets-list
+        = render ticket_reports
+    - else
+      .row
+        %i.col-md-12.text-center
+          = t('.empty')
+
+    .mt-4.clearfix
+      .float-right
+        = paginate ticket_reports

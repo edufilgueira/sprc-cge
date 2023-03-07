@@ -1,0 +1,120 @@
+es:
+
+  transparency:
+    sou:
+      home:
+
+        index:
+          title: Oidoría Digital
+          transparency_title: Oidoría Digital
+          transparency_description: >
+            Bienvenidos al área de Oidoría Digital del Portal de Ceará Transparente.
+
+        general:
+          title: Haz tu manifestación
+          description: >
+            El gobierno te escucha. Registrar solicitudes, quejas, sugerencias o cumplidos. También es posible informar algo
+            mal sin tener que identificarse.
+          new_ticket: Registrar Nueva Manifestación
+
+          follow_ticket: 
+            title: Acompañar Manifestación
+            description: >
+              Podrás seguir el servicio de tu manifestación por número de protocolo o accediendo a su perfil en Ceará Transparente.
+
+        how:
+          more: 'Lea más'
+          what_is:
+            title: ¿Qué es la Oidoría?
+            description: >
+              El Defensor del Pueblo es el principal canal de comunicación entre los ciudadanos y el gobierno. Es un derecho del ciudadano hablar, participar e inspeccionar el gobierno, con el objetivo de mejorar la calidad de los servicios públicos e identificar irregularidades.
+
+          how_to:
+            title: ¿Como usarla?
+            description: >
+              Manual Defensoría de la Casa Matriz y Defensoría General del Estado, Evaluación del Desempeño de las Defensorías y Labores Profesionales.
+
+        publications:
+          title: Manual del Defensor del Pueblo y publicaciones generales 
+          description: >
+           
+
+          articles: Artículos
+          academic: Publicaciones Académicas
+
+          diagnosis:
+            title: 'Haga clic aquí'
+
+        sou_intro:
+          title: 'Informes de gestión del Oidoría'
+          description: 'Acceda a los Informes de Gestión del Defensor del Pueblo y conozca el análisis de las declaraciones de la ciudadanía y la información sobre las medidas adoptadas por el gobierno.'
+          links: 'Links'
+
+          report:
+            title: 'Informes de Gestión de Oidoría (Consolidado CGE)'
+          legislation:
+            title: 'Legislación sobre Oidoría'
+          sectoral:
+            title: 'Informes de Gestión de Oidorías Sectoriales'
+
+        stats:
+          title: Estadísticas de manifestaciones de la Oidoría
+          description: >
+            Ver estadísticas y datos sobre los tipos de manifestaciones del Defensor del Pueblo realizadas por los ciudadanos desde marzo de 2018.
+
+
+
+          month: Visualización de datos del período de %{month}
+          stats_1:
+            title: Total de declaraciones válidas
+
+          stats_2:
+            title: Tempo promedio de respuesta
+            unit: '%{value} días'
+
+          stats_3:
+            title: '% de respuestas respondidas dentro del plazo'
+            unit: '%{value}%'
+
+          summary:
+            stats_1: Elogio
+            stats_2: Reclamación
+            stats_3: Denuncia
+            stats_4: Sugerencia
+            stats_5: Solicitud
+
+          see_more: Acceder a paneles estadísticos de la Oidoría
+
+        stats_evaluations:
+          title: 'Encuesta de satisfacción del Defensor del Pueblo Digital'
+          description: >
+            Paneles estadísticos mensuales como los datos consolidados de la encuesta de satisfacción y las evaluaciones de servicio que realizan los ciudadanos de Ceará Transparente.
+
+          month: Visualización de datos para el período %{month}
+
+          total_answered_tickets:
+            title: 'Total manifestaciones respondidas'
+
+          total_user_evaluations:
+            title: 'Encuestas de satisfacción respondidas por usuarios de Ceará Transparente'
+
+          see_more: Acessar painéis estatísticos das pesquisas de satisfação da ouvidoria
+
+        events:
+          title: Próximos eventos
+          description: >
+            Seguir el programa de cursos y capacitaciones relacionados con la ciudadanía para los empleados de las agencias y entidades estado.
+
+          empty: Ningún evento registrado.
+
+        sous:
+          title: Red de Oidoría
+          description: >
+            El Estado de Ceará cuenta con una red organizada de Defensores del Pueblo. Esto permite la estandarización de procesos y ayuda a implementar mejores políticas públicas.
+
+          link_1: Red de Oidoría del Poder Ejecutivo Estadual
+          link_2: Red Cearense de Oidoría Pública y Afines
+          link_3: Programa de Fortalecimiento de la Oidoría
+          see_more:
+            title: Ver la Red de Ouvidoría
+            link: '/portal-da-transparencia/paginas/redes-de-ouvidorias'

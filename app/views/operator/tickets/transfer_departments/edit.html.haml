@@ -1,0 +1,35 @@
+- content_for :title, t(".title")
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        %h2.card-title
+          = t('.title')
+
+      .card-block
+
+        .content
+
+          %h3.card-subtitle
+            = t('.description.title')
+
+          = render 'shared/tickets/description', ticket: ticket
+
+          .content-with-label.form-group
+            %p.content-label
+              = t('.attachments.title')
+            %p
+              = render 'shared/attachments/index', ticket: ticket
+
+          %hr{'aria-hidden': 'true'}
+
+          %h3.card-subtitle
+            = t('.form.title')
+
+          = render 'form', ticket_department: ticket_department

@@ -1,0 +1,5 @@
+- if can?(:appeal, ticket)
+
+  %small.no-print
+    - url = url_for([:new, namespace, :ticket, :appeal, ticket_id: ticket.id, only_path: true])
+    = link_to t('.appeal'), url, class: 'btn btn-sm btn-success pull-right', 'data-confirm': t('.confirm')

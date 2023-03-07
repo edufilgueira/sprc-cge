@@ -1,0 +1,14 @@
+%h4.h6
+  = t('.title')
+
+%hr{'aria-hidden': 'true'}
+
+.col-12
+
+  %dl.row
+    %dt.col-12.col-lg-5.text-right
+      = t(".range")
+    %dd.col-12.col-lg-7
+      - starts_at = l(attendance_report.starts_at, format: :date)
+      - ends_at = l(attendance_report.ends_at, format: :date)
+      = t("report.filters.range", start: starts_at, end: ends_at)

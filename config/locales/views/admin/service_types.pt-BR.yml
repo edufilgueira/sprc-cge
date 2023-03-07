@@ -1,0 +1,51 @@
+pt-BR:
+
+  admin:
+
+    service_types:
+      create:
+        title: Novo tipo de serviço
+        done: "O tipo de serviço '%{title}' foi criado."
+        error: Falha ao criar o tipo de serviço
+      destroy:
+        done: "O tipo de serviço %{title}' foi removido."
+      form:
+        commands:
+          cancel: < Voltar a lista de tipos de serviço
+          create: Criar tipo de serviço
+        select:
+          organ: Selecione o órgão
+      index:
+        title: Tipos de serviço
+
+        commands:
+          new: Novo tipo de serviço
+
+        table:
+          summary: Lista paginada com todos os tipos de serviço
+          caption: Tabela contendo todos os tipos de serviço
+          header:
+            name: Nome
+            organ_acronym: Órgão
+            code: Código
+            commands: ''
+            status: ''
+
+        filters:
+          select:
+            organ: Órgão
+            subnet: Sub-rede
+
+      new:
+        title: Novo tipo de serviço
+      edit:
+        title: Edição
+      update:
+        title: Edição de tipo de serviço
+        done: "O tipo de serviço '%{title}' foi atualizado."
+        error: Falha ao atualizar o tipo de serviço
+      show:
+        title: Exibição do tipo de serviço
+      toggle_disabled:
+        disabled: Tipo de serviço desabilitado!
+        enabled: Tipo de serviço habilitado!

@@ -1,0 +1,13 @@
+en:
+  activerecord:
+    attributes:
+
+      topic:
+        name: Name 
+        organ: Organ
+        organ_name: Organ name
+
+    errors:
+      models:
+        topic:
+          attributes:

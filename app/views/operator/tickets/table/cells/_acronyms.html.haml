@@ -1,0 +1,9 @@
+- ticket_show_path = operator_ticket_path(ticket)
+
+%td
+  = link_to ticket_show_path  do
+    - acronyms = operator_sectoral?(current_user) ? acronym_departments_list(ticket) : acronym_organs_list(ticket)
+    - if acronyms.present?
+      = acronyms
+    - else
+      %em= t('messages.content.undefined')

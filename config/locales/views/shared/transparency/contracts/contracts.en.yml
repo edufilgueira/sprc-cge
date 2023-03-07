@@ -1,0 +1,191 @@
+en:
+  shared:
+    transparency:
+      contracts:
+        contracts:
+
+          index:
+            title: Contracts
+            description: |
+              Consult here any contract signed by the State.See who was hired, what service should be done, how much was paid, the due date, etc.You can also track the <a href="%{url}"> management contracts </a> execution.
+
+            source: |
+              <p><strong>Data source:</strong></p>
+              <p>Controladoria e Ouvidoria Geral do Estado - CGE</p>
+              <p>Sistema de Acompanhamento de Contratos e Convênio - SACC</p>
+
+            chart:
+              valor_atualizado_concedente:
+                unit: "Active contracts values sum: R$"
+                title: 'Active contracts values in the month'
+
+                creditor:
+                  title: Active contracts values sum per creditor
+                manager:
+                  title: Active contracts values sum per management unit
+                tipo_objeto:
+                  title: Active contracts values sum per scope type
+                decricao_modalidade:
+                  title: Active contracts values sum per bidding modality
+
+            charts:
+              tabs:
+                creditor:
+                  title: Per creditor
+                manager:
+                  title: Per management unit
+                tipo_objeto:
+                  title: Per scope type
+                decricao_modalidade:
+                  title: Per bidding modality
+
+            filters:
+              title: Advanced search
+              search:
+                hint: |
+                  You can search for the SACC No., Contract No., management unit name, contractor name or CNPJ and contract scope parts. Examples: 'sec saude', 'education', 'snack', among others.
+              situation_description:
+                information: |
+                  WAITING FOR ADDITIONAL PUBLICATION - Instrument with Additive pending publication in the Official Gazette of the State (DOE) or in Ceará Transparente;
+                  COMPLETED - Instrument with object completed;
+                  COMPLETED WITH DEBT - Instrument with completed object, which presents pending payments;
+                  UNDER EXECUTION [BLOCKED REQUEST FOR INSTALLMENT] - Instrument that presents an impediment to execution, due to a supervening fact;
+                  UNDER PERFORMANCE [NORMAL] - Instrument with execution proceeding normally;
+                  DISABLED [ELECTORAL PERIOD] - Restriction imposed on account of the electoral period in accordance with § 10 of art. 73 of Law No. 9.504 / 97;
+                  RELEASED [ELECTORAL PERIOD] - The restriction imposed on account of the electoral period provided for in § 10 of art. 73 of Law No. 9.504 / 97;
+                  STOPPED - If it occurs due to a fact attributable to the Public Administration, there will be an automatic extension of the execution schedule;
+                  TERMINATED - Instrument terminated unilaterally by the State or bilaterally by related parties;
+                  ENDED WITH DEBT - Instrument closed unilaterally by the State or bilaterally by related parties, which presents pending payments;
+                  SUSPENDED - It arises from a unilateral act of the Administration, accompanied by motivation, supported by reasons of public interest, arising from a supervening fact;
+                  EXPIRED - Instrument with expired term.
+              contractor_description:
+                information: |
+                  Public agency or entity of the State of Ceará responsible for contracting.
+              effective_date_description:
+                information: |
+                  Period in which the contract begins its effects - signature date, publication date or date defined in the contractual instrument - with an end defined on the day established in the contractual instrument and its amendments.
+              signature_date_description:
+                information: |
+                  Period in which the contract was signed by the parties involved - contracting party and contracted party.
+
+            counts:
+              contracts_count:
+                title: Filtered contracts amount
+              contracts_sum:
+                title: Filtered contracts value
+                tolltip: It is the original value of the contracts plus the value of their amendments - amendments or apostilles - considering the entire period of validity of the contractual instrument.
+
+            table:
+              summary: Contracts and agreements list
+              header:
+                data_assinatura: Signature Date
+                isn_sic: SACC No.
+
+                num_contrato: Contract No.
+                cod_concedente: Grantor
+                descricao_objeto: Scope
+                valor_atualizado_concedente: Updated value <i class="fa fa-question-circle" title="It is the original value of the contracts plus the value of their amendments - amendments or apostilles - considering the entire period of validity."></i>
+                calculated_valor_empenhado: Committed value <i class="fa fa-question-circle" title="It is the total value of the commitments made, considering the entire period of validity of the contractual instrument."></i>
+                calculated_valor_pago: Amount paid <i class="fa fa-question-circle" title="It is the total value of payments made, considering the entire period of validity of the contractual instrument."></i>
+                cod_gestora: Management unit
+                creditor: Creditor
+
+            stats:
+              title: Contracts main figures
+              count: 'Active contracts amount in <strong>%{date}</strong>'
+              valor_atualizado_concedente: 'Largest active suppliers in <strong>%{date}</strong>'
+              valor_atualizado_concedente_tooltip: Comprises current contracts, that is, those that have not yet expired or have not been terminated
+              tooltips:
+                active_information: An active contract is one that has not yet expired or has not been terminated.
+
+          show:
+            resource_title: 'SACC No.: %{sacc}'
+            descricao_url: Whole contract
+            descricao_url_ddisp: Bidding exemption process
+            descricao_url_inexg: Bidding unenforceability process
+            edital_url: Check bidding notice
+            num_contrato: 'Contract Number'
+            blank_contract: 'FOR THIS EXPENSE THERE IS NO CONTRACT TERM AVAILABLE FOR DOWNLOAD, BECAUSE IT IS AN ACQUISITION DISPENSED FROM THE FORMALIZATION OF THE CONTRACT TERM, ACCORDING TO § 4 of ART. 62 OF NATIONAL LAW No. 8.666 / 93.'
+
+            additives:
+              title: Additives
+              empty: No additives registered
+              table:
+                export_file_name: 'Additives-%{id}'
+                heads:
+                  descricao_tipo_aditivo: Type
+                  data_aditivo: Datos aditivos
+                  data_termino: End date
+                  valor: Value
+                  descricao_observacao: Scope
+                  descricao_url: Whole additive
+
+            adjustments:
+              title: Adjustments
+              empty: No adjustments registered
+              table:
+                export_file_name: 'adjustments-%{id}'
+                heads:
+                  descricao_tipo_ajuste: Description type
+                  descricao_observacao: Scope
+                  data_ajuste: Adjustment Data
+                  data_termino: End date
+                  valor_ajuste_destino: Value
+                  descricao_url: Whole adjustment
+
+            financials:
+              title: Commitment notes and Payments notes
+              empty: No Commitment notes and Payments notes registered
+              table:
+                export_file_name: 'payments-%{id}'
+                heads:
+                  num_documento: Commitment note
+                  data_documento: Commitment date
+                  valor_documento: Commitment
+                  num_pagamento: Payment note
+                  data_pagamento: Payment date
+                  valor_pagamento: Payment
+
+            infringements:
+              title: Document Overdue
+              empty: No document overdue registered
+              table:
+                export_file_name: 'overdues-%{id}'
+                heads:
+                  cod_financiador: Funding
+                  descricao_entidade: Entity
+                  descricao_financiador: Funding description
+                  descricao_motivo_inadimplencia: Reason
+                  data_lancamento: Due date
+                  valor_atualizado_total: Value
+
+            transfer_bank_orders:
+              empty: There are no bank transfer orders for this agreement
+              table:
+                export_file_name: 'bank-transfer-orders-%{id}'
+
+            accountability:
+              empty: No accountability information of this agreement
+              legend: |
+                <p> Accountability Status: </ p>
+                  <ul>
+                    <li> <strong> Waiting for Accountabilities </ strong>: Accountability has not yet been submitted; </ li>
+                    <li> <strong> Accountabilities not submitted </ strong>: The deadline to submit the Accountability has expired; </ li>
+                    <li> <strong> Awaiting accountabilities analysis </ strong>: Accountability submitted, but the Grantor did not initiate the analysis; </ li>
+                    <li> <strong> Accountabilities under analysis </ strong>: Accountability sent and the Grantor started the analysis; </ li>
+                    <li> <strong> Unanalyzed accountabilities </ strong>: The deadline for the Grantor to analyze the accountabilities has expired; </ li>
+                    <li> <strong> Approved </ strong>: Accountability Approved; </ li>
+                    <li> <strong> Reproved </ strong>: Accountability Reproved; </ li>
+                  </ul>
+
+            management_contract:
+              follow:
+                title: Follow the contract
+              description: '<a href="%{url}">Click here</a> to follow the Management Agreement execution'
+
+        transfer_bank_orders:
+          download:
+            xlsx: Download XLSX
+            csv: Download CSV
+          index:
+            empty: There are no bank transfer orders for this agreement

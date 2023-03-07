@@ -1,0 +1,56 @@
+%h2.sr-only
+  = t('.title')
+
+- content_for(:toolbar) do
+  .pull-left
+    = render 'shared/admin/available_locales', resource: page
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-8
+            %h3.card-title
+              = page.title
+
+          .col-4
+            .float-right
+              = link_to transparency_page_path(page), target: "_blank", class: 'btn text-muted btn-link hover-link float-left d-inline-block' do
+                %i.fa.fa-external-link
+                = t('commands.show')
+
+              - if can?(:edit, page)
+                = link_to t('commands.edit'), edit_admin_page_path(page), class: 'btn text-muted btn-link'
+
+              - if can?(:manage, page)
+                = link_to t('commands.remove'), admin_page_path(page), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link'
+
+      .card-block
+
+        = content_with_label(page, :menu_title)
+
+        = content_with_label(page, :status_str)
+
+        - if page.parent_id.present?
+          = content_with_label(page, :parent_menu_title)
+
+        .content-with-label
+          %p.content-label
+            = Page.human_attribute_name(:content)
+          %p.content-value
+            = raw page.content
+
+      = render 'shared/pages/charts', page: page
+
+
+      - if page.attachments.blank?
+        .card-block
+          = t('.attachments.none')
+
+      - else
+        = render 'shared/pages/attachments', page: page

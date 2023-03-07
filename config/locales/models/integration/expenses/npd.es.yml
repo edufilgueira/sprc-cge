@@ -1,0 +1,49 @@
+es:
+  activerecord:
+    models:
+      integration/expenses/npd:
+        one: Nota de Liquidación de Gastos
+        other: Notas de Liquidación de Gastos
+
+    attributes:
+      integration/expenses/npd:
+        exercicio: Ejercicio
+        unidade_gestora: Unidad de gestión
+        unidade_executora: Unidad ejecutora
+        numero: Número de la nota de pago
+        natureza: Naturaleza
+        efeito: Efecto
+
+        numero_npd_ordinaria: Número de la NPD ordinaria
+        codigo_localidade_npd_ordinaria: Código local de la NPD ordinaria
+        codigo_retencao: Código de la retención
+        justificativa: Justificativa
+        numero_processo_administrativo_despesa: Número del proceso administrativo del gasto
+        data_emissao: Fecha de emisión
+        date_of_issue: Fecha de emisión
+        credor: Acreedor
+        documento_credor: Documento del acreedor
+        valor: Valor
+        numero_nld_ordinaria: Número de la NLD ordinaria
+        codigo_natureza_receita: Código de la naturaleza de los ingresos
+        servico_bancario: Servicio bancario
+        banco_origem: Banco de origen
+        agencia_origem: Agencia de origen
+        digito_agencia_origem: Dígito de la agencia de origen
+        conta_origem: Cuenta de origen
+        digito_conta_origem: Dígito de la cuenta de origen
+        banco_pagamento: Banco del pago
+        codigo_localidade: Codigo de la localidad
+        banco_beneficiario: Banco del beneficiário
+        agencia_beneficiario: Agencia del beneficiario
+        digito_agencia_beneficiario: Dígito de la agencia del beneficiario
+        conta_beneficiario: Cuenta del beneficiario
+        digito_conta_beneficiario: Dígito de la cuenta del beneficiario
+        status_movimento_bancario: Estatus del movimiento bancario
+        data_retorno_remessa_bancaria: Fecha de retorno del envío bancária
+        processo_judicial: Proceso judicial
+        data_atual: Fecha actual
+
+        management_unit_title: Secretaría/Órgano
+        executing_unit_title: Unidad ejecutora
+        creditor_nome: Acreedor

@@ -1,0 +1,22 @@
+.table-responsive
+  %table.table.table-hover.table-sm.table-sorted{summary: t('.summary')}
+
+    %thead
+
+      %tr
+        - headers = [:parent_protocol, :created_at, :ticket_type, :internal_status, :used_input, :acronym_list]
+
+        - headers.each_with_index do |head, index|
+          - sort_column_name = sort_columns[index]
+
+          %th{ class: "#{sortered_table_active_class(sort_column_name)}" }
+            - if sort_column_name
+              = sortered_table_header(sort_column_name, t(".heads.#{head}"))
+            - else
+              = t(".heads.#{head}")
+
+    %tbody
+      %tbody
+        = render partial: 'ticket', collection: tickets
+
+  = render 'shared/components/table/index_count', collection: tickets, filtered_count: filtered_count, total_count: total_count, filtered: filtered?

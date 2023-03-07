@@ -1,0 +1,30 @@
+.card.mb-1
+  .row.card-body
+
+    .col-md-1.hidden-sm-down
+      %label.h5.text-muted.ml-3.mt-2
+        = index + 1
+
+    .col-md-4.col-6
+      %label.h6.font-weight-bold
+        = organ[0]
+
+      - organ_name = organ[1]['organ_name']
+      %small.text-muted.d-block.text-truncate{title: organ_name}
+        = organ_name
+
+    .col-md-2.hidden-sm-down
+      .text-center.text-muted.mt-2
+        = organ[1]['total_tickets']
+
+    .col-md-2.hidden-sm-down
+      .text-center.text-muted.mt-2
+        = organ[1]['total_answered_tickets']
+
+    .col-md-1.col-3
+      .text-center.text-muted.mt-2
+        = organ[1]['total_user_evaluations']
+
+    .col-md-2.col-3
+      .text-center.text-muted.mt-2.h4
+        = number_with_precision(organ[1]['average_evaluations'], precision: 2) || '-'

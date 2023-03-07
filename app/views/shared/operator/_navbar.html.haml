@@ -1,0 +1,208 @@
+= content_for(:navbar) do
+
+  %ul.navbar-nav.ml-auto
+
+    %li.nav-item
+
+      - active = (controller_path == 'operator/home')
+      - active_class = (active ? 'active' : '')
+
+      = link_to operator_root_path, class: "nav-link #{active_class}" do
+        %i.fa.fa-home.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+
+        .navbar-link-text
+          = t('.home.title')
+
+        .navbar-active-indicator.hidden-md-down
+          %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+    - unless current_user.sic_sectoral?
+      %li.nav-item
+
+        - active = (controller_path == 'operator/tickets' && action_name != 'index' && ticket.ticket_type == 'sou')
+        - active = (active || (controller_path == 'operator/tickets' && action_name == 'index' && ticket_type == 'sou'))
+
+        - active_class = (active ? 'active' : '')
+
+        = link_to operator_tickets_path(ticket_type: :sou), class: "nav-link #{active_class}" do
+          %i.fa.fa-comment.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+          .navbar-link-text
+            = t('.tickets.title')
+
+          .navbar-active-indicator.hidden-md-down
+            %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+    - unless (current_user.sectoral? && !current_user.acts_as_sic?) || current_user.operator_security_organ?
+      %li.nav-item
+
+        - active = (controller_path == 'operator/tickets' && action_name != 'index' && ticket.ticket_type == 'sic')
+        - active = (active || (controller_path == 'operator/tickets' && action_name == 'index' && ticket_type == 'sic'))
+
+        - active_class = (active ? 'active' : '')
+
+        = link_to operator_tickets_path(ticket_type: :sic), class: "nav-link #{active_class}" do
+          %i.fa.fa-info-circle.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+          .navbar-link-text
+            = t('.information_access.title')
+
+          .navbar-active-indicator.hidden-md-down
+            %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+    - if current_user.call_center? || current_user.call_center_supervisor?
+      %li.nav-item
+
+        - active = (controller_path == 'operator/attendances')
+
+        - active_class = (active ? 'active' : '')
+
+        = link_to operator_attendances_path, class: "nav-link #{active_class}" do
+          %i.fa.fa-phone.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+          .navbar-link-text
+            = t('.attendances.title')
+
+          .navbar-active-indicator.hidden-md-down
+            %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+      %li.nav-item
+
+        - active = (controller_path == 'operator/call_center_tickets')
+
+        - active_class = (active ? 'active' : '')
+
+        = link_to operator_call_center_tickets_path, class: "nav-link #{active_class}" do
+          %i.fa.fa-reply.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+          .navbar-link-text
+            = t('.call_center_tickets.title')
+
+          .navbar-active-indicator.hidden-md-down
+            %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+    - if can?(:global_tickets_index, Ticket)
+      %li.nav-item
+        - active = (controller_path == 'operator/global_tickets')
+
+        - active_class = (active ? 'active' : '')
+
+        = link_to operator_global_tickets_path, class: "nav-link #{active_class}" do
+          %i.fa.fa-globe.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+          .navbar-link-text
+            = t('.global_tickets.title')
+
+          .navbar-active-indicator.hidden-md-down
+            %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+
+    - if can?(:create, Stats::Ticket) || can?(:create, TicketReport) || can?(:create, GrossExport) || can?(:create, AttendanceReport)|| can?(:create, EvaluationExport)
+      %li.nav-item
+
+        - active = controller_path.include?('operator/reports')
+
+        - active_class = (active ? 'active' : '')
+
+        = link_to operator_reports_root_path, class: "nav-link #{active_class}" do
+          %i.fa.fa-bar-chart.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+          .navbar-link-text
+            = t('.reports.title')
+
+          .navbar-active-indicator.hidden-md-down
+            %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+  
+    - if can?(:index, User)
+
+      %li.nav-item
+
+        - active = controller_path.include?('operator/users')
+
+        - active_class = (active ? 'active' : '')
+
+        = link_to operator_users_path, class: "nav-link #{active_class}" do
+          %i.fa.fa-users.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+          .navbar-link-text
+            = t('.users.title')
+
+          .navbar-active-indicator.hidden-md-down
+            %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+    - if can?(:view, Topic)
+      %li.nav-item
+
+        - active = controller_path.include?('operator/topics')
+
+        - active_class = (active ? 'active' : '')
+
+        = link_to operator_topics_path, class: "nav-link #{active_class}" do
+          %i.fa.fa-list.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+          .navbar-link-text
+            = t('.topics.title')
+
+          .navbar-active-indicator.hidden-md-down
+            %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+    - if can?(:index, Department)
+
+      %li.nav-item
+
+        - active = controller_path.include?('operator/departments')
+
+        - active_class = (active ? 'active' : '')
+
+        = link_to operator_departments_path, class: "nav-link #{active_class}" do
+          %i.fa.fa-hospital-o.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+          .navbar-link-text
+            = t('.departments.title')
+
+          .navbar-active-indicator.hidden-md-down
+            %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+    - if can? :subnet_index, Department
+
+      %li.nav-item
+
+        - active = controller_path.include?('operator/subnet_departments')
+
+        - active_class = (active ? 'active' : '')
+
+        = link_to operator_subnet_departments_path, class: "nav-link #{active_class}" do
+          %i.fa.fa-hospital-o.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+          .navbar-link-text
+            = t('.subnet_departments.title')
+
+          .navbar-active-indicator.hidden-md-down
+            %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+    - if !current_user.operator_security_organ?
+      %li.nav-item
+        - active = controller_path.include?('operator/answer_templates')
+        - active_class = (active ? 'active' : '')
+
+        = link_to operator_answer_templates_path, class: "nav-link #{active_class}" do
+          %i.fa.fa-wpforms.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+          .navbar-link-text
+            = t('.answer_templates.title')
+
+          .navbar-active-indicator.hidden-md-down
+            %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+
+    - if can? :manage, Operator::SouEvaluationSample
+
+      %li.nav-item
+        - active =controller_name.to_sym == :sou_evaluation_samples
+        - active_class = (active ? 'active' : '')
+
+        = link_to operator_sou_evaluation_samples_path, class: "nav-link #{active_class}" do
+          %i.fa.fa-file-text-o.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+          .navbar-link-text
+            = t('.sou_evaluation_samples.title')
+
+        .navbar-active-indicator.hidden-md-down
+          %i.fa.fa-caret-up{ 'aria-hidden': 'true' }
+
+
+    %li.nav-item
+      = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
+        %i.fa.fa-sign-out.d-block.hidden-md-down{ 'aria-hidden': 'true' }
+        .navbar-link-text
+          = t('.logout.title')
+
+= render 'shared/navbar'

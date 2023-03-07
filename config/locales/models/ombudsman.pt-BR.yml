@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    attributes:
+
+      ombudsman:
+        title: 'Título'
+        contact_name: 'Ouvidor(a):'
+        phone: 'Telefone:'
+        email: 'E-mail:'
+        address: 'Endereço:'
+        operating_hours: 'Horário de funcionamento:'
+        kind: 'Tipo'
+
+  ombudsman:
+    kinds:
+      executive: 'Poder Executivo'
+      sesa: 'SESA'

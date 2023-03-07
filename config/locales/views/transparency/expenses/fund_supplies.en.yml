@@ -1,0 +1,7 @@
+en:
+  transparency:
+    expenses:
+      fund_supplies:
+        index:
+          title: Funds supply
+          description: Here you can consult information on Funding.

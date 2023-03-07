@@ -1,0 +1,11 @@
+pt-BR:
+  shared:
+    attachments:
+      permissions:
+        attachments:
+          none: Nenhum arquivo
+      index:
+        attachments:
+          none: Nenhum arquivo
+      attachment_permission:
+        protected: Protegido

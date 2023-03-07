@@ -1,0 +1,171 @@
+= simple_form_for [:admin, user] do |f|
+
+  .row
+    .col-lg-12
+      %label
+        = User.human_attribute_name(:person_type)
+
+      .btn-group.btn-group-justified{ 'data-toggle': 'radio-buttons', role: 'group', 'aria-label': User.human_attribute_name(:person_type), 'data-input': 'person_type' }
+        - User.person_types.keys.each do |type|
+          - option_label = I18n.t("user.person_types.#{type}")
+          - checked = (type.to_s == user.person_type.to_s)
+          - active_class = (checked ? 'active' : '')
+          %label.btn.btn-outline-primary{ class: active_class, for: option_label }
+            = radio_button_tag 'user[person_type]', type, checked, autofocus: checked, id: option_label, 'data-input': type
+            = option_label
+
+  .row{ data: { content: 'legal_person' } }
+    .col-lg-12
+      = f.input :name, label: t('.person_types.legal.name'), wrapper_html: { data: { content: 'legal_name' } }
+
+  .row{ data: { content: 'individual_person' } }
+    .col-12.col-lg-6
+      = f.input :name, wrapper_html: { data: { content: 'individual_name' } }
+
+    .col-12.col-lg-6
+      = f.input :social_name, wrapper_html: { data: { content: 'individual_social_name' } }
+
+
+  .row
+    .col-12.col-lg-6
+      = f.input :document_type, { collection: user_admin_document_types_for_select, selected: user.document_type, input_html: { 'data-input': 'document_type' }, required: true }
+
+      %label{ data: { input: 'document_cnpj'}}
+        = t('.person_types.legal.cnpj')
+
+
+    .col-12.col-lg-6
+      = f.input :document, input_html: { 'data-input': 'document' }, required: true
+
+
+  .row
+    .col-lg-6
+      = f.input :gender, { collection: user_gender_for_select, selected: user.gender || :not_informed_gender, wrapper_html: { data: { content: 'individual_gender' } } }
+
+    .col-lg-6
+      = f.input :birthday, as: :string, input_html: { class: 'datetimepicker' }
+
+
+  .row
+    .col-lg-6
+      = f.input :server, as: :radio_buttons
+
+
+  .row
+    .col-lg-6
+      - education_level_select_text = t('.fields.education_level.select')
+      = f.input :education_level, include_blank: education_level_select_text, collection: user_education_level_for_select, selected: user.education_level, input_html: { 'data-select2-search': 'hidden' }
+
+  .row
+    - state = params[:state] || states_default_selected_for_user(user)
+
+    .col-lg-6
+      = render 'shared/components/select_states', field_name: :state, cities_container: :user_city_id, required: false, selected: state
+    .col-lg-6
+      = f.association :city, collection: cities_by_state_for_select(state),include_blank: t('.fields.city.select')
+
+  %hr
+
+  .row.mt-3
+    .col-12.col-lg-6
+      = f.input :email
+      - if user.unconfirmed_email.present?
+        .alert.alert-warning.unconfirmed-email.py-1.px-2
+          %i.fa.fa-warning
+          %i
+            = raw t('.fields.unconfirmed_email.tooltip', email: user.unconfirmed_email)
+
+    .col-12.col-lg-6
+      = f.input :email_confirmation, input_html: { 'data-input': 'email_confirmation' }
+
+  .row
+    .col-12.col-lg-4{ data: {  content: 'denunciation_tracking' } }
+      = f.input :denunciation_tracking, as: :radio_buttons, required: true, input_html: { data: { input: 'denunciation_tracking' } }
+
+  .row
+    .col-12.col-lg-6{ data: { content: 'user_type' } }
+      = f.input :user_type, { collection: user_administrative_user_types_for_select, selected: user.user_type, input_html: { data: { input: 'user_type' } } }
+
+    .col-12.col-lg-6{ data: { content: 'operator_type' } }
+      - operator_type_select_text = t('.fields.operator_type.select')
+      = f.input :operator_type, required: true, include_blank: operator_type_select_text, collection:user_operator_types_for_select, input_html: { 'aria-label': operator_type_select_text }
+    %hr
+
+  .row
+    .col-12.col-lg-4{ data: {  content: 'sectoral_denunciation' } }
+      = f.input :sectoral_denunciation, as: :radio_buttons
+
+    .col-12.col-lg-4{ data: { content: 'internal_subnet' } }
+      = f.input :internal_subnet, as: :radio_buttons, required: true, input_html: { data: { input: 'internal_subnet' } }
+
+    .col-12.col-lg-4{ data: {  content: 'positioning' } }
+      = f.input :positioning, as: :radio_buttons
+
+    .col-12.col-lg-4{ data: {  content: 'acts_as_sic' } }
+      = f.input :acts_as_sic, as: :radio_buttons
+
+
+  %hr
+  - # XXX rever preenchido ao editar
+  .row
+    .col-12{ data: { content: 'organ' } }
+      - organ_select_text = t('shared.tickets.form.fields.organ.select')
+      /-# rede_ouvir_select_text = t('shared.tickets.form.fields.rede_ouvir.select')
+
+      - data = { 'input': 'organ', 'dependent-select': 'departments', 'child-container': '[data-dependent-select-child=departments]', 'ignore-blank': 'true', 'param-name': 'organ_id', 'url': api_v1_departments_path }
+
+      / =# f.input :rede_ouvir, input_html: { data: { 'input': 'rede_ouvir' } }, wrapper_html: { data: { 'content': 'rede_ouvir_checkbox' } }
+
+      = f.association :organ, { collection: organs_for_select_with_subnet_info, include_blank: t('messages.form.select'), selected: user.organ_id, label: organ_select_text, input_html: { data: data }, wrapper_html: { data: { 'content': 'executive_organ' } } }
+
+      / =# f.association :organ, { collection: organs_rede_ouvir_for_select, include_blank: t('messages.form.select'), selected: user.organ_id, label: rede_ouvir_select_text, wrapper_html: { data: { 'content': 'rede_ouvir' } } }
+
+    .col-12{ data: { content: 'subnet' } }
+      - organ_select_text = t('.fields.organ.select')
+      - data = { 'input': 'organ_subnet', 'dependent-select': 'organ_subnet', 'child-container': '[data-dependent-select-child=subnets]', 'ignore-blank': 'true', 'param-name': 'organ_id', 'url': api_v1_subnets_path }
+
+      = f.association :organ, { collection: organs_for_select_with_subnet_info, include_blank: t('messages.form.select'), selected: user.organ_id, label: organ_select_text, input_html: { data: data } }
+
+      - subnet_select_text = t('messages.form.select')
+      - data = { 'input': 'subnet', 'dependent-select': 'subnet', 'child-container': '[data-dependent-select-child=departments]', 'dependent-select-blank': subnet_select_text, 'param-name': 'subnet_id', 'url': api_v1_departments_path, 'aria-label': subnet_select_text, 'dependent-select-child': 'subnets' }
+      - organ = f.object.organ
+      = f.association :subnet, prompt: subnets_by_organ_for_select(organ), collection: subnets_for_select, required: true, input_html: { data: data  }
+  .row
+    .col-12.col-lg-6{ data: { content: 'department' } }
+      - department_select_text = t('.fields.department.select')
+      - data = { 'input': 'department', 'dependent-select': 'sub_departments', 'dependent-select-child': 'departments', 'dependent-select-blank': department_select_text, 'child-container': '[data-dependent-select-child=sub_departments]', 'param-name': 'department_id', 'url': api_v1_sub_departments_path }
+
+      - departments_data = []
+      - if user.organ_id.present?
+        - departments_data = departments_by_user_for_select(f.object)
+
+      = f.association :department, { collection: departments_data, label: department_select_text, include_blank: department_select_text, input_html: { data: data, 'aria-label': department_select_text } }
+
+      - sub_department_select_text = t('.fields.sub_department.select')
+      - data = { 'input': 'sub_department', 'dependent-select-child': 'sub_departments', 'dependent-select-blank': sub_department_select_text }
+
+      = f.association :sub_department, { collection: sub_departments_by_department_for_select(user.department_id), include_blank: sub_department_select_text, label: sub_department_select_text, input_html: { data: data, 'aria-label': sub_department_select_text } }
+
+
+  - if can?(:edit, user) && user.persisted?
+    .row
+      .col-12.col-lg-6
+        = check_box_tag :change_password, {}, user.errors[:password].present? || user.errors[:password_confirmation].present?, 'data-input': 'change_password'
+        = label_tag :change_password, t('.commands.change_password')
+
+    .row
+      .col-12.col-lg-6
+        = f.input :password
+
+      .col-12.col-lg-6
+        = f.input :password_confirmation
+
+  .row
+    = render 'shared/users/notification_roles_form', f: f, user: user
+
+  %hr{'aria-hidden': 'true'}
+
+  .row.mt-3
+    .col-lg-12
+      = link_to t('.commands.cancel'), admin_users_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary pull-right'

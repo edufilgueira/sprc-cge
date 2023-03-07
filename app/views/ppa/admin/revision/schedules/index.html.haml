@@ -1,0 +1,59 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.card.card-custom
+
+  .card-header
+
+    %h2.card-title
+      = t('.title')
+
+  .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+    .remote-content{'data-remote-content': controller_name}
+
+      .row
+        .col-4.offset-8.mb-2
+
+          = link_to t('.new'), new_ppa_admin_revision_schedule_path, class: 'btn btn-success btn-block'
+
+      .remote-content-result{ 'data-remote-content-result': controller_name }
+
+        - if ppa_revision_schedules.nil?
+
+          .text-muted.text-center
+            = t('messages.filters.no_results_found')
+
+        - else
+          .table-responsive
+            %table.table.table-hover.table-striped.table-sm.table-sorted
+
+              %thead
+                %tr
+                  %th= PPA::Revision::Schedule.human_attribute_name(:start_in)
+                  %th= PPA::Revision::Schedule.human_attribute_name(:end_in)
+                  %th= PPA::Revision::Schedule.human_attribute_name(:stage)
+                  %th= PPA::Revision::Schedule.human_attribute_name(:plan)
+                  %th
+
+                - ppa_revision_schedules.each do |revision_schedule|
+                  - show_path = ppa_admin_revision_schedule_path(revision_schedule)
+                  %tr
+
+                    %td
+                      = link_to revision_schedule.start_in, show_path
+
+                    %td
+                      = link_to revision_schedule.end_in, show_path
+                    %td
+                      = link_to t(".stages.#{revision_schedule.stage}"), show_path
+
+                    %td
+                      = link_to revision_schedule.plan_name, show_path
+
+                    %td
+                      .float-right
+                        = link_to t('commands.edit'), edit_ppa_admin_revision_schedule_path(revision_schedule), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          = paginate ppa_revision_schedules
+  

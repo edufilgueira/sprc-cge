@@ -1,0 +1,18 @@
+- breadcrumbs = content_for(:breadcrumbs)
+- toolbar = content_for(:toolbar)
+
+- # XXX para exibir o menu de notificações para Ticket (autenticação por protocolo), adicionamos
+- # a condição de `ticket_signed_in?`. Para os demais casos, as condições de "ter breadcrumb" ou
+- # "ter toolbar" resolvem.
+- if (breadcrumbs.present? || toolbar.present? || ticket_signed_in?)
+
+  .toolbar.ml-auto
+    .row
+      .toolbar-content.col-12.col-md-6
+        = breadcrumbs
+
+      - if namespace == :operator || namespace == :admin
+        .toolbar-content.col-12.col-md-6
+          = toolbar
+
+          = render 'shared/toolbar_menu', namespace: namespace

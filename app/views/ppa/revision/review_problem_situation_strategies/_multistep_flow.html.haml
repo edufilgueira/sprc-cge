@@ -1,0 +1,24 @@
+-# steps
+
+#grad1.container-fluid
+  .row.justify-content-center.mt-0
+    .col-lg-12.text-center.p-0
+      .card.px-0.pt-4.pb-0
+        %h5.mb-5
+          %strong= t('ppa.revision.review_problem_situation_strategies.multistep_form.title')
+        .row
+          .col-md-12.mx-0
+            %form#msform
+
+              -# progressbar
+              %ul#progressbar
+                %li#account.active
+                  %strong= t('ppa.revision.review_problem_situation_strategies.multistep_form.region')
+                %li#personal
+                  %strong= t('ppa.revision.review_problem_situation_strategies.multistep_form.theme')
+                %li#payment
+                  %strong= t('ppa.revision.review_problem_situation_strategies.multistep_form.revision')
+                %li#confirm
+                  %strong= t('ppa.revision.review_problem_situation_strategies.multistep_form.resume')
+                %li#conclusion
+                  %strong= t('ppa.revision.review_problem_situation_strategies.multistep_form.conclusion')

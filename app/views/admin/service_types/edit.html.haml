@@ -1,0 +1,15 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+.content-detail
+
+  .card.card-custom
+
+    .card-header
+
+      %h3.card-title
+        = t(".title")
+
+    .card-block
+
+      = render 'form', service_type: service_type

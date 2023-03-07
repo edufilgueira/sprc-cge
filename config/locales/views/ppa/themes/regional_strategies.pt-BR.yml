@@ -1,0 +1,48 @@
+pt-BR:
+  ppa:
+    themes:
+      regional_strategies:
+        index:
+          title: "%{theme} - Biênio %{biennium} na região %{region}"
+          regional_strategies: Estratégias Regionais
+          guidelines: Diretrizes
+          proposals: Propostas
+          info_1: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          info_2: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          prioritized_strategy: Diretriz priorizada
+
+          table:
+            header:
+              objectives: Objetivos estratégicos
+              strategies: Estratégia regional
+              priority: Priorização
+              initiatives_count: Iniciativas
+              badge: ''
+              products_count: Produtos
+              interactions_count: Interações
+
+        filters:
+          search: Busca
+
+        show:
+          title: "%{theme} - Biênio %{biennium} na região %{region}"
+          objective: Objetivo Estratégico
+          strategy: Estratégia Regional
+          initiatives: Iniciativas relacionadas a esta estratégia regional
+          comments_count: '%{count} comentário(s)'
+
+          empty_initiatives: Sem iniciativas associadas à estratégia em questão
+
+
+        interactions:
+          interaction_opinion: O que você achou dessa estratégia?
+
+        interaction_stat:
+          likes: gostaram
+          dislikes: não gostaram
+          comments: comentários
+          proposals: propostas
+
+        interaction_button:
+          liked: Gostei
+          disliked: Não gostei

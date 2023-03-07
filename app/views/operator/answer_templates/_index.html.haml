@@ -1,0 +1,28 @@
+= render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+.my-4
+
+  - header = [:name, :commands]
+
+  - table_locale = t('.table')
+
+  = render 'shared/components/remote_table', header: header, collection: answer_templates, sort_columns: sort_columns, table_locale: table_locale do |answer_template|
+
+    - show_path = operator_answer_template_path(answer_template)
+
+    %tr
+
+      %td
+        = link_to show_path, title: answer_template.title do
+          = filtered_highlighted(answer_template.title)
+
+
+      %td
+        .float-right
+
+          - if can?(:edit, answer_template)
+            = link_to t('commands.edit'), edit_operator_answer_template_path(answer_template), class: 'btn text-muted btn-link hover-link float-left d-inline-block'
+
+          - if can?(:manage, answer_template)
+            = link_to t('commands.remove'), operator_answer_template_path(answer_template), method: :delete, 'data-confirm': t('commands.remove_confirm'), class: 'btn text-danger btn-link'
+

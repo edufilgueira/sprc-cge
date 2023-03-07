@@ -1,0 +1,16 @@
+%h3.card-subtitle.text-muted.mb-2
+  = t('.title')
+
+- if documents.empty?
+  %p.alert.alert-info
+    = t('.empty')
+
+- else
+
+  %ul.list-group
+    - documents.each do |document|
+
+      %li.list-group-item
+        = link_to document.attachment_filename, document.attachment_url, target: :_blank
+
+

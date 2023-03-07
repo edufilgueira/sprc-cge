@@ -1,0 +1,8 @@
+pt-BR:
+  shared:
+    filters:
+      category:
+        label: 'Categorias:'
+    operator:
+      fast_search:
+        search: 'Buscar protocolo'

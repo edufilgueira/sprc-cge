@@ -1,0 +1,37 @@
+#
+# Arquivo de localização principal da aplicação. Contém informações básicas
+# e compartilhadas por diversas partes da aplicação.
+#
+# As localizações gerais ficam organizadas como as funcionalidades da aplicação,
+# ou seja, models, controllers, ...;
+#
+
+es:
+  app:
+    author: 'Controladoría General del Estado de Ceará'
+    copyright: '© %{year} - Gobierno del Estado de Ceará. Todos los derechos reservados.'
+    description: 'Ceará Transparente.'
+    title: 'Ceará Transparente'
+
+    unauthorized_message: Usted no tiene permiso de acceso 
+
+    logout: Salir
+    login: Acceder
+    home: Inicio
+
+    breadcrumb:
+      title: Ir para %{title}
+
+    locales:
+      pt-BR: Portugués (Brasil)
+      en: Inglés 
+      es: Español
+
+    env:
+      stage:
+        label: Usted está en el ambiente de
+        dev: Desarrollo
+        qa: QA
+        demo: Demonstración 
+        homologation: homologación
+

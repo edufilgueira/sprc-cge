@@ -1,0 +1,26 @@
+.row
+  .col-12.col-md-1.no-print
+    .float-left
+
+      .bg-faded.rounded-circle.p-1
+
+        %i.fa.fa-bookmark.fa-1x.text-muted.m-2
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      %h4.h6.mb-0
+        - ticket = ticket || ticket_log.ticket
+        = t(".#{ticket.ticket_type}.title", protocol: ticket.protocol)
+      %small
+        %em
+          = ticket_log.responsible.as_author
+
+      %br/
+
+      %small
+        %em
+          = ticket_log_date_author(ticket_log)
+
+%hr{'aria-hidden': 'true'}

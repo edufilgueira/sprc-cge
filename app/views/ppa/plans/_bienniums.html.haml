@@ -1,0 +1,25 @@
+- bienniums.each_with_index do |biennium, i|
+  .biennium-container{ data: { biennium: biennium }, class: i.zero? ? '': 'collapse' }
+    .card-block.small.py-0.text-muted.mt-1
+      = t('.biennium', biennium: biennium)
+
+    .list-group
+      .list-group-item.border-0.small.py-2
+        %strong.mr-1.label-colon
+          = t('.strategies')
+        = PPA::Strategy.in_biennium_and_region(biennium.gsub(' ',''), region).count
+
+      .list-group-item.border-0.small.py-2
+        %strong.mr-1.label-colon
+          = t('.initiatives')
+        = PPA::Initiative.in_biennium_and_region(biennium.gsub(' ',''), region).count
+
+      .list-group-item.border-0.small.py-2
+        %strong.mr-1.label-colon
+          = t('.products')
+        = PPA::Product.in_biennium_and_region(biennium.gsub(' ',''), region).count
+
+      .list-group-item.border-0.small.py-2
+        %strong.mr-1.label-colon
+          = t('.proposals')
+        \ -

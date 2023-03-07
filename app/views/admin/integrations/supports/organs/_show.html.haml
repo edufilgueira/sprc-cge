@@ -1,0 +1,37 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-12
+            %h3.card-title
+              = organ.title
+      .card-block
+        .row
+          .col-6
+            = content_with_label(organ, :sigla)
+          .col-6
+            = content_with_label(organ, :codigo_orgao)
+        .row
+          .col-6
+            = content_with_label(organ, :codigo_entidade)
+          .col-6
+            = content_with_label(organ, :descricao_entidade)
+        .row
+          .col-6
+            = content_with_label(organ, :descricao_administracao)
+          .col-6
+            = content_with_label(organ, :poder)
+        .row
+          .col-6
+            = content_with_label(organ, :codigo_folha_pagamento)
+
+
+

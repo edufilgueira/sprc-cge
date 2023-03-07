@@ -1,0 +1,7 @@
+es:
+  transparency:
+    expenses:
+      multi_gov_transfers:
+        index:
+          title: Transferencias a Instituiciones Multigovernamentales 
+          description: Aquí usted podrá consultar informaciones de Transferencias a Instituiciones Multigovernamentales.

@@ -1,0 +1,20 @@
+@import 'base/variables';
+
+// controle das cores dos status de open_data
+
+.open-datum-status {
+
+  &[data-status=created] {
+    background-color: $status-blue-light;
+    color: $status-blue-text;
+
+    border-color: $status-blue-text;
+  }
+
+  &[data-status=confirmed] {
+    background-color: $status-green-light;
+    color: $status-green-text;
+
+    border-color: $status-green-text;
+  }
+}

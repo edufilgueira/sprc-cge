@@ -1,0 +1,8 @@
+en:
+  ppa:
+    themes:
+      regional_strategies:
+        dislikes:
+          create:
+            success: 'Registered "Unlike" interaction. Thank you!'
+            failure: 'Unable to register the "Unlike" interaction.'

@@ -1,0 +1,95 @@
+pt-BR:
+  activerecord:
+    attributes:
+      integration/expenses/ned:
+        exercicio: Exercício
+        unidade_gestora: Secretaria/Órgão
+        unidade_executora: Unidade executora
+        numero: Número da nota de empenho
+        natureza: Natureza
+        efeito: Efeito
+        data_emissao: Data de emissão
+        valor: Valor empenhado
+        valor_pago: Valor pago
+        classificacao_orcamentaria_reduzido: Classificação orçamentária reduzida
+        classificacao_orcamentaria_completo: Classificação orçamentária completa
+        item_despesa: Item de despesa
+        expense_nature_item_title: Item de despesa
+        cpf_ordenador_despesa: CPF ordenador de despesa
+        credor: Credor
+        cpf_cnpj_credor: CPF/CNPJ do credor
+        razao_social_credor: Razão social do credor
+        numero_npf_ordinario: Número NPF ordinário
+        projeto: Projeto
+        numero_parcela: Número da parcela
+        isn_parcela: ISN da parcela
+        numero_proposta: Número da proposta
+        numero_processo_protocolo_original: Protocolo original do processo
+        especificacao_geral: Especificação geral
+        data_atual: Data atual
+
+        date_of_issue: Data da Despesa
+        date_of_issue_filter: Período
+        management_unit_title: Secretaria/Órgão
+        executing_unit_title: Unidade executora
+        creditor_nome: Credor
+        contract: Instrumento contratual
+
+        classificacao_unidade_orcamentaria: Unidade orçamentária
+        classificacao_funcao: Função
+        classificacao_subfuncao: Subfunção
+        classificacao_programa_governo: Programa de governo
+        classificacao_acao_governamental: Ação governamental
+        classificacao_regiao_administrativa: Região de planejamento
+        classificacao_natureza_despesa: Natureza despesa
+        classificacao_fonte_recursos: Fonte dos recursos
+        classificacao_subfonte: Subfonte
+        classificacao_tipo_despesa: Tipo da despesa
+        classificacao_elemento_despesa: Elemento de despesa
+
+        calculated_valor_final: 'Valor empenhado final'
+        calculated_valor_pago_final: 'Valor pago'
+
+        calculated_valor_pago_exercicio: 'Valor pago no exercício da emissão do empenho'
+        calculated_valor_pago_apos_exercicio: 'Valor pago em anos posteriores ao da emissão do empenho'
+        calculated_valor_liquidado_exercicio: 'Valor liquidado no exercício da emissão do empenho'
+        calculated_valor_liquidado_apos_exercicio: 'Valor liquidado em anos posteriores ao da emissão do empenho'
+        items_description: Descrição do empenho
+
+        function_title: 'Função'
+        sub_function_title: 'Subfunção'
+        resource_source_title: 'Fonte do recurso'
+        government_program_title: 'Programa de governo'
+        government_action_title: 'Ação de governo'
+        modalidade_licitacao: 'Modalidade de licitação'
+
+  integration/expenses/ned:
+    spreadsheet:
+      worksheets:
+        default:
+          title: 'Notas de Empenho %{year}'
+
+          header:
+            exercicio: Exercício
+            numero: Número
+            razao_social_credor: Razão social do credor
+            date_of_issue: Data de emissão
+            management_unit_title: Unidade gestora
+            budget_unit_title: Unidade orçamentária
+            executing_unit_title: Unidade executora
+            creditor_nome: Credor
+            function_title: Função
+            sub_function_title: Subfunção
+            government_program_title: Programa de governo
+            government_action_title: Ação de governo
+            administrative_region_title: Região administrativa
+            expense_nature_title: Natureza da despesa
+            resource_source_title: Fonte de recurso
+            expense_type_title: Tipo da despesa
+            valor: Valor empenhado
+            valor_pago: Valor pago
+            calculated_valor_final: Valor empenhado final
+            calculated_valor_pago_final: Valor pago final
+            calculated_valor_suplementado: Valor suplementado
+            calculated_valor_anulado: Valor anulado
+            calculated_valor_pago_anulado: Valor pago anulado

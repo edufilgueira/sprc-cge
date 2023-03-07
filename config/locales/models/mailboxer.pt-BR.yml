@@ -1,0 +1,9 @@
+pt-BR:
+  mailboxer:
+    notification_mailer:
+      subject: '[Ceará transparente] - Notificação do sistema'
+
+      new_notification_email:
+        footer:
+          body: >
+           Acesse %{link} e acesse suas notificações para ver mais detalhes.

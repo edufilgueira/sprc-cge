@@ -1,0 +1,24 @@
+en:
+  activerecord:
+    models:
+      ppa/workshop:
+        one: Drafting workshop
+        other: Drafting workshops
+
+    attributes:
+      ppa/workshop:
+        plan: Plan
+        name: Name
+        start_at: Start date
+        end_at: End date
+        region: Region
+        city: City
+        address: Address
+        participants_count: Number of participants
+
+    errors:
+      models:
+        ppa/workshop:
+          attributes:
+            end_at:
+              invalid_range: End date needs to be greater than start date 

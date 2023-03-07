@@ -1,0 +1,6 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = t(".#{ticket.ticket_type}.title")
+
+= render 'form', ticket: ticket

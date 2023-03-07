@@ -1,0 +1,7 @@
+= content_for :javascript, javascript_include_tag('views/shared/tickets/attendance_evaluation')
+
+- if can?(:attendance_evaluate, ticket)
+  = render 'operator/tickets/attendance_evaluations/form', ticket: ticket, attendance_evaluation: ticket.attendance_evaluation
+
+- else
+  = render 'operator/tickets/attendance_evaluations/show', attendance_evaluation: ticket.attendance_evaluation

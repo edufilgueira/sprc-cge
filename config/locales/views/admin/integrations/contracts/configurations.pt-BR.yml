@@ -1,0 +1,38 @@
+pt-BR:
+
+  admin:
+    integrations:
+      contracts:
+        configurations:
+
+          import:
+            done: A importação dos dados de contratos e convênios está sendo processada em segundo plano
+          form:
+            label:
+              contract: Informações de contratos e convênios
+              additive: Informações de aditivos
+              adjustment: Informações de ajustes/apostilamentos
+              financial: Informações financeiras de contratos e convênios
+              infringement: Informações de inadimplência de contratos e convênios
+            hint:
+              response: 'Padrão: caminho/do/array'
+              parameters: 'Padrão: foo=bar&abc=def'
+            commands:
+              cancel: Voltar para integrações
+          edit:
+            title: Configuração
+          update:
+            done: "Configuração salva com sucesso."
+          show:
+            edit: Configurar
+            created_at: Criado
+            title: Configuração de Contratos e Convênios
+            import: Importar agora
+            hide_show: Mostrar/Esconder log
+            empty: Nenhuma importação realizada
+            label:
+              contract: Informações de contratos e convênios
+              additive: Informações de aditivos
+              adjustment: Informações de ajustes/apostilamentos
+              financial: Informações financeiras de contratos e convênios
+              infringement: Informações de inadimplência de contratos e convênios

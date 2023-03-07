@@ -1,0 +1,18 @@
+en:
+
+  shared:
+
+    transparency:
+
+      filters:
+
+        range:
+          label: Period
+          start: Start
+          end: End
+
+        filters:
+          starts_at:
+            label: Period
+            start: Start
+            end: End

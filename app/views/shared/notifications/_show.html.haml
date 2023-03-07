@@ -1,0 +1,36 @@
+- title = notification.subject
+- content_for :title, title
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+%h2.sr-only
+  = title
+
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+        .row
+          .col-8
+            %h3.card-title
+              = notification.subject
+
+          .col-4
+            %small.float-right.pt-2
+              = link_to url_for([namespace, :notification, id: notification.id]), method: :patch, style: 'text-decoration:none' do
+                %i{class: "fa #{read_or_unread_icon(notification, current_user)}"}
+                %span
+                  = t('shared.notifications.show.mark_as_unread')
+
+      .card-block
+
+        %p.content-value
+          = raw notification.body
+
+        .pt-4
+          %small
+            %em.text-muted
+              = l(notification.created_at, format: :shorter)

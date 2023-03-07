@@ -1,0 +1,112 @@
+= cache(cache_key) do
+
+  = render 'shared/components/filtered_warning_with_count', total_count: total_count, filtered_count: filtered_count, filtered: filtered?
+
+  .my-4
+
+    %hr{'aria-hidden': 'true'}
+
+    .row
+      .col-4
+        = l(date, format: :month_year_long)
+
+      .col-4.text-center
+        .fa.fa-spin.fa-refresh.m-1.text-muted{'data-remote-content-loader': ''}
+
+
+    %hr{'aria-hidden': 'true'}
+
+    = render 'transparency/exports/form'
+
+    %hr{'aria-hidden': 'true'}
+
+    .row
+      .col-12.col-lg-4
+        .content-with-label
+          - label = raw(t('.counts.server_salaries_count.title'))
+          - value = number_with_delimiter(server_salaries_count)
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+      .col-12.col-lg-4
+        .content-with-label
+          - label = raw(t('.counts.unique_servers_count.title'))
+          - value = number_with_delimiter(unique_servers_count)
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+      .col-12.col-lg-4
+        .content-with-label
+          - label = raw(t('.counts.income_total_sum.title'))
+          - value = number_to_currency(income_total_sum)
+
+          %label.content-label{'aria-label': label, title: label}
+            = label
+            %i.fa.fa-question-circle{'data-toggle': 'tooltip', title: t('.counts.income_total_sum.tooltip')}
+
+          .content-value{'aria-label': value, title: value}
+            .h3.text-muted
+              = value
+
+    %hr{'aria-hidden': 'true'}
+
+    - header = ['server_name', 'organ', 'role_name', 'functional_status', { id: 'income_total', html_class: 'text-right w-12'}, { id: 'income_final', html_class: 'text-right w-12'}]
+
+    - table_locale = t('.table')
+
+    = render 'shared/components/remote_table', header: header, collection: server_salaries, sort_columns: sort_columns, table_locale: table_locale do |server_salary|
+
+      - show_path = url_for(action: 'show', controller: 'server_salaries', id: server_salary)
+
+      %tr
+
+        %td
+          = link_to show_path do
+            = filtered_highlighted(server_salary.server_name)
+
+        %td
+          = link_to show_path do
+            
+            - title = resource_value(server_salary.registration.organ, :sigla)
+            - #title = resource_value(server_salary.organ, :sigla)
+
+            - if params[:cod_orgao].present?
+              = highlight(title, title)
+            - else
+              = filtered_highlighted(title)
+
+        %td
+          = link_to show_path do
+            - title = resource_value(server_salary.role, :name)
+
+            - if params[:integration_supports_server_role_id].present?
+              = highlight(title, title)
+            - else
+              = filtered_highlighted(title)
+
+        %td
+          = link_to show_path do
+            - functional_status_str = server_salary.functional_status_str
+
+            - if params[:functional_status].present?
+              = highlight(functional_status_str, functional_status_str)
+            - else
+              = filtered_highlighted(functional_status_str)
+
+        %td.text-right
+          = link_to show_path do
+            = number_to_currency(server_salary.income_total)
+
+        %td.text-right
+          = link_to show_path do
+            = number_to_currency(server_salary.income_final)

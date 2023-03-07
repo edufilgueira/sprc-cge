@@ -1,0 +1,30 @@
+.row.border-bottom.mb-4.pb-4
+	.col-md-6
+		.row
+			.col-12
+				= f.label :region
+			.col-12
+				= region.name
+	.col-md-6
+		.row
+			.col-12
+				= f.label :theme
+			.col-12
+				= theme.name
+
+.row.mb-4
+	.col-md-12.text-justify
+		= t('.info')
+	
+.row.border-bottom
+	.col-12
+		= f.input :justification, as: :ckeditor, input_html: { ckeditor: { toolbar: :mini } }
+
+.row.p-4
+	.col-4
+		= link_to t('commands.cancel'), :back, class: 'btn btn-secondary btn-block'
+
+	.col-4
+
+	.col-4
+		= f.submit class: 'btn btn-tertiary btn-block'

@@ -1,0 +1,7 @@
+pt-BR:
+  admin:
+    integrations:
+      expenses:
+        budget_balances:
+          index:
+            title: Despesas do Poder Executivo

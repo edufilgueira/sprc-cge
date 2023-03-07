@@ -1,0 +1,56 @@
+pt-BR:
+
+  admin:
+
+    departments:
+      create:
+        title: Nova Unidade
+        done: "A unidade '%{title}' foi criada."
+        error: Falha ao criar a unidade
+      destroy:
+        done: "A unidade '%{title}' foi removida."
+      form:
+        commands:
+          cancel: < Voltar a lista de unidades
+          create: Criar unidade
+        organ:
+          select: Selecione o órgão
+        sub_departments:
+          add: Adicionar
+        subnet:
+          info: Pertence à ouvidoria de sub-rede?
+          select: Selecione a sub-rede
+      index:
+        commands:
+          new: Nova unidade
+        title: Unidades
+        table:
+          summary: Lista de unidades
+          header:
+            acronym: Sigla
+            name: Nome
+            organ_acronym: Órgão
+            subnet_acronym: Sub-rede
+            commands: ''
+            status: ''
+        filters:
+          select:
+            organ: Órgão
+            subnet: Sub-rede
+
+      new:
+        title: Nova unidade
+      edit:
+        title: Edição
+      update:
+        title: Edição de unidade
+        done: "A unidade '%{title}' foi atualizada."
+        error: Falha ao atualizar a unidade
+      show:
+        title: Exibição da unidade
+        sub_departments:
+          disabled_at: "Desabilitado em %{disabled_at}"
+
+      toggle_disabled:
+        disabled: Unidade desabilitada!
+        enabled: Unidade habilitada!

@@ -1,0 +1,24 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :title, t('.title')
+
+%h2.sr-only
+  = t('.title')
+
+.card
+
+  .card-header
+    %h3
+      = t('.title')
+
+  .card-block
+    = render 'shared/servers/filters'
+
+  .card-block
+    - if servers.present?
+
+      = render 'shared/servers/table_server', servers: servers
+
+    - else
+      .row
+        %i.col-md-12.text-center
+          = t('.empty')

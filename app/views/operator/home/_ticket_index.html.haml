@@ -1,0 +1,94 @@
+.row.justify-content-center
+
+  .col-12
+
+    - user_types = user_ticket_types_availables(current_user)
+    - organ_association = params[:organ_association]
+
+    - user_types.each do |user_type|
+      .card.card-custom.my-4
+
+        .card-header
+
+          %h2.h5.p-2
+            .row
+              .col-lg-8.col-12
+                = link_to t(".#{user_type}.stats.title"), operator_tickets_path(ticket_type: user_type)
+
+              - if can?(:create_ticket, Ticket.new)
+                .col-lg-4.col-12.text-right.mt-4.mt-lg-0
+                  = link_to t(".new.title.#{user_type}"), new_operator_ticket_path(ticket_type: user_type), class: 'btn btn-success w-100'
+
+
+        .card-block
+          .row
+            
+            - Ticket::FILTER_DEADLINE.keys.each do |status|
+              - filter = tickets_operator_link_cards_params(current_user, user_type, organ_association, { deadline: status })
+              = render 'operator/home/cards/deadline', params: filter
+
+            - if operator_subnet?(current_user) || operator_chief?(current_user)
+              - internal_status = :partial_answer
+              = render 'operator/home/cards/internal_status',
+                user_type: user_type, internal_status: internal_status,
+                organ_association: organ_association
+
+            - if operator_cge?(current_user)
+              - sou_statuses = [:partial_answer, :waiting_referral, :cge_validation, :awaiting_invalidation]
+              - sic_statuses = [:partial_answer, :waiting_referral, :awaiting_invalidation]
+              - statuses = user_type == :sic ? sic_statuses : sou_statuses
+
+              - statuses.each do |internal_status|
+                = render 'operator/home/cards/internal_status', user_type: user_type,
+                  internal_status: internal_status, organ_association: organ_association
+
+              = render 'operator/home/cards/partial_answer_expired', user_type: user_type, 
+              internal_status: :partial_answer, organ_association: organ_association
+
+            - if operator_sectoral?(current_user)
+              - [:partial_answer, :sectoral_validation].each do |internal_status|
+                = render 'operator/home/cards/internal_status', user_type: user_type, 
+                  internal_status: internal_status, organ_association: organ_association
+
+            - if operator_sectoral?(current_user)
+              = render 'operator/home/cards/partial_answer_expired', user_type: user_type,
+                internal_status: :partial_answer, organ_association: organ_association
+
+            = render 'operator/home/cards/priority', 
+              params: tickets_operator_link_cards_params(current_user, user_type, organ_association)
+
+            - if operator?(current_user)
+              - if user_type == :sic
+                = render 'operator/home/cards/internal_status', user_type: user_type, 
+                  internal_status: :appeal, organ_association: organ_association
+
+            = render 'operator/home/cards/reopened', user_type: user_type,
+              organ_association: organ_association
+
+
+            - if operator_internal?(current_user)
+              - [:partial_answer, :final_answer].each do |internal_status|
+                = render 'operator/home/cards/internal_status', user_type: user_type,
+                  internal_status: internal_status, organ_association: organ_association
+
+            - if operator_chief?(current_user)
+              = render 'operator/home/cards/extension_in_progress', user_type: user_type,
+                organ_association: organ_association
+
+              - if user_type == :sou
+
+                = render 'operator/home/cards/extension_in_progress_to_cge',
+                  organ_association: organ_association
+
+                = render 'operator/home/cards/extension_to_cge_denied',
+                  organ_association: organ_association
+
+            - if operator_coordination?(current_user)
+              = render 'operator/home/cards/coordination', user_type: user_type,
+                organ_association: organ_association
+
+              = render 'operator/home/cards/partial_answer_expired', user_type: user_type,
+                internal_status: :partial_answer, organ_association: organ_association
+
+            / - if operator_cge?(current_user)
+            /   = render 'operator/home/cards/rede_ouvir', user_type: user_type

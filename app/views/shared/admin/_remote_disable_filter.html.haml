@@ -1,0 +1,13 @@
+%label
+  = t('shared.admin.disable_filter.disabled')
+
+.radio
+  - show_disabled = params[:disabled] == '1'
+
+  %label
+    = radio_button_tag :disabled, 0, !show_disabled, 'data-filter-bar-field': ''
+    = t('boolean.false')
+
+  %label
+    = radio_button_tag :disabled, 1, show_disabled, 'data-filter-bar-field': ''
+    = t('boolean.true')

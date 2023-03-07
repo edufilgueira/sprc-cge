@@ -1,0 +1,70 @@
+= form_for transparency_resources_path, method: :get, remote: true, data: { form: 'transparency-export' } do |f|
+
+  - #
+  - # error message
+  - #
+  .alert.alert-dismissible.fade.show.alert-danger.no-print{style: 'display: none;', role: 'alert', data: { alert: 'error' } }
+
+    %span{ data: { message: 'alert' } }
+
+  - #
+  - # success message
+  - #
+  .alert.alert-dismissible.fade.show.alert-success.no-print{style: 'display: none;', role: 'alert', data: { alert: 'success' } }
+
+    %span{ data: { message: 'success' } }
+
+  - #
+  - # collapse link
+  - #
+  .row
+    .col-12.text-right
+      %a.btn.btn-link{ 'data-toggle': 'collapse', href: '#export_collapse', role: 'button', 'aria-expanded': 'false', 'aria-controls': 'export_collapse' }
+        = t('.link.title')
+
+  .collapse.multi-collapse{ 'id': 'export_collapse', 'data-link': 'collapse'}
+
+    - #
+    - # Info message
+    - #
+    .alert.alert-dismissible.fade.show.alert-warning.no-print.mt-1{role: 'alert'}
+      %span
+        = t('.info', expiration: Transparency::Export::DEADLINE_EXPIRATION)
+
+    - #
+    - # form collapsed
+    - #
+    .row.mt-2
+
+      = hidden_field_tag 'format', 'xlsx', 'data-input': 'format'
+
+      .col-xl-4.col-12
+        = label_tag(:export_name, "#{t('.name.label')} *")
+        = text_field_tag(:export_name, '', class: 'form-control w-100', maxlength: 32 )
+        %small.text-danger{'data-input-message': 'name'}
+        %small.form-text.text-muted
+          = raw(t('.name.hint'))
+
+      .col-xl-4.col-12
+        = label_tag(:export_email, "#{t('.email.label')} *")
+        = text_field_tag(:export_email, '', class: 'form-control w-100')
+        %small.text-danger{'data-input-message': 'email'}
+        %small.form-text.text-muted
+          = raw(t('.email.hint'))
+
+      .col-xl-4.col-12
+        - options = options_for_select(transparency_export_worksheet_formats, params[:export_worksheet_format])
+        = label_tag(:export_worksheet_format, "#{t('.worksheet_format.label')} *")
+        = select_tag(:export_worksheet_format, options, class: 'form-control w-100')
+        %small.text-danger{'data-input-message': 'worksheet_format'}
+        %small.form-text.text-muted
+          = raw(t('.worksheet_format.hint'))
+
+    .row.mt-3
+
+      .col-xl-6.col-12
+        = recaptcha_tags hl: I18n.locale
+        %small.text-danger{'data-input-message': 'recaptcha' }
+
+      .col-xl-6.col-12.text-right
+        = f.submit t('.export'), class: 'btn btn-primary w-50', data: { submit: 'transparency-export' }

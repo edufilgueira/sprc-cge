@@ -1,0 +1,128 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-8
+            %h3.card-title
+              = user.title
+
+          .col-4
+            .float-right
+
+              - if can?(:toggle_disabled, user)
+                = render 'shared/buttons/btn_toggle_disabled', resource: user, namespace: :operator
+
+              - if can?(:edit, user)
+
+                - if can?(:edit, user)
+                  = link_to t('commands.edit'), edit_operator_user_path(user), class: 'btn text-muted btn-link'
+
+      .card-block
+
+        .row
+
+          .col-12.col-lg-6
+            = content_with_label(user, :name)
+
+          .col-12.col-lg-6
+            = content_with_label(user, :social_name)
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(user, :gender_str)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :education_level_str)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :birthday)
+
+        %hr{'aria-hidden': 'true'}
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(user, :operator_type_str)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :server)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :city_title)
+
+        .row
+
+          .col-12.col-lg-4
+            = content_with_label(user, :document_type_str)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :document)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :email)
+            - if user.unconfirmed_email.present?
+              .alert.alert-warning.unconfirmed-email.py-1.px-2
+                %i.fa.fa-warning
+                %i= raw t('.fields.unconfirmed_email.tooltip', email: user.unconfirmed_email)
+
+
+        %hr{'aria-hidden': 'true'}
+
+        - if operator_cge?(user)
+          .row
+            .col-12.col-lg-4
+              = content_with_label(user, :denunciation_tracking)
+
+        - else
+
+          .row
+            .col-12.col-lg-4
+              = content_with_label(user, :organ_name)
+
+
+            - if user.sectoral?
+              .col-12.col-lg-4
+                = content_with_label(user, :positioning)
+
+            - if user.sou_sectoral?
+              .col-12.col-lg-4
+                = content_with_label(user, :acts_as_sic)
+
+            - if user.subnet.present?
+              .col-12.col-lg-4
+                = content_with_label(user, :subnet_name)
+
+
+            - if user.internal?
+              .col-12.col-lg-4
+                = content_with_label(user, :department_name)
+
+              - if user.sub_department.present?
+                .col-12.col-lg-4
+                  = content_with_label(user, :sub_department_name)
+
+
+        %hr{ 'aria-hidden': 'true' }
+
+        .row
+          .col-12.col-lg-4
+            = content_with_label(user, :created_at)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :updated_at)
+
+          .col-12.col-lg-4
+            = content_with_label(user, :disabled_at)
+
+        %hr{'aria-hidden': 'true'}
+
+        = render 'shared/users/show_notification_roles'

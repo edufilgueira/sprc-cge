@@ -1,0 +1,4 @@
+- if f.object.persisted?
+  = f.input :_destroy, as: :boolean, input_html: { checked: f.object.deleted? }
+- else
+  = link_to_remove_association "", f, { class: 'fa fa-times fa-2x text-danger', 'aria-label': t('simple_form.file.remove_nested'), title: t('simple_form.file.remove_nested') }

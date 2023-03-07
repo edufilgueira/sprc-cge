@@ -1,0 +1,113 @@
+es:
+  shared:
+    transparency:
+      contracts:
+        convenants:
+
+          index:
+            title: Convenios
+            description: Consulte aquí cualquer convenio firmado por el Estado. Vea aquí los convenios con la prefectura de su ciudad o convenios de otras entidades. Sepa cual servicio que debe ser hecho, cuanto ya ha sido pago, la fecha de finalización etc.
+            source: |
+              <p><strong>Fuente de datos:</strong></p>
+              <p>Controladoria e Ouvidoria Geral do Estado - CGE</p>
+              <p>Sistema de Acompanhamento de Contratos e Convênio - SACC</p>
+
+            chart:
+              valor_atualizado_concedente:
+                unit: 'Valores de los convenios: R$'
+                title: Valores de los convenios
+
+                creditor:
+                  title: Velores de los convenios por contratante
+                manager:
+                  title: Velores de los convenios por unidad
+                tipo_objeto:
+                  title: Velores de los convenios por tipo de objecto
+
+            charts:
+              tabs:
+                creditor:
+                  title: Por contratante
+                manager:
+                  title: Por unidad
+                tipo_objeto:
+                  title: Por tipo de objecto
+
+            filters:
+              title: Consulta avanzada
+              search:
+                hint: |
+                  Usted puede buscar por parte del Nº SACC, Nº del Convenio, nombre de la
+                  unidad, nombre o CNPJ del contratante y partes del objecto del contrato.
+                  Ejemplos: 'der', 'construção', entre otros.
+              situation_description:
+                information: |
+                  A LA ESPERA DE PUBLICACIÓN ADICIONAL - Instrumento con Aditivo pendiente de publicación en el Diario Oficial del Estado (DOE) o en Ceará Transparente;
+                  COMPLETED - Instrumento con objeto completado;
+                  COMPLETADO CON DEUDA - Instrumento con objeto terminado, que presenta pagos pendientes;
+                  EN EJECUCIÓN [SOLICITUD BLOQUEADA DE PLAZO] - Instrumento que presenta impedimento a la ejecución, por hecho superviniente;
+                  BAJO RENDIMIENTO [NORMAL] - Instrumento con ejecución procediendo normalmente;
+                  DISCAPACITADO [PERIODO ELECTORAL] - Restricción impuesta por razón del período electoral de conformidad con el § 10 del art. 73 de la Ley Nº 9.504 / 97;
+                  LIBERADO [PERIODO ELECTORAL] - La restricción impuesta con motivo del período electoral previsto en el § 10 del art. 73 de la Ley Nº 9.504 / 97;
+                  DETENIDO - Si se produce por un hecho imputable a la Administración Pública, se producirá una prórroga automática del cronograma de ejecución;
+                  TERMINADO - Instrumento rescindido unilateralmente por el Estado o bilateralmente por partes relacionadas;
+                  TERMINADO EN DEUDA - Instrumento cerrado unilateralmente por el Estado o bilateralmente por partes relacionadas, que presenta pagos pendientes;
+                  SUSPENDIDA - Surge de un acto unilateral de la Administración, acompañado de motivación, sustentada en razones de interés público, derivadas de un hecho superviniente;
+                  EXPIRED: instrumento con plazo vencido.
+
+              effective_date_description:
+                information: |
+                  Período en el que el Instrumento comienza a surtir efectos - fecha de firma, fecha de publicación o fecha definida en el instrumento contractual - con un final definido en el día establecido en el instrumento contractual y sus modificaciones.
+              signature_date_description:
+                information: |
+                  Período en el que el Instrumento fue firmado por las partes involucradas - contratante y contratante.
+              publication_date_description:
+                information: |
+                  La fecha de publicación de los instrumentos del acuerdo en la Plataforma Transparente de Ceará comenzó en junio de 2014, por lo tanto, no hay registros de la fecha de publicación de los instrumentos publicados en una fecha anterior.
+
+            counts:
+              convenants_count:
+                title: Cantidade de convenios filtrados
+              convenants_sum:
+                title: Valor de los convenios filtrados
+                tolltip: Es el valor original de los Instrumentos más el valor de sus modificaciones - enmiendas o apostillas - considerando todo el período de vigencia del instrumento contractual.
+
+
+            table:
+              summary: Lista de convenios
+              header:
+                data_assinatura: Fecha de la firma
+                isn_sic: Nº SACC
+                num_contrato: Nº Convenio
+                descricao_objeto: Objecto
+                valor_atualizado_concedente: Valor actualizado <i class="fa fa-question-circle" title="Es el valor original de los instrumentos más el valor de sus modificaciones - enmiendas o apostillas - considerando todo el período de vigencia."></i>
+                calculated_valor_empenhado: Valor comprometido <i class="fa fa-question-circle" title="Es el valor total de los compromisos adquiridos, considerando todo el período de vigencia del instrumento contractual."></i>
+                calculated_valor_pago: Valor pago <i class="fa fa-question-circle" title="Es el valor total de los pagos realizados, considerando todo el período de vigencia del instrumento contractual."></i>
+                cod_gestora: Unidad
+                creditor: Contratante
+
+            stats:
+              title: Principales numeros relacionados con los convenios
+              count: 'Cantidade de convenios activos en <strong>%{date}</strong>'
+              valor_atualizado_concedente: 'Velores de los convenios activos en <strong>%{date}</strong>'
+              valor_atualizado_concedente_tooltip: Incluye los contratos vigentes, es decir, los que aún no han expirado o no han sido rescindidos.
+              tooltips:
+                active_information: El acuerdo activo es uno que aún no ha expirado o no se ha rescindido.
+
+          show:
+            resource_title: 'Nº SACC: %{sacc}'
+            descricao_url: Íntegra del convenio
+            descricao_url_pltrb: Plan de trabajo
+
+            tooltips:
+              valor_contrato: 'Valor Inicial del Instrumento (sumado valor del traspaso y contrapartida).'
+              valor_original_concedente: 'Valor inicial que el gobierno transferirá al Beneficiario.'
+              valor_original_contrapartida: 'Valor que el Beneficiario gastará de su própio presupuesto.'
+              valor_atualizado_concedente: 'Valor actualizado que el gobierno transferirá al Beneficiario (Valor inicial del trespaso más aditivos, si existe).'
+              valor_atualizado_contrapartida: 'Valor actualizado que el Beneficiario gastará de su própio presupuesto.'
+              valor_atualizado_total: 'Valor global del instrumento (sumado valor del traspaso, contrapartida y aditivos, si existe).'
+              data_publicacao_portal: '
+Los datos para la liberación de los registros del acuerdo Ceará Transparente comenzaron en junio de 2014, por lo que no se publicaron para los instrumentos publicados en esa fecha.'
+
+            confidential:
+              message: "El instrumento contiene información confidencial, en los términos de la Ley Estatal N ° 15.175 / 2012 - Ley de Acceso a la Información. Documentos omitidos por confidencialidad: las integrales del Convenio, Plan de Trabajo, Aditivos, Apostilamentos, Ajustes y OBTs." 

@@ -1,0 +1,13 @@
+en:
+
+  activerecord:
+
+    attributes:
+
+      attendance_evaluation:
+        clarity: Clarity (weight 2 on the average)
+        content: Content (weight 5 on the average)
+        wording: Writing (weight 2 on the average)
+        kindness: Kindness (weight 1 on the average)
+        average: Final service average
+        comment: Comment

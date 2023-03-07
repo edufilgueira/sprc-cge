@@ -1,0 +1,387 @@
+- report.filters = request.query_parameters if report.filters.blank?
+- filters = report.filters
+- gross_export_path = controller_path.include?('gross_export')
+- statistical_sheets_path = controller_path.include?('ticket_reports')
+
+- #
+- # text search
+- #
+.row.col-12
+  .col-12.col-lg-8
+
+    %label{ for: 'search'}
+      = t('.search.title')
+
+    = text_field_tag("#{report_name}[filters][search]", filters[:search], placeholder: t('.search.label'), class: 'form-control w-100 mb-3', title: t('.search.label'))
+
+  - if gross_export_path
+    - #
+    - # parent protocol
+    - #
+    .col-12.col-lg-4
+      %label
+        = t('.parent_protocol.title')
+
+      = text_field_tag("#{report_name}[filters][parent_protocol]", filters[:parent_protocol], placeholder: t('.parent_protocol.label'), class: 'form-control w-100 mb-3', title: t('.parent_protocol.label'))
+
+.row.col-12
+  .col-12.col-lg-4.mb-1
+    .errors.text-danger.small
+      = report.errors[:base].join(',')
+
+.row.col-12
+
+  - #
+  - # confirmed_at
+  - #
+  .col-12.col-lg-4.mb-3
+
+    %label
+      = t('.confirmed_at.label')
+
+    .row
+      - filter_confirmed_at = filters[:confirmed_at]
+      - if filter_confirmed_at.present?
+        - filter_confirmed_at_start = filter_confirmed_at[:start]
+        - filter_confirmed_at_end = filter_confirmed_at[:end]
+
+      .col-12.col-lg-6
+        = text_field_tag("#{report_name}[filters][confirmed_at][start]", filter_confirmed_at_start, placeholder: t('.confirmed_at.start'),  class: 'form-control w-100 datetimepicker')
+
+
+      .col-12.col-lg-6
+        = text_field_tag("#{report_name}[filters][confirmed_at][end]", filter_confirmed_at_end, placeholder: t('.confirmed_at.end'), class: 'form-control w-100 datetimepicker')
+
+
+  - #
+  - # ticket_type
+  - #
+  .col-12.col-lg-4.mb-3
+
+    %label{ for: 'ticket_type'}
+      = t('.ticket_type')
+
+    - default_option = 'sou' if current_user.sou_sectoral? || current_user.coordination?
+    - options = options_for_select(ticket_types_for_select, filters[:ticket_type] || default_option)
+    = select_tag "#{report_name}[filters][ticket_type]", options, { 'data-select2-search': 'hidden', 'data-input': 'ticket_type' }
+
+  - #
+  - # tipo de manifestação
+  - #
+  .col-12.col-lg-4.mb-3{ 'data-container': 'sou_type_container'}
+    - options = options_for_select(ticket_sou_types_report_for_select(current_user), filters[:sou_type])
+    = label_tag :sou_type, t('.sou_type')
+    = select_tag "#{report_name}[filters][sou_type]", options, { include_blank: t('messages.filters.select.all.male') }
+
+.row.col-12
+
+  - #
+  - # Situação
+  - #
+  .col-12.col-lg-4.mb-3
+    %label{ for: 'internal_status'}
+      = t('.internal_status.title')
+
+    - options = options_for_select(ticket_internal_status_for_select(filters[:ticket_type], current_user), filters[:internal_status])
+    = select_tag "#{report_name}[filters][internal_status]", options, { include_blank: t('.internal_status.select') }
+
+  - #
+  - # Topic
+  - #
+  .col-12.col-lg-4.mb-3{ data: { content: :topic } }
+    %label{ for: 'topic'}
+      = t('.topic.title')
+    - url_topic = topics_api_v1_operator_classifications_path
+    = select_tag "#{report_name}[filters][topic]", options_for_select(topics_for_select(current_user.organ), filters[:topic]) , { include_blank: t('messages.form.select'), 'data-placeholder': t('messages.form.select'), 'data-input': 'topic', 'data-url': url_topic, 'data-param-name': 'organ' }
+
+  - #
+  - # Subtopic
+  - #
+  .col-12.col-lg-4.mb-3{ data: { content: :subtopic } }
+    %label{ for: 'subtopic'}
+      = t('.subtopic.title')
+    - url_subtopic = subtopics_api_v1_operator_classifications_path
+    = select_tag "#{report_name}[filters][subtopic]",nil, { include_blank: t('messages.form.select'), 'data-placeholder': t('messages.form.select'), 'data-input': 'subtopic', 'data-url': url_subtopic, 'data-param-name': 'topic' }
+
+  - #
+  - # Budget Program
+  - #
+  .col-12.col-lg-4.mb-3{ data: { content: :budget_program } }
+    %label{ for: 'budget_program'}
+      = t('.budget_program.title')
+
+    - url_budget = budget_programs_api_v1_operator_classifications_path
+    - options = options_for_select(budget_programs_for_select(current_user.organ, current_user.subnet), filters[:budget_program])
+    = select_tag "#{report_name}[filters][budget_program]", options, { include_blank: t('.budget_program.select'), 'data-input': 'budget_program', 'data-url': url_budget, 'data-param-name': 'organ' }
+
+  
+  - # Department
+  - #
+  .col-12.col-lg-4.mb-3
+    %label{ for: 'department'}
+      = t('.department.title')
+
+    - url_department = departments_api_v1_operator_classifications_path
+    - options = options_for_select(departments_by_user_for_select(current_user), filters[:department])
+    = select_tag "#{report_name}[filters][department]", options, { include_blank: t('messages.form.select'), 'data-input': 'department', 'data-url': url_department, 'data-param-name': 'organ' }
+
+
+  - if gross_export_path   
+
+    - #
+    - # Sub Department
+    - #
+    .col-12.col-lg-4.mb-3
+      %label{ for: 'sub_department'}
+        = t('.sub_department.title')
+
+      - url_sub_department = sub_departments_api_v1_operator_classifications_path
+      = select_tag "#{report_name}[filters][sub_department]", nil, { include_blank: t('messages.form.select'), 'data-input': 'sub_department', 'data-url': url_sub_department, 'data-param-name': 'department' }
+
+    - #
+    - # Service Type
+    - #
+    .col-12.col-lg-4.mb-3
+      %label{ for: 'service_type'}
+        = t('.service_type.title')
+
+      - url_service_type = service_types_api_v1_operator_classifications_path
+      - options = options_for_select(service_types_for_select(current_user.organ), filters[:service_type])
+      = select_tag "#{report_name}[filters][service_type]", options, { include_blank: t('messages.form.select'), 'data-input': 'service_type', 'data-url': url_service_type, 'data-param-name': 'organ' }
+
+
+    - #
+    - # Answer Type
+    - #
+    .col-12.col-lg-4.mb-3
+      %label{ for: 'answer_type'}
+        = t('.answer_type.title')
+
+      - options = options_for_select(ticket_answer_types_for_select, filters[:answer_type])
+      = select_tag "#{report_name}[filters][answer_type]", options, { include_blank: t('messages.form.select') }
+
+
+  - unless gross_export_path
+    - #
+    - # Estado
+    - #
+    .col-12.col-lg-4.mb-3
+      = render 'shared/components/select_states', field_name: "#{report_name}[filters][state]", required: false, selected: filters[:state], cities_container: 'city'
+
+    - #
+    - # Municipio
+    - #
+    .col-12.col-lg-4.mb-3
+      %label{ for: 'city'}
+        = t('.city')
+      - cities = options_for_select(cities_by_state_for_select(filters[:state]), filters[:city])
+      = select_tag "#{report_name}[filters][city]", cities, { include_blank: t('messages.form.select'), 'data-input': 'city', 'id': 'city'}
+
+    - #
+    - # Meio de entrada
+    - #
+    .col-12.col-lg-4.mb-3
+      %label{ for: 'used_input'}
+        = t('.used_input')
+      - options = options_for_select(used_inputs_for_select, filters[:used_input])
+      = select_tag "#{report_name}[filters][used_input]", options, { include_blank: t('messages.filters.select.all.male') }
+
+  - #
+  - # deadline
+  - #
+  .col-12.col-lg-4.mb-3
+    %label{ for: 'deadline'}
+      = t('.deadline.title')
+
+    - options = options_for_select(ticket_deadlines_for_select, filters[:deadline])
+    = select_tag "#{report_name}[filters][deadline]", options, { include_blank: t('.deadline.select') }
+
+  - #
+  - # Answer Type
+  - #
+  .col-12.col-lg-4.mb-3
+    %label{ for: 'answer_type'}
+      = t('.answer_type.title')
+
+    - options = options_for_select(ticket_answer_types_for_select, filters[:answer_type])
+    = select_tag "#{report_name}[filters][answer_type]", options, { include_blank: t('messages.form.select') }
+
+  - if gross_export_path
+    - #
+    - # ticket_department deadline
+    - #
+    .col-12.col-lg-4.mb-3
+      %label{ for: 'departments_deadline'}
+        = t('.departments_deadline.title')
+
+      - options = options_for_select(ticket_deadlines_for_select, params[:departments_deadline])
+      = select_tag "#{report_name}[filters][departments_deadline]", options, { include_blank: t('messages.filters.select.all.male') }
+
+  - if can?(:view_organ_association, User)
+    - #
+    - # Association organ
+    - #
+    .col-12.col-lg-4.mb-3
+      %label{ for: 'organ'}
+        = t('.organ.title')
+
+      - organ = filters[:organ].nil? ? current_user.organ.id : filters[:organ]
+      - options = options_for_select(organ_and_organ_associations_for_select, organ)
+      = select_tag "#{report_name}[filters][organ]", options, { include_blank: t('messages.filters.select.organ_association'), 'data-input': 'organ' }
+
+  
+
+.row.col-12{'data-content': 'organ'}
+
+  - if can?(:filter_by_organs_on_reports, Organ)
+    - #
+    - # rede ouvir scope
+    - #
+    / .col-12.col-lg-12
+    /   .checkbox
+    /     %label.small
+    /       = check_box_tag "#{report_name}[filters][rede_ouvir_scope]", true, filters[:rede_ouvir_scope], { 'data-input': 'rede_ouvir' }
+    /       = t('.rede_ouvir_scope')
+
+    .row.col-12{'data-content': 'executive_organ'}
+
+      - #
+      - # executive organ
+      - #
+      .col-12.col-lg-4.mb-3
+        %label{ for: 'organ'}
+          = t('.organ.title')
+
+        - options = options_for_select(organs_for_select, filters[:organ])
+        = select_tag "#{report_name}[filters][organ]", options, { include_blank: t('.organ.select'), 'data-input': 'organ', 'data-dependent-select': 'subnets', 'data-param-name': 'organ_id', 'data-url': api_v1_subnets_path, 'data-child-container': '[data-dependent-select-child=subnets]' }
+
+      - #
+      - # Subnet
+      - #
+      .col-12.col-lg-4.mb-3{'data-content': 'subnet'}
+        %label{ for: 'subnet'}
+          = t('.subnet.title')
+        = select_tag "#{report_name}[filters][subnet]", nil , { include_blank: t('messages.form.select'), 'data-placeholder': t('messages.form.select'), 'data-input': 'subnet', 'data-dependent-select-child': 'subnets', 'data-ignore-blank': 'true', 'data-dependent-select-blank': t('messages.form.select')  }
+
+    / .row.col-12{'data-content': 'rede_ouvir'}
+
+    /   - #
+    /   - # rede ouvir organ
+    /   - #
+    /   .col-12.col-lg-4.mb-3
+    /     %label{ for: 'rede_ouvir_organ'}
+    /       = t('.rede_ouvir_organ.title')
+
+    /     - options = options_for_select(organs_rede_ouvir_for_select, filters[:organ])
+    /     = select_tag "#{report_name}[filters][organ]", options, { include_blank: t('.rede_ouvir_organ.select') }
+
+
+  - elsif ! (current_user.subnet_sectoral? || current_user.subnet_chief?)
+
+    - unless can?(:view_organ_association, User)
+      = hidden_field_tag "#{report_name}[filters][organ]", current_user.organ_id, { 'data-input': 'organ' }
+
+    / -# if current_user.sectoral_rede_ouvir?
+    /   =# hidden_field_tag "#{report_name}[filters][rede_ouvir_scope]", true
+
+    - if subnet_by_organ(current_user.organ).present?
+      - #
+      - # Subnet
+      - #
+      .col-12.col-lg-4.mb-3
+        %label{ for: 'subnet'}
+          = t('.subnet.title')
+        = select_tag "#{report_name}[filters][subnet]", options_for_select(subnets_by_organ_for_select(current_user.organ), filters[:subnet]) , { include_blank: t('messages.form.select'), 'data-placeholder': t('messages.form.select'), 'data-input': 'subnet' }
+
+- unless gross_export_path
+  .row.col-12
+
+    - #
+    - # Escopo dos chamados (data_scope)
+    - #
+    .col
+
+      %label
+        = t('.data_scope.title')
+      .radio
+        - [:all, :sectoral, :subnet].each do |option|
+          - data_scope = filters[:data_scope]
+          - selected = (data_scope.blank? && option == :all) || data_scope&.to_sym == option
+          %label
+            = radio_button_tag "#{report_name}[filters][data_scope]", option, selected
+            = t(".data_scope.#{option}")
+
+.row.col-12
+
+  - #
+  - # priority
+  - #
+  .col-lg-12
+    .checkbox
+      %label.small
+        = check_box_tag "#{report_name}[filters][priority]", true, filters[:priority]
+        = t('.priority')
+
+
+  - #
+  - # expired
+  - #
+  .col-lg-12
+    .checkbox
+      %label.small
+        = check_box_tag "#{report_name}[filters][expired]", true, filters[:expired]
+        = t('.expired')
+
+
+  - #
+  - # denúncia
+  - #
+  - if operator_denunciation?(current_user)
+    .col-lg-12
+      .checkbox
+        %label.small
+          = check_box_tag "#{report_name}[filters][denunciation]", true, filters[:denunciation]
+          = t('.denunciation')
+
+
+  - unless gross_export_path
+    - #
+    - # other_organs
+    - #
+    .col-lg-12
+      .checkbox
+        %label.small
+          = check_box_tag "#{report_name}[filters][other_organs]", true, filters[:other_organs], { 'data-input': 'other_organs' }
+          = t('.other_organs')
+
+  - if statistical_sheets_path
+    .col-lg-12
+      .checkbox
+        %label.small
+          = check_box_tag "choose_reports", true, false, { 'data-input': 'choose_reports' }
+          = t('.choose_reports')
+
+- if statistical_sheets_path
+  .row.col-12.mt-2.sic_reports{ style: "display: none" }
+    .col-12
+      %label
+        = t('.sic_reports')
+
+  .row.col-12.sic_reports{ style: "display: none" }
+    - TicketReport::SIC_SHEETS.each do |sic_sheet|
+      .col-12.col-lg-4
+        %label.small
+          = check_box_tag "#{report_name}[filters][sheets][]", sic_sheet, false, { 'data-input': 'sheets' }
+          = TicketReport.sic_sheet_name(sic_sheet)
+
+  .row.col-12.mt-2.sou_reports{ style: "display: none" }
+    .col-12
+      %label
+        = t('.sou_reports')
+
+  .row.col-12.sou_reports{ style: "display: none" }
+    - TicketReport::SOU_SHEETS.each do |sou_sheet|
+      .col-12.col-lg-4
+        %label.small
+          = check_box_tag "#{report_name}[filters][sheets][]", sou_sheet, false, { 'data-input': 'sheets' }
+          = TicketReport.sou_sheet_name(sou_sheet)

@@ -1,0 +1,34 @@
+= simple_form_for [:admin, topic], method: :delete do |f|
+
+  .row
+    .col-12.col-lg-5
+      = topic.title
+
+    .col-12.col-lg-2
+      = t('.replace_by')
+      = t('simple_form.required.mark')
+
+    .col-12.col-lg-5
+      - options = options_for_select(topics_transfer_targets_for_select(topic), params[:target_topic])
+      = select_tag :target_topic, options, { include_blank: t('messages.form.select'), 'data-input': 'topic' }
+
+  %hr{'aria-hidden': 'true'}
+
+
+  - #
+  - # Subassuntos
+  - #
+  - if topic.subtopics.present?
+
+    %h3.card-title.mb-4
+      = Subtopic.model_name.human(count: 2)
+
+    = render partial: 'admin/topics/delete/subtopic', collection: topic.subtopics
+
+    %hr{'aria-hidden': 'true'}
+
+  .row
+    .col-12
+      = link_to t('.commands.cancel'), admin_topics_path, class: 'btn btn-warning pull-left'
+      = f.submit t('.commands.save'), class: 'btn btn-primary float-right'
+

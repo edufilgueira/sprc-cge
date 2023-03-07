@@ -1,0 +1,21 @@
+%h2.sr-only
+  = t('.title')
+
+.row
+
+  .col-12
+
+    .card.card-custom
+
+      .card-header
+
+        .row
+          .col-12
+            %h3.card-title
+              = axis.title
+      .card-block
+        .row
+          .col-6
+            = content_with_label(axis, :codigo_eixo)
+          .col-6
+            = content_with_label(axis, :descricao_eixo)

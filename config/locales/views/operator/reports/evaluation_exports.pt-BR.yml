@@ -1,0 +1,53 @@
+pt-BR:
+
+  operator:
+
+    reports:
+
+      evaluation_exports:
+
+        index:
+          title: Relatórios de pesquisas de satisfação dados brutos
+          empty: Nenhum relatório encontrado
+          search:
+            label: Busque pelo título
+          commands:
+            new: Novo relatório
+
+        file_info:
+          title: Informações do arquivo
+          size: Tamanho
+          created_at: Criado em
+
+        file_filters:
+          title: Filtros considerados
+          range: Período
+          ticket_type: Tipo
+          organ: Órgão
+          subnet: Subrede
+
+        new:
+          title: Novo relatório de pesquisas de satisfação
+
+        show:
+          title: Relatório de pesquisa de satisfação
+
+        form:
+          title: Relatórios de pesquisa de satisfação dados brutos
+          sou_type: Tipo manifestação
+          used_input: Tipo de Entrada
+          filters:
+            ticket_type: Tipo
+            confirmed_at:
+              label: Período
+              start: Início
+              end: Fim
+
+        create:
+          title: Novo relatório de pesquisa de satisfação
+          done: Relatório iniciado com sucesso
+          error: Falha ao criar relatório
+
+        destroy:
+          done: Relatório removido com sucesso
+          error: Falha ao remover relatório

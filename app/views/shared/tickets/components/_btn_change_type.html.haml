@@ -1,0 +1,4 @@
+- if can?(:change_type, ticket)
+  = link_to send("new_#{namespace}_ticket_change_type_path", ticket), class: 'btn btn-link btn-print hover-link d-inline-block', 'data-confirm': t(".confirm") do
+    %i.fa.fa-exchange{ 'aria-hidden': 'true' }
+    = t('.title')

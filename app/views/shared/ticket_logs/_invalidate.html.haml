@@ -1,0 +1,26 @@
+- ticket_log_status = ticket_log.data[:status].to_s
+
+.row
+
+  .col-12.col-md-1.no-print
+    .float-left
+
+      .rounded-circle.p-1{class: "#{invalidate_status_class(ticket_log_status)}"}
+
+        %i.fa.fa-ban.fa-1x.text-muted.m-2{ 'aria-hidden': 'true' }
+
+  .col-12.col-md-11.pt-3.pt-md-1
+
+    .text-muted
+
+      %h4.h6.mb-0
+        = t(".#{ticket_log_status}.title.#{ticket.ticket_type}", user: ticket_log.responsible.social_name, protocol: tickets_invalidate_log_protocol(ticket_log))
+
+      %small
+        %em
+          = l(ticket_log.created_at, format: :shorter)
+
+      %p.mb-0
+        = ticket_log.description
+
+%hr{'aria-hidden': 'true'}

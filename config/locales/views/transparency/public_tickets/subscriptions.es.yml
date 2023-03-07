@@ -1,0 +1,74 @@
+es:
+  transparency:
+    public_tickets:
+      subscriptions:
+
+        breadcrumbs:
+          ticket:
+            sou: 'Manifestación %{protocol}'
+            sic: 'Solicitud %{protocol}'
+
+        new:
+          title:
+            sou: Acompañar Manifestación
+            sic: Acompañar Solicitud
+
+        edit:
+          title:
+            sou: Acompañar Manifestación
+            sic: Acompañar Solicitud
+
+
+        create:
+          done: La confirmación de correo electrónico ha sido enviada para el email registrado
+          fail: Error al acomapañar 
+          was_created:
+            unconfirmed: E-mail de confirmación ha sido enviado 
+            already_following: Su correo electrónico ya está acompañando 
+
+        update:
+          done: La confirmación de correo electrónico ha sido enviada para el email registrado
+          fail: Error al acomapañar 
+
+        confirmation:
+          done:
+            sic: 'Usted está acompañando la Solicitud de Informação [%{protocol}].'
+            sou: 'Usted está acompañando la Manifestación de Ouvidoria [%{protocol}].'
+          fail: Error al encontrar la solicitud
+
+        unsubscribe:
+          done:
+            sic: 'Usted no está más acompañando la Solicitud de Infromação [%{protocol}].'
+            sou: 'Usted no está más acompañando la Manifestación de Ouvidoria [%{protocol}].'
+          fail: Error al encontrara la solicitud
+
+        unconfirmed:
+          title:
+            sou: Acompañar Manifestación
+            sic: Acompañar Solicitud
+
+          explanation: 'Acceda al enlace de confirmación enviado para el correo electrónico: %{email} para reciber las notificaciones de actualización.'
+
+        confirmed:
+          title:
+            sou: Acompañar Manifestación
+            sic: Acompañar Solicitud
+
+          explanation:
+            sou: 'Para no acompañar más la Manifestación [%{protocol}] y no recibir más las actualizaciones, haga clic en el botón de abajo.'
+            sic: 'Para no acompañar más la Solicitud [%{protocol}] y no recibir más las actualizaciones, haga clic en el botón de abajo.'
+
+          unfollow: Dejar de acompañar
+
+        form:
+          title:
+            sou: Acompañar Manifestación
+            sic: Acompañar Solicitud
+
+          field:
+            email: Email
+
+          explanation:
+            sic: Informe su correo electrónico y haga clic en "registrar" para recibir actualizaciones de su manifestación.
+            sou: Informe su correo electrónico y haga clic en "registrar" para recibir actualizaciones de su solicitd.
+          register: Registrar 

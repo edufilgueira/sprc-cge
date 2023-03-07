@@ -1,0 +1,16 @@
+pt-BR:
+
+  shared:
+
+    mobile_apps:
+
+      filters:
+        search: Buscar aplicativo por nome ou descrição
+        commands:
+          new: Cadastrar aplicativo
+
+
+      mobile_app:
+        official:
+          'true': Aplicativo oficial
+          'false': Aplicativo não oficial

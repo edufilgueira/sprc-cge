@@ -1,0 +1,45 @@
+= f.simple_fields_for :ppa_revision_review_problem_situation do |nps|
+
+  %hr
+  .row
+    .col-12
+      %h6
+        %strong= t('.title')
+        %small.text-muted.ml-1= t('.description', ppa_plan: plan.name)
+
+  .row.mt-3
+    .col-lg-12
+      %table#table_problem_situation.table.table-hover.table-sm
+        %thead
+          %tr
+            %th
+              = t('.table.title')
+            %th{style: 'width: 20%;'}
+              = t('.table.persist')
+
+        %tbody#problem_situation_tbody.text-justify
+          - if @problem_situations_list.present?
+            - @problem_situations_list.each_with_index do |problem_situation, i|
+
+              - radio_name = radio_name_for_problem_situations(i)
+              - description = problem_situation[0]
+              - persist = problem_situation[2]
+
+              - if is_edit_region_theme?
+                %input{ type: :hidden, value: problem_situation[1], name: "#{input_name_for_problem_situations(i)}[id]" }
+
+              %tr
+                %td= description
+                %td{style: 'width: 20%;'}
+                  .form-group.radio_buttons.optional
+                    .row
+                      .col-lg-6
+                        %spam.radio
+                          %input{type: "radio", value: "true", name: radio_name, checked: persist == true}
+                          = t('boolean.true')
+                      .col-lg-6
+                        %spam.radio
+                          %input{type: "radio", value: "false", name: radio_name, checked: persist == false}
+                          = t('boolean.false')
+
+

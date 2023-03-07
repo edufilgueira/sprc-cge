@@ -1,0 +1,9 @@
+en:
+  shared:
+    components:
+
+      select_states:
+        label: State
+        select: Select state
+
+

@@ -1,0 +1,22 @@
+- notification_roles = user.notification_roles
+
+- if notification_roles.present?
+  %table.table.table-hover.mt-4
+    %thead
+      %th
+        = t('.notifications')
+      %th.text-center
+        = t('.email')
+      %th.text-center
+        = t('.system')
+      %th.text-center
+        = t('.none')
+
+    %tbody
+      = f.fields_for :notification_roles do |roles|
+        = render partial: 'shared/users/notification_role', collection: notification_roles.keys, locals: { f: roles, user: user }
+
+- else
+  .col-12.text-center
+    %i.text-muted
+      = t('.empty')

@@ -1,0 +1,67 @@
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+- content_for :stylesheet, stylesheet_link_tag(stylesheet)
+
+.row.show_resume.d-none
+  .col-lg-12
+    .row
+      .col-lg-12
+        %h2.font-weight-bold
+          = t('ppa.revision.review_problem_situation_strategies.new.title')
+
+    .row
+      .col-lg-12
+        %label.text-justify{ style: 'font-size: 14px' }
+          %label.text-justify= t('ppa.revision.review_problem_situation_strategies.new.description').html_safe
+
+    .row
+      .col-lg-12
+        .card
+          = render partial: 'multistep_flow'
+
+          .row
+            .col-12
+              .float-right
+                %a.btn.btn-primary{ href: edit_ppa_revision_review_problem_situation_strategy_path, style: 'margin-right: 10px;' }
+                  = t('.new_region')
+
+                - if last_region_theme_worked(resource).present?
+                  %a.btn.btn-primary{ href: edit_ppa_revision_review_problem_situation_strategy_path(region_id: last_region_theme_worked(resource).region_id) }
+                    = t('.new_theme', region_name: last_region_theme_worked(resource).region.name)
+    .row
+      .col-lg-12
+        .card
+          .fieldset
+            .row
+              .col-12
+                %h5
+                  %b= t('.revised_themes')
+            .row
+              .col-12
+                - if problem_situation_strategy_regions(resource).blank?
+                  %p= t('.no_revised_themes')
+                %ul
+                  - problem_situation_strategy_regions(resource).each do |region|
+                    %li
+                      = region.name
+                      %ul
+                        - problem_situation_strategy_axes_by_region(resource, region).each do |axis|
+                          %li
+                            = axis.name
+                            %ul
+                              - problem_situation_strategy_themes(resource, region.id, axis.id).each do |region_theme|
+                                %li
+                                  = link_to ppa_revision_review_problem_situation_strategy_region_theme_path(plan_id: resource.plan_id, review_problem_situation_strategy_id: id, id: region_theme.id), remote: true, class: 'problem_situation_strategy_theme' do
+                                    = region_theme.name
+                                    .fa.fa-check.d-inline.text-success
+
+        .card
+          .row
+            .col-12
+              #div-region-theme-result
+          %br
+          .row
+            .col-12
+              %a.btn.btn-primary{ href: ppa_revision_review_problem_situation_strategy_conclusion_path(plan_id: resource.plan_id, review_problem_situation_strategy_id: id) }
+                = t('.finish')
+          %br

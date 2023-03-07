@@ -1,0 +1,49 @@
+- organs_hash = data_hash['organs']
+- sorted_organs_hash = stats_evaluations_sorted_organs_data(organs_hash)
+
+%h4.h6
+  = t('.title')
+
+.row.align-items-end
+  .col-md-1.hidden-sm-down
+    %small
+      .text-left.text-muted
+        = t(".#{type}.header.position.title")
+  .col-md-4.col-6
+    %small
+      .text-md-left.text-muted
+        = t(".#{type}.header.organ_name.title")
+  .col-md-2.hidden-sm-down
+    %small
+      .text-center.text-muted
+        = t(".#{type}.header.total_tickets.title")
+  .col-md-2.hidden-sm-down
+    %small
+      .text-center.text-muted
+        = t(".#{type}.header.total_answered_tickets.title")
+  .col-md-1.col-3
+    %small
+      .text-center.text-muted
+        = t(".#{type}.header.total_user_evaluations.title")
+  .col-md-2.col-3
+    %small
+      .text-center.text-muted
+        = t(".#{type}.header.average_evaluations.title")
+
+- if sorted_organs_hash.present?
+
+  - sorted_organs_hash.each_with_index do |organ, _index|
+    - if _index <= 4
+      = render 'organ', organ: organ, index: _index
+
+    - elsif _index > 4
+      #more-organs.collapse
+        - sorted_organs_hash.each_with_index do |organ, _index|
+          - if _index > 4
+            = render 'organ', organ: organ, index: _index
+
+    - if _index == 5
+      %p
+        %a{href: '#', data: { 'toggle': 'collapse', 'target': '#more-organs'} }
+          = t('.more.title')
+      - break

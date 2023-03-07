@@ -1,0 +1,37 @@
+- nodes = revenues_tree.nodes(next_node_type)
+
+- nodes.each do |node|
+
+  - node_type = next_node_type
+  - node_id = node[:id]
+  - node_path = "#{current_node_path}/#{node_type}/#{node_id}"
+
+  - node_level = next_node_level
+
+  - node_children_url = url_for(action: 'index', controller: 'revenues/registered_revenues', params: params.permit!.to_h.merge({node_path: node_path}))
+
+  - node_opened = 'false'
+
+  - has_children = ( node_type != node_types.last )
+
+  - node_children_url = (has_children ? node_children_url : '')
+  - node_opened = (has_children ? node_opened : 'leaf')
+
+  %tr{ data: { 'node': node_path, 'node-children-url': node_children_url, 'node-level': node_level, 'node-opened': node_opened } }
+
+    %td
+      .treeview-icons
+        .fa.fa-spin.fa-refresh.mx-1.loading
+        .fa.fa-chevron-right.closed
+        .fa.fa-chevron-down.opened
+
+      .treeview-node
+        - title = node[:title].upcase
+
+        = filtered_highlighted(title)
+
+    %td.text-right
+      = number_to_currency(node[:valor_lancado])
+    %td.text-right
+      = number_to_currency(node[:valor_acumulado])
+

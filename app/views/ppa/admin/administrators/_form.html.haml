@@ -1,0 +1,14 @@
+= simple_form_for [:ppa_admin, ppa_administrator], url: url do |f|
+
+  .row
+    .col-lg-12
+      = f.input :name
+    .col-lg-6
+      = f.input :cpf
+    .col-lg-6
+      = f.input :email, required: true
+
+  .row.mt-3
+    .col-lg-12
+      = link_to t('commands.cancel'), ppa_admin_administrators_path, class: 'btn btn-warning pull-left'
+      = f.submit t('commands.save'), class: 'btn btn-primary pull-right'

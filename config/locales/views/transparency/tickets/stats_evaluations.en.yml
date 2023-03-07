@@ -1,0 +1,227 @@
+en:
+  transparency:
+    tickets:
+      stats_evaluations:
+
+        index:
+          title: 'Statistic data'
+          description: >
+            Monthly statistic panels such as the consolidated data of the Ombudsman Satisfaction Survey, Access to Information and 155 Central of the service review carried out by the citizens on Ceará Transparente.
+
+          average_alert: The average rating goes from 1 to 5.
+
+          tabs:
+            sou:
+              title: 'Digital Ombudsman'
+
+            sic:
+              title: 'Access to information'
+
+            call_center:
+              title: '155 Central'
+
+            transparency:
+              title: 'Transparency'
+
+          empty: 'There are no statistics for this period'
+
+          sou:
+            title: 'Digital Ombudsman Satisfaction Survey'
+
+            summary:
+              title: 'Number of queries and manifestations'
+
+              total_answered_tickets:
+                title: 'Manifestations answered by the State of Ceará Government'
+
+              total_user_evaluations:
+                title: 'Queries answered by the users of Ceará Transparente'
+
+
+              evaluations:
+                questions_01:
+                  title: 'Satisfaction Rate'
+
+                questions_02_03:
+                  title: 'Quality of the Ombudsman service'
+
+              average_question_01_a:
+                title: 'In regards to the Ombudsman for this specific service'
+
+              average_question_01_b:
+                title: 'In regards to the answer return time'
+
+              average_question_01_c:
+                title: 'In regards to how much the attendant understood your request'
+
+              average_question_01_d:
+                title: 'In regards to receiving all necessary information'
+
+
+              average_question_02:
+                title: 'Before, I used to think the Ombudsman service was'
+
+              average_question_03:
+                title: 'Now evaluate the Ombudsman service provided'
+
+          sic:
+            title: 'Information Services Satisfaction Survey'
+
+            summary:
+              title: 'Number of requests and queries'
+
+              total_answered_tickets:
+                title: 'Requests answered by the State of Ceará Government'
+
+              total_user_evaluations:
+                title: 'Queries answers by the users of Ceará Transparente'
+
+
+              evaluations:
+                questions_01:
+                  title: 'Satisfaction Index'
+
+                questions_02_03:
+                  title: 'Quality of the Information service'
+
+              average_question_01_a:
+                title: 'In regards to the Information for this specific service'
+
+              average_question_01_b:
+                title: 'In regards to the answer return time'
+
+              average_question_01_c:
+                title: 'In regards to how much the attendant understood your request'
+
+              average_question_01_d:
+                title: 'In regards to receiving all necessary information'
+
+
+              average_question_02:
+                title: 'Before, I used to think the Information service was'
+
+              average_question_03:
+                title: 'Now evaluate the Information service provided'
+
+          call_center:
+            title: '155 Central Satisfaction Survey'
+
+            summary:
+              title: 'Number of tickets and queries'
+
+              total_answered_tickets:
+                title: 'Tickets answered by the State of Ceará Government'
+
+              total_user_evaluations:
+                title: 'Queries answered by the users of Ceará Transparente'
+
+
+              evaluations:
+                questions_01:
+                  title: 'Satisfaction Rate'
+
+                questions_02_03:
+                  title: 'Quality of the 155 Central service'
+
+              average_question_01_a:
+                title: 'In regards to the 155 Central service for this specific service'
+
+              average_question_01_b:
+                title: 'In regards to the answer return time'
+
+              average_question_01_c:
+                title: 'In regards to how much the attendant understood your request'
+
+              average_question_01_d:
+                title: 'In regards to receiving all necessary information'
+
+
+              average_question_02:
+                title: 'Before, I used to think the 155 Central service was'
+
+              average_question_03:
+                title: 'Now evaluate the 155 Central service provided'
+
+          transparency:
+            title: 'Transparency Satisfaction Survey'
+
+
+        organs:
+          more:
+            title: 'Show/Hide all bodies'
+
+          title: 'Top-rated bodies'
+
+          sou:
+            header:
+              position:
+                title: 'Position'
+
+              organ_name:
+                title: 'Body'
+
+              total_tickets:
+                title: 'Open manifestations'
+
+              total_answered_tickets:
+                title: 'Answered manifestations'
+
+              total_user_evaluations:
+                title: 'Answered tickets'
+
+              average_evaluations:
+                title: 'Evaluation'
+
+          sic:
+            header:
+              position:
+                title: 'Position'
+
+              organ_name:
+                title: 'Body'
+
+              total_tickets:
+                title: 'Open manifestations'
+
+              total_answered_tickets:
+                title: 'Answered manifestations'
+
+              total_user_evaluations:
+                title: 'Answered tickets'
+
+              average_evaluations:
+                title: 'Evaluation'
+
+          call_center:
+            header:
+              position:
+                title: 'Position'
+
+              organ_name:
+                title: 'Body'
+
+              total_tickets:
+                title: 'Open manifestations'
+
+              total_answered_tickets:
+                title: 'Answered manifestations'
+
+              total_user_evaluations:
+                title: 'Answered tickets'
+
+              average_evaluations:
+                title: 'Evaluation'
+
+        themes:
+          title: 'Average evaluation rate by topic'
+
+        transparency:
+          summary:
+            total:
+              title: 'Total number of pages evaluated'
+
+            average:
+              title: 'Average of the evaluated pages'
+
+        create:
+          done: 'The update of the statistics are being generated in the background, wait a few seconds!'

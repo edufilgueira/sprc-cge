@@ -1,0 +1,13 @@
+pt-BR:
+  presenters:
+    reports:
+      tickets:
+        sou:
+          summary:
+            relevant_to_executive_count: 'Total Geral de Manifestações Pertinentes ao Poder Executivo Estadual: %{count}'
+            invalidated_count: 'Total Geral de Manifestações Invalidadas: %{count}'
+            other_organs_count: 'Total Geral de Manifestações Outros Poderes: %{count}'
+            total_count: 'Total Geral de Manifestações Registradas: %{count}'
+            reopened_count: 'Total Geral de Manifestações Reabertas: %{count}'
+            average_time_answer: 'Tempo médio para responder: %{count} dias'
+            anonymous_count: 'Manifestações anônimas: %{count}'

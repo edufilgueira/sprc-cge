@@ -1,0 +1,38 @@
+- content_for :title, title
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+
+.row.justify-content-center{ data: { main_container: '', current_year: filters[:year] } }
+
+  .col-12
+
+    = render 'shared/reports/stats_tickets/index/filters'
+
+  .col-12
+
+    %nav.nav.nav-pills.nav-fill{id: 'tabs', role: 'tablist', 'aria-orientation': 'horizontal'}
+
+      - stats_tabs.each_with_index do |ticket_type, index|
+
+        - html_class = (index == 0 ? 'active' : '')
+
+        %a.nav-item.nav-link{id: "tabs-#{ticket_type}-tab", 'data-toggle': :pill, href: "#tabs-#{ticket_type}", role: 'tab', class: html_class}
+          = t(".tabs.#{ticket_type}.title")
+
+    .tab-content
+
+      - stats_tabs.each_with_index do |ticket_type, index|
+
+        - html_class = (index == 0 ? 'active show' : '')
+
+        .tab-pane.fade{id: "tabs-#{ticket_type}", "aria-labelledby": "#tabs-#{ticket_type}-tab", role: 'tabpanel', class: html_class}
+
+          - stats_ticket = current_stats_ticket(ticket_type)
+
+          - unless stats_ticket.persisted?
+
+            = render 'shared/reports/stats_tickets/error'
+
+          - else
+
+            = render 'shared/reports/stats_tickets/index/stats_ticket', ticket_type: ticket_type, stats_ticket: stats_ticket

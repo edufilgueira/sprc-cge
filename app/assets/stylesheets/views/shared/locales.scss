@@ -1,0 +1,10 @@
+.locales {
+  a, strong {
+    border-right: 1px solid;
+    padding: 0 3px;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}

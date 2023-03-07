@@ -1,0 +1,8 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+- content_for :javascript, javascript_include_tag(javascript)
+
+.row
+
+  .col-12
+    = render partial: 'shared/tickets/change_types/form', ticket: ticket

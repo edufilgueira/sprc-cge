@@ -1,0 +1,15 @@
+pt-BR:
+  operator:
+    tickets:
+      change_denunciation_types:
+
+        new:
+          title: 'Editar tipo de denúncia'
+
+        form:
+          title: 'Editar tipo de denúncia'
+
+        create:
+          title: 'Editar tipo de denúncia'
+          done: 'O tipo de denúncia foi modificado.'
+          fail: 'Erro ao modificar o tipo de denúncia.'

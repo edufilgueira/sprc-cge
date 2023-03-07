@@ -1,0 +1,123 @@
+.card-filters.filter-bar{'data-filter-bar': 'expenses_budget_balances'}
+
+  = form_for transparency_expenses_budget_balances_path, method: :get, remote: true do |f|
+
+    = render 'shared/sortered/hidden_filters'
+
+    .row.mb-3.month-range{data: { container: 'month-range' }}
+      .col-12.col-lg-4
+        = label_tag(:year, Integration::Expenses::BudgetBalance.human_attribute_name(:year))
+        = text_field_tag(:year, params[:year], placeholder: year, 'data-filter-bar-bypass-clear': '', class: 'form-control w-100 year-datetimepicker')
+
+      .col-12.col-lg-4
+        = label_tag(:month_start, t('messages.filters.select.month_start'))
+        = select_tag(:month_start, options_for_select(date_months_for_select, params[:month_start]), data: {'filter-bar-bypass-clear': '', 'stats-month': 'start'}, class: 'form-control w-100')
+
+      .col-12.col-lg-4
+        = label_tag(:month_end, t('messages.filters.select.month_end'))
+        = select_tag(:month_end, options_for_select(date_months_for_select, params[:month_end] || last_stat_month), data: {'filter-bar-bypass-clear': '', 'stats-month': 'end'}, class: 'form-control w-100')
+
+    .row.mb-3
+      .col-12.col-lg-6
+        - items = supports_secretaries_from_executivo_for_select_with_all_option
+        - options = options_for_select(items, params['integration_supports_secretary_id'])
+
+        = label_tag('integration_supports_secretary_id', Integration::Expenses::BudgetBalance.human_attribute_name(:secretary))
+        = select_tag('integration_supports_secretary_id', options)
+
+
+      .col-12.col-lg-6
+        - items = supports_organs_from_executivo_for_select_with_all_option
+        - options = options_for_select(items, params['integration_supports_organ_id'])
+
+        = label_tag('integration_supports_organ_id', Integration::Expenses::BudgetBalance.human_attribute_name(:organ))
+        = select_tag('integration_supports_organ_id', options)
+
+
+    .row.mb-3
+      .col-12.col-lg-4
+        - items = [['Todas', ' ']] + Integration::Supports::Function.all.map{|i| [i.title, i.codigo_funcao]}
+        - options = options_for_select(items, params['cod_funcao'])
+
+        = label_tag('cod_funcao', Integration::Expenses::BudgetBalance.human_attribute_name(:function))
+        = select_tag('cod_funcao', options)
+
+
+      .col-12.col-lg-4
+        - items = [['Todas', ' ']] + Integration::Supports::SubFunction.all.map{|i| [i.title, i.codigo_sub_funcao]}
+        - options = options_for_select(items, params['cod_subfuncao'])
+
+        = label_tag('cod_subfuncao', Integration::Expenses::BudgetBalance.human_attribute_name(:sub_function))
+        = select_tag('cod_subfuncao', options)
+
+      .col-12.col-lg-4
+        - items = [['Todos', ' ']] + Integration::Supports::GovernmentProgram.all.map{|i| [i.title, i.id]}
+        - options = options_for_select(items, params['integration_supports_government_program_id'])
+
+        = label_tag('integration_supports_government_program_id', Integration::Expenses::BudgetBalance.human_attribute_name(:government_program))
+        = select_tag('integration_supports_government_program_id', options)
+
+    .row.mb-3
+
+      .col-12.col-lg-4
+        - items = [['Todas', ' ']] + Integration::Supports::QualifiedResourceSource.all.map{|i| [i.title, i.codigo]}
+        - options = options_for_select(items, params['cod_fonte'])
+
+        = label_tag('cod_fonte', Integration::Expenses::BudgetBalance.human_attribute_name(:qualified_resource_source))
+        = select_tag('cod_fonte', options)
+
+      .col-12.col-lg-4
+        - items = [['Todas', ' ']] + Integration::Supports::EconomicCategory.all.map{|i| [i.title, i.codigo_categoria_economica]}
+        - options = options_for_select(items, params['cod_categoria_economica'])
+
+        = label_tag('cod_categoria_economica', Integration::Expenses::BudgetBalance.human_attribute_name(:economic_category))
+        = select_tag('cod_categoria_economica', options)
+
+      .col-12.col-lg-4
+        - #
+        - # XXX Motar métodos no helper para gerar os items traduzíveis como este filtro
+        - #
+        - items = integration_expenses_cod_grupo_desp_for_select
+        - options = options_for_select(items, params['cod_grupo_desp'])
+
+        = label_tag('cod_grupo_desp', Integration::Expenses::BudgetBalance.human_attribute_name(:cod_grupo_desp))
+        = select_tag('cod_grupo_desp', options)
+
+    .row.mb-3
+
+      .col-12.col-lg-4
+        - items = [['Todas', ' ']] + Integration::Supports::ApplicationModality.all.map{|i| [i.title, i.codigo_modalidade]}
+        - options = options_for_select(items, params['cod_modalidade_aplicacao'])
+
+        = label_tag('cod_modalidade_aplicacao', Integration::Expenses::BudgetBalance.human_attribute_name(:application_modality))
+        = select_tag('cod_modalidade_aplicacao', options)
+
+      .col-12.col-lg-4
+        - items = [['Todos', ' ']] + Integration::Supports::ExpenseElement.all.map{|i| [i.title, i.codigo_elemento_despesa]}
+        - options = options_for_select(items, params['cod_elemento_despesa'])
+
+        = label_tag('cod_elemento_despesa', Integration::Expenses::BudgetBalance.human_attribute_name(:expense_element))
+        = select_tag('cod_elemento_despesa', options)
+
+    .row
+
+      .col-12.col-lg-5
+
+        - node_type_model = Integration::Expenses::BudgetBalance
+
+        - tree_organizer_options = { id: 'budget_balances', default_node_types: default_node_types, default_node_types_path: default_node_types_path, node_type_model: node_type_model, node_types_options: node_types_options }
+
+        = render 'shared/transparency/tree_organizer', options: tree_organizer_options
+
+
+      .col-12.col-lg-5
+        = label_tag(:search, t('messages.filters.search.label'))
+        = text_field_tag(:search, params[:search], class: 'form-control w-100', 'data-filter-bar-ignore-submit-on-enter': 'true')
+        %small.form-text.text-muted
+          = t('.search.hint')
+
+      .col-12.col-lg-2
+
+        - # forma simples de align-bottom no botão de busca
+        .mt-4.pt-2
+          = f.submit t('commands.search'), class: 'btn btn-primary btn-block'

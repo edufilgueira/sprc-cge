@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      ppa/voting:
+        one: Votação
+        other: Votações
+
+    attributes:
+      ppa/voting:
+        start_in: Período Inical
+        end_in: Período Final
+        plan: PPA
+        region: Região

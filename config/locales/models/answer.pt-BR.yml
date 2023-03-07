@@ -1,0 +1,65 @@
+pt-BR:
+  activerecord:
+    attributes:
+      answer:
+        description: Comentário
+        answer_type: Tipo de resposta
+        answer_type_str: Tipo de resposta
+        status: Situação da resposta
+        status_str: Situação da resposta
+        classification: Percepção após o procedimento de apuração preliminar
+        classification_str: Percepção após o procedimento de apuração preliminar
+        certificate: Certidão negativa
+        department_id: Área interna
+
+      answer/answer_type:
+        partial: Resposta parcial
+        final: Resposta final
+
+      answer/status/sic:
+          awaiting: Aguardando aprovação
+          sectoral_approved: Posicionamento aprovado
+          sectoral_rejected: Posicionamento devolvido
+          cge_approved: Resposta enviada ao cidadão
+          cge_rejected: Resposta devolvida
+          user_evaluated: Resposta avaliada pelo cidadão
+          call_center_approved: Resposta enviada
+          subnet_approved: Posicionamento aprovado
+          subnet_rejected: Posicionamento devolvido
+      answer/status/sou:
+          awaiting: Aguardando aprovação
+          sectoral_approved: Posicionamento aprovado
+          sectoral_rejected: Posicionamento devolvido
+          cge_approved: Resposta enviada ao cidadão
+          cge_rejected: Resposta devolvida
+          user_evaluated: Resposta avaliada pelo cidadão
+          call_center_approved: Resposta enviada
+          subnet_approved: Posicionamento aprovado
+          subnet_rejected: Posicionamento devolvido
+
+      answer/classification:
+        sic_attended_personal_info: Atendido (informação pessoal)
+        sic_attended_rejected_partially: Atendido parcialmente
+        sic_rejected_secret: Não atendido por se tratar de informação sigilosa
+        sic_rejected_need_work: Não atendido (exige trabalho adicional)
+        # sic_rejected_reserved: Não atendido (sigiloso/reservado)
+        sic_rejected_personal_info: Não atendido (informação pessoal)
+        sic_not_attended_info_unclear: Não atendido (solicitação não especificada de forma clara e precisa)
+        sic_not_attended_info_nonexistent: Não atendido (informação inexistente)
+        sic_rejected_ultrasecret: Não atendido (ultrassecreto)
+        sic_rejected_generic: Não atendido (solicitações genéricas, desproporcionais ou desarrazoadas)
+        sic_not_attended_other_organs: Não atendido (competência outros poderes)
+        sic_attended_active: Atendido (transparência ativa)
+        sic_attended_passive: Atendido (transparência passiva)
+        appeal_deferred: Deferido
+        appeal_rejected: Não atendido
+        appeal_deferred_partially: Deferido parcialmente
+        appeal_loss_object: Perda de objeto
+        appeal_loss_object_partially: Perda parcial do objeto
+        appeal_not_allowed: Não admitido
+        sou_demand_well_founded: Demanda Procedente
+        sou_demand_unfounded: Demanda Improcedente
+        sou_well_founded_partially: Parcialmente Procedente
+        sou_could_not_verify: Não foi possível constatar
+        sou_waitting_determination_result: Aguardando Resultado de apuração
+        legacy_classification: Sistema legado

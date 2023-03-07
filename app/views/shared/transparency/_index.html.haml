@@ -1,0 +1,115 @@
+- transparency_stats_id = "#{transparency_id}_stats"
+- transparency_stats_type = local_assigns[:stats_type] || :month
+- transparency_path = local_assigns[:filter_path] || transparency_id.to_s.gsub('_', '/')
+- controllers_with_last_imports = ['daes', 'ders']
+
+- #
+- # Alerta Pesquisa de satisfação
+- #
+- if namespace == :transparency
+  .my-4
+    .alert.alert-warning
+      = t('shared.transparency.survey_answer.title').html_safe
+
+.row.mb-4
+
+  .col-12
+
+    %h2
+      = base_locale[:title]
+
+    %hr{'aria-hidden': 'true'}
+
+    %label
+      = raw(base_locale[:description])
+
+    - if controller_name.in? controllers_with_last_imports
+      %br
+        %label
+          = "#{raw(base_locale[:last_update])} #{last_update}"
+
+- #
+- # Bloco de estatísticas e download de arquivos
+- #
+= render 'shared/transparency/index/filter_stats', base_locale: base_locale, transparency_stats_id: transparency_stats_id, stats_url: stats_url, transparency_stats_type: transparency_stats_type
+
+
+- #
+- # Filtros da consulta avançada e tabela com dados
+- #
+- if base_locale[:filters].present?
+  .row
+    .col-12
+      .card.card-custom
+
+        .card-header
+
+          %h3.card-title
+            = base_locale[:filters][:title]
+
+        .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+          .remote-content{'data-remote-content': transparency_id}
+            #advanced_filter
+              = render "shared/transparency/#{transparency_path}/index/filters", transparency_id: transparency_id
+
+            - # Em alguns casos não temos estatísticas mas temos as
+            - # planilhas atualizados para download (ex: ind. estratégicos/thematic.)
+            - # Por isso inserimos os download links separados.
+
+            - unless base_locale[:stats].present?
+              = render 'shared/transparency/download_links', paths: { xlsx: xlsx_download_path, csv: csv_download_path }
+
+            - # o index é carregado como remote-content e está na partial ./_index
+
+            .transparency-resources{ 'data-remote-content-result': transparency_id, 'data-toggle': 'treeview' }
+
+              .p-2.text-center.text-muted
+                .fa.fa-spin.fa-refresh.mx-1
+                = t('messages.loading')
+
+
+- #
+- # Footer com informações adicionais abaixo da tabela
+- # Ex. de uso: revenues/registered_revenues
+- #
+- if base_locale[:footer].present?
+
+  .my-2.small
+    %em
+      = raw(base_locale[:footer])
+
+  %hr
+
+
+- #
+- # Informação sobre fonte dos dados
+- #
+- if base_locale[:source].present?
+
+  .my-2.small
+    %em
+      = raw(base_locale[:source])
+
+
+- #
+- # Card com informações adicionais. Ex: Decretos Anuais de Reajuste Salarial dos Servidores
+- #
+- if base_locale[:additional].present?
+  .card.card-custom.mb-3
+    .card-header
+      %h3.card-title
+        = base_locale[:additional][:title]
+
+    .card-block
+      .row
+        .col
+          = link_to base_locale[:additional][:url] do
+            = base_locale[:additional][:link]
+
+
+- #
+- # Formulário Pesquisa de satisfação
+- #
+- if namespace == :transparency
+  = render("shared/transparency/survey_answers/form", transparency_id: transparency_id, action: action_name, controller: controller_path, url: request.original_url)

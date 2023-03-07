@@ -1,0 +1,14 @@
+@import 'base/variables';
+
+@media (max-width: map-get($grid-breakpoints, "sm")) {
+  .alert {
+    font-size: 0.8rem;
+  }
+
+  .alert-dismissible {
+
+    .close {
+      top: -0.9rem;
+    }
+  }
+}

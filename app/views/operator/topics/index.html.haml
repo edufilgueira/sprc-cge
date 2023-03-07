@@ -1,0 +1,52 @@
+- content_for :title, t('.title')
+- content_for :breadcrumbs, render_breadcrumbs(breadcrumbs)
+
+- can_create = can?(:create, Topic)
+- new_path = new_operator_topic_path
+- controller_name = controller.controller_name
+- filter_path = operator_topics_path
+
+%h2.sr-only
+  = t('.title')
+
+.card.card-custom
+
+  .card-header
+
+    %h3.card-title
+      = t('.title')
+
+
+  .card-block{'data-toggle': 'remote-content-with-filter-bar'}
+
+    .remote-content{'data-remote-content': controller_name}
+
+      - filter_new_command = { title: t('.commands.new'), path: new_path, permission: can_create }
+      - filter_commands = { 'new': filter_new_command }
+      - filter_options = { filter_id: :contracts, filter_path: filter_path, commands: filter_commands, hint: t('.search.hint') }
+
+      = render "shared/operator/filters", filter_options do
+
+        - # filtros além do padrão (barra de busca);
+
+        .row.mt-2
+          .col-6.col-md-6
+            = render "shared/operator/remote_disable_filter"
+
+          .col-6.col-md-6
+            - label = t('operator.topics.filters.select.organ')
+            - placeholder = t('messages.filters.select.all.male')
+            - options = options_for_select(current_user_organ_for_select, params[:organ])
+            = label_tag :organ, label
+            = select_tag :organ, options
+
+
+      - # o index é carregado como remote-content e está na partial ./_index
+
+      %hr{'aria-hidden': 'true'}
+
+      .remote-content-result{ 'data-remote-content-result': controller_name }
+
+        .p-2.text-center.text-muted
+          .fa.fa-spin.fa-refresh.mx-1
+          = t('messages.loading')

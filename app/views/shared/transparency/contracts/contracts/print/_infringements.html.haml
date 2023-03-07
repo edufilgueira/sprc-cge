@@ -1,0 +1,49 @@
+.row.mt-4
+
+  .col
+
+    %h3.h5.text-center
+      = t('shared.transparency.contracts.contracts.show.infringements.title')
+
+    - if infringements.present?
+
+      %table.table.table-sm.table-sriped.table-print{summary: t('shared.transparency.contracts.contracts.show.infringements.summary')}
+
+        %thead
+          %tr
+            - heads = [:cod_financiador, :descricao_entidade, :descricao_financiador, :descricao_motivo_inadimplencia, :data_lancamento, {id: :valor_atualizado_total, class: 'text-right'}]
+
+            - heads.each do |head|
+              - if head.is_a?(Hash)
+                %th{class: head[:class]}
+                  = t("shared.transparency.contracts.contracts.show.infringements.table.heads.#{head[:id]}")
+              - else
+                %th
+                  = t("shared.transparency.contracts.contracts.show.infringements.table.heads.#{head}")
+
+        %tbody
+          - infringements.each do |infringement|
+            %tr
+              %td
+                = infringement.cod_financiador
+
+              %td
+                = infringement.descricao_entidade
+
+              %td
+                = infringement.descricao_financiador
+
+              %td
+                = infringement.descricao_motivo_inadimplencia
+
+              %td
+                = l(infringement.data_lancamento.to_date)
+
+              %td.text-right
+                = number_to_currency(infringement.valor_atualizado_total)
+
+    - else
+
+      .row
+        %i.col-md-12.text-center
+          = t('shared.transparency.contracts.contracts.show.infringements.empty')

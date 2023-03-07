@@ -1,0 +1,15 @@
+.row.mb-3
+  .col-lg-12
+    %label.form-control-label
+      = raw(question_description)
+      - if evaluation_error.present?
+        %small.text-danger
+          = "#{evaluation_error.to_sentence}"
+
+    .evaluation-btn-group.btn-group.btn-group-justified{ 'data-toggle': 'radio-buttons', role: 'group', 'aria-label': question_description }
+
+      - Evaluation::QUESTION_05_OPTIONS.each do |grade|
+        - checked = f.object.send("#{field_name}") == grade.to_s
+        %label.btn.btn-secondary{ class: checked ? 'active' : '' }
+          = radio_button_tag("evaluation[#{field_name}]", grade, checked = checked, 'data-input': grade)
+          = t("shared.answers.evaluations.questions.sou.question_05.#{grade}")

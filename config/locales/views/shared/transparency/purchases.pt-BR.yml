@@ -1,0 +1,68 @@
+pt-BR:
+  shared:
+    transparency:
+
+      purchases:
+
+        index:
+          title: Licitações finalizadas
+          description: >
+            Consulte aqui qualquer licitação finalizada adjudicada pelo Estado.
+            Veja os maiores fornecedores e os responsáveis pelas licitações finalizadas etc.
+
+          source: |
+            <p><strong>Fonte de dados:</strong></p>
+            <p>Secretaria do Planejamento e Gestão - SEPLAG</p>
+            <p>Sistema de Registro de Preço - SRP</p>
+
+          chart:
+            valor_total_calculated:
+              unit: 'Valor total em R$'
+              title: 'Valor total'
+
+          charts:
+            tabs:
+              itens:
+                title: Itens
+              fornecedores:
+                title: Fornecedores
+              grupos:
+                title: Grupos
+              resp_compra:
+                title: Unidades
+
+          filters:
+            title: Consulta avançada
+            search_placeholder: >
+              Busque por Nº Publicação, Fornecedor, Órgão, Cód/Desc. do item,
+              Categoria ou Grupo
+
+          counts:
+            purchases_count:
+              title: Quantidade de licitações finalizadas filtradas
+            purchases_sum:
+              title: Valor das licitações finalizadas filtradas
+
+          table:
+            summary: Lista de licitações finalizadas
+            header:
+              numero_publicacao: Nº Publicação
+              nome_fornecedor: Fornecedor
+              nome_resp_compra: Unidade
+              descricao_item: Desc. do item
+              quantidade_estimada: Quantidade estimada
+              valor_unitario: Valor unitário
+              valor_estimado: Valor estimado
+              valor_total_calculated: Valor total
+
+          stats:
+            title: Principais números relacionados a licitações finalizadas
+            count: 'Quantidade de licitações finalizadas publicadas em <strong>%{date}</strong>'
+            valor_total_calculated: 'Licitações finalizadas publicadas em <strong>%{date}</strong>'
+
+        show:
+          descricao_url: Íntegra da licitação finalizada
+          descricao_url_ddisp: Processo de dispensa de licitação
+          descricao_url_inexg: Processo de inexibilidade de licitação
+          edital_url: Ver edital
+

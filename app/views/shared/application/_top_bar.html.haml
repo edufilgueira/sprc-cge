@@ -1,0 +1,50 @@
+- items = [:portal_governo, :cge, :acessibilidade]
+- not_logged = !content_for?(:logged_top_bar)
+
+%nav.navbar.navbar-toggleable-md.navbar-inverse.top-bar
+
+  %button.navbar-toggler-left.navbar-toggler{ type: 'button', data: { menu: '' } }
+
+    %span.navbar-toggler-icon
+
+  = render 'shared/a11y/menu_anchor'
+
+  %ul.navbar-nav.hidden-md-down{ class: not_logged ? 'w-100' : '' }
+
+    - #
+    - # Itens links estáticos
+    - #
+    - items.each do |item|
+
+      %li.nav-item
+        = link_to t(".#{item}.title"), t(".#{item}.link"), class: 'nav-link', target: '_blank'
+
+    %li.nav-item
+      = link_to t(".alto_contraste.title"), url_for(acessibility: !acessibility?), class: 'nav-link'
+
+    %li.nav-item
+      = link_to 'A+', 'javascript:;', class: 'nav-link pr-0 border-right-0 btn-a11y-increase-font-size'
+    %li.nav-item
+      = link_to 'A-', 'javascript:;', class: 'nav-link pr-0 border-right-0 btn-a11y-decrease-font-size'
+    %li.nav-item
+      = link_to 'A',  'javascript:;', class: 'nav-link btn-a11y-reset-font-size'
+
+    %li.nav-item
+      = link_to t(".faq.title"), t(".faq.link"), class: 'nav-link', target: '_blank'
+
+    %li.nav-item
+      .locales
+        = render 'shared/locales'
+
+    - #
+    - # Item link não estático
+    - #
+    - if not_logged
+      %li.nav-item
+        = link_to t('.sign_up.title'), new_user_registration_path, class: 'nav-link'
+
+      %li.nav-item
+        = link_to t('.login.title'), new_user_session_path, class: 'nav-link'
+
+  - if signed_in?
+    = yield :logged_top_bar
