@@ -12,7 +12,6 @@
 
 ## Instalação
 
-
   1) Instalar RVM
 
   2) rvm use --create 2.4.9@sprc
